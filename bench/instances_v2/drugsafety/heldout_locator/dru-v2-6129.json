@@ -1,0 +1,304 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "recall_number",
+     "record_id": "D-336-2014"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "event_id",
+     "code_info",
+     "recall_number"
+    ],
+    "what": "the recall number"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Terminated\"",
+    "params": {
+     "field_path": "status",
+     "record_id": "D-336-2014"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "status",
+     "country",
+     "recall_initiation_date"
+    ],
+    "what": "the recall status"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:20151218",
+    "params": {
+     "field_path": "report_date",
+     "record_id": "D-336-2014"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "recall_initiation_date",
+     "country",
+     "report_date"
+    ],
+    "what": "the date the recall was reported"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "product_quantity",
+     "record_id": "D-336-2014"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "event_id",
+     "product_quantity",
+     "voluntary_mandated"
+    ],
+    "what": "the product quantity"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "recalling_firm",
+     "record_id": "D-336-2014"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "code_info",
+     "voluntary_mandated",
+     "recalling_firm"
+    ],
+    "what": "the recalling firm"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "recall_number",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The recall is identified with a stated classification (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "recall_number",
+      "exists",
+      null
+     ],
+     [
+      "classification",
+      "exists",
+      null
+     ],
+     [
+      "status",
+      "equals",
+      "Terminated"
+     ]
+    ],
+    [
+     [
+      "recall_number",
+      "exists",
+      null
+     ],
+     [
+      "reason_for_recall",
+      "exists",
+      null
+     ],
+     [
+      "report_date",
+      "numeric_le",
+      20151218
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The recall is action-ready: identified, classified, with product description, reason, and status populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "recall_number",
+      "exists",
+      null
+     ],
+     [
+      "classification",
+      "exists",
+      null
+     ],
+     [
+      "status",
+      "equals",
+      "Terminated"
+     ],
+     [
+      "product_quantity",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The recall satisfies the checked completeness protocol: action-ready per the inspected fields, with consistent dates and populated distribution and firm fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "drugsafety_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "dru-v2-6129",
+ "notes_for_annotators": "{\"family\": \"drugsafety-branching-hom-17\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": 1, \"false_mech\": false, \"locator\": true, \"source_instance\": \"dru-v2-0129\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "D-336-2014": {
+   "code_info": "Product code: 707156; Lot Number: F0012, Exp 02/28/2014",
+   "country": "United States",
+   "event_id": "66015",
+   "product_quantity": "18,665 bottles",
+   "recall_initiation_date": "20130808",
+   "recall_number": "D-336-2014",
+   "recalling_firm": "Novartis Pharmaceuticals Corp.",
+   "report_date": "20131218",
+   "status": "Terminated",
+   "voluntary_mandated": "Voluntary: Firm initiated"
+  }
+ },
+ "scope": "The single named openFDA enforcement record, as retrieved and embedded; no external lookups. Record identifier: D-336-2014.",
+ "seed": "D-336-2014",
+ "user_prompt": "Is this recall record complete and correctly classified for downstream pharmacy action?",
+ "variant": "base"
+}

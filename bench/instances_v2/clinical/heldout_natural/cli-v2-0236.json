@@ -1,0 +1,291 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT04186676"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT04186676"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2021-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT04186676"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT04186676"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT04186676"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:false",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.healthyVolunteers",
+     "record_id": "NCT04186676"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT04186676"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2021-01-01"
+     ]
+    ],
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2021-01-01"
+     ],
+     [
+      "protocolSection.eligibilityModule.healthyVolunteers",
+      "equals",
+      false
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-0236",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-hom-17\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": null, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT04186676": {
+   "protocolSection": {
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n1. Patients older than 18 years\n2. Patients without known history of coronary artery disease\n3. Patients with acute coronary syndrome with and/or without ST-segment elevation who underwent coronary angiography within 24h after onset of the disease\n4. Absence of obstructive coronary atherosclerosis (normal coronary arteries or plaques \\<50% stenosis) based on the results of invasive coronary angiography\n5. Subject has provided written informed consent\n6. Subject is willing to comply with study follow-up requirements\n\nExclusion Criteria:\n\n1. Patients \\< 18 years old at time of coronary angiography\n2. Patients with a previous history of coronary artery disease and/or prior revascularization\n3. Patients with serious concurrent disease and life expectancy of \\< 1 year\n4. Patients who refuse to give written consent for participation in the study\n5. In the investigator's opinion, subject will not be able to comply with the follow-up requirements\n6. Subject is pregnant and/or breastfeeding or intends to become pregnant during the study\n7. Subject has a known allergy to contrast agent that cannot be adequately pre-medicated",
+     "healthyVolunteers": false,
+     "minimumAge": "18 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "Myocardial Infarction With Non-Obstructive Coronary Arteries in the Greek Population",
+     "nctId": "NCT04186676"
+    },
+    "statusModule": {
+     "studyFirstSubmitDate": "2019-11-29"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT04186676.",
+ "seed": "NCT04186676",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

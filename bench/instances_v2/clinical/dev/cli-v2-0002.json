@@ -1,0 +1,305 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2009-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT00490425"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2009-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT00490425"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"INTERVENTIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT00490425"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT00490425"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT00490425"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT00490425"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_after:\"1980-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT00490425"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT00490425"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2009-01-01"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2009-01-01"
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2009-01-01"
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2009-01-01"
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2009-01-01"
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_after",
+      "1980-01-01"
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "cli-v2-0002",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-het-00\", \"topology\": \"nested\", \"cost\": \"het\", \"target_level\": 3, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT00490425": {
+   "protocolSection": {
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* History of at least 3 episodes of wheezing bronchitis,\n* First degree relative with history of allergic disease\n\nExclusion Criteria:\n\n* Congenital malformations,\n* Immunologic or oncologic systemic disorders,\n* Current antibiotic therapy,\n* Prior exposure to probiotics; and\n* Known intolerances towards ingredients of the probiotics (LGG, microcristalline cellulose, gelatine, magnesiumstearate, titandioxide).",
+     "minimumAge": "6 Months",
+     "sex": "ALL"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2007-06-21",
+     "overallStatus": "COMPLETED",
+     "studyFirstSubmitDate": "2007-06-21"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT00490425.",
+ "seed": "NCT00490425",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

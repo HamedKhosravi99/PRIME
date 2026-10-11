@@ -1,0 +1,175 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-2gfx-95x2-5v3x"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-2gfx-95x2-5v3x"
+    },
+    "what": "the details text names the affected package (the package itself, by its registered name or a distinctive part of it, not only the vendor or the ecosystem)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-2gfx-95x2-5v3x"
+    },
+    "what": "the details text states a version in which the issue is fixed"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-2gfx-95x2-5v3x"
+    },
+    "what": "the details text states the first affected version, the version in which the issue was introduced"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory has a readable summary (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: it has a summary and its text names the affected package."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked completeness protocol: summary present, and the text names the package, a fixed version, and the first affected version."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4"
+   ]
+  ]
+ },
+ "id": "sec-v2-7450",
+ "notes_for_annotators": "{\"family\": \"security-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, true, false], \"twins\": [\"affected.0.package.name\", \"affected.*.ranges.*.events.*.fixed\", \"affected.*.ranges.*.events.*.introduced\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-2gfx-95x2-5v3x": {
+   "details": "### Impact\nAn attacker can cause a heap buffer overflow in `QuantizedReshape` by passing in invalid thresholds for the quantization:\n\n```python\nimport tensorflow as tf\n\ntensor = tf.constant([], dtype=tf.qint32)\nshape = tf.constant([], dtype=tf.int32)\ninput_min = tf.constant([], dtype=tf.float32)\ninput_max = tf.constant([], dtype=tf.float32)\n\ntf.raw_ops.QuantizedReshape(tensor=tensor, shape=shape, input_min=input_min, input_max=input_max)\n```\n\nThis is because the [implementation](https://github.com/tensorflow/tensorflow/blob/a324ac84e573fba362a5e53d4e74d5de6729933e/tensorflow/core/kernels/quantized_reshape_op.cc#L38-L55) assumes that the 2 arguments are always valid scalars and tries to access the numeric value directly:\n\n```cc\nconst auto& input_min_float_tensor = ctx->input(2);\n...\nconst float input_min_float = input_min_float_tensor.flat<float>()(0);\nconst auto& input_max_float_tensor = ctx->input(3);\n...\nconst float input_max_float = input_max_float_tensor.flat<float>()(0);\n```\n\nHowever, if any of these tensors is empty, then `.flat<T>()` is an empty buffer and accessing the element at position 0 results in overflow.\n\n### Patches\nWe have patched the issue in GitHub commit [a324ac84e573fba362a5e53d4e74d5de6729933e](https://github.com/tensorflow/tensorflow/commit/a324ac84e573fba362a5e53d4e74d5de6729933e).\n\nThe fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.\n\n### For more information\nPlease consult [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md) for more information regarding the security model and how to contact us with issues and questions.\n\n### Attribution\nThis vulnerability has been reported by Ying Wang and Yakun Zhang of Baidu X-Team.",
+   "summary": "Heap buffer overflow in `QuantizedReshape`"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-2gfx-95x2-5v3x.",
+ "seed": "GHSA-2gfx-95x2-5v3x",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "text"
+}

@@ -1,0 +1,67 @@
+{
+  "protocolSection": {
+    "conditionsModule": {
+      "conditions": [
+        "Psoriasis",
+        "Type 2 Diabetes Mellitus"
+      ]
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "CROSSOVER",
+        "maskingInfo": {
+          "masking": "QUADRUPLE",
+          "whoMasked": [
+            "PARTICIPANT",
+            "CARE_PROVIDER",
+            "INVESTIGATOR",
+            "OUTCOMES_ASSESSOR"
+          ]
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 20,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "identificationModule": {
+      "briefTitle": "Dipeptidyl Peptidase-4 Inhibition in Psoriasis Patients With Diabetes (DIP): A Randomized Clinical Trial.",
+      "nctId": "NCT01991197",
+      "organization": {
+        "class": "OTHER",
+        "fullName": "University College Dublin"
+      }
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "measure": "The Change in the Psoriasis Area and Severity Index (PASI) From Baseline to 16 Weeks in Psoriasis Patients With Type 2 Diabetes Treated With Sitagliptin Compared to Patients Treated With Gliclazide.",
+          "timeFrame": "16 weeks"
+        }
+      ]
+    },
+    "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+        "class": "OTHER",
+        "name": "University College Dublin"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2016-01",
+        "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+        "date": "2014-04"
+      },
+      "statusVerifiedDate": "2020-05"
+    }
+  }
+}

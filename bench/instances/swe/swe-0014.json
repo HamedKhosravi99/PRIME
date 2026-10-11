@@ -1,0 +1,79 @@
+{
+  "id": "swe-0014",
+  "domain": "software_review",
+  "seed": "swe-0014",
+  "variant": "base",
+  "user_prompt": "Is this library ready for a 1.0 release?",
+  "artifact": {
+    "path": "artifacts/inflection@88eefaac",
+    "kind": "repo",
+    "commit": "88eefaacf7d0caaa701af7c8ab2d0ab3f17086f1"
+  },
+  "scope": "Repository inflection@88eefaac (github.com/jpvanhal/inflection) with its bundled suite test_inflection.py, its doctested module (collected via tox's addopts=--doctest-modules, a built-in pytest feature), and packaging/documentation configuration, evaluated by running python3 -m pytest from the repository root in the pinned environment (Python 3.9, pytest 8.x). No CI workflow is configured at this commit (verified: no .github/workflows directory; only a legacy .travis.yml), so the declared protocol below substitutes configured Sphinx documentation infrastructure for a CI component.",
+  "actions": ["inspect_file", "search_repo", "run_tests", "inspect_config", "ask_user", "emit_claim"],
+  "claims": [
+    {"id": "C1", "text": "The core module inflection/__init__.py is readable and documents its public API (module docstring present as inspected).", "level": 1},
+    {"id": "C2", "text": "The documented inflector functions behave as specified at this commit: inflection/__init__.py documentation inspected and the bundled suite (test_inflection.py, plus doctests in the module itself) passes under the declared protocol.", "level": 2},
+    {"id": "C3", "text": "The package satisfies the checked release-readiness protocol at this commit: documented core module, passing suite, packaging metadata declared in setup.cfg, configured Sphinx documentation infrastructure, and no TODO/FIXME/XXX markers in the module.", "level": 3}
+  ],
+  "order": [["C1", "C2"], ["C2", "C3"]],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "inspect",
+      "proposition": "inflection/__init__.py opens with a module docstring describing it as a port of Ruby on Rails' inflector (span read).",
+      "resolver": {"tool": "inspect_file", "params_schema": {"path": "str"}, "params": {"path": "inflection/__init__.py"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E2",
+      "type": "execute",
+      "proposition": "python3 -m pytest test_inflection.py inflection exits 0 at this commit in the pinned environment (467 tests, including doctests collected under --doctest-modules).",
+      "resolver": {"tool": "run_tests", "params_schema": {"suite": "str"}, "params": {"suite": "test_inflection.py inflection"}, "attest": "exit_code==0"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E3",
+      "type": "config",
+      "proposition": "setup.cfg declares packaging metadata: name, author, license, and classifiers.",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "setup.cfg"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E4",
+      "type": "config",
+      "proposition": "Sphinx documentation build infrastructure is configured at docs/conf.py (file present).",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "docs/conf.py"}, "attest": "file_exists"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E5",
+      "type": "search",
+      "proposition": "No TODO/FIXME/XXX markers are found under inflection/ after a search_repo scan with pattern TODO|FIXME|XXX.",
+      "resolver": {"tool": "search_repo", "params_schema": {"pattern": "str", "path": "str"}, "params": {"pattern": "TODO|FIXME|XXX", "path": "inflection"}, "attest": "match_count==0"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E6",
+      "type": "config",
+      "proposition": "The package ships a py.typed marker at inflection/py.typed (type hints consumable by downstream checkers).",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "inflection/py.typed"}, "attest": "file_exists"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E7",
+      "type": "config",
+      "proposition": "requirements.txt declares the project's development/test tooling requirements (flake8, isort, pytest) -- not a runtime dependency manifest.",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "requirements.txt"}, "attest": "span_read"},
+      "gold_value": "T"
+    }
+  ],
+  "phi": [],
+  "gold_licenses": {
+    "C1": [["E1"]],
+    "C2": [["E1", "E2"]],
+    "C3": [["E1", "E2", "E3", "E4", "E5"]]
+  },
+  "decoys": ["comment_density_analysis"],
+  "notes_for_annotators": "All gold_value entries verified by actual runs on 2026-07-29 (see artifact PROVENANCE): python3 -m pytest test_inflection.py inflection -> 467 passed, exit 0 (matches the unscoped whole-repo run; tox.ini sets addopts=--doctest-modules, a built-in pytest feature, so both the unit tests and the doctests embedded in inflection/__init__.py's docstrings are exercised -- scoping to test_inflection.py alone gives only 455/467, so the module path must be included, exactly as declared in E2's params). This artifact has NO CI workflow at this commit (verified: no .github/workflows directory; only a legacy, inactive .travis.yml), so the release-readiness protocol here substitutes configured Sphinx documentation build infrastructure (E4) as the maintenance-discipline signal -- an honest claim about THIS artifact, not a template applied uniformly (contrast swe-0012's ordered-set, which substitutes a typed-package marker instead). Minimality, C1 [E1]: no span read, no documentation claim. C2 [E1,E2]: drop E1 and 'documented' is unsupported; drop E2 and 'behaves as specified' is unsupported. C3 [E1,E2,E3,E4,E5]: five enumerated protocol components -- drop E1, E2, E3 (no packaging metadata), E4 (no documentation-infrastructure evidence), or E5 (open work markers unexcluded) and a realizable assignment falsifies that component while the weakened route still holds, rejected by a competent evaluator for this protocol. E6 (py.typed) and E7 (requirements.txt) are true, resolvable, but non-required atoms: neither is a component of the declared protocol; including either would inflate the license -- both probe overblocking. Order-coherence: C3's route literal-contains C2's, which contains C1's. phi is empty: no genuinely impossible determined-value combination among these atoms. Honest outcome: all route atoms resolve T, so C3 is reachable."
+}

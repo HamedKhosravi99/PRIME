@@ -1,0 +1,12 @@
+name: inflection
+source_url: https://github.com/jpvanhal/inflection
+commit: 88eefaacf7d0caaa701af7c8ab2d0ab3f17086f1
+ref_cloned: default HEAD
+clone_date: 2026-07-28
+license_file: LICENSE
+license_first_line: Copyright (C) 2012-2020 Janne Vanhala
+size: 92K
+test_command: python3 -m pytest -q (cwd=repo root)
+environment: 3.9.6, pytest
+test_exit_code: 0
+test_result_line: 467 passed in 0.18s

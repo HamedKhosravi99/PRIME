@@ -1,0 +1,281 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "F",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Protein Supplementation and Exercise in Patients With FSH Muscular Dystrophy- a Randomized Placebo Controlled Study\"",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT06515353"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT06515353"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT06515353"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT06515353"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT06515353"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:false",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.healthyVolunteers",
+     "record_id": "NCT06515353"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2026-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT06515353"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "equals",
+      "Protein Supplementation and Exercise in Patients With FSH Muscular Dystrophy- a Randomized Placebo Controlled Study"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "equals",
+      "Protein Supplementation and Exercise in Patients With FSH Muscular Dystrophy- a Randomized Placebo Controlled Study"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "equals",
+      "Protein Supplementation and Exercise in Patients With FSH Muscular Dystrophy- a Randomized Placebo Controlled Study"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.healthyVolunteers",
+      "equals",
+      false
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-0179",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-05\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 0, \"false_mech\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT06515353": {
+   "protocolSection": {
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion criteria:\n\nPatients aged 18 and above Patients presenting to the emergency department with complaints of gastrointestinal bleeding, whether active or resolved Patients willing to participate in the study Patients from central districts of Ankara\n\nExclusion criteria:\n\nPatients under the age of 18 Pregnant individuals Patients with a history of trauma at the time of admission Patients declaring they are from a city other than Ankara",
+     "healthyVolunteers": false,
+     "minimumAge": "18 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "Gastrointestinal Bleeding and Atmospheric Pressure Relationship",
+     "officialTitle": "The Effect of Atmospheric Pressure on Patients Presenting to the Emergency Department With Gastrointestinal Bleeding"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2024-07-17"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT06515353.",
+ "seed": "NCT06515353",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

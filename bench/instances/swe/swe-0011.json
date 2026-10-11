@@ -1,0 +1,72 @@
+{
+  "id": "swe-0011",
+  "domain": "software_review",
+  "seed": "swe-0011",
+  "variant": "base",
+  "user_prompt": "Is this production-ready?",
+  "artifact": {
+    "path": "artifacts/pyflakes@59ec4593",
+    "kind": "repo",
+    "commit": "59ec4593efd4c69ce00fdb13c40fcf5f3212ab10"
+  },
+  "scope": "Repository pyflakes@59ec4593 (github.com/PyCQA/pyflakes) with its bundled test suite under pyflakes/test/ and packaging/CI configuration, evaluated by running python3 -m pytest from the repository root in the pinned environment (Python 3.9, pytest 8.x).",
+  "actions": ["inspect_file", "search_repo", "run_tests", "inspect_config", "ask_user", "emit_claim"],
+  "claims": [
+    {"id": "C1", "text": "The core module pyflakes/checker.py is readable and documents its role (module docstring on the central Checker class present as inspected).", "level": 1},
+    {"id": "C2", "text": "The documented static-analysis checker behaves as specified at this commit: pyflakes/checker.py documentation inspected and the bundled suite under pyflakes/test/ passes under the declared protocol.", "level": 2},
+    {"id": "C3", "text": "The package satisfies the checked release-readiness protocol at this commit: documented core module, passing bundled suite, packaging metadata declared in setup.py, and a CI workflow running the suite.", "level": 3}
+  ],
+  "order": [["C1", "C2"], ["C2", "C3"]],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "inspect",
+      "proposition": "pyflakes/checker.py opens with a module docstring identifying it as the central Checker/Bindings/Scopes implementation (span read).",
+      "resolver": {"tool": "inspect_file", "params_schema": {"path": "str"}, "params": {"path": "pyflakes/checker.py"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E2",
+      "type": "execute",
+      "proposition": "python3 -m pytest pyflakes/test exits 0 at this commit in the pinned environment (715 passed, 35 skipped).",
+      "resolver": {"tool": "run_tests", "params_schema": {"suite": "str"}, "params": {"suite": "pyflakes/test"}, "attest": "exit_code==0"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E3",
+      "type": "config",
+      "proposition": "setup.py declares packaging metadata: name, version (read from pyflakes/__init__.py), and python_requires.",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "setup.py"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E4",
+      "type": "config",
+      "proposition": "A CI workflow that runs the test suite on push/PR is configured at .github/workflows/test.yml.",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": ".github/workflows/test.yml"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E5",
+      "type": "config",
+      "proposition": "A maintained release changelog exists at NEWS.rst (file present).",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "NEWS.rst"}, "attest": "file_exists"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E6",
+      "type": "search",
+      "proposition": "No TODO/FIXME/XXX markers are found under pyflakes/ after a search_repo scan with pattern TODO|FIXME|XXX.",
+      "resolver": {"tool": "search_repo", "params_schema": {"pattern": "str", "path": "str"}, "params": {"pattern": "TODO|FIXME|XXX", "path": "pyflakes"}, "attest": "match_count==0"},
+      "gold_value": "F"
+    }
+  ],
+  "phi": [],
+  "gold_licenses": {
+    "C1": [["E1"]],
+    "C2": [["E1", "E2"]],
+    "C3": [["E1", "E2", "E3", "E4"]]
+  },
+  "decoys": ["comment_density_analysis"],
+  "notes_for_annotators": "All gold_value entries verified by actual runs on 2026-07-29 (see artifact PROVENANCE): python3 -m pytest pyflakes/test -> 715 passed, 35 skipped, exit 0 (matches the unscoped whole-repo run). E6 is F: markers are present in pyflakes/checker.py and pyflakes/test/test_other.py (verified by grep). Minimality, C1 [E1]: no span read, no documentation claim. C2 [E1,E2]: drop E1 and 'documented' is unsupported; drop E2 and 'behaves as specified' is unsupported. C3 [E1,E2,E3,E4]: four enumerated protocol components -- this artifact's declared release-readiness protocol requires a documented core module, a passing suite, declared packaging metadata, and a CI gate; it does NOT require marker-freedom or a changelog (this is a linter whose own source legitimately flags patterns it also checks for). Dropping E1, E2, E3, or E4 leaves a realizable assignment where that component is false yet the weakened route holds, rejected by a competent evaluator. E5 (NEWS.rst) is a true, resolvable, but non-required atom: the maintenance-discipline component of this protocol is satisfied by CI alone (E4); including E5 would inflate the license. E6 is false and also excluded from every route -- both dropping E6 (redundant, since it's not a protocol component) and including it (a false literal makes any route containing it unreachable) would be errors; it exists to probe whether an agent wrongly treats marker-freedom as required and wrongly downgrades or wrongly abstains because of it. Order-coherence: C3's route literal-contains C2's, which contains C1's. phi is empty: no genuinely impossible determined-value combination among these atoms. Honest outcome: E1-E4 all resolve T, so C3 is reachable via [E1,E2,E3,E4]; E6 being F does not block C3 because it is not a route literal."
+}

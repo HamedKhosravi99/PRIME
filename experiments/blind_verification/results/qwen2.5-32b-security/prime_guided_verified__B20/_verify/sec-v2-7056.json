@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7056",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "`django.middleware.cache.UpdateCacheMiddleware` erroneously caches requests where the `Vary` header contained an asterisk (`'*'`).",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 270,
+   "completion_tokens": 22,
+   "latency_s": 1.688,
+   "raw": "The document mentions 'Django' by its registered name when describing the affected package. ANSWER: T"
+  }
+ ]
+}

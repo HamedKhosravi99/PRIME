@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7133",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Males and females between the ages of 18-80 years",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 307,
+   "completion_tokens": 35,
+   "latency_s": 2.748,
+   "raw": "The inclusion criteria specify an age range of 18-80 years, which confirms the restriction to adults aged 18 years or more. ANSWER: T"
+  }
+ ]
+}

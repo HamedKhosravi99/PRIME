@@ -1,0 +1,13 @@
+name: Alphabet Inc.
+cik: 0001652044
+source_url: https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json
+retrieved_utc: 2026-07-29T16:32:38Z
+raw_response_sha256: 979c75696954e42c634836a54399506d5d548cbfaa37824932e5bca6c6d2ab6c
+user_agent_sent: PRIME-research <contact-email>
+concepts_fetched: Revenues, RevenueFromContractWithCustomerExcludingAssessedTax, NetIncomeLoss, Assets, Liabilities
+  Revenues: 18 annual (10-K, fp=FY) entries
+  RevenueFromContractWithCustomerExcludingAssessedTax: 15 annual (10-K, fp=FY) entries
+  NetIncomeLoss: 33 annual (10-K, fp=FY) entries
+  Assets: 22 annual (10-K, fp=FY) entries
+  Liabilities: 20 annual (10-K, fp=FY) entries
+integrity: every val/start/end/fy/fp/form/accn/frame field in companyfacts_trimmed.json is copied verbatim from SEC's own API response (see raw_response_sha256); nothing computed, edited, or invented. Values embedded in any bench/instances/fin/*.json record are a further subset of these SAME entries, unedited.

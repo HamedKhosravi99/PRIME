@@ -1,0 +1,295 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2022-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT04285476"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2028-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT04285476"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"INTERVENTIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT04285476"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT04285476"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT04285476"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:false",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.healthyVolunteers",
+     "record_id": "NCT04285476"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT04285476"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2022-01-01"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2022-01-01"
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2028-01-01"
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ]
+    ],
+    [
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2022-01-01"
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2022-01-01"
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2028-01-01"
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ],
+     [
+      "protocolSection.eligibilityModule.healthyVolunteers",
+      "equals",
+      false
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-0238",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-hom-19\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": null, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT04285476": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "The aim is to validate a signature of microRNA (micro Ribonucleic acid) based in a first exploratory study allowing the stratification of the cytologies of indeterminate type and to study and select others. In a first step, the teams will focus on standardising the pre-analytical stages and defining a threshold of positivity. The results of microRNA signature on a cohort of 70 patients will be compared with the ultrasound and then histological data of the resection specimen."
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n1. Man or woman whose Age is \u2265 18 years\n2. Patient requiring ultrasound for thyroid nodule scanning with established indication of FNAC\n3. Patient with Bethesda 3, 4 and 5 thyroid nodule\n4. Informed patient and signed informed consent received\n5. Patient affiliated to a French medical coverage system\n\nExclusion Criteria:\n\n1. Patient under guardianship, curatorship or safeguarding of justice\n2. Patient whose medical or psychological conditions do not permit them to complete the study or to sign the consent,\n3. Patient with metastatic cancer distinct from thyroid cancer\n4. Patient who has stopped treatment (chemotherapy / immunotherapy) for cancer for less than 6 months.",
+     "healthyVolunteers": false
+    },
+    "identificationModule": {
+     "nctId": "NCT04285476"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2026-06-02",
+     "studyFirstSubmitDate": "2020-02-24"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT04285476.",
+ "seed": "NCT04285476",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

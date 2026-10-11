@@ -1,0 +1,13 @@
+name: AMAZON COM INC
+cik: 0001018724
+source_url: https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json
+retrieved_utc: 2026-07-29T16:32:37Z
+raw_response_sha256: c991e221b9e1956e53c1e7c05f6a6683f926e43b23e2c800f626e997a268cc93
+user_agent_sent: PRIME-research <contact-email>
+concepts_fetched: Revenues, RevenueFromContractWithCustomerExcludingAssessedTax, NetIncomeLoss, Assets, Liabilities
+  Revenues: 0 annual (10-K, fp=FY) entries
+  RevenueFromContractWithCustomerExcludingAssessedTax: 48 annual (10-K, fp=FY) entries
+  NetIncomeLoss: 139 annual (10-K, fp=FY) entries
+  Assets: 45 annual (10-K, fp=FY) entries
+  Liabilities: 0 annual (10-K, fp=FY) entries
+integrity: every val/start/end/fy/fp/form/accn/frame field in companyfacts_trimmed.json is copied verbatim from SEC's own API response (see raw_response_sha256); nothing computed, edited, or invented. Values embedded in any bench/instances/fin/*.json record are a further subset of these SAME entries, unedited.

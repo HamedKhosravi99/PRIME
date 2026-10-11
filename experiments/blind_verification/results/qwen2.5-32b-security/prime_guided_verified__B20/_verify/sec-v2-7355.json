@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7355",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Exiv2 versions v0.28.0 to v0.28.4",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 442,
+   "completion_tokens": 26,
+   "latency_s": 2.849,
+   "raw": "The document mentions \"Exiv2\" multiple times, which is the registered name of the affected package. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E4",
+   "attested": "T",
+   "quote": "Versions prior to v0.28.0, such as v0.27.7, are **not** affected.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 429,
+   "completion_tokens": 37,
+   "latency_s": 2.481,
+   "raw": "The document specifies that versions prior to v0.28.0 are not affected, implying v0.28.0 is the first affected version. ANSWER: T"
+  }
+ ]
+}

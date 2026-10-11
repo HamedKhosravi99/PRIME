@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7405",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "users should upgrade to Wasmtime version 0.30.0.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 802,
+   "completion_tokens": 26,
+   "latency_s": 1.607,
+   "raw": "The document establishes that the issue is fixed in Wasmtime version 0.30.0.\nANSWER: T"
+  }
+ ]
+}

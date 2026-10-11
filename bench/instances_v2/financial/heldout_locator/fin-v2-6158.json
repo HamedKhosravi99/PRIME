@@ -1,0 +1,469 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "entityName",
+     "record_id": "CIK0000040987"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "facts.us-gaap.NetIncomeLoss.units.USD.0.val",
+     "entityName",
+     "facts.us-gaap.RetainedEarningsAccumulatedDeficit.units.USD.0.val"
+    ],
+    "what": "the filer's name"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_ge:0",
+    "params": {
+     "field_path": "cik",
+     "record_id": "CIK0000040987"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "facts.us-gaap.NetIncomeLoss.units.USD.0.val",
+     "cik",
+     "facts.us-gaap.CashAndCashEquivalentsAtCarryingValue.units.USD.0.val"
+    ],
+    "what": "the filer's CIK number"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_ge:0",
+    "params": {
+     "field_path": "facts.us-gaap.Assets.units.USD.0.val",
+     "record_id": "CIK0000040987"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "facts.us-gaap.Assets.units.USD.0.val",
+     "facts.us-gaap.LiabilitiesAndStockholdersEquity.units.USD.0.val",
+     "facts.us-gaap.RetainedEarningsAccumulatedDeficit.units.USD.0.val"
+    ],
+    "what": "the latest reported total assets"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_ge:0",
+    "params": {
+     "field_path": "facts.us-gaap.PropertyPlantAndEquipmentNet.units.USD.0.val",
+     "record_id": "CIK0000040987"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "facts.us-gaap.AccumulatedOtherComprehensiveIncomeLossNetOfTax.units.USD.0.val",
+     "facts.us-gaap.NetIncomeLoss.units.USD.0.val",
+     "facts.us-gaap.PropertyPlantAndEquipmentNet.units.USD.0.val"
+    ],
+    "what": "the latest reported net property, plant and equipment"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_ge:0",
+    "params": {
+     "field_path": "facts.us-gaap.CommonStockSharesIssued.units.shares.0.val",
+     "record_id": "CIK0000040987"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "facts.us-gaap.CommonStockSharesIssued.units.shares.0.val",
+     "facts.us-gaap.RetainedEarningsAccumulatedDeficit.units.USD.0.val",
+     "facts.us-gaap.CashAndCashEquivalentsAtCarryingValue.units.USD.0.val"
+    ],
+    "what": "the latest reported number of common shares issued"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_ge:0",
+    "params": {
+     "field_path": "facts.us-gaap.AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment.units.USD.0.val",
+     "record_id": "CIK0000040987"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "facts.us-gaap.AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment.units.USD.0.val",
+     "facts.us-gaap.RetainedEarningsAccumulatedDeficit.units.USD.0.val",
+     "facts.us-gaap.CashAndCashEquivalentsAtCarryingValue.units.USD.0.val"
+    ],
+    "what": "the latest reported accumulated depreciation on property, plant and equipment"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:1000409870.0",
+    "params": {
+     "field_path": "cik",
+     "record_id": "CIK0000040987"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "facts.us-gaap.CashAndCashEquivalentsAtCarryingValue.units.USD.0.val",
+     "facts.us-gaap.RetainedEarningsAccumulatedDeficit.units.USD.0.val",
+     "cik"
+    ],
+    "what": "the filer's CIK number"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_ge:0",
+    "params": {
+     "field_path": "facts.us-gaap.EarningsPerShareBasic.units.USD/shares.0.val",
+     "record_id": "CIK0000040987"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "facts.us-gaap.StockholdersEquity.units.USD.0.val",
+     "facts.us-gaap.NetIncomeLoss.units.USD.0.val",
+     "facts.us-gaap.EarningsPerShareBasic.units.USD/shares.0.val"
+    ],
+    "what": "the latest reported basic earnings per share"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "entityName",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The filer is identified and reports a total-assets figure (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "entityName",
+      "exists",
+      null
+     ],
+     [
+      "cik",
+      "numeric_ge",
+      0
+     ],
+     [
+      "facts.us-gaap.Assets.units.USD.0.val",
+      "numeric_ge",
+      0
+     ]
+    ],
+    [
+     [
+      "entityName",
+      "exists",
+      null
+     ],
+     [
+      "facts.us-gaap.PropertyPlantAndEquipmentNet.units.USD.0.val",
+      "numeric_ge",
+      0
+     ],
+     [
+      "facts.us-gaap.CommonStockSharesIssued.units.shares.0.val",
+      "numeric_ge",
+      0
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The filer's core balance-sheet figures are present and positive as inspected under the declared protocol."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "entityName",
+      "exists",
+      null
+     ],
+     [
+      "cik",
+      "numeric_ge",
+      0
+     ],
+     [
+      "facts.us-gaap.Assets.units.USD.0.val",
+      "numeric_ge",
+      0
+     ],
+     [
+      "facts.us-gaap.AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment.units.USD.0.val",
+      "numeric_ge",
+      0
+     ],
+     [
+      "cik",
+      "numeric_le",
+      1000409870.0
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The filer satisfies the checked reporting protocol: core figures present, positive, and within the declared magnitude bounds, with cash and equity fields populated as inspected."
+  }
+ ],
+ "decoys": [],
+ "domain": "financial_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "fin-v2-6158",
+ "notes_for_annotators": "{\"family\": \"financial-branching-het-16\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 3, \"false_mech\": false, \"locator\": true, \"source_instance\": \"fin-v2-0158\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "CIK0000040987": {
+   "cik": 40987,
+   "entityName": "GENUINE PARTS CO",
+   "facts": {
+    "us-gaap": {
+     "AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment": {
+      "units": {
+       "USD": [
+        {
+         "val": 628532000
+        }
+       ]
+      }
+     },
+     "AccumulatedOtherComprehensiveIncomeLossNetOfTax": {
+      "units": {
+       "USD": [
+        {
+         "val": -478562000
+        }
+       ]
+      }
+     },
+     "Assets": {
+      "units": {
+       "USD": [
+        {
+         "val": 4496984000
+        }
+       ]
+      }
+     },
+     "CashAndCashEquivalentsAtCarryingValue": {
+      "units": {
+       "USD": [
+        {
+         "val": 135973000
+        }
+       ]
+      }
+     },
+     "CommonStockSharesIssued": {
+      "units": {
+       "shares": [
+        {
+         "val": 159442508
+        }
+       ]
+      }
+     },
+     "EarningsPerShareBasic": {
+      "units": {
+       "USD/shares": [
+        {
+         "val": 2.99
+        }
+       ]
+      }
+     },
+     "LiabilitiesAndStockholdersEquity": {
+      "units": {
+       "USD": [
+        {
+         "val": 4786350000
+        }
+       ]
+      }
+     },
+     "NetIncomeLoss": {
+      "units": {
+       "USD": [
+        {
+         "val": 684959000
+        }
+       ]
+      }
+     },
+     "PropertyPlantAndEquipmentNet": {
+      "units": {
+       "USD": [
+        {
+         "val": 429260000
+        }
+       ]
+      }
+     },
+     "RetainedEarningsAccumulatedDeficit": {
+      "units": {
+       "USD": [
+        {
+         "val": 2643451000
+        }
+       ]
+      }
+     },
+     "StockholdersEquity": {
+      "units": {
+       "USD": [
+        {
+         "val": 2324332000
+        }
+       ]
+      }
+     }
+    }
+   }
+  }
+ },
+ "scope": "The single named SEC companyfacts record, as retrieved and embedded; no external lookups. Record identifier: CIK0000040987.",
+ "seed": "CIK0000040987",
+ "user_prompt": "Are this filer's reported balance-sheet figures present and within the declared plausibility protocol for the latest filings?",
+ "variant": "base"
+}

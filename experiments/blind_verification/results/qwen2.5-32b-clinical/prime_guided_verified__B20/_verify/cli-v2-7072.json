@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7072",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Age: 18-35",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 462,
+   "completion_tokens": 55,
+   "latency_s": 4.607,
+   "raw": "The document establishes the condition for the Bedrest inclusion criteria but not for the Training criteria; however, since the question does not specify which section to consider, we must conclude that the overall document does not clearly establish the condition for all sections mentioned. ANSWER: UNCLEAR"
+  }
+ ]
+}

@@ -1,0 +1,371 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "details",
+     "record_id": "GHSA-5239-wwwm-4pmq"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "affected.0.package.name",
+     "schema_version",
+     "details"
+    ],
+    "what": "the advisory's detailed description"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"PyPI\"",
+    "params": {
+     "field_path": "affected.0.package.ecosystem",
+     "record_id": "GHSA-5239-wwwm-4pmq"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "affected.0.package.ecosystem",
+     "affected.0.package.name",
+     "references.0.url"
+    ],
+    "what": "the ecosystem of the affected package"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2028-01-01\"",
+    "params": {
+     "field_path": "published",
+     "record_id": "GHSA-5239-wwwm-4pmq"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.github_reviewed",
+     "modified",
+     "published"
+    ],
+    "what": "the date the advisory was published"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.severity",
+     "record_id": "GHSA-5239-wwwm-4pmq"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "affected.0.package.name",
+     "database_specific.severity",
+     "aliases.0"
+    ],
+    "what": "the maintainers' severity label"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.type",
+     "record_id": "GHSA-5239-wwwm-4pmq"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "aliases.0",
+     "references.0.type",
+     "affected.0.package.name"
+    ],
+    "what": "the type of the first reference"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E6",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "affected.0.package.ecosystem",
+     "record_id": "GHSA-5239-wwwm-4pmq"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "affected.0.package.ecosystem",
+     "aliases.0",
+     "schema_version"
+    ],
+    "what": "the ecosystem of the affected package"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-5239-wwwm-4pmq"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "summary",
+     "aliases.0",
+     "references.0.url"
+    ],
+    "what": "the advisory's one-line summary"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ],
+     [
+      "published",
+      "date_before",
+      "2028-01-01"
+     ]
+    ],
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.severity",
+      "exists",
+      null
+     ],
+     [
+      "references.0.type",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ],
+     [
+      "published",
+      "date_before",
+      "2028-01-01"
+     ],
+     [
+      "severity.0.score",
+      "exists",
+      null
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "sec-v2-6081",
+ "notes_for_annotators": "{\"family\": \"security-branching-het-10\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 2, \"false_mech\": false, \"locator\": true, \"source_instance\": \"sec-v2-0081\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-5239-wwwm-4pmq": {
+   "affected": [
+    {
+     "package": {
+      "ecosystem": "PyPI",
+      "name": "pygments"
+     }
+    }
+   ],
+   "aliases": [
+    "CVE-2026-4539"
+   ],
+   "database_specific": {
+    "github_reviewed": true,
+    "severity": "LOW"
+   },
+   "details": "A security flaw has been discovered in pygments before 2.20.0. The impacted element is the function AdlLexer of the file pygments/lexers/archetype.py. The manipulation results in inefficient regular expression complexity. The attack is only possible with local access. The exploit has been released to the public and may be used for attacks. The project was informed of the problem early through an issue report but has not responded yet.",
+   "modified": "2026-07-13T16:42:36.989801915Z",
+   "published": "2026-03-22T06:30:15Z",
+   "references": [
+    {
+     "type": "ADVISORY",
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-4539"
+    }
+   ],
+   "schema_version": "1.7.5",
+   "summary": "Pygments has Regular Expression Denial of Service (ReDoS) due to Inefficient Regex for GUID Matching"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-5239-wwwm-4pmq.",
+ "seed": "GHSA-5239-wwwm-4pmq",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

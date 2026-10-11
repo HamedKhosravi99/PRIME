@@ -1,0 +1,332 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://prime-pilot/bench/schema.json",
+  "title": "ObligationBench-pilot instance (software-review domain)",
+  "description": "Formalizes the Instance JSON contract in pilot/SPEC.md. Structural constraints only; cross-field semantic constraints (order-coherence, realizability under phi, route minimality, path existence, tool membership) are enforced by bench/validate.py and by the runtime's schema.validate_instance.",
+  "type": "object",
+  "required": [
+    "id",
+    "domain",
+    "seed",
+    "variant",
+    "user_prompt",
+    "artifact",
+    "scope",
+    "actions",
+    "claims",
+    "order",
+    "atoms",
+    "phi",
+    "gold_licenses",
+    "decoys",
+    "notes_for_annotators"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^(swe|res|grant|rec|fda|ctgov|osv|fin)-[0-9]{4}(__[a-z0-9_]+)?$",
+      "description": "Instance id; variants append __<variant-tag> to the seed id. 'rec' is the generic structured-record (Tier-M predicate-grammar) prefix; 'fda' is the drug-safety/openFDA record domain built on that infra; 'ctgov' is the clinical-trials/ClinicalTrials.gov record domain built on that infra; 'osv' is the security/supply-chain record domain (real OSV vulnerability advisories) built on that infra; 'fin' is the financial/SEC-XBRL record domain (real SEC EDGAR company-facts filings) built on that infra. A further real record domain authored on top of this infra should add its own short prefix here, mirroring how swe/res/grant/fda/ctgov/osv/fin were each added."
+    },
+    "domain": {
+      "enum": [
+        "software_review",
+        "research_review",
+        "funding_review",
+        "structured_record",
+        "drug_safety",
+        "clinical_trial",
+        "security_vuln",
+        "financial_filing"
+      ],
+      "description": "'structured_record' is the generic Tier-M predicate-grammar domain marker (see prime_runtime/RECORD_ORACLE_REPORT.md); 'drug_safety' is the openFDA drug-enforcement (recall) record domain built on it; 'clinical_trial' is the ClinicalTrials.gov record domain built on it; 'security_vuln' is the OSV vulnerability-advisory record domain built on it; 'financial_filing' is the SEC EDGAR XBRL company-facts record domain built on it. A further real record domain should add its own specific value here."
+    },
+    "seed": {
+      "type": "string",
+      "pattern": "^(swe|res|grant|rec|fda|ctgov|osv|fin)-[0-9]{4}$",
+      "description": "Seed task id shared by all variants of the same artifact/task."
+    },
+    "variant": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Controlled-split variant. Known values: 'base', 'noev' (evidence-unavailable: exactly one atom has resolver null and every gold C3 route contains that atom)."
+    },
+    "user_prompt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifact": {
+      "type": "object",
+      "required": [
+        "path",
+        "kind",
+        "commit"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^artifacts/[^/]+(@[0-9a-f]{8})?$",
+          "description": "Relative to bench/. Directory must exist and contain a PROVENANCE file."
+        },
+        "kind": {
+          "enum": [
+            "repo",
+            "paper_with_corpus",
+            "grant_record",
+            "structured_record"
+          ]
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^([0-9a-f]{40}|arxiv:.+|nsf:.+|synthetic:.+|osv:.+|sec:.+|openfda:.+|ctgov:.+)$",
+          "description": "'synthetic:...' marks a deliberately fabricated smoke/test record (never a real domain instance); 'osv:'/'sec:'/'openfda:'/'ctgov:' are provenance-id prefixes reserved for the four structured-record domains built on this infra."
+        }
+      }
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Declared evidence scope: what the claims are about, including the pinned commit and the exact test protocol/environment."
+    },
+    "actions": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "allOf": [
+        {
+          "contains": {
+            "const": "emit_claim"
+          }
+        }
+      ],
+      "description": "Action interface. Must include emit_claim; every atom resolver tool must be a member (checked by validate.py). Decoys are listed separately and merged by the runner."
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "text",
+          "level"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^C[0-9]+$"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "level": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "order": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2,
+        "items": {
+          "type": "string",
+          "pattern": "^C[0-9]+$"
+        },
+        "description": "[weaker, stronger] pair; transitive closure taken by the runtime."
+      }
+    },
+    "atoms": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "proposition",
+          "resolver"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^E[0-9]+$"
+          },
+          "type": {
+            "enum": [
+              "inspect",
+              "execute",
+              "search",
+              "config",
+              "user",
+              "user_fact",
+              "record"
+            ]
+          },
+          "proposition": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Operational, adjudicable proposition. Negative atoms must name the executed protocol ('no X found after scan of Y'), never 'no problem noticed'."
+          },
+          "resolver": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "required": [
+                  "tool",
+                  "params_schema",
+                  "params",
+                  "attest"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "tool": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "params_schema": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "string"
+                    }
+                  },
+                  "params": {
+                    "type": "object",
+                    "description": "Concrete parameter values on THIS artifact. Any 'path'/'suite' value must name files that exist in the artifact checkout (checked by validate.py)."
+                  },
+                  "attest": {
+                    "type": "string",
+                    "anyOf": [
+                      {
+                        "enum": [
+                          "span_read",
+                          "exit_code==0",
+                          "exit_code!=0",
+                          "match_count==0",
+                          "match_count>0",
+                          "file_exists",
+                          "user_reply",
+                          "answer_given"
+                        ]
+                      },
+                      {
+                        "pattern": "^record_predicate:(equals|in_set|numeric_eq|numeric_ge|numeric_le|in_version_range|date_before|date_after|substring_contains|exists):.*$"
+                      }
+                    ],
+                    "description": "Mechanically checkable attestation predicate mapping the tool observation to the atom's truth value. The 'record_predicate:<type>:<json-expected>' family is the closed structured-record grammar (Tier-M; prime_runtime/predicates.py) evaluated against the observation's 'value' field; see that module's docstring for the full grammar."
+                  }
+                }
+              }
+            ],
+            "description": "null means the atom is unresolvable in this variant (evidence-unavailable split); the runtime treats its literals as impossible."
+          },
+          "gold_value": {
+            "enum": [
+              "T",
+              "F",
+              "impossible"
+            ],
+            "description": "Authoring-time verified value of the atom on this artifact under the declared protocol (from actual runs recorded in PROVENANCE). Used for gold-ledger reconstruction sanity checks; omitted only for user-type atoms."
+          }
+        }
+      }
+    },
+    "phi": {
+      "type": "array",
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "forbid",
+          "why"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "forbid": {
+            "type": "object",
+            "minProperties": 2,
+            "propertyNames": {
+              "pattern": "^E[0-9]+$"
+            },
+            "additionalProperties": {
+              "enum": [
+                "T",
+                "F"
+              ]
+            },
+            "description": "Forbidden combination of determined atom values: no realizable assignment sets all listed atoms to the listed values."
+          },
+          "why": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "gold_licenses": {
+      "type": "object",
+      "minProperties": 3,
+      "propertyNames": {
+        "pattern": "^C[0-9]+$"
+      },
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^E[0-9]+$"
+          },
+          "description": "A route: conjunction of positive atom literals (negative propositions are phrased inside the atom itself)."
+        }
+      },
+      "description": "The authored prime-license family; defines the benchmark support predicate f_bench per PRIME-master 10.6."
+    },
+    "decoys": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "Plausible actions that advance no gold route."
+    },
+    "notes_for_annotators": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Must include a one-sentence per-literal minimality justification for every gold route."
+    },
+    "split": {
+      "type": "string",
+      "description": "Optional controlled-split label (e.g. evidence_unavailable, failure_regime, multiple_route)."
+    },
+    "records": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[A-Za-z0-9_.:-]+$"
+      },
+      "additionalProperties": {
+        "type": "object"
+      },
+      "description": "Structured-record capability (Tier-M predicate-atom domains; prime_runtime/RECORD_ORACLE_REPORT.md): named, embedded, real JSON records {record_id: {...arbitrary JSON...}} that the 'inspect_record' tool and 'record_predicate:*' attest rules read. Present iff any atom's resolver.tool == 'inspect_record' (cross-checked by bench/validate.py, not here). Embedding the record verbatim in the instance file (rather than fetching it live) is what makes runs deterministic and offline-replayable."
+    }
+  }
+}

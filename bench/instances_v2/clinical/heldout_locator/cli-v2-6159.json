@@ -1,0 +1,326 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT06719037"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.identificationModule.officialTitle"
+    ],
+    "what": "the brief title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2027-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT06719037"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.statusModule.lastUpdateSubmitDate",
+     "protocolSection.statusModule.studyFirstSubmitDate"
+    ],
+    "what": "the date of the most recent update submission"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"INTERVENTIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT06719037"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.designModule.studyType",
+     "protocolSection.statusModule.studyFirstSubmitDate"
+    ],
+    "what": "the study type"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT06719037"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.statusModule.overallStatus"
+    ],
+    "what": "the eligibility criteria text"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT06719037"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.eligibilityModule.sex"
+    ],
+    "what": "the sex eligibility field"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT06719037"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.identificationModule.officialTitle"
+    ],
+    "what": "the minimum age for eligibility"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2027-01-01"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2027-01-01"
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-6159",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-09\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 1, \"false_mech\": false, \"locator\": true, \"source_instance\": \"cli-v2-0159\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT06719037": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "The purpose of this study is to conduct a multicenter comparison of the clinical efficacy of Endo-Surgi Plus endoscopic technique, UBE endoscopic technique, and microdiscectomy technique in the treatment of lumbar spinal stenosis, and to compare the differences in the incidence of complications, surgical trauma, and other aspects among the three surgical techniques for the treatment of lumbar spinal stenosis.\n\nEach group of patients received either Endo-Surgi Plus endoscopy, UBE, or microdiscectomy decompression through the Quadrant channel. All patients were routinely administered low-dose hormones, dehydrating agents, and neurotrophic drugs postoperatively. Patients were required to strictly avoid strenuous activities and heavy lifting in the lumbar region for three months after surgery. Upon discharge, patients were provided with the same lumbar and back muscle rehabilitation exercises and other postoperative recovery-related discharge education. Each group of patients was followed up for at least one year, with follow-up including outpatient visits, physical examinations, questionnaire scoring, and necessary auxiliary examinations.\n\nBoth two endoscopic surgeries, as surgical techniques that have been used in clinical practice for many years, have their efficacy confirmed by various studies. The investigator proposes that these two techniques may have similar clinical efficacy to microdiscectomy, while also offering the advantage of being less invasive. The aim of this study is to validate these assumptions. At the same time, there may be some differences between the two endoscopic surgeries that require further verification."
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Diagnosed with single-segment lumbar spinal stenosis through CT and MRI imaging combined with clinical symptoms;\n* Symptoms in the lumbar region and lower extremities corresponding to the imaging findings;\n* Patients who have not responded to three months of conservative treatment;\n* Informed consent from family members regarding the surgical procedure and associated risks.\n\nExclusion Criteria:\n\n* Patients with multi-segment lumbar disc herniation, malignant spinal tumors, spinal deformities, and other diseases.\n* Patients with comorbidities such as cardiovascular diseases, cerebrovascular diseases, or those with mental abnormalities, communication difficulties, or other issues that may affect clinical evaluation.\n* Patients with a history of previous lumbar surgery.",
+     "minimumAge": "18 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "Comparision of Endoscopic Discectomy and Microdiscectomy for the Treatment of Lumbar Spinal Stenosis",
+     "nctId": "NCT06719037",
+     "officialTitle": "Efficacy and Safety of Endo-Surgi Plus Endoscopy, UBE Endoscopy, and Microdiscectomy Decompression Techniques for the Treatment of Lumbar Spinal Stenosis: A Prospective Multicenter Study"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2025-01-05",
+     "overallStatus": "RECRUITING",
+     "studyFirstSubmitDate": "2024-11-18"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT06719037.",
+ "seed": "NCT06719037",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

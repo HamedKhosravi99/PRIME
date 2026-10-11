@@ -1,0 +1,175 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-5m2m-27cg-7v4v"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-5m2m-27cg-7v4v"
+    },
+    "what": "the details text names the affected package (the package itself, by its registered name or a distinctive part of it, not only the vendor or the ecosystem)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-5m2m-27cg-7v4v"
+    },
+    "what": "the details text states a version in which the issue is fixed"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-5m2m-27cg-7v4v"
+    },
+    "what": "the details text states the first affected version, the version in which the issue was introduced"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory has a readable summary (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: it has a summary and its text names the affected package."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked completeness protocol: summary present, and the text names the package, a fixed version, and the first affected version."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4"
+   ]
+  ]
+ },
+ "id": "sec-v2-7008",
+ "notes_for_annotators": "{\"family\": \"security-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, true, false], \"twins\": [\"affected.0.package.name\", \"affected.*.ranges.*.events.*.fixed\", \"affected.*.ranges.*.events.*.introduced\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-5m2m-27cg-7v4v": {
+   "details": "Multiple cross-site scripting (XSS) vulnerabilities in MoinMoin 1.7.3 and earlier, 1.8.x before 1.8.8, and 1.9.x before 1.9.3 allow remote attackers to inject arbitrary web script or HTML via crafted content, related to (1) `Page.py`, (2) `PageEditor.py`, (3) `PageGraphicalEditor.py`, (4) `action/CopyPage.py`, (5) `action/Load.py`, (6) `action/RenamePage.py`, (7) `action/backup.py`, (8) `action/login.py`, (9) `action/newaccount.py`, and (10) `action/recoverpass.py`.",
+   "summary": "MoinMoin Cross-site Scripting (XSS) vulnerability"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-5m2m-27cg-7v4v.",
+ "seed": "GHSA-5m2m-27cg-7v4v",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "text"
+}

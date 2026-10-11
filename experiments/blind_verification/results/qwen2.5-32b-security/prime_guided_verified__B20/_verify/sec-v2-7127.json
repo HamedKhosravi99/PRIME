@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7127",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "The AWS API MCP Server is an open source Model Context Protocol (MCP) server that enables AI assistants to interact with AWS services and resources through AWS CLI commands.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 384,
+   "completion_tokens": 18,
+   "latency_s": 1.344,
+   "raw": "The document names the affected package as \"AWS API MCP Server\". ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E4",
+   "attested": "T",
+   "quote": "versions >= 0.2.14 and < 1.3.9",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 371,
+   "completion_tokens": 28,
+   "latency_s": 2.221,
+   "raw": "The document does not specify the exact version where the issue was first introduced, only the range of affected versions. ANSWER: UNCLEAR"
+  }
+ ]
+}

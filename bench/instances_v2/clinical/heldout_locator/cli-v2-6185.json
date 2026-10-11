@@ -1,0 +1,379 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT06904859"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.descriptionModule.briefSummary"
+    ],
+    "what": "the brief title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2027-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT06904859"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.studyFirstSubmitDate",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.designModule.studyType"
+    ],
+    "what": "the date the registration was first submitted"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT06904859"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.identificationModule.nctId"
+    ],
+    "what": "the eligibility criteria text"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT06904859"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.statusModule.overallStatus"
+    ],
+    "what": "the sex eligibility field"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT06904859"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.descriptionModule.briefSummary"
+    ],
+    "what": "the official title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT06904859"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.eligibilityModule.minimumAge"
+    ],
+    "what": "the minimum age for eligibility"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_after:\"1980-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT06904859"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.statusModule.studyFirstSubmitDate",
+     "protocolSection.descriptionModule.briefSummary"
+    ],
+    "what": "the date the registration was first submitted"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2027-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT06904859"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.lastUpdateSubmitDate",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.eligibilityModule.healthyVolunteers"
+    ],
+    "what": "the date of the most recent update submission"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2027-01-01"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2027-01-01"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_after",
+      "1980-01-01"
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "cli-v2-6185",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-het-06\", \"topology\": \"nested\", \"cost\": \"het\", \"target_level\": 3, \"false_mech\": false, \"locator\": true, \"source_instance\": \"cli-v2-0185\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT06904859": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "Acute myeloid leukemia (AML) is the main type of leukemia, accounting for about 60% of all leukemia, with complex pathogenesis and great clinical heterogeneity. Effective targets for AML need to be further developed. We performed next-generation sequencing analysis of the TCR sequence of an AML patient to find the patient's specific TCR clone for leukemia. The rearranged TCR gene stimulated by leukemia antigens was transduced into the patient's own T cells, and the TCR gene-modified T cells (TCR-T) that could specifically recognize leukemia antigens and kill leukemia cells were constructed. Enhancing the specificity and killing activity of T cells can truly achieve individualized treatment for patients. In addition, through TCR sequencing, the TCR sequence database of leukemia patients can be constructed to find the common specific TCR clones for AML among different patients, which can realize the precise treatment of AML."
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n1. Age 18-65 (\u2265 18 years old, \u2264 65 years old)\n2. gender is not limited\n3. Acute myeloid leukemia patients\n4. CR(remission phase, white blood cell count \\> 2\u00d710\\^9/L after blood picture recovery)\n5. After 3-4 courses of chemotherapy (the number of courses is not absolute)\n6. Before the next chemotherapy\n\nExclusion Criteria:\n\n1. Transformed acute myeloid leukemia\n2. Secondary acute myeloid leukemia\n3. Post-transplantation acute myeloid leukemia\n4. AML-M3\n5. white blood cell count \\<2\u00d710\\^9/L\n6. More than 8 courses of chemotherapy\n7. Combined with other immune-related diseases\n8. Pregnancy",
+     "healthyVolunteers": true,
+     "minimumAge": "18 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "The Role and Mechanism of TCR-T Cells in Immunotherapy for Acute Myeloid Leukemia",
+     "nctId": "NCT06904859",
+     "officialTitle": "The Role and Mechanism of TCR-T Cells in Immunotherapy for Acute Myeloid Leukemia"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2025-03-25",
+     "overallStatus": "COMPLETED",
+     "statusVerifiedDate": "2025-03",
+     "studyFirstSubmitDate": "2025-03-12"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT06904859.",
+ "seed": "NCT06904859",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

@@ -1,0 +1,44 @@
+{
+ "instance": "sec-v2-7359",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "when running `ansible-galaxy collection` install",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 222,
+   "completion_tokens": 17,
+   "latency_s": 1.04,
+   "raw": "The document specifies \"ansible-engine\" as the affected package. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "prior to 2.9.7",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 204,
+   "completion_tokens": 35,
+   "latency_s": 2.94,
+   "raw": "The document implies that the issue is fixed in version 2.9.7 and later, but does not explicitly state this as a fact. ANSWER: UNCLEAR"
+  },
+  {
+   "attempt": 3,
+   "atom": "E4",
+   "attested": "T",
+   "quote": "all ansible-engine versions 2.9.x prior to 2.9.7",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 209,
+   "completion_tokens": 35,
+   "latency_s": 2.288,
+   "raw": "The document does not specify the exact version where the issue was first introduced, only that it affects versions prior to 2.9.7. ANSWER: UNCLEAR"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7228",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Multiple cross-site scripting (XSS) vulnerabilities in Zope, as used in Plone 3.3.x through 3.3.6, 4.0.x through 4.0.9, 4.1.x through 4.1.6, 4.2.x through 4.2.7, and 4.3 through 4.3.2,",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 267,
+   "completion_tokens": 27,
+   "latency_s": 2.654,
+   "raw": "The document mentions \"Zope\" and \"Plone,\" which are the registered names of the affected packages. ANSWER: T"
+  }
+ ]
+}

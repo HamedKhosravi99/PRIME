@@ -1,0 +1,14 @@
+name: ordered-set
+source_url: https://github.com/rspeer/ordered-set
+commit: 9dfc91c27c0c56df2536036bec4a5b3f717ef2ba
+ref_cloned: default HEAD
+clone_date: 2026-07-28
+license_file: MIT-LICENSE
+license_first_line: Copyright (c) 2012-2022 Elia Robyn Lake
+note: scaffold's license-file candidate list did not include the actual
+  filename MIT-LICENSE (verified by direct read: standard MIT text).
+size: 84K
+test_command: python3 -m pytest -q (cwd=repo root)
+environment: 3.9.6, pytest
+test_exit_code: 0
+test_result_line: 53 passed in 0.06s

@@ -1,0 +1,181 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT06927141"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT06927141"
+    },
+    "what": "the eligibility criteria restrict enrollment to adults, that is, a minimum age of 18 years or more"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT06927141"
+    },
+    "what": "the eligibility criteria restrict enrollment to one sex only (only male or only female participants)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT06927141"
+    },
+    "what": "the eligibility criteria accept healthy volunteers"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready for an adult cohort: identified, and the eligibility text restricts enrollment to adults."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked adult-cohort protocol: identified, adults only, open to both sexes, and not a healthy-volunteer study, as established from the eligibility text."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "!E3",
+    "!E4"
+   ]
+  ]
+ },
+ "id": "cli-v2-7125",
+ "notes_for_annotators": "{\"family\": \"clinical-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, false, true], \"twins\": [\"protocolSection.eligibilityModule.minimumAge\", \"protocolSection.eligibilityModule.sex\", \"protocolSection.eligibilityModule.healthyVolunteers\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT06927141": {
+   "protocolSection": {
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Adult aged 18-75 years.\n* Not pregnant at time of recruitment and within 48 hrs of Day 1 procedures (self-reported)\n* Normal haematology results as per reference range determined by the laboratory.\n* Normal coagulation results as per reference range determined by the laboratory.\n* Target cephalic veins readily cannulatable (i.e., \\> 2 mm)\n* Able and willing to provide verbal and written consent\n* Must be an Australian citizen with current Medicare card\n\nExclusion Criteria:\n\n* History of pro coagulative state / condition (e.g., previous deep vein thrombosis)\n* Currently on any anti-coagulant or platelet inhibitor medication. Use of NSAIDs and aspirin will be documented however are not exclusionary.\n* Haemophilia or any current or history of bleeding disorder or tendency\n* Presence or report of current blood borne disease/infection (e.g., hepatitis, HIV, leukemia, lymphoma)\n* History of difficult vascular access\n* Allergy or sensitivity to chlorhexidine gluconate, isopropyl alcohol, latex, or skin adhesives\n* BMI \\< 18.5 kg/m2 or \u2265 35 kg/m2\n* Positive results for the urine drug screen at screening or check-in (including opiates, methadone, cocaine, amphetamines)\n* History or presence of alcoholism (self-reported) or drug abuse within the past 2 years\n* A current or previous medical, physical, mental / cognitive disorder or anatomical conditions that, in the opinion of the chief or sub-investigator, would place the patient at risk, would make them unable to perform study procedures or has the potential to confound interpretation of the study results. (e.g., musculo-skeletal injury, chronic back pain)\n* Employed by Terumo, Becton Dickinson, Teleflex Medical, ICUMedical or BBraun (conflict of interest)"
+    },
+    "identificationModule": {
+     "briefTitle": "Effect of Flexible Catheter Materials on Catheter Angle and Blood Vessel Irritation"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT06927141.",
+ "seed": "NCT06927141",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "text"
+}

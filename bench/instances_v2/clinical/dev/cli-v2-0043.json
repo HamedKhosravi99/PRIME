@@ -1,0 +1,315 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT01035125"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2008-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT01035125"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT01035125"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"ALL-alt\"",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT01035125"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT01035125"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT01035125"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_after:\"1980-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT01035125"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT01035125"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2008-01-01"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ]
+    ],
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "equals",
+      "ALL-alt"
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2008-01-01"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_after",
+      "1980-01-01"
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "cli-v2-0043",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-het-06\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 1, \"false_mech\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT01035125": {
+   "protocolSection": {
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Diagnosis of Fibromyalgia outlined by the American College of Rheumatology for one year or more\n* Between 20 and 70 years old\n* Native Norwegian speaking\n* Own wishes about participating the self-management program\n\nExclusion Criteria:\n\n* Participated in the hospitals' SMP before\n* Cognitive dysfunction\n* Problems with sight and hearing that not can be compensated\n* Mental disorders except light or treated depressions",
+     "minimumAge": "20 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "Effect of One Week Self-management Program in Patients With Fibromyalgia",
+     "officialTitle": "A Study of Effect of One Week Self-management Program in Patients With Fibromyalgia"
+    },
+    "statusModule": {
+     "overallStatus": "COMPLETED",
+     "studyFirstSubmitDate": "2009-12-17"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT01035125.",
+ "seed": "NCT01035125",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

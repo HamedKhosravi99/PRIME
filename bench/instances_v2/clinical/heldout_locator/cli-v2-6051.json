@@ -1,0 +1,385 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT03508180"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.identificationModule.nctId"
+    ],
+    "what": "the NCT identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT03508180"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.identificationModule.briefTitle"
+    ],
+    "what": "the brief title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.statusVerifiedDate",
+     "record_id": "NCT03508180"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.descriptionModule.briefSummary"
+    ],
+    "what": "the date the status was last verified"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT03508180"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.eligibilityModule.eligibilityCriteria"
+    ],
+    "what": "the eligibility criteria text"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT03508180"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.statusModule.overallStatus"
+    ],
+    "what": "the sex eligibility field"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT03508180"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.descriptionModule.briefSummary"
+    ],
+    "what": "the minimum age for eligibility"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT03508180"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.identificationModule.officialTitle"
+    ],
+    "what": "the brief title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2027-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT03508180"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.lastUpdateSubmitDate",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.statusModule.studyFirstSubmitDate"
+    ],
+    "what": "the date of the most recent update submission"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ]
+    ],
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "cli-v2-6051",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-het-10\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 3, \"false_mech\": false, \"locator\": true, \"source_instance\": \"cli-v2-0051\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT03508180": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "Chemotherapy with platinum salts is very emetic. The aim of this study is to evaluate the benefits of foot reflexology in nausea and vomiting induced by platinum salts-based chemotherapy in patients with thoracic or digestive tumors."
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Patient with a thoracic or digestive cancer with indication of management with platinum salts-based chemotherapy\n* Good performance status of (ECOG 0-2)\n* More than 18 years old\n* Ability to complete the questionnaires (comprehension oral and written French language) and to carry out the required exercises.\n* Patient affiliated to Social Security or equivalent\n* Informed consent signed\n\nExclusion Criteria:\n\n* Phlebitis\n* Cellar syndrome\n* Weight loss\\> 5% in 3 months\n* Uncontrolled pain\n* Patients under morphine and derivatives\n* Brain metastases\n* Patient benefiting from foot reflexology outside the study\n* Patient under guardianship or curatorship or deprived of his rights",
+     "minimumAge": "18 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "Benefit Evaluation of Foot Reflexology in Oncology",
+     "nctId": "NCT03508180",
+     "officialTitle": "Randomized Study Assessing the Benefits of Foot Reflexology in Patients With Gastrointestinal or Thoracic Cancer With Chemotherapy"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2025-12-13",
+     "overallStatus": "COMPLETED",
+     "statusVerifiedDate": "2025-12",
+     "studyFirstSubmitDate": "2018-03-05"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT03508180.",
+ "seed": "NCT03508180",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

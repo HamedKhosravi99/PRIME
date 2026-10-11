@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7263",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "LiteLLM through 2026-04-08 allows remote attackers to execute arbitrary code via bytecode rewriting at the /guardrails/test_custom_code URI.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 229,
+   "completion_tokens": 22,
+   "latency_s": 2.263,
+   "raw": "The document mentions \"LiteLLM\" as the affected package by its registered name. ANSWER: T"
+  }
+ ]
+}

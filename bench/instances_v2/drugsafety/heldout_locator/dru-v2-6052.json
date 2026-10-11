@@ -1,0 +1,345 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "recall_number",
+     "record_id": "D-1201-2020"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "recall_number",
+     "reason_for_recall",
+     "code_info"
+    ],
+    "what": "the recall number"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "product_description",
+     "record_id": "D-1201-2020"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "product_description",
+     "reason_for_recall",
+     "code_info"
+    ],
+    "what": "the description of the recalled product"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:20220406",
+    "params": {
+     "field_path": "recall_initiation_date",
+     "record_id": "D-1201-2020"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "country",
+     "code_info",
+     "recall_initiation_date"
+    ],
+    "what": "the date the recall was initiated"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:20220422",
+    "params": {
+     "field_path": "report_date",
+     "record_id": "D-1201-2020"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "status",
+     "report_date",
+     "country"
+    ],
+    "what": "the date the recall was reported"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "distribution_pattern",
+     "record_id": "D-1201-2020"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "reason_for_recall",
+     "distribution_pattern",
+     "event_id"
+    ],
+    "what": "the distribution pattern"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"520 mL\"",
+    "params": {
+     "field_path": "product_quantity",
+     "record_id": "D-1201-2020"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "product_quantity",
+     "event_id",
+     "recalling_firm"
+    ],
+    "what": "the product quantity"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "voluntary_mandated",
+     "record_id": "D-1201-2020"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "voluntary_mandated",
+     "recalling_firm",
+     "reason_for_recall"
+    ],
+    "what": "whether the recall was voluntary or mandated"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "recall_number",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The recall is identified with a stated classification (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "recall_number",
+      "exists",
+      null
+     ],
+     [
+      "product_description",
+      "exists",
+      null
+     ],
+     [
+      "recall_initiation_date",
+      "numeric_le",
+      20220406
+     ]
+    ],
+    [
+     [
+      "recall_number",
+      "exists",
+      null
+     ],
+     [
+      "report_date",
+      "numeric_le",
+      20220422
+     ],
+     [
+      "distribution_pattern",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The recall is action-ready: identified, classified, with product description, reason, and status populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "recall_number",
+      "exists",
+      null
+     ],
+     [
+      "product_description",
+      "exists",
+      null
+     ],
+     [
+      "recall_initiation_date",
+      "numeric_le",
+      20220406
+     ],
+     [
+      "product_quantity",
+      "equals",
+      "520 mL"
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The recall satisfies the checked completeness protocol: action-ready per the inspected fields, with consistent dates and populated distribution and firm fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "drugsafety_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "dru-v2-6052",
+ "notes_for_annotators": "{\"family\": \"drugsafety-branching-hom-11\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": 2, \"false_mech\": true, \"locator\": true, \"source_instance\": \"dru-v2-0052\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "D-1201-2020": {
+   "code_info": "Lot: 44850 Discard by: 6/4/2020",
+   "country": "United States",
+   "distribution_pattern": "Florida",
+   "event_id": "85404",
+   "product_description": "Bi-Est 1:1/Progest/DHEA 0.5 mg/180 mg/25 mg/mL Cream 30 mL jar, Rx, The Medicine Shoppe Pharmacy, Port Charlotte, FL",
+   "product_quantity": "1 tube",
+   "reason_for_recall": "Lack of Processing Control",
+   "recall_initiation_date": "20200406",
+   "recall_number": "D-1201-2020",
+   "recalling_firm": "The Medicine Shoppe Pharmacy",
+   "report_date": "20200422",
+   "status": "Terminated",
+   "voluntary_mandated": "Voluntary: Firm initiated"
+  }
+ },
+ "scope": "The single named openFDA enforcement record, as retrieved and embedded; no external lookups. Record identifier: D-1201-2020.",
+ "seed": "D-1201-2020",
+ "user_prompt": "Is this recall record complete and correctly classified for downstream pharmacy action?",
+ "variant": "base"
+}

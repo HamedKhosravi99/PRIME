@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7082",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "On file [src/ansys/geometry/core/connection/product_instance.py](https://github.com/ansys/pyansys-geometry/blob/52cba1737a8a7812e5430099f715fa2160ec007b/src/ansys/geometry/core/connection/product_instance.py#L403-L428):",
+   "verdict": "F",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 638,
+   "completion_tokens": 42,
+   "latency_s": 2.893,
+   "raw": "The document does not explicitly name an affected package by its registered name or a distinctive part of it; it refers to code within a file but does not clearly identify a specific package name. ANSWER: F"
+  }
+ ]
+}

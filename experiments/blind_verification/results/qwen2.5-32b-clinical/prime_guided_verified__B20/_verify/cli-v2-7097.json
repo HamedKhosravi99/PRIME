@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7097",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Age: * 18 and over",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 586,
+   "completion_tokens": 30,
+   "latency_s": 2.09,
+   "raw": "The document specifies an age criterion of \"18 and over,\" which aligns with the eligibility criteria restricting enrollment to adults. ANSWER: T"
+  }
+ ]
+}

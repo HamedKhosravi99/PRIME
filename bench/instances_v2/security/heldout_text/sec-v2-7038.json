@@ -1,0 +1,175 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-2475-53vw-vp25"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-2475-53vw-vp25"
+    },
+    "what": "the details text names the affected package (the package itself, by its registered name or a distinctive part of it, not only the vendor or the ecosystem)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-2475-53vw-vp25"
+    },
+    "what": "the details text states a version in which the issue is fixed"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-2475-53vw-vp25"
+    },
+    "what": "the details text states the first affected version, the version in which the issue was introduced"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory has a readable summary (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: it has a summary and its text names the affected package."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked completeness protocol: summary present, and the text names the package, a fixed version, and the first affected version."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4"
+   ]
+  ]
+ },
+ "id": "sec-v2-7038",
+ "notes_for_annotators": "{\"family\": \"security-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, true, false], \"twins\": [\"affected.0.package.name\", \"affected.*.ranges.*.events.*.fixed\", \"affected.*.ranges.*.events.*.introduced\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-2475-53vw-vp25": {
+   "details": "### Impact\nThe implementation of `AvgPoolGrad` does not fully validate the input `orig_input_shape`. This results in a `CHECK` failure which can be used to trigger a denial of service attack:\n```python\nimport tensorflow as tf\n\nksize = [1, 2, 2, 1]\nstrides = [1, 2, 2, 1]\npadding = \"VALID\"\ndata_format = \"NHWC\"\norig_input_shape = tf.constant(-536870912, shape=[4], dtype=tf.int32)\ngrad = tf.constant(.0890338004362538, shape=[1,5,7,1], dtype=tf.float64)\ntf.raw_ops.AvgPoolGrad(orig_input_shape=orig_input_shape, grad=grad, ksize=ksize, strides=strides, padding=padding, data_format=data_format)\n```\n\n### Patches\nWe have patched the issue in GitHub commit [3a6ac52664c6c095aa2b114e742b0aa17fdce78f](https://github.com/tensorflow/tensorflow/commit/3a6ac52664c6c095aa2b114e742b0aa17fdce78f).\n\nThe fix will be included in TensorFlow 2.10.0. We will also cherrypick this commit on TensorFlow 2.9.1, TensorFlow 2.8.1, and TensorFlow 2.7.2, as these are also affected and still in supported range.\n\n\n### For more information\nPlease consult [our security guide](https://github.com/tensorflow/tensorflow/blob/master/SECURITY.md) for more information regarding the security model and how to contact us with issues and questions.\n\n\n### Attribution\nThis vulnerability has been reported by Neophytos Christou, Secure Systems Labs, Brown University.\n",
+   "summary": "TensorFlow vulnerable to `CHECK` fail in `AvgPoolGrad`"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-2475-53vw-vp25.",
+ "seed": "GHSA-2475-53vw-vp25",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "text"
+}

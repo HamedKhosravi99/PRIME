@@ -1,0 +1,12 @@
+name: parsimonious
+source_url: https://github.com/erikrose/parsimonious
+commit: eb79639859a9697a86c0992a045174a8856b5fb0
+ref_cloned: default HEAD
+clone_date: 2026-07-28
+license_file: LICENSE
+license_first_line: Copyright (c) 2012 Erik Rose
+size: 192K
+test_command: python3 -m pytest -q (cwd=repo root)
+environment: 3.9.6, pytest
+test_exit_code: 0
+test_result_line: 84 passed, 2 skipped in 0.21s

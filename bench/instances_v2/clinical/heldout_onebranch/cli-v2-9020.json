@@ -1,0 +1,293 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT00477360"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"NOT_YET_RECRUITING\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT00477360"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2009-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT00477360"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT00477360"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT00477360"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT00477360"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT00477360"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "equals",
+      "NOT_YET_RECRUITING"
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2009-01-01"
+     ]
+    ],
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "equals",
+      "NOT_YET_RECRUITING"
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2009-01-01"
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-9020",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-hom-17\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": 2, \"false_mech\": true, \"one_branch\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT00477360": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "The primary objective of this study is to examine quality of life outcomes in patients who have undergone a humeral surface replacement hemiarthroplasty."
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Pre-Operative Inclusion Criteria:\n\n* Failed standard non-surgical management (analgesics, nsaids, physiotherapy, activity modification)\n* Persistent pain and disability for at least 6 months\n* Imaging demonstrates advanced humeral head cartilage loss\n\nPre-Operative Exclusion Criteria:\n\n* Active or systemic joint infection\n* Significant muscle paralysis of shoulder girdle\n* Charcot's Arthropathy\n* Major medical illness (life expectancy \\<2years)\n* Unable to speak and read English/French\n* Psychiatric illness that precludes informed consent\n* Unwilling/unable to remain in study for one year\n\nIntra-Operative Inclusion Criteria:\n\nAdvanced humeral head cartilage loss AND ONE of:\n\n* minimal/no glenoid cartilage loss\n* complete glenoid cartilage loss and no bony erosion\n* complete glenoid cartilage loss and concentric bony erosion with no humeral anterior/posterior subluxation\n\nIntra-Operative Exclusion Criteria:\n\n* Eccentric glenoid erosion with biconcavity of glenoid and subluxation of humeral head\n* Inability of humeral head to support the CAP surface replacement",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "nctId": "NCT00477360",
+     "officialTitle": "Humeral Resurfacing Hemiarthroplasty. Phase 2: Prospective Cohort Study"
+    },
+    "statusModule": {
+     "overallStatus": "UNKNOWN",
+     "studyFirstSubmitDate": "2007-05-22"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT00477360.",
+ "seed": "NCT00477360",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

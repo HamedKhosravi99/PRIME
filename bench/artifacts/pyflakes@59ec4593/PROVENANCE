@@ -1,0 +1,12 @@
+name: pyflakes
+source_url: https://github.com/PyCQA/pyflakes
+commit: 59ec4593efd4c69ce00fdb13c40fcf5f3212ab10
+ref_cloned: default HEAD
+clone_date: 2026-07-28
+license_file: LICENSE
+license_first_line: Copyright 2005-2011 Divmod, Inc.
+size: 388K
+test_command: python3 -m pytest -q (cwd=repo root)
+environment: 3.9.6, pytest
+test_exit_code: 0
+test_result_line: 715 passed, 35 skipped in 0.76s

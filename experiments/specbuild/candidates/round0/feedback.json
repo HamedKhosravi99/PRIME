@@ -1,0 +1,1808 @@
+{
+ "n": 600,
+ "agree": 252,
+ "agree_pct": 42.0,
+ "examples": [
+  {
+   "registration": {
+    "protocolSection": {
+     "identificationModule": {
+      "briefTitle": "COVID-19 Anticoagulation in Children - Thromboprophlaxis (COVAC-TP) Trial"
+     },
+     "statusModule": {
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2020-06-02",
+       "type": "ACTUAL"
+      },
+      "primaryCompletionDateStruct": {
+       "date": "2021-06-04",
+       "type": "ACTUAL"
+      },
+      "completionDateStruct": {
+       "date": "2021-06-04",
+       "type": "ACTUAL"
+      },
+      "resultsFirstSubmitDate": "2022-03-01",
+      "resultsFirstPostDateStruct": {
+       "date": "2022-03-31",
+       "type": "ACTUAL"
+      },
+      "studyFirstSubmitDate": "2020-04-13"
+     },
+     "designModule": {
+      "studyType": "INTERVENTIONAL",
+      "phases": [
+       "PHASE2"
+      ],
+      "designInfo": {
+       "primaryPurpose": "PREVENTION"
+      }
+     },
+     "oversightModule": {
+      "isFdaRegulatedDrug": true,
+      "isFdaRegulatedDevice": false,
+      "isUsExport": false
+     },
+     "contactsLocationsModule": {
+      "locations": [
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       }
+      ]
+     },
+     "armsInterventionsModule": {
+      "interventions": [
+       {
+        "type": "DRUG"
+       }
+      ]
+     },
+     "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+       "class": "OTHER"
+      }
+     }
+    },
+    "hasResults": true
+   },
+   "derived": {
+    "is_applicable_trial": true,
+    "submission_deadline": "2022-06-04"
+   },
+   "program_level": 3,
+   "tracker_level": 2
+  },
+  {
+   "registration": {
+    "protocolSection": {
+     "identificationModule": {
+      "briefTitle": "Pilot Study of Physiological Effect of High-Flow Nasal Cannula on Respiratory Pattern and Work of Breathing"
+     },
+     "statusModule": {
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2015-07",
+       "type": "ACTUAL"
+      },
+      "primaryCompletionDateStruct": {
+       "date": "2017-12",
+       "type": "ACTUAL"
+      },
+      "completionDateStruct": {
+       "date": "2018-04-01",
+       "type": "ACTUAL"
+      },
+      "studyFirstSubmitDate": "2015-07-30"
+     },
+     "designModule": {
+      "studyType": "INTERVENTIONAL",
+      "phases": [
+       "NA"
+      ],
+      "designInfo": {
+       "primaryPurpose": "OTHER"
+      }
+     },
+     "oversightModule": {},
+     "contactsLocationsModule": {
+      "locations": [
+       {
+        "country": "United States"
+       }
+      ]
+     },
+     "armsInterventionsModule": {
+      "interventions": [
+       {
+        "type": "OTHER"
+       },
+       {
+        "type": "OTHER"
+       },
+       {
+        "type": "OTHER"
+       },
+       {
+        "type": "DEVICE"
+       },
+       {
+        "type": "DEVICE"
+       }
+      ]
+     },
+     "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+       "class": "OTHER"
+      }
+     }
+    },
+    "hasResults": false
+   },
+   "derived": {
+    "is_applicable_trial": false,
+    "submission_deadline": null
+   },
+   "program_level": 0,
+   "tracker_level": 2
+  },
+  {
+   "registration": {
+    "protocolSection": {
+     "identificationModule": {
+      "briefTitle": "A Study of FT-2102 in Patients With Advanced Solid Tumors and Gliomas With an IDH1 Mutation"
+     },
+     "statusModule": {
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2018-11-01",
+       "type": "ACTUAL"
+      },
+      "primaryCompletionDateStruct": {
+       "date": "2021-05-24",
+       "type": "ACTUAL"
+      },
+      "completionDateStruct": {
+       "date": "2022-06-13",
+       "type": "ACTUAL"
+      },
+      "resultsFirstSubmitDate": "2022-09-27",
+      "resultsFirstPostDateStruct": {
+       "date": "2023-01-25",
+       "type": "ACTUAL"
+      },
+      "dispFirstSubmitDate": "2022-05-24",
+      "studyFirstSubmitDate": "2018-09-17"
+     },
+     "designModule": {
+      "studyType": "INTERVENTIONAL",
+      "phases": [
+       "PHASE1",
+       "PHASE2"
+      ],
+      "designInfo": {
+       "primaryPurpose": "TREATMENT"
+      }
+     },
+     "oversightModule": {
+      "isFdaRegulatedDrug": true,
+      "isFdaRegulatedDevice": false
+     },
+     "contactsLocationsModule": {
+      "locations": [
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "Australia"
+       },
+       {
+        "country": "Australia"
+       },
+       {
+        "country": "France"
+       },
+       {
+        "country": "France"
+       },
+       {
+        "country": "France"
+       },
+       {
+        "country": "France"
+       },
+       {
+        "country": "South Korea"
+       },
+       {
+        "country": "South Korea"
+       },
+       {
+        "country": "South Korea"
+       },
+       {
+        "country": "Spain"
+       },
+       {
+        "country": "United Kingdom"
+       },
+       {
+        "country": "United Kingdom"
+       }
+      ]
+     },
+     "armsInterventionsModule": {
+      "interventions": [
+       {
+        "type": "DRUG"
+       },
+       {
+        "type": "DRUG"
+       },
+       {
+        "type": "BIOLOGICAL"
+       },
+       {
+        "type": "DRUG"
+       }
+      ]
+     },
+     "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+       "class": "INDUSTRY"
+      }
+     }
+    },
+    "hasResults": true
+   },
+   "derived": {
+    "is_applicable_trial": true,
+    "submission_deadline": "2022-05-24"
+   },
+   "program_level": 3,
+   "tracker_level": 2
+  },
+  {
+   "registration": {
+    "protocolSection": {
+     "identificationModule": {
+      "briefTitle": "Structural Fat Grafting for Craniofacial Trauma Using Manual Technique for Processing Fat Graft Material"
+     },
+     "statusModule": {
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2014-10-22",
+       "type": "ACTUAL"
+      },
+      "primaryCompletionDateStruct": {
+       "date": "2017-06-21",
+       "type": "ACTUAL"
+      },
+      "completionDateStruct": {
+       "date": "2017-06-21",
+       "type": "ACTUAL"
+      },
+      "resultsFirstSubmitDate": "2018-04-18",
+      "resultsFirstPostDateStruct": {
+       "date": "2018-05-17",
+       "type": "ACTUAL"
+      },
+      "studyFirstSubmitDate": "2014-08-08"
+     },
+     "designModule": {
+      "studyType": "INTERVENTIONAL",
+      "phases": [
+       "NA"
+      ],
+      "designInfo": {
+       "primaryPurpose": "TREATMENT"
+      }
+     },
+     "oversightModule": {},
+     "contactsLocationsModule": {
+      "locations": [
+       {
+        "country": "United States"
+       }
+      ]
+     },
+     "armsInterventionsModule": {
+      "interventions": [
+       {
+        "type": "PROCEDURE"
+       },
+       {
+        "type": "DRUG"
+       },
+       {
+        "type": "DEVICE"
+       },
+       {
+        "type": "OTHER"
+       }
+      ]
+     },
+     "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+       "class": "OTHER"
+      }
+     }
+    },
+    "hasResults": true
+   },
+   "derived": {
+    "is_applicable_trial": false,
+    "submission_deadline": "2018-06-21"
+   },
+   "program_level": 0,
+   "tracker_level": 2
+  },
+  {
+   "registration": {
+    "protocolSection": {
+     "identificationModule": {
+      "briefTitle": "A Study to Evaluate the Efficacy and Safety of Tocilizumab in Hospitalized Participants With COVID-19 Pneumonia"
+     },
+     "statusModule": {
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2020-05-14",
+       "type": "ACTUAL"
+      },
+      "primaryCompletionDateStruct": {
+       "date": "2020-08-18",
+       "type": "ACTUAL"
+      },
+      "completionDateStruct": {
+       "date": "2020-09-22",
+       "type": "ACTUAL"
+      },
+      "resultsFirstSubmitDate": "2021-08-04",
+      "resultsFirstPostDateStruct": {
+       "date": "2021-09-27",
+       "type": "ACTUAL"
+      },
+      "studyFirstSubmitDate": "2020-04-29"
+     },
+     "designModule": {
+      "studyType": "INTERVENTIONAL",
+      "phases": [
+       "PHASE3"
+      ],
+      "designInfo": {
+       "primaryPurpose": "TREATMENT"
+      }
+     },
+     "oversightModule": {
+      "isFdaRegulatedDrug": true,
+      "isFdaRegulatedDevice": false
+     },
+     "contactsLocationsModule": {
+      "locations": [
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "Brazil"
+       },
+       {
+        "country": "Brazil"
+       },
+       {
+        "country": "Brazil"
+       },
+       {
+        "country": "Kenya"
+       },
+       {
+        "country": "Mexico"
+       },
+       {
+        "country": "Mexico"
+       },
+       {
+        "country": "Peru"
+       },
+       {
+        "country": "Peru"
+       },
+       {
+        "country": "Peru"
+       },
+       {
+        "country": "Peru"
+       },
+       {
+        "country": "Peru"
+       },
+       {
+        "country": "South Africa"
+       }
+      ]
+     },
+     "armsInterventionsModule": {
+      "interventions": [
+       {
+        "type": "DRUG"
+       },
+       {
+        "type": "DRUG"
+       }
+      ]
+     },
+     "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+       "class": "INDUSTRY"
+      }
+     }
+    },
+    "hasResults": true
+   },
+   "derived": {
+    "is_applicable_trial": true,
+    "submission_deadline": "2021-08-18"
+   },
+   "program_level": 3,
+   "tracker_level": 2
+  },
+  {
+   "registration": {
+    "protocolSection": {
+     "identificationModule": {
+      "briefTitle": "Gemcitabine Hydrochloride With or Without Erlotinib Hydrochloride Followed by the Same Chemotherapy Regimen With or Without Radiation Therapy and Capecitabine or Fluorouracil in Treating Patients With Pancreatic Cancer That Has Been Removed by Surgery"
+     },
+     "statusModule": {
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2010-04-05",
+       "type": "ACTUAL"
+      },
+      "primaryCompletionDateStruct": {
+       "date": "2023-12-10",
+       "type": "ACTUAL"
+      },
+      "completionDateStruct": {
+       "date": "2025-09-04",
+       "type": "ACTUAL"
+      },
+      "resultsFirstSubmitDate": "2024-10-02",
+      "resultsFirstPostDateStruct": {
+       "date": "2024-10-24",
+       "type": "ACTUAL"
+      },
+      "studyFirstSubmitDate": "2009-11-13"
+     },
+     "designModule": {
+      "studyType": "INTERVENTIONAL",
+      "phases": [
+       "PHASE3"
+      ],
+      "designInfo": {
+       "primaryPurpose": "TREATMENT"
+      }
+     },
+     "oversightModule": {},
+     "contactsLocationsModule": {
+      "locations": [
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       }
+      ]
+     },
+     "armsInterventionsModule": {
+      "interventions": [
+       {
+        "type": "RADIATION"
+       },
+       {
+        "type": "PROCEDURE"
+       },
+       {
+        "type": "DRUG"
+       },
+       {
+        "type": "DRUG"
+       },
+       {
+        "type": "PROCEDURE"
+       },
+       {
+        "type": "DRUG"
+       },
+       {
+        "type": "DRUG"
+       },
+       {
+        "type": "DRUG"
+       },
+       {
+        "type": "RADIATION"
+       },
+       {
+        "type": "PROCEDURE"
+       },
+       {
+        "type": "OTHER"
+       },
+       {
+        "type": "PROCEDURE"
+       }
+      ]
+     },
+     "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+       "class": "NIH"
+      }
+     }
+    },
+    "hasResults": true
+   },
+   "derived": {
+    "is_applicable_trial": false,
+    "submission_deadline": "2024-12-09"
+   },
+   "program_level": 0,
+   "tracker_level": 2
+  },
+  {
+   "registration": {
+    "protocolSection": {
+     "identificationModule": {
+      "briefTitle": "Avelumab and Talazoparib in Untreated Advanced Ovarian Cancer (JAVELIN OVARIAN PARP 100)"
+     },
+     "statusModule": {
+      "overallStatus": "TERMINATED",
+      "startDateStruct": {
+       "date": "2018-07-19",
+       "type": "ACTUAL"
+      },
+      "primaryCompletionDateStruct": {
+       "date": "2021-12-22",
+       "type": "ACTUAL"
+      },
+      "completionDateStruct": {
+       "date": "2021-12-22",
+       "type": "ACTUAL"
+      },
+      "resultsFirstSubmitDate": "2022-12-06",
+      "resultsFirstPostDateStruct": {
+       "date": "2023-04-06",
+       "type": "ACTUAL"
+      },
+      "studyFirstSubmitDate": "2018-07-13"
+     },
+     "designModule": {
+      "studyType": "INTERVENTIONAL",
+      "phases": [
+       "PHASE3"
+      ],
+      "designInfo": {
+       "primaryPurpose": "TREATMENT"
+      }
+     },
+     "oversightModule": {
+      "isFdaRegulatedDrug": true,
+      "isFdaRegulatedDevice": false
+     },
+     "contactsLocationsModule": {
+      "locations": [
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "Australia"
+       },
+       {
+        "country": "Australia"
+       },
+       {
+        "country": "Belgium"
+       },
+       {
+        "country": "Ireland"
+       },
+       {
+        "country": "Italy"
+       },
+       {
+        "country": "Italy"
+       },
+       {
+        "country": "Japan"
+       },
+       {
+        "country": "Russia"
+       },
+       {
+        "country": "Singapore"
+       },
+       {
+        "country": "Singapore"
+       },
+       {
+        "country": "Singapore"
+       },
+       {
+        "country": "Singapore"
+       },
+       {
+        "country": "Singapore"
+       },
+       {
+        "country": "Singapore"
+       }
+      ]
+     },
+     "armsInterventionsModule": {
+      "interventions": [
+       {
+        "type": "DRUG"
+       },
+       {
+        "type": "DRUG"
+       },
+       {
+        "type": "DRUG"
+       }
+      ]
+     },
+     "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+       "class": "INDUSTRY"
+      }
+     }
+    },
+    "hasResults": true
+   },
+   "derived": {
+    "is_applicable_trial": true,
+    "submission_deadline": "2022-12-22"
+   },
+   "program_level": 3,
+   "tracker_level": 2
+  },
+  {
+   "registration": {
+    "protocolSection": {
+     "identificationModule": {
+      "briefTitle": "Monitoring Metered Dose Inhalation (MDI) Volume and Timing With a Respimetrix Device in Obstructive Lung Disease."
+     },
+     "statusModule": {
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2021-05-01",
+       "type": "ACTUAL"
+      },
+      "primaryCompletionDateStruct": {
+       "date": "2022-03-22",
+       "type": "ACTUAL"
+      },
+      "completionDateStruct": {
+       "date": "2022-03-22",
+       "type": "ACTUAL"
+      },
+      "studyFirstSubmitDate": "2022-04-19"
+     },
+     "designModule": {
+      "studyType": "INTERVENTIONAL",
+      "phases": [
+       "NA"
+      ],
+      "designInfo": {
+       "primaryPurpose": "DIAGNOSTIC"
+      }
+     },
+     "oversightModule": {
+      "isFdaRegulatedDrug": false,
+      "isFdaRegulatedDevice": true,
+      "isUnapprovedDevice": true
+     },
+     "contactsLocationsModule": {
+      "locations": [
+       {
+        "country": "United States"
+       }
+      ]
+     },
+     "armsInterventionsModule": {
+      "interventions": [
+       {
+        "type": "DEVICE"
+       }
+      ]
+     },
+     "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+       "class": "OTHER"
+      }
+     }
+    },
+    "derivedSection": {
+     "miscInfoModule": {
+      "submissionTracking": {
+       "estimatedResultsFirstSubmitDate": "2025-05-05"
+      }
+     }
+    },
+    "hasResults": false
+   },
+   "derived": {
+    "is_applicable_trial": true,
+    "submission_deadline": "2023-03-22"
+   },
+   "program_level": 2,
+   "tracker_level": 3
+  },
+  {
+   "registration": {
+    "protocolSection": {
+     "identificationModule": {
+      "briefTitle": "Study of Efficacy and Safety of Brolucizumab vs. Aflibercept in Patients With Visual Impairment Due to Diabetic Macular Edema"
+     },
+     "statusModule": {
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2018-07-23",
+       "type": "ACTUAL"
+      },
+      "primaryCompletionDateStruct": {
+       "date": "2020-11-11",
+       "type": "ACTUAL"
+      },
+      "completionDateStruct": {
+       "date": "2021-10-18",
+       "type": "ACTUAL"
+      },
+      "resultsFirstSubmitDate": "2022-05-27",
+      "resultsFirstPostDateStruct": {
+       "date": "2022-10-28",
+       "type": "ACTUAL"
+      },
+      "dispFirstSubmitDate": "2021-01-06",
+      "studyFirstSubmitDate": "2018-03-13"
+     },
+     "designModule": {
+      "studyType": "INTERVENTIONAL",
+      "phases": [
+       "PHASE3"
+      ],
+      "designInfo": {
+       "primaryPurpose": "TREATMENT"
+      }
+     },
+     "oversightModule": {
+      "isFdaRegulatedDrug": true,
+      "isFdaRegulatedDevice": false
+     },
+     "contactsLocationsModule": {
+      "locations": [
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "Argentina"
+       },
+       {
+        "country": "Argentina"
+       },
+       {
+        "country": "Argentina"
+       },
+       {
+        "country": "Argentina"
+       },
+       {
+        "country": "Argentina"
+       },
+       {
+        "country": "Australia"
+       },
+       {
+        "country": "Australia"
+       },
+       {
+        "country": "Australia"
+       },
+       {
+        "country": "Australia"
+       },
+       {
+        "country": "Australia"
+       },
+       {
+        "country": "Australia"
+       },
+       {
+        "country": "Australia"
+       },
+       {
+        "country": "Australia"
+       },
+       {
+        "country": "Austria"
+       },
+       {
+        "country": "Austria"
+       },
+       {
+        "country": "Austria"
+       },
+       {
+        "country": "Canada"
+       },
+       {
+        "country": "Canada"
+       },
+       {
+        "country": "Canada"
+       },
+       {
+        "country": "Canada"
+       },
+       {
+        "country": "Colombia"
+       }
+      ]
+     },
+     "armsInterventionsModule": {
+      "interventions": [
+       {
+        "type": "DRUG"
+       },
+       {
+        "type": "DRUG"
+       }
+      ]
+     },
+     "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+       "class": "INDUSTRY"
+      }
+     }
+    },
+    "hasResults": true
+   },
+   "derived": {
+    "is_applicable_trial": true,
+    "submission_deadline": "2021-11-11"
+   },
+   "program_level": 3,
+   "tracker_level": 2
+  },
+  {
+   "registration": {
+    "protocolSection": {
+     "identificationModule": {
+      "briefTitle": "Brentuximab Vedotin and Combination Chemotherapy in Treating Patients With Stage II-IV HIV-Associated Hodgkin Lymphoma"
+     },
+     "statusModule": {
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2013-03-08",
+       "type": "ACTUAL"
+      },
+      "primaryCompletionDateStruct": {
+       "date": "2021-10-15",
+       "type": "ACTUAL"
+      },
+      "completionDateStruct": {
+       "date": "2024-03-21",
+       "type": "ACTUAL"
+      },
+      "resultsFirstSubmitDate": "2022-10-26",
+      "resultsFirstPostDateStruct": {
+       "date": "2023-03-03",
+       "type": "ACTUAL"
+      },
+      "studyFirstSubmitDate": "2013-01-16"
+     },
+     "designModule": {
+      "studyType": "INTERVENTIONAL",
+      "phases": [
+       "PHASE1",
+       "PHASE2"
+      ],
+      "designInfo": {
+       "primaryPurpose": "TREATMENT"
+      }
+     },
+     "oversightModule": {},
+     "contactsLocationsModule": {
+      "locations": [
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "France"
+       },
+       {
+        "country": "France"
+       },
+       {
+        "country": "France"
+       },
+       {
+        "country": "France"
+       },
+       {
+        "country": "France"
+       },
+       {
+        "country": "France"
+       },
+       {
+        "country": "France"
+       },
+       {
+        "country": "France"
+       }
+      ]
+     },
+     "armsInterventionsModule": {
+      "interventions": [
+       {
+        "type": "DRUG"
+       },
+       {
+        "type": "DRUG"
+       },
+       {
+        "type": "DRUG"
+       },
+       {
+        "type": "OTHER"
+       },
+       {
+        "type": "DRUG"
+       }
+      ]
+     },
+     "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+       "class": "NIH"
+      }
+     }
+    },
+    "hasResults": true
+   },
+   "derived": {
+    "is_applicable_trial": false,
+    "submission_deadline": "2022-10-15"
+   },
+   "program_level": 0,
+   "tracker_level": 3
+  },
+  {
+   "registration": {
+    "protocolSection": {
+     "identificationModule": {
+      "briefTitle": "LINX Reflux Management System in Subjects With GERD Who Have Previously Undergone a Laparoscopic Sleeve Gastrectomy"
+     },
+     "statusModule": {
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2017-04-05",
+       "type": "ACTUAL"
+      },
+      "primaryCompletionDateStruct": {
+       "date": "2021-06-08",
+       "type": "ACTUAL"
+      },
+      "completionDateStruct": {
+       "date": "2021-06-08",
+       "type": "ACTUAL"
+      },
+      "resultsFirstSubmitDate": "2022-06-08",
+      "resultsFirstPostDateStruct": {
+       "date": "2022-07-05",
+       "type": "ACTUAL"
+      },
+      "studyFirstSubmitDate": "2015-04-13"
+     },
+     "designModule": {
+      "studyType": "INTERVENTIONAL",
+      "phases": [
+       "NA"
+      ],
+      "designInfo": {
+       "primaryPurpose": "TREATMENT"
+      }
+     },
+     "oversightModule": {
+      "isFdaRegulatedDrug": false,
+      "isFdaRegulatedDevice": true
+     },
+     "contactsLocationsModule": {
+      "locations": [
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       },
+       {
+        "country": "United States"
+       }
+      ]
+     },
+     "armsInterventionsModule": {
+      "interventions": [
+       {
+        "type": "DEVICE"
+       }
+      ]
+     },
+     "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+       "class": "INDUSTRY"
+      }
+     }
+    },
+    "hasResults": true
+   },
+   "derived": {
+    "is_applicable_trial": true,
+    "submission_deadline": "2022-06-08"
+   },
+   "program_level": 3,
+   "tracker_level": 2
+  },
+  {
+   "registration": {
+    "protocolSection": {
+     "identificationModule": {
+      "briefTitle": "High Dose Intravenous Ascorbic Acid in Severe Sepsis"
+     },
+     "statusModule": {
+      "overallStatus": "TERMINATED",
+      "startDateStruct": {
+       "date": "2016-04-01"
+      },
+      "primaryCompletionDateStruct": {
+       "date": "2017-10-08",
+       "type": "ACTUAL"
+      },
+      "completionDateStruct": {
+       "date": "2017-11-23",
+       "type": "ACTUAL"
+      },
+      "resultsFirstSubmitDate": "2020-03-06",
+      "resultsFirstPostDateStruct": {
+       "date": "2021-02-16",
+       "type": "ACTUAL"
+      },
+      "studyFirstSubmitDate": "2016-03-18"
+     },
+     "designModule": {
+      "studyType": "INTERVENTIONAL",
+      "phases": [
+       "PHASE2"
+      ],
+      "designInfo": {
+       "primaryPurpose": "TREATMENT"
+      }
+     },
+     "oversightModule": {},
+     "contactsLocationsModule": {
+      "locations": [
+       {
+        "country": "United States"
+       }
+      ]
+     },
+     "armsInterventionsModule": {
+      "interventions": [
+       {
+        "type": "DRUG"
+       },
+       {
+        "type": "OTHER"
+       }
+      ]
+     },
+     "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+       "class": "OTHER"
+      }
+     }
+    },
+    "hasResults": true
+   },
+   "derived": {
+    "is_applicable_trial": false,
+    "submission_deadline": "2018-10-08"
+   },
+   "program_level": 0,
+   "tracker_level": 3
+  }
+ ],
+ "derive_errors": 0,
+ "derive_error_examples": []
+}

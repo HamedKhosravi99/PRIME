@@ -1,0 +1,271 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "F",
+   "id": "E1",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT00617942"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2022-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT00617942"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT00617942"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT00617942"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT00617942"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:false",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.healthyVolunteers",
+     "record_id": "NCT00617942"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2022-01-01"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2022-01-01"
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-0076",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-07\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 0, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT00617942": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "Q3week carboplatin with weekly abraxane and trastuzumab as neoadjuvant therapy in resectable and unresectable HER2+ (stage IIa-IIIb) breast cancer"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Histologically documented adenocarcinoma of the breast\n* ANC \\> 1000 cells\n* Female; age \\> 18; Zubrod PS 0-1\n* Platelets \\> 100,000\n* Stage IIA-IIIB disease\n* Total bilirubin \\< or = ULN\n* No evidence of metastatic disease Not pregnant or lactating\n* No prior systemic therapy for this breast cancer\n* Serum Creatinine \\< 1.5 mg/dl or Creat Cl \\> 30 ml/min\n* Serum ALT \\< 2.5 x ULN\n* ER, PR and HER2 status required\n* LVEF (MUGA/echo)WNL\n* No baseline \\> 2 neuropathy\n* Hemoglobin \\> 9.0 gm/dl\n* HER2+, defined by IHC 3+ or FISH ratio \\> 2.0",
+     "healthyVolunteers": false
+    },
+    "identificationModule": {
+     "officialTitle": "BrUOG-BR-211B q3week Carboplatin With Weekly Abraxane and Trastuzumab As Neoadjuvant Therapy in Resectable and Unresectable HER2+ (Stage IIa-IIIb) Breast Cancer"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2020-05-28",
+     "overallStatus": "COMPLETED"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT00617942.",
+ "seed": "NCT00617942",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

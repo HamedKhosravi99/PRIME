@@ -1,0 +1,377 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "recall_number",
+     "record_id": "D-0527-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "distribution_pattern",
+     "recall_number",
+     "voluntary_mandated"
+    ],
+    "what": "the recall number"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Class II\"",
+    "params": {
+     "field_path": "classification",
+     "record_id": "D-0527-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "status",
+     "voluntary_mandated",
+     "classification"
+    ],
+    "what": "the recall classification"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:20250323",
+    "params": {
+     "field_path": "recall_initiation_date",
+     "record_id": "D-0527-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "recall_initiation_date",
+     "recalling_firm",
+     "distribution_pattern"
+    ],
+    "what": "the date the recall was initiated"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:20250412",
+    "params": {
+     "field_path": "report_date",
+     "record_id": "D-0527-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "status",
+     "report_date",
+     "recalling_firm"
+    ],
+    "what": "the date the recall was reported"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"United States\"",
+    "params": {
+     "field_path": "country",
+     "record_id": "D-0527-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "code_info",
+     "country",
+     "status"
+    ],
+    "what": "the country"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "product_quantity",
+     "record_id": "D-0527-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "product_quantity",
+     "voluntary_mandated",
+     "distribution_pattern"
+    ],
+    "what": "the product quantity"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "classification",
+     "record_id": "D-0527-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "classification",
+     "status",
+     "code_info"
+    ],
+    "what": "the recall classification"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "product_description",
+     "record_id": "D-0527-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "product_description",
+     "reason_for_recall",
+     "voluntary_mandated"
+    ],
+    "what": "the description of the recalled product"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "recall_number",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The recall is identified with a stated classification (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "recall_number",
+      "exists",
+      null
+     ],
+     [
+      "classification",
+      "equals",
+      "Class II"
+     ],
+     [
+      "recall_initiation_date",
+      "numeric_le",
+      20250323
+     ]
+    ],
+    [
+     [
+      "recall_number",
+      "exists",
+      null
+     ],
+     [
+      "report_date",
+      "numeric_le",
+      20250412
+     ],
+     [
+      "country",
+      "equals",
+      "United States"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The recall is action-ready: identified, classified, with product description, reason, and status populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "recall_number",
+      "exists",
+      null
+     ],
+     [
+      "classification",
+      "equals",
+      "Class II"
+     ],
+     [
+      "recall_initiation_date",
+      "numeric_le",
+      20250323
+     ],
+     [
+      "product_quantity",
+      "exists",
+      null
+     ],
+     [
+      "classification",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The recall satisfies the checked completeness protocol: action-ready per the inspected fields, with consistent dates and populated distribution and firm fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "drugsafety_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "dru-v2-6089",
+ "notes_for_annotators": "{\"family\": \"drugsafety-branching-het-18\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 3, \"false_mech\": false, \"locator\": true, \"source_instance\": \"dru-v2-0089\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "D-0527-2023": {
+   "classification": "Class II",
+   "code_info": "Lot: H1221Z, I0121J, J0622X, Exp 10/31/2023.",
+   "country": "United States",
+   "distribution_pattern": "USA Nationwide",
+   "product_description": "Glimepiride Tablets USP, 4 mg, 90-count bottle, Rx only, Manufactured: Accord Healthcare, Inc., Durham, NC 27703, NDC 68788-8066-9",
+   "product_quantity": "15 Bottles",
+   "reason_for_recall": "cGMP Deviations for the manufacturing Firm (Accord Healthcare) after their inspection.",
+   "recall_initiation_date": "20230323",
+   "recall_number": "D-0527-2023",
+   "recalling_firm": "Preferred Pharmaceuticals, Inc.",
+   "report_date": "20230412",
+   "status": "Ongoing",
+   "voluntary_mandated": "Voluntary: Firm initiated"
+  }
+ },
+ "scope": "The single named openFDA enforcement record, as retrieved and embedded; no external lookups. Record identifier: D-0527-2023.",
+ "seed": "D-0527-2023",
+ "user_prompt": "Is this recall record complete and correctly classified for downstream pharmacy action?",
+ "variant": "base"
+}

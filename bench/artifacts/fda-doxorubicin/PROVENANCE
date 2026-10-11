@@ -1,0 +1,18 @@
+name: fda-doxorubicin
+source: openFDA public API, endpoint https://api.fda.gov/drug/enforcement.json (no auth)
+api_docs: https://open.fda.gov/apis/drug/enforcement/
+query: search=recall_number:"D-0580-2026"&limit=1
+retrieval_date: 2026-07-29
+openfda_meta_last_updated: 2026-07-22
+recall_number: D-0580-2026
+event_id: 98921
+classification: Class I
+recalling_firm: SUN PHARMACEUTICAL INDUSTRIES INC
+product_description: DOXOrubin Hydrochloride Liposome injection, 50 mg/25 mL (2mg/mL), 25 mL single-dose vials, Sterile, Rx only, Manufactured for: Northstar Rx LLC., Memphis, TN 38141, Manufactured by: Sun Pharmaceutical Ind. Ltd., Halol-Baroda Highway, Halol, Gujarat, India, NDC 72603-200-01.
+reason_for_recall: Presence of Particulate matter: Particulate matter identified as glass.
+status: Ongoing
+voluntary_mandated: Voluntary: Firm initiated
+report_date (raw YYYYMMDD): 20260617
+recall_initiation_date (raw YYYYMMDD): 20260512
+disclaimer: Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated.
+integrity_note: raw_enforcement_record.json is the UNEDITED API response (meta+results). The instance JSON's embedded record carries this same record's fields verbatim, plus a 'report_date_iso' key that is a pure YYYYMMDD->YYYY-MM-DD reformat of the SAME real report_date value (no digit changed) -- required because prime_runtime.predicates.date_before/date_after need ISO-dashed input under Python 3.9's date.fromisoformat. See fetch_openfda.py docstring.

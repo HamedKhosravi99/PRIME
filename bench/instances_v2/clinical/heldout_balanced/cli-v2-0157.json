@@ -1,0 +1,271 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT00896974"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT00896974"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2017-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT00896974"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT00896974"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT00896974"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"INTERVENTIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT00896974"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2017-01-01"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2017-01-01"
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-0157",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-07\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 2, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT00896974": {
+   "protocolSection": {
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Healthy volunteer\n* Karnofsky performance status (PS) 70-100% (ECOG PS 0-1)\n* WBC \u2265 3,000/mm\u00b3\n* Platelet count \u2265 100,000mm\u00b3\n* Hemoglobin \\> 10 g/dL\n* Bilirubin \u2264 1.4 mg/dL\n* AST \u2264 1.5 times normal\n* Creatinine normal\n* Sodium 135-144 mmol/L\n* Potassium 3.2-4.8 mmol/L\n* Chloride 85-114 mmol/L\n* Bicarbonate \\> 11 mEQ/dL\n* Fasting triglycerides \u2264 1.5 times upper limit of normal (ULN)\n* Fasting cholesterol \u2264 1.5 times ULN\n* Not pregnant or nursing\n\n  * No nursing during and for 30 days after completion of study treatment\n* Negative pregnancy test\n* Fertile participants must use effective contraception prior to, during, and for 1 month after completion of study treatment\n\n  * No low-dose progesterone only birth control pills\n* No concurrent uncontrolled illness including, but not limited to, any of the following:\n\n  * Ongoing or active infection\n  * Symptomatic congestive heart failure\n  * Unstable angina pectoris\n  * Cardiac arrhythmia\n  * Psychiatricillness or social situation that would limit compliance with study requirements\n* No history of allergic reactions attributed to compounds of similar chemical or biological composition to retinoids\n* No other concurrent investigational agents\n* No concurrent lipid-lowering agents\n* No concurrent medications that may interact with 9cUAB30 (e.g., St.John's wort, ketoconazole, vitamin A, tetracycline, or oral corticosteroids)\n* No other concurrent topical or oral retinoids (e.g., retinol, retinal, tretinoin \\[Retin-A\\], isotretinoin, alitretinoin, etretinate, acitretin,tazarotene, or bexarotene)"
+    },
+    "identificationModule": {
+     "nctId": "NCT00896974",
+     "officialTitle": "A Pilot Study of the Novel Retinoid, 9cUAB30 to Determine Preliminary Pharmacokinetics"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2015-06-17",
+     "overallStatus": "COMPLETED"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT00896974.",
+ "seed": "NCT00896974",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

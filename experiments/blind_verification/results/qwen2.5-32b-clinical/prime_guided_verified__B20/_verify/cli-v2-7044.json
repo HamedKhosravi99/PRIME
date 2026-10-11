@@ -1,0 +1,31 @@
+{
+ "instance": "cli-v2-7044",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Age: 18 years old and above but 75 years old and below, regardless of gender;",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 1228,
+   "completion_tokens": 26,
+   "latency_s": 2.88,
+   "raw": "The inclusion criteria explicitly state an age requirement of 18 years old and above, establishing the condition. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "F",
+   "quote": "regardless of gender;",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 1223,
+   "completion_tokens": 27,
+   "latency_s": 2.257,
+   "raw": "The document does not establish the condition as it includes both male and female participants without restriction to one sex only. ANSWER: F"
+  }
+ ]
+}

@@ -1,0 +1,307 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Class I\"",
+    "params": {
+     "field_path": "classification",
+     "record_id": "D-0969-2015"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"New! Rompe Pecho MAX Multi Symptoms, 8 FL. Oz (237 mL) bottle, Distributed by: Efficient Laboratories, Inc. Miami, FL 33166. UPC 0 00856 00309 5\"",
+    "params": {
+     "field_path": "product_description",
+     "record_id": "D-0969-2015"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "recalling_firm",
+     "record_id": "D-0969-2015"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:20170120",
+    "params": {
+     "field_path": "recall_initiation_date",
+     "record_id": "D-0969-2015"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "product_quantity",
+     "record_id": "D-0969-2015"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "code_info",
+     "record_id": "D-0969-2015"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "product_description",
+     "record_id": "D-0969-2015"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"United States\"",
+    "params": {
+     "field_path": "country",
+     "record_id": "D-0969-2015"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "classification",
+      "equals",
+      "Class I"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The recall is identified with a stated classification (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "classification",
+      "equals",
+      "Class I"
+     ],
+     [
+      "product_description",
+      "equals",
+      "New! Rompe Pecho MAX Multi Symptoms, 8 FL. Oz (237 mL) bottle, Distributed by: Efficient Laboratories, Inc. Miami, FL 33166. UPC 0 00856 00309 5"
+     ],
+     [
+      "recalling_firm",
+      "exists",
+      null
+     ]
+    ],
+    [
+     [
+      "classification",
+      "equals",
+      "Class I"
+     ],
+     [
+      "recall_initiation_date",
+      "numeric_le",
+      20170120
+     ],
+     [
+      "product_quantity",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The recall is action-ready: identified, classified, with product description, reason, and status populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "classification",
+      "equals",
+      "Class I"
+     ],
+     [
+      "product_description",
+      "equals",
+      "New! Rompe Pecho MAX Multi Symptoms, 8 FL. Oz (237 mL) bottle, Distributed by: Efficient Laboratories, Inc. Miami, FL 33166. UPC 0 00856 00309 5"
+     ],
+     [
+      "recalling_firm",
+      "exists",
+      null
+     ],
+     [
+      "code_info",
+      "exists",
+      null
+     ],
+     [
+      "product_description",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The recall satisfies the checked completeness protocol: action-ready per the inspected fields, with consistent dates and populated distribution and firm fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "drugsafety_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "dru-v2-9046",
+ "notes_for_annotators": "{\"family\": \"drugsafety-branching-het-10\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 2, \"false_mech\": true, \"one_branch\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "D-0969-2015": {
+   "classification": "Class I",
+   "code_info": "Lot #: 44-002-JT (the lot number may be followed by 01 to 99), Exp 08/01/2016",
+   "country": "United States",
+   "product_description": "0.9% Sodium Chloride Injection, USP, 250 mL, Rx Only, Hospira Inc., Lake Forest, IL, 60045, USA, NDC 0409-7983-02",
+   "product_quantity": "661,128 containers",
+   "recall_initiation_date": "20150120",
+   "recalling_firm": "Hospira Inc."
+  }
+ },
+ "scope": "The single named openFDA enforcement record, as retrieved and embedded; no external lookups. Record identifier: D-0969-2015.",
+ "seed": "D-0969-2015",
+ "user_prompt": "Is this recall record complete and correctly classified for downstream pharmacy action?",
+ "variant": "base"
+}

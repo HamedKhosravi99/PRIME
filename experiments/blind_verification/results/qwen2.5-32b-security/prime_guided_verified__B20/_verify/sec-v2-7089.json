@@ -1,0 +1,44 @@
+{
+ "instance": "sec-v2-7089",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Airflow versions 2.7.0 through 2.8.4 have a vulnerability that allows an authenticated user to see sensitive provider configuration via the \"configuration\" UI page",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 298,
+   "completion_tokens": 21,
+   "latency_s": 1.217,
+   "raw": "The document mentions \"Airflow\" as the affected package by its registered name. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "You should migrate to Airflow 2.9",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 280,
+   "completion_tokens": 28,
+   "latency_s": 2.267,
+   "raw": "The document suggests migrating to Airflow 2.9 to resolve the issue, implying this version fixes the vulnerability. ANSWER: T"
+  },
+  {
+   "attempt": 3,
+   "atom": "E4",
+   "attested": "T",
+   "quote": "Airflow versions 2.7.0 through 2.8.4 have a vulnerability",
+   "verdict": "F",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 285,
+   "completion_tokens": 20,
+   "latency_s": 1.161,
+   "raw": "The document does not specify the first affected version where the issue was introduced. ANSWER: F"
+  }
+ ]
+}

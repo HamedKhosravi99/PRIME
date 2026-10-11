@@ -1,0 +1,307 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "F",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2019-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT04355897"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2026-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT04355897"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"INTERVENTIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT04355897"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT04355897"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT04355897"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT04355897"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_after:\"1980-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT04355897"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT04355897"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2019-01-01"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2019-01-01"
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2026-01-01"
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2019-01-01"
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2026-01-01"
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_after",
+      "1980-01-01"
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "cli-v2-0032",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-het-00\", \"topology\": \"nested\", \"cost\": \"het\", \"target_level\": 0, \"false_mech\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT04355897": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "The investigatores propose to evaluate intravenous administration of convalescent plasma (CP) obtained from COVID19 survivors in patients requiring hospitalization for symptomatic \"high risk\" COVID19 disease as reflected by the presence of elevated hsTPN. Supportive data exist for use of convalescent plasma in the treatment of COVID19 and other overwhelming viral illness. Investigators hypothesize that treatment with COVID19 CP will demonstrate salutary effects on COVID19 disease severity/duration, with the primary objective to reduce mortality and a key secondary objective to reduce the requirement for and/or duration of mechanical ventilation. Finally, as the hospital mortality for patients requiring mechanical ventilation is very high (50 to 80%), these patients will be eligible for COVID19 CP treatment as well, even in the absence of elevated hsTPN. Although considerable overlap of these populations has been observed (elevated hsTPN and requirement for mechanical ventilation) there is not 100% redundancy and it is hopeful that COVID19 CP may provide benefit to these critically ill patients."
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Age 18-80 years\n* Symptomatic CoVID-19 disease requiring hospitalization\n* SARS-CoV-19 PCR positive\n* Elevated hsTPN\n\nExclusion Criteria:\n\n* Multi-organ / system failure\n* Renal insufficiency (eGFR \\<30 or renal replacement therapy)\n* Liver dysfunction (\\>3x ULN SGOT / SGPT)\n* Chronic Immunosuppression therapy\n* Prior organ transplant\n* Prior multiple transfusions for Myelodysplastic syndrome\n* Prior treatment with plasma, immunoglobulin transfusion within 30 days\n* Allergic reaction to blood/ plasma products\n* Pregnant or breast feeding at the time of study\n* Inability to provide informed consent",
+     "minimumAge": "18 Years",
+     "sex": "ALL"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2024-01-03",
+     "studyFirstSubmitDate": "2020-04-15"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT04355897.",
+ "seed": "NCT04355897",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

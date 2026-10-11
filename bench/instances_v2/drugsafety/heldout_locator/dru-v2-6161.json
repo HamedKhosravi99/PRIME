@@ -1,0 +1,336 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:20150726",
+    "params": {
+     "field_path": "recall_initiation_date",
+     "record_id": "D-969-2013"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "distribution_pattern",
+     "recall_initiation_date",
+     "recall_number"
+    ],
+    "what": "the date the recall was initiated"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:20150918",
+    "params": {
+     "field_path": "report_date",
+     "record_id": "D-969-2013"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "report_date",
+     "distribution_pattern",
+     "product_description"
+    ],
+    "what": "the date the recall was reported"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "voluntary_mandated",
+     "record_id": "D-969-2013"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "product_description",
+     "voluntary_mandated",
+     "recalling_firm"
+    ],
+    "what": "whether the recall was voluntary or mandated"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "event_id",
+     "record_id": "D-969-2013"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "event_id",
+     "recalling_firm",
+     "distribution_pattern"
+    ],
+    "what": "the event identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "product_quantity",
+     "record_id": "D-969-2013"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "product_quantity",
+     "product_description",
+     "reason_for_recall"
+    ],
+    "what": "the product quantity"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "code_info",
+     "record_id": "D-969-2013"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "code_info",
+     "reason_for_recall",
+     "distribution_pattern"
+    ],
+    "what": "the lot or code information"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Class II\"",
+    "params": {
+     "field_path": "classification",
+     "record_id": "D-969-2013"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "classification",
+     "status",
+     "country"
+    ],
+    "what": "the recall classification"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "recall_initiation_date",
+      "numeric_le",
+      20150726
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The recall is identified with a stated classification (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "recall_initiation_date",
+      "numeric_le",
+      20150726
+     ],
+     [
+      "report_date",
+      "numeric_le",
+      20150918
+     ],
+     [
+      "voluntary_mandated",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The recall is action-ready: identified, classified, with product description, reason, and status populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "recall_initiation_date",
+      "numeric_le",
+      20150726
+     ],
+     [
+      "report_date",
+      "numeric_le",
+      20150918
+     ],
+     [
+      "voluntary_mandated",
+      "exists",
+      null
+     ],
+     [
+      "event_id",
+      "exists",
+      null
+     ],
+     [
+      "product_quantity",
+      "exists",
+      null
+     ],
+     [
+      "code_info",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The recall satisfies the checked completeness protocol: action-ready per the inspected fields, with consistent dates and populated distribution and firm fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "drugsafety_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "dru-v2-6161",
+ "notes_for_annotators": "{\"family\": \"drugsafety-nested-hom-05\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 3, \"false_mech\": false, \"locator\": true, \"source_instance\": \"dru-v2-0161\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "D-969-2013": {
+   "classification": "Class II",
+   "code_info": "01042013@16, 02262013@21, 03072013@9, 03042013@23, 07022013@36  07252013@18",
+   "country": "United States",
+   "distribution_pattern": "USA nationwide",
+   "event_id": "65876",
+   "product_description": "HYDROXOCOBALAMIN (VITAMIN B12A) 1 MG/ML INJECTABLE, all presentations, FOR INTRAVENO and SQ USE ONLY, STERILE, RX ONLY, Compounded by Beacon Hill Medical Pharmacy PC, dba Rxtra Solutions, Southfield, MI",
+   "product_quantity": "N/A",
+   "reason_for_recall": "Lack of Assurance of Sterility; FDA inspectional findings resulted in concerns associated with quality control procedures that impacted sterility assurance",
+   "recall_initiation_date": "20130726",
+   "recall_number": "D-969-2013",
+   "recalling_firm": "Beacon Hill Medical Pharmacy, P.C.",
+   "report_date": "20130918",
+   "status": "Terminated",
+   "voluntary_mandated": "Voluntary: Firm initiated"
+  }
+ },
+ "scope": "The single named openFDA enforcement record, as retrieved and embedded; no external lookups. Record identifier: D-969-2013.",
+ "seed": "D-969-2013",
+ "user_prompt": "Is this recall record complete and correctly classified for downstream pharmacy action?",
+ "variant": "base"
+}

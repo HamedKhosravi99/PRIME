@@ -1,0 +1,397 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "details",
+     "record_id": "GHSA-2jq4-q6vv-4cp3"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "summary",
+     "details",
+     "aliases.0"
+    ],
+    "what": "the advisory's detailed description"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2028-01-01\"",
+    "params": {
+     "field_path": "published",
+     "record_id": "GHSA-2jq4-q6vv-4cp3"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "affected.0.package.ecosystem",
+     "database_specific.cwe_ids.0",
+     "published"
+    ],
+    "what": "the date the advisory was published"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2028-01-01\"",
+    "params": {
+     "field_path": "modified",
+     "record_id": "GHSA-2jq4-q6vv-4cp3"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.cwe_ids.0",
+     "modified",
+     "severity.0.score"
+    ],
+    "what": "the date the advisory was last modified"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.severity",
+     "record_id": "GHSA-2jq4-q6vv-4cp3"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.severity",
+     "severity.0.score",
+     "aliases.0"
+    ],
+    "what": "the maintainers' severity label"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.type",
+     "record_id": "GHSA-2jq4-q6vv-4cp3"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "references.0.type",
+     "database_specific.cwe_ids.0",
+     "aliases.0"
+    ],
+    "what": "the type of the first reference"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"https://nvd.nist.gov/vuln/detail/CVE-2023-1625\"",
+    "params": {
+     "field_path": "references.0.url",
+     "record_id": "GHSA-2jq4-q6vv-4cp3"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "schema_version",
+     "database_specific.cwe_ids.0",
+     "references.0.url"
+    ],
+    "what": "the URL of the first reference"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_after:\"1980-01-01\"",
+    "params": {
+     "field_path": "published",
+     "record_id": "GHSA-2jq4-q6vv-4cp3"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "affected.0.package.ecosystem",
+     "aliases.0",
+     "published"
+    ],
+    "what": "the date the advisory was published"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "affected.0.package.name",
+     "record_id": "GHSA-2jq4-q6vv-4cp3"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "aliases.0",
+     "summary",
+     "affected.0.package.name"
+    ],
+    "what": "the name of the affected package"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "published",
+      "date_before",
+      "2028-01-01"
+     ],
+     [
+      "modified",
+      "date_before",
+      "2028-01-01"
+     ]
+    ],
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.severity",
+      "exists",
+      null
+     ],
+     [
+      "references.0.type",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "published",
+      "date_before",
+      "2028-01-01"
+     ],
+     [
+      "modified",
+      "date_before",
+      "2028-01-01"
+     ],
+     [
+      "references.0.url",
+      "equals",
+      "https://nvd.nist.gov/vuln/detail/CVE-2023-1625"
+     ],
+     [
+      "published",
+      "date_after",
+      "1980-01-01"
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "sec-v2-6112",
+ "notes_for_annotators": "{\"family\": \"security-branching-het-16\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 2, \"false_mech\": true, \"locator\": true, \"source_instance\": \"sec-v2-0112\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-2jq4-q6vv-4cp3": {
+   "affected": [
+    {
+     "package": {
+      "ecosystem": "PyPI",
+      "name": "crawl4ai"
+     }
+    }
+   ],
+   "aliases": [
+    "CVE-2026-57571"
+   ],
+   "database_specific": {
+    "cwe_ids": [
+     "CWE-22"
+    ],
+    "severity": "CRITICAL"
+   },
+   "details": "### Summary\n\nWhen the crawler saves a downloaded file, the destination filename was taken from attacker-influenced input and joined to the downloads directory with no confinement. A filename containing an absolute path (e.g. `/etc/cron.d/evil`) or `../` traversal escaped the downloads directory, giving an arbitrary file write with attacker-controlled contents. Because the written bytes are attacker-controlled, this escalates to remote code execution (overwriting a shell rc-file, `~/.ssh/authorized_keys`, a cron entry, or a Python module on the import path).\n\n### Affected paths\n\nTwo download sinks in `crawl4ai/async_crawler_strategy.py`:\n- HTTP crawler (`AsyncHTTPCrawlerStrategy`): the filename is parsed from the response `Content-Disposition` header by `_extract_filename()` and written via `aiofiles.open(filepath, 'wb')`. Reachable directly via the SDK, and via the unauthenticated Docker `/crawl` endpoint when an `HTTPCrawlerConfig` is supplied.\n- Browser crawler (`AsyncPlaywrightCrawlerStrategy`): the download's `suggested_filename` (controllable by the visited page) is joined to `downloads_path` and written via `download.save_as()`.\n\nThe HTTP-strategy sink is reachable pre-auth on the default Docker deployment; both are reachable for SDK users simply by crawling an attacker-controlled URL. The default Playwright crawl path that does not trigger a download is unaffected.\n\n### Impact\n\nArbitrary file write with attacker-controlled content as the user running the crawler, escalating to remote code execution.\n\n### Fix\n\nBoth sinks now resolve the destination through a single hardened helper (`_safe_download_filepath`) that reduces the attacker-influenced name to a bare basename (dropping absolute paths and `..` components) and re-checks, via `realpath`, that the resolved path stays inside the downloads root (defeating symlink/TOCTOU escapes). A traversal attempt is rejected; normal downloads are unchanged.\n\n### Workarounds\n\n- Upgrade to the patched version (0.9.0).\n- Run the crawler as an unprivileged user with a dedicated, isolated downloads directory on a volume with no sensitive paths writable.\n- Enable authentication (`CRAWL4AI_API_TOKEN`) on the Docker server.\n\n### Credits\n\nY4tacker - reported the Content-Disposition path traversal in the HTTP crawler with a clear PoC and a basename + realpath-containment fix recommendation.",
+   "modified": "2026-07-13T07:26:47.459995537Z",
+   "published": "2026-06-18T17:25:13Z",
+   "references": [
+    {
+     "type": "WEB",
+     "url": "https://github.com/unclecode/crawl4ai/security/advisories/GHSA-2jq4-q6vv-4cp3"
+    }
+   ],
+   "schema_version": "1.7.5",
+   "severity": [
+    {
+     "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H"
+    }
+   ],
+   "summary": "Crawl4AI: Arbitrary file write (path traversal) in crawler downloads can lead to RCE"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-2jq4-q6vv-4cp3.",
+ "seed": "GHSA-2jq4-q6vv-4cp3",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

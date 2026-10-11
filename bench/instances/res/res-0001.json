@@ -1,0 +1,161 @@
+{
+  "id": "res-0001",
+  "domain": "research_review",
+  "seed": "res-0001",
+  "variant": "base",
+  "user_prompt": "Is the core idea of this paper novel relative to the related work I gave you?",
+  "artifact": {
+    "path": "artifacts/res-lora",
+    "kind": "paper_with_corpus",
+    "commit": "arxiv:2106.09685"
+  },
+  "scope": "The target paper target/paper.txt (arXiv:2106.09685, LoRA) and the supplied corpus of 10 real related-paper abstracts under corpus/, searched by search_repo and read by inspect_file; the novelty question is scoped to the target's STATED contribution and to subsumption BY THE SUPPLIED CORPUS ONLY (not the open literature).",
+  "actions": [
+    "inspect_file",
+    "search_repo",
+    "ask_user",
+    "emit_claim"
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "The target paper's stated contribution is identifiable from the supplied text (a low-rank additive weight-update adaptation that freezes pretrained weights).",
+      "level": 1
+    },
+    {
+      "id": "C2",
+      "text": "The contribution is identified (C1) and the closest work in the supplied corpus has been located by search and inspected.",
+      "level": 2
+    },
+    {
+      "id": "C3",
+      "text": "Under the supplied corpus and the declared search protocol, no inspected corpus item subsumes the target's stated contribution (trainable low-rank additive weight-update merged into the frozen weights with no added inference latency): the contribution stands as novel relative to this corpus.",
+      "level": 3
+    }
+  ],
+  "order": [
+    [
+      "C1",
+      "C2"
+    ],
+    [
+      "C2",
+      "C3"
+    ]
+  ],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "inspect",
+      "proposition": "The target's contribution paragraph is read via inspect_file over target/paper.txt.",
+      "resolver": {
+        "tool": "inspect_file",
+        "params_schema": {
+          "path": "str",
+          "start": "int",
+          "end": "int"
+        },
+        "params": {
+          "path": "target/paper.txt"
+        },
+        "attest": "span_read"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E2",
+      "type": "search",
+      "proposition": "The corpus is searched for the mechanism family with search_repo (pattern low-rank|adapter|prefix|prompt over corpus/), returning at least one match.",
+      "resolver": {
+        "tool": "search_repo",
+        "params_schema": {
+          "pattern": "str",
+          "path": "str"
+        },
+        "params": {
+          "path": "corpus"
+        },
+        "attest": "match_count>0"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E3",
+      "type": "inspect",
+      "proposition": "A closest-by-name corpus candidate (prefix-tuning, arXiv:2101.00190) is read via inspect_file.",
+      "resolver": {
+        "tool": "inspect_file",
+        "params_schema": {
+          "path": "str",
+          "start": "int",
+          "end": "int"
+        },
+        "params": {
+          "path": "corpus/01_prefix_tuning_2101.00190.txt"
+        },
+        "attest": "span_read"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E4",
+      "type": "inspect",
+      "proposition": "The closest low-rank corpus candidate (Compacter, arXiv:2106.04647) is read via inspect_file.",
+      "resolver": {
+        "tool": "inspect_file",
+        "params_schema": {
+          "path": "str",
+          "start": "int",
+          "end": "int"
+        },
+        "params": {
+          "path": "corpus/06_compacter_2106.04647.txt"
+        },
+        "attest": "span_read"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E5",
+      "type": "user_fact",
+      "proposition": "Expert adjudication is obtained (ask_user) on whether any inspected corpus abstract claims the target's specific mechanism; the adjudication is that none does.",
+      "resolver": {
+        "tool": "ask_user",
+        "params_schema": {
+          "question": "str"
+        },
+        "params": {},
+        "attest": "answer_given"
+      },
+      "gold_value": "T"
+    }
+  ],
+  "phi": [],
+  "gold_licenses": {
+    "C1": [
+      [
+        "E1"
+      ]
+    ],
+    "C2": [
+      [
+        "E1",
+        "E2",
+        "E3"
+      ]
+    ],
+    "C3": [
+      [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5"
+      ]
+    ]
+  },
+  "decoys": [
+    "citation_count_lookup"
+  ],
+  "notes_for_annotators": "Target arXiv:2106.09685 (LoRA), corpus of 10 real abstracts, all fetched 2026-07-28 from arxiv.org abs pages (provenance in artifacts/res-lora/PROVENANCE). ADJUDICATION (E5 answer, verified by reading the abstracts): No corpus item subsumes LoRA's stated contribution. LoRA = trainable low-rank additive weight-update (delta W = BA) merged into the frozen weights, giving zero added inference latency. The closest corpus items differ in mechanism: adapters (1902.00751) and Compacter (2106.04647) INSERT task modules (added latency; Compacter uses Kronecker products of slow/fast matrices); prefix-tuning (2101.00190), prompt-tuning (2104.08691) and P-tuning (2103.10385) PREPEND continuous vectors (reducing usable sequence length); BitFit (2106.10199) tunes biases; intrinsic-dimensionality (2012.13255) is an analysis, not an adaptation method; unified-PEFT (2110.04366) postdates the target and gives a unifying view, not the mechanism. Route minimality: E1 necessary (cannot judge novelty without reading the contribution); E2 necessary (the corpus must actually be searched, not assumed); E3, E4 necessary (the two nearest candidates must be read, not inferred from titles); E5 necessary (the subsumption call is the adjudicated conclusion). Order-coherence by containment. Decoy citation_count_lookup is not a listed action. The answer the ask_user tool returns is this note; E5 attests that the adjudication was obtained."
+}

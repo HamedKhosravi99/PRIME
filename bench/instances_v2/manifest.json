@@ -1,0 +1,1790 @@
+{
+ "domains": {
+  "clinical": {
+   "achieved_strata": {
+    "0": 32,
+    "1": 34,
+    "2": 57,
+    "3": 117
+   },
+   "construction_attrition": {
+    "field-missing": 17,
+    "no-degradable": 0,
+    "schema": 0,
+    "stratum-miss": 0,
+    "verify-mismatch": 0
+   },
+   "counts": {
+    "dev": 48,
+    "heldout_balanced": 120,
+    "heldout_natural": 60,
+    "val": 12
+   },
+   "false_load_bearing_instances": 77,
+   "families": {
+    "clinical-branching-het-00": {
+     "cost": "het",
+     "probes": [
+      "first_submit",
+      "last_update",
+      "study_type",
+      "eligibility",
+      "sex",
+      "min_age"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "clinical-branching-het-02": {
+     "cost": "het",
+     "probes": [
+      "title",
+      "status",
+      "first_submit",
+      "last_update",
+      "eligibility",
+      "official"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "clinical-branching-het-04": {
+     "cost": "het",
+     "probes": [
+      "title",
+      "status",
+      "last_update",
+      "study_type",
+      "official",
+      "healthy"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "clinical-branching-het-06": {
+     "cost": "het",
+     "probes": [
+      "title",
+      "first_submit",
+      "eligibility",
+      "sex",
+      "official",
+      "min_age"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "clinical-branching-het-08": {
+     "cost": "het",
+     "probes": [
+      "nct",
+      "verified",
+      "study_type",
+      "sex",
+      "official",
+      "min_age"
+     ],
+     "split": "val",
+     "topology": "branching"
+    },
+    "clinical-branching-het-10": {
+     "cost": "het",
+     "probes": [
+      "nct",
+      "title",
+      "verified",
+      "eligibility",
+      "sex",
+      "min_age"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "clinical-branching-het-12": {
+     "cost": "het",
+     "probes": [
+      "nct",
+      "title",
+      "verified",
+      "first_submit",
+      "summary",
+      "sex"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "clinical-branching-het-14": {
+     "cost": "het",
+     "probes": [
+      "nct",
+      "title",
+      "last_update",
+      "study_type",
+      "official",
+      "min_age"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "clinical-branching-het-16": {
+     "cost": "het",
+     "probes": [
+      "first_submit",
+      "last_update",
+      "eligibility",
+      "sex",
+      "min_age",
+      "healthy"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "clinical-branching-het-18": {
+     "cost": "het",
+     "probes": [
+      "nct",
+      "first_submit",
+      "summary",
+      "eligibility",
+      "min_age",
+      "healthy"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "clinical-branching-hom-01": {
+     "cost": "hom",
+     "probes": [
+      "nct",
+      "verified",
+      "first_submit",
+      "eligibility",
+      "sex",
+      "min_age"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "clinical-branching-hom-03": {
+     "cost": "hom",
+     "probes": [
+      "nct",
+      "title",
+      "status",
+      "last_update",
+      "study_type",
+      "healthy"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "clinical-branching-hom-05": {
+     "cost": "hom",
+     "probes": [
+      "title",
+      "eligibility",
+      "sex",
+      "official",
+      "min_age",
+      "healthy"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "clinical-branching-hom-07": {
+     "cost": "hom",
+     "probes": [
+      "nct",
+      "status",
+      "last_update",
+      "summary",
+      "eligibility",
+      "official"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "clinical-branching-hom-09": {
+     "cost": "hom",
+     "probes": [
+      "title",
+      "verified",
+      "last_update",
+      "study_type",
+      "eligibility",
+      "sex"
+     ],
+     "split": "val",
+     "topology": "branching"
+    },
+    "clinical-branching-hom-11": {
+     "cost": "hom",
+     "probes": [
+      "nct",
+      "verified",
+      "first_submit",
+      "study_type",
+      "sex",
+      "min_age"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "clinical-branching-hom-13": {
+     "cost": "hom",
+     "probes": [
+      "nct",
+      "title",
+      "verified",
+      "study_type",
+      "official",
+      "healthy"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "clinical-branching-hom-15": {
+     "cost": "hom",
+     "probes": [
+      "status",
+      "last_update",
+      "summary",
+      "eligibility",
+      "official",
+      "healthy"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "clinical-branching-hom-17": {
+     "cost": "hom",
+     "probes": [
+      "nct",
+      "title",
+      "first_submit",
+      "eligibility",
+      "min_age",
+      "healthy"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "clinical-branching-hom-19": {
+     "cost": "hom",
+     "probes": [
+      "first_submit",
+      "last_update",
+      "study_type",
+      "summary",
+      "eligibility",
+      "healthy"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "clinical-nested-het-00": {
+     "cost": "het",
+     "probes": [
+      "first_submit",
+      "last_update",
+      "study_type",
+      "eligibility",
+      "sex",
+      "min_age"
+     ],
+     "split": "dev",
+     "topology": "nested"
+    },
+    "clinical-nested-het-02": {
+     "cost": "het",
+     "probes": [
+      "title",
+      "status",
+      "first_submit",
+      "last_update",
+      "eligibility",
+      "official"
+     ],
+     "split": "dev",
+     "topology": "nested"
+    },
+    "clinical-nested-het-04": {
+     "cost": "het",
+     "probes": [
+      "title",
+      "status",
+      "last_update",
+      "study_type",
+      "official",
+      "healthy"
+     ],
+     "split": "val",
+     "topology": "nested"
+    },
+    "clinical-nested-het-06": {
+     "cost": "het",
+     "probes": [
+      "title",
+      "first_submit",
+      "eligibility",
+      "sex",
+      "official",
+      "min_age"
+     ],
+     "split": "heldout",
+     "topology": "nested"
+    },
+    "clinical-nested-het-08": {
+     "cost": "het",
+     "probes": [
+      "nct",
+      "verified",
+      "study_type",
+      "sex",
+      "official",
+      "min_age"
+     ],
+     "split": "heldout",
+     "topology": "nested"
+    },
+    "clinical-nested-hom-01": {
+     "cost": "hom",
+     "probes": [
+      "nct",
+      "verified",
+      "first_submit",
+      "eligibility",
+      "sex",
+      "min_age"
+     ],
+     "split": "dev",
+     "topology": "nested"
+    },
+    "clinical-nested-hom-03": {
+     "cost": "hom",
+     "probes": [
+      "nct",
+      "title",
+      "status",
+      "last_update",
+      "study_type",
+      "healthy"
+     ],
+     "split": "dev",
+     "topology": "nested"
+    },
+    "clinical-nested-hom-05": {
+     "cost": "hom",
+     "probes": [
+      "title",
+      "eligibility",
+      "sex",
+      "official",
+      "min_age",
+      "healthy"
+     ],
+     "split": "heldout",
+     "topology": "nested"
+    },
+    "clinical-nested-hom-07": {
+     "cost": "hom",
+     "probes": [
+      "nct",
+      "status",
+      "last_update",
+      "summary",
+      "eligibility",
+      "official"
+     ],
+     "split": "heldout",
+     "topology": "nested"
+    },
+    "clinical-nested-hom-09": {
+     "cost": "hom",
+     "probes": [
+      "title",
+      "verified",
+      "last_update",
+      "study_type",
+      "eligibility",
+      "sex"
+     ],
+     "split": "heldout",
+     "topology": "nested"
+    }
+   },
+   "n_families": 30
+  },
+  "drugsafety": {
+   "achieved_strata": {
+    "0": 32,
+    "1": 34,
+    "2": 57,
+    "3": 117
+   },
+   "construction_attrition": {
+    "field-missing": 6,
+    "no-degradable": 0,
+    "schema": 0,
+    "stratum-miss": 0,
+    "verify-mismatch": 0
+   },
+   "counts": {
+    "dev": 48,
+    "heldout_balanced": 120,
+    "heldout_natural": 60,
+    "val": 12
+   },
+   "false_load_bearing_instances": 72,
+   "families": {
+    "drugsafety-branching-het-00": {
+     "cost": "het",
+     "probes": [
+      "recall_no",
+      "classification",
+      "reason",
+      "report_date",
+      "voluntary",
+      "code_info"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "drugsafety-branching-het-02": {
+     "cost": "het",
+     "probes": [
+      "recall_no",
+      "product",
+      "reason",
+      "init_date",
+      "country",
+      "quantity"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "drugsafety-branching-het-04": {
+     "cost": "het",
+     "probes": [
+      "classification",
+      "product",
+      "firm",
+      "report_date",
+      "country",
+      "quantity"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "drugsafety-branching-het-06": {
+     "cost": "het",
+     "probes": [
+      "classification",
+      "product",
+      "init_date",
+      "report_date",
+      "quantity",
+      "code_info"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "drugsafety-branching-het-08": {
+     "cost": "het",
+     "probes": [
+      "reason",
+      "firm",
+      "report_date",
+      "dist",
+      "voluntary",
+      "event"
+     ],
+     "split": "val",
+     "topology": "branching"
+    },
+    "drugsafety-branching-het-10": {
+     "cost": "het",
+     "probes": [
+      "recall_no",
+      "reason",
+      "firm",
+      "init_date",
+      "country",
+      "code_info"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "drugsafety-branching-het-12": {
+     "cost": "het",
+     "probes": [
+      "status",
+      "product",
+      "reason",
+      "firm",
+      "country",
+      "code_info"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "drugsafety-branching-het-14": {
+     "cost": "het",
+     "probes": [
+      "classification",
+      "status",
+      "reason",
+      "voluntary",
+      "event",
+      "code_info"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "drugsafety-branching-het-16": {
+     "cost": "het",
+     "probes": [
+      "classification",
+      "product",
+      "firm",
+      "report_date",
+      "voluntary",
+      "event"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "drugsafety-branching-het-18": {
+     "cost": "het",
+     "probes": [
+      "recall_no",
+      "classification",
+      "init_date",
+      "report_date",
+      "country",
+      "quantity"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "drugsafety-branching-hom-01": {
+     "cost": "hom",
+     "probes": [
+      "classification",
+      "reason",
+      "firm",
+      "init_date",
+      "report_date",
+      "code_info"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "drugsafety-branching-hom-03": {
+     "cost": "hom",
+     "probes": [
+      "classification",
+      "status",
+      "firm",
+      "init_date",
+      "voluntary",
+      "country"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "drugsafety-branching-hom-05": {
+     "cost": "hom",
+     "probes": [
+      "init_date",
+      "report_date",
+      "voluntary",
+      "event",
+      "quantity",
+      "code_info"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "drugsafety-branching-hom-07": {
+     "cost": "hom",
+     "probes": [
+      "product",
+      "reason",
+      "firm",
+      "init_date",
+      "dist",
+      "quantity"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "drugsafety-branching-hom-09": {
+     "cost": "hom",
+     "probes": [
+      "status",
+      "product",
+      "init_date",
+      "report_date",
+      "country",
+      "event"
+     ],
+     "split": "val",
+     "topology": "branching"
+    },
+    "drugsafety-branching-hom-11": {
+     "cost": "hom",
+     "probes": [
+      "recall_no",
+      "product",
+      "init_date",
+      "report_date",
+      "dist",
+      "quantity"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "drugsafety-branching-hom-13": {
+     "cost": "hom",
+     "probes": [
+      "classification",
+      "product",
+      "reason",
+      "init_date",
+      "voluntary",
+      "quantity"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "drugsafety-branching-hom-15": {
+     "cost": "hom",
+     "probes": [
+      "product",
+      "firm",
+      "init_date",
+      "dist",
+      "country",
+      "code_info"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "drugsafety-branching-hom-17": {
+     "cost": "hom",
+     "probes": [
+      "recall_no",
+      "classification",
+      "status",
+      "reason",
+      "report_date",
+      "quantity"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "drugsafety-branching-hom-19": {
+     "cost": "hom",
+     "probes": [
+      "recall_no",
+      "classification",
+      "firm",
+      "country",
+      "event",
+      "code_info"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "drugsafety-nested-het-00": {
+     "cost": "het",
+     "probes": [
+      "recall_no",
+      "classification",
+      "reason",
+      "report_date",
+      "voluntary",
+      "code_info"
+     ],
+     "split": "dev",
+     "topology": "nested"
+    },
+    "drugsafety-nested-het-02": {
+     "cost": "het",
+     "probes": [
+      "recall_no",
+      "product",
+      "reason",
+      "init_date",
+      "country",
+      "quantity"
+     ],
+     "split": "dev",
+     "topology": "nested"
+    },
+    "drugsafety-nested-het-04": {
+     "cost": "het",
+     "probes": [
+      "classification",
+      "product",
+      "firm",
+      "report_date",
+      "country",
+      "quantity"
+     ],
+     "split": "val",
+     "topology": "nested"
+    },
+    "drugsafety-nested-het-06": {
+     "cost": "het",
+     "probes": [
+      "classification",
+      "product",
+      "init_date",
+      "report_date",
+      "quantity",
+      "code_info"
+     ],
+     "split": "heldout",
+     "topology": "nested"
+    },
+    "drugsafety-nested-het-08": {
+     "cost": "het",
+     "probes": [
+      "reason",
+      "firm",
+      "report_date",
+      "dist",
+      "voluntary",
+      "event"
+     ],
+     "split": "heldout",
+     "topology": "nested"
+    },
+    "drugsafety-nested-hom-01": {
+     "cost": "hom",
+     "probes": [
+      "classification",
+      "reason",
+      "firm",
+      "init_date",
+      "report_date",
+      "code_info"
+     ],
+     "split": "dev",
+     "topology": "nested"
+    },
+    "drugsafety-nested-hom-03": {
+     "cost": "hom",
+     "probes": [
+      "classification",
+      "status",
+      "firm",
+      "init_date",
+      "voluntary",
+      "country"
+     ],
+     "split": "dev",
+     "topology": "nested"
+    },
+    "drugsafety-nested-hom-05": {
+     "cost": "hom",
+     "probes": [
+      "init_date",
+      "report_date",
+      "voluntary",
+      "event",
+      "quantity",
+      "code_info"
+     ],
+     "split": "heldout",
+     "topology": "nested"
+    },
+    "drugsafety-nested-hom-07": {
+     "cost": "hom",
+     "probes": [
+      "product",
+      "reason",
+      "firm",
+      "init_date",
+      "dist",
+      "quantity"
+     ],
+     "split": "heldout",
+     "topology": "nested"
+    },
+    "drugsafety-nested-hom-09": {
+     "cost": "hom",
+     "probes": [
+      "status",
+      "product",
+      "init_date",
+      "report_date",
+      "country",
+      "event"
+     ],
+     "split": "heldout",
+     "topology": "nested"
+    }
+   },
+   "n_families": 30
+  },
+  "financial": {
+   "achieved_strata": {
+    "0": 32,
+    "1": 34,
+    "2": 57,
+    "3": 95
+   },
+   "construction_attrition": {
+    "field-missing": 100,
+    "no-degradable": 0,
+    "schema": 0,
+    "stratum-miss": 0,
+    "verify-mismatch": 0
+   },
+   "counts": {
+    "dev": 48,
+    "heldout_balanced": 120,
+    "heldout_natural": 38,
+    "val": 12
+   },
+   "false_load_bearing_instances": 77,
+   "families": {
+    "financial-branching-het-00": {
+     "cost": "het",
+     "probes": [
+      "cik",
+      "l_and_e",
+      "net_income",
+      "retained",
+      "cash",
+      "ppe_dep"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "financial-branching-het-02": {
+     "cost": "het",
+     "probes": [
+      "assets",
+      "net_income",
+      "equity",
+      "eps",
+      "cash",
+      "shares_issued"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "financial-branching-het-04": {
+     "cost": "het",
+     "probes": [
+      "entity",
+      "cik",
+      "net_income",
+      "equity",
+      "cash",
+      "ppe"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "financial-branching-het-06": {
+     "cost": "het",
+     "probes": [
+      "entity",
+      "net_income",
+      "equity",
+      "retained",
+      "cash",
+      "ppe"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "financial-branching-het-08": {
+     "cost": "het",
+     "probes": [
+      "entity",
+      "assets",
+      "retained",
+      "ppe",
+      "shares_issued",
+      "ppe_dep"
+     ],
+     "split": "val",
+     "topology": "branching"
+    },
+    "financial-branching-het-10": {
+     "cost": "het",
+     "probes": [
+      "entity",
+      "cik",
+      "l_and_e",
+      "net_income",
+      "equity",
+      "cash"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "financial-branching-het-12": {
+     "cost": "het",
+     "probes": [
+      "cik",
+      "net_income",
+      "equity",
+      "eps",
+      "ppe",
+      "ppe_dep"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "financial-branching-het-14": {
+     "cost": "het",
+     "probes": [
+      "l_and_e",
+      "net_income",
+      "eps",
+      "retained",
+      "cash",
+      "ppe"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "financial-branching-het-16": {
+     "cost": "het",
+     "probes": [
+      "entity",
+      "cik",
+      "assets",
+      "ppe",
+      "shares_issued",
+      "ppe_dep"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "financial-branching-het-18": {
+     "cost": "het",
+     "probes": [
+      "entity",
+      "l_and_e",
+      "net_income",
+      "eps",
+      "retained",
+      "ppe_dep"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "financial-branching-hom-01": {
+     "cost": "hom",
+     "probes": [
+      "assets",
+      "l_and_e",
+      "net_income",
+      "aoci",
+      "eps",
+      "cash"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "financial-branching-hom-03": {
+     "cost": "hom",
+     "probes": [
+      "assets",
+      "equity",
+      "eps",
+      "cash",
+      "ppe",
+      "shares_issued"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "financial-branching-hom-05": {
+     "cost": "hom",
+     "probes": [
+      "assets",
+      "net_income",
+      "eps",
+      "retained",
+      "cash",
+      "shares_issued"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "financial-branching-hom-07": {
+     "cost": "hom",
+     "probes": [
+      "entity",
+      "cik",
+      "l_and_e",
+      "eps",
+      "cash",
+      "ppe"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "financial-branching-hom-09": {
+     "cost": "hom",
+     "probes": [
+      "entity",
+      "equity",
+      "cash",
+      "ppe",
+      "shares_issued",
+      "ppe_dep"
+     ],
+     "split": "val",
+     "topology": "branching"
+    },
+    "financial-branching-hom-11": {
+     "cost": "hom",
+     "probes": [
+      "cik",
+      "l_and_e",
+      "aoci",
+      "equity",
+      "eps",
+      "cash"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "financial-branching-hom-13": {
+     "cost": "hom",
+     "probes": [
+      "cik",
+      "assets",
+      "l_and_e",
+      "net_income",
+      "aoci",
+      "ppe_dep"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "financial-branching-hom-15": {
+     "cost": "hom",
+     "probes": [
+      "entity",
+      "equity",
+      "retained",
+      "cash",
+      "ppe",
+      "shares_issued"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "financial-branching-hom-17": {
+     "cost": "hom",
+     "probes": [
+      "assets",
+      "aoci",
+      "eps",
+      "cash",
+      "shares_issued",
+      "ppe_dep"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "financial-branching-hom-19": {
+     "cost": "hom",
+     "probes": [
+      "cik",
+      "assets",
+      "l_and_e",
+      "aoci",
+      "cash",
+      "ppe"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "financial-nested-het-00": {
+     "cost": "het",
+     "probes": [
+      "cik",
+      "l_and_e",
+      "net_income",
+      "retained",
+      "cash",
+      "ppe_dep"
+     ],
+     "split": "dev",
+     "topology": "nested"
+    },
+    "financial-nested-het-02": {
+     "cost": "het",
+     "probes": [
+      "assets",
+      "net_income",
+      "equity",
+      "eps",
+      "cash",
+      "shares_issued"
+     ],
+     "split": "dev",
+     "topology": "nested"
+    },
+    "financial-nested-het-04": {
+     "cost": "het",
+     "probes": [
+      "entity",
+      "cik",
+      "net_income",
+      "equity",
+      "cash",
+      "ppe"
+     ],
+     "split": "val",
+     "topology": "nested"
+    },
+    "financial-nested-het-06": {
+     "cost": "het",
+     "probes": [
+      "entity",
+      "net_income",
+      "equity",
+      "retained",
+      "cash",
+      "ppe"
+     ],
+     "split": "heldout",
+     "topology": "nested"
+    },
+    "financial-nested-het-08": {
+     "cost": "het",
+     "probes": [
+      "entity",
+      "assets",
+      "retained",
+      "ppe",
+      "shares_issued",
+      "ppe_dep"
+     ],
+     "split": "heldout",
+     "topology": "nested"
+    },
+    "financial-nested-hom-01": {
+     "cost": "hom",
+     "probes": [
+      "assets",
+      "l_and_e",
+      "net_income",
+      "aoci",
+      "eps",
+      "cash"
+     ],
+     "split": "dev",
+     "topology": "nested"
+    },
+    "financial-nested-hom-03": {
+     "cost": "hom",
+     "probes": [
+      "assets",
+      "equity",
+      "eps",
+      "cash",
+      "ppe",
+      "shares_issued"
+     ],
+     "split": "dev",
+     "topology": "nested"
+    },
+    "financial-nested-hom-05": {
+     "cost": "hom",
+     "probes": [
+      "assets",
+      "net_income",
+      "eps",
+      "retained",
+      "cash",
+      "shares_issued"
+     ],
+     "split": "heldout",
+     "topology": "nested"
+    },
+    "financial-nested-hom-07": {
+     "cost": "hom",
+     "probes": [
+      "entity",
+      "cik",
+      "l_and_e",
+      "eps",
+      "cash",
+      "ppe"
+     ],
+     "split": "heldout",
+     "topology": "nested"
+    },
+    "financial-nested-hom-09": {
+     "cost": "hom",
+     "probes": [
+      "entity",
+      "equity",
+      "cash",
+      "ppe",
+      "shares_issued",
+      "ppe_dep"
+     ],
+     "split": "heldout",
+     "topology": "nested"
+    }
+   },
+   "n_families": 30
+  },
+  "security": {
+   "achieved_strata": {
+    "0": 32,
+    "1": 34,
+    "2": 57,
+    "3": 117
+   },
+   "construction_attrition": {
+    "field-missing": 17,
+    "no-degradable": 0,
+    "schema": 0,
+    "stratum-miss": 0,
+    "verify-mismatch": 0
+   },
+   "counts": {
+    "dev": 48,
+    "heldout_balanced": 120,
+    "heldout_natural": 60,
+    "val": 12
+   },
+   "false_load_bearing_instances": 75,
+   "families": {
+    "security-branching-het-00": {
+     "cost": "het",
+     "probes": [
+      "summary",
+      "modified",
+      "severity",
+      "cwe",
+      "alias",
+      "schema_v"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "security-branching-het-02": {
+     "cost": "het",
+     "probes": [
+      "summary",
+      "details",
+      "ecosystem",
+      "reviewed",
+      "cwe",
+      "alias"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "security-branching-het-04": {
+     "cost": "het",
+     "probes": [
+      "pkg_name",
+      "summary",
+      "reviewed",
+      "severity",
+      "cvss",
+      "schema_v"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "security-branching-het-06": {
+     "cost": "het",
+     "probes": [
+      "ecosystem",
+      "published",
+      "modified",
+      "reviewed",
+      "ref_type",
+      "alias"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "security-branching-het-08": {
+     "cost": "het",
+     "probes": [
+      "pkg_name",
+      "reviewed",
+      "severity",
+      "cwe",
+      "alias",
+      "schema_v"
+     ],
+     "split": "val",
+     "topology": "branching"
+    },
+    "security-branching-het-10": {
+     "cost": "het",
+     "probes": [
+      "details",
+      "ecosystem",
+      "published",
+      "severity",
+      "ref_type",
+      "cvss"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "security-branching-het-12": {
+     "cost": "het",
+     "probes": [
+      "details",
+      "reviewed",
+      "severity",
+      "ref_type",
+      "ref_url",
+      "alias"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "security-branching-het-14": {
+     "cost": "het",
+     "probes": [
+      "summary",
+      "ecosystem",
+      "published",
+      "ref_type",
+      "ref_url",
+      "alias"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "security-branching-het-16": {
+     "cost": "het",
+     "probes": [
+      "details",
+      "published",
+      "modified",
+      "severity",
+      "ref_type",
+      "ref_url"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "security-branching-het-18": {
+     "cost": "het",
+     "probes": [
+      "details",
+      "reviewed",
+      "severity",
+      "ref_type",
+      "ref_url",
+      "cwe"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "security-branching-hom-01": {
+     "cost": "hom",
+     "probes": [
+      "modified",
+      "ref_type",
+      "ref_url",
+      "cwe",
+      "alias",
+      "schema_v"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "security-branching-hom-03": {
+     "cost": "hom",
+     "probes": [
+      "ecosystem",
+      "reviewed",
+      "severity",
+      "ref_type",
+      "ref_url",
+      "cvss"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "security-branching-hom-05": {
+     "cost": "hom",
+     "probes": [
+      "published",
+      "modified",
+      "severity",
+      "cwe",
+      "cvss",
+      "schema_v"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "security-branching-hom-07": {
+     "cost": "hom",
+     "probes": [
+      "details",
+      "ecosystem",
+      "reviewed",
+      "cwe",
+      "cvss",
+      "schema_v"
+     ],
+     "split": "dev",
+     "topology": "branching"
+    },
+    "security-branching-hom-09": {
+     "cost": "hom",
+     "probes": [
+      "pkg_name",
+      "details",
+      "ref_type",
+      "ref_url",
+      "cvss",
+      "alias"
+     ],
+     "split": "val",
+     "topology": "branching"
+    },
+    "security-branching-hom-11": {
+     "cost": "hom",
+     "probes": [
+      "summary",
+      "details",
+      "modified",
+      "reviewed",
+      "ref_type",
+      "cwe"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "security-branching-hom-13": {
+     "cost": "hom",
+     "probes": [
+      "pkg_name",
+      "modified",
+      "reviewed",
+      "ref_type",
+      "cwe",
+      "cvss"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "security-branching-hom-15": {
+     "cost": "hom",
+     "probes": [
+      "pkg_name",
+      "details",
+      "ecosystem",
+      "modified",
+      "ref_url",
+      "alias"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "security-branching-hom-17": {
+     "cost": "hom",
+     "probes": [
+      "details",
+      "ecosystem",
+      "modified",
+      "reviewed",
+      "ref_type",
+      "ref_url"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "security-branching-hom-19": {
+     "cost": "hom",
+     "probes": [
+      "details",
+      "published",
+      "reviewed",
+      "cwe",
+      "alias",
+      "schema_v"
+     ],
+     "split": "heldout",
+     "topology": "branching"
+    },
+    "security-nested-het-00": {
+     "cost": "het",
+     "probes": [
+      "summary",
+      "modified",
+      "severity",
+      "cwe",
+      "alias",
+      "schema_v"
+     ],
+     "split": "dev",
+     "topology": "nested"
+    },
+    "security-nested-het-02": {
+     "cost": "het",
+     "probes": [
+      "summary",
+      "details",
+      "ecosystem",
+      "reviewed",
+      "cwe",
+      "alias"
+     ],
+     "split": "dev",
+     "topology": "nested"
+    },
+    "security-nested-het-04": {
+     "cost": "het",
+     "probes": [
+      "pkg_name",
+      "summary",
+      "reviewed",
+      "severity",
+      "cvss",
+      "schema_v"
+     ],
+     "split": "val",
+     "topology": "nested"
+    },
+    "security-nested-het-06": {
+     "cost": "het",
+     "probes": [
+      "ecosystem",
+      "published",
+      "modified",
+      "reviewed",
+      "ref_type",
+      "alias"
+     ],
+     "split": "heldout",
+     "topology": "nested"
+    },
+    "security-nested-het-08": {
+     "cost": "het",
+     "probes": [
+      "pkg_name",
+      "reviewed",
+      "severity",
+      "cwe",
+      "alias",
+      "schema_v"
+     ],
+     "split": "heldout",
+     "topology": "nested"
+    },
+    "security-nested-hom-01": {
+     "cost": "hom",
+     "probes": [
+      "modified",
+      "ref_type",
+      "ref_url",
+      "cwe",
+      "alias",
+      "schema_v"
+     ],
+     "split": "dev",
+     "topology": "nested"
+    },
+    "security-nested-hom-03": {
+     "cost": "hom",
+     "probes": [
+      "ecosystem",
+      "reviewed",
+      "severity",
+      "ref_type",
+      "ref_url",
+      "cvss"
+     ],
+     "split": "dev",
+     "topology": "nested"
+    },
+    "security-nested-hom-05": {
+     "cost": "hom",
+     "probes": [
+      "published",
+      "modified",
+      "severity",
+      "cwe",
+      "cvss",
+      "schema_v"
+     ],
+     "split": "heldout",
+     "topology": "nested"
+    },
+    "security-nested-hom-07": {
+     "cost": "hom",
+     "probes": [
+      "details",
+      "ecosystem",
+      "reviewed",
+      "cwe",
+      "cvss",
+      "schema_v"
+     ],
+     "split": "heldout",
+     "topology": "nested"
+    },
+    "security-nested-hom-09": {
+     "cost": "hom",
+     "probes": [
+      "pkg_name",
+      "details",
+      "ref_type",
+      "ref_url",
+      "cvss",
+      "alias"
+     ],
+     "split": "heldout",
+     "topology": "nested"
+    }
+   },
+   "n_families": 30
+  }
+ },
+ "generated_at": "2026-08-01T22:45:20.665649+00:00",
+ "locator": {
+  "clinical": {
+   "count": 120,
+   "failed": 0,
+   "n_candidates": 3,
+   "source": "heldout_balanced"
+  },
+  "drugsafety": {
+   "count": 120,
+   "failed": 0,
+   "n_candidates": 3,
+   "source": "heldout_balanced"
+  },
+  "financial": {
+   "count": 120,
+   "failed": 0,
+   "n_candidates": 3,
+   "source": "heldout_balanced"
+  },
+  "security": {
+   "count": 120,
+   "failed": 0,
+   "n_candidates": 3,
+   "source": "heldout_balanced"
+  }
+ },
+ "one_branch": {
+  "clinical": {
+   "construction_attrition": {
+    "field-missing": 16,
+    "no-degradable": 0,
+    "schema": 0,
+    "stratum-miss": 0,
+    "verify-mismatch": 0
+   },
+   "count": 60,
+   "false_mech_instances": 35,
+   "families": [
+    "clinical-branching-het-10",
+    "clinical-branching-het-12",
+    "clinical-branching-het-14",
+    "clinical-branching-het-16",
+    "clinical-branching-het-18",
+    "clinical-branching-hom-11",
+    "clinical-branching-hom-13",
+    "clinical-branching-hom-15",
+    "clinical-branching-hom-17",
+    "clinical-branching-hom-19"
+   ],
+   "seq_base": 9000
+  },
+  "drugsafety": {
+   "construction_attrition": {
+    "field-missing": 5,
+    "no-degradable": 0,
+    "schema": 0,
+    "stratum-miss": 0,
+    "verify-mismatch": 0
+   },
+   "count": 60,
+   "false_mech_instances": 35,
+   "families": [
+    "drugsafety-branching-het-10",
+    "drugsafety-branching-het-12",
+    "drugsafety-branching-het-14",
+    "drugsafety-branching-het-16",
+    "drugsafety-branching-het-18",
+    "drugsafety-branching-hom-11",
+    "drugsafety-branching-hom-13",
+    "drugsafety-branching-hom-15",
+    "drugsafety-branching-hom-17",
+    "drugsafety-branching-hom-19"
+   ],
+   "seq_base": 9000
+  },
+  "financial": {
+   "construction_attrition": {
+    "field-missing": 60,
+    "no-degradable": 0,
+    "schema": 0,
+    "stratum-miss": 0,
+    "verify-mismatch": 0
+   },
+   "count": 60,
+   "false_mech_instances": 35,
+   "families": [
+    "financial-branching-het-10",
+    "financial-branching-het-12",
+    "financial-branching-het-14",
+    "financial-branching-het-16",
+    "financial-branching-het-18",
+    "financial-branching-hom-11",
+    "financial-branching-hom-13",
+    "financial-branching-hom-15",
+    "financial-branching-hom-17",
+    "financial-branching-hom-19"
+   ],
+   "seq_base": 9000
+  },
+  "security": {
+   "construction_attrition": {
+    "field-missing": 15,
+    "no-degradable": 0,
+    "schema": 0,
+    "stratum-miss": 0,
+    "verify-mismatch": 0
+   },
+   "count": 60,
+   "false_mech_instances": 35,
+   "families": [
+    "security-branching-het-10",
+    "security-branching-het-12",
+    "security-branching-het-14",
+    "security-branching-het-16",
+    "security-branching-het-18",
+    "security-branching-hom-11",
+    "security-branching-hom-13",
+    "security-branching-hom-15",
+    "security-branching-hom-17",
+    "security-branching-hom-19"
+   ],
+   "seq_base": 9000
+  }
+ },
+ "seed": 20260801
+}

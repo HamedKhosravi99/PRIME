@@ -1,0 +1,228 @@
+[
+ {
+  "protocolSection": {
+   "identificationModule": {
+    "briefTitle": "A Study to Evaluate DD01 in Overweight/Obese Subjects With MASLD/MASH"
+   },
+   "statusModule": {
+    "overallStatus": "COMPLETED",
+    "startDateStruct": {
+     "date": "2024-06-13",
+     "type": "ACTUAL"
+    },
+    "primaryCompletionDateStruct": {
+     "date": "2025-05-20",
+     "type": "ACTUAL"
+    },
+    "completionDateStruct": {
+     "date": "2026-04-21",
+     "type": "ACTUAL"
+    },
+    "studyFirstSubmitDate": "2024-05-08"
+   },
+   "designModule": {
+    "studyType": "INTERVENTIONAL",
+    "phases": [
+     "PHASE2"
+    ],
+    "designInfo": {
+     "primaryPurpose": "TREATMENT"
+    }
+   },
+   "oversightModule": {
+    "isFdaRegulatedDrug": true,
+    "isFdaRegulatedDevice": false
+   },
+   "contactsLocationsModule": {
+    "locations": [
+     {
+      "country": "United States"
+     },
+     {
+      "country": "United States"
+     },
+     {
+      "country": "United States"
+     },
+     {
+      "country": "United States"
+     },
+     {
+      "country": "United States"
+     },
+     {
+      "country": "United States"
+     },
+     {
+      "country": "United States"
+     },
+     {
+      "country": "United States"
+     },
+     {
+      "country": "United States"
+     },
+     {
+      "country": "United States"
+     },
+     {
+      "country": "United States"
+     },
+     {
+      "country": "United States"
+     }
+    ]
+   },
+   "armsInterventionsModule": {
+    "interventions": [
+     {
+      "type": "DRUG"
+     },
+     {
+      "type": "DRUG"
+     }
+    ]
+   },
+   "sponsorCollaboratorsModule": {
+    "leadSponsor": {
+     "class": "INDUSTRY"
+    }
+   }
+  },
+  "hasResults": false
+ },
+ {
+  "protocolSection": {
+   "identificationModule": {
+    "briefTitle": "Transspinal-Transcortical Paired Stimulation for Neuroplasticity and Recovery After SCI"
+   },
+   "statusModule": {
+    "overallStatus": "COMPLETED",
+    "startDateStruct": {
+     "date": "2018-01-05",
+     "type": "ACTUAL"
+    },
+    "primaryCompletionDateStruct": {
+     "date": "2020-02-10",
+     "type": "ACTUAL"
+    },
+    "completionDateStruct": {
+     "date": "2020-03-03",
+     "type": "ACTUAL"
+    },
+    "studyFirstSubmitDate": "2020-11-05"
+   },
+   "designModule": {
+    "studyType": "INTERVENTIONAL",
+    "phases": [
+     "NA"
+    ],
+    "designInfo": {
+     "primaryPurpose": "TREATMENT"
+    }
+   },
+   "oversightModule": {
+    "isFdaRegulatedDrug": false,
+    "isFdaRegulatedDevice": true
+   },
+   "contactsLocationsModule": {
+    "locations": [
+     {
+      "country": "United States"
+     }
+    ]
+   },
+   "armsInterventionsModule": {
+    "interventions": [
+     {
+      "type": "DEVICE"
+     },
+     {
+      "type": "DEVICE"
+     }
+    ]
+   },
+   "sponsorCollaboratorsModule": {
+    "leadSponsor": {
+     "class": "OTHER"
+    }
+   }
+  },
+  "derivedSection": {
+   "miscInfoModule": {
+    "submissionTracking": {
+     "estimatedResultsFirstSubmitDate": "2021-10-25"
+    }
+   }
+  },
+  "hasResults": false
+ },
+ {
+  "protocolSection": {
+   "identificationModule": {
+    "briefTitle": "Treatment of Tinnitus With Migraine Medications"
+   },
+   "statusModule": {
+    "overallStatus": "COMPLETED",
+    "startDateStruct": {
+     "date": "2019-09-26",
+     "type": "ACTUAL"
+    },
+    "primaryCompletionDateStruct": {
+     "date": "2023-12-30",
+     "type": "ACTUAL"
+    },
+    "completionDateStruct": {
+     "date": "2023-12-30",
+     "type": "ACTUAL"
+    },
+    "resultsFirstSubmitDate": "2025-07-17",
+    "resultsFirstPostDateStruct": {
+     "date": "2026-04-16",
+     "type": "ACTUAL"
+    },
+    "studyFirstSubmitDate": "2020-05-17"
+   },
+   "designModule": {
+    "studyType": "INTERVENTIONAL",
+    "phases": [
+     "PHASE4"
+    ],
+    "designInfo": {
+     "primaryPurpose": "TREATMENT"
+    }
+   },
+   "oversightModule": {
+    "isFdaRegulatedDrug": true,
+    "isFdaRegulatedDevice": false,
+    "isUsExport": false
+   },
+   "contactsLocationsModule": {
+    "locations": [
+     {
+      "country": "United States"
+     }
+    ]
+   },
+   "armsInterventionsModule": {
+    "interventions": [
+     {
+      "type": "DRUG"
+     },
+     {
+      "type": "DRUG"
+     },
+     {
+      "type": "DRUG"
+     }
+    ]
+   },
+   "sponsorCollaboratorsModule": {
+    "leadSponsor": {
+     "class": "OTHER"
+    }
+   }
+  },
+  "hasResults": true
+ }
+]

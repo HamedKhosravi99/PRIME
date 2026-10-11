@@ -1,0 +1,552 @@
+You turn a published regulation into an executable evidence program for an automated review runtime. Follow the regulation's text. Reply with exactly two fenced code blocks: a ```python block defining derive(record), then a ```json block.
+
+A review runtime examines one ClinicalTrials.gov registration at a time against the results-reporting rules of 42 CFR Part 11. The date of review is 3 August 2026. For each registration the runtime must establish which of three graded conclusions hold:
+C1 (level 1): This registration is an applicable clinical trial subject to the results-reporting requirement of 42 CFR Part 11.
+C2 (level 2): Results information for this trial was due by a determinate date that had passed by 3 August 2026.
+C3 (level 3): Results information for this trial was submitted after the deadline that 42 CFR Part 11 sets for it.
+
+You write the evidence program the runtime will commit to before it sees any registration. The program has three parts.
+
+1. derive(record): a Python function that receives the embedded registration (a dict shaped like the examples below) and returns a dict of derived values (strings, dates as "YYYY-MM-DD", booleans, numbers, or None). Use it for anything that needs more than one field, date arithmetic, or iteration over lists. Only the modules datetime, math, re and json may be imported. Derived value d is readable by atoms as field "derived.d".
+
+2. atoms: each atom applies ONE predicate to ONE field, either a dotted path into the registration (list items by 0-based index: the catalog writes an index as N, so "protocolSection.contactsLocationsModule.locations.N.country" means locations.0.country, locations.1.country, ...) or "derived.<name>". The argument is a constant; to compare one field with another field or with a computed date, compute the comparison in derive() and test the derived value. The runtime reads the field and evaluates the predicate; an absent field or a value the predicate cannot evaluate leaves the atom unresolved, never true or false. Predicates (closed grammar):
+equals              field value == argument (JSON equality)
+in_set              field value is one of the values in argument (a JSON list)
+numeric_eq          float(value) == float(argument)
+numeric_ge          float(value) >= float(argument)
+numeric_le          float(value) <= float(argument)
+in_version_range    version comparison (not useful here)
+date_before         date(value) <  date(argument)   (ISO dates YYYY-MM-DD; a month-precision value YYYY-MM cannot be compared and leaves the atom unresolved)
+date_after          date(value) >  date(argument)   (same date rules)
+substring_contains  str(argument) occurs in str(value) (a list value is converted to its JSON text)
+exists              the field is present (argument null)
+
+3. routes: for each of C1, C2, C3, a list of routes; a route is a list of atom ids, an id prefixed with "!" requiring that atom to be false. A conclusion is established when every literal of one of its routes holds. Every C2 route must contain all literals of some C1 route, and every C3 route all literals of some C2 route.
+
+The regulation (excerpt from the electronic Code of Federal Regulations):
+42 CFR 11.10(a), selected definitions:
+Applicable clinical trial means an applicable device clinical trial or an applicable drug clinical trial. Expanded access use under section 561 of the Federal Food, Drug, and Cosmetic Act (21 U.S.C. 360bbb) is not an applicable clinical trial.
+Applicable device clinical trial means: (1) A prospective clinical study of health outcomes comparing an intervention with a device product subject to section 510(k), 515, or 520(m) of the Federal Food, Drug, and Cosmetic Act (21 U.S.C. 360(k) , 21 U.S.C. 360e , 21 U.S.C. 360j(m)) against a control in human subjects (other than a small clinical trial to determine the feasibility of a device product, or a clinical trial to test prototype device products where the primary outcome measure relates to feasibility and not to health outcomes); (2) A pediatric postmarket surveillance of a device product as required under section 522 of the Federal Food, Drug, and Cosmetic Act (21 U.S.C. 3601 ); or (3) A clinical trial of a combination product with a device primary mode of action under 21 CFR part 3 , provided that it meets all other criteria of the definition under this part.
+Applicable drug clinical trial means a controlled clinical investigation, other than a phase 1 clinical investigation, of a drug product subject to section 505 of the Federal Food, Drug, and Cosmetic Act (21 U.S.C. 355) or a biological product subject to section 351 of the Public Health Service Act (42 U.S.C. 262 ), where “clinical investigation” has the meaning given in 21 CFR 312.3 and “phase 1” has the meaning given in 21 CFR 312.21 . A clinical trial of a combination product with a drug primary mode of action under 21 CFR part 3 is also an applicable drug clinical trial, provided that it meets all other criteria of the definition under this part.
+Clinical trial means a clinical investigation or a clinical study in which human subject(s) are prospectively assigned, according to a protocol, to one or more interventions (or no intervention) to evaluate the effect(s) of the intervention(s) on biomedical or health-related outcomes.
+Completion date means, for a clinical trial, including an applicable clinical trial, the date that the final subject was examined or received an intervention for the purposes of final collection of data for the primary outcome, whether the clinical trial concluded according to the pre-specified protocol or was terminated. In the case of clinical trials with more than one primary outcome measure with different completion dates, this term refers to the date on which data collection is completed for all of the primary outcomes. For a pediatric postmarket surveillance of a device product that is not a clinical trial, completion date means the date on which the final report of the pediatric postmarket surveillance of the device product is submitted to FDA. For purposes of this part, completion date is referred to as “primary completion date.”
+Device means a device as defined in section 201(h) of the Federal Food, Drug, and Cosmetic Act (21 U.S.C. 321(h) ).
+Drug means a drug as defined in section 201(g) of the Federal Food, Drug, and Cosmetic Act (21 U.S.C. 321(g)) or a biological product as defined in section 351 of the Public Health Service Act (42 U.S.C. 262 ).
+Pediatric postmarket surveillance of a device product means the active, systematic, scientifically valid collection, analysis, and interpretation of data or other information conducted under section 522 of the Federal Food, Drug, and Cosmetic Act (21 U.S.C. 360l) about a marketed device product that is expected to have significant use in patients who are 21 years of age or younger at the time of diagnosis or treatment. A pediatric postmarket surveillance of a device product may be, but is not always, a clinical trial.
+Primary completion date means, for purposes of this part, “completion date.” See the definition of “completion date.”
+
+42 CFR 11.22(b):
+( b) Determination of applicable clinical trial for a clinical trial or study initiated on or after January 18, 2017. A clinical trial or study that, at any point in time, meets the conditions listed in paragraph (b)(1) or (2) of this section will be considered to meet the definition of an applicable clinical trial.
+ (1) Applicable device clinical trial. A clinical trial or study that meets the conditions listed in either paragraph (b)(1)(i) or (ii) of this section is an applicable device clinical trial:
+ (i) The study is a pediatric postmarket surveillance of a device product as required by FDA under section 522 of the Federal Food, Drug, and Cosmetic Act (21 U.S.C. 3601 ).
+ (ii) The study is a clinical trial with one or more arms that meets all of the following criteria:
+ (A) Study Type is interventional;
+ (B) Primary Purpose of the clinical trial is other than a feasibility study;
+ (C) The clinical trial Studies a U.S. FDA-regulated Device Product; and
+ (D) One or more of the following applies:
+ (1) At least one Facility Location is within the United States or one of its territories,
+ (2) A device product under investigation is a Product Manufactured in and Exported from the U.S. or one of its territories for study in another country, or
+ (3) The clinical trial has a U.S. Food and Drug Administration IDE Number.
+ (2) Applicable drug clinical trial. A clinical trial with one or more arms that meets the following conditions is an applicable drug clinical trial:
+ (i) Study Type is interventional;
+ (ii) Study Phase is other than phase 1;
+ (iii) The clinical trial Studies a U.S. FDA-regulated Drug Product; and
+ (iv) One or more of the following applies:
+ (A) At least one Facility Location for the clinical trial is within the United States or one of its territories,
+ (B) A drug product (including a biological product) under investigation is a Product Manufactured in and Exported from the U.S. or one of its territories for study in another country, or
+ (C) The clinical trial has a U.S. Food and Drug Administration IND Number.
+
+§ 11.42 For which applicable clinical trials must clinical trial results information be submitted?
+ (a) Applicable clinical trials for which the studied product is approved, licensed, or cleared by FDA. Unless a waiver of the requirement to submit clinical trial results information is granted in accordance with § 11.54 , clinical trial results information must be submitted for any applicable clinical trial for which the studied product is approved, licensed, or cleared by FDA for which submission of clinical trial registration information is required in accordance with the following:
+ (1) If the primary completion date is before January 18, 2017, the responsible party must submit the clinical trial results information specified in sections 402(j)(3)(C) and 402(j)(3)(I) of the Public Health Service Act (42 U.S.C. 282(j)(3)(C) and 42 U.S.C. 282(j)(3)(I) ); or
+ (2) If the primary completion date is on or after January 18, 2017, the responsible party must submit the clinical trial results information specified in § 11.48 .
+ (b) Applicable clinical trials for which the studied product is not approved, licensed, or cleared by FDA. Unless a waiver of the requirement to submit clinical trial results information is granted in accordance with § 11.54 , clinical trial results information specified in § 11.48 must be submitted for any applicable clinical trial with a primary completion date on or after January 18, 2017 for which clinical trial registration information is required to be submitted and for which the studied product is not approved, licensed, or cleared by FDA.
+
+§ 11.44 When must clinical trial results information be submitted for applicable clinical trials subject to § 11.42 ?
+ (a) Standard submission deadline. In general, for applicable clinical trials subject to § 11.42 , clinical trial results information specified in sections 402(j)(3)(C) and 402(j)(3)(I) of the Public Health Service Act (42 U.S.C. 282(j)(3)(C) and 42 U.S.C. 282(j)(3)(I)) or in § 11.48 , as applicable, must be submitted no later than 1 year after the primary completion date of the applicable clinical trial.
+ (b) Delayed submission of results information with certification if seeking approval, licensure, or clearance of a new use —
+ (1) General requirements. If, prior to the results information submission deadline specified under paragraph (a) of this section, the responsible party submits a certification that an applicable clinical trial involves an FDA-regulated drug product (including a biological product) or device product that previously has been approved, licensed, or cleared, for which the manufacturer is the sponsor of the applicable clinical trial and for which an application or premarket notification seeking approval, licensure, or clearance of the use being studied (which is not included in the labeling of the approved, licensed, or cleared drug product (including a biological product) or device product) has been filed or will be filed within 1 year with FDA, the deadline for submitting clinical trial results information, as specified in sections 402(j)(3)(C) and 402(j)(3)(I) of the Public Health Service Act (42 U.S.C. 282(j)(3)(C) and 42 U.S.C. 282(j)(3)(I)) or § 11.48 , as applicable, will be 30 calendar days after the earliest of the following events:
+ (i) FDA approves, licenses, or clears the drug product (including a biological product) or device product for the use studied in the applicable clinical trial;
+ (ii) FDA issues a letter that ends the regulatory review cycle for the application or submission but does not approve, license, or clear the drug product (including a biological product) or device product for the use studied in the applicable clinical trial; or
+ (iii) The application or premarket notification seeking approval, licensure, or clearance of the new use is withdrawn without resubmission for not less than 210 calendar days.
+ (2) Two-year limitation. Notwithstanding the deadlines specified in paragraph (b)(1) of this section, the responsible party must submit clinical trial results information specified in paragraph (b)(1) of this section not later than the date that is 2 years after the date that the certification was submitted, except to the extent that paragraph (d) of this section applies.
+ (3) Additional requirements. If a responsible party who is both the manufacturer of the drug product (including a biological product) or device product studied in an applicable clinical trial and the sponsor of the applicable clinical trial submits a certification in accordance with paragraph (b)(1) of this section, that responsible party must submit such a certification for each applicable clinical trial that meets the following criteria:
+ (i) The applicable clinical trial is required to be submitted in an application or premarket notification seeking approval, licensure, or clearance of a new use; and
+ (ii) The applicable clinical trial studies the same drug product (including a biological product) or device product for the same use as studied in the applicable clinical trial for which the initial certification was submitted.
+ (c) Delayed submission of results with certification if seeking initial approval, licensure, or clearance. —
+ (1) General requirements. If, prior to the submission deadline specified under paragraph (a) of this section, a responsible party submits a certification that an applicable clinical trial studies an FDA-regulated drug product (including a biological product) or device product that was not approved, licensed, or cleared by FDA for any use before the primary completion date of the trial, and that the sponsor intends to continue with product development and is either seeking, or may at a future date seek, FDA approval, licensure, or clearance of the drug product (including a biological product) or device product under study, the deadline for submitting clinical trial results information, as specified in § 11.48 , will be 30 calendar days after the earlier of the date on which:
+ (i) FDA approves, licenses, or clears the drug product (including a biological product) or device product for any use that is studied in the applicable clinical trial; or
+ (ii) The marketing application or premarket notification is withdrawn without resubmission for not less than 210 calendar days.
+ (2) Two-year limitation. Notwithstanding the deadlines established in paragraph (c)(1) of this section, the responsible party must submit clinical trial results information specified in paragraph (c)(1) of this section not later than 2 years after the date on which the certification was submitted, except to the extent that paragraph (d) of this section applies.
+
+Fields of the embedded registration (path, type, observed values, description):
+[
+{
+"path": "derivedSection.miscInfoModule.submissionTracking.estimatedResultsFirstSubmitDate",
+"type": "str",
+"description": "Date results information was first submitted, when results are submitted but not yet posted (set by ClinicalTrials.gov).",
+"values": "dates"
+},
+{
+"path": "hasResults",
+"type": "bool",
+"description": "Whether posted results exist on ClinicalTrials.gov.",
+"values": [
+true,
+false
+]
+},
+{
+"path": "protocolSection.armsInterventionsModule.interventions",
+"type": "list",
+"description": "List of interventions; each has a type (DRUG, DEVICE, BIOLOGICAL, PROCEDURE, ...)."
+},
+{
+"path": "protocolSection.armsInterventionsModule.interventions.N.type",
+"type": "str",
+"description": "List of interventions; each has a type (DRUG, DEVICE, BIOLOGICAL, PROCEDURE, ...).",
+"values": [
+"DRUG",
+"DEVICE",
+"OTHER",
+"BIOLOGICAL",
+"PROCEDURE",
+"RADIATION",
+"BEHAVIORAL",
+"DIAGNOSTIC_TEST",
+"COMBINATION_PRODUCT",
+"DIETARY_SUPPLEMENT",
+"GENETIC"
+]
+},
+{
+"path": "protocolSection.contactsLocationsModule.locations",
+"type": "list",
+"description": "List of facility locations; each has a country."
+},
+{
+"path": "protocolSection.contactsLocationsModule.locations.N.country",
+"type": "str",
+"description": "List of facility locations; each has a country."
+},
+{
+"path": "protocolSection.designModule.designInfo.primaryPurpose",
+"type": "str",
+"description": "Primary purpose of an interventional study (for example TREATMENT, PREVENTION, DEVICE_FEASIBILITY).",
+"values": [
+"TREATMENT",
+"PREVENTION",
+"DIAGNOSTIC",
+"SUPPORTIVE_CARE",
+"OTHER",
+"BASIC_SCIENCE",
+"SCREENING",
+"HEALTH_SERVICES_RESEARCH"
+]
+},
+{
+"path": "protocolSection.designModule.phases",
+"type": "list",
+"description": "List of study phases (for example PHASE1, PHASE2, PHASE3, PHASE4, EARLY_PHASE1, NA)."
+},
+{
+"path": "protocolSection.designModule.phases.N",
+"type": "str",
+"description": "List of study phases (for example PHASE1, PHASE2, PHASE3, PHASE4, EARLY_PHASE1, NA).",
+"values": [
+"PHASE2",
+"NA",
+"PHASE3",
+"PHASE4",
+"PHASE1"
+]
+},
+{
+"path": "protocolSection.designModule.studyType",
+"type": "str",
+"description": "Study type: INTERVENTIONAL, OBSERVATIONAL, or EXPANDED_ACCESS.",
+"values": [
+"INTERVENTIONAL"
+]
+},
+{
+"path": "protocolSection.identificationModule.briefTitle",
+"type": "str",
+"description": "Short title of the study.",
+"values": "free text"
+},
+{
+"path": "protocolSection.oversightModule.isFdaRegulatedDevice",
+"type": "bool",
+"description": "Whether the study studies a U.S. FDA-regulated device product (absent if not reported).",
+"values": [
+false,
+true
+]
+},
+{
+"path": "protocolSection.oversightModule.isFdaRegulatedDrug",
+"type": "bool",
+"description": "Whether the study studies a U.S. FDA-regulated drug product (absent if not reported).",
+"values": [
+true,
+false
+]
+},
+{
+"path": "protocolSection.oversightModule.isUnapprovedDevice",
+"type": "bool",
+"description": "Whether a device product studied is not approved or cleared by FDA.",
+"values": [
+true
+]
+},
+{
+"path": "protocolSection.oversightModule.isUsExport",
+"type": "bool",
+"description": "Whether a product under investigation is manufactured in and exported from the U.S. for study in another country.",
+"values": [
+false,
+true
+]
+},
+{
+"path": "protocolSection.sponsorCollaboratorsModule.leadSponsor.class",
+"type": "str",
+"description": "Class of the lead sponsor (INDUSTRY, NIH, FED, OTHER, ...).",
+"values": [
+"OTHER",
+"INDUSTRY",
+"NIH",
+"FED",
+"NETWORK",
+"OTHER_GOV",
+"INDIV"
+]
+},
+{
+"path": "protocolSection.statusModule.completionDateStruct.date",
+"type": "str",
+"description": "Study completion date (actual or estimated); YYYY-MM-DD or YYYY-MM.",
+"values": "dates"
+},
+{
+"path": "protocolSection.statusModule.completionDateStruct.type",
+"type": "str",
+"description": "Whether the study completion date is ACTUAL or ESTIMATED.",
+"values": [
+"ACTUAL",
+"ESTIMATED"
+]
+},
+{
+"path": "protocolSection.statusModule.dispFirstSubmitDate",
+"type": "str",
+"description": "Date the responsible party first submitted a certification or request to delay the submission of results information (absent if none).",
+"values": "dates"
+},
+{
+"path": "protocolSection.statusModule.overallStatus",
+"type": "str",
+"description": "Recruitment status of the study as a whole.",
+"values": [
+"COMPLETED",
+"TERMINATED",
+"UNKNOWN",
+"ACTIVE_NOT_RECRUITING",
+"RECRUITING",
+"SUSPENDED",
+"NOT_YET_RECRUITING"
+]
+},
+{
+"path": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+"type": "str",
+"description": "Primary completion date: the date the final participant was examined or received an intervention for the primary outcome (actual or estimated); YYYY-MM-DD or YYYY-MM.",
+"values": "dates"
+},
+{
+"path": "protocolSection.statusModule.primaryCompletionDateStruct.type",
+"type": "str",
+"description": "Whether the primary completion date is ACTUAL or ESTIMATED.",
+"values": [
+"ACTUAL",
+"ESTIMATED"
+]
+},
+{
+"path": "protocolSection.statusModule.resultsFirstPostDateStruct.date",
+"type": "str",
+"description": "Date results information was first posted on ClinicalTrials.gov after quality control.",
+"values": "dates"
+},
+{
+"path": "protocolSection.statusModule.resultsFirstPostDateStruct.type",
+"type": "str",
+"description": null,
+"values": [
+"ACTUAL"
+]
+},
+{
+"path": "protocolSection.statusModule.resultsFirstSubmitDate",
+"type": "str",
+"description": "Date the responsible party first submitted results information to ClinicalTrials.gov (absent if never submitted).",
+"values": "dates"
+},
+{
+"path": "protocolSection.statusModule.startDateStruct.date",
+"type": "str",
+"description": "Study start date: the date the first participant was enrolled (actual or estimated); YYYY-MM-DD or YYYY-MM.",
+"values": "dates"
+},
+{
+"path": "protocolSection.statusModule.startDateStruct.type",
+"type": "str",
+"description": "Whether the start date is ACTUAL or ESTIMATED.",
+"values": [
+"ACTUAL",
+"ESTIMATED"
+]
+},
+{
+"path": "protocolSection.statusModule.studyFirstSubmitDate",
+"type": "str",
+"description": "Date the study was first submitted for registration.",
+"values": "dates"
+}
+]
+
+Three example registrations as embedded (no verdicts are given):
+[
+{
+"protocolSection": {
+"identificationModule": {
+"briefTitle": "A Study to Evaluate DD01 in Overweight/Obese Subjects With MASLD/MASH"
+},
+"statusModule": {
+"overallStatus": "COMPLETED",
+"startDateStruct": {
+"date": "2024-06-13",
+"type": "ACTUAL"
+},
+"primaryCompletionDateStruct": {
+"date": "2025-05-20",
+"type": "ACTUAL"
+},
+"completionDateStruct": {
+"date": "2026-04-21",
+"type": "ACTUAL"
+},
+"studyFirstSubmitDate": "2024-05-08"
+},
+"designModule": {
+"studyType": "INTERVENTIONAL",
+"phases": [
+"PHASE2"
+],
+"designInfo": {
+"primaryPurpose": "TREATMENT"
+}
+},
+"oversightModule": {
+"isFdaRegulatedDrug": true,
+"isFdaRegulatedDevice": false
+},
+"contactsLocationsModule": {
+"locations": [
+{
+"country": "United States"
+},
+{
+"country": "United States"
+},
+{
+"country": "United States"
+},
+{
+"country": "United States"
+},
+{
+"country": "United States"
+},
+{
+"country": "United States"
+},
+{
+"country": "United States"
+},
+{
+"country": "United States"
+},
+{
+"country": "United States"
+},
+{
+"country": "United States"
+},
+{
+"country": "United States"
+},
+{
+"country": "United States"
+}
+]
+},
+"armsInterventionsModule": {
+"interventions": [
+{
+"type": "DRUG"
+},
+{
+"type": "DRUG"
+}
+]
+},
+"sponsorCollaboratorsModule": {
+"leadSponsor": {
+"class": "INDUSTRY"
+}
+}
+},
+"hasResults": false
+},
+{
+"protocolSection": {
+"identificationModule": {
+"briefTitle": "Transspinal-Transcortical Paired Stimulation for Neuroplasticity and Recovery After SCI"
+},
+"statusModule": {
+"overallStatus": "COMPLETED",
+"startDateStruct": {
+"date": "2018-01-05",
+"type": "ACTUAL"
+},
+"primaryCompletionDateStruct": {
+"date": "2020-02-10",
+"type": "ACTUAL"
+},
+"completionDateStruct": {
+"date": "2020-03-03",
+"type": "ACTUAL"
+},
+"studyFirstSubmitDate": "2020-11-05"
+},
+"designModule": {
+"studyType": "INTERVENTIONAL",
+"phases": [
+"NA"
+],
+"designInfo": {
+"primaryPurpose": "TREATMENT"
+}
+},
+"oversightModule": {
+"isFdaRegulatedDrug": false,
+"isFdaRegulatedDevice": true
+},
+"contactsLocationsModule": {
+"locations": [
+{
+"country": "United States"
+}
+]
+},
+"armsInterventionsModule": {
+"interventions": [
+{
+"type": "DEVICE"
+},
+{
+"type": "DEVICE"
+}
+]
+},
+"sponsorCollaboratorsModule": {
+"leadSponsor": {
+"class": "OTHER"
+}
+}
+},
+"derivedSection": {
+"miscInfoModule": {
+"submissionTracking": {
+"estimatedResultsFirstSubmitDate": "2021-10-25"
+}
+}
+},
+"hasResults": false
+},
+{
+"protocolSection": {
+"identificationModule": {
+"briefTitle": "Treatment of Tinnitus With Migraine Medications"
+},
+"statusModule": {
+"overallStatus": "COMPLETED",
+"startDateStruct": {
+"date": "2019-09-26",
+"type": "ACTUAL"
+},
+"primaryCompletionDateStruct": {
+"date": "2023-12-30",
+"type": "ACTUAL"
+},
+"completionDateStruct": {
+"date": "2023-12-30",
+"type": "ACTUAL"
+},
+"resultsFirstSubmitDate": "2025-07-17",
+"resultsFirstPostDateStruct": {
+"date": "2026-04-16",
+"type": "ACTUAL"
+},
+"studyFirstSubmitDate": "2020-05-17"
+},
+"designModule": {
+"studyType": "INTERVENTIONAL",
+"phases": [
+"PHASE4"
+],
+"designInfo": {
+"primaryPurpose": "TREATMENT"
+}
+},
+"oversightModule": {
+"isFdaRegulatedDrug": true,
+"isFdaRegulatedDevice": false,
+"isUsExport": false
+},
+"contactsLocationsModule": {
+"locations": [
+{
+"country": "United States"
+}
+]
+},
+"armsInterventionsModule": {
+"interventions": [
+{
+"type": "DRUG"
+},
+{
+"type": "DRUG"
+},
+{
+"type": "DRUG"
+}
+]
+},
+"sponsorCollaboratorsModule": {
+"leadSponsor": {
+"class": "OTHER"
+}
+}
+},
+"hasResults": true
+}
+]
+
+Write the program. Reply with a ```python block containing derive(record), then a ```json block of the form
+{"atoms": [{"id": "A1", "field": "...", "predicate": "...", "argument": ..., "meaning": "..."}], "routes": {"C1": [["A1", ...]], "C2": [[...]], "C3": [[...]]}}
+Use at most 12 atoms. Do not refer to any specific registration.

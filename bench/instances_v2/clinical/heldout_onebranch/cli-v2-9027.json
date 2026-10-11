@@ -1,0 +1,317 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT01105572"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"2024-12\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.statusVerifiedDate",
+     "record_id": "NCT01105572"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2012-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT01105572"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"INTERVENTIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT01105572"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT01105572"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT01105572"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.statusVerifiedDate",
+     "record_id": "NCT01105572"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT01105572"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "equals",
+      "2024-12"
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2012-01-01"
+     ]
+    ],
+    [
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "equals",
+      "2024-12"
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2012-01-01"
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "cli-v2-9027",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-het-14\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 2, \"false_mech\": true, \"one_branch\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT01105572": {
+   "protocolSection": {
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Aetna Medicare (PFFS, HMO/PPO fully insured) Individual members, plus Medicare members from any plan sponsor that has agreed it would like its members to be included\n* Member meets Aetna Health Profile Database criteria for Chronic Heart Failure (Disease Management Eligibility = Y) with a disease risk stratification score of 3 - 5 (moderately severe to severe). These proprietary criteria yield a group of individuals for whom historical claims data estimates a substantial risk of hospital readmission within the coming 6 months.\n* Acute inpatient admission or 2 or more emergency room visits within 6 months prior to identification\n* Residence in the designated geographic areas selected for the study (The planned source population is all New Jersey, New York, Pennsylvania and North Central Aetna Individual Medicare members and North Central. If members identified from these states have not filled the study within three months, the source population may be expanded to include Aetna's North Central region members in Illinois and Ohio. These North Central members would include all Aetna Medicare Individual members in these areas, plus any Group Medicare members from Groups whose Plan Sponsors agree that the study may be offered to the members.)\n* Member may be currently open/ active in case management\n* Responds telephonic outreach to offer study participation, or to Interactive Voice Response outreach call, and confirms each of:\n\n  * Their own identity {secure Health Insurance Portability Accountability Act (HIPAA) compliant acknowledgement to caller}\n  * That they have been told of having a heart condition\n  * Interest in hearing more and possibly participating in the study\n\nExclusion Criteria:\n\n* Member had case management and this was closed within the 30 days prior to identification for the study\n* End-of life, terminal cancer, end stage renal disease, hospice, late stage Alzheimer's disease, dementia, ventricular assist device, heart transplant or active in heart transplant program. Excluded diagnoses or conditions will be identified where it is evident through Aetna's Health Profile Data diagnoses in claims, or upon case management assessment.\n* Chronic or ongoing intravenous heart failure medication\n* Any response to Interactive Voice Response outreach call other than \"Yes, I am interested\"",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "officialTitle": "Study of Impact of Home Biomonitoring With Nurse Case Manager Support for a Congestive Heart Failure Cohort, Compared to Case Manager Support Without Biomonitoring"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2010-04-15",
+     "overallStatus": "COMPLETED",
+     "statusVerifiedDate": "2010-04"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT01105572.",
+ "seed": "NCT01105572",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

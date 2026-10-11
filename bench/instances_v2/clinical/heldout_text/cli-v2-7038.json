@@ -1,0 +1,181 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT00598208"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT00598208"
+    },
+    "what": "the eligibility criteria restrict enrollment to adults, that is, a minimum age of 18 years or more"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT00598208"
+    },
+    "what": "the eligibility criteria restrict enrollment to one sex only (only male or only female participants)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT00598208"
+    },
+    "what": "the eligibility criteria accept healthy volunteers"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready for an adult cohort: identified, and the eligibility text restricts enrollment to adults."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked adult-cohort protocol: identified, adults only, open to both sexes, and not a healthy-volunteer study, as established from the eligibility text."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "!E3",
+    "!E4"
+   ]
+  ]
+ },
+ "id": "cli-v2-7038",
+ "notes_for_annotators": "{\"family\": \"clinical-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, true, false], \"twins\": [\"protocolSection.eligibilityModule.minimumAge\", \"protocolSection.eligibilityModule.sex\", \"protocolSection.eligibilityModule.healthyVolunteers\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT00598208": {
+   "protocolSection": {
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Females of couples with an indication for COH and IVF or ICSI;\n* \\>=18 and \\<=39 years of age at the time of signing informed consent;\n* BMI \\>=18 and \\<=29 kg/m\\^2;\n* Normal menstrual cycle length: 24-35 days;\n* Ejaculatory sperm (use of donated and/or frozen sperm is allowed);\n* Willing and able to sign informed consent.\n\nExclusion Criteria:\n\n* History of/or any current (treated) endocrine abnormality;\n* History of ovarian hyperstimulation syndrome (OHSS);\n* History of/or current polycystic ovary syndrome (PCOS) or current polycystic ovaries according to USS (at least 10 follicles of 2-8 mm in each ovary);\n* More than three unsuccessful COH cycles since the last established ongoing pregnancy (if applicable);\n* History of non- or low ovarian response to FSH/hMG treatment;\n* Any clinically relevant hormone value outside the reference range during the early follicular phase (menstrual cycle day 2-7) as measured by the local laboratory (FSH, LH, E2, P, total T, TSH and prolactin):\n* Any clinically relevant abnormal laboratory value;\n* Less than 2 ovaries;\n* Any ovarian and/or abdominal abnormality interfering with ultrasound examination;\n* Contraindications for the use of gonadotropins (e.g. tumors, pregnancy/lactation, undiagnosed vaginal bleeding, hypersensitivity, ovarian cysts);\n* Epilepsy, diabetes, cardiovascular, gastro-intestinal, hepatic, renal, pulmonary, or abdominal disease;\n* History of presence of alcohol or drug abuse within 12 months prior to signing informed consent;\n* Previous use of Org 36286;\n* Use of hormonal preparations within 1 month prior to randomization;\n* Hypersensitivity to Org 32489 (Puregon\u00ae) and/or Org 37462 (Orgalutran\u00ae) and/or Pregnyl\u00ae or any of their components;\n* Administration of investigational drugs within three months prior to signing informed consent."
+    },
+    "identificationModule": {
+     "briefTitle": "A Phase 2, Trial to Investigate the Dose-Response Relationship of a Single Injection of Org 36286 (Corifollitropin Alfa) to Initiate Multiple Follicular Growth in a Controlled Ovarian (Study 38826)(P06055)(COMPLETED)"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT00598208.",
+ "seed": "NCT00598208",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "text"
+}

@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7406",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "issue affects Apache Superset: from 2.0.0 before 4.1.0.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 227,
+   "completion_tokens": 22,
+   "latency_s": 1.227,
+   "raw": "The document mentions \"Apache Superset\" by its registered name, establishing the condition. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E4",
+   "attested": "T",
+   "quote": "issue affects Apache Superset: from 2.0.0 before 4.1.0.",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 214,
+   "completion_tokens": 29,
+   "latency_s": 2.066,
+   "raw": "The document does not specify the exact version in which the issue was first introduced, only the range of affected versions. ANSWER: UNCLEAR"
+  }
+ ]
+}

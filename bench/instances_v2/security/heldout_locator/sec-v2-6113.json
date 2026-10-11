@@ -1,0 +1,361 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "details",
+     "record_id": "GHSA-5946-mpw5-pqxx"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.cwe_ids.0",
+     "schema_version",
+     "details"
+    ],
+    "what": "the advisory's detailed description"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"PyPI-alt\"",
+    "params": {
+     "field_path": "affected.0.package.ecosystem",
+     "record_id": "GHSA-5946-mpw5-pqxx"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "published",
+     "schema_version",
+     "affected.0.package.ecosystem"
+    ],
+    "what": "the ecosystem of the affected package"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2026-01-01\"",
+    "params": {
+     "field_path": "modified",
+     "record_id": "GHSA-5946-mpw5-pqxx"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "published",
+     "modified",
+     "schema_version"
+    ],
+    "what": "the date the advisory was last modified"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"True-alt\"",
+    "params": {
+     "field_path": "database_specific.github_reviewed",
+     "record_id": "GHSA-5946-mpw5-pqxx"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.severity",
+     "database_specific.github_reviewed",
+     "schema_version"
+    ],
+    "what": "whether the advisory has been reviewed by the database maintainers"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.type",
+     "record_id": "GHSA-5946-mpw5-pqxx"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.severity",
+     "affected.0.package.name",
+     "references.0.type"
+    ],
+    "what": "the type of the first reference"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.url",
+     "record_id": "GHSA-5946-mpw5-pqxx"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.severity",
+     "schema_version",
+     "references.0.url"
+    ],
+    "what": "the URL of the first reference"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-5946-mpw5-pqxx"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "summary",
+     "database_specific.cwe_ids.0",
+     "aliases.0"
+    ],
+    "what": "the advisory's one-line summary"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI-alt"
+     ],
+     [
+      "modified",
+      "date_before",
+      "2026-01-01"
+     ]
+    ],
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.github_reviewed",
+      "equals",
+      "True-alt"
+     ],
+     [
+      "references.0.type",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI-alt"
+     ],
+     [
+      "modified",
+      "date_before",
+      "2026-01-01"
+     ],
+     [
+      "references.0.url",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "sec-v2-6113",
+ "notes_for_annotators": "{\"family\": \"security-branching-hom-17\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": 1, \"false_mech\": true, \"locator\": true, \"source_instance\": \"sec-v2-0113\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-5946-mpw5-pqxx": {
+   "affected": [
+    {
+     "package": {
+      "ecosystem": "PyPI",
+      "name": "cobbler"
+     }
+    }
+   ],
+   "aliases": [
+    "CVE-2021-45083"
+   ],
+   "database_specific": {
+    "cwe_ids": [
+     "CWE-276"
+    ],
+    "github_reviewed": true,
+    "severity": "HIGH"
+   },
+   "details": "An issue was discovered in Cobbler before 3.3.1. Files in /etc/cobbler are world readable. Two of those files contain some sensitive information that can be exposed to a local user who has non-privileged access to the server. The users.digest file contains the sha2-512 digest of users in a Cobbler local installation. In the case of an easy-to-guess password, it's trivial to obtain the plaintext string. The settings.yaml file contains secrets such as the hashed default password.",
+   "modified": "2024-09-13T18:57:54.823399Z",
+   "published": "2022-02-21T00:00:20Z",
+   "references": [
+    {
+     "type": "ADVISORY",
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-45083"
+    }
+   ],
+   "schema_version": "1.7.3",
+   "summary": "Incorrect Default Permissions in Cobbler"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-5946-mpw5-pqxx.",
+ "seed": "GHSA-5946-mpw5-pqxx",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7451",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Apache Airflow version 2.9.0 has a vulnerability",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 202,
+   "completion_tokens": 22,
+   "latency_s": 1.775,
+   "raw": "The document mentions \"Apache Airflow\" by its registered name, establishing the condition. ANSWER: T"
+  }
+ ]
+}

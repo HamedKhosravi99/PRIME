@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7393",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "in Django 2.2 before 2.2.28, 3.2 before 3.2.13, and 4.0 before 4.0.4.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 238,
+   "completion_tokens": 26,
+   "latency_s": 2.163,
+   "raw": "The document establishes the condition because it mentions \"Django\" as the affected package by its registered name. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "Django 2.2 before 2.2.28, 3.2 before 3.2.13, and 4.0 before 4.0.4.",
+   "verdict": "F",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 220,
+   "completion_tokens": 31,
+   "latency_s": 1.798,
+   "raw": "The document does not state a specific version in which the issue is fixed; it only mentions versions up to which the issue exists. ANSWER: F"
+  }
+ ]
+}

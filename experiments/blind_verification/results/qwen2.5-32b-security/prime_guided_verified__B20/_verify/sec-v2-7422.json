@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7422",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "The Fides webserver is vulnerable to a type of Denial of Service (DoS) attack.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 341,
+   "completion_tokens": 23,
+   "latency_s": 2.598,
+   "raw": "The document establishes the condition as it specifically names \"Fides\" as the affected package. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E4",
+   "attested": "T",
+   "quote": "This vulnerability affects Fides versions `2.11.0` through `2.15.1`.",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 328,
+   "completion_tokens": 34,
+   "latency_s": 2.507,
+   "raw": "The document does not specify the first affected version or the version in which the issue was introduced; it only mentions the range of affected versions. ANSWER: UNCLEAR"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7140",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "A reflected Cross-Site Scripting (XSS) vulnerability was identified in zenml-io/zenml version 0.57.1.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 267,
+   "completion_tokens": 20,
+   "latency_s": 1.821,
+   "raw": "The document specifies the affected package as \"zenml-io/zenml\". ANSWER: T"
+  }
+ ]
+}

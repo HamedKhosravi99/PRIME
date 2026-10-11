@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7052",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "PyYAML 5.1 through 5.1.2 has insufficient restrictions on the load and load_all functions",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 223,
+   "completion_tokens": 28,
+   "latency_s": 1.907,
+   "raw": "The document specifies the affected package as \"PyYAML 5.1 through 5.1.2\". ANSWER: T"
+  }
+ ]
+}

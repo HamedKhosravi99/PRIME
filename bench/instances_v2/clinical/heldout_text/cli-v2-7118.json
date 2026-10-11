@@ -1,0 +1,181 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT04708288"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT04708288"
+    },
+    "what": "the eligibility criteria restrict enrollment to adults, that is, a minimum age of 18 years or more"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT04708288"
+    },
+    "what": "the eligibility criteria restrict enrollment to one sex only (only male or only female participants)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT04708288"
+    },
+    "what": "the eligibility criteria accept healthy volunteers"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready for an adult cohort: identified, and the eligibility text restricts enrollment to adults."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked adult-cohort protocol: identified, adults only, open to both sexes, and not a healthy-volunteer study, as established from the eligibility text."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "!E3",
+    "!E4"
+   ]
+  ]
+ },
+ "id": "cli-v2-7118",
+ "notes_for_annotators": "{\"family\": \"clinical-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, false, false], \"twins\": [\"protocolSection.eligibilityModule.minimumAge\", \"protocolSection.eligibilityModule.sex\", \"protocolSection.eligibilityModule.healthyVolunteers\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT04708288": {
+   "protocolSection": {
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Patient eligible for implantation of a pancreatic or billiary stent prior to participate in the study and according to current guidelines\n* Patient has provided a signed and dated informed consent (according to the laws and regualtions of the country in which the observational study is conducted)\n\nExclusion Criteria:\n\n* Age \\< 18 y\n* Inability to understand the purpose of the study or refusal to cooperate\n* Not available for routine follow-up visits\n* Pregnancy\n* Currently participating in a confounding trial before reaching first endpoint."
+    },
+    "identificationModule": {
+     "briefTitle": "To Evaluate the Safety and Clinical Performance of the ARCHIMEDES Biodegradable Biliary and Pancreatic Stent"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT04708288.",
+ "seed": "NCT04708288",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "text"
+}

@@ -1,0 +1,84 @@
+{
+  "id": "swe-0013",
+  "domain": "software_review",
+  "seed": "swe-0013",
+  "variant": "base",
+  "user_prompt": "Is this good code?",
+  "artifact": {
+    "path": "artifacts/voluptuous@44593ce7",
+    "kind": "repo",
+    "commit": "44593ce7c330faf9418252c4b5448f4736144a7f"
+  },
+  "scope": "Repository voluptuous@44593ce7 (github.com/alecthomas/voluptuous) with its bundled test suite (voluptuous/tests/tests.py and its doctested companion voluptuous/tests/tests.md) and packaging/CI/changelog configuration, evaluated by running python3 -m pytest from the repository root in the pinned environment (Python 3.9, pytest 8.x; pyproject.toml sets addopts = --doctest-glob=*.md, a built-in pytest feature).",
+  "actions": ["inspect_file", "search_repo", "run_tests", "inspect_config", "ask_user", "emit_claim"],
+  "claims": [
+    {"id": "C1", "text": "The core module voluptuous/schema_builder.py is readable and documents its public API (Schema class docstring present as inspected).", "level": 1},
+    {"id": "C2", "text": "The documented Schema validation API behaves as specified at this commit: schema_builder.py documentation inspected and the bundled suite (tests.py and its doctested tests.md) passes under the declared protocol.", "level": 2},
+    {"id": "C3", "text": "The library satisfies the checked maintenance-quality protocol at this commit: documented module, passing suite, packaging metadata declared in setup.py, and maintenance discipline evidenced by either a configured CI workflow running the suite or a maintained release changelog.", "level": 3}
+  ],
+  "order": [["C1", "C2"], ["C2", "C3"]],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "inspect",
+      "proposition": "voluptuous/schema_builder.py's Schema class carries a docstring explaining the tree-matching validation model, with a runnable doctest example (span read).",
+      "resolver": {"tool": "inspect_file", "params_schema": {"path": "str"}, "params": {"path": "voluptuous/schema_builder.py"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E2",
+      "type": "execute",
+      "proposition": "python3 -m pytest voluptuous/tests/tests.py voluptuous/tests/tests.md exits 0 at this commit in the pinned environment (182 tests, including doctests in tests.md).",
+      "resolver": {"tool": "run_tests", "params_schema": {"suite": "str"}, "params": {"suite": "voluptuous/tests/tests.py voluptuous/tests/tests.md"}, "attest": "exit_code==0"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E3",
+      "type": "search",
+      "proposition": "voluptuous/tests/tests.py defines at least one collectible test function (pattern 'def test_' matches under search_repo).",
+      "resolver": {"tool": "search_repo", "params_schema": {"pattern": "str", "path": "str"}, "params": {"pattern": "def test_", "path": "voluptuous/tests/tests.py"}, "attest": "match_count>0"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E4",
+      "type": "config",
+      "proposition": "setup.py declares packaging metadata: name, version (imported from voluptuous.__version__), and python_requires.",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "setup.py"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E5",
+      "type": "config",
+      "proposition": "A CI workflow that runs the test suite on push/PR is configured at .github/workflows/tests.yml.",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": ".github/workflows/tests.yml"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E6",
+      "type": "config",
+      "proposition": "A maintained release changelog exists at CHANGELOG.md (file present, entries enumerated).",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "CHANGELOG.md"}, "attest": "file_exists"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E7",
+      "type": "config",
+      "proposition": "The package ships a py.typed marker at voluptuous/py.typed (type hints consumable by downstream checkers).",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "voluptuous/py.typed"}, "attest": "file_exists"},
+      "gold_value": "T"
+    }
+  ],
+  "phi": [
+    {
+      "forbid": {"E2": "T", "E3": "F"},
+      "why": "The suite cannot pass (exit 0 on a non-empty selection) if tests.py contains no collectible test functions; a ledger asserting both is evidence corruption."
+    }
+  ],
+  "gold_licenses": {
+    "C1": [["E1"]],
+    "C2": [["E1", "E2"]],
+    "C3": [["E1", "E2", "E4", "E5"], ["E1", "E2", "E4", "E6"]]
+  },
+  "decoys": ["count_lines_of_code"],
+  "notes_for_annotators": "All gold_value entries verified by actual runs on 2026-07-29 (see artifact PROVENANCE): python3 -m pytest voluptuous/tests/tests.py voluptuous/tests/tests.md -> 182 passed, exit 0 (matches the unscoped whole-repo run; pyproject.toml's addopts=--doctest-glob=*.md is pytest's built-in doctest collector, no extra dependency). MULTIPLE-ROUTE split instance, mirroring swe-0002 (six): C3 has two alternative routes for the disjunctive maintenance-discipline component (CI evidence E5, or changelog evidence E6). Minimality, C1 [E1]: without the span read no readability/documentation claim is acceptable. C2 [E1,E2]: drop E1 and 'documented' is unsupported; drop E2 and 'behaves as specified' is unsupported. C3 route A [E1,E2,E4,E5]: drop E1, E2, E4 (no packaging metadata), or E5 (no maintenance-discipline evidence on this route) and a realizable assignment falsifies that component while the weakened route still holds. C3 route B [E1,E2,E4,E6]: same argument with E6 as the maintenance-discipline witness. Neither route entails the other modulo phi (E5 and E6 are independent), so neither is dominated; both are kept as genuine alternatives. E3 appears in no route because modulo phi E2=T already entails E3=T -- including it would violate primeness; it exists to ground the phi rule and as a cheap decoy-ish probe. E7 (py.typed) is true but not a component of this maintenance-quality protocol (which is about documentation, correctness, packaging, and maintenance discipline, not typing); including it would inflate the license -- a non-required-but-true atom probing overblocking. Order-coherence: both C3 routes literal-contain C2's route [E1,E2], which contains C1's [E1]. Honest outcome: C3 reachable by either route."
+}

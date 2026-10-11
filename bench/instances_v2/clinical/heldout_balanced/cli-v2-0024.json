@@ -1,0 +1,295 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "F",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"NCT07682597\"",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT01202825"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT01202825"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.statusVerifiedDate",
+     "record_id": "NCT01202825"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"INTERVENTIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT01202825"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT01202825"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:true",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.healthyVolunteers",
+     "record_id": "NCT01202825"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT01202825"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "equals",
+      "NCT07682597"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "equals",
+      "NCT07682597"
+     ],
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ]
+    ],
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "equals",
+      "NCT07682597"
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "equals",
+      "NCT07682597"
+     ],
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.healthyVolunteers",
+      "equals",
+      true
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-0024",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-hom-13\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": 0, \"false_mech\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT01202825": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "The purpose of this study is to assess the safety and tolerability of TMC647055 both after increasing single oral doses from 100 mg up to maximum 3000 mg in fed conditions, and after multiple oral doses in fed conditions at increasing dose levels administered for 6 days, as well as to assess the pharmacokinetics of TMC647055 after increasing single oral doses from 100 mg up to maximum 3000 mg in fed conditions, and after multiple oral doses in fed conditions at increasing dose levels administered for 6 days and to assess the effect of food on a single oral dose of TMC647055 at one dose level, all in healthy participants. In addition, the safety, tolerability, pharmacokinetics and the antiviral activity of TMC647055 will be determined after 6 days of consecutive dosing and of TMC647055 and TMC435 after 10 days of co-administration in chronic hepatitis C virus infected patients. Pharmacokinetics means how the drug is absorbed into the bloodstream, distributed in the body and eliminated from the body. TMC647055 is being investigated for the treatment of chronic hepatitis C infection."
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "healthyVolunteers": true
+    },
+    "identificationModule": {
+     "briefTitle": "TMC647055HPC1001 - First-in-human Trial to Examine Safety, Tolerability and Pharmacokinetics (How the Drug is Absorbed Into the Bloodstream) of Increasing Single Oral Doses and of Increasing Repeated Oral Doses of TMC647055 in Healthy Volunteers and in Hepatitis C Virus Infected Patients",
+     "nctId": "NCT01202825",
+     "officialTitle": "Phase I, First-in-human Trial in Healthy Volunteers to Examine Increasing Single and Repeated Oral Doses of TMC647055, Followed by a Repeated-dose Part in Chronic HCV-genotype 1 Infected Patients to Examine TMC647055 Given Alone or in Combination With TMC435"
+    },
+    "statusModule": {
+     "statusVerifiedDate": "2013-03"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT01202825.",
+ "seed": "NCT01202825",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

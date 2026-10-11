@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "last_updated": "2026-07-22",
+    "license": "https://open.fda.gov/license/",
+    "results": {
+      "limit": 1,
+      "skip": 0,
+      "total": 1
+    },
+    "terms": "https://open.fda.gov/terms/"
+  },
+  "results": [
+    {
+      "address_1": "2 Independence Way",
+      "address_2": "N/A",
+      "center_classification_date": "20260605",
+      "city": "Princeton",
+      "classification": "Class I",
+      "code_info": "Lot HAG2581B, expires: 05/31/2027",
+      "country": "United States",
+      "distribution_pattern": "U.S. Nationwide",
+      "event_id": "98921",
+      "initial_firm_notification": "E-Mail",
+      "openfda": {
+        "application_number": [
+          "ANDA203263"
+        ],
+        "brand_name": [
+          "DOXORUBICIN HYDROCHLORIDE"
+        ],
+        "generic_name": [
+          "DOXORUBICIN HYDROCHLORIDE"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "manufacturer_name": [
+          "NorthStar RxLLC"
+        ],
+        "package_ndc": [
+          "72603-103-01",
+          "72603-200-01"
+        ],
+        "product_ndc": [
+          "72603-103",
+          "72603-200"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "INTRAVENOUS"
+        ],
+        "rxcui": [
+          "1790115",
+          "1790127"
+        ],
+        "spl_id": [
+          "010a4e76-dedf-4f7b-b4de-1d78f91c2095"
+        ],
+        "spl_set_id": [
+          "ddf55319-bf62-4ec7-8be2-ef97188837c4"
+        ],
+        "substance_name": [
+          "DOXORUBICIN HYDROCHLORIDE"
+        ],
+        "unii": [
+          "82F2G7BL4E"
+        ],
+        "upc": [
+          "0372603200010"
+        ]
+      },
+      "postal_code": "08540-6620",
+      "product_description": "DOXOrubin Hydrochloride Liposome injection, 50 mg/25 mL (2mg/mL), 25 mL single-dose vials, Sterile, Rx only, Manufactured for: Northstar Rx LLC., Memphis, TN 38141, Manufactured by: Sun Pharmaceutical Ind. Ltd., Halol-Baroda Highway, Halol, Gujarat, India, NDC 72603-200-01.",
+      "product_quantity": "675 vials",
+      "product_type": "Drugs",
+      "reason_for_recall": "Presence of Particulate matter: Particulate matter identified as glass.",
+      "recall_initiation_date": "20260512",
+      "recall_number": "D-0580-2026",
+      "recalling_firm": "SUN PHARMACEUTICAL INDUSTRIES INC",
+      "report_date": "20260617",
+      "state": "NJ",
+      "status": "Ongoing",
+      "voluntary_mandated": "Voluntary: Firm initiated"
+    }
+  ]
+}

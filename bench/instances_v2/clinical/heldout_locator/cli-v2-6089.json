@@ -1,0 +1,313 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT04623502"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.statusModule.statusVerifiedDate"
+    ],
+    "what": "the NCT identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT04623502"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.descriptionModule.briefSummary"
+    ],
+    "what": "the brief summary"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT04623502"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.eligibilityModule.minimumAge"
+    ],
+    "what": "the minimum age for eligibility"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:true",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.healthyVolunteers",
+     "record_id": "NCT04623502"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.eligibilityModule.healthyVolunteers"
+    ],
+    "what": "whether healthy volunteers are accepted"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT04623502"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.identificationModule.officialTitle"
+    ],
+    "what": "the sex eligibility field"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ]
+    ],
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.healthyVolunteers",
+      "equals",
+      true
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-6089",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-het-18\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 1, \"false_mech\": false, \"locator\": true, \"source_instance\": \"cli-v2-0089\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT04623502": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "The purpose of this study is to understand the metabolism of cancers involving the kidney, including renal cell carcinomas and urothelial cell carcinomas, and how kidney cancers use different types of fuel to support tumor growth. This study uses specially labeled nutrient tracers of compounds normally found circulating in the blood. The nutrients (glucose, fructose, glutamine, acetate, and lactate) are also found in common foods. A nutrient tracer will be given to the participants through an intravenous (IV) catheter during surgery or biopsy, and blood will be collected every 30 minutes during the infusion to monitor safety parameters and the nutrient tracers. The investigators will collect a tissue sample after the completion of surgery. Participants not having an infusion will have their tissue collected after surgery or biopsy.\n\nParticipation in this study will not change patient care. All patients will receive standard of care treatment as determined by their doctors."
+    },
+    "eligibilityModule": {
+     "healthyVolunteers": true,
+     "minimumAge": "18 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "An Investigation of Kidney and Urothelial Tumor Metabolism in Patients Undergoing Surgical Resection and/or Biopsy",
+     "nctId": "NCT04623502",
+     "officialTitle": "An Investigation of Kidney and Urothelial Tumor Metabolism in Patients Undergoing Surgical Resection and/or Biopsy"
+    },
+    "statusModule": {
+     "overallStatus": "RECRUITING",
+     "statusVerifiedDate": "2026-01"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT04623502.",
+ "seed": "NCT04623502",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

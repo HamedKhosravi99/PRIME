@@ -1,0 +1,321 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "affected.0.package.name",
+     "record_id": "GHSA-2jc8-4r6g-282j"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Picklescan has a missing detection when calling built-in python idlelib.debugobj.ObjectTreeItem\"",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-2jc8-4r6g-282j"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:true",
+    "params": {
+     "field_path": "database_specific.github_reviewed",
+     "record_id": "GHSA-2jc8-4r6g-282j"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.severity",
+     "record_id": "GHSA-2jc8-4r6g-282j"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.type",
+     "record_id": "GHSA-2jc8-4r6g-282j"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "aliases.0",
+     "record_id": "GHSA-2jc8-4r6g-282j"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-2jc8-4r6g-282j"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2026-01-01\"",
+    "params": {
+     "field_path": "modified",
+     "record_id": "GHSA-2jc8-4r6g-282j"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ],
+     [
+      "summary",
+      "equals",
+      "Picklescan has a missing detection when calling built-in python idlelib.debugobj.ObjectTreeItem"
+     ],
+     [
+      "database_specific.github_reviewed",
+      "equals",
+      true
+     ]
+    ],
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.severity",
+      "exists",
+      null
+     ],
+     [
+      "references.0.type",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ],
+     [
+      "summary",
+      "equals",
+      "Picklescan has a missing detection when calling built-in python idlelib.debugobj.ObjectTreeItem"
+     ],
+     [
+      "database_specific.github_reviewed",
+      "equals",
+      true
+     ],
+     [
+      "aliases.0",
+      "exists",
+      null
+     ],
+     [
+      "summary",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "sec-v2-9011",
+ "notes_for_annotators": "{\"family\": \"security-branching-het-16\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 2, \"false_mech\": true, \"one_branch\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-2jc8-4r6g-282j": {
+   "affected": [
+    {
+     "package": {
+      "name": "python-gnupg"
+     }
+    }
+   ],
+   "aliases": [
+    "CVE-2014-1928"
+   ],
+   "database_specific": {
+    "github_reviewed": true,
+    "severity": "HIGH"
+   },
+   "modified": "2024-10-25T20:46:24Z",
+   "references": [
+    {
+     "type": "ADVISORY"
+    }
+   ],
+   "summary": "python-gnupg's shell_quote function does not properly escape characters"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-2jc8-4r6g-282j.",
+ "seed": "GHSA-2jc8-4r6g-282j",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

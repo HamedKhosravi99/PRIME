@@ -1,0 +1,13 @@
+name: Tesla, Inc.
+cik: 0001318605
+source_url: https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json
+retrieved_utc: 2026-07-29T16:32:41Z
+raw_response_sha256: d0c2b9288d027a6d735039a6fe874a348b65a7fdbc6c133130666c777c885204
+user_agent_sent: PRIME-research <contact-email>
+concepts_fetched: Revenues, RevenueFromContractWithCustomerExcludingAssessedTax, NetIncomeLoss, Assets, Liabilities
+  Revenues: 117 annual (10-K, fp=FY) entries
+  RevenueFromContractWithCustomerExcludingAssessedTax: 10 annual (10-K, fp=FY) entries
+  NetIncomeLoss: 120 annual (10-K, fp=FY) entries
+  Assets: 30 annual (10-K, fp=FY) entries
+  Liabilities: 30 annual (10-K, fp=FY) entries
+integrity: every val/start/end/fy/fp/form/accn/frame field in companyfacts_trimmed.json is copied verbatim from SEC's own API response (see raw_response_sha256); nothing computed, edited, or invented. Values embedded in any bench/instances/fin/*.json record are a further subset of these SAME entries, unedited.

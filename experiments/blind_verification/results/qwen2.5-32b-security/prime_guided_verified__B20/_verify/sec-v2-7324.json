@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7324",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "The [implementation of `UnravelIndex`](https://github.com/tensorflow/tensorflow/blob/5100e359aef5c8021f2e71c7b986420b85ce7b3d/tensorflow/core/kernels/unravel_index_op.cc#L36-L135) is vulnerable to a division by zero caused by an integer overflow bug:",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 535,
+   "completion_tokens": 27,
+   "latency_s": 2.311,
+   "raw": "The document mentions \"TensorFlow\" by its registered name multiple times, establishing that it is the affected package. ANSWER: T"
+  }
+ ]
+}

@@ -1,0 +1,334 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT05227105"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.statusModule.overallStatus"
+    ],
+    "what": "the overall recruitment status"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2028-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT05227105"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.studyFirstSubmitDate",
+     "protocolSection.statusModule.lastUpdateSubmitDate",
+     "protocolSection.identificationModule.briefTitle"
+    ],
+    "what": "the date of the most recent update submission"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT05227105"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.eligibilityModule.sex"
+    ],
+    "what": "the brief summary"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT05227105"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.eligibilityModule.sex"
+    ],
+    "what": "the eligibility criteria text"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT05227105"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.identificationModule.nctId"
+    ],
+    "what": "the official title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E6",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.statusVerifiedDate",
+     "record_id": "NCT05227105"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.identificationModule.briefTitle"
+    ],
+    "what": "the date the status was last verified"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2028-01-01"
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ]
+    ],
+    [
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2028-01-01"
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.healthyVolunteers",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-6086",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-hom-15\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": 2, \"false_mech\": false, \"locator\": true, \"source_instance\": \"cli-v2-0086\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT05227105": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "The purpose of this study is to address physical inactivity in rural populations in Pennsylvania."
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Adults aged 18 - 75 at the time of enrollment\n* Either overweight/obese (Body Mass Index (BMI) \u2265 25) or diabetic (hemoglobin A1c \u2265 5.7%)\n* Physically inactive (defined as \\< 90 min/week of self-reported structured physical activity)\n* Able to speak, read, and understand the English language\n* Resides in a rural area of Pennsylvania with a Rural Urban Continuum Code (RUCC) 4 - 9 or Rural-Urban Commuting Area (RUCA) code 4 - 10\n* Must be able to provide and understand informed consent\n* Primary care patient of one of the participating providers\n* Self-report ability to walk \u00bc mile\n* Access to a telephone\n\nExclusion Criteria:\n\n* Cardiac exclusion criteria: Class II, III, or IV heart failure as defined by the New York Heart Association (NYHA) functional classification system, history of acute coronary syndromes, uncertain or uncontrolled arrhythmia, uncontrolled hypertension, syncope, acute myocarditis, acute pericarditis, acute endocarditis, acute pulmonary embolus or pulmonary infarction, thrombosis of lower extremities, suspected dissecting aneurysm, pulmonary edema, respiratory failure, or acute non-cardiopulmonary disorder that may affect exercise performance or be aggravated by exercise\n* Mental impairment leading to inability to cooperate, provide informed consent, or follow study instructions\n* Evidence in the electronic medical record of an absolute contraindication for physical activity\n* Severe or advanced orthopedic conditions\n* Use of assistive devices for ambulation\n* Resides outside of a rural area of Pennsylvania (i.e., one that is not RUCC code 4 - 9 OR RUCA code 4 - 10)\n* Pregnant women",
+     "minimumAge": "18 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "PA Moves Trial - Patient Participants",
+     "nctId": "NCT05227105",
+     "officialTitle": "Increasing Physical Activity in Rural Pennsylvanians: The PA Moves Trial"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2026-04-18",
+     "overallStatus": "ACTIVE_NOT_RECRUITING",
+     "statusVerifiedDate": "2026-04",
+     "studyFirstSubmitDate": "2022-01-27"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT05227105.",
+ "seed": "NCT05227105",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

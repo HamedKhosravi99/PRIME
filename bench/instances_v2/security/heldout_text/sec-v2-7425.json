@@ -1,0 +1,175 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-5824-cm3x-3c38"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-5824-cm3x-3c38"
+    },
+    "what": "the details text names the affected package (the package itself, by its registered name or a distinctive part of it, not only the vendor or the ecosystem)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-5824-cm3x-3c38"
+    },
+    "what": "the details text states a version in which the issue is fixed"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-5824-cm3x-3c38"
+    },
+    "what": "the details text states the first affected version, the version in which the issue was introduced"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory has a readable summary (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: it has a summary and its text names the affected package."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked completeness protocol: summary present, and the text names the package, a fixed version, and the first affected version."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4"
+   ]
+  ]
+ },
+ "id": "sec-v2-7425",
+ "notes_for_annotators": "{\"family\": \"security-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, true, true], \"twins\": [\"affected.0.package.name\", \"affected.*.ranges.*.events.*.fixed\", \"affected.*.ranges.*.events.*.introduced\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-5824-cm3x-3c38": {
+   "details": "### Impact\n\nIn versions 0.2.15, 0.2.16 and 0.3.0, named re-entrancy locks are allocated incorrectly. Each function using a named re-entrancy lock gets a unique lock regardless of the key, allowing cross-function re-entrancy in contracts compiled with the susceptible versions. A specific set of conditions is required to result in misbehavior of affected contracts, specifically:\n\n- A `.vy` contract compiled with either of the following `vyper` versions: `0.2.15`, `0.2.16`, `0.3.0`\n- A primary function that utilizes the `@nonreentrant` decorator with a specific `key` and does not strictly follow the check-effects-interaction pattern (i.e. contains an external call to an untrusted party before storage updates)\n- A secondary function that utilizes the same `key` and would be affected by the improper state caused by the primary function\n\n### Patches\nhttps://github.com/vyperlang/vyper/pull/2439, https://github.com/vyperlang/vyper/pull/2514\n\n### Workarounds\nUpgrade to 0.3.1 or higher\n\n### References\nTechnical post-mortem report: https://hackmd.io/@vyperlang/HJUgNMhs2",
+   "summary": "Vyper has incorrectly allocated named re-entrancy locks"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-5824-cm3x-3c38.",
+ "seed": "GHSA-5824-cm3x-3c38",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "text"
+}

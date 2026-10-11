@@ -1,0 +1,181 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT07174310"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT07174310"
+    },
+    "what": "the eligibility criteria restrict enrollment to adults, that is, a minimum age of 18 years or more"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT07174310"
+    },
+    "what": "the eligibility criteria restrict enrollment to one sex only (only male or only female participants)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT07174310"
+    },
+    "what": "the eligibility criteria accept healthy volunteers"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready for an adult cohort: identified, and the eligibility text restricts enrollment to adults."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked adult-cohort protocol: identified, adults only, open to both sexes, and not a healthy-volunteer study, as established from the eligibility text."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "!E3",
+    "!E4"
+   ]
+  ]
+ },
+ "id": "cli-v2-7074",
+ "notes_for_annotators": "{\"family\": \"clinical-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, false, false], \"twins\": [\"protocolSection.eligibilityModule.minimumAge\", \"protocolSection.eligibilityModule.sex\", \"protocolSection.eligibilityModule.healthyVolunteers\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT07174310": {
+   "protocolSection": {
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Body weight within 40-110 kilograms (kg) (88-242 pounds \\[lbs\\]) and a body mass index within the range 18-34 kg/m2\n* Diagnosis of idiopathic PD based on Movement Disorder Society (MDS) criteria\n* Has received monotherapy treatment\n* An MDS-UPDRS Part IV score of 0 at screening and prior to randomization\n* Hoehn and Yahr (H\\&Y) Stage 1 or 2 off medication at screening and prior to randomization\n* Agreement to adhere to the contraception requirements\n\nExclusion Criteria:\n\n* Pregnant or breastfeeding, or intention of becoming pregnant during the study or within the time frame in which contraception is required\n* Medical history indicating a parkinsonian syndrome other than idiopathic PD\n* Diagnosis of a significant neurologic disease other than PD\n* Chronic uncontrolled hypertension"
+    },
+    "identificationModule": {
+     "briefTitle": "A Study to Evaluate the Efficacy and Safety of Intravenous (IV) Prasinezumab in Participants With Early-Stage Parkinson's Disease"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT07174310.",
+ "seed": "NCT07174310",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "text"
+}

@@ -1,0 +1,13 @@
+name: NVIDIA CORP
+cik: 0001045810
+source_url: https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json
+retrieved_utc: 2026-07-29T16:32:40Z
+raw_response_sha256: 93edcffe24f55d08284ff1736e41aa1a8e743ab6e4a6eea52cb8e9392b0ae6be
+user_agent_sent: PRIME-research <contact-email>
+concepts_fetched: Revenues, RevenueFromContractWithCustomerExcludingAssessedTax, NetIncomeLoss, Assets, Liabilities
+  Revenues: 104 annual (10-K, fp=FY) entries
+  RevenueFromContractWithCustomerExcludingAssessedTax: 28 annual (10-K, fp=FY) entries
+  NetIncomeLoss: 130 annual (10-K, fp=FY) entries
+  Assets: 33 annual (10-K, fp=FY) entries
+  Liabilities: 22 annual (10-K, fp=FY) entries
+integrity: every val/start/end/fy/fp/form/accn/frame field in companyfacts_trimmed.json is copied verbatim from SEC's own API response (see raw_response_sha256); nothing computed, edited, or invented. Values embedded in any bench/instances/fin/*.json record are a further subset of these SAME entries, unedited.

@@ -1,0 +1,342 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT06095102"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.identificationModule.briefTitle"
+    ],
+    "what": "the brief title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT06095102"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.eligibilityModule.eligibilityCriteria"
+    ],
+    "what": "the eligibility criteria text"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT06095102"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.eligibilityModule.sex"
+    ],
+    "what": "the sex eligibility field"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT06095102"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.descriptionModule.briefSummary"
+    ],
+    "what": "the official title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT06095102"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.statusModule.overallStatus"
+    ],
+    "what": "the minimum age for eligibility"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:false",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.healthyVolunteers",
+     "record_id": "NCT06095102"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.eligibilityModule.healthyVolunteers",
+     "protocolSection.descriptionModule.briefSummary"
+    ],
+    "what": "whether healthy volunteers are accepted"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT06095102"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.identificationModule.nctId"
+    ],
+    "what": "the NCT identifier"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.healthyVolunteers",
+      "equals",
+      false
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-6042",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-05\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 3, \"false_mech\": false, \"locator\": true, \"source_instance\": \"cli-v2-0042\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT06095102": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "The purpose of the study is to see how effective JNJ-77242113 is in participants with plaque psoriasis affecting special areas (scalp, genital, and/or palms of the hands and the soles of the feet)."
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Diagnosis of plaque psoriasis, with or without psoriatic arthritis (PsA), for at least 26 weeks prior to the first administration of study intervention\n* Candidate for phototherapy or systemic treatment for plaque psoriasis\n* Need to meet criteria: Total body surface area (BSA) greater than or equal to (\\>=)1 percent (%) at screening and baseline, and investigator global assessment (IGA) (overall) \\>=2 at screening and baseline and at least one of the following: scalp-specific investigator global assessment (ss-IGA) score \\>=3 at screening and baseline, and/or static physician's global assessment of genitalia (sPGA-G) \\>=3 at screening and baseline, and/or physician's global assessment of hands and feet (hf-PGA) score \\>=3 at screening and baseline\n* Failed to respond to at least 1 topical therapy (example, corticosteroids, calcineurin inhibitors, and/or vitamin D analogs) used for treatment of psoriasis\n* Confirmation of plaque psoriasis in a non-special area (example, areas excluding scalp, genital, palmoplantar) at screening and baseline\n\nExclusion Criteria:\n\n* Nonplaque form of psoriasis (example, erythrodermic, guttate, or pustular)\n* Dermatoses other than plaque psoriasis (such as contact dermatitis) or palmoplantar pustulosis of the palmoplantar area (if hf-PGA \\>=3 at baseline)\n* Current drug-induced psoriasis (example, a new onset of psoriasis or an exacerbation of psoriasis from beta blockers, calcium channel blockers, or lithium)\n* A current diagnosis or signs or symptoms of severe, progressive, or uncontrolled renal, liver, cardiac, vascular, pulmonary, gastrointestinal, endocrine, neurologic, hematologic, rheumatologic, psychiatric, or metabolic disturbances\n* Known allergies, hypersensitivity, or intolerance to JNJ-77242113 or its excipients",
+     "healthyVolunteers": false,
+     "minimumAge": "12 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "A Study of JNJ-77242113 for the Treatment of Participants With Plaque Psoriasis Involving Special Areas (Scalp, Genital, and/or Palms of the Hands and the Soles of the Feet)",
+     "nctId": "NCT06095102",
+     "officialTitle": "A Phase 3 Multicenter, Randomized, Double-blind, Placebo-controlled Study to Evaluate the Efficacy and Safety of JNJ-77242113 for the Treatment of Participants With Plaque Psoriasis Involving Special Areas"
+    },
+    "statusModule": {
+     "overallStatus": "ACTIVE_NOT_RECRUITING",
+     "statusVerifiedDate": "2026-07"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT06095102.",
+ "seed": "NCT06095102",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

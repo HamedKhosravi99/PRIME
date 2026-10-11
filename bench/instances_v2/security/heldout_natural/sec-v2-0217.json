@@ -1,0 +1,313 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "details",
+     "record_id": "GHSA-55f6-pf8r-c2f4"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2028-01-01\"",
+    "params": {
+     "field_path": "published",
+     "record_id": "GHSA-55f6-pf8r-c2f4"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2028-01-01\"",
+    "params": {
+     "field_path": "modified",
+     "record_id": "GHSA-55f6-pf8r-c2f4"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.severity",
+     "record_id": "GHSA-55f6-pf8r-c2f4"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.type",
+     "record_id": "GHSA-55f6-pf8r-c2f4"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.url",
+     "record_id": "GHSA-55f6-pf8r-c2f4"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_after:\"1980-01-01\"",
+    "params": {
+     "field_path": "published",
+     "record_id": "GHSA-55f6-pf8r-c2f4"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-55f6-pf8r-c2f4"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "published",
+      "date_before",
+      "2028-01-01"
+     ],
+     [
+      "modified",
+      "date_before",
+      "2028-01-01"
+     ]
+    ],
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.severity",
+      "exists",
+      null
+     ],
+     [
+      "references.0.type",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "published",
+      "date_before",
+      "2028-01-01"
+     ],
+     [
+      "modified",
+      "date_before",
+      "2028-01-01"
+     ],
+     [
+      "references.0.url",
+      "exists",
+      null
+     ],
+     [
+      "published",
+      "date_after",
+      "1980-01-01"
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "sec-v2-0217",
+ "notes_for_annotators": "{\"family\": \"security-branching-het-16\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": null, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-55f6-pf8r-c2f4": {
+   "database_specific": {
+    "severity": "HIGH"
+   },
+   "details": "### Summary\n\nA memory-safety vulnerability in Open Babel's MOPAC output parser\nallowed an out-of-bounds write into the `translationVectors[]` array\nwhen reading the \"UNIT CELL TRANSLATION\" block of a crafted input\nfile.\n\n### Details\n\nThe MOPAC output reader stored translation vectors from the UNIT CELL\nTRANSLATION block into a fixed-size `translationVectors[]` array. A\nmalformed block could push more vectors than the array had slots,\ncausing a write past the end of the array. One of five\n`translationVectors[]` OOB writes in the TALOS 2022 batch.\n\n### Impact\n\nOpen Babel is a C++ library and CLI used to read and write chemistry\nfile formats; it is shipped by Linux distributions and embedded in\nservices that may parse untrusted input. Triggering this vulnerability\nrequires the victim to open a malicious MOPAC output file with the\n`obabel` tool, the `OBConversion` API, or any of the language\nbindings (Python, Ruby, Java, R, Perl, C#, PHP).\n\n### Affected versions\n\nAll releases up to and including 3.1.1.\n\n### Patched version\n\n3.2.0 (released 2026-05-26).\n\n### Patch\n\nFix commit: https://github.com/openbabel/openbabel/commit/40e85213\n\nA minimized reproducer for this CVE is checked in under\n`test/files/fuzz_regress/` and is exercised on every CI build under\nASAN+UBSAN by the `fuzzregresstest` harness.\n\n### Credit\n\nReported by Cisco TALOS.",
+   "modified": "2026-07-20T05:15:25.412809796Z",
+   "published": "2026-07-06T16:41:43Z",
+   "references": [
+    {
+     "type": "WEB",
+     "url": "https://github.com/openbabel/openbabel/security/advisories/GHSA-55f6-pf8r-c2f4"
+    }
+   ],
+   "summary": "Open Babel has out-of-bounds write in MOPAC translationVectors[] (UNIT CELL TRANSLATION)"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-55f6-pf8r-c2f4.",
+ "seed": "GHSA-55f6-pf8r-c2f4",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

@@ -1,0 +1,389 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT05504720"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.identificationModule.nctId"
+    ],
+    "what": "the NCT identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2021-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT05504720"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.statusModule.studyFirstSubmitDate",
+     "protocolSection.statusModule.lastUpdateSubmitDate"
+    ],
+    "what": "the date the registration was first submitted"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT05504720"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.identificationModule.briefTitle"
+    ],
+    "what": "the brief summary"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Inclusion Criteria:\\n\\nAll the participants must fulfill all the following criteria to be eligible for study entry:\\n\\n* Be aged of 18 to 80 years old\\n* Have a ECOG Performance Status \\u2264 2 or a Karnofsky index \\u2265 50 %\\n* Have a satisfactory level of French\\n* Have signed the informed consent\\n\\nAlso, for the DLGG group, the patients must:\\n\\n* Have a histologically-proven diagnosis of DLGG (i.e., WHO grade II glioma)\\n* Receive or have received a first oncological treatment after surgery (chemotherapy, radiation therapy\\u2026)\\n\\nAlso, for the GB group, the patients must:\\n\\n\\\\- Have a histologically-proven diagnosis of GB (i.e., WHO grade IV glioma).\\n\\nAlso, for the breast cancer group, the patients must:\\n\\n\\\\- Have a histologically-proven diagnosis of breast cancer diagnosed \\\\< 2 years.\\n\\nExclusion Criteria:\\n\\nParticipants presenting with any of the following exclusion criteria will not be included in the study:\\n\\n* Patients with brain metastases\\n* Patients under tutorship or curatorship or protective measures\\n* Patients suffering from sensorial or motor deficits avoiding the tests administration\\n* Patients with a reported history of psychiatric disease (e.g., mental retardation, psychotic disorders, learning disabilities, attention-deficit/hyperactivity disorder, and bipolar disorder)\\n* Have reported a substance dependence within the past six months (e.g., cocaine or methamphetamine dependence)\\n* Pregnant women\\n* Legal incapacity or physical, psychological social or geographical status interfering with the patient's ability to sign the informed consent or to terminate the study\\n\\nAlso, for the DLGG group, the patients must not:\\n\\n* Have an anaplastic glioma (i.e., WHO grade III glioma)\\n* Have a DLGG with radiological or histological signs of anaplastic transformation\\n* Have a history of HIV\\n* Have a history of other cancer\\n\\nAlso, for the GB group, the patients must not:\\n\\n* Patients treated with \\u22652 lines of systemic cancer treatment (e.g., patient after the first GB recurrence)\\n* Have a history of HIV\\n* Have a history of other cancer\\n\\nAlso, for the breast cancer group, the patients must not:\\n\\n* Have a metastatic disease\\n* Have a neoadjuvant therapy\\n* Have a documented neurological, or substance use disorders.\\n* Have a history of HIV\\n* Have a history of other cancer\\n* Have reported a history of neurological diagnoses (e.g., seizure disorders, closed head injuries with loss of consciousness greater than 15 min).\\n\\nAlso for the control group, the participants must not:\\n\\n* Have a documented neurological, or substance use disorders\\n* Have a history of cancer\\n* Have a history of HIV\"",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT05504720"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.eligibilityModule.sex"
+    ],
+    "what": "the eligibility criteria text"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT05504720"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.identificationModule.officialTitle"
+    ],
+    "what": "the minimum age for eligibility"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:false",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.healthyVolunteers",
+     "record_id": "NCT05504720"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.healthyVolunteers",
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.eligibilityModule.sex"
+    ],
+    "what": "whether healthy volunteers are accepted"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_after:\"1980-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT05504720"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.studyFirstSubmitDate",
+     "protocolSection.statusModule.lastUpdateSubmitDate",
+     "protocolSection.designModule.studyType"
+    ],
+    "what": "the date the registration was first submitted"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT05504720"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.statusModule.statusVerifiedDate"
+    ],
+    "what": "the overall recruitment status"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2021-01-01"
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ]
+    ],
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "equals",
+      "Inclusion Criteria:\n\nAll the participants must fulfill all the following criteria to be eligible for study entry:\n\n* Be aged of 18 to 80 years old\n* Have a ECOG Performance Status \u2264 2 or a Karnofsky index \u2265 50 %\n* Have a satisfactory level of French\n* Have signed the informed consent\n\nAlso, for the DLGG group, the patients must:\n\n* Have a histologically-proven diagnosis of DLGG (i.e., WHO grade II glioma)\n* Receive or have received a first oncological treatment after surgery (chemotherapy, radiation therapy\u2026)\n\nAlso, for the GB group, the patients must:\n\n\\- Have a histologically-proven diagnosis of GB (i.e., WHO grade IV glioma).\n\nAlso, for the breast cancer group, the patients must:\n\n\\- Have a histologically-proven diagnosis of breast cancer diagnosed \\< 2 years.\n\nExclusion Criteria:\n\nParticipants presenting with any of the following exclusion criteria will not be included in the study:\n\n* Patients with brain metastases\n* Patients under tutorship or curatorship or protective measures\n* Patients suffering from sensorial or motor deficits avoiding the tests administration\n* Patients with a reported history of psychiatric disease (e.g., mental retardation, psychotic disorders, learning disabilities, attention-deficit/hyperactivity disorder, and bipolar disorder)\n* Have reported a substance dependence within the past six months (e.g., cocaine or methamphetamine dependence)\n* Pregnant women\n* Legal incapacity or physical, psychological social or geographical status interfering with the patient's ability to sign the informed consent or to terminate the study\n\nAlso, for the DLGG group, the patients must not:\n\n* Have an anaplastic glioma (i.e., WHO grade III glioma)\n* Have a DLGG with radiological or histological signs of anaplastic transformation\n* Have a history of HIV\n* Have a history of other cancer\n\nAlso, for the GB group, the patients must not:\n\n* Patients treated with \u22652 lines of systemic cancer treatment (e.g., patient after the first GB recurrence)\n* Have a history of HIV\n* Have a history of other cancer\n\nAlso, for the breast cancer group, the patients must not:\n\n* Have a metastatic disease\n* Have a neoadjuvant therapy\n* Have a documented neurological, or substance use disorders.\n* Have a history of HIV\n* Have a history of other cancer\n* Have reported a history of neurological diagnoses (e.g., seizure disorders, closed head injuries with loss of consciousness greater than 15 min).\n\nAlso for the control group, the participants must not:\n\n* Have a documented neurological, or substance use disorders\n* Have a history of cancer\n* Have a history of HIV"
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2021-01-01"
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.healthyVolunteers",
+      "equals",
+      false
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_after",
+      "1980-01-01"
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "cli-v2-6029",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-het-18\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 1, \"false_mech\": true, \"locator\": true, \"source_instance\": \"cli-v2-0029\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT05504720": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "The study is an open-label, single arm, multicenter phase II trial investigating the clinical activity of a perioperative therapy consisting of a combination of pembrolizumab, trastuzumab and FLOT, followed by pembrolizumab plus trastuzumab alone for a maximum systemic treatment duration of one year in patients with Her-2 positive localized esophagogastric adenocarcinoma."
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n1. The participant provides written informed consent for the trial.\n2. Male/female\\* participants who are at least 18 years of age on the day of signing informed consent.\n\n   \\*There are no data that indicate special gender distribution. Therefore, patients will be enrolled in the study gender-independently.\n3. In the investigator's judgement, participant is willing and able to comply with the study protocol including the planned surgical treatment\n4. Histologically confirmed adenocarcinoma of the GEJ (Type I-III according to Sievert\u00b4s classification) or the stomach (cT2, cT3, cT4, any N category, M0), or (any T, N+, M0) that:\n\n   * is not infiltrating any adjacent organs or structures by CT or MRI evaluation\n   * does not involve peritoneal carcinomatosis\n   * is considered medically and technically resectable Note: the absence of distant metastases must be confirmed by CT or MRI of the thorax and abdomen, and, if there is clinical suspicion of osseous lesions, a bone scan. If peritoneal carcinomatosis is suspected clinically, its absence must be confirmed by laparoscopy. Diagnostic laparoscopy is mandatory in patients with T3 or T4 tumors of the diffuse type histology in the stomach.\n5. Participants must have HER2-positive disease defined as either IHC 3+ or IHC 2+, the latter in combination with ISH+, as assessed locally by a certified test on primary tumor (see Appendix 4)\n6. Participants must be candidates for potential curative resection as determined by the treating surgeon\n7. No prior systemic-anti cancer therapy (e.g. cytotoxic or targeted agents or radiotherapy)\n8. No prior partial or complete esophagogastric tumor resection\n9. ECOG (Eastern Cooperative Oncology Group) performance status score of 0 or 1\n10. Male participants: A male participant must agree to use a contraception as detailed in Appendix 2 of this protocol during the treatment period and for at least 6 months after the last dose of study intervention and refrain from donating sperm during this period.\n\n    Female participants: A female participant is eligible to participate if she is not pregnant (see Appendix 2), not breastfeeding, and at least one of the following conditions applies:\n    * Not a woman of childbearing potential (WOCBP) as defined in Appendix 2 OR\n    * A WOCBP who agrees to follow the contraceptive guidance as given in Appendix 2 during the treatment period and for at least 7 months after the last dose of study intervention.\n11. Participants have adequate organ function as defined in the following table (Table 2). Specimens must be collected within 14 days prior to enrolment (also to be repeated if older than 14 days at day of first treatment).\n\nHematological:\n\n* Absolute neutrophil count (ANC) \u2265 1500/\u03bcL\n* leucocytes \u2265 3000/\u03bcL\n* Thrombocytes \u2265 100 000/\u03bcL\n* Hemoglobin \u2265 9.0 g/dL or \u2265 5.6 mmol/L (Criteria must be met without erythropoietin dependency and without packed red blood cell (pRBC) transfusion within the last 2 weeks)\n\nRenal:\n\n\u2022 Measured or calculated (b) creatinine clearance\u2265 50 mL/min\n\nHepatic:\n\n* Total bilirubin \u2264 1.5 \u00d7ULN OR direct bilirubin \u2264 ULN for participants with total bilirubin levels \\> 1.5 \u00d7 ULN\n* AST (SGOT) and ALT (SGPT) \u2264 2.5 \u00d7 ULN Coagulation\n* International normalized ratio (INR) OR prothrombin time (PT) and\n* Activated partial thromboplastin time (aPTT) \u2264 1.5 \u00d7 ULN unless participant is receiving anticoagulant therapy as long as PT or aPTT is within therapeutic range of intended use of anticoagulants ALT (SGPT)=alanine aminotransferase (serum glutamic pyruvic transaminase); AST (SGOT)=aspartate aminotransferase (serum glutamic oxaloacetic transaminase); GFR=glomerular filtration rate; ULN=upper limit of normal.\n\nExclusion Criteria:\n\n1. Participants with involved retroperitoneal (e.g. para-aortal, paracaval or interaortocaval lymph nodes) or mesenterial lymph nodes (distant metastasis!)\n2. A WOCBP who has a positive urine pregnancy test within 72 hours prior to start of study intervention (see Appendix 2). If the urine test is positive or cannot be confirmed as negative, a serum pregnancy test will be required.\n3. Received prior therapy with an anti-PD-1, anti-PD-L1, or anti-PD-L2 agent or with an agent directed to another stimulatory or co-inhibitory T-cell receptor (e.g., CTLA-4, OX-40, CD137).\n4. Participant received colony-stimulating factors (e.g. granulocyte colony-stimulating factor \\[G-CSF\\], granulocyte-macrophage colony-stimulating factor \\[GM-CSF\\] or recombinant erythropoietin) within 28 days prior to the first dose of study intervention.\n5. Major surgery within 2 weeks of starting study intervention and patients must have recovered from any effects of any major surgery.\n6. Concomitant use of drugs inhibiting (dihydropyrimidine dehydrogenase) DPD activity (including sorivudine, brivudine), the required wash out phase is 4 weeks before start of the study intervention.\n7. Inadequate cardiac function (LVEF value \\< 55 %) as determined by echocardiography\n8. Resting ECG indicating uncontrolled, potentially reversible cardiac conditions, as judged by the investigator (e.g., unstable ischemia, uncontrolled symptomatic arrhythmia, congestive heart failure, QTcF prolongation \\> 500 ms, electrolyte disturbances, etc.), or patients with congenital long QT syndrome.\n9. Participant has received a live vaccine or live-attenuated vaccine within 30 days prior to the first dose of study drug. Administration of killed vaccines is allowed.\n10. Participant is currently participating in or has participated in a study of an investigational agent or has used an investigational device within 4 weeks prior to the first dose of study intervention.\n11. Participant has a diagnosis of immunodeficiency or is receiving chronic systemic steroid therapy (in dosing exceeding 10 mg daily of prednisone equivalent) or any other form of immunosuppressive therapy within 7 days prior to the first dose of study drug.\n12. Participant has a known additional malignancy that is progressing or has required active treatment within the past 2 years. Participants with basal cell carcinoma of the skin, squamous cell carcinoma of the skin or carcinoma in situ (e.g., breast carcinoma, cervical cancer in situ) that have undergone potentially curative therapy are not excluded.\n13. Participant has myelodysplastic syndrome (MDS)/acute myeloid leukemia (AML) or with features suggestive of MDS/AML.\n14. History of severe allergic, anaphylactic, or other hypersensitivity reactions to chimeric or humanized antibodies or fusion protein; known hypersensitivity to Chinese hamster ovary cell products or to any component of the pembrolizumab or trastuzumab formulation\n15. Any known contraindication (including hypersensitivity) to docetaxel, 5-FU, folinic acid/leucovorin, or oxaliplatin.\n16. Known DPD deficiency. Patients with a reduced DPD activity (CPIC activity score of 1.0-1.5) might participate in the study and receive a reduced dosage of 5-FU after discussion with the coordinating investigator and sponsor \\[https://cpicpgx.org/guidelines/guideline-for-fluoropyrimidines-and-dpyd/\\]\n17. Participant has active autoimmune disease that has required systemic treatment in the past 2 years (i.e., with use of disease modifying agents, corticosteroids or immunosuppressive drugs). Replacement therapy (e.g., thyroxine, insulin, or physiologic corticosteroid replacement therapy for adrenal or pituitary insufficiency, etc.) is not considered a form of systemic treatment and is allowed.\n18. Participant has a history of (non-infectious) pneumonitis/interstitial lung disease that required steroids or has current pneumonitis/interstitial lung disease.\n19. Participant has an active infection requiring systemic therapy.\n20. Participant has a known history of Human Immunodeficiency Virus (HIV) infection\n21. Participant has a known history of Hepatitis B (defined as Hepatitis B surface antigen \\[HBsAg\\] reactive) or known active Hepatitis C virus (defined as HCV RNA is detected) infection.\n22. Participant is considered a poor medical risk due to a serious, uncontrolled medical disorder, non-malignant systemic disease or active, uncontrolled infection. Examples include, but are not limited to, uncontrolled ventricular arrhythmia, recent (within 3 months) myocardial infarction, uncontrolled major seizure disorder, unstable spinal cord compression, superior vena cava syndrome, extensive interstitial bilateral lung disease on High Resolution Computed Tomography (HRCT) scan, previous allogenic bone marrow/blood transplantation or any psychiatric disorder or substance abuse that prohibits obtaining informed consent.\n23. Participant is pregnant or breastfeeding or expecting to conceive or father children within the projected duration of the study, starting with the screening visit through 6 months after the last dose of study intervention.\n24. Participant has had an allogenic tissue/solid organ transplant.",
+     "healthyVolunteers": false,
+     "minimumAge": "18 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "Evaluating Pembrolizumab, Trastuzumab and FLOT as Perioperative Treatment of HER2-positive, Localized Esophagogastric Adenocarcinoma",
+     "nctId": "NCT05504720",
+     "officialTitle": "Pembrolizumab and Trastuzumab in Combination With FLOT in the Perioperative Treatment of HER2-positive, Localized Esophagogastric Adenocarcinoma - A Phase II Trial of the AIO Study Group - PHERFLOT -"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2026-06-30",
+     "overallStatus": "ACTIVE_NOT_RECRUITING",
+     "statusVerifiedDate": "2026-06",
+     "studyFirstSubmitDate": "2022-08-15"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT05504720.",
+ "seed": "NCT05504720",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

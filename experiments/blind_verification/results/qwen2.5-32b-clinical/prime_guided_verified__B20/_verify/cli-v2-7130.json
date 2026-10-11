@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7130",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Male or female subjects, age \u2265 18 years.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 926,
+   "completion_tokens": 26,
+   "latency_s": 2.549,
+   "raw": "The inclusion criteria explicitly state that subjects must be \"age \u2265 18 years,\" establishing the condition. ANSWER: T"
+  }
+ ]
+}

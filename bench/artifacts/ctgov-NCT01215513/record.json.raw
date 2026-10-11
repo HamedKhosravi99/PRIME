@@ -1,0 +1,1962 @@
+{
+  "derivedSection": {
+    "conditionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D005834",
+          "term": "Genital Neoplasms, Male"
+        },
+        {
+          "id": "D014565",
+          "term": "Urogenital Neoplasms"
+        },
+        {
+          "id": "D009371",
+          "term": "Neoplasms by Site"
+        },
+        {
+          "id": "D009369",
+          "term": "Neoplasms"
+        },
+        {
+          "id": "D005832",
+          "term": "Genital Diseases, Male"
+        },
+        {
+          "id": "D000091662",
+          "term": "Genital Diseases"
+        },
+        {
+          "id": "D000091642",
+          "term": "Urogenital Diseases"
+        },
+        {
+          "id": "D011469",
+          "term": "Prostatic Diseases"
+        },
+        {
+          "id": "D052801",
+          "term": "Male Urogenital Diseases"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D011471",
+          "term": "Prostatic Neoplasms"
+        }
+      ]
+    },
+    "interventionBrowseModule": {
+      "meshes": [
+        {
+          "id": "C431566",
+          "term": "acetyl-2-naphthylalanyl-3-chlorophenylalanyl-1-oxohexadecyl-seryl-4-aminophenylalanyl(hydroorotyl)-4-aminophenylalanyl(carbamoyl)-leucyl-ILys-prolyl-alaninamide"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "versionHolder": "2026-07-29"
+    }
+  },
+  "hasResults": true,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "interventionNames": [
+            "Drug: Degarelix"
+          ],
+          "label": "Degarelix",
+          "type": "EXPERIMENTAL"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "Degarelix"
+          ],
+          "name": "Degarelix",
+          "type": "DRUG"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Prostate Cancer"
+      ]
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "city": "Seoul",
+          "country": "South Korea",
+          "facility": "Korea University Hospital",
+          "geoPoint": {
+            "lat": 37.566,
+            "lon": 126.9784
+          },
+          "state": "Anam-dong, Seongbuk-gu"
+        },
+        {
+          "city": "Seoul",
+          "country": "South Korea",
+          "facility": "Seoul St. Mary's Hospital",
+          "geoPoint": {
+            "lat": 37.566,
+            "lon": 126.9784
+          },
+          "state": "Banpo-dong, Seocho-gu"
+        },
+        {
+          "city": "Daegu",
+          "country": "South Korea",
+          "facility": "Kyoungbuk National University Hospital",
+          "geoPoint": {
+            "lat": 35.87028,
+            "lon": 128.59111
+          },
+          "state": "Daegu"
+        },
+        {
+          "city": "Seoul",
+          "country": "South Korea",
+          "facility": "Yonsei University Health System Gangnam Sevrance",
+          "geoPoint": {
+            "lat": 37.566,
+            "lon": 126.9784
+          },
+          "state": "Eonguro, Gangnam-gu"
+        },
+        {
+          "city": "Seongnam-si",
+          "country": "South Korea",
+          "facility": "Seoul National University Bundang Hospital",
+          "geoPoint": {
+            "lat": 37.43861,
+            "lon": 127.13778
+          },
+          "state": "Gyeonggi-do"
+        },
+        {
+          "city": "Pyungchon",
+          "country": "South Korea",
+          "facility": "Hallym University Sacred Heart Hospital",
+          "state": "Gyunggi-do"
+        },
+        {
+          "city": "Mulgeum-eup",
+          "country": "South Korea",
+          "facility": "Pusan National University Yangsan Hospital",
+          "state": "Gyungnam"
+        },
+        {
+          "city": "Seoul",
+          "country": "South Korea",
+          "facility": "Samsung Medical Center",
+          "geoPoint": {
+            "lat": 37.566,
+            "lon": 126.9784
+          },
+          "state": "Ilwon-dong, Kangnam-gu"
+        },
+        {
+          "city": "Seoul",
+          "country": "South Korea",
+          "facility": "Asan Medical Center",
+          "geoPoint": {
+            "lat": 37.566,
+            "lon": 126.9784
+          },
+          "state": "Pungnap-2-dong, Songpa-gu"
+        },
+        {
+          "city": "Seoul",
+          "country": "South Korea",
+          "facility": "Yonsei University Health System (Sevrance Hospital)",
+          "geoPoint": {
+            "lat": 37.566,
+            "lon": 126.9784
+          },
+          "state": "Seongsanno, Seodaemun-gu"
+        },
+        {
+          "city": "Seoul",
+          "country": "South Korea",
+          "facility": "Seoul National University Hospital",
+          "geoPoint": {
+            "lat": 37.566,
+            "lon": 126.9784
+          },
+          "state": "Yeongeon-dong, Chongno-gu"
+        }
+      ],
+      "overallOfficials": [
+        {
+          "affiliation": "Ferring Pharmaceuticals",
+          "name": "Clinical Development Support",
+          "role": "STUDY_DIRECTOR"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "This is an open-label, multi-centre single arm trial to investigate long-term safety and tolerability of degarelix in Korean patients with prostate cancer."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "NA",
+        "interventionModel": "SINGLE_GROUP",
+        "maskingInfo": {
+          "masking": "NONE"
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 127,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* Has given written informed consent before any trial-related activity is performed. A trial-related activity is defined as any procedure that would not have been performed during the normal management of the patient\n* Has completed the 7-month main trial, FE200486 CS42\n\nExclusion Criteria:\n\n* Has been withdrawn/discontinued from the FE200486 CS42 trial\n* A patient may also not be entered into the CS42A trial at the discretion of the investigator due to safety or lack of efficacy concerns (LH or PSA response) in the CS42 trial.",
+      "healthyVolunteers": false,
+      "minimumAge": "18 Years",
+      "sex": "MALE",
+      "stdAges": [
+        "ADULT",
+        "OLDER_ADULT"
+      ]
+    },
+    "identificationModule": {
+      "briefTitle": "Long-Term Safety and Tolerability of Degarelix One-Month Dosing Regimen in Korean Patients",
+      "nctId": "NCT01215513",
+      "officialTitle": "An Open-Label, Multi-Centre, Extension Trial, Evaluating the Long-Term Safety and Tolerability of Degarelix One-Month Dosing Regimen in Korean Patients Requiring Androgen Ablation Therapy",
+      "orgStudyIdInfo": {
+        "id": "FE200486 CS42A"
+      },
+      "organization": {
+        "class": "INDUSTRY",
+        "fullName": "Ferring Pharmaceuticals"
+      }
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "description": "The figures present the number of participants who had markedly abnormal levels of safety laboratory variables. Only the laboratory variables that had at least one participant with abnormal value are presented, more variables were included in the study.\n\nULN=upper limit of normal",
+          "measure": "Number of Participants With Markedly Abnormal Values in Safety Laboratory Variables",
+          "timeFrame": "From baseline (day 0) to end of treatment (up to day 364)"
+        },
+        {
+          "description": "This outcome measure included incidence of markedly abnormal changes in blood pressure (systolic and diastolic), pulse, and body weight. The figures present the number of participants with normal baseline and at least one post-baseline markedly abnormal value.",
+          "measure": "Number of Participants With Markedly Abnormal Values in Vital Signs and Body Weight",
+          "timeFrame": "From baseline (day 0) to end of treatment (up to day 364)"
+        },
+        {
+          "description": "This outcome measure included incidence of markedly abnormal changes in ECG variables (PR, QRS, and QT interval, QTcF, and ventricular rate). The figures present the number of participants with normal baseline and at least one post-baseline markedly abnormal value.",
+          "measure": "Number of Participants With Markedly Abnormal Values in ECG Variables",
+          "timeFrame": "From baseline (day 0) to end of treatment (up to day 364)"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "description": "PSA levels were measured over time. The figures present the median level at day 0 (n=155 participants), day 196 (n=148), day 280 (n=115), and day 364 (n=109).",
+          "measure": "Serum Levels of Prostate Specific Antigen (PSA) Over Time",
+          "timeFrame": "Day 0, day 196, day 280, and day 364"
+        }
+      ]
+    },
+    "oversightModule": {
+      "oversightHasDmc": false
+    },
+    "sponsorCollaboratorsModule": {
+      "collaborators": [
+        {
+          "class": "OTHER",
+          "name": "Ferring Pharmaceuticals Korea, Ltd."
+        }
+      ],
+      "leadSponsor": {
+        "class": "INDUSTRY",
+        "name": "Ferring Pharmaceuticals"
+      },
+      "responsibleParty": {
+        "type": "SPONSOR"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2012-04",
+        "type": "ACTUAL"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2013-05-22",
+        "type": "ESTIMATED"
+      },
+      "lastUpdateSubmitDate": "2013-04-04",
+      "overallStatus": "COMPLETED",
+      "primaryCompletionDateStruct": {
+        "date": "2012-04",
+        "type": "ACTUAL"
+      },
+      "resultsFirstPostDateStruct": {
+        "date": "2013-05-22",
+        "type": "ESTIMATED"
+      },
+      "resultsFirstSubmitDate": "2013-04-04",
+      "resultsFirstSubmitQcDate": "2013-04-04",
+      "startDateStruct": {
+        "date": "2010-09"
+      },
+      "statusVerifiedDate": "2013-04",
+      "studyFirstPostDateStruct": {
+        "date": "2010-10-06",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2010-10-05",
+      "studyFirstSubmitQcDate": "2010-10-05"
+    }
+  },
+  "resultsSection": {
+    "adverseEventsModule": {
+      "description": "The investigator monitored the condition of each participant throughout the study from the time the participant signed the informed consent form until the end of study visit or the end of follow-up period.",
+      "eventGroups": [
+        {
+          "description": "80 mg degarelix at a concentration of 20 mg/mL were administered as a single 4 mL subcutaneous injection at monthly intervals.",
+          "id": "EG000",
+          "otherNumAffected": 88,
+          "otherNumAtRisk": 156,
+          "seriousNumAffected": 25,
+          "seriousNumAtRisk": 156,
+          "title": "Degarelix"
+        }
+      ],
+      "frequencyThreshold": "5",
+      "otherEvents": [
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 39,
+              "numAtRisk": 156,
+              "numEvents": 55
+            }
+          ],
+          "term": "Injection site pain"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Skin and subcutaneous tissue disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 19,
+              "numAtRisk": 156,
+              "numEvents": 21
+            }
+          ],
+          "term": "Hyperhidrosis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 14,
+              "numAtRisk": 156,
+              "numEvents": 16
+            }
+          ],
+          "term": "Upper respiratory tract infection"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 13,
+              "numAtRisk": 156,
+              "numEvents": 13
+            }
+          ],
+          "term": "Constipation"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 13,
+              "numAtRisk": 156,
+              "numEvents": 13
+            }
+          ],
+          "term": "Injection site erythema"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 11,
+              "numAtRisk": 156,
+              "numEvents": 15
+            }
+          ],
+          "term": "Diarrhoea"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 11,
+              "numAtRisk": 156,
+              "numEvents": 13
+            }
+          ],
+          "term": "Dizziness"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Renal and urinary disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 11,
+              "numAtRisk": 156,
+              "numEvents": 11
+            }
+          ],
+          "term": "Nocturia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 10,
+              "numAtRisk": 156,
+              "numEvents": 13
+            }
+          ],
+          "term": "Headache"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Renal and urinary disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 9,
+              "numAtRisk": 156,
+              "numEvents": 10
+            }
+          ],
+          "term": "Pollakiuria"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 8,
+              "numAtRisk": 156,
+              "numEvents": 10
+            }
+          ],
+          "term": "Back pain"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 8,
+              "numAtRisk": 156,
+              "numEvents": 9
+            }
+          ],
+          "term": "Insomnia"
+        }
+      ],
+      "seriousEvents": [
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Cardiac disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Angina pectoris"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Cardiac disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Angina unstable"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Cardiac disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Atrial fibrillation"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Cardiac disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Coronary artery occlusion"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Cardiac disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Myocardial ischaemia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Eye disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Diabetic retinopathy"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Eye disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Hypermetropia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Constipation"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Inguinal hernia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Asthenia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Disease progression"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Sudden death"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Appendicitis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Herpes zoster"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Influenza"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Upper respiratory tract infection"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Injury, poisoning and procedural complications",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 156,
+              "numEvents": 2
+            }
+          ],
+          "term": "Spinal compression fracture"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Injury, poisoning and procedural complications",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Drug toxicity"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Metabolism and nutrition disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Anorexia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Metabolism and nutrition disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Diabetes mellitus inadequate control"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Metabolism and nutrition disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Hyperglycaemia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Back pain"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Flank pain"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Neoplasms benign, malignant and unspecified (incl cysts and polyps)",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Metastases to prostate"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Neoplasms benign, malignant and unspecified (incl cysts and polyps)",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Metastatic pain"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 2
+            }
+          ],
+          "term": "Dizziness"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Paraplegia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Spinal cord compression"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Renal and urinary disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Dysuria"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Renal and urinary disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Haematuria"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Renal and urinary disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Urinary retention"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Reproductive system and breast disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Benign prostatic hyperplasia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Reproductive system and breast disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Pelvic pain"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Reproductive system and breast disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Penile pain"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Reproductive system and breast disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Perineal pain"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Dyspnoea"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Surgical and medical procedures",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Removal of internal fixation"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Surgical and medical procedures",
+          "sourceVocabulary": "MedDRA (12.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 156,
+              "numEvents": 1
+            }
+          ],
+          "term": "Ureteral stent removal"
+        }
+      ],
+      "timeFrame": "From baseline (day 0) to end of treatment (up to day 364)"
+    },
+    "baselineCharacteristicsModule": {
+      "denoms": [
+        {
+          "counts": [
+            {
+              "groupId": "BG000",
+              "value": "156"
+            }
+          ],
+          "units": "Participants"
+        }
+      ],
+      "groups": [
+        {
+          "description": "80 mg degarelix at a concentration of 20 mg/mL were administered as a single 4 mL subcutaneous injection at monthly intervals",
+          "id": "BG000",
+          "title": "Degarelix"
+        }
+      ],
+      "measures": [
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "spread": "8.06",
+                      "value": "72.6"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "dispersionType": "STANDARD_DEVIATION",
+          "paramType": "MEAN",
+          "title": "Age Continuous",
+          "unitOfMeasure": "years"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Female"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "156"
+                    }
+                  ],
+                  "title": "Male"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Sex: Female, Male",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "156"
+                    }
+                  ]
+                }
+              ],
+              "title": "Korea, Republic of"
+            }
+          ],
+          "paramType": "NUMBER",
+          "title": "Region of Enrollment",
+          "unitOfMeasure": "participants"
+        }
+      ],
+      "populationDescription": "The 156 participants included in the CS42 and CS42A saftey analysis set are included in this baseline analysis population."
+    },
+    "moreInfoModule": {
+      "certainAgreement": {
+        "otherDetails": "The only disclosure restriction on the PI is that the sponsor can review the draft manuscript prior to publication and can request delay of publication where any contents are deemed patentable by the sponsor or confidential to the sponsor. Comments will be given within four weeks from receipt of the draft manuscript. Additional time may be required to allow Ferring to seek patent protection of the invention.",
+        "piSponsorEmployee": false,
+        "restrictionType": "OTHER",
+        "restrictiveAgreement": true
+      },
+      "pointOfContact": {
+        "email": "DK0-Disclosure@ferring.com",
+        "organization": "Ferring Pharmaceuticals",
+        "title": "Clinical Development Support"
+      }
+    },
+    "outcomeMeasuresModule": {
+      "outcomeMeasures": [
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ],
+              "title": "S-Alanine aminotransferase (IU/L) >3xULN"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ],
+              "title": "S-Cholesterol (mmol/L) >=8.0"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "10"
+                    }
+                  ]
+                }
+              ],
+              "title": "S-Potassium (mmol/L) >=5.8"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "2"
+                    }
+                  ]
+                }
+              ],
+              "title": "S-Sodium (mmol/L) <=130"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ],
+              "title": "S-Total bilirubin (micromol/L) >1.5xULN"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "10"
+                    }
+                  ]
+                }
+              ],
+              "title": "S-Urea nitrogen (mmol/L) >=10.7"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ],
+              "title": "B-Basophils (%) >=5"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "7"
+                    }
+                  ]
+                }
+              ],
+              "title": "B-Eosinophils (%) >=10"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "83"
+                    }
+                  ]
+                }
+              ],
+              "title": "B-Haematocrit (ratio) <=0.37"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "9"
+                    }
+                  ]
+                }
+              ],
+              "title": "B-Haemoglobin (g/L) <=115"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "4"
+                    }
+                  ]
+                }
+              ],
+              "title": "B-Lymphocytes (%) <=10"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ],
+              "title": "B-Neutrophils (%) >=90"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "25"
+                    }
+                  ]
+                }
+              ],
+              "title": "B-Red blood cell count (10^12/L) <=3.5"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ],
+              "title": "B-White blood cell count (10^9/L) <=2.8"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ],
+              "title": "B-White blood cell count (10^9/L) >=16.0"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "156"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The figures present the number of participants who had markedly abnormal levels of safety laboratory variables. Only the laboratory variables that had at least one participant with abnormal value are presented, more variables were included in the study.\n\nULN=upper limit of normal",
+          "groups": [
+            {
+              "description": "80 mg degarelix at a concentration of 20 mg/mL were administered as a single 4 mL subcutaneous injection at monthly intervals.",
+              "id": "OG000",
+              "title": "Degarelix"
+            }
+          ],
+          "paramType": "NUMBER",
+          "populationDescription": "Descriptive statistics provided a view of the 1-year safety of degarelix (CS42 and CS42A safety analysis set).",
+          "reportingStatus": "POSTED",
+          "timeFrame": "From baseline (day 0) to end of treatment (up to day 364)",
+          "title": "Number of Participants With Markedly Abnormal Values in Safety Laboratory Variables",
+          "type": "PRIMARY",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "13"
+                    }
+                  ]
+                }
+              ],
+              "title": "Diastolic blood pressure <=50 and decrease >=15"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ],
+              "title": "Diastolic blood pressure >=105 and increase >=15"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "20"
+                    }
+                  ]
+                }
+              ],
+              "title": "Systolic blood pressure <=90 and decrease >=20"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ],
+              "title": "Systolic blood pressure >=180 and increase >=20"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "10"
+                    }
+                  ]
+                }
+              ],
+              "title": "Pulse rate <=50 and decrease >=15"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ],
+              "title": "Pulse rate >=120 and increase >=15"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "4"
+                    }
+                  ]
+                }
+              ],
+              "title": "Body weight decrease of >=7% from baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "12"
+                    }
+                  ]
+                }
+              ],
+              "title": "Body weight increase of >=7% from baseline"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "156"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "This outcome measure included incidence of markedly abnormal changes in blood pressure (systolic and diastolic), pulse, and body weight. The figures present the number of participants with normal baseline and at least one post-baseline markedly abnormal value.",
+          "groups": [
+            {
+              "description": "80 mg degarelix at a concentration of 20 mg/mL were administered as a single 4 mL subcutaneous injection at monthly intervals.",
+              "id": "OG000",
+              "title": "Degarelix"
+            }
+          ],
+          "paramType": "NUMBER",
+          "populationDescription": "Descriptive statistics provided a view of the 1-year safety of degarelix (CS42 and CS42A safety analysis set).",
+          "reportingStatus": "POSTED",
+          "timeFrame": "From baseline (day 0) to end of treatment (up to day 364)",
+          "title": "Number of Participants With Markedly Abnormal Values in Vital Signs and Body Weight",
+          "type": "PRIMARY",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "1.59",
+                      "upperLimit": "100",
+                      "value": "19.2"
+                    }
+                  ]
+                }
+              ],
+              "title": "Baseline (Day 0)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "0.1",
+                      "upperLimit": "100",
+                      "value": "0.67"
+                    }
+                  ]
+                }
+              ],
+              "title": "Day 196"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "0.1",
+                      "upperLimit": "100",
+                      "value": "0.52"
+                    }
+                  ]
+                }
+              ],
+              "title": "Day 280"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "0.1",
+                      "upperLimit": "100",
+                      "value": "0.46"
+                    }
+                  ]
+                }
+              ],
+              "title": "Day 364"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "155"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "PSA levels were measured over time. The figures present the median level at day 0 (n=155 participants), day 196 (n=148), day 280 (n=115), and day 364 (n=109).",
+          "dispersionType": "Full Range",
+          "groups": [
+            {
+              "description": "80 mg degarelix at a concentration of 20 mg/mL were administered as a single 4 mL subcutaneous injection at monthly intervals.",
+              "id": "OG000",
+              "title": "Degarelix"
+            }
+          ],
+          "paramType": "MEDIAN",
+          "populationDescription": "CS42 and CS42A full analysis set (data of all participants who received at least one dose of degarelix and had at least one efficacy assessment after dosing). The figures present the median of the absolute values at day 0 (n=155 participants), day 196 (n=148), day 280 (n=115), and day 364 (n=109).",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Day 0, day 196, day 280, and day 364",
+          "title": "Serum Levels of Prostate Specific Antigen (PSA) Over Time",
+          "type": "SECONDARY",
+          "unitOfMeasure": "ng/mL"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ],
+              "title": "PR interval (msec) <=120"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "3"
+                    }
+                  ]
+                }
+              ],
+              "title": "PR interval (msec) >=220"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "3"
+                    }
+                  ]
+                }
+              ],
+              "title": "QRS interval (msec) >=120"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "27"
+                    }
+                  ]
+                }
+              ],
+              "title": "QT interval (msec) >=450"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "6"
+                    }
+                  ]
+                }
+              ],
+              "title": "QT interval (msec) >=480"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "2"
+                    }
+                  ]
+                }
+              ],
+              "title": "QT interval (msec) >=500"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "69"
+                    }
+                  ]
+                }
+              ],
+              "title": "QT interval increase of >=30 from baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "20"
+                    }
+                  ]
+                }
+              ],
+              "title": "QT interval increase of >=60 from baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "25"
+                    }
+                  ]
+                }
+              ],
+              "title": "QTcF (msec) >=450"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "3"
+                    }
+                  ]
+                }
+              ],
+              "title": "QTcF (msec) >=480"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ],
+              "title": "QTcF (msec) >=500"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "39"
+                    }
+                  ]
+                }
+              ],
+              "title": "QTcF increase of >=30 from baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "8"
+                    }
+                  ]
+                }
+              ],
+              "title": "QTcF increase of >=60 from baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ],
+              "title": "Ventricular rate (beats/min) <=50"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "2"
+                    }
+                  ]
+                }
+              ],
+              "title": "Ventricular rate (beats/min) >=120"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "156"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "This outcome measure included incidence of markedly abnormal changes in ECG variables (PR, QRS, and QT interval, QTcF, and ventricular rate). The figures present the number of participants with normal baseline and at least one post-baseline markedly abnormal value.",
+          "groups": [
+            {
+              "description": "80 mg degarelix at a concentration of 20 mg/mL were administered as a single 4 mL subcutaneous injection at monthly intervals",
+              "id": "OG000",
+              "title": "Degarelix"
+            }
+          ],
+          "paramType": "NUMBER",
+          "populationDescription": "Descriptive statistics provided a view of the 1-year safety of degarelix (CS42 and CS42A safety analysis set).",
+          "reportingStatus": "POSTED",
+          "timeFrame": "From baseline (day 0) to end of treatment (up to day 364)",
+          "title": "Number of Participants With Markedly Abnormal Values in ECG Variables",
+          "type": "PRIMARY",
+          "unitOfMeasure": "Participants"
+        }
+      ]
+    },
+    "participantFlowModule": {
+      "groups": [
+        {
+          "description": "80 mg degarelix at a concentration of 20 mg/mL were administered as a single 4 mL subcutaneous injection at monthly intervals.",
+          "id": "FG000",
+          "title": "Degarelix"
+        }
+      ],
+      "periods": [
+        {
+          "dropWithdraws": [
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "9"
+                }
+              ],
+              "type": "Not completed CS42"
+            },
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "21"
+                }
+              ],
+              "type": "Not enrolled from CS42 to CS42A"
+            },
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "2"
+                }
+              ],
+              "type": "Adverse event (CS42A)"
+            },
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "6"
+                }
+              ],
+              "type": "Physician decision (CS42A)"
+            },
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "5"
+                }
+              ],
+              "type": "Withdrawal by subject (CS42A)"
+            },
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "2"
+                }
+              ],
+              "type": "Miscellaneous reasons (CS42A)"
+            }
+          ],
+          "milestones": [
+            {
+              "achievements": [
+                {
+                  "comment": "157 participants were allocated to treatment in CS42 main study (Intent-to-treat analysis set)",
+                  "groupId": "FG000",
+                  "numSubjects": "157"
+                }
+              ],
+              "type": "STARTED"
+            },
+            {
+              "achievements": [
+                {
+                  "comment": "156 participants received at least 1 dose of degarelix",
+                  "groupId": "FG000",
+                  "numSubjects": "156"
+                }
+              ],
+              "type": "CS42 and CS42A Safety Analysis Set"
+            },
+            {
+              "achievements": [
+                {
+                  "comment": "155 participants received at least 1 dose of degarelix and had at least 1 efficacy assessment",
+                  "groupId": "FG000",
+                  "numSubjects": "155"
+                }
+              ],
+              "type": "CS42 and CS42A Full Analysis Set"
+            },
+            {
+              "achievements": [
+                {
+                  "comment": "127 participants were enrolled in the extension study CS42A",
+                  "groupId": "FG000",
+                  "numSubjects": "127"
+                }
+              ],
+              "type": "CS42A Safety Analysis Set"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "112"
+                }
+              ],
+              "type": "COMPLETED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "45"
+                }
+              ],
+              "type": "NOT COMPLETED"
+            }
+          ],
+          "title": "Overall Study"
+        }
+      ],
+      "recruitmentDetails": "The participants were recruited from 9 sites in Korea. All participants had completed the 7-month main study (CS42, NCT01071915) prior to enrollment into this extension study (CS42A). The CS42A study was conducted between 20 September 2010 (FPFV) and 25 April 2012 (LPLV)."
+    }
+  }
+}

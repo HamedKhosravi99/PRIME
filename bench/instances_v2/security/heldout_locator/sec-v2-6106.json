@@ -1,0 +1,397 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "details",
+     "record_id": "GHSA-54w4-233h-x86g"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "details",
+     "schema_version",
+     "database_specific.cwe_ids.0"
+    ],
+    "what": "the advisory's detailed description"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"PyPI\"",
+    "params": {
+     "field_path": "affected.0.package.ecosystem",
+     "record_id": "GHSA-54w4-233h-x86g"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "affected.0.package.ecosystem",
+     "schema_version",
+     "aliases.0"
+    ],
+    "what": "the ecosystem of the affected package"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2028-01-01\"",
+    "params": {
+     "field_path": "published",
+     "record_id": "GHSA-54w4-233h-x86g"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "published",
+     "database_specific.github_reviewed",
+     "affected.0.package.name"
+    ],
+    "what": "the date the advisory was published"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.severity",
+     "record_id": "GHSA-54w4-233h-x86g"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "summary",
+     "database_specific.severity",
+     "database_specific.cwe_ids.0"
+    ],
+    "what": "the maintainers' severity label"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.type",
+     "record_id": "GHSA-54w4-233h-x86g"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "affected.0.package.name",
+     "summary",
+     "references.0.type"
+    ],
+    "what": "the type of the first reference"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "severity.0.score",
+     "record_id": "GHSA-54w4-233h-x86g"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.cwe_ids.0",
+     "summary",
+     "severity.0.score"
+    ],
+    "what": "the first CVSS score string"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "affected.0.package.ecosystem",
+     "record_id": "GHSA-54w4-233h-x86g"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "affected.0.package.ecosystem",
+     "schema_version",
+     "database_specific.github_reviewed"
+    ],
+    "what": "the ecosystem of the affected package"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2028-01-01\"",
+    "params": {
+     "field_path": "modified",
+     "record_id": "GHSA-54w4-233h-x86g"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "summary",
+     "modified",
+     "schema_version"
+    ],
+    "what": "the date the advisory was last modified"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ],
+     [
+      "published",
+      "date_before",
+      "2028-01-01"
+     ]
+    ],
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.severity",
+      "exists",
+      null
+     ],
+     [
+      "references.0.type",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ],
+     [
+      "published",
+      "date_before",
+      "2028-01-01"
+     ],
+     [
+      "severity.0.score",
+      "exists",
+      null
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "sec-v2-6106",
+ "notes_for_annotators": "{\"family\": \"security-branching-het-10\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 3, \"false_mech\": false, \"locator\": true, \"source_instance\": \"sec-v2-0106\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-54w4-233h-x86g": {
+   "affected": [
+    {
+     "package": {
+      "ecosystem": "PyPI",
+      "name": "ironic-python-agent"
+     }
+    }
+   ],
+   "aliases": [
+    "CVE-2026-42997"
+   ],
+   "database_specific": {
+    "cwe_ids": [
+     "CWE-669"
+    ],
+    "github_reviewed": true,
+    "severity": "HIGH"
+   },
+   "details": "An issue was discovered in idrac in OpenStack Ironic before 35.0.1. During import, a user invoking molds can request authorization to be sent to a remote endpoint. The credential forwarded is a time-limited Keystone token (which provides access to all OpenStack services Ironic is authorized for); or basic credentials configured for molds storage. The fixed versions are 26.1.6, 29.0.5, 32.0.1, and 35.0.1.",
+   "modified": "2026-07-13T16:42:57.875607256Z",
+   "published": "2026-05-05T21:31:31Z",
+   "references": [
+    {
+     "type": "ADVISORY"
+    }
+   ],
+   "schema_version": "1.7.5",
+   "severity": [
+    {
+     "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N"
+    }
+   ],
+   "summary": "OpenStack Ironic has an Incorrect Resource Transfer Between Spheres"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-54w4-233h-x86g.",
+ "seed": "GHSA-54w4-233h-x86g",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

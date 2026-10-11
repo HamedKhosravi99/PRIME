@@ -1,0 +1,86 @@
+{
+ "k": 0,
+ "temperature": 0.0,
+ "seed": null,
+ "reply": "```python\nimport datetime\n\ndef derive(record):\n    derived = {}\n    \n    # Determine if the study is an applicable clinical trial\n    derived['is_applicable_device_trial'] = False\n    derived['is_applicable_drug_trial'] = False\n    \n    if record.get('protocolSection', {}).get('oversightModule', {}).get('isFdaRegulatedDevice'):\n        derived['is_applicable_device_trial'] = True\n        \n    if record.get('protocolSection', {}).get('oversightModule', {}).get('isFdaRegulatedDrug'):\n        derived['is_applicable_drug_trial'] = True\n    \n    # Check if the study started on or after January 18, 2017\n    start_date_str = record.get('protocolSection', {}).get('statusModule', {}).get('startDateStruct', {}).get('date')\n    if start_date_str:\n        start_date = datetime.datetime.strptime(start_date_str, '%Y-%m-%d')\n        derived['started_on_or_after_2017'] = start_date >= datetime.datetime(2017, 1, 18)\n    \n    # Calculate the deadline for results submission\n    primary_completion_date_str = record.get('protocolSection', {}).get('statusModule', {}).get('primaryCompletionDateStruct', {}).get('date')\n    if primary_completion_date_str:\n        primary_completion_date = datetime.datetime.strptime(primary_completion_date_str, '%Y-%m-%d')\n        derived['results_deadline'] = (primary_completion_date + datetime.timedelta(days=365)).strftime('%Y-%m-%d')\n    \n    return derived\n```\n\n```json\n{\n  \"atoms\": [\n    {\n      \"id\": \"A1\",\n      \"field\": \"derived.is_applicable_device_trial\",\n      \"predicate\": \"equals\",\n      \"argument\": true,\n      \"meaning\": \"The study is an applicable device clinical trial.\"\n    },\n    {\n      \"id\": \"A2\",\n      \"field\": \"derived.is_applicable_drug_trial\",\n      \"predicate\": \"equals\",\n      \"argument\": true,\n      \"meaning\": \"The study is an applicable drug clinical trial.\"\n    },\n    {\n      \"id\": \"A3\",\n      \"field\": \"derived.started_on_or_after_2017\",\n      \"predicate\": \"equals\",\n      \"argument\": true,\n      \"meaning\": \"The study started on or after January 18, 2017.\"\n    },\n    {\n      \"id\": \"A4\",\n      \"field\": \"derived.results_deadline\",\n      \"predicate\": \"date_before\",\n      \"argument\": \"2026-08-03\",\n      \"meaning\": \"The results submission deadline has passed by 3 August 2026.\"\n    },\n    {\n      \"id\": \"A5\",\n      \"field\": \"protocolSection.statusModule.resultsFirstSubmitDate\",\n      \"predicate\": \"exists\",\n      \"argument\": null,\n      \"meaning\": \"The results were submitted.\"\n    }\n  ],\n  \"routes\": {\n    \"C1\": [\n      [\"A1\"],\n      [\"A2\"]\n    ],\n    \"C2\": [\n      [\"A1\", \"A3\", \"A4\"],\n      [\"A2\", \"A3\", \"A4\"]\n    ],\n    \"C3\": [\n      [\"A1\", \"A3\", \"A4\", \"A5\"],\n      [\"A2\", \"A3\", \"A4\", \"A5\"]\n    ]\n  }\n}\n```",
+ "usage": {
+  "prompt_tokens": 6285,
+  "completion_tokens": 733
+ },
+ "program": {
+  "atoms": [
+   {
+    "id": "A1",
+    "field": "derived.is_applicable_device_trial",
+    "predicate": "equals",
+    "argument": true,
+    "meaning": "The study is an applicable device clinical trial."
+   },
+   {
+    "id": "A2",
+    "field": "derived.is_applicable_drug_trial",
+    "predicate": "equals",
+    "argument": true,
+    "meaning": "The study is an applicable drug clinical trial."
+   },
+   {
+    "id": "A3",
+    "field": "derived.started_on_or_after_2017",
+    "predicate": "equals",
+    "argument": true,
+    "meaning": "The study started on or after January 18, 2017."
+   },
+   {
+    "id": "A4",
+    "field": "derived.results_deadline",
+    "predicate": "date_before",
+    "argument": "2026-08-03",
+    "meaning": "The results submission deadline has passed by 3 August 2026."
+   },
+   {
+    "id": "A5",
+    "field": "protocolSection.statusModule.resultsFirstSubmitDate",
+    "predicate": "exists",
+    "argument": null,
+    "meaning": "The results were submitted."
+   }
+  ],
+  "routes": {
+   "C1": [
+    [
+     "A1"
+    ],
+    [
+     "A2"
+    ]
+   ],
+   "C2": [
+    [
+     "A1",
+     "A3",
+     "A4"
+    ],
+    [
+     "A2",
+     "A3",
+     "A4"
+    ]
+   ],
+   "C3": [
+    [
+     "A1",
+     "A3",
+     "A4",
+     "A5"
+    ],
+    [
+     "A2",
+     "A3",
+     "A4",
+     "A5"
+    ]
+   ]
+  },
+  "derive": "import datetime\n\ndef derive(record):\n    derived = {}\n    \n    # Determine if the study is an applicable clinical trial\n    derived['is_applicable_device_trial'] = False\n    derived['is_applicable_drug_trial'] = False\n    \n    if record.get('protocolSection', {}).get('oversightModule', {}).get('isFdaRegulatedDevice'):\n        derived['is_applicable_device_trial'] = True\n        \n    if record.get('protocolSection', {}).get('oversightModule', {}).get('isFdaRegulatedDrug'):\n        derived['is_applicable_drug_trial'] = True\n    \n    # Check if the study started on or after January 18, 2017\n    start_date_str = record.get('protocolSection', {}).get('statusModule', {}).get('startDateStruct', {}).get('date')\n    if start_date_str:\n        start_date = datetime.datetime.strptime(start_date_str, '%Y-%m-%d')\n        derived['started_on_or_after_2017'] = start_date >= datetime.datetime(2017, 1, 18)\n    \n    # Calculate the deadline for results submission\n    primary_completion_date_str = record.get('protocolSection', {}).get('statusModule', {}).get('primaryCompletionDateStruct', {}).get('date')\n    if primary_completion_date_str:\n        primary_completion_date = datetime.datetime.strptime(primary_completion_date_str, '%Y-%m-%d')\n        derived['results_deadline'] = (primary_completion_date + datetime.timedelta(days=365)).strftime('%Y-%m-%d')\n    \n    return derived"
+ }
+}

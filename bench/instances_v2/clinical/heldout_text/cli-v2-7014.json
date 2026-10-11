@@ -1,0 +1,181 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT01052025"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT01052025"
+    },
+    "what": "the eligibility criteria restrict enrollment to adults, that is, a minimum age of 18 years or more"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT01052025"
+    },
+    "what": "the eligibility criteria restrict enrollment to one sex only (only male or only female participants)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT01052025"
+    },
+    "what": "the eligibility criteria accept healthy volunteers"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready for an adult cohort: identified, and the eligibility text restricts enrollment to adults."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked adult-cohort protocol: identified, adults only, open to both sexes, and not a healthy-volunteer study, as established from the eligibility text."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "!E3",
+    "!E4"
+   ]
+  ]
+ },
+ "id": "cli-v2-7014",
+ "notes_for_annotators": "{\"family\": \"clinical-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, false, true], \"twins\": [\"protocolSection.eligibilityModule.minimumAge\", \"protocolSection.eligibilityModule.sex\", \"protocolSection.eligibilityModule.healthyVolunteers\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT01052025": {
+   "protocolSection": {
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Patients aged 35 years or older with an abnormal fasting plasma glucose (100-125 mg/dl) or with insulin resistance (140-199 mg/dl) by using 75 mg of glucose OGTT.\n\nExclusion Criteria:\n\n* Have been diagnosed with diabetes by the results of FPG \\>/=126 mg/dl\n* Present with secondary peripheral arterial disease (PAD)\n* Present with cardiovascular diseases such as coronary arterial disease and cerebrovascular disease\n* Receive anticoagulant drugs that have an effect on the measurement of pulse wave velocity (PWV)\n* Receive antihypertensive or lipid-lowering drugs (ARB, ACEI, fenofibrate, atorvastatin, rosuvastatin, fluvastatin) that have an effect on the measurement of C-reactive protein (CRP)\n* Present with kidney failure (serum creatinine \\> 2.0 mg/dl) or in the process of renal dialysis\n* Present with hepatitis (ALT level \\>/= 3 times the upper limit)\n* Receive any herbal medications or curcumin\n* Present with high blood sugar from other causes apart from type 2 diabetes such as receiving steroid drugs, cancer or pancreatic cyst\n* Present with infection or inflammation that have effect on the level of CRP\n* Pregnancy or breastfeeding\n* Have a history of gall bladder diseases or removal"
+    },
+    "identificationModule": {
+     "briefTitle": "Curcumin Therapy in Patients With Impaired Glucose Tolerance and Insulin Resistance"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT01052025.",
+ "seed": "NCT01052025",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "text"
+}

@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7357",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "OpenStack Compute (Nova) before 2014.1.4 and 2014.2.x before 2014.2.1",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 215,
+   "completion_tokens": 24,
+   "latency_s": 1.684,
+   "raw": "The document specifies \"OpenStack Compute (Nova)\" as the affected package, establishing the condition. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "2014.2.1",
+   "verdict": "F",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 197,
+   "completion_tokens": 20,
+   "latency_s": 1.985,
+   "raw": "The document does not mention a specific version in which the issue is fixed. ANSWER: F"
+  }
+ ]
+}

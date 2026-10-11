@@ -1,0 +1,215 @@
+{
+  "id": "fda-0001",
+  "domain": "drug_safety",
+  "seed": "fda-0001",
+  "variant": "base",
+  "user_prompt": "Given this openFDA drug-enforcement (recall) record for recall_number D-0692-2026, was the product recalled, and if so was it a Class I recall, voluntary (firm-initiated), for a microbial contamination reason, reported after 2020-01-01?",
+  "artifact": {
+    "path": "artifacts/fda-revitaderm",
+    "kind": "structured_record",
+    "commit": "openfda:D-0692-2026"
+  },
+  "scope": "The single embedded REAL openFDA drug-enforcement (recall) record D-0692-2026 (top-level records.D-0692-2026 of this instance file; fetched verbatim from the live openFDA public API, not fabricated -- see notes_for_annotators and bench/artifacts/fda-revitaderm/PROVENANCE), read exclusively via inspect_record(record_id='D-0692-2026', field_path=...): product_description (identifying facts), classification (Class I/II/III recall severity), voluntary_mandated (voluntary firm-initiated vs. FDA-mandated), reason_for_recall (the stated reason category), report_date / report_date_iso (the record's own reported date, background for C1/C2, the C3 threshold field), status (background only), and other fields present in the raw record (recalling_firm, recall_number, event_id, distribution_pattern, code_info, openfda.* -- background only, not used by any atom). The verdict is scoped to this ONE record's own declared JSON fields only -- no network access, external label lookup, or human/LLM judgment is used or available; every atom below is a closed, mechanically-decidable Boolean predicate over the record (prime_runtime/predicates.py).",
+  "actions": [
+    "inspect_record",
+    "emit_claim"
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "The record's identifying facts are located: 'Revitaderm Wound Care Gel' (recalling firm: Blaine Labs Inc) is the subject of an FDA drug enforcement (recall) record, recall_number D-0692-2026.",
+      "level": 1
+    },
+    {
+      "id": "C2",
+      "text": "The identifying facts are established (C1) AND the record's own classification field has been located and is recognized as Class I (FDA's most severe recall classification).",
+      "level": 2
+    },
+    {
+      "id": "C3",
+      "text": "C2 holds AND the record's own voluntary_mandated field confirms the recall was voluntary (firm-initiated), not FDA-mandated, AND the record's own reason_for_recall field names a microbial contamination issue AND the record's own report_date postdates 2020-01-01: the record supports a verdict of a recent (reported after 2020-01-01), voluntary, Class I recall due to a microbial contamination issue.",
+      "level": 3
+    }
+  ],
+  "order": [
+    [
+      "C1",
+      "C2"
+    ],
+    [
+      "C2",
+      "C3"
+    ]
+  ],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "record",
+      "proposition": "The record's identifying fact (product_description) is read via inspect_record(record_id='D-0692-2026', field_path='product_description') and found present.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "D-0692-2026",
+          "field_path": "product_description"
+        },
+        "attest": "record_predicate:exists:null"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E2",
+      "type": "record",
+      "proposition": "The record's classification is read via inspect_record(record_id='D-0692-2026', field_path='classification') and found to equal 'Class I' (FDA's most severe recall classification: reasonable probability that use of, or exposure to, the violative product will cause serious adverse health consequences or death).",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "D-0692-2026",
+          "field_path": "classification"
+        },
+        "attest": "record_predicate:equals:\"Class I\""
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E3",
+      "type": "record",
+      "proposition": "The record's voluntary_mandated field is read via inspect_record(record_id='D-0692-2026', field_path='voluntary_mandated') and found to equal 'Voluntary: Firm initiated'.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "D-0692-2026",
+          "field_path": "voluntary_mandated"
+        },
+        "attest": "record_predicate:equals:\"Voluntary: Firm initiated\""
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E4",
+      "type": "record",
+      "proposition": "The record's reason_for_recall field is read via inspect_record(record_id='D-0692-2026', field_path='reason_for_recall') and found to contain the substring 'Microbial contamination'.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "D-0692-2026",
+          "field_path": "reason_for_recall"
+        },
+        "attest": "record_predicate:substring_contains:\"Microbial contamination\""
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E5",
+      "type": "record",
+      "proposition": "The record's report_date_iso field is read via inspect_record(record_id='D-0692-2026', field_path='report_date_iso') and found to be strictly after 2020-01-01 (real report_date reformatted YYYYMMDD->YYYY-MM-DD; see notes_for_annotators).",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "D-0692-2026",
+          "field_path": "report_date_iso"
+        },
+        "attest": "record_predicate:date_after:\"2020-01-01\""
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E6",
+      "type": "record",
+      "proposition": "Non-route background: the record's status field is read via inspect_record(record_id='D-0692-2026', field_path='status') and found to be one of the recognized values {Ongoing, Completed, Terminated} (not required for, and not evidence toward, the Class-I/voluntary/reason/date verdict).",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "D-0692-2026",
+          "field_path": "status"
+        },
+        "attest": "record_predicate:in_set:[\"Ongoing\",\"Completed\",\"Terminated\"]"
+      },
+      "gold_value": "T"
+    }
+  ],
+  "phi": [],
+  "gold_licenses": {
+    "C1": [
+      [
+        "E1"
+      ]
+    ],
+    "C2": [
+      [
+        "E1",
+        "E2"
+      ]
+    ],
+    "C3": [
+      [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5"
+      ]
+    ]
+  },
+  "decoys": [
+    "drug_label_lookup"
+  ],
+  "notes_for_annotators": "REAL openFDA drug-enforcement (recall) record, fetched 2026-07-29 via bench/fetch_openfda.py from the live, unauthenticated openFDA API (https://api.fda.gov/drug/enforcement.json?search=recall_number:%22D-0692-2026%22). PROVENANCE + the unedited raw API response are stored at bench/artifacts/fda-revitaderm/. Every embedded field is verbatim from that response EXCEPT 'report_date_iso', which is a pure YYYYMMDD->YYYY-MM-DD reformat of the SAME real 'report_date' digits (Python 3.9's date.fromisoformat requires dashes; prime_runtime.predicates.date_before/date_after need an ISO-parseable string) -- disclosed here and in bench/artifacts/fda-revitaderm/PROVENANCE, never silently altered. Route minimality: E1 necessary (identifying facts must be located before any claim). E2 necessary (the Class-I classification is a disjoint fact from identity -- a product can be recalled at any of three classification levels, so C2 requires actually reading and checking this field). E3 necessary (voluntary-vs-mandated is a disjoint fact from the classification level -- a Class I recall can be either). E4 necessary (the reason-category substring is a disjoint fact from both classification and voluntary/mandated status -- neither implies WHY the product was recalled). E5 necessary (the report-date threshold is a disjoint fact from reason/classification/voluntary-status -- an old Class I voluntary recall for the same reason category would not satisfy the 'reported after 2020-01-01' component of C3's text). Order-coherence by containment (C1's route subset of C2's, C2's subset of C3's). E6 (status) is a genuine non-route atom -- real, resolvable, on-topic-looking background (is the recall still open?) deliberately NOT required by any route, probing whether an agent pulls in plausible-but-irrelevant evidence, mirroring rec-0001's E5 and grant-0001's E5. Decoy 'drug_label_lookup' is not a listed action (this domain offers no drug/label lookup tool; everything needed is in the embedded enforcement record). No ask_user tool: every atom is a closed, executable predicate over structured JSON fields (prime_runtime/predicates.py) -- no human/LLM judge, per the hard domain constraint. Honest maximal licensable claim for this record: C3 (all five route atoms are real and gold_value=T for this record).",
+  "records": {
+    "D-0692-2026": {
+      "address_1": "11037 Lockport Pl",
+      "address_2": "N/A",
+      "center_classification_date": "20260716",
+      "city": "Santa Fe Springs",
+      "classification": "Class I",
+      "code_info": "Lot#: BL3608, Exp. 07/01/28.",
+      "country": "United States",
+      "distribution_pattern": "Nationwide in the USA",
+      "event_id": "98731",
+      "initial_firm_notification": "Press Release",
+      "openfda": {},
+      "postal_code": "90670-4634",
+      "product_description": "Revitaderm Wound Care Gel, Benzalkonium Chloride 0.1%, packaged in 1.0 FL OZ (37 mL) bottle, shorter twist cap, Manufactured By: Blaine Labs, Inc. 11037 Lockport Place Santa Fe Springs, CA 90670, NDC 63347-120-02.",
+      "product_quantity": "1,171 - 1 oz bottles",
+      "product_type": "Drugs",
+      "reason_for_recall": "Microbial contamination of Non-Sterile Product: samples identified the presence of Lysinibacillus fusiformis and other Bacillus spp",
+      "recall_initiation_date": "20260408",
+      "recall_number": "D-0692-2026",
+      "recalling_firm": "Blaine Labs Inc",
+      "report_date": "20260708",
+      "state": "CA",
+      "status": "Ongoing",
+      "voluntary_mandated": "Voluntary: Firm initiated",
+      "report_date_iso": "2026-07-08",
+      "_source_meta": {
+        "openfda_meta_last_updated": "2026-07-22",
+        "endpoint": "https://api.fda.gov/drug/enforcement.json",
+        "retrieval_date": "2026-07-29",
+        "note": "Every field above except 'report_date_iso' and this '_source_meta' block is VERBATIM from the openFDA API response (bench/artifacts/.../raw_enforcement_record.json). 'report_date_iso' is a pure YYYYMMDD->YYYY-MM-DD reformat of the same real 'report_date' value (see fetch_openfda.py)."
+      }
+    }
+  }
+}

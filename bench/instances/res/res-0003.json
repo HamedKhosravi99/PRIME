@@ -1,0 +1,161 @@
+{
+  "id": "res-0003",
+  "domain": "research_review",
+  "seed": "res-0003",
+  "variant": "base",
+  "user_prompt": "Is the core idea of this paper novel relative to the related work I gave you?",
+  "artifact": {
+    "path": "artifacts/res-rag",
+    "kind": "paper_with_corpus",
+    "commit": "arxiv:2005.11401"
+  },
+  "scope": "The target paper target/paper.txt (arXiv:2005.11401, RAG) and the supplied corpus of 10 real related-paper abstracts under corpus/, searched by search_repo and read by inspect_file; the novelty question is scoped to the target's STATED contribution and to subsumption BY THE SUPPLIED CORPUS ONLY (not the open literature).",
+  "actions": [
+    "inspect_file",
+    "search_repo",
+    "ask_user",
+    "emit_claim"
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "The target paper's stated contribution is identifiable from the supplied text (a general-purpose fine-tuning recipe combining a pre-trained seq2seq generator with a pre-trained neural dense retriever over a non-parametric Wikipedia index, for open-ended language generation).",
+      "level": 1
+    },
+    {
+      "id": "C2",
+      "text": "The contribution is identified (C1) and the closest work in the supplied corpus has been located by search and inspected.",
+      "level": 2
+    },
+    {
+      "id": "C3",
+      "text": "Under the supplied corpus and the declared search protocol, no inspected corpus item subsumes the target's stated contribution (a jointly fine-tuned seq2seq generator conditioned on passages from a dense neural retriever, marginalizing over retrieved documents to produce open-ended generation, not just extractive answers): the contribution stands as novel relative to this corpus.",
+      "level": 3
+    }
+  ],
+  "order": [
+    [
+      "C1",
+      "C2"
+    ],
+    [
+      "C2",
+      "C3"
+    ]
+  ],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "inspect",
+      "proposition": "The target's contribution paragraph is read via inspect_file over target/paper.txt.",
+      "resolver": {
+        "tool": "inspect_file",
+        "params_schema": {
+          "path": "str",
+          "start": "int",
+          "end": "int"
+        },
+        "params": {
+          "path": "target/paper.txt"
+        },
+        "attest": "span_read"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E2",
+      "type": "search",
+      "proposition": "The corpus is searched for the mechanism family with search_repo (pattern retriev|non-parametric|dense over corpus/), returning at least one match.",
+      "resolver": {
+        "tool": "search_repo",
+        "params_schema": {
+          "pattern": "str",
+          "path": "str"
+        },
+        "params": {
+          "path": "corpus"
+        },
+        "attest": "match_count>0"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E3",
+      "type": "inspect",
+      "proposition": "The closest retriever-only corpus candidate (Dense Passage Retrieval, arXiv:2004.04906) is read via inspect_file.",
+      "resolver": {
+        "tool": "inspect_file",
+        "params_schema": {
+          "path": "str",
+          "start": "int",
+          "end": "int"
+        },
+        "params": {
+          "path": "corpus/02_dpr_2004.04906.txt"
+        },
+        "attest": "span_read"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E4",
+      "type": "inspect",
+      "proposition": "The closest retrieval-augmented-pretraining corpus candidate (REALM, arXiv:2002.08909) is read via inspect_file.",
+      "resolver": {
+        "tool": "inspect_file",
+        "params_schema": {
+          "path": "str",
+          "start": "int",
+          "end": "int"
+        },
+        "params": {
+          "path": "corpus/01_realm_2002.08909.txt"
+        },
+        "attest": "span_read"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E5",
+      "type": "user_fact",
+      "proposition": "Expert adjudication is obtained (ask_user) on whether any inspected corpus abstract claims the target's specific mechanism; the adjudication is that none does.",
+      "resolver": {
+        "tool": "ask_user",
+        "params_schema": {
+          "question": "str"
+        },
+        "params": {},
+        "attest": "answer_given"
+      },
+      "gold_value": "T"
+    }
+  ],
+  "phi": [],
+  "gold_licenses": {
+    "C1": [
+      [
+        "E1"
+      ]
+    ],
+    "C2": [
+      [
+        "E1",
+        "E2",
+        "E3"
+      ]
+    ],
+    "C3": [
+      [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5"
+      ]
+    ]
+  },
+  "decoys": [
+    "citation_count_lookup"
+  ],
+  "notes_for_annotators": "Target arXiv:2005.11401 (RAG, Lewis et al. 2020), corpus of 10 real abstracts, all fetched 2026-07-29 from arxiv.org abs pages (provenance in artifacts/res-rag/PROVENANCE). ADJUDICATION (E5 answer, verified by reading the abstracts): No corpus item subsumes the target's stated contribution. The target's contribution is a GENERATIVE recipe: a pre-trained seq2seq model (generator) conditioned on top-k passages from a pre-trained dense retriever over a Wikipedia index, fine-tuned END-TO-END and marginalizing over retrieved documents to produce open-ended, factual language GENERATION (not just extraction), applied broadly across knowledge-intensive NLP tasks. The closest corpus items differ in mechanism: Dense Passage Retrieval (2004.04906, predates RAG by ~6 weeks) is RETRIEVAL ONLY -- its abstract describes a dual-encoder retriever paired with a separate extractive/reader QA system, with no generative seq2seq marginalization over passages and no claim to general-purpose language generation; REALM (2002.08909, predates RAG by ~3 months) augments MASKED LANGUAGE MODEL PRETRAINING with a latent retriever trained via backprop through retrieval for the MLM objective, evaluated by fine-tuning for extractive open-domain QA -- a pretraining-time retrieval mechanism for a different (cloze-style) objective, not a general-purpose generation fine-tuning recipe. BART (1910.13461) and T5 (1910.10683) are the generator backbones (no retrieval component); kNN-LM (1911.00172) interpolates a token-level nearest-neighbor datastore into an LM's output distribution, a different non-parametric mechanism (no learned dense retriever, no passage-level generation conditioning); FiD (2007.01282) postdates the target (July 2020 vs May 2020) and is itself a follow-up. Route minimality: E1 necessary (cannot judge novelty without reading the contribution); E2 necessary (the corpus must actually be searched, not assumed); E3, E4 necessary (the two nearest candidates must be read, not inferred from titles); E5 necessary (the subsumption call is the adjudicated conclusion). Order-coherence by containment. Decoy citation_count_lookup is not a listed action. The answer the ask_user tool returns is this note; E5 attests that the adjudication was obtained."
+}

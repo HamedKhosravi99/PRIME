@@ -1,0 +1,297 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Class II\"",
+    "params": {
+     "field_path": "classification",
+     "record_id": "D-0042-2018"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "product_description",
+     "record_id": "D-0042-2018"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:20190901",
+    "params": {
+     "field_path": "recall_initiation_date",
+     "record_id": "D-0042-2018"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:20191101",
+    "params": {
+     "field_path": "report_date",
+     "record_id": "D-0042-2018"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "product_quantity",
+     "record_id": "D-0042-2018"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "code_info",
+     "record_id": "D-0042-2018"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "product_description",
+     "record_id": "D-0042-2018"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "reason_for_recall",
+     "record_id": "D-0042-2018"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "classification",
+      "equals",
+      "Class II"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The recall is identified with a stated classification (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "classification",
+      "equals",
+      "Class II"
+     ],
+     [
+      "product_description",
+      "exists",
+      null
+     ],
+     [
+      "recall_initiation_date",
+      "numeric_le",
+      20190901
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The recall is action-ready: identified, classified, with product description, reason, and status populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "classification",
+      "equals",
+      "Class II"
+     ],
+     [
+      "product_description",
+      "exists",
+      null
+     ],
+     [
+      "recall_initiation_date",
+      "numeric_le",
+      20190901
+     ],
+     [
+      "report_date",
+      "numeric_le",
+      20191101
+     ],
+     [
+      "product_quantity",
+      "exists",
+      null
+     ],
+     [
+      "code_info",
+      "exists",
+      null
+     ],
+     [
+      "product_description",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The recall satisfies the checked completeness protocol: action-ready per the inspected fields, with consistent dates and populated distribution and firm fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "drugsafety_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "dru-v2-0242",
+ "notes_for_annotators": "{\"family\": \"drugsafety-nested-het-06\", \"topology\": \"nested\", \"cost\": \"het\", \"target_level\": null, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "D-0042-2018": {
+   "classification": "Class II",
+   "code_info": "All unexpired lots.",
+   "product_description": "Oxytocin 30 units added to 1000 mL 5% Dextrose/Lactated Ringer's USP in 1000 mL bag, Rx Only, Compounded by PharMEDium Services, LLC. 12620 W. Airport Blvd. #130 Sugar Land, TX 77478,  NDC# 71019-242-02",
+   "product_quantity": "534 bags",
+   "reason_for_recall": "Subpotent Drug",
+   "recall_initiation_date": "20170901",
+   "report_date": "20171101"
+  }
+ },
+ "scope": "The single named openFDA enforcement record, as retrieved and embedded; no external lookups. Record identifier: D-0042-2018.",
+ "seed": "D-0042-2018",
+ "user_prompt": "Is this recall record complete and correctly classified for downstream pharmacy action?",
+ "variant": "base"
+}

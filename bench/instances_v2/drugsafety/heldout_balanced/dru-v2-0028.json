@@ -1,0 +1,283 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "recall_number",
+     "record_id": "D-0382-2018"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Class I\"",
+    "params": {
+     "field_path": "classification",
+     "record_id": "D-0382-2018"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Terminated\"",
+    "params": {
+     "field_path": "status",
+     "record_id": "D-0382-2018"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Superpotent Drug.\"",
+    "params": {
+     "field_path": "reason_for_recall",
+     "record_id": "D-0382-2018"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:20200221",
+    "params": {
+     "field_path": "report_date",
+     "record_id": "D-0382-2018"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "product_quantity",
+     "record_id": "D-0382-2018"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "voluntary_mandated",
+     "record_id": "D-0382-2018"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "recall_number",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The recall is identified with a stated classification (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "recall_number",
+      "exists",
+      null
+     ],
+     [
+      "classification",
+      "equals",
+      "Class I"
+     ],
+     [
+      "status",
+      "equals",
+      "Terminated"
+     ]
+    ],
+    [
+     [
+      "recall_number",
+      "exists",
+      null
+     ],
+     [
+      "reason_for_recall",
+      "equals",
+      "Superpotent Drug."
+     ],
+     [
+      "report_date",
+      "numeric_le",
+      20200221
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The recall is action-ready: identified, classified, with product description, reason, and status populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "recall_number",
+      "exists",
+      null
+     ],
+     [
+      "classification",
+      "equals",
+      "Class I"
+     ],
+     [
+      "status",
+      "equals",
+      "Terminated"
+     ],
+     [
+      "product_quantity",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The recall satisfies the checked completeness protocol: action-ready per the inspected fields, with consistent dates and populated distribution and firm fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "drugsafety_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "dru-v2-0028",
+ "notes_for_annotators": "{\"family\": \"drugsafety-branching-hom-17\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": 1, \"false_mech\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "D-0382-2018": {
+   "classification": "Class II",
+   "product_quantity": "6472 Cases",
+   "reason_for_recall": "Cross Contamination With Other Products: Oral care solutions were manufactured by a third party supplier on equipment shared with non-pharmaceutical products",
+   "recall_number": "D-0382-2018",
+   "report_date": "20180221",
+   "status": "Terminated",
+   "voluntary_mandated": "Voluntary: Firm initiated"
+  }
+ },
+ "scope": "The single named openFDA enforcement record, as retrieved and embedded; no external lookups. Record identifier: D-0382-2018.",
+ "seed": "D-0382-2018",
+ "user_prompt": "Is this recall record complete and correctly classified for downstream pharmacy action?",
+ "variant": "base"
+}

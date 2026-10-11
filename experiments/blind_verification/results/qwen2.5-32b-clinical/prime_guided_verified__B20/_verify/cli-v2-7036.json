@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7036",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "* Histologically confirmed diagnosis of invasive ductal carcinoma (grade 1-2), or mucinous carcinoma, or papillary carcinoma, or tubular carcinoma, or medullary carcinoma: primary tumor \u2264 3.0cm in maximum diameter and pN0; or histologically confirmed DCIS: primary tumor \u2264 2.5cm in maximum diameter, low-medium grade",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 444,
+   "completion_tokens": 31,
+   "latency_s": 2.662,
+   "raw": "The document does not mention any age requirement for participants, thus it is unclear if the eligibility criteria restrict enrollment to adults only. ANSWER: UNCLEAR"
+  }
+ ]
+}

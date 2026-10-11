@@ -1,0 +1,313 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT01903174"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.identificationModule.nctId"
+    ],
+    "what": "the NCT identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.statusVerifiedDate",
+     "record_id": "NCT01903174"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.eligibilityModule.eligibilityCriteria"
+    ],
+    "what": "the date the status was last verified"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT01903174"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.identificationModule.officialTitle"
+    ],
+    "what": "the brief summary"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT01903174"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.eligibilityModule.minimumAge"
+    ],
+    "what": "the sex eligibility field"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:false",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.healthyVolunteers",
+     "record_id": "NCT01903174"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.eligibilityModule.healthyVolunteers",
+     "protocolSection.eligibilityModule.eligibilityCriteria"
+    ],
+    "what": "whether healthy volunteers are accepted"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ]
+    ],
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-6125",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-het-12\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 1, \"false_mech\": false, \"locator\": true, \"source_instance\": \"cli-v2-0125\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT01903174": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "This study is intended to support previous positive results of the AeroForm\u2122 Patient Controlled Tissue Expander System for breast reconstruction"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n1. Subject is female between the ages of 18 - 70.\n2. Subject has elected two stage breast reconstruction with tissue expanders.\n3. Subject's tissue is amenable to tissue expansion.\n4. Subject is able to provide written informed consent.\n5. Subject is able and willing to comply with all of the study requirements.\n6. Subject has the physical, perceptual and cognitive capacity to understand and manage the at home dosing regimen.\n\nExclusion Criteria:\n\n1. Subject has residual gross malignancy following mastectomy.\n2. Subject has a current infection at the intended expansion site.\n3. Subject has clinically significant radiation fibrosis at the expansion site.\n4. Subject has planned radiation at the intended expansion site during the time the expander is implanted.\n5. Subject has any co-morbid condition determined by the Investigator to place the subject at an increased risk of complications (e.g., severe collagen vascular disease, poorly managed diabetes).\n6. Subject is currently participating in a concurrent investigational drug or device study.\n7. Subject is a current tobacco smoker.\n8. Subject is overweight with a BMI \\> 33.\n9. Subject has currently implanted electronic device such as a pacemaker, defibrillator, neurostimulator device, or drug infusion device.\n10. Subject is pregnant or planning to become pregnant during the study period.\n11. Subject has a history of psychological condition, drug or alcohol misuse which may interfere with their ability to use the device safely.\n\n    \\-",
+     "healthyVolunteers": false,
+     "minimumAge": "18 Years",
+     "sex": "FEMALE"
+    },
+    "identificationModule": {
+     "nctId": "NCT01903174",
+     "officialTitle": "AeroForm Patient Controlled Tissue Expansion for Breast Reconstruction"
+    },
+    "statusModule": {
+     "overallStatus": "COMPLETED",
+     "statusVerifiedDate": "2014-03"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT01903174.",
+ "seed": "NCT01903174",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

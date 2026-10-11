@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7049",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "cloudflare-scrape 1.6.6 through 1.7.1",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 213,
+   "completion_tokens": 23,
+   "latency_s": 1.855,
+   "raw": "The document mentions \"cloudflare-scrape\" by its registered name, establishing the condition. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E4",
+   "attested": "T",
+   "quote": "cloudflare-scrape 1.6.6 through 1.7.1",
+   "verdict": "F",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 200,
+   "completion_tokens": 26,
+   "latency_s": 1.782,
+   "raw": "The document does not specify the first affected version, only the range of versions impacted and the fix version. ANSWER: F"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7255",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "The `GraphDef` format in TensorFlow does not allow self recursive functions.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 512,
+   "completion_tokens": 24,
+   "latency_s": 2.006,
+   "raw": "The document mentions TensorFlow by its registered name multiple times, establishing that it is the affected package. ANSWER: T"
+  }
+ ]
+}

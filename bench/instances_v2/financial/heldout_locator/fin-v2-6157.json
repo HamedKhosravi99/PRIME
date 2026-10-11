@@ -1,0 +1,437 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "F",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"D.R. Horton, Inc.\"",
+    "params": {
+     "field_path": "entityName",
+     "record_id": "CIK0000029534"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "facts.us-gaap.AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment.units.USD.0.val",
+     "facts.us-gaap.EarningsPerShareBasic.units.USD/shares.0.val",
+     "entityName"
+    ],
+    "what": "the filer's name"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_ge:0",
+    "params": {
+     "field_path": "facts.us-gaap.StockholdersEquity.units.USD.0.val",
+     "record_id": "CIK0000029534"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "facts.us-gaap.Assets.units.USD.0.val",
+     "facts.us-gaap.StockholdersEquity.units.USD.0.val",
+     "facts.us-gaap.AccumulatedOtherComprehensiveIncomeLossNetOfTax.units.USD.0.val"
+    ],
+    "what": "the latest reported stockholders' equity"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_ge:0",
+    "params": {
+     "field_path": "facts.us-gaap.RetainedEarningsAccumulatedDeficit.units.USD.0.val",
+     "record_id": "CIK0000029534"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "facts.us-gaap.RetainedEarningsAccumulatedDeficit.units.USD.0.val",
+     "cik",
+     "facts.us-gaap.AccumulatedOtherComprehensiveIncomeLossNetOfTax.units.USD.0.val"
+    ],
+    "what": "the latest reported retained earnings or accumulated deficit"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_ge:0",
+    "params": {
+     "field_path": "facts.us-gaap.CashAndCashEquivalentsAtCarryingValue.units.USD.0.val",
+     "record_id": "CIK0000029534"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "facts.us-gaap.AccumulatedOtherComprehensiveIncomeLossNetOfTax.units.USD.0.val",
+     "facts.us-gaap.LiabilitiesAndStockholdersEquity.units.USD.0.val",
+     "facts.us-gaap.CashAndCashEquivalentsAtCarryingValue.units.USD.0.val"
+    ],
+    "what": "the latest reported cash and cash equivalents"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_ge:0",
+    "params": {
+     "field_path": "facts.us-gaap.PropertyPlantAndEquipmentNet.units.USD.0.val",
+     "record_id": "CIK0000029534"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "facts.us-gaap.AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment.units.USD.0.val",
+     "facts.us-gaap.AccumulatedOtherComprehensiveIncomeLossNetOfTax.units.USD.0.val",
+     "facts.us-gaap.PropertyPlantAndEquipmentNet.units.USD.0.val"
+    ],
+    "what": "the latest reported net property, plant and equipment"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_ge:0",
+    "params": {
+     "field_path": "facts.us-gaap.CommonStockSharesIssued.units.shares.0.val",
+     "record_id": "CIK0000029534"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "facts.us-gaap.Assets.units.USD.0.val",
+     "facts.us-gaap.CommonStockSharesIssued.units.shares.0.val",
+     "facts.us-gaap.AccumulatedOtherComprehensiveIncomeLossNetOfTax.units.USD.0.val"
+    ],
+    "what": "the latest reported number of common shares issued"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_ge:0",
+    "params": {
+     "field_path": "facts.us-gaap.NetIncomeLoss.units.USD.0.val",
+     "record_id": "CIK0000029534"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "facts.us-gaap.NetIncomeLoss.units.USD.0.val",
+     "facts.us-gaap.AccumulatedOtherComprehensiveIncomeLossNetOfTax.units.USD.0.val",
+     "facts.us-gaap.Assets.units.USD.0.val"
+    ],
+    "what": "the latest reported net income or loss"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "entityName",
+      "equals",
+      "D.R. Horton, Inc."
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The filer is identified and reports a total-assets figure (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "entityName",
+      "equals",
+      "D.R. Horton, Inc."
+     ],
+     [
+      "facts.us-gaap.StockholdersEquity.units.USD.0.val",
+      "numeric_ge",
+      0
+     ],
+     [
+      "facts.us-gaap.RetainedEarningsAccumulatedDeficit.units.USD.0.val",
+      "numeric_ge",
+      0
+     ]
+    ],
+    [
+     [
+      "entityName",
+      "equals",
+      "D.R. Horton, Inc."
+     ],
+     [
+      "facts.us-gaap.CashAndCashEquivalentsAtCarryingValue.units.USD.0.val",
+      "numeric_ge",
+      0
+     ],
+     [
+      "facts.us-gaap.PropertyPlantAndEquipmentNet.units.USD.0.val",
+      "numeric_ge",
+      0
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The filer's core balance-sheet figures are present and positive as inspected under the declared protocol."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "entityName",
+      "equals",
+      "D.R. Horton, Inc."
+     ],
+     [
+      "facts.us-gaap.StockholdersEquity.units.USD.0.val",
+      "numeric_ge",
+      0
+     ],
+     [
+      "facts.us-gaap.RetainedEarningsAccumulatedDeficit.units.USD.0.val",
+      "numeric_ge",
+      0
+     ],
+     [
+      "facts.us-gaap.CommonStockSharesIssued.units.shares.0.val",
+      "numeric_ge",
+      0
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The filer satisfies the checked reporting protocol: core figures present, positive, and within the declared magnitude bounds, with cash and equity fields populated as inspected."
+  }
+ ],
+ "decoys": [],
+ "domain": "financial_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "fin-v2-6157",
+ "notes_for_annotators": "{\"family\": \"financial-branching-hom-15\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": 0, \"false_mech\": true, \"locator\": true, \"source_instance\": \"fin-v2-0157\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "CIK0000029534": {
+   "cik": 29534,
+   "entityName": "DOLLAR GENERAL CORP",
+   "facts": {
+    "us-gaap": {
+     "AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment": {
+      "units": {
+       "USD": [
+        {
+         "val": 652694000
+        }
+       ]
+      }
+     },
+     "AccumulatedOtherComprehensiveIncomeLossNetOfTax": {
+      "units": {
+       "USD": [
+        {
+         "val": -20296000
+        }
+       ]
+      }
+     },
+     "Assets": {
+      "units": {
+       "USD": [
+        {
+         "val": 9546222000
+        }
+       ]
+      }
+     },
+     "CashAndCashEquivalentsAtCarryingValue": {
+      "units": {
+       "USD": [
+        {
+         "val": 377995000
+        }
+       ]
+      }
+     },
+     "CommonStockSharesIssued": {
+      "units": {
+       "shares": [
+        {
+         "val": 341507000
+        }
+       ]
+      }
+     },
+     "EarningsPerShareBasic": {
+      "units": {
+       "USD/shares": [
+        {
+         "val": 1.05
+        }
+       ]
+      }
+     },
+     "LiabilitiesAndStockholdersEquity": {
+      "units": {
+       "USD": [
+        {
+         "val": 9546222000
+        }
+       ]
+      }
+     },
+     "NetIncomeLoss": {
+      "units": {
+       "USD": [
+        {
+         "val": 1165080000
+        }
+       ]
+      }
+     },
+     "PropertyPlantAndEquipmentNet": {
+      "units": {
+       "USD": [
+        {
+         "val": 1524575000
+        }
+       ]
+      }
+     },
+     "RetainedEarningsAccumulatedDeficit": {
+      "units": {
+       "USD": [
+        {
+         "val": 830932000
+        }
+       ]
+      }
+     },
+     "StockholdersEquity": {
+      "units": {
+       "USD": [
+        {
+         "val": 2831695000
+        }
+       ]
+      }
+     }
+    }
+   }
+  }
+ },
+ "scope": "The single named SEC companyfacts record, as retrieved and embedded; no external lookups. Record identifier: CIK0000029534.",
+ "seed": "CIK0000029534",
+ "user_prompt": "Are this filer's reported balance-sheet figures present and within the declared plausibility protocol for the latest filings?",
+ "variant": "base"
+}

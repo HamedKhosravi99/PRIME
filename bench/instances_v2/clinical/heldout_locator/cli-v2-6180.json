@@ -1,0 +1,376 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "F",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"The Role and Mechanism of TCR-T Cells in Immunotherapy for Acute Myeloid Leukemia\"",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT03442088"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.identificationModule.briefTitle"
+    ],
+    "what": "the brief title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2019-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT03442088"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.lastUpdateSubmitDate",
+     "protocolSection.eligibilityModule.healthyVolunteers",
+     "protocolSection.statusModule.studyFirstSubmitDate"
+    ],
+    "what": "the date the registration was first submitted"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT03442088"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.identificationModule.nctId"
+    ],
+    "what": "the eligibility criteria text"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT03442088"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.eligibilityModule.sex"
+    ],
+    "what": "the sex eligibility field"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT03442088"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.identificationModule.officialTitle"
+    ],
+    "what": "the official title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT03442088"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.eligibilityModule.minimumAge"
+    ],
+    "what": "the minimum age for eligibility"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_after:\"1980-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT03442088"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.lastUpdateSubmitDate",
+     "protocolSection.statusModule.studyFirstSubmitDate",
+     "protocolSection.identificationModule.nctId"
+    ],
+    "what": "the date the registration was first submitted"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT03442088"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.descriptionModule.briefSummary"
+    ],
+    "what": "the brief summary"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "equals",
+      "The Role and Mechanism of TCR-T Cells in Immunotherapy for Acute Myeloid Leukemia"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "equals",
+      "The Role and Mechanism of TCR-T Cells in Immunotherapy for Acute Myeloid Leukemia"
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2019-01-01"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "equals",
+      "The Role and Mechanism of TCR-T Cells in Immunotherapy for Acute Myeloid Leukemia"
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2019-01-01"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_after",
+      "1980-01-01"
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "cli-v2-6180",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-het-06\", \"topology\": \"nested\", \"cost\": \"het\", \"target_level\": 0, \"false_mech\": true, \"locator\": true, \"source_instance\": \"cli-v2-0180\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT03442088": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "This is an open label pilot study of the impact of treatment with standard dosing of Otezla for 16 weeks on AM-endotype psoriasis patients, identified by elevated (\\>150% of normal): 1.) Intermediate (CD14++CD16+) monocytes, or 2.) circulating monocyte doublets, or 3.) circulating monocyte-platelet aggregates (MPA).\n\nApproximately 25 psoriasis patients with the AM-endotype will be followed during treatment over 16 weeks with 4 monthly individual blood draws will be enrolled. All treated psoriasis subjects will receive apremilast through Week 16."
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n1. Males or females, \u2265 18 and \\< 60 years of age at the time of signing the informed consent document.\n2. Understand and voluntarily sign an informed consent document prior to any study related assessments/procedures being conducted.\n3. Able to adhere to the study visit schedule and other protocol requirements.\n4. Patients must exhibit AM-endotype psoriasis patients, identified by elevated (\\>150% of normal) levels of any one of the following criteria: 1.) Intermediate (CD14++CD16+) monocytes, or 2.) circulating monocyte doublets, or 3.) circulating monocyte-platelet aggregates (MPA).\n5. Diagnosis of chronic plaque psoriasis for at least 12 months prior to Screening.\n6. Have moderate to severe plaque psoriasis at Screening and Baseline as defined by a. BSA \u22655% b. sPGA \u22653 (moderate to severe)\n7. Must be a candidate for phototherapy and systemic (including Otezla) therapy.\n8. Must be in good health (except for psoriasis) as judged by the Investigator, based on medical history and physical examination.\n9. Females of childbearing potential (FCBP) must have a negative pregnancy test at Screening and Baseline. While on investigational product and for at least 28 days after taking the last dose of investigational product, FCBP who engage in activity in which conception is possible must use one of the approved contraceptive options described below:\n\nOption 1: Any one of the following highly effective methods: hormonal contraception (oral, injection, implant, transdermal patch, vaginal ring); intrauterine device (IUD); tubal ligation; or partner's vasectomy;\n\nOR\n\nOption 2: Male or female condom (latex condom or nonlatex condom NOT made out of natural \\[animal\\] membrane \\[for example, polyurethane\\]; PLUS one additional barrier method: (a) diaphragm with spermicide; (b) cervical cap with spermicide; or (c) contraceptive sponge with spermicide.\n\nThe female subject's chosen form of contraception must be effective by the time the female subject is randomized into the study (for example, hormonal contraception should be initiated at least 28 days before randomization Male subjects (including those who have had a vasectomy) who engage in activity in which conception is possible must use barrier contraception (male latex condom or non-latex condom NOT made out of natural \\[animal\\] membrane \\[for example, polyurethane\\]) while on investigational product and for at least 28 days after the last dose of investigational product.\n\nExclusion Criteria:\n\n* 1\\. Other than psoriasis, history of any clinically significant (as determined by the Investigator) cardiac (clinically advanced cardiovascular disease including; Stent, past history of MI, thrombotic event or arterial calcification), endocrinologic, pulmonary, neurologic, psychiatric, hepatic, renal, hematologic, immunologic disease, or other major uncontrolled disease.\n\n  2\\. Any condition, including the presence of laboratory abnormalities, which would place the subject at unacceptable risk if he/she were to participate in the study.\n\n  3\\. Any condition, including other inflammatory diseases or dermatologic conditions that confound the ability to interpret data from the study.\n\n  4\\. Prior history of suicide attempt at any time in the subject's life time prior to screening or randomization, or major psychiatric illness requiring hospitalization within the last 3 years.\n\n  5\\. Pregnant or breast feeding.\n\n  6\\. Have failed more than 3 systemic agents for treatment of psoriasis.\n\n  7\\. History of allergy to any component of Apremilast.\n\n  8\\. Hepatitis B surface antigen positive at Screening.\n\n  9\\. Anti-hepatitis C antibody positive at Screening.\n\n  10\\. Had a serious infection (including, but not limited to, hepatitis, pneumonia, sepsis, cellulitis, meningitis or pyelonephritis) or have been hospitalized for an infection. Subject must be cured of infection \\> 4 weeks before Screening.\n\n  11\\. Have a history of, or ongoing, chronic or recurrent infectious disease, including, but not limited to, chronic renal infection, chronic chest infection (e.g., bronchiectasis), sinusitis, recurrent urinary tract infection (e.g., recurrent pyelonephritis, chronic nonremitting cystitis), an open, draining, or infected skin wound or ulcer.\n\n  12\\. Had a Bacillus Calmette-Gu\u00e9rin (BCG) vaccination within 1 year prior to screening.\n\n  13\\. History of positive human immunodeficiency virus (HIV), or have congenital or acquired immunodeficiency (e.g., common variable immunodeficiency disease).\n\n  14\\. Active substance abuse or a history of substance abuse within 6 months prior to Screening.\n\n  15\\. Bacterial infections requiring treatment with oral or injectable antibiotics, or significant viral or fungal infections, within 4 weeks of Screening. Any treatment and cure for such infections must have been completed at least 4 weeks prior to Screening.\n\n  16\\. Malignancy or history of malignancy, except for:\n  1. treated \\[i.e., cured\\] basal cell or squamous cell in situ skin carcinomas;\n  2. treated \\[i.e., cured\\] cervical intraepithelial neoplasia \\[CIN\\] or carcinoma in situ of the cervix with no evidence of recurrence within the previous 5 years.\n\n     17\\. Topical therapy within 2 weeks of study entry (including, but not limited to, topical corticosteroids, retinoids or vitamin D analog preparations, tacrolimus, pimecrolimus, or anthralin/dithranol). Exceptions: low-potency corticosteroids to cyclosporine, corticosteroids, methotrexate, retinoids, mycophenolate, thioguanine, hydroxyurea, sirolimus, sulfasalazine, azathioprine, fumaric acid esters) will be allowed as background therapy and restricted to treatment of the face, axillae, and groin in accordance with the manufacturers' suggested usage during the course of the study (this restricted usage should be documented). Subjects with scalp psoriasis will be permitted to use coal tar shampoo and/or salicylic acid scalp preparations on scalp lesions. An unmedicated skin moisturizer (eg, Eucerin\u00ae) will be also permitted for body lesions only. Subjects should not use these topical treatments within 24 hours prior to the clinic visit.\n\n     18\\. Systemic therapy for psoriasis within 4 weeks prior to study entry (including, but not limited to, cyclosporine, corticosteroids, methotrexate, retinoids, mycophenolate, thioguanine, hydroxyurea, sirolimus, sulfasalazine, azathioprine, and fumaric acid esters).\n\n     19\\. Use of phototherapy within 4 weeks prior to study entry.\n\n     20\\. Use of any investigational drug within 4 weeks prior to study entry, or 5 pharmacokinetic/pharmacodynamic half-lives, if known (whichever is longer).\n\n     21\\. Prolonged sun exposure or use of tanning booths or other ultraviolet (UV) light sources.\n\n     22\\. Prior treatment with Apremilast\n\n     23\\. Inability to wash out from any topical treatment(s) (two weeks prior to entering the study) or all systemic therapies, including orals and biologics (e.g., TNF inhibitors IL-17 inhibitors, IL-12/23 inhibitors, 4 weeks).",
+     "healthyVolunteers": false,
+     "minimumAge": "18 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "Monocyte Biomarkers in Moderate to Severe Plaque Psoriasis Subjects Treated With Apremilast",
+     "nctId": "NCT03442088",
+     "officialTitle": "An Investigator Initiated Study of Monocyte Biomarkers in Moderate to Severe Plaque Psoriasis Subjects Treated With Apremilast"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2022-12-22",
+     "overallStatus": "COMPLETED",
+     "statusVerifiedDate": "2022-12",
+     "studyFirstSubmitDate": "2017-10-11"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT03442088.",
+ "seed": "NCT03442088",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

@@ -1,0 +1,335 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Terminated\"",
+    "params": {
+     "field_path": "status",
+     "record_id": "D-1106-2020"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "status",
+     "voluntary_mandated",
+     "distribution_pattern"
+    ],
+    "what": "the recall status"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "product_description",
+     "record_id": "D-1106-2020"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "product_description",
+     "recalling_firm",
+     "voluntary_mandated"
+    ],
+    "what": "the description of the recalled product"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:20220324",
+    "params": {
+     "field_path": "recall_initiation_date",
+     "record_id": "D-1106-2020"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "recall_number",
+     "recall_initiation_date",
+     "product_quantity"
+    ],
+    "what": "the date the recall was initiated"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:20220415",
+    "params": {
+     "field_path": "report_date",
+     "record_id": "D-1106-2020"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "code_info",
+     "report_date",
+     "voluntary_mandated"
+    ],
+    "what": "the date the recall was reported"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"United States\"",
+    "params": {
+     "field_path": "country",
+     "record_id": "D-1106-2020"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "recalling_firm",
+     "distribution_pattern",
+     "country"
+    ],
+    "what": "the country"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "event_id",
+     "record_id": "D-1106-2020"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "voluntary_mandated",
+     "recall_number",
+     "event_id"
+    ],
+    "what": "the event identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Class II\"",
+    "params": {
+     "field_path": "classification",
+     "record_id": "D-1106-2020"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "classification",
+     "voluntary_mandated",
+     "code_info"
+    ],
+    "what": "the recall classification"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "status",
+      "equals",
+      "Terminated"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The recall is identified with a stated classification (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "status",
+      "equals",
+      "Terminated"
+     ],
+     [
+      "product_description",
+      "exists",
+      null
+     ],
+     [
+      "recall_initiation_date",
+      "numeric_le",
+      20220324
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The recall is action-ready: identified, classified, with product description, reason, and status populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "status",
+      "equals",
+      "Terminated"
+     ],
+     [
+      "product_description",
+      "exists",
+      null
+     ],
+     [
+      "recall_initiation_date",
+      "numeric_le",
+      20220324
+     ],
+     [
+      "report_date",
+      "numeric_le",
+      20220415
+     ],
+     [
+      "country",
+      "equals",
+      "United States"
+     ],
+     [
+      "event_id",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The recall satisfies the checked completeness protocol: action-ready per the inspected fields, with consistent dates and populated distribution and firm fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "drugsafety_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "dru-v2-6121",
+ "notes_for_annotators": "{\"family\": \"drugsafety-nested-hom-09\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 3, \"false_mech\": false, \"locator\": true, \"source_instance\": \"dru-v2-0121\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "D-1106-2020": {
+   "classification": "Class II",
+   "code_info": "All lots within expiry",
+   "country": "United States",
+   "distribution_pattern": "Products are sold online within the United States and  internationally to the following countries: Australia, Canada, Israel, Italy, Japan, Norway, and United Kingdom",
+   "event_id": "85341",
+   "product_description": "Acne Cystic, 500 mg Capsules, 90-count bottles, Distributed by Herbal Doctor Remedies Alhambra, CA 91801-7081 USA, 1(800) 600-0808",
+   "product_quantity": "N/A",
+   "recall_initiation_date": "20200324",
+   "recall_number": "D-1106-2020",
+   "recalling_firm": "Herbal Doctor Remedies",
+   "report_date": "20200415",
+   "status": "Terminated",
+   "voluntary_mandated": "Voluntary: Firm initiated"
+  }
+ },
+ "scope": "The single named openFDA enforcement record, as retrieved and embedded; no external lookups. Record identifier: D-1106-2020.",
+ "seed": "D-1106-2020",
+ "user_prompt": "Is this recall record complete and correctly classified for downstream pharmacy action?",
+ "variant": "base"
+}

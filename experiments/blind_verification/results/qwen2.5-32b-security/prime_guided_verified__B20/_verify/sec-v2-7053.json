@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7053",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "in the login form in the administration application in Django",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 233,
+   "completion_tokens": 21,
+   "latency_s": 1.743,
+   "raw": "The document specifies \"Django\" as the affected package, establishing the condition. ANSWER: T"
+  }
+ ]
+}

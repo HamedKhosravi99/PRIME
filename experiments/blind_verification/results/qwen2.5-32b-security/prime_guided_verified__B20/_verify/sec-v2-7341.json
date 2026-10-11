@@ -1,0 +1,44 @@
+{
+ "instance": "sec-v2-7341",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Ansible, versions 2.9.x before 2.9.1, 2.8.x before 2.8.7 and Ansible versions 2.7.x before 2.7.15",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 239,
+   "completion_tokens": 28,
+   "latency_s": 2.734,
+   "raw": "The document specifies the affected package by naming \"Ansible\" and listing specific version numbers, thus establishing the condition. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "versions 2.9.x before 2.9.1, 2.8.x before 2.8.7 and Ansible versions 2.7.x before 2.7.15",
+   "verdict": "F",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 221,
+   "completion_tokens": 29,
+   "latency_s": 2.023,
+   "raw": "The document does not mention a specific version in which the issue is fixed; it only lists versions that contain the issue. ANSWER: F"
+  },
+  {
+   "attempt": 3,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "before 2.9.1, 2.8.x before 2.8.7 and Ansible versions 2.7.x before 2.7.15",
+   "verdict": "F",
+   "agree": false,
+   "invoked": false,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "raw": "The document does not mention a specific version in which the issue is fixed; it only lists versions that contain the issue. ANSWER: F"
+  }
+ ]
+}

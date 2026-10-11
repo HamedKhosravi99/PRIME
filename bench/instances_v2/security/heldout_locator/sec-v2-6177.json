@@ -1,0 +1,334 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"PyPI\"",
+    "params": {
+     "field_path": "affected.0.package.ecosystem",
+     "record_id": "GHSA-2wgc-48g2-cj5w"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.cwe_ids.0",
+     "affected.0.package.ecosystem",
+     "references.0.url"
+    ],
+    "what": "the ecosystem of the affected package"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2028-01-01\"",
+    "params": {
+     "field_path": "modified",
+     "record_id": "GHSA-2wgc-48g2-cj5w"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.severity",
+     "database_specific.cwe_ids.0",
+     "modified"
+    ],
+    "what": "the date the advisory was last modified"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:true",
+    "params": {
+     "field_path": "database_specific.github_reviewed",
+     "record_id": "GHSA-2wgc-48g2-cj5w"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.github_reviewed",
+     "affected.0.package.name",
+     "severity.0.score"
+    ],
+    "what": "whether the advisory has been reviewed by the database maintainers"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.type",
+     "record_id": "GHSA-2wgc-48g2-cj5w"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.cwe_ids.0",
+     "severity.0.score",
+     "references.0.type"
+    ],
+    "what": "the type of the first reference"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "aliases.0",
+     "record_id": "GHSA-2wgc-48g2-cj5w"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.cwe_ids.0",
+     "database_specific.severity",
+     "aliases.0"
+    ],
+    "what": "the first alias identifier (such as a CVE)"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-2wgc-48g2-cj5w"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "severity.0.score",
+     "summary",
+     "database_specific.severity"
+    ],
+    "what": "the advisory's one-line summary"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ],
+     [
+      "published",
+      "exists",
+      null
+     ],
+     [
+      "modified",
+      "date_before",
+      "2028-01-01"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ],
+     [
+      "published",
+      "exists",
+      null
+     ],
+     [
+      "modified",
+      "date_before",
+      "2028-01-01"
+     ],
+     [
+      "database_specific.github_reviewed",
+      "equals",
+      true
+     ],
+     [
+      "references.0.type",
+      "exists",
+      null
+     ],
+     [
+      "aliases.0",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "sec-v2-6177",
+ "notes_for_annotators": "{\"family\": \"security-nested-het-06\", \"topology\": \"nested\", \"cost\": \"het\", \"target_level\": 1, \"false_mech\": false, \"locator\": true, \"source_instance\": \"sec-v2-0177\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-2wgc-48g2-cj5w": {
+   "affected": [
+    {
+     "package": {
+      "ecosystem": "PyPI",
+      "name": "vantage6"
+     }
+    }
+   ],
+   "aliases": [
+    "CVE-2024-21653"
+   ],
+   "database_specific": {
+    "cwe_ids": [
+     "CWE-284"
+    ],
+    "github_reviewed": true,
+    "severity": "MODERATE"
+   },
+   "modified": "2026-07-07T17:56:25.281119153Z",
+   "references": [
+    {
+     "type": "WEB",
+     "url": "https://github.com/vantage6/vantage6/security/advisories/GHSA-2wgc-48g2-cj5w"
+    }
+   ],
+   "severity": [
+    {
+     "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
+    }
+   ],
+   "summary": "vantage6 has insecure SSH configuration for node and server containers"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-2wgc-48g2-cj5w.",
+ "seed": "GHSA-2wgc-48g2-cj5w",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

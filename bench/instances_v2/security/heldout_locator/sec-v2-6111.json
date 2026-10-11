@@ -1,0 +1,361 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "affected.0.package.name",
+     "record_id": "GHSA-3x47-w4rx-6pm7"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "summary",
+     "references.0.type",
+     "affected.0.package.name"
+    ],
+    "what": "the name of the affected package"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "details",
+     "record_id": "GHSA-3x47-w4rx-6pm7"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "summary",
+     "details",
+     "database_specific.cwe_ids.0"
+    ],
+    "what": "the advisory's detailed description"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"PyPI\"",
+    "params": {
+     "field_path": "affected.0.package.ecosystem",
+     "record_id": "GHSA-3x47-w4rx-6pm7"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.cwe_ids.0",
+     "affected.0.package.ecosystem",
+     "summary"
+    ],
+    "what": "the ecosystem of the affected package"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2028-01-01\"",
+    "params": {
+     "field_path": "modified",
+     "record_id": "GHSA-3x47-w4rx-6pm7"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "modified",
+     "database_specific.github_reviewed",
+     "published"
+    ],
+    "what": "the date the advisory was last modified"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.url",
+     "record_id": "GHSA-3x47-w4rx-6pm7"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "summary",
+     "references.0.url",
+     "references.0.type"
+    ],
+    "what": "the URL of the first reference"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"CVE-2025-71367\"",
+    "params": {
+     "field_path": "aliases.0",
+     "record_id": "GHSA-3x47-w4rx-6pm7"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "summary",
+     "database_specific.severity",
+     "aliases.0"
+    ],
+    "what": "the first alias identifier (such as a CVE)"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "schema_version",
+     "record_id": "GHSA-3x47-w4rx-6pm7"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.severity",
+     "schema_version",
+     "summary"
+    ],
+    "what": "the schema version of the record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ],
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ]
+    ],
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ],
+     [
+      "modified",
+      "date_before",
+      "2028-01-01"
+     ],
+     [
+      "references.0.url",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ],
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ],
+     [
+      "aliases.0",
+      "equals",
+      "CVE-2025-71367"
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "sec-v2-6111",
+ "notes_for_annotators": "{\"family\": \"security-branching-hom-15\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": 2, \"false_mech\": true, \"locator\": true, \"source_instance\": \"sec-v2-0111\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-3x47-w4rx-6pm7": {
+   "affected": [
+    {
+     "package": {
+      "ecosystem": "PyPI",
+      "name": "lollms"
+     }
+    }
+   ],
+   "aliases": [
+    "CVE-2024-3429"
+   ],
+   "database_specific": {
+    "cwe_ids": [
+     "CWE-22"
+    ],
+    "github_reviewed": true,
+    "severity": "HIGH"
+   },
+   "details": "A path traversal vulnerability exists in the parisneo/lollms application, specifically within the `sanitize_path_from_endpoint` and `sanitize_path` functions in `lollms_core\\lollms\\security.py`. This vulnerability allows for arbitrary file reading when the application is running on Windows. The issue arises due to insufficient sanitization of user-supplied input, enabling attackers to bypass the path traversal protection mechanisms by crafting malicious input. Successful exploitation could lead to unauthorized access to sensitive files, information disclosure, and potentially a denial of service (DoS) condition by including numerous large or resource-intensive files. This vulnerability affects the latest version prior to 9.5.0.",
+   "modified": "2026-07-07T17:56:53.831410771Z",
+   "published": "2024-06-06T21:30:37Z",
+   "references": [
+    {
+     "type": "ADVISORY",
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-3429"
+    }
+   ],
+   "schema_version": "1.7.3",
+   "summary": "LoLLMS Path Traversal vulnerability"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-3x47-w4rx-6pm7.",
+ "seed": "GHSA-3x47-w4rx-6pm7",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

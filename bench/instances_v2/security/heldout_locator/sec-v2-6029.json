@@ -1,0 +1,394 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "F",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"### Impact\\n\\nIn mitmproxy 7.0.2 and below, a malicious client or server is able to perform [HTTP request smuggling](https://en.wikipedia.org/wiki/HTTP_request_smuggling) attacks through mitmproxy. This means that a malicious client/server could smuggle a request/response through mitmproxy as part of another request/response's HTTP message body. While mitmproxy would only see one request, the target server would see multiple requests. A smuggled request is still captured as part of another request's body, but it does not appear in the request list and does not go through the usual mitmproxy event hooks, where users may have implemented custom access control checks or input sanitization.\\n\\nUnless you use mitmproxy to protect an HTTP/1 service, no action is required.\\n\\n\\n### Patches\\n\\nThe vulnerability has been fixed in mitmproxy 7.0.3 and above.\\n\\n\\n### Acknowledgements\\n\\nWe thank Jo\\u00e3o Sobral (@chinchila) for responsibly disclosing this vulnerability to the mitmproxy team.\\n\\n\\n### Timeline\\n\\n- **2021-09-08**: Received initial report for mitmproxy <= 6.0.2.\\n- **2021-09-08**: Requested clarification if 7.x is affected.\\n- **2021-09-10**: Received additional details, 7.x situation still unclear.\\n- **2021-09-13**: Internally determined that 7.x is also affected.\\n- **2021-09-13**: Shared initial fix with researcher.\\n- **2021-09-14**: Received confirmation that fix is working, but H2.TE/H2.CL should also be looked at.\\n- **2021-09-14**: Shared revised fix that includes additional H2.TE mitigations.\\n- **2021-09-14**: Received confirmation that revised fix is working.\\n- **2021-09-16**: Completed internal patch review.\\n- **2021-09-16**: Published patch release and advisory.\"",
+    "params": {
+     "field_path": "details",
+     "record_id": "GHSA-2mhw-8qcg-gr96"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "summary",
+     "details",
+     "affected.0.package.name"
+    ],
+    "what": "the advisory's detailed description"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:true",
+    "params": {
+     "field_path": "database_specific.github_reviewed",
+     "record_id": "GHSA-2mhw-8qcg-gr96"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "affected.0.package.name",
+     "modified",
+     "database_specific.github_reviewed"
+    ],
+    "what": "whether the advisory has been reviewed by the database maintainers"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.severity",
+     "record_id": "GHSA-2mhw-8qcg-gr96"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "schema_version",
+     "database_specific.severity",
+     "affected.0.package.name"
+    ],
+    "what": "the maintainers' severity label"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.type",
+     "record_id": "GHSA-2mhw-8qcg-gr96"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "affected.0.package.name",
+     "summary",
+     "references.0.type"
+    ],
+    "what": "the type of the first reference"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.url",
+     "record_id": "GHSA-2mhw-8qcg-gr96"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "references.0.url",
+     "schema_version",
+     "affected.0.package.name"
+    ],
+    "what": "the URL of the first reference"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.cwe_ids.0",
+     "record_id": "GHSA-2mhw-8qcg-gr96"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "schema_version",
+     "affected.0.package.name",
+     "database_specific.cwe_ids.0"
+    ],
+    "what": "the first CWE identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.github_reviewed",
+     "record_id": "GHSA-2mhw-8qcg-gr96"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "published",
+     "schema_version",
+     "database_specific.github_reviewed"
+    ],
+    "what": "whether the advisory has been reviewed by the database maintainers"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "severity.0.score",
+     "record_id": "GHSA-2mhw-8qcg-gr96"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "affected.0.package.name",
+     "summary",
+     "severity.0.score"
+    ],
+    "what": "the first CVSS score string"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "equals",
+      "### Impact\n\nIn mitmproxy 7.0.2 and below, a malicious client or server is able to perform [HTTP request smuggling](https://en.wikipedia.org/wiki/HTTP_request_smuggling) attacks through mitmproxy. This means that a malicious client/server could smuggle a request/response through mitmproxy as part of another request/response's HTTP message body. While mitmproxy would only see one request, the target server would see multiple requests. A smuggled request is still captured as part of another request's body, but it does not appear in the request list and does not go through the usual mitmproxy event hooks, where users may have implemented custom access control checks or input sanitization.\n\nUnless you use mitmproxy to protect an HTTP/1 service, no action is required.\n\n\n### Patches\n\nThe vulnerability has been fixed in mitmproxy 7.0.3 and above.\n\n\n### Acknowledgements\n\nWe thank Jo\u00e3o Sobral (@chinchila) for responsibly disclosing this vulnerability to the mitmproxy team.\n\n\n### Timeline\n\n- **2021-09-08**: Received initial report for mitmproxy <= 6.0.2.\n- **2021-09-08**: Requested clarification if 7.x is affected.\n- **2021-09-10**: Received additional details, 7.x situation still unclear.\n- **2021-09-13**: Internally determined that 7.x is also affected.\n- **2021-09-13**: Shared initial fix with researcher.\n- **2021-09-14**: Received confirmation that fix is working, but H2.TE/H2.CL should also be looked at.\n- **2021-09-14**: Shared revised fix that includes additional H2.TE mitigations.\n- **2021-09-14**: Received confirmation that revised fix is working.\n- **2021-09-16**: Completed internal patch review.\n- **2021-09-16**: Published patch release and advisory."
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "equals",
+      "### Impact\n\nIn mitmproxy 7.0.2 and below, a malicious client or server is able to perform [HTTP request smuggling](https://en.wikipedia.org/wiki/HTTP_request_smuggling) attacks through mitmproxy. This means that a malicious client/server could smuggle a request/response through mitmproxy as part of another request/response's HTTP message body. While mitmproxy would only see one request, the target server would see multiple requests. A smuggled request is still captured as part of another request's body, but it does not appear in the request list and does not go through the usual mitmproxy event hooks, where users may have implemented custom access control checks or input sanitization.\n\nUnless you use mitmproxy to protect an HTTP/1 service, no action is required.\n\n\n### Patches\n\nThe vulnerability has been fixed in mitmproxy 7.0.3 and above.\n\n\n### Acknowledgements\n\nWe thank Jo\u00e3o Sobral (@chinchila) for responsibly disclosing this vulnerability to the mitmproxy team.\n\n\n### Timeline\n\n- **2021-09-08**: Received initial report for mitmproxy <= 6.0.2.\n- **2021-09-08**: Requested clarification if 7.x is affected.\n- **2021-09-10**: Received additional details, 7.x situation still unclear.\n- **2021-09-13**: Internally determined that 7.x is also affected.\n- **2021-09-13**: Shared initial fix with researcher.\n- **2021-09-14**: Received confirmation that fix is working, but H2.TE/H2.CL should also be looked at.\n- **2021-09-14**: Shared revised fix that includes additional H2.TE mitigations.\n- **2021-09-14**: Received confirmation that revised fix is working.\n- **2021-09-16**: Completed internal patch review.\n- **2021-09-16**: Published patch release and advisory."
+     ],
+     [
+      "database_specific.github_reviewed",
+      "equals",
+      true
+     ],
+     [
+      "database_specific.severity",
+      "exists",
+      null
+     ]
+    ],
+    [
+     [
+      "details",
+      "equals",
+      "### Impact\n\nIn mitmproxy 7.0.2 and below, a malicious client or server is able to perform [HTTP request smuggling](https://en.wikipedia.org/wiki/HTTP_request_smuggling) attacks through mitmproxy. This means that a malicious client/server could smuggle a request/response through mitmproxy as part of another request/response's HTTP message body. While mitmproxy would only see one request, the target server would see multiple requests. A smuggled request is still captured as part of another request's body, but it does not appear in the request list and does not go through the usual mitmproxy event hooks, where users may have implemented custom access control checks or input sanitization.\n\nUnless you use mitmproxy to protect an HTTP/1 service, no action is required.\n\n\n### Patches\n\nThe vulnerability has been fixed in mitmproxy 7.0.3 and above.\n\n\n### Acknowledgements\n\nWe thank Jo\u00e3o Sobral (@chinchila) for responsibly disclosing this vulnerability to the mitmproxy team.\n\n\n### Timeline\n\n- **2021-09-08**: Received initial report for mitmproxy <= 6.0.2.\n- **2021-09-08**: Requested clarification if 7.x is affected.\n- **2021-09-10**: Received additional details, 7.x situation still unclear.\n- **2021-09-13**: Internally determined that 7.x is also affected.\n- **2021-09-13**: Shared initial fix with researcher.\n- **2021-09-14**: Received confirmation that fix is working, but H2.TE/H2.CL should also be looked at.\n- **2021-09-14**: Shared revised fix that includes additional H2.TE mitigations.\n- **2021-09-14**: Received confirmation that revised fix is working.\n- **2021-09-16**: Completed internal patch review.\n- **2021-09-16**: Published patch release and advisory."
+     ],
+     [
+      "references.0.type",
+      "exists",
+      null
+     ],
+     [
+      "references.0.url",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "equals",
+      "### Impact\n\nIn mitmproxy 7.0.2 and below, a malicious client or server is able to perform [HTTP request smuggling](https://en.wikipedia.org/wiki/HTTP_request_smuggling) attacks through mitmproxy. This means that a malicious client/server could smuggle a request/response through mitmproxy as part of another request/response's HTTP message body. While mitmproxy would only see one request, the target server would see multiple requests. A smuggled request is still captured as part of another request's body, but it does not appear in the request list and does not go through the usual mitmproxy event hooks, where users may have implemented custom access control checks or input sanitization.\n\nUnless you use mitmproxy to protect an HTTP/1 service, no action is required.\n\n\n### Patches\n\nThe vulnerability has been fixed in mitmproxy 7.0.3 and above.\n\n\n### Acknowledgements\n\nWe thank Jo\u00e3o Sobral (@chinchila) for responsibly disclosing this vulnerability to the mitmproxy team.\n\n\n### Timeline\n\n- **2021-09-08**: Received initial report for mitmproxy <= 6.0.2.\n- **2021-09-08**: Requested clarification if 7.x is affected.\n- **2021-09-10**: Received additional details, 7.x situation still unclear.\n- **2021-09-13**: Internally determined that 7.x is also affected.\n- **2021-09-13**: Shared initial fix with researcher.\n- **2021-09-14**: Received confirmation that fix is working, but H2.TE/H2.CL should also be looked at.\n- **2021-09-14**: Shared revised fix that includes additional H2.TE mitigations.\n- **2021-09-14**: Received confirmation that revised fix is working.\n- **2021-09-16**: Completed internal patch review.\n- **2021-09-16**: Published patch release and advisory."
+     ],
+     [
+      "database_specific.github_reviewed",
+      "equals",
+      true
+     ],
+     [
+      "database_specific.severity",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.cwe_ids.0",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.github_reviewed",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "sec-v2-6029",
+ "notes_for_annotators": "{\"family\": \"security-branching-het-18\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 0, \"false_mech\": true, \"locator\": true, \"source_instance\": \"sec-v2-0029\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-2mhw-8qcg-gr96": {
+   "affected": [
+    {
+     "package": {
+      "name": "skia-python"
+     }
+    }
+   ],
+   "database_specific": {
+    "cwe_ids": [
+     "CWE-1395"
+    ],
+    "github_reviewed": true,
+    "severity": "HIGH"
+   },
+   "details": "### Impact\n\nThe Linux wheels for skia-python vendor a vulnerable version of\nlibfreetype that is affected by CVE-2025-27363 [1].\n\nThe root cause is a chain of unfortunate events:\n\n1. skia-python builds wheels using pinned pypa/cibuildwheel@2.21.3 [2]\n\n2. cibuildwheel 2.21.3 in turn pins manylinux container images [3]\n\n3. In these images, version 2.9.1-9.el8 of RedHat package freetype is\n*preinstalled*. This package version is vulnerable and has since been\npatched in 2.9.1-10.\n\n4. During the skia-python Linux build, libfreetype is vendored from the\nsystem, resulting in skia-python.libs/libfreetype-29a7443c.so.6.16.1\n\n[ To find the provenance of your vendored libfreetype, we extracted the\n8-character hash of the original binary file that is added during the\nbuild process (29a7443c), and matched it against our database of hashes\nall historic Red Hat, Debian and Ubuntu releases of freetype. ]\n\n5. Because freetype is only a *transitive* dependency of the packages\nexplicitly installed by the build script [4], it is not upgraded to the\npatched version [4].\n\n5. As a result, the published wheels embed a vulnerable libfreetype,\neven though patched packages are available upstream.\n\nThis appears to be a broader manylinux ecosystem issue. The base images\ndo not enforce that `yum update` runs on container start, so\npreinstalled libraries may remain vulnerable indefinitely.\n\n\n### Patches\n\n> In the case of skia-python, the solution is to explicitly install freetype in the build process and rebuild the wheels.\n\nThe original report was suggesting the above, but in the current `build_Linux.sh` script, the patched `freetype-devel` version 2.9.1-10 gets installed as a dependency. It's just that we need to rebuild the wheel for a new release.\n\n### Workarounds\n\nUsers must upgrade the wheel package after release.\n\n### References\n\n1. https://nvd.nist.gov/vuln/detail/CVE-2025-27363\n2. https://github.com/kyamagu/skia-python/blob/9ffb045811f9b5508e152302d5b81aadca6edd8d/.github/workflows/ci.yml#L38\n3. https://github.com/pypa/cibuildwheel/blob/v2.21.3/cibuildwheel/resources/pinned_docker_images.cfg\n4. https://github.com/kyamagu/skia-python/blob/9ffb045811f9b5508e152302d5b81aadca6edd8d/scripts/build_Linux.sh#L6",
+   "modified": "2026-03-19T18:16:28.060452Z",
+   "published": "2026-03-19T18:10:25Z",
+   "references": [
+    {
+     "type": "WEB",
+     "url": "https://github.com/kyamagu/skia-python/security/advisories/GHSA-2mhw-8qcg-gr96"
+    }
+   ],
+   "schema_version": "1.7.5",
+   "severity": [
+    {
+     "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+    }
+   ],
+   "summary": "skia-python vendors vulnerable libfreetype because of pinned cibuildwheel version"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-2mhw-8qcg-gr96.",
+ "seed": "GHSA-2mhw-8qcg-gr96",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

@@ -1,0 +1,346 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "F",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Comparision of Endoscopic Discectomy and Microdiscectomy for the Treatment of Lumbar Spinal Stenosis\"",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT02807779"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.identificationModule.nctId"
+    ],
+    "what": "the brief title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.statusVerifiedDate",
+     "record_id": "NCT02807779"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.statusModule.statusVerifiedDate"
+    ],
+    "what": "the date the status was last verified"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2027-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT02807779"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.healthyVolunteers",
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.statusModule.lastUpdateSubmitDate"
+    ],
+    "what": "the date of the most recent update submission"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"INTERVENTIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT02807779"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.designModule.studyType"
+    ],
+    "what": "the study type"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT02807779"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.identificationModule.officialTitle"
+    ],
+    "what": "the eligibility criteria text"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT02807779"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.eligibilityModule.minimumAge"
+    ],
+    "what": "the sex eligibility field"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2018-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT02807779"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.healthyVolunteers",
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.statusModule.studyFirstSubmitDate"
+    ],
+    "what": "the date the registration was first submitted"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "equals",
+      "Comparision of Endoscopic Discectomy and Microdiscectomy for the Treatment of Lumbar Spinal Stenosis"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "equals",
+      "Comparision of Endoscopic Discectomy and Microdiscectomy for the Treatment of Lumbar Spinal Stenosis"
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2027-01-01"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "equals",
+      "Comparision of Endoscopic Discectomy and Microdiscectomy for the Treatment of Lumbar Spinal Stenosis"
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2027-01-01"
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-6142",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-09\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 0, \"false_mech\": true, \"locator\": true, \"source_instance\": \"cli-v2-0142\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT02807779": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "This is a prospective, multicenter, randomized trial to determine the mechanisms of vascular healing. The study will evaluate subjects with peripheral artery disease (PAD) who require an endovascular intervention of the femoro-popliteal (SFA) artery to restore blood flow to the leg."
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\nScreening:\n\n1. Male or non-pregnant female \u2265 35 years of age\n2. Atherosclerotic, infrainguinal PAD\n3. Rutherford Clinical Category 2-6\n4. Stenosis detected by radiology that in the clinician's opinion is the reason for the PAD symptoms\n5. Patient is willing to provide informed consent and comply with the required follow up visits, testing schedule, and medication regimen\n6. Estimated Glomerular Filtration Rate (eGFR) \u2265 30 and/or threshold established by the local Institutional Review Board or Committee of Human Research\n\nProcedural Criteria:\n\n1. De novo atherosclerotic lesion qualifying for angioplasty\n2. A patent artery proximal to the index lesion. Concomitant inflow procedures, including open femoral artery endarterectomy and/or stenting of the iliac arteries, are permissible.\n3. \\>50% diameter stenosis of the superficial femoral artery and/or popliteal artery (between the profunda and tibioperoneal trunk)\n4. Reference vessel diameter \u22653 mm and \u2264 8mm\n5. Successful wire crossing of lesion\n6. Successful angioplasty of the index lesion or part of the index lesion, defined as \u226430% residual lumen stenosis compared with adjacent non-diseased lumen diameter, without flow-limiting dissection\n\nExclusion Criteria:\n\nScreening Criteria:\n\n1. Any contraindication to receiving an MRI\n2. Pregnant, nursing, or planning on becoming pregnant in \\< 2yrs\n3. Life expectancy of \\< 1 yr\n4. History of solid organ transplantation\n5. Patient actively participating in another investigational device or drug study\n6. History of hemorrhagic stroke within 3 months of index procedure\n7. Previous or planned surgical or interventional procedure within 30 days of index procedure\n8. Chronic renal insufficiency with eGFR \\< 30\n9. Prior bypass surgery, stenting, atherectomy or angioplasty of the index lesion\n10. Inability to take required study medications\n11. Contra-indication or known hypersensitivity to dexamethasone sodium phosphate, contrast media, gadolinium, aspirin or Plavix\n12. Systemic fungal infection\n13. Acute limb ischemia\n14. Prior participation of the index limb in the current study (contralateral treatment is allowed)\n15. Patient is being treated with long-term steroids (not including treatment of a bronchial condition with inhaled steroids)\n\nProcedural Criteria:\n\n1. Index lesions extending into the tibial trifurcation or above the profunda. Note: the outflow tibial artery can be treated concomitantly. Similarly, the common femoral artery can be treated concomitantly, either with open endarterectomy and patch angioplasty or with endovascular methods. However, the index lesion cannot be contiguous with either the common femoral artery or the tibial trifurcation.\n2. Circumferential calcification at index lesion, which in the judgment of the investigator would prevent penetration of the Micro-Infusion catheter needle through the vessel wall\n3. Inadequate distal outflow defined as no patent tibial arteries (\\>50% stenosis). The outflow vessel can be established at the time of primary treatment\n4. Use of adjunctive therapies other than angioplasty. Chocolate balloons and/or scoring balloons are allowed, if used below reference diameter.",
+     "healthyVolunteers": false,
+     "minimumAge": "35 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "Intima Versus Adventitia Drug Delivery to Elucidate Mechanisms of Restenosis: Magnetic Resonance Imaging",
+     "nctId": "NCT02807779",
+     "officialTitle": "Intima Versus Adventitia Drug Delivery to Elucidate Mechanisms of Restenosis: Magnetic Resonance Imaging"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2025-06-27",
+     "statusVerifiedDate": "2025-06",
+     "studyFirstSubmitDate": "2016-04-01"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT02807779.",
+ "seed": "NCT02807779",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

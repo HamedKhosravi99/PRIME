@@ -1,0 +1,283 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Terminated\"",
+    "params": {
+     "field_path": "status",
+     "record_id": "D-0509-2024"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"PAPAVERINE/PHENTOLAMINE, Injectable Solution, 30MG/1MG/ML, 10 mL syringe,  Rx only, JD & SN Inc, DBA Moses Lake Professional Pharmacy, 1555 S. Pilgrim St. Moses Lake WA  98837, (509)764-2314\"",
+    "params": {
+     "field_path": "product_description",
+     "record_id": "D-0509-2024"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:20260520",
+    "params": {
+     "field_path": "recall_initiation_date",
+     "record_id": "D-0509-2024"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"United States\"",
+    "params": {
+     "field_path": "country",
+     "record_id": "D-0509-2024"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "event_id",
+     "record_id": "D-0509-2024"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "code_info",
+     "record_id": "D-0509-2024"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Class II\"",
+    "params": {
+     "field_path": "classification",
+     "record_id": "D-0509-2024"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "status",
+      "equals",
+      "Terminated"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The recall is identified with a stated classification (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "status",
+      "equals",
+      "Terminated"
+     ],
+     [
+      "product_description",
+      "equals",
+      "PAPAVERINE/PHENTOLAMINE, Injectable Solution, 30MG/1MG/ML, 10 mL syringe,  Rx only, JD & SN Inc, DBA Moses Lake Professional Pharmacy, 1555 S. Pilgrim St. Moses Lake WA  98837, (509)764-2314"
+     ],
+     [
+      "recall_initiation_date",
+      "numeric_le",
+      20260520
+     ]
+    ],
+    [
+     [
+      "status",
+      "equals",
+      "Terminated"
+     ],
+     [
+      "country",
+      "equals",
+      "United States"
+     ],
+     [
+      "event_id",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The recall is action-ready: identified, classified, with product description, reason, and status populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "status",
+      "equals",
+      "Terminated"
+     ],
+     [
+      "product_description",
+      "equals",
+      "PAPAVERINE/PHENTOLAMINE, Injectable Solution, 30MG/1MG/ML, 10 mL syringe,  Rx only, JD & SN Inc, DBA Moses Lake Professional Pharmacy, 1555 S. Pilgrim St. Moses Lake WA  98837, (509)764-2314"
+     ],
+     [
+      "recall_initiation_date",
+      "numeric_le",
+      20260520
+     ],
+     [
+      "code_info",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The recall satisfies the checked completeness protocol: action-ready per the inspected fields, with consistent dates and populated distribution and firm fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "drugsafety_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "dru-v2-9025",
+ "notes_for_annotators": "{\"family\": \"drugsafety-branching-hom-19\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": 2, \"false_mech\": true, \"one_branch\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "D-0509-2024": {
+   "classification": "Class II",
+   "code_info": "Lot #: 3618858, 3618873, Exp. Date 01/31/2026",
+   "country": "United States",
+   "event_id": "94653",
+   "product_description": "Cathflo activase (ALTEPLASE), 2mg vials, Rx only, Genentech Inc., South San Francisco, CA 94080, NDC 50242-041-64",
+   "recall_initiation_date": "20240520",
+   "status": "Terminated"
+  }
+ },
+ "scope": "The single named openFDA enforcement record, as retrieved and embedded; no external lookups. Record identifier: D-0509-2024.",
+ "seed": "D-0509-2024",
+ "user_prompt": "Is this recall record complete and correctly classified for downstream pharmacy action?",
+ "variant": "base"
+}

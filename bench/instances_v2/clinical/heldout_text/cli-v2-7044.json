@@ -1,0 +1,181 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT06936488"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT06936488"
+    },
+    "what": "the eligibility criteria restrict enrollment to adults, that is, a minimum age of 18 years or more"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT06936488"
+    },
+    "what": "the eligibility criteria restrict enrollment to one sex only (only male or only female participants)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT06936488"
+    },
+    "what": "the eligibility criteria accept healthy volunteers"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready for an adult cohort: identified, and the eligibility text restricts enrollment to adults."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked adult-cohort protocol: identified, adults only, open to both sexes, and not a healthy-volunteer study, as established from the eligibility text."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "!E3",
+    "!E4"
+   ]
+  ]
+ },
+ "id": "cli-v2-7044",
+ "notes_for_annotators": "{\"family\": \"clinical-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, false, false], \"twins\": [\"protocolSection.eligibilityModule.minimumAge\", \"protocolSection.eligibilityModule.sex\", \"protocolSection.eligibilityModule.healthyVolunteers\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT06936488": {
+   "protocolSection": {
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n1. Age: 18 years old and above but 75 years old and below, regardless of gender;\n2. Previously received at least two standard chemotherapy regimens for advanced colorectal cancer and demonstrated disease progression or intolerance to the last regimen.\n\n   Patients who have received adjuvant/neoadjuvant chemotherapy and experience recurrence during or within 6 months after completion of adjuvant/neoadjuvant chemotherapy can be considered as a chemotherapy regimen for advanced disease;\n3. There are sufficient tissue specimens that have been tested as pMMR (immunohistochemistry) or MSS (PCR or NGS)\n4. Have at least one measurable lesion (RECIST v1.1);\n5. ECOG PS score is 0 or 1;\n6. Expected survival exceeds 3 months;\n7. The main organ functions are normal, which meets the following criteria:\n\n   Absolute neutrophil count \u2265 1.5 x 10 \\^ 9/L Hemoglobin \u2265 9 g/dL Platelet count \u2265 100 x 10 \\^ 9/L Creatinine clearance rate \u2265 50 mL/min, evaluated using the Cockcroft\\&Gault formula Serum total bilirubin\\<1.5 x upper limit of normal (ULN) Aspartate aminotransferase (AST; SGOT) and alanine aminotransferase (ALT; SGPT) \u2264 2.5 x ULN (unless liver metastasis leads to abnormal liver function, aspartate aminotransferase (AST) (SGOT) and alanine aminotransferase (ALT) (SGPT) \u2264 5 x ULN) All patients have normal coagulation function. For patients receiving anticoagulant therapy (excluding platelet anticoagulants), it should be confirmed that the INR has reached a sufficient therapeutic level.\n8. The subjects voluntarily joined this study and signed informed consent forms, demonstrating good compliance and cooperation with follow-up;\n9. Women with fertility: must agree to use reliable methods of contraception for at least 180 days from the signing of the informed consent form until the last administration of the study drug. And the serum HCG test must be negative within 7 days before starting the study treatment; And it must be non lactating. If a female patient has already menstruated, has not yet reached postmenopausal status (continuous absence of menstruation for \u2265 12 months, no other reasons found besides menopause), and has not undergone sterilization surgery (such as hysterectomy, bilateral tubal ligation, or bilateral oophorectomy), it is considered that the patient has fertility;\n10. For male patients whose partners are women with fertility, they must agree to use reliable methods of contraception for at least 180 days from the signing of the informed consent form until the last administration of the study drug. Male patients must also agree not to donate sperm during the same time period.\n\nExclusion Criteria:\n\n1. Previously received TAS-102 treatment.\n2. Previously received immunotherapy, including immune checkpoint inhibitors (such as anti-PD-1/L1 antibodies, anti-CTLA-4 antibodies, anti-CD47 antibodies, anti-SIRP \u03b1 antibodies, anti-LAG-3 antibodies, etc.), immune checkpoint agonists (such as ICOS, CD40, CD137, GITR, OX40 antibodies, etc.), immunotherapy, and any other treatment targeting the immune mechanism of tumor.\n3. Severe wounds that do not heal, ulcers that do not heal, or fractures that do not heal.\n4. Known coagulation disorders and bleeding disorders that increase the risk of bleeding.\n5. Researchers believe that patients are unlikely to comply with oral medication treatment plans or study requirements for scheduled evaluations.\n6. Pregnant, lactating women or those who may become pregnant during the study period.\n7. Symptomatic central nervous system metastasis with unstable nervous system or the need to increase steroid dosage to control central nervous system diseases.\n8. Suffering from severe or uncontrolled active acute or chronic infections.\n9. Suffering from interstitial lung disease and/or pneumonia, or pulmonary arterial hypertension.\n\nResearchers believe that uncontrolled arterial hypertension or uncontrolled or symptomatic arrhythmia.\n\n11\\. Study whether there have been deep arterial thromboembolic events, including cerebrovascular accidents or myocardial infarction, within 6 months prior to the start of the first treatment. Study the occurrence of deep vein thromboembolism events within 4 weeks prior to the first treatment.\n\n12\\. Severe/unstable angina, symptomatic congestive heart failure, New York Heart Association (NYHA) class III or IV.\n\n13\\. Other malignant tumors, including those that have received curative treatment and have a remission period of less than 5 years during screening. Patients with cervical carcinoma in situ and basal cell carcinoma who can be cured with appropriate treatment are exempt from this minimum required remission period.\n\nReceive systemic immunosuppressive therapy (excluding prophylactic or long-term low-dose steroids \\[\u2264 20 mg/day prednisone equivalent\\])."
+    },
+    "identificationModule": {
+     "briefTitle": "A Prospective, Single Arm, Open Label, Phase II Clinical Study on the Efficacy and Safety of Ivonescimab (AK112) Combined With TAS-102 in the Treatment of Refractory MSS/pMMR Advanced Colorectal Cancer"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT06936488.",
+ "seed": "NCT06936488",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "text"
+}

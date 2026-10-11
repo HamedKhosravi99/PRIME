@@ -1,0 +1,354 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "details",
+     "record_id": "GHSA-3qhf-m339-9g5v"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "details",
+     "aliases.0",
+     "references.0.type"
+    ],
+    "what": "the advisory's detailed description"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"PyPI\"",
+    "params": {
+     "field_path": "affected.0.package.ecosystem",
+     "record_id": "GHSA-3qhf-m339-9g5v"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "affected.0.package.ecosystem",
+     "summary",
+     "references.0.url"
+    ],
+    "what": "the ecosystem of the affected package"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:true",
+    "params": {
+     "field_path": "database_specific.github_reviewed",
+     "record_id": "GHSA-3qhf-m339-9g5v"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "references.0.url",
+     "database_specific.github_reviewed",
+     "summary"
+    ],
+    "what": "whether the advisory has been reviewed by the database maintainers"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"CWE-248-alt\"",
+    "params": {
+     "field_path": "database_specific.cwe_ids.0",
+     "record_id": "GHSA-3qhf-m339-9g5v"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "references.0.type",
+     "database_specific.severity",
+     "database_specific.cwe_ids.0"
+    ],
+    "what": "the first CWE identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "severity.0.score",
+     "record_id": "GHSA-3qhf-m339-9g5v"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "summary",
+     "severity.0.score",
+     "references.0.type"
+    ],
+    "what": "the first CVSS score string"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "schema_version",
+     "record_id": "GHSA-3qhf-m339-9g5v"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "references.0.type",
+     "schema_version",
+     "aliases.0"
+    ],
+    "what": "the schema version of the record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "affected.0.package.name",
+     "record_id": "GHSA-3qhf-m339-9g5v"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "affected.0.package.name",
+     "aliases.0",
+     "summary"
+    ],
+    "what": "the name of the affected package"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ],
+     [
+      "database_specific.github_reviewed",
+      "equals",
+      true
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ],
+     [
+      "database_specific.github_reviewed",
+      "equals",
+      true
+     ],
+     [
+      "database_specific.cwe_ids.0",
+      "equals",
+      "CWE-248-alt"
+     ],
+     [
+      "severity.0.score",
+      "exists",
+      null
+     ],
+     [
+      "schema_version",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "sec-v2-6168",
+ "notes_for_annotators": "{\"family\": \"security-nested-hom-07\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 2, \"false_mech\": true, \"locator\": true, \"source_instance\": \"sec-v2-0168\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-3qhf-m339-9g5v": {
+   "affected": [
+    {
+     "package": {
+      "ecosystem": "PyPI",
+      "name": "mcp"
+     }
+    }
+   ],
+   "aliases": [
+    "CVE-2025-53366"
+   ],
+   "database_specific": {
+    "cwe_ids": [
+     "CWE-248"
+    ],
+    "github_reviewed": true,
+    "severity": "HIGH"
+   },
+   "details": "A validation error in the MCP SDK can cause an unhandled exception when processing malformed requests, resulting in service unavailability (500 errors) until manually restarted. Impact may vary depending on the deployment conditions, and presence of infrastructure-level resilience measures.\n\nThank you to Rich Harang for reporting this issue.",
+   "references": [
+    {
+     "type": "WEB",
+     "url": "https://github.com/modelcontextprotocol/python-sdk/security/advisories/GHSA-3qhf-m339-9g5v"
+    }
+   ],
+   "schema_version": "1.7.5",
+   "severity": [
+    {
+     "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N"
+    }
+   ],
+   "summary": "MCP Python SDK vulnerability in the FastMCP Server causes validation error, leading to DoS"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-3qhf-m339-9g5v.",
+ "seed": "GHSA-3qhf-m339-9g5v",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

@@ -1,0 +1,347 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "F",
+   "id": "E1",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "product_description",
+     "record_id": "D-0174-2016"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "reason_for_recall",
+     "product_description",
+     "recall_number"
+    ],
+    "what": "the description of the recalled product"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:20171007",
+    "params": {
+     "field_path": "recall_initiation_date",
+     "record_id": "D-0174-2016"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "voluntary_mandated",
+     "reason_for_recall",
+     "recall_initiation_date"
+    ],
+    "what": "the date the recall was initiated"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:20171118",
+    "params": {
+     "field_path": "report_date",
+     "record_id": "D-0174-2016"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "distribution_pattern",
+     "status",
+     "report_date"
+    ],
+    "what": "the date the recall was reported"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "product_quantity",
+     "record_id": "D-0174-2016"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "event_id",
+     "product_quantity",
+     "voluntary_mandated"
+    ],
+    "what": "the product quantity"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "code_info",
+     "record_id": "D-0174-2016"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "distribution_pattern",
+     "recall_number",
+     "code_info"
+    ],
+    "what": "the lot or code information"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "product_description",
+     "record_id": "D-0174-2016"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "recall_number",
+     "product_description",
+     "event_id"
+    ],
+    "what": "the description of the recalled product"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "recalling_firm",
+     "record_id": "D-0174-2016"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "voluntary_mandated",
+     "reason_for_recall",
+     "recalling_firm"
+    ],
+    "what": "the recalling firm"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "classification",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The recall is identified with a stated classification (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "classification",
+      "exists",
+      null
+     ],
+     [
+      "product_description",
+      "exists",
+      null
+     ],
+     [
+      "recall_initiation_date",
+      "numeric_le",
+      20171007
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The recall is action-ready: identified, classified, with product description, reason, and status populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "classification",
+      "exists",
+      null
+     ],
+     [
+      "product_description",
+      "exists",
+      null
+     ],
+     [
+      "recall_initiation_date",
+      "numeric_le",
+      20171007
+     ],
+     [
+      "report_date",
+      "numeric_le",
+      20171118
+     ],
+     [
+      "product_quantity",
+      "exists",
+      null
+     ],
+     [
+      "code_info",
+      "exists",
+      null
+     ],
+     [
+      "product_description",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The recall satisfies the checked completeness protocol: action-ready per the inspected fields, with consistent dates and populated distribution and firm fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "drugsafety_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "dru-v2-6155",
+ "notes_for_annotators": "{\"family\": \"drugsafety-nested-het-06\", \"topology\": \"nested\", \"cost\": \"het\", \"target_level\": 0, \"false_mech\": false, \"locator\": true, \"source_instance\": \"dru-v2-0155\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "D-0174-2016": {
+   "code_info": "5 ml --- 07062015@2, exp 1/2/2016    10 ml --- 06042015@4, exp 12/1/2015; 06052015@15, exp 12/2/2015; 07132015@3, exp 1/9/2016",
+   "distribution_pattern": "CA and NJ",
+   "event_id": "72361",
+   "product_description": "PAPA/PGE1/PHENTO (30mg/10mg/1mg/ml) Injection, 5 mL and 10 mL vials, Rx, B & B Health Mart Pharmacy, Bellflower, CA",
+   "product_quantity": "1-5 ml vial; 3-10 ml vials",
+   "reason_for_recall": "Lack of Assurance of Sterility; FDA inspection identified GMP violations potentially impacting product quality and sterility",
+   "recall_initiation_date": "20151007",
+   "recall_number": "D-0174-2016",
+   "recalling_firm": "Pacific Healthcare, Inc dba B&B Pharmacy",
+   "report_date": "20151118",
+   "status": "Terminated",
+   "voluntary_mandated": "Voluntary: Firm initiated"
+  }
+ },
+ "scope": "The single named openFDA enforcement record, as retrieved and embedded; no external lookups. Record identifier: D-0174-2016.",
+ "seed": "D-0174-2016",
+ "user_prompt": "Is this recall record complete and correctly classified for downstream pharmacy action?",
+ "variant": "base"
+}

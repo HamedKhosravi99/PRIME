@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7115",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Aged 18 to 80 years, regardless of sex.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 610,
+   "completion_tokens": 30,
+   "latency_s": 2.282,
+   "raw": "The inclusion criteria explicitly state an age range of 18 to 80 years, which confirms the restriction to adults. ANSWER: T"
+  }
+ ]
+}

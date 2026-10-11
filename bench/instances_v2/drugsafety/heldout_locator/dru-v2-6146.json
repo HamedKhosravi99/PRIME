@@ -1,0 +1,377 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Class II\"",
+    "params": {
+     "field_path": "classification",
+     "record_id": "D-0792-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "classification",
+     "country",
+     "report_date"
+    ],
+    "what": "the recall classification"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Ongoing\"",
+    "params": {
+     "field_path": "status",
+     "record_id": "D-0792-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "country",
+     "status",
+     "recall_number"
+    ],
+    "what": "the recall status"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "reason_for_recall",
+     "record_id": "D-0792-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "product_quantity",
+     "reason_for_recall",
+     "product_description"
+    ],
+    "what": "the stated reason for the recall"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "voluntary_mandated",
+     "record_id": "D-0792-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "product_quantity",
+     "recall_number",
+     "voluntary_mandated"
+    ],
+    "what": "whether the recall was voluntary or mandated"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "event_id",
+     "record_id": "D-0792-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "recall_number",
+     "event_id",
+     "product_quantity"
+    ],
+    "what": "the event identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "code_info",
+     "record_id": "D-0792-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "code_info",
+     "recall_number",
+     "product_description"
+    ],
+    "what": "the lot or code information"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "status",
+     "record_id": "D-0792-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "country",
+     "status",
+     "distribution_pattern"
+    ],
+    "what": "the recall status"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "recalling_firm",
+     "record_id": "D-0792-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "product_description",
+     "product_quantity",
+     "recalling_firm"
+    ],
+    "what": "the recalling firm"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "classification",
+      "equals",
+      "Class II"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The recall is identified with a stated classification (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "classification",
+      "equals",
+      "Class II"
+     ],
+     [
+      "status",
+      "equals",
+      "Ongoing"
+     ],
+     [
+      "reason_for_recall",
+      "exists",
+      null
+     ]
+    ],
+    [
+     [
+      "classification",
+      "equals",
+      "Class II"
+     ],
+     [
+      "voluntary_mandated",
+      "exists",
+      null
+     ],
+     [
+      "event_id",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The recall is action-ready: identified, classified, with product description, reason, and status populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "classification",
+      "equals",
+      "Class II"
+     ],
+     [
+      "status",
+      "equals",
+      "Ongoing"
+     ],
+     [
+      "reason_for_recall",
+      "exists",
+      null
+     ],
+     [
+      "code_info",
+      "exists",
+      null
+     ],
+     [
+      "status",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The recall satisfies the checked completeness protocol: action-ready per the inspected fields, with consistent dates and populated distribution and firm fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "drugsafety_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "dru-v2-6146",
+ "notes_for_annotators": "{\"family\": \"drugsafety-branching-het-14\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 3, \"false_mech\": false, \"locator\": true, \"source_instance\": \"dru-v2-0146\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "D-0792-2023": {
+   "classification": "Class II",
+   "code_info": "All Lots",
+   "country": "United States",
+   "distribution_pattern": "Nationwide in the USA and Puerto Rico",
+   "event_id": "91788",
+   "product_description": "Ciclopirox Topical Solution 8% (Nail Lacquer), 6.6 mL bottles, Rx Only, Distributed by: Akorn Operating Company, LLC., Gurnee, IL 60031.  ALL NDCs",
+   "product_quantity": "N/A",
+   "reason_for_recall": "CGMP Deviations: Firm went out of business and could no longer continue stability studies.",
+   "recall_number": "D-0792-2023",
+   "recalling_firm": "Akorn, Inc.",
+   "report_date": "20230607",
+   "status": "Ongoing",
+   "voluntary_mandated": "Voluntary: Firm initiated"
+  }
+ },
+ "scope": "The single named openFDA enforcement record, as retrieved and embedded; no external lookups. Record identifier: D-0792-2023.",
+ "seed": "D-0792-2023",
+ "user_prompt": "Is this recall record complete and correctly classified for downstream pharmacy action?",
+ "variant": "base"
+}

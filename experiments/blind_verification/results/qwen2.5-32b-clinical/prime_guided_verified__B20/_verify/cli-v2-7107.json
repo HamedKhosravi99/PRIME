@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7107",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "* Age of 18 to 70 years",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 204,
+   "completion_tokens": 31,
+   "latency_s": 1.764,
+   "raw": "The inclusion criteria specify an age range starting from 18 years, which aligns with the condition of restricting enrollment to adults. ANSWER: T"
+  }
+ ]
+}

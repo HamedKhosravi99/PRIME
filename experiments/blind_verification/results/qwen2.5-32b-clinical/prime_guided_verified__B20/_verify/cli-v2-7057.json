@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7057",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "F",
+   "quote": "Exclusion criteria are the same for both groups. 1. Patients with mental disorders or neurological diseases. 2. Illiterate people 3. Patients who use medication that affects cognitive function 4. Emergency surgeries 5. Patients with end-stage renal failure 6. Patients who are receiving antidepressant and antipsychotic treatment 7. Patients who refused to participate in the study",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 255,
+   "completion_tokens": 29,
+   "latency_s": 2.128,
+   "raw": "The document does not mention any age restrictions, thus it is unclear if the eligibility criteria restrict enrollment to adults only. ANSWER: UNCLEAR"
+  }
+ ]
+}

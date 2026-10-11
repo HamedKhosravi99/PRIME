@@ -1,0 +1,283 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT00001161"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT00001161"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2010-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT00001161"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Q3week carboplatin with weekly abraxane and trastuzumab as neoadjuvant therapy in resectable and unresectable HER2+ (stage IIa-IIIb) breast cancer\"",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT00001161"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT00001161"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT00001161"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT00001161"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2010-01-01"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2010-01-01"
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "equals",
+      "Q3week carboplatin with weekly abraxane and trastuzumab as neoadjuvant therapy in resectable and unresectable HER2+ (stage IIa-IIIb) breast cancer"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-0046",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-07\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 2, \"false_mech\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT00001161": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "This study will investigate congenital or developmental eye abnormalities that affect the iris, cornea and lens, and are usually accompanied by elevated pressure within the eye. These disorders can cause vision loss, and the increased eye pressure can lead to glaucoma, a condition that may also cause loss of eyesight.\n\nPatients with eye anterior chamber eye disease, such as Axenfeld's syndrome, Rieger's anomaly, Peter's anomaly, iridocorneal endothelial syndrome, megalocornea, ocular hypertension, and others, are eligible for this study. Participants will have a medical examination, family history, and comprehensive eye examination. Tests and procedures may include photographs of the cornea, iris, and the structure through which fluid that normally circulates behind the cornea drains out of the eye. Some patients may undergo indentation tonography to measure how easily this fluid drains. In this procedure, the patient lies on an examination table and both eyes are numbed with eye drops. A small instrument (tonometer) is placed on the surface of one eye, and with the other eye, the patient looks at an overhead light. Other tests may include photographs of the back of the eye and ultrasound imaging of the structures of the eye. A blood sample may be drawn to study the genetic disorder responsible for the disease. Patients will have follow-up examinations every 6 months for the duration of the study.\n\nMedical or surgical therapy will be recommended, as appropriate, for patients who develop elevated eye pressure or vision loss."
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "The eye conditions to be studied include Axenfeld's syndrome, Rieger's anomaly, Peter's anomaly, (all with or without glaucoma), Iridocorneal Endothelial syndrome, Aniridia, Pigment Dispersion syndrome, Megalocornea and other conditions with clinical abnormalities of the anterior chamber.\n\nPatients will not be included in the study if they do not fit the morphologic characteristics of the disease in question or if the patient's general medical condition or other related factors make it impossible for him or her to continue participation in the study.",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "nctId": "NCT00001161",
+     "officialTitle": "Anomalies of the Anterior Chamber, Angle, Iris, Cornea and Lens With or Without Glaucoma or Ocular Hypertension"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2008-03-03",
+     "overallStatus": "COMPLETED"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT00001161.",
+ "seed": "NCT00001161",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

@@ -1,0 +1,11 @@
+name: res-transformer
+domain: research_review
+target: arXiv:1706.03762 (Attention Is All You Need)
+corpus: 10 real arXiv abstracts (Bahdanau attention 1409.0473, Luong attention
+  1508.04025, ConvS2S 1705.03122, ByteNet 1610.10099, Seq2Seq 1409.3215,
+  Structured Self-Attentive Sentence Embedding 1703.03130, ELMo 1802.05365,
+  BERT 1810.04805, GNMT 1609.08144, Structured Attention Networks 1702.00887)
+retrieved: 2026-07-29 from https://arxiv.org/abs/<id> citation_* meta tags
+content: exactly the title + abstract arXiv served; no edits
+license_note: arXiv abstracts are displayed under arXiv's terms; used here as
+  read-only review artifacts (title+abstract only, not full text).

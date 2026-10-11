@@ -1,0 +1,31 @@
+{
+ "instance": "cli-v2-7110",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Females aged 10-90 who are confirmed with ovarian malignancy and are willing to receive GnRHa experimentally to preserve their fertility function.",
+   "verdict": "F",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 305,
+   "completion_tokens": 27,
+   "latency_s": 2.184,
+   "raw": "The inclusion criteria specify females aged 10-90, which does not restrict enrollment to adults only. ANSWER: F"
+  },
+  {
+   "attempt": 2,
+   "atom": "E2",
+   "attested": "F",
+   "quote": "Females aged 10-90 who are confirmed with ovarian malignancy and are willing to receive GnRHa experimentally to preserve their fertility function.",
+   "verdict": "F",
+   "agree": true,
+   "invoked": false,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "raw": "The inclusion criteria specify females aged 10-90, which does not restrict enrollment to adults only. ANSWER: F"
+  }
+ ]
+}

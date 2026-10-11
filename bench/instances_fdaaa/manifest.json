@@ -1,0 +1,26 @@
+{
+ "adverse_rate": 52.0,
+ "attrition": {
+  "applicability-undeterminable": 210,
+  "no-deadline": 0,
+  "no-sponsor": 0,
+  "not-act": 4990,
+  "not-due": 0,
+  "withheld": 0
+ },
+ "cluster_unit": "sponsor",
+ "contract": "42 CFR Part 11 (FDAAA 801), sections 11.22(b), 11.42, 11.44(a)-(c)",
+ "contract_author": "Congress and FDA/NLM -- not the authors",
+ "external_agreement_pct": 99.37,
+ "external_checked": 319,
+ "n_clusters": 124,
+ "n_instances": 319,
+ "predicate_grammar": "prime_runtime/predicates.py, unextended",
+ "records": "ClinicalTrials.gov API v2, frozen; see external/SHA256SUMS.txt",
+ "snapshot": "2026-08-03",
+ "verdicts": {
+  "compliant": 153,
+  "late": 86,
+  "overdue": 80
+ }
+}

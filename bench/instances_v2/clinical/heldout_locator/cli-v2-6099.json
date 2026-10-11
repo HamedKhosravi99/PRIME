@@ -1,0 +1,378 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "F",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Neoadjuvant Study of Targeting ROS1 in Combination With Endocrine Therapy in Invasive Lobular Carcinoma of the Breast (ROSALINE)\"",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT02937766"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.statusModule.statusVerifiedDate"
+    ],
+    "what": "the brief title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2018-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT02937766"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.lastUpdateSubmitDate",
+     "protocolSection.statusModule.studyFirstSubmitDate",
+     "protocolSection.statusModule.statusVerifiedDate"
+    ],
+    "what": "the date the registration was first submitted"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT02937766"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.descriptionModule.briefSummary"
+    ],
+    "what": "the eligibility criteria text"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT02937766"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.statusModule.statusVerifiedDate"
+    ],
+    "what": "the sex eligibility field"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT02937766"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.identificationModule.officialTitle"
+    ],
+    "what": "the official title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT02937766"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.identificationModule.nctId"
+    ],
+    "what": "the minimum age for eligibility"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_after:\"1980-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT02937766"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.designModule.studyType",
+     "protocolSection.statusModule.studyFirstSubmitDate",
+     "protocolSection.statusModule.lastUpdateSubmitDate"
+    ],
+    "what": "the date the registration was first submitted"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT02937766"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.descriptionModule.briefSummary"
+    ],
+    "what": "the overall recruitment status"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "equals",
+      "Neoadjuvant Study of Targeting ROS1 in Combination With Endocrine Therapy in Invasive Lobular Carcinoma of the Breast (ROSALINE)"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "equals",
+      "Neoadjuvant Study of Targeting ROS1 in Combination With Endocrine Therapy in Invasive Lobular Carcinoma of the Breast (ROSALINE)"
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2018-01-01"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "equals",
+      "Neoadjuvant Study of Targeting ROS1 in Combination With Endocrine Therapy in Invasive Lobular Carcinoma of the Breast (ROSALINE)"
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2018-01-01"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_after",
+      "1980-01-01"
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "cli-v2-6099",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-het-06\", \"topology\": \"nested\", \"cost\": \"het\", \"target_level\": 0, \"false_mech\": true, \"locator\": true, \"source_instance\": \"cli-v2-0099\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT02937766": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "To demonstrate that Makena\u00ae (Hydroxyprogesterone Caproate Injection, 250 mg/mL) delivered subcutaneously via auto-injector is associated with less pain as compared to intramuscular injections of Makena\u00ae"
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n1. Female subjects aged 50 to 75 years of age, inclusive, at Screening Visit.\n2. Follicle stimulating hormone (FSH) levels greater than 40 mIU/mL.\n3. Naturally or surgically postmenopausal with or without an intact uterus.\n\nExclusion Criteria:\n\n1. Have history of or positive test results for HIV or hepatitis B or C.\n2. A significant history or current evidence of chronic infectious disease, organ dysfunction especially cardiovascular, renal, or hepatic disorders or other medical condition.\n3. Receiving or have received chronic opioid therapy within 12 months.\n4. Unwilling to stop taking/using:\n\n   * pain medication.\n   * topical analgesic or anti-inflammatory treatment. Topical analgesics must be washed out by at least 72 hours in the areas to be treated before randomization.\n5. History of alcohol abuse (regularly drinks \\> 4 units of alcohol per day; 8 oz. beer, 3 oz. wine, 1 oz. spirits) or prescription/illicit drug abuse in the last 12 months.\n6. Currently taking any estrogen/progesterone hormone replacement therapy (HRT).\n7. History of allergy or sensitivity to hydroxyprogesterone caproate, castor oil or any of the constituents of the study medications or history of any drug hypersensitivity or intolerance.\n8. Poorly controlled diabetes (Hgb A1C \\>8).\n9. Current or history of thrombosis or thromboembolic disorders.\n10. Known or suspected breast cancer, other hormone-sensitive cancer or tumor, or history of these conditions within the last 5 years.\n11. Any current or recent (within previous 12 months) vaginal bleeding.\n12. Uncontrolled hypertension.\n13. A chronic pain condition (i.e. chronic back pain) that may confound the assessments of injection pain.",
+     "minimumAge": "50 Years",
+     "sex": "FEMALE"
+    },
+    "identificationModule": {
+     "briefTitle": "Study Assessing Injection Pain of Makena\u00ae (Hydroxyprogesterone Caproate Injection, 250 mg/mL) When Administered Via Subcutaneous Auto-injector vs Intramuscular Injection Via Needle and Syringe in Healthy Post-menopausal Women",
+     "nctId": "NCT02937766",
+     "officialTitle": "A Phase III, Single-Center, Open-labeled, Randomized Controlled Study Assessing Injection Pain of Preservative-free Makena\u00ae (Hydroxyprogesterone Caproate Injection, 250 mg/mL) When Administered Via Subcutaneous Auto-injector vs Intramuscular Injection Via Needle and Syringe in Healthy Post-menopausal Women"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2022-03-31",
+     "overallStatus": "TERMINATED",
+     "statusVerifiedDate": "2022-03",
+     "studyFirstSubmitDate": "2016-10-17"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT02937766.",
+ "seed": "NCT02937766",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

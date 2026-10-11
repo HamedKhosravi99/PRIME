@@ -1,0 +1,5006 @@
+{
+  "derivedSection": {
+    "conditionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D005834",
+          "term": "Genital Neoplasms, Male"
+        },
+        {
+          "id": "D014565",
+          "term": "Urogenital Neoplasms"
+        },
+        {
+          "id": "D009371",
+          "term": "Neoplasms by Site"
+        },
+        {
+          "id": "D009369",
+          "term": "Neoplasms"
+        },
+        {
+          "id": "D005832",
+          "term": "Genital Diseases, Male"
+        },
+        {
+          "id": "D000091662",
+          "term": "Genital Diseases"
+        },
+        {
+          "id": "D000091642",
+          "term": "Urogenital Diseases"
+        },
+        {
+          "id": "D011469",
+          "term": "Prostatic Diseases"
+        },
+        {
+          "id": "D052801",
+          "term": "Male Urogenital Diseases"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D011471",
+          "term": "Prostatic Neoplasms"
+        }
+      ]
+    },
+    "interventionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D043823",
+          "term": "Taxoids"
+        },
+        {
+          "id": "D043822",
+          "term": "Cyclodecanes"
+        },
+        {
+          "id": "D003516",
+          "term": "Cycloparaffins"
+        },
+        {
+          "id": "D006840",
+          "term": "Hydrocarbons, Alicyclic"
+        },
+        {
+          "id": "D006844",
+          "term": "Hydrocarbons, Cyclic"
+        },
+        {
+          "id": "D006838",
+          "term": "Hydrocarbons"
+        },
+        {
+          "id": "D009930",
+          "term": "Organic Chemicals"
+        },
+        {
+          "id": "D004224",
+          "term": "Diterpenes"
+        },
+        {
+          "id": "D013729",
+          "term": "Terpenes"
+        },
+        {
+          "id": "D013057",
+          "term": "Spectrum Analysis"
+        },
+        {
+          "id": "D002623",
+          "term": "Chemistry Techniques, Analytical"
+        },
+        {
+          "id": "D008919",
+          "term": "Investigative Techniques"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "C572045",
+          "term": "apalutamide"
+        },
+        {
+          "id": "D000077143",
+          "term": "Docetaxel"
+        },
+        {
+          "id": "D009682",
+          "term": "Magnetic Resonance Spectroscopy"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "versionHolder": "2026-07-29"
+    }
+  },
+  "hasResults": false,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "description": "Patients receive ADT at the discretion of the investigator and apalutamide PO QD. Cycles repeat every 12 weeks in the absence of disease progression or unacceptable toxicity. Additionally, patients undergo CT scan or MRI and bone scan throughout the study. Patients may optionally undergo PSMA-PET scans and blood sample collection throughout the study.",
+          "interventionNames": [
+            "Drug: Androgen Therapy",
+            "Drug: Apalutamide",
+            "Procedure: Computed Tomography",
+            "Procedure: Magnetic Resonance Imaging",
+            "Procedure: Bone Scan",
+            "Procedure: PSMA PET Scan",
+            "Procedure: Biospecimen Collection",
+            "Other: Questionnaire Administration"
+          ],
+          "label": "Arm 1 (ADT, apalutamide)",
+          "type": "ACTIVE_COMPARATOR"
+        },
+        {
+          "description": "Patients receive ADT at the discretion of the investigator and apalutamide PO QD. Cycles repeat every 12 weeks in the absence of disease progression or unacceptable toxicity. Patients also receive docetaxel IV over 1 hour every 21 days for up to 6 doses. Additionally, patients undergo CT scan or MRI and bone scan throughout the study. Patients may optionally undergo PSMA-PET scans and blood sample collection throughout the study.",
+          "interventionNames": [
+            "Drug: Androgen Therapy",
+            "Drug: Apalutamide",
+            "Drug: Docetaxel",
+            "Procedure: Computed Tomography",
+            "Procedure: Magnetic Resonance Imaging",
+            "Procedure: Bone Scan",
+            "Procedure: PSMA PET Scan",
+            "Procedure: Biospecimen Collection",
+            "Other: Questionnaire Administration"
+          ],
+          "label": "Arm 2 (ADT, apalutamide, docetaxel)",
+          "type": "EXPERIMENTAL"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "Arm 1 (ADT, apalutamide)",
+            "Arm 2 (ADT, apalutamide, docetaxel)"
+          ],
+          "description": "Given ADT",
+          "name": "Androgen Therapy",
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "Arm 1 (ADT, apalutamide)",
+            "Arm 2 (ADT, apalutamide, docetaxel)"
+          ],
+          "description": "Given PO",
+          "name": "Apalutamide",
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "Arm 2 (ADT, apalutamide, docetaxel)"
+          ],
+          "description": "Given IV",
+          "name": "Docetaxel",
+          "otherNames": [
+            "Taxotere"
+          ],
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "Arm 1 (ADT, apalutamide)",
+            "Arm 2 (ADT, apalutamide, docetaxel)"
+          ],
+          "description": "Undergo CT",
+          "name": "Computed Tomography",
+          "otherNames": [
+            "CAT Scan",
+            "CT Scan"
+          ],
+          "type": "PROCEDURE"
+        },
+        {
+          "armGroupLabels": [
+            "Arm 1 (ADT, apalutamide)",
+            "Arm 2 (ADT, apalutamide, docetaxel)"
+          ],
+          "description": "Undergo MRI",
+          "name": "Magnetic Resonance Imaging",
+          "otherNames": [
+            "MRI"
+          ],
+          "type": "PROCEDURE"
+        },
+        {
+          "armGroupLabels": [
+            "Arm 1 (ADT, apalutamide)",
+            "Arm 2 (ADT, apalutamide, docetaxel)"
+          ],
+          "description": "Undergo Bone Scan",
+          "name": "Bone Scan",
+          "type": "PROCEDURE"
+        },
+        {
+          "armGroupLabels": [
+            "Arm 1 (ADT, apalutamide)",
+            "Arm 2 (ADT, apalutamide, docetaxel)"
+          ],
+          "description": "Undergo PSMA PET Scan",
+          "name": "PSMA PET Scan",
+          "type": "PROCEDURE"
+        },
+        {
+          "armGroupLabels": [
+            "Arm 1 (ADT, apalutamide)",
+            "Arm 2 (ADT, apalutamide, docetaxel)"
+          ],
+          "description": "Undergo blood sample collection",
+          "name": "Biospecimen Collection",
+          "type": "PROCEDURE"
+        },
+        {
+          "armGroupLabels": [
+            "Arm 1 (ADT, apalutamide)",
+            "Arm 2 (ADT, apalutamide, docetaxel)"
+          ],
+          "description": "undergo Questionnaire Administration",
+          "name": "Questionnaire Administration",
+          "type": "OTHER"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Castration-Sensitive Prostate Carcinoma",
+        "Metastatic Prostate Adenocarcinoma",
+        "Stage IVB Prostate Cancer AJCC v8"
+      ]
+    },
+    "contactsLocationsModule": {
+      "centralContacts": [
+        {
+          "email": "GUprotocols@alliancenctn.org",
+          "name": "Shiva Baghaie, MPH",
+          "phone": "(773) 702-9171",
+          "role": "CONTACT"
+        }
+      ],
+      "locations": [
+        {
+          "city": "Tucson",
+          "contacts": [
+            {
+              "email": "UACC-IIT@uacc.arizona.edu",
+              "name": "Site Public Contact",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Edward P. Gelmann",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Banner University Medical Center - Tucson",
+          "geoPoint": {
+            "lat": 32.22174,
+            "lon": -110.92648
+          },
+          "state": "Arizona",
+          "status": "RECRUITING",
+          "zip": "85719"
+        },
+        {
+          "city": "Tucson",
+          "contacts": [
+            {
+              "email": "UACC-IIT@uacc.arizona.edu",
+              "name": "Site Public Contact",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Edward P. Gelmann",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "University of Arizona Cancer Center-North Campus",
+          "geoPoint": {
+            "lat": 32.22174,
+            "lon": -110.92648
+          },
+          "state": "Arizona",
+          "status": "RECRUITING",
+          "zip": "85719"
+        },
+        {
+          "city": "Dublin",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "877-642-4691",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Andrea L. Harzstark",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kaiser Permanente Dublin",
+          "geoPoint": {
+            "lat": 37.70215,
+            "lon": -121.93579
+          },
+          "state": "California",
+          "status": "RECRUITING",
+          "zip": "94568"
+        },
+        {
+          "city": "Fremont",
+          "contacts": [
+            {
+              "email": "Kpoct@kp.org",
+              "name": "Site Public Contact",
+              "phone": "877-642-4691",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Andrea L. Harzstark",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kaiser Permanente-Fremont",
+          "geoPoint": {
+            "lat": 37.54827,
+            "lon": -121.98857
+          },
+          "state": "California",
+          "status": "RECRUITING",
+          "zip": "94538"
+        },
+        {
+          "city": "Fresno",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "833-574-2273",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Andrea L. Harzstark",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kaiser Permanente Fresno Orchard Plaza",
+          "geoPoint": {
+            "lat": 36.74773,
+            "lon": -119.77237
+          },
+          "state": "California",
+          "status": "RECRUITING",
+          "zip": "93720"
+        },
+        {
+          "city": "La Jolla",
+          "contacts": [
+            {
+              "email": "cancercto@ucsd.edu",
+              "name": "Site Public Contact",
+              "phone": "858-822-5354",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Yu-Wei Chen",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "UC San Diego Moores Cancer Center",
+          "geoPoint": {
+            "lat": 32.84727,
+            "lon": -117.2742
+          },
+          "state": "California",
+          "status": "RECRUITING",
+          "zip": "92093"
+        },
+        {
+          "city": "Modesto",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "877-642-4691",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Andrea L. Harzstark",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kaiser Permanente- Modesto MOB II",
+          "geoPoint": {
+            "lat": 37.6391,
+            "lon": -120.99688
+          },
+          "state": "California",
+          "status": "RECRUITING",
+          "zip": "95356"
+        },
+        {
+          "city": "Modesto",
+          "contacts": [
+            {
+              "email": "Kpoct@kp.org",
+              "name": "Site Public Contact",
+              "phone": "877-642-4691",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Andrea L. Harzstark",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kaiser Permanente-Modesto",
+          "geoPoint": {
+            "lat": 37.6391,
+            "lon": -120.99688
+          },
+          "state": "California",
+          "status": "RECRUITING",
+          "zip": "95356"
+        },
+        {
+          "city": "Oakland",
+          "contacts": [
+            {
+              "email": "Kpoct@kp.org",
+              "name": "Site Public Contact",
+              "phone": "877-642-4691",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Andrea L. Harzstark",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kaiser Permanente-Oakland",
+          "geoPoint": {
+            "lat": 37.80437,
+            "lon": -122.2708
+          },
+          "state": "California",
+          "status": "RECRUITING",
+          "zip": "94611"
+        },
+        {
+          "city": "Rancho Mirage",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "760-834-3798",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Delshad Ahmad",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Eisenhower Medical Center",
+          "geoPoint": {
+            "lat": 33.73974,
+            "lon": -116.41279
+          },
+          "state": "California",
+          "status": "RECRUITING",
+          "zip": "92270"
+        },
+        {
+          "city": "Roseville",
+          "contacts": [
+            {
+              "email": "Kpoct@kp.org",
+              "name": "Site Public Contact",
+              "phone": "877-642-4691",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Andrea L. Harzstark",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kaiser Permanente-Roseville",
+          "geoPoint": {
+            "lat": 38.75212,
+            "lon": -121.28801
+          },
+          "state": "California",
+          "status": "RECRUITING",
+          "zip": "95661"
+        },
+        {
+          "city": "Sacramento",
+          "contacts": [
+            {
+              "email": "kpoct@kp.org",
+              "name": "Site Public Contact",
+              "phone": "877-642-4691",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Andrea L. Harzstark",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kaiser Permanente Downtown Commons",
+          "geoPoint": {
+            "lat": 38.58157,
+            "lon": -121.4944
+          },
+          "state": "California",
+          "status": "RECRUITING",
+          "zip": "95814"
+        },
+        {
+          "city": "Sacramento",
+          "contacts": [
+            {
+              "email": "Kpoct@kp.org",
+              "name": "Site Public Contact",
+              "phone": "877-642-4691",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Andrea L. Harzstark",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kaiser Permanente-South Sacramento",
+          "geoPoint": {
+            "lat": 38.58157,
+            "lon": -121.4944
+          },
+          "state": "California",
+          "status": "RECRUITING",
+          "zip": "95823"
+        },
+        {
+          "city": "San Diego",
+          "contacts": [
+            {
+              "email": "rhabbaba@health.ucsd.edu",
+              "name": "Site Public Contact",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Yu-Wei Chen",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "UC San Diego Medical Center - Hillcrest",
+          "geoPoint": {
+            "lat": 32.71571,
+            "lon": -117.16472
+          },
+          "state": "California",
+          "status": "RECRUITING",
+          "zip": "92103"
+        },
+        {
+          "city": "San Francisco",
+          "contacts": [
+            {
+              "email": "Kpoct@kp.org",
+              "name": "Site Public Contact",
+              "phone": "877-642-4691",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Andrea L. Harzstark",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kaiser Permanente-San Francisco",
+          "geoPoint": {
+            "lat": 37.77493,
+            "lon": -122.41942
+          },
+          "state": "California",
+          "status": "RECRUITING",
+          "zip": "94115"
+        },
+        {
+          "city": "San Jose",
+          "contacts": [
+            {
+              "email": "Kpoct@kp.org",
+              "name": "Site Public Contact",
+              "phone": "877-642-4691",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Andrea L. Harzstark",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kaiser Permanente-Santa Teresa-San Jose",
+          "geoPoint": {
+            "lat": 37.33939,
+            "lon": -121.89496
+          },
+          "state": "California",
+          "status": "RECRUITING",
+          "zip": "95119"
+        },
+        {
+          "city": "San Leandro",
+          "contacts": [
+            {
+              "email": "Kpoct@kp.org",
+              "name": "Site Public Contact",
+              "phone": "877-642-4691",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Andrea L. Harzstark",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kaiser Permanente San Leandro",
+          "geoPoint": {
+            "lat": 37.72493,
+            "lon": -122.15608
+          },
+          "state": "California",
+          "status": "RECRUITING",
+          "zip": "94577"
+        },
+        {
+          "city": "San Rafael",
+          "contacts": [
+            {
+              "email": "Kpoct@kp.org",
+              "name": "Site Public Contact",
+              "phone": "877-642-4691",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Andrea L. Harzstark",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kaiser San Rafael-Gallinas",
+          "geoPoint": {
+            "lat": 37.97353,
+            "lon": -122.53109
+          },
+          "state": "California",
+          "status": "RECRUITING",
+          "zip": "94903"
+        },
+        {
+          "city": "Santa Clara",
+          "contacts": [
+            {
+              "email": "Kpoct@kp.org",
+              "name": "Site Public Contact",
+              "phone": "877-642-4691",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Andrea L. Harzstark",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kaiser Permanente Medical Center - Santa Clara",
+          "geoPoint": {
+            "lat": 37.35411,
+            "lon": -121.95524
+          },
+          "state": "California",
+          "status": "RECRUITING",
+          "zip": "95051"
+        },
+        {
+          "city": "Santa Rosa",
+          "contacts": [
+            {
+              "email": "Kpoct@kp.org",
+              "name": "Site Public Contact",
+              "phone": "877-642-4691",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Andrea L. Harzstark",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kaiser Permanente-Santa Rosa",
+          "geoPoint": {
+            "lat": 38.44047,
+            "lon": -122.71443
+          },
+          "state": "California",
+          "status": "RECRUITING",
+          "zip": "95403"
+        },
+        {
+          "city": "South San Francisco",
+          "contacts": [
+            {
+              "email": "Kpoct@kp.org",
+              "name": "Site Public Contact",
+              "phone": "877-642-4691",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Andrea L. Harzstark",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kaiser Permanente-South San Francisco",
+          "geoPoint": {
+            "lat": 37.65466,
+            "lon": -122.40775
+          },
+          "state": "California",
+          "status": "RECRUITING",
+          "zip": "94080"
+        },
+        {
+          "city": "Vallejo",
+          "contacts": [
+            {
+              "email": "Kpoct@kp.org",
+              "name": "Site Public Contact",
+              "phone": "877-642-4691",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Andrea L. Harzstark",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kaiser Permanente-Vallejo",
+          "geoPoint": {
+            "lat": 38.10409,
+            "lon": -122.25664
+          },
+          "state": "California",
+          "status": "RECRUITING",
+          "zip": "94589"
+        },
+        {
+          "city": "Walnut Creek",
+          "contacts": [
+            {
+              "email": "Kpoct@kp.org",
+              "name": "Site Public Contact",
+              "phone": "877-642-4691",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Andrea L. Harzstark",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kaiser Permanente-Walnut Creek",
+          "geoPoint": {
+            "lat": 37.90631,
+            "lon": -122.06496
+          },
+          "state": "California",
+          "status": "RECRUITING",
+          "zip": "94596"
+        },
+        {
+          "city": "Denver",
+          "contacts": [
+            {
+              "email": "KPCOIHRClinicalResearch@kp.org",
+              "name": "Site Public Contact",
+              "phone": "303-817-9295",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Matthew J. Eadens",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kaiser Permanente-Franklin",
+          "geoPoint": {
+            "lat": 39.73915,
+            "lon": -104.9847
+          },
+          "state": "Colorado",
+          "status": "RECRUITING",
+          "zip": "80205"
+        },
+        {
+          "city": "Grand Junction",
+          "contacts": [
+            {
+              "email": "ccrp@co-cancerresearch.org",
+              "name": "Site Public Contact",
+              "phone": "303-777-2663",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Wallace Jones",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Saint Mary's Hospital and Regional Medical Center",
+          "geoPoint": {
+            "lat": 39.06387,
+            "lon": -108.55065
+          },
+          "state": "Colorado",
+          "status": "RECRUITING",
+          "zip": "81501"
+        },
+        {
+          "city": "Lafayette",
+          "contacts": [
+            {
+              "email": "KPCOIHRClinicalResearch@kp.org",
+              "name": "Site Public Contact",
+              "phone": "303-817-9295",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Matthew J. Eadens",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kaiser Permanente-Rock Creek",
+          "geoPoint": {
+            "lat": 39.9936,
+            "lon": -105.08971
+          },
+          "state": "Colorado",
+          "status": "RECRUITING",
+          "zip": "80026"
+        },
+        {
+          "city": "Lone Tree",
+          "contacts": [
+            {
+              "email": "KPCOIHRClinicalResearch@kp.org",
+              "name": "Site Public Contact",
+              "phone": "303-817-9295",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Matthew J. Eadens",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kaiser Permanente-Lone Tree",
+          "geoPoint": {
+            "lat": 39.55171,
+            "lon": -104.8863
+          },
+          "state": "Colorado",
+          "status": "RECRUITING",
+          "zip": "80124"
+        },
+        {
+          "city": "Dover",
+          "country": "United States",
+          "facility": "Bayhealth Hospital Kent Campus",
+          "geoPoint": {
+            "lat": 39.15817,
+            "lon": -75.52437
+          },
+          "state": "Delaware",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "zip": "19901"
+        },
+        {
+          "city": "Milford",
+          "country": "United States",
+          "facility": "Bayhealth Hospital Sussex Campus",
+          "geoPoint": {
+            "lat": 38.91261,
+            "lon": -75.42797
+          },
+          "state": "Delaware",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "zip": "19963"
+        },
+        {
+          "city": "Washington D.C.",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "202-444-2223",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Suthee Rapisuwon",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "MedStar Georgetown University Hospital",
+          "geoPoint": {
+            "lat": 38.89511,
+            "lon": -77.03637
+          },
+          "state": "District of Columbia",
+          "status": "RECRUITING",
+          "zip": "20007"
+        },
+        {
+          "city": "Washington D.C.",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "202-877-8839",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Suthee Rapisuwon",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "MedStar Washington Hospital Center",
+          "geoPoint": {
+            "lat": 38.89511,
+            "lon": -77.03637
+          },
+          "state": "District of Columbia",
+          "status": "RECRUITING",
+          "zip": "20010"
+        },
+        {
+          "city": "Gainesville",
+          "contacts": [
+            {
+              "email": "trials@cancer.ufl.edu",
+              "name": "Site Public Contact",
+              "phone": "352-273-8675",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Jess DeLaune",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Malcom Randall Veterans Administration Medical Center",
+          "geoPoint": {
+            "lat": 29.65163,
+            "lon": -82.32483
+          },
+          "state": "Florida",
+          "status": "RECRUITING",
+          "zip": "32610"
+        },
+        {
+          "city": "Honolulu",
+          "contacts": [
+            {
+              "email": "shelley.a.clark@kp.org",
+              "name": "Site Public Contact",
+              "phone": "808-432-5195",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Andrea L. Harzstark",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kaiser Permanente Moanalua Medical Center",
+          "geoPoint": {
+            "lat": 21.30694,
+            "lon": -157.85833
+          },
+          "state": "Hawaii",
+          "status": "RECRUITING",
+          "zip": "96819"
+        },
+        {
+          "city": "Boise",
+          "contacts": [
+            {
+              "email": "eslinget@slhs.org",
+              "name": "Site Public Contact",
+              "phone": "208-381-2774",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Alison K. Conlin",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Saint Luke's Cancer Institute - Boise",
+          "geoPoint": {
+            "lat": 43.6135,
+            "lon": -116.20345
+          },
+          "state": "Idaho",
+          "status": "RECRUITING",
+          "zip": "83712"
+        },
+        {
+          "city": "Coeur d'Alene",
+          "contacts": [
+            {
+              "email": "mccinfo@mtcancer.org",
+              "name": "Site Public Contact",
+              "phone": "406-969-6060",
+              "role": "CONTACT"
+            },
+            {
+              "name": "John M. Schallenkamp",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kootenai Health - Coeur d'Alene",
+          "geoPoint": {
+            "lat": 47.67768,
+            "lon": -116.78047
+          },
+          "state": "Idaho",
+          "status": "RECRUITING",
+          "zip": "83814"
+        },
+        {
+          "city": "Fruitland",
+          "contacts": [
+            {
+              "email": "eslinget@slhs.org",
+              "name": "Site Public Contact",
+              "phone": "208-381-2774",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Alison K. Conlin",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Saint Luke's Cancer Institute - Fruitland",
+          "geoPoint": {
+            "lat": 44.00766,
+            "lon": -116.91655
+          },
+          "state": "Idaho",
+          "status": "RECRUITING",
+          "zip": "83619"
+        },
+        {
+          "city": "Meridian",
+          "contacts": [
+            {
+              "email": "eslinget@slhs.org",
+              "name": "Site Public Contact",
+              "phone": "208-381-2774",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Alison K. Conlin",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Saint Luke's Cancer Institute - Meridian",
+          "geoPoint": {
+            "lat": 43.61211,
+            "lon": -116.39151
+          },
+          "state": "Idaho",
+          "status": "RECRUITING",
+          "zip": "83642"
+        },
+        {
+          "city": "Nampa",
+          "contacts": [
+            {
+              "email": "eslinget@slhs.org",
+              "name": "Site Public Contact",
+              "phone": "208-381-2774",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Alison K. Conlin",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Saint Luke's Cancer Institute - Nampa",
+          "geoPoint": {
+            "lat": 43.54072,
+            "lon": -116.56346
+          },
+          "state": "Idaho",
+          "status": "RECRUITING",
+          "zip": "83687"
+        },
+        {
+          "city": "Post Falls",
+          "contacts": [
+            {
+              "email": "mccinfo@mtcancer.org",
+              "name": "Site Public Contact",
+              "phone": "406-969-6060",
+              "role": "CONTACT"
+            },
+            {
+              "name": "John M. Schallenkamp",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kootenai Clinic Cancer Services - Post Falls",
+          "geoPoint": {
+            "lat": 47.71796,
+            "lon": -116.95159
+          },
+          "state": "Idaho",
+          "status": "RECRUITING",
+          "zip": "83854"
+        },
+        {
+          "city": "Sandpoint",
+          "contacts": [
+            {
+              "email": "mccinfo@mtcancer.org",
+              "name": "Site Public Contact",
+              "phone": "406-969-6060",
+              "role": "CONTACT"
+            },
+            {
+              "name": "John M. Schallenkamp",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Kootenai Clinic Cancer Services - Sandpoint",
+          "geoPoint": {
+            "lat": 48.27659,
+            "lon": -116.55325
+          },
+          "state": "Idaho",
+          "status": "RECRUITING",
+          "zip": "83864"
+        },
+        {
+          "city": "Bloomington",
+          "contacts": [
+            {
+              "email": "andersonj@illinoiscancercare.com",
+              "name": "Site Public Contact",
+              "phone": "309-243-3605",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Illinois CancerCare-Bloomington",
+          "geoPoint": {
+            "lat": 40.4842,
+            "lon": -88.99369
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "61704"
+        },
+        {
+          "city": "Canton",
+          "contacts": [
+            {
+              "email": "andersonj@illinoiscancercare.com",
+              "name": "Site Public Contact",
+              "phone": "309-243-3605",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Illinois CancerCare-Canton",
+          "geoPoint": {
+            "lat": 40.55809,
+            "lon": -90.03512
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "61520"
+        },
+        {
+          "city": "Carthage",
+          "contacts": [
+            {
+              "email": "andersonj@illinoiscancercare.com",
+              "name": "Site Public Contact",
+              "phone": "309-243-3605",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Illinois CancerCare-Carthage",
+          "geoPoint": {
+            "lat": 40.41643,
+            "lon": -91.13625
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "62321"
+        },
+        {
+          "city": "Centralia",
+          "contacts": [
+            {
+              "email": "morganthaler.jodi@mhsil.com",
+              "name": "Site Public Contact",
+              "phone": "217-876-4762",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Centralia Oncology Clinic",
+          "geoPoint": {
+            "lat": 38.52505,
+            "lon": -89.1334
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "62801"
+        },
+        {
+          "city": "Chicago",
+          "contacts": [
+            {
+              "email": "Cancer_Studies@rush.edu",
+              "name": "Site Public Contact",
+              "phone": "312-226-2371",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Thomas C. Westbrook",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Rush MD Anderson Cancer Center",
+          "geoPoint": {
+            "lat": 41.85003,
+            "lon": -87.65005
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "60612"
+        },
+        {
+          "city": "Chicago",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "312-355-3046",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Karine Tawagi",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "University of Illinois",
+          "geoPoint": {
+            "lat": 41.85003,
+            "lon": -87.65005
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "60612"
+        },
+        {
+          "city": "Danville",
+          "contacts": [
+            {
+              "email": "Research@Carle.com",
+              "name": "Site Public Contact",
+              "phone": "800-446-5532",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kendrith M. Rowland",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Carle at The Riverfront",
+          "geoPoint": {
+            "lat": 40.12448,
+            "lon": -87.63002
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "61832"
+        },
+        {
+          "city": "Decatur",
+          "contacts": [
+            {
+              "email": "morganthaler.jodi@mhsil.com",
+              "name": "Site Public Contact",
+              "phone": "217-876-4762",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Cancer Care Specialists of Illinois - Decatur",
+          "geoPoint": {
+            "lat": 39.84031,
+            "lon": -88.9548
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "62526"
+        },
+        {
+          "city": "Decatur",
+          "contacts": [
+            {
+              "email": "morganthaler.jodi@mhsil.com",
+              "name": "Site Public Contact",
+              "phone": "217-876-4762",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Decatur Memorial Hospital",
+          "geoPoint": {
+            "lat": 39.84031,
+            "lon": -88.9548
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "62526"
+        },
+        {
+          "city": "Dixon",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "815-285-7800",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Illinois CancerCare-Dixon",
+          "geoPoint": {
+            "lat": 41.83892,
+            "lon": -89.47955
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "61021"
+        },
+        {
+          "city": "Effingham",
+          "contacts": [
+            {
+              "email": "Research@carle.com",
+              "name": "Site Public Contact",
+              "phone": "800-446-5532",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kendrith M. Rowland",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Carle Physician Group-Effingham",
+          "geoPoint": {
+            "lat": 39.12004,
+            "lon": -88.54338
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "62401"
+        },
+        {
+          "city": "Effingham",
+          "contacts": [
+            {
+              "email": "morganthaler.jodi@mhsil.com",
+              "name": "Site Public Contact",
+              "phone": "217-876-4762",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Crossroads Cancer Center",
+          "geoPoint": {
+            "lat": 39.12004,
+            "lon": -88.54338
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "62401"
+        },
+        {
+          "city": "Eureka",
+          "contacts": [
+            {
+              "email": "andersonj@illinoiscancercare.com",
+              "name": "Site Public Contact",
+              "phone": "309-243-3605",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Illinois CancerCare-Eureka",
+          "geoPoint": {
+            "lat": 40.72143,
+            "lon": -89.27286
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "61530"
+        },
+        {
+          "city": "Galesburg",
+          "contacts": [
+            {
+              "email": "andersonj@illinoiscancercare.com",
+              "name": "Site Public Contact",
+              "phone": "309-243-3605",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Illinois CancerCare-Galesburg",
+          "geoPoint": {
+            "lat": 40.94782,
+            "lon": -90.37124
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "61401"
+        },
+        {
+          "city": "Kewanee",
+          "contacts": [
+            {
+              "email": "andersonj@illinoiscancercare.com",
+              "name": "Site Public Contact",
+              "phone": "309-243-3605",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Illinois CancerCare-Kewanee Clinic",
+          "geoPoint": {
+            "lat": 41.24559,
+            "lon": -89.92483
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "61443"
+        },
+        {
+          "city": "Macomb",
+          "contacts": [
+            {
+              "email": "andersonj@illinoiscancercare.com",
+              "name": "Site Public Contact",
+              "phone": "309-243-3605",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Illinois CancerCare-Macomb",
+          "geoPoint": {
+            "lat": 40.45921,
+            "lon": -90.6718
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "61455"
+        },
+        {
+          "city": "Mattoon",
+          "contacts": [
+            {
+              "email": "Research@carle.com",
+              "name": "Site Public Contact",
+              "phone": "800-446-5532",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kendrith M. Rowland",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Carle Physician Group-Mattoon/Charleston",
+          "geoPoint": {
+            "lat": 39.48309,
+            "lon": -88.37283
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "61938"
+        },
+        {
+          "city": "Normal",
+          "contacts": [
+            {
+              "email": "Research@Carle.com",
+              "name": "Site Public Contact",
+              "phone": "800-446-5532",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kendrith M. Rowland",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Carle BroMenn Medical Center",
+          "geoPoint": {
+            "lat": 40.5142,
+            "lon": -88.99063
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "61761"
+        },
+        {
+          "city": "Normal",
+          "contacts": [
+            {
+              "email": "Research@Carle.com",
+              "name": "Site Public Contact",
+              "phone": "800-446-5532",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kendrith M. Rowland",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Carle Cancer Institute Normal",
+          "geoPoint": {
+            "lat": 40.5142,
+            "lon": -88.99063
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "61761"
+        },
+        {
+          "city": "O'Fallon",
+          "contacts": [
+            {
+              "email": "morganthaler.jodi@mhsil.com",
+              "name": "Site Public Contact",
+              "phone": "217-876-4762",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Cancer Care Center of O'Fallon",
+          "geoPoint": {
+            "lat": 38.59227,
+            "lon": -89.91121
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "62269"
+        },
+        {
+          "city": "O'Fallon",
+          "contacts": [
+            {
+              "email": "morganthaler.jodi@mhsil.com",
+              "name": "Site Public Contact",
+              "phone": "217-876-4762",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "HSHS Saint Elizabeth's Hospital",
+          "geoPoint": {
+            "lat": 38.59227,
+            "lon": -89.91121
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "62269"
+        },
+        {
+          "city": "Ottawa",
+          "contacts": [
+            {
+              "email": "andersonj@illinoiscancercare.com",
+              "name": "Site Public Contact",
+              "phone": "309-243-3605",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Illinois CancerCare-Ottawa Clinic",
+          "geoPoint": {
+            "lat": 41.34559,
+            "lon": -88.84258
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "61350"
+        },
+        {
+          "city": "Pekin",
+          "contacts": [
+            {
+              "email": "andersonj@illinoiscancercare.com",
+              "name": "Site Public Contact",
+              "phone": "309-243-3605",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Illinois CancerCare-Pekin",
+          "geoPoint": {
+            "lat": 40.56754,
+            "lon": -89.64066
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "61554"
+        },
+        {
+          "city": "Peoria",
+          "contacts": [
+            {
+              "email": "andersonj@illinoiscancercare.com",
+              "name": "Site Public Contact",
+              "phone": "309-243-3605",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Illinois CancerCare-Peoria",
+          "geoPoint": {
+            "lat": 40.69365,
+            "lon": -89.58899
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "61615"
+        },
+        {
+          "city": "Peru",
+          "contacts": [
+            {
+              "email": "andersonj@illinoiscancercare.com",
+              "name": "Site Public Contact",
+              "phone": "309-243-3605",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Illinois CancerCare-Peru",
+          "geoPoint": {
+            "lat": 41.32753,
+            "lon": -89.12897
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "61354"
+        },
+        {
+          "city": "Princeton",
+          "contacts": [
+            {
+              "email": "andersonj@illinoiscancercare.com",
+              "name": "Site Public Contact",
+              "phone": "309-243-3605",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Illinois CancerCare-Princeton",
+          "geoPoint": {
+            "lat": 41.36809,
+            "lon": -89.46481
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "61356"
+        },
+        {
+          "city": "Shiloh",
+          "contacts": [
+            {
+              "email": "dschwab@wustl.edu",
+              "name": "Site Public Contact",
+              "phone": "314-747-9912",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Eric M. Knoche",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Memorial Hospital East",
+          "geoPoint": {
+            "lat": 38.56144,
+            "lon": -89.89732
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "62269"
+        },
+        {
+          "city": "Springfield",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "217-545-7929",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Southern Illinois University School of Medicine",
+          "geoPoint": {
+            "lat": 39.80172,
+            "lon": -89.64371
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "62702"
+        },
+        {
+          "city": "Springfield",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "800-444-7541",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Springfield Clinic",
+          "geoPoint": {
+            "lat": 39.80172,
+            "lon": -89.64371
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "62702"
+        },
+        {
+          "city": "Springfield",
+          "contacts": [
+            {
+              "email": "pallante.beth@mhsil.com",
+              "name": "Site Public Contact",
+              "phone": "217-528-7541",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Springfield Memorial Hospital",
+          "geoPoint": {
+            "lat": 39.80172,
+            "lon": -89.64371
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "62781"
+        },
+        {
+          "city": "Urbana",
+          "contacts": [
+            {
+              "email": "Research@carle.com",
+              "name": "Site Public Contact",
+              "phone": "800-446-5532",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kendrith M. Rowland",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Carle Cancer Center",
+          "geoPoint": {
+            "lat": 40.11059,
+            "lon": -88.20727
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "61801"
+        },
+        {
+          "city": "Washington",
+          "contacts": [
+            {
+              "email": "andersonj@illinoiscancercare.com",
+              "name": "Site Public Contact",
+              "phone": "309-243-3605",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Illinois CancerCare - Washington",
+          "geoPoint": {
+            "lat": 40.70365,
+            "lon": -89.40731
+          },
+          "state": "Illinois",
+          "status": "RECRUITING",
+          "zip": "61571"
+        },
+        {
+          "city": "Ames",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "515-956-4132",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Joseph J. Merchant",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Mary Greeley Medical Center",
+          "geoPoint": {
+            "lat": 42.03471,
+            "lon": -93.61994
+          },
+          "state": "Iowa",
+          "status": "RECRUITING",
+          "zip": "50010"
+        },
+        {
+          "city": "Ames",
+          "contacts": [
+            {
+              "email": "ksoder@mcfarlandclinic.com",
+              "name": "Site Public Contact",
+              "phone": "515-239-4734",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Joseph J. Merchant",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "McFarland Clinic - Ames",
+          "geoPoint": {
+            "lat": 42.03471,
+            "lon": -93.61994
+          },
+          "state": "Iowa",
+          "status": "RECRUITING",
+          "zip": "50010"
+        },
+        {
+          "city": "Boone",
+          "country": "United States",
+          "facility": "McFarland Clinic - Boone",
+          "geoPoint": {
+            "lat": 42.0597,
+            "lon": -93.88023
+          },
+          "state": "Iowa",
+          "status": "SUSPENDED",
+          "zip": "50036"
+        },
+        {
+          "city": "Cedar Rapids",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "319-365-4673",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Deborah W. Wilbur",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Mercy Hospital",
+          "geoPoint": {
+            "lat": 42.00833,
+            "lon": -91.64407
+          },
+          "state": "Iowa",
+          "status": "RECRUITING",
+          "zip": "52403"
+        },
+        {
+          "city": "Cedar Rapids",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "319-363-2690",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Deborah W. Wilbur",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Oncology Associates at Mercy Medical Center",
+          "geoPoint": {
+            "lat": 42.00833,
+            "lon": -91.64407
+          },
+          "state": "Iowa",
+          "status": "RECRUITING",
+          "zip": "52403"
+        },
+        {
+          "city": "Fort Dodge",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "515-956-4132",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Joseph J. Merchant",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "McFarland Clinic - Trinity Cancer Center",
+          "geoPoint": {
+            "lat": 42.49747,
+            "lon": -94.16802
+          },
+          "state": "Iowa",
+          "status": "RECRUITING",
+          "zip": "50501"
+        },
+        {
+          "city": "Jefferson",
+          "country": "United States",
+          "facility": "McFarland Clinic - Jefferson",
+          "geoPoint": {
+            "lat": 42.01526,
+            "lon": -94.37747
+          },
+          "state": "Iowa",
+          "status": "SUSPENDED",
+          "zip": "50129"
+        },
+        {
+          "city": "Marshalltown",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "515-956-4132",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Joseph J. Merchant",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "McFarland Clinic - Marshalltown",
+          "geoPoint": {
+            "lat": 42.04943,
+            "lon": -92.90798
+          },
+          "state": "Iowa",
+          "status": "RECRUITING",
+          "zip": "50158"
+        },
+        {
+          "city": "Hays",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "785-623-5774",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Elizabeth M. Wulff",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "HaysMed",
+          "geoPoint": {
+            "lat": 38.87918,
+            "lon": -99.32677
+          },
+          "state": "Kansas",
+          "status": "RECRUITING",
+          "zip": "67601"
+        },
+        {
+          "city": "Lawrence",
+          "contacts": [
+            {
+              "email": "Stephanie.Norris@LMH.ORG",
+              "name": "Site Public Contact",
+              "phone": "785-505-2800",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Elizabeth M. Wulff",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Lawrence Memorial Hospital",
+          "geoPoint": {
+            "lat": 38.97167,
+            "lon": -95.23525
+          },
+          "state": "Kansas",
+          "status": "RECRUITING",
+          "zip": "66044"
+        },
+        {
+          "city": "Olathe",
+          "contacts": [
+            {
+              "email": "OlatheCCResearch@kumc.edu",
+              "name": "Site Public Contact",
+              "phone": "913-588-1569",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Elizabeth M. Wulff",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "The University of Kansas Cancer Center - Olathe",
+          "geoPoint": {
+            "lat": 38.8814,
+            "lon": -94.81913
+          },
+          "state": "Kansas",
+          "status": "RECRUITING",
+          "zip": "66061"
+        },
+        {
+          "city": "Overland Park",
+          "contacts": [
+            {
+              "email": "KUCC_Navigation@kumc.edu",
+              "name": "Site Public Contact",
+              "phone": "913-588-3671",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Elizabeth M. Wulff",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "University of Kansas Cancer Center-Overland Park",
+          "geoPoint": {
+            "lat": 38.98223,
+            "lon": -94.67079
+          },
+          "state": "Kansas",
+          "status": "RECRUITING",
+          "zip": "66210"
+        },
+        {
+          "city": "Salina",
+          "contacts": [
+            {
+              "email": "mleepers@srhc.com",
+              "name": "Site Public Contact",
+              "phone": "785-452-7038",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Elizabeth M. Wulff",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Salina Regional Health Center",
+          "geoPoint": {
+            "lat": 38.84028,
+            "lon": -97.61142
+          },
+          "state": "Kansas",
+          "status": "RECRUITING",
+          "zip": "67401"
+        },
+        {
+          "city": "Topeka",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "785-295-8000",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Elizabeth M. Wulff",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "University of Kansas Health System Saint Francis Campus",
+          "geoPoint": {
+            "lat": 39.04833,
+            "lon": -95.67804
+          },
+          "state": "Kansas",
+          "status": "RECRUITING",
+          "zip": "66606"
+        },
+        {
+          "city": "Westwood",
+          "contacts": [
+            {
+              "email": "KUCC_Navigation@kumc.edu",
+              "name": "Site Public Contact",
+              "phone": "913-588-3671",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Elizabeth M. Wulff",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "University of Kansas Hospital-Westwood Cancer Center",
+          "geoPoint": {
+            "lat": 39.04056,
+            "lon": -94.6169
+          },
+          "state": "Kansas",
+          "status": "RECRUITING",
+          "zip": "66205"
+        },
+        {
+          "city": "Brighton",
+          "contacts": [
+            {
+              "email": "MCRCwebsitecontactform@stjoeshealth.org",
+              "name": "Site Public Contact",
+              "phone": "734-712-7251",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Christopher M. Reynolds",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Trinity Health IHA Medical Group Hematology Oncology - Brighton",
+          "geoPoint": {
+            "lat": 42.52948,
+            "lon": -83.78022
+          },
+          "state": "Michigan",
+          "status": "RECRUITING",
+          "zip": "48114"
+        },
+        {
+          "city": "Canton",
+          "contacts": [
+            {
+              "email": "MCRCwebsitecontactform@stjoeshealth.org",
+              "name": "Site Public Contact",
+              "phone": "734-712-7251",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Christopher M. Reynolds",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Trinity Health IHA Medical Group Hematology Oncology - Canton",
+          "geoPoint": {
+            "lat": 42.30865,
+            "lon": -83.48216
+          },
+          "state": "Michigan",
+          "status": "RECRUITING",
+          "zip": "48188"
+        },
+        {
+          "city": "Chelsea",
+          "contacts": [
+            {
+              "email": "MCRCwebsitecontactform@stjoeshealth.org",
+              "name": "Site Public Contact",
+              "phone": "734-712-7251",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Christopher M. Reynolds",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Trinity Health IHA Medical Group Hematology Oncology - Chelsea Hospital",
+          "geoPoint": {
+            "lat": 42.31807,
+            "lon": -84.02181
+          },
+          "state": "Michigan",
+          "status": "RECRUITING",
+          "zip": "48118"
+        },
+        {
+          "city": "Escanaba",
+          "contacts": [
+            {
+              "email": "WI_research_admin@hshs.org",
+              "name": "Site Public Contact",
+              "phone": "920-433-8889",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Anthony J. Jaslowski",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "OSF Saint Francis Hospital and Medical Group",
+          "geoPoint": {
+            "lat": 45.74525,
+            "lon": -87.06458
+          },
+          "state": "Michigan",
+          "status": "RECRUITING",
+          "zip": "49829"
+        },
+        {
+          "city": "Flint",
+          "contacts": [
+            {
+              "email": "wstrong@ghci.org",
+              "name": "Site Public Contact",
+              "phone": "810-762-8038",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Christopher M. Reynolds",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Genesys Hurley Cancer Institute",
+          "geoPoint": {
+            "lat": 43.01253,
+            "lon": -83.68746
+          },
+          "state": "Michigan",
+          "status": "RECRUITING",
+          "zip": "48503"
+        },
+        {
+          "city": "Flint",
+          "contacts": [
+            {
+              "email": "wstrong@ghci.org",
+              "name": "Site Public Contact",
+              "phone": "810-762-8038",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Christopher M. Reynolds",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Hurley Medical Center",
+          "geoPoint": {
+            "lat": 43.01253,
+            "lon": -83.68746
+          },
+          "state": "Michigan",
+          "status": "RECRUITING",
+          "zip": "48503"
+        },
+        {
+          "city": "Lansing",
+          "contacts": [
+            {
+              "email": "harsha.trivedi@umhsparrow.org",
+              "name": "Site Public Contact",
+              "phone": "517-364-3712",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Christopher M. Reynolds",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "University of Michigan Health - Sparrow Lansing",
+          "geoPoint": {
+            "lat": 42.73253,
+            "lon": -84.55553
+          },
+          "state": "Michigan",
+          "status": "RECRUITING",
+          "zip": "48912"
+        },
+        {
+          "city": "Livonia",
+          "contacts": [
+            {
+              "email": "MCRCwebsitecontactform@stjoeshealth.org",
+              "name": "Site Public Contact",
+              "phone": "734-712-7251",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Christopher M. Reynolds",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Trinity Health Saint Mary Mercy Livonia Hospital",
+          "geoPoint": {
+            "lat": 42.36837,
+            "lon": -83.35271
+          },
+          "state": "Michigan",
+          "status": "RECRUITING",
+          "zip": "48154"
+        },
+        {
+          "city": "Pontiac",
+          "contacts": [
+            {
+              "email": "MCRCwebsitecontactform@stjoeshealth.org",
+              "name": "Site Public Contact",
+              "phone": "734-712-7251",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Christopher M. Reynolds",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Trinity Health Saint Joseph Mercy Oakland Hospital",
+          "geoPoint": {
+            "lat": 42.63892,
+            "lon": -83.29105
+          },
+          "state": "Michigan",
+          "status": "RECRUITING",
+          "zip": "48341"
+        },
+        {
+          "city": "Ypsilanti",
+          "contacts": [
+            {
+              "email": "MCRCwebsitecontactform@stjoeshealth.org",
+              "name": "Site Public Contact",
+              "phone": "734-712-7251",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Christopher M. Reynolds",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Trinity Health IHA Medical Group Hematology Oncology Ann Arbor Campus",
+          "geoPoint": {
+            "lat": 42.24115,
+            "lon": -83.61299
+          },
+          "state": "Michigan",
+          "status": "RECRUITING",
+          "zip": "48197"
+        },
+        {
+          "city": "Bemidji",
+          "contacts": [
+            {
+              "email": "OncologyClinicalTrialsFargo@sanfordhealth.org",
+              "name": "Site Public Contact",
+              "phone": "218-333-5000",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Daniel Almquist",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Sanford Joe Lueken Cancer Center",
+          "geoPoint": {
+            "lat": 47.47356,
+            "lon": -94.88028
+          },
+          "state": "Minnesota",
+          "status": "RECRUITING",
+          "zip": "56601"
+        },
+        {
+          "city": "Saint Cloud",
+          "contacts": [
+            {
+              "email": "coborncancercenter@centracare.com",
+              "name": "Site Public Contact",
+              "phone": "877-229-4907",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Donald J. Jurgens",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Coborn Cancer Center at Saint Cloud Hospital",
+          "geoPoint": {
+            "lat": 45.5608,
+            "lon": -94.16249
+          },
+          "state": "Minnesota",
+          "status": "RECRUITING",
+          "zip": "56303"
+        },
+        {
+          "city": "Cape Girardeau",
+          "contacts": [
+            {
+              "email": "sfmc@sfmc.net",
+              "name": "Site Public Contact",
+              "phone": "573-334-2230",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Bryan A. Faller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Saint Francis Medical Center",
+          "geoPoint": {
+            "lat": 37.30588,
+            "lon": -89.51815
+          },
+          "state": "Missouri",
+          "status": "RECRUITING",
+          "zip": "63703"
+        },
+        {
+          "city": "City of Saint Peters",
+          "contacts": [
+            {
+              "email": "info@siteman.wustl.edu",
+              "name": "Site Public Contact",
+              "phone": "800-600-3606",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Eric M. Knoche",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Siteman Cancer Center at Saint Peters Hospital",
+          "geoPoint": {
+            "lat": 38.80033,
+            "lon": -90.62651
+          },
+          "state": "Missouri",
+          "status": "RECRUITING",
+          "zip": "63376"
+        },
+        {
+          "city": "Creve Coeur",
+          "contacts": [
+            {
+              "email": "info@siteman.wustl.edu",
+              "name": "Site Public Contact",
+              "phone": "800-600-3606",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Eric M. Knoche",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Siteman Cancer Center at West County Hospital",
+          "geoPoint": {
+            "lat": 38.66089,
+            "lon": -90.42262
+          },
+          "state": "Missouri",
+          "status": "RECRUITING",
+          "zip": "63141"
+        },
+        {
+          "city": "Kansas City",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "816-404-4375",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Elizabeth M. Wulff",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "University Health Truman Medical Center",
+          "geoPoint": {
+            "lat": 39.09973,
+            "lon": -94.57857
+          },
+          "state": "Missouri",
+          "status": "RECRUITING",
+          "zip": "64108"
+        },
+        {
+          "city": "Kansas City",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "913-588-3671",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Elizabeth M. Wulff",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "University of Kansas Cancer Center - Briarcliff",
+          "geoPoint": {
+            "lat": 39.09973,
+            "lon": -94.57857
+          },
+          "state": "Missouri",
+          "status": "RECRUITING",
+          "zip": "64116"
+        },
+        {
+          "city": "Kansas City",
+          "contacts": [
+            {
+              "email": "KUCC_Navigation@kumc.edu",
+              "name": "Site Public Contact",
+              "phone": "913-588-3671",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Elizabeth M. Wulff",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "University of Kansas Cancer Center - North",
+          "geoPoint": {
+            "lat": 39.09973,
+            "lon": -94.57857
+          },
+          "state": "Missouri",
+          "status": "RECRUITING",
+          "zip": "64154"
+        },
+        {
+          "city": "Lee's Summit",
+          "contacts": [
+            {
+              "email": "KUCC_Navigation@kumc.edu",
+              "name": "Site Public Contact",
+              "phone": "913-588-3671",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Elizabeth M. Wulff",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "University of Kansas Cancer Center - Lee's Summit",
+          "geoPoint": {
+            "lat": 38.91084,
+            "lon": -94.38217
+          },
+          "state": "Missouri",
+          "status": "RECRUITING",
+          "zip": "64064"
+        },
+        {
+          "city": "St Louis",
+          "contacts": [
+            {
+              "email": "info@siteman.wustl.edu",
+              "name": "Site Public Contact",
+              "phone": "800-600-3606",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Eric M. Knoche",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Washington University School of Medicine",
+          "geoPoint": {
+            "lat": 38.62727,
+            "lon": -90.19789
+          },
+          "state": "Missouri",
+          "status": "RECRUITING",
+          "zip": "63110"
+        },
+        {
+          "city": "St Louis",
+          "contacts": [
+            {
+              "email": "Danielle.Werle@mercy.net",
+              "name": "Site Public Contact",
+              "phone": "314-525-6042",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Jay W. Carlson",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Mercy Hospital South",
+          "geoPoint": {
+            "lat": 38.62727,
+            "lon": -90.19789
+          },
+          "state": "Missouri",
+          "status": "RECRUITING",
+          "zip": "63128"
+        },
+        {
+          "city": "St Louis",
+          "contacts": [
+            {
+              "email": "info@siteman.wustl.edu",
+              "name": "Site Public Contact",
+              "phone": "800-600-3606",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Eric M. Knoche",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Siteman Cancer Center-South County",
+          "geoPoint": {
+            "lat": 38.62727,
+            "lon": -90.19789
+          },
+          "state": "Missouri",
+          "status": "RECRUITING",
+          "zip": "63129"
+        },
+        {
+          "city": "St Louis",
+          "contacts": [
+            {
+              "email": "info@siteman.wustl.edu",
+              "name": "Site Public Contact",
+              "phone": "800-600-3606",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Eric M. Knoche",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Siteman Cancer Center at Christian Hospital",
+          "geoPoint": {
+            "lat": 38.62727,
+            "lon": -90.19789
+          },
+          "state": "Missouri",
+          "status": "RECRUITING",
+          "zip": "63136"
+        },
+        {
+          "city": "St Louis",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "314-251-7066",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Jay W. Carlson",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Mercy Hospital Saint Louis",
+          "geoPoint": {
+            "lat": 38.62727,
+            "lon": -90.19789
+          },
+          "state": "Missouri",
+          "status": "RECRUITING",
+          "zip": "63141"
+        },
+        {
+          "city": "Anaconda",
+          "contacts": [
+            {
+              "email": "mccinfo@mtcancer.org",
+              "name": "Site Public Contact",
+              "phone": "406-969-6060",
+              "role": "CONTACT"
+            },
+            {
+              "name": "John M. Schallenkamp",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Community Hospital of Anaconda",
+          "geoPoint": {
+            "lat": 46.12854,
+            "lon": -112.94226
+          },
+          "state": "Montana",
+          "status": "RECRUITING",
+          "zip": "59711"
+        },
+        {
+          "city": "Billings",
+          "contacts": [
+            {
+              "email": "research@billingsclinic.org",
+              "name": "Site Public Contact",
+              "phone": "800-996-2663",
+              "role": "CONTACT"
+            },
+            {
+              "name": "John M. Schallenkamp",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Billings Clinic Cancer Center",
+          "geoPoint": {
+            "lat": 45.78329,
+            "lon": -108.50069
+          },
+          "state": "Montana",
+          "status": "RECRUITING",
+          "zip": "59101"
+        },
+        {
+          "city": "Billings",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "800-648-6274",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Wallace Jones",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Saint Vincent Frontier Cancer Center",
+          "geoPoint": {
+            "lat": 45.78329,
+            "lon": -108.50069
+          },
+          "state": "Montana",
+          "status": "RECRUITING",
+          "zip": "59102"
+        },
+        {
+          "city": "Bozeman",
+          "contacts": [
+            {
+              "email": "mccinfo@mtcancer.org",
+              "name": "Site Public Contact",
+              "phone": "406-969-6060",
+              "role": "CONTACT"
+            },
+            {
+              "name": "John M. Schallenkamp",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Bozeman Health Deaconess Hospital",
+          "geoPoint": {
+            "lat": 45.67965,
+            "lon": -111.03856
+          },
+          "state": "Montana",
+          "status": "RECRUITING",
+          "zip": "59715"
+        },
+        {
+          "city": "Great Falls",
+          "contacts": [
+            {
+              "email": "mccinfo@mtcancer.org",
+              "name": "Site Public Contact",
+              "phone": "406-969-6060",
+              "role": "CONTACT"
+            },
+            {
+              "name": "John M. Schallenkamp",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Benefis Sletten Cancer Institute",
+          "geoPoint": {
+            "lat": 47.50024,
+            "lon": -111.30081
+          },
+          "state": "Montana",
+          "status": "RECRUITING",
+          "zip": "59405"
+        },
+        {
+          "city": "Kalispell",
+          "contacts": [
+            {
+              "email": "mccinfo@mtcancer.org",
+              "name": "Site Public Contact",
+              "phone": "406-969-6060",
+              "role": "CONTACT"
+            },
+            {
+              "name": "John M. Schallenkamp",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Logan Health Medical Center",
+          "geoPoint": {
+            "lat": 48.19579,
+            "lon": -114.31291
+          },
+          "state": "Montana",
+          "status": "RECRUITING",
+          "zip": "59901"
+        },
+        {
+          "city": "Missoula",
+          "contacts": [
+            {
+              "email": "mccinfo@mtcancer.org",
+              "name": "Site Public Contact",
+              "phone": "406-969-6060",
+              "role": "CONTACT"
+            },
+            {
+              "name": "John M. Schallenkamp",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Community Medical Center",
+          "geoPoint": {
+            "lat": 46.87215,
+            "lon": -113.994
+          },
+          "state": "Montana",
+          "status": "RECRUITING",
+          "zip": "59804"
+        },
+        {
+          "city": "Basking Ridge",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "212-639-7592",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kristine P. Lacuna",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Memorial Sloan Kettering Basking Ridge",
+          "geoPoint": {
+            "lat": 40.70621,
+            "lon": -74.54932
+          },
+          "state": "New Jersey",
+          "status": "RECRUITING",
+          "zip": "07920"
+        },
+        {
+          "city": "Cherry Hill",
+          "contacts": [
+            {
+              "email": "ONCTrialNow@jefferson.edu",
+              "name": "Site Public Contact",
+              "phone": "215-600-9151",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kevin K. Zarrabi",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Jefferson Cherry Hill Hospital",
+          "geoPoint": {
+            "lat": 39.93484,
+            "lon": -75.03073
+          },
+          "state": "New Jersey",
+          "status": "RECRUITING",
+          "zip": "08002"
+        },
+        {
+          "city": "Middletown",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "212-639-7592",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kristine P. Lacuna",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Memorial Sloan Kettering Monmouth",
+          "geoPoint": {
+            "lat": 40.39428,
+            "lon": -74.11709
+          },
+          "state": "New Jersey",
+          "status": "RECRUITING",
+          "zip": "07748"
+        },
+        {
+          "city": "Montvale",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "212-639-7592",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kristine P. Lacuna",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Memorial Sloan Kettering Bergen",
+          "geoPoint": {
+            "lat": 41.04676,
+            "lon": -74.02292
+          },
+          "state": "New Jersey",
+          "status": "RECRUITING",
+          "zip": "07645"
+        },
+        {
+          "city": "Sewell",
+          "contacts": [
+            {
+              "email": "ONCTrialNow@jefferson.edu",
+              "name": "Site Public Contact",
+              "phone": "215-600-9151",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kevin K. Zarrabi",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Sidney Kimmel Cancer Center Washington Township",
+          "geoPoint": {
+            "lat": 39.7665,
+            "lon": -75.14434
+          },
+          "state": "New Jersey",
+          "status": "RECRUITING",
+          "zip": "08080"
+        },
+        {
+          "city": "Buffalo",
+          "contacts": [
+            {
+              "email": "askroswell@roswellpark.org",
+              "name": "Site Public Contact",
+              "phone": "800-767-9355",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Ellis G. Levine",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Roswell Park Cancer Institute",
+          "geoPoint": {
+            "lat": 42.88645,
+            "lon": -78.87837
+          },
+          "state": "New York",
+          "status": "RECRUITING",
+          "zip": "14263"
+        },
+        {
+          "city": "Commack",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "212-639-7592",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kristine P. Lacuna",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Memorial Sloan Kettering Commack",
+          "geoPoint": {
+            "lat": 40.84288,
+            "lon": -73.29289
+          },
+          "state": "New York",
+          "status": "RECRUITING",
+          "zip": "11725"
+        },
+        {
+          "city": "Cortland",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "607-756-3130",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Alina Basnet",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Guthrie Cortland Memorial Hospital",
+          "geoPoint": {
+            "lat": 42.60118,
+            "lon": -76.18048
+          },
+          "state": "New York",
+          "status": "RECRUITING",
+          "zip": "13045"
+        },
+        {
+          "city": "Harrison",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "212-639-7592",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kristine P. Lacuna",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Memorial Sloan Kettering Westchester",
+          "geoPoint": {
+            "lat": 40.96899,
+            "lon": -73.71263
+          },
+          "state": "New York",
+          "status": "RECRUITING",
+          "zip": "10604"
+        },
+        {
+          "city": "New York",
+          "contacts": [
+            {
+              "email": "CCTO@mssm.edu",
+              "name": "Site Public Contact",
+              "phone": "212-824-7309",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Eric J. Miller",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Mount Sinai Hospital",
+          "geoPoint": {
+            "lat": 40.71427,
+            "lon": -74.00597
+          },
+          "state": "New York",
+          "status": "RECRUITING",
+          "zip": "10029"
+        },
+        {
+          "city": "New York",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "212-639-7592",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kristine P. Lacuna",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Memorial Sloan Kettering Cancer Center",
+          "geoPoint": {
+            "lat": 40.71427,
+            "lon": -74.00597
+          },
+          "state": "New York",
+          "status": "RECRUITING",
+          "zip": "10065"
+        },
+        {
+          "city": "Stony Brook",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "800-862-2215",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Judy Huang",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Stony Brook University Medical Center",
+          "geoPoint": {
+            "lat": 40.92565,
+            "lon": -73.14094
+          },
+          "state": "New York",
+          "status": "RECRUITING",
+          "zip": "11794"
+        },
+        {
+          "city": "Uniondale",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "212-639-7592",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kristine P. Lacuna",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Memorial Sloan Kettering Nassau",
+          "geoPoint": {
+            "lat": 40.70038,
+            "lon": -73.59291
+          },
+          "state": "New York",
+          "status": "RECRUITING",
+          "zip": "11553"
+        },
+        {
+          "city": "Durham",
+          "contacts": [
+            {
+              "email": "VHADURcancertrials@va.gov",
+              "name": "Site Public Contact",
+              "phone": "919-286-0411",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Rhonda L. Bitting",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Durham VA Medical Center",
+          "geoPoint": {
+            "lat": 35.99403,
+            "lon": -78.89862
+          },
+          "state": "North Carolina",
+          "status": "RECRUITING",
+          "zip": "27705"
+        },
+        {
+          "city": "Durham",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "888-275-3853",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Hannah D. McManus",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Duke University Medical Center",
+          "geoPoint": {
+            "lat": 35.99403,
+            "lon": -78.89862
+          },
+          "state": "North Carolina",
+          "status": "RECRUITING",
+          "zip": "27710"
+        },
+        {
+          "city": "Pinehurst",
+          "contacts": [
+            {
+              "email": "jcwilliams@firsthealth.org",
+              "name": "Site Public Contact",
+              "phone": "910-715-3500",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Charles S. Kuzma",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "FirstHealth of the Carolinas-Moore Regional Hospital",
+          "geoPoint": {
+            "lat": 35.19543,
+            "lon": -79.46948
+          },
+          "state": "North Carolina",
+          "status": "RECRUITING",
+          "zip": "28374"
+        },
+        {
+          "city": "Bismarck",
+          "contacts": [
+            {
+              "email": "OncologyClinicalTrialsFargo@sanfordhealth.org",
+              "name": "Site Public Contact",
+              "phone": "701-323-5760",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Daniel Almquist",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Sanford Bismarck Medical Center",
+          "geoPoint": {
+            "lat": 46.80833,
+            "lon": -100.78374
+          },
+          "state": "North Dakota",
+          "status": "RECRUITING",
+          "zip": "58501"
+        },
+        {
+          "city": "Fargo",
+          "contacts": [
+            {
+              "email": "OncologyClinicalTrialsFargo@sanfordhealth.org",
+              "name": "Site Public Contact",
+              "phone": "701-323-5760",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Daniel Almquist",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Sanford Broadway Medical Center",
+          "geoPoint": {
+            "lat": 46.87719,
+            "lon": -96.7898
+          },
+          "state": "North Dakota",
+          "status": "RECRUITING",
+          "zip": "58122"
+        },
+        {
+          "city": "Fargo",
+          "contacts": [
+            {
+              "email": "OncologyClinicalTrialsFargo@sanfordhealth.org",
+              "name": "Site Public Contact",
+              "phone": "701-234-6161",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Daniel Almquist",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Sanford Roger Maris Cancer Center",
+          "geoPoint": {
+            "lat": 46.87719,
+            "lon": -96.7898
+          },
+          "state": "North Dakota",
+          "status": "RECRUITING",
+          "zip": "58122"
+        },
+        {
+          "city": "Columbus",
+          "contacts": [
+            {
+              "email": "Jamesline@osumc.edu",
+              "name": "Site Public Contact",
+              "phone": "800-293-5066",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Lingbin Meng",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Ohio State University Comprehensive Cancer Center",
+          "geoPoint": {
+            "lat": 39.96118,
+            "lon": -82.99879
+          },
+          "state": "Ohio",
+          "status": "RECRUITING",
+          "zip": "43210"
+        },
+        {
+          "city": "Sylvania",
+          "contacts": [
+            {
+              "email": "PCIOncResearch@promedica.org",
+              "name": "Site Public Contact",
+              "phone": "419-824-1842",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Jeffrey H. Muler",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "ProMedica Flower Hospital",
+          "geoPoint": {
+            "lat": 41.71894,
+            "lon": -83.71299
+          },
+          "state": "Ohio",
+          "status": "RECRUITING",
+          "zip": "43560"
+        },
+        {
+          "city": "Oklahoma City",
+          "contacts": [
+            {
+              "email": "ou-clinical-trials@ouhsc.edu",
+              "name": "Site Public Contact",
+              "phone": "405-271-8777",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Adanma Anji Ayanambakkam Attanathi",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "University of Oklahoma Health Sciences Center",
+          "geoPoint": {
+            "lat": 35.46756,
+            "lon": -97.51643
+          },
+          "state": "Oklahoma",
+          "status": "RECRUITING",
+          "zip": "73104"
+        },
+        {
+          "city": "Erie",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "814-452-5000",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Shifeng S. Mao",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Saint Vincent Hospital",
+          "geoPoint": {
+            "lat": 42.12922,
+            "lon": -80.08506
+          },
+          "state": "Pennsylvania",
+          "status": "RECRUITING",
+          "zip": "16544"
+        },
+        {
+          "city": "Jefferson Hills",
+          "contacts": [
+            {
+              "email": "ddefazio@wpahs.org",
+              "name": "Site Public Contact",
+              "phone": "412-359-3043",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Shifeng S. Mao",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Jefferson Hospital",
+          "geoPoint": {
+            "lat": 40.29118,
+            "lon": -79.93199
+          },
+          "state": "Pennsylvania",
+          "status": "RECRUITING",
+          "zip": "15025"
+        },
+        {
+          "city": "Monroeville",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "412-858-7746",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Shifeng S. Mao",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Forbes Hospital",
+          "geoPoint": {
+            "lat": 40.42118,
+            "lon": -79.7881
+          },
+          "state": "Pennsylvania",
+          "status": "RECRUITING",
+          "zip": "15146"
+        },
+        {
+          "city": "Natrona Heights",
+          "contacts": [
+            {
+              "email": "Dawnmarie.DeFazio@ahn.org",
+              "name": "Site Public Contact",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Shifeng S. Mao",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Allegheny Valley Hospital",
+          "geoPoint": {
+            "lat": 40.6234,
+            "lon": -79.72977
+          },
+          "state": "Pennsylvania",
+          "status": "RECRUITING",
+          "zip": "15065"
+        },
+        {
+          "city": "Philadelphia",
+          "contacts": [
+            {
+              "email": "ONCTrialNow@jefferson.edu",
+              "name": "Site Public Contact",
+              "phone": "215-600-9151",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kevin K. Zarrabi",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Thomas Jefferson University Hospital",
+          "geoPoint": {
+            "lat": 39.95238,
+            "lon": -75.16362
+          },
+          "state": "Pennsylvania",
+          "status": "RECRUITING",
+          "zip": "19107"
+        },
+        {
+          "city": "Philadelphia",
+          "contacts": [
+            {
+              "email": "ONCTrialNow@jefferson.edu",
+              "name": "Site Public Contact",
+              "phone": "215-600-9151",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kevin K. Zarrabi",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Jefferson Torresdale Hospital",
+          "geoPoint": {
+            "lat": 39.95238,
+            "lon": -75.16362
+          },
+          "state": "Pennsylvania",
+          "status": "RECRUITING",
+          "zip": "19114"
+        },
+        {
+          "city": "Philadelphia",
+          "country": "United States",
+          "facility": "Jefferson Methodist Hospital",
+          "geoPoint": {
+            "lat": 39.95238,
+            "lon": -75.16362
+          },
+          "state": "Pennsylvania",
+          "status": "SUSPENDED",
+          "zip": "19148"
+        },
+        {
+          "city": "Pittsburgh",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "877-284-2000",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Shifeng S. Mao",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Allegheny General Hospital",
+          "geoPoint": {
+            "lat": 40.44062,
+            "lon": -79.99589
+          },
+          "state": "Pennsylvania",
+          "status": "RECRUITING",
+          "zip": "15212"
+        },
+        {
+          "city": "Pittsburgh",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "412-578-5000",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Shifeng S. Mao",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "West Penn Hospital",
+          "geoPoint": {
+            "lat": 40.44062,
+            "lon": -79.99589
+          },
+          "state": "Pennsylvania",
+          "status": "RECRUITING",
+          "zip": "15224"
+        },
+        {
+          "city": "Sayre",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "800-836-0388",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Joyson Poulose",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Guthrie Medical Group PC-Robert Packer Hospital",
+          "geoPoint": {
+            "lat": 41.97896,
+            "lon": -76.5155
+          },
+          "state": "Pennsylvania",
+          "status": "RECRUITING",
+          "zip": "18840"
+        },
+        {
+          "city": "Wexford",
+          "contacts": [
+            {
+              "email": "Dawnmarie.DeFazio@ahn.org",
+              "name": "Site Public Contact",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Shifeng S. Mao",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Wexford Health and Wellness Pavilion",
+          "geoPoint": {
+            "lat": 40.62646,
+            "lon": -80.05589
+          },
+          "state": "Pennsylvania",
+          "status": "RECRUITING",
+          "zip": "15090"
+        },
+        {
+          "city": "Willow Grove",
+          "contacts": [
+            {
+              "email": "ONCTrialNow@jefferson.edu",
+              "name": "Site Public Contact",
+              "phone": "215-600-9151",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kevin K. Zarrabi",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Asplundh Cancer Pavilion",
+          "geoPoint": {
+            "lat": 40.144,
+            "lon": -75.11573
+          },
+          "state": "Pennsylvania",
+          "status": "RECRUITING",
+          "zip": "19090"
+        },
+        {
+          "city": "Greenville",
+          "contacts": [
+            {
+              "email": "Heather_Rich@bshsi.org",
+              "name": "Site Public Contact",
+              "phone": "864-603-6234",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Stephen H. Dyar",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Saint Francis Hospital",
+          "geoPoint": {
+            "lat": 34.85262,
+            "lon": -82.39401
+          },
+          "state": "South Carolina",
+          "status": "RECRUITING",
+          "zip": "29601"
+        },
+        {
+          "city": "Greenville",
+          "contacts": [
+            {
+              "email": "Heather_Rich@bshsi.org",
+              "name": "Site Public Contact",
+              "phone": "864-603-6234",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Stephen H. Dyar",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Saint Francis Cancer Center",
+          "geoPoint": {
+            "lat": 34.85262,
+            "lon": -82.39401
+          },
+          "state": "South Carolina",
+          "status": "RECRUITING",
+          "zip": "29607"
+        },
+        {
+          "city": "Greenwood",
+          "contacts": [
+            {
+              "email": "nmcgaha@selfregional.org",
+              "name": "Site Public Contact",
+              "phone": "864-725-4771",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Albert C. Lockhart",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Self Regional Healthcare",
+          "geoPoint": {
+            "lat": 34.1954,
+            "lon": -82.16179
+          },
+          "state": "South Carolina",
+          "status": "RECRUITING",
+          "zip": "29646"
+        },
+        {
+          "city": "Rapid City",
+          "contacts": [
+            {
+              "email": "research@monument.health",
+              "name": "Site Public Contact",
+              "phone": "605-755-2370",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Abdel-Ghani Azzouqa",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Rapid City Regional Hospital",
+          "geoPoint": {
+            "lat": 44.08054,
+            "lon": -103.23101
+          },
+          "state": "South Dakota",
+          "status": "RECRUITING",
+          "zip": "57701"
+        },
+        {
+          "city": "Sioux Falls",
+          "contacts": [
+            {
+              "email": "OncologyClinicTrialsSF@sanfordhealth.org",
+              "name": "Site Public Contact",
+              "phone": "605-312-3320",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Daniel Almquist",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Sanford Cancer Center Oncology Clinic",
+          "geoPoint": {
+            "lat": 43.54369,
+            "lon": -96.72796
+          },
+          "state": "South Dakota",
+          "status": "RECRUITING",
+          "zip": "57104"
+        },
+        {
+          "city": "Sioux Falls",
+          "contacts": [
+            {
+              "email": "OncologyClinicalTrialsSF@SanfordHealth.org",
+              "name": "Site Public Contact",
+              "phone": "605-312-3320",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Daniel Almquist",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Sanford USD Medical Center - Sioux Falls",
+          "geoPoint": {
+            "lat": 43.54369,
+            "lon": -96.72796
+          },
+          "state": "South Dakota",
+          "status": "RECRUITING",
+          "zip": "57117-5134"
+        },
+        {
+          "city": "Dallas",
+          "contacts": [
+            {
+              "email": "canceranswerline@utsouthwestern.edu",
+              "name": "Site Public Contact",
+              "phone": "214-648-7097",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Qian Qin",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "UT Southwestern Simmons Cancer Center - RedBird",
+          "geoPoint": {
+            "lat": 32.78306,
+            "lon": -96.80667
+          },
+          "state": "Texas",
+          "status": "RECRUITING",
+          "zip": "75237"
+        },
+        {
+          "city": "Dallas",
+          "contacts": [
+            {
+              "email": "canceranswerline@UTSouthwestern.edu",
+              "name": "Site Public Contact",
+              "phone": "214-648-7097",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Qian Qin",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "UT Southwestern/Simmons Cancer Center-Dallas",
+          "geoPoint": {
+            "lat": 32.78306,
+            "lon": -96.80667
+          },
+          "state": "Texas",
+          "status": "RECRUITING",
+          "zip": "75390"
+        },
+        {
+          "city": "Fort Worth",
+          "contacts": [
+            {
+              "email": "canceranswerline@UTSouthwestern.edu",
+              "name": "Site Public Contact",
+              "phone": "214-648-7097",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Qian Qin",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "UT Southwestern/Simmons Cancer Center-Fort Worth",
+          "geoPoint": {
+            "lat": 32.72541,
+            "lon": -97.32085
+          },
+          "state": "Texas",
+          "status": "RECRUITING",
+          "zip": "76104"
+        },
+        {
+          "city": "Richardson",
+          "contacts": [
+            {
+              "email": "Suzanne.cole@utsouthwestern.edu",
+              "name": "Site Public Contact",
+              "phone": "972-669-7044",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Qian Qin",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "UT Southwestern Clinical Center at Richardson/Plano",
+          "geoPoint": {
+            "lat": 32.94818,
+            "lon": -96.72972
+          },
+          "state": "Texas",
+          "status": "RECRUITING",
+          "zip": "75080"
+        },
+        {
+          "city": "Murray",
+          "contacts": [
+            {
+              "email": "officeofresearch@imail.org",
+              "name": "Site Public Contact",
+              "phone": "801-507-3950",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Wallace Jones",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Intermountain Medical Center",
+          "geoPoint": {
+            "lat": 40.66689,
+            "lon": -111.88799
+          },
+          "state": "Utah",
+          "status": "RECRUITING",
+          "zip": "84107"
+        },
+        {
+          "city": "Salt Lake City",
+          "contacts": [
+            {
+              "email": "officeofresearch@imail.org",
+              "name": "Site Public Contact",
+              "phone": "801-408-1347",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Wallace Jones",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "LDS Hospital",
+          "geoPoint": {
+            "lat": 40.76078,
+            "lon": -111.89105
+          },
+          "state": "Utah",
+          "status": "RECRUITING",
+          "zip": "84143"
+        },
+        {
+          "city": "St. George",
+          "contacts": [
+            {
+              "email": "officeofresearch@imail.org",
+              "name": "Site Public Contact",
+              "phone": "833-321-3332",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Wallace Jones",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Saint George Regional Medical Center",
+          "geoPoint": {
+            "lat": 37.10415,
+            "lon": -113.58412
+          },
+          "state": "Utah",
+          "status": "RECRUITING",
+          "zip": "84770"
+        },
+        {
+          "city": "Berlin Corners",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "802-225-5400",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Rahul Anil",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Central Vermont Medical Center/National Life Cancer Treatment",
+          "geoPoint": {
+            "lat": 44.21006,
+            "lon": -72.57594
+          },
+          "state": "Vermont",
+          "status": "RECRUITING",
+          "zip": "05602"
+        },
+        {
+          "city": "Burlington",
+          "contacts": [
+            {
+              "email": "rpo@uvm.edu",
+              "name": "Site Public Contact",
+              "phone": "802-656-4101",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Rahul Anil",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "University of Vermont Medical Center",
+          "geoPoint": {
+            "lat": 44.47588,
+            "lon": -73.21207
+          },
+          "state": "Vermont",
+          "status": "RECRUITING",
+          "zip": "05401"
+        },
+        {
+          "city": "Burlington",
+          "contacts": [
+            {
+              "email": "rpo@uvm.edu",
+              "name": "Site Public Contact",
+              "phone": "802-656-8990",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Rahul Anil",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "University of Vermont and State Agricultural College",
+          "geoPoint": {
+            "lat": 44.47588,
+            "lon": -73.21207
+          },
+          "state": "Vermont",
+          "status": "RECRUITING",
+          "zip": "05405"
+        },
+        {
+          "city": "Fredericksburg",
+          "contacts": [
+            {
+              "email": "cvaughn@hoafredericksburg.com",
+              "name": "Site Public Contact",
+              "phone": "540-371-0079",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Asit K. Paul",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Hematology Oncology Associates of Fredericksburg Inc",
+          "geoPoint": {
+            "lat": 38.30318,
+            "lon": -77.46054
+          },
+          "state": "Virginia",
+          "status": "RECRUITING",
+          "zip": "22408"
+        },
+        {
+          "city": "Richmond",
+          "contacts": [
+            {
+              "email": "ctoclinops@vcu.edu",
+              "name": "Site Public Contact",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Asit K. Paul",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "VCU Massey Cancer Center at Stony Point",
+          "geoPoint": {
+            "lat": 37.55376,
+            "lon": -77.46026
+          },
+          "state": "Virginia",
+          "status": "RECRUITING",
+          "zip": "23235"
+        },
+        {
+          "city": "Richmond",
+          "contacts": [
+            {
+              "email": "CTOclinops@vcu.edu",
+              "name": "Site Public Contact",
+              "phone": "804-628-6430",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Asit K. Paul",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "VCU Massey Comprehensive Cancer Center",
+          "geoPoint": {
+            "lat": 37.55376,
+            "lon": -77.46026
+          },
+          "state": "Virginia",
+          "status": "RECRUITING",
+          "zip": "23298"
+        },
+        {
+          "city": "Tappahannock",
+          "contacts": [
+            {
+              "email": "klcampbell@vcu.edu",
+              "name": "Site Public Contact",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Asit K. Paul",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "VCU Health Tappahannock Hospital",
+          "geoPoint": {
+            "lat": 37.92541,
+            "lon": -76.85913
+          },
+          "state": "Virginia",
+          "status": "RECRUITING",
+          "zip": "22560"
+        },
+        {
+          "city": "Charleston",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "304-388-9944",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kok Hoe Chan",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "West Virginia University Charleston Division",
+          "geoPoint": {
+            "lat": 38.34982,
+            "lon": -81.63262
+          },
+          "state": "West Virginia",
+          "status": "RECRUITING",
+          "zip": "25304"
+        },
+        {
+          "city": "Appleton",
+          "contacts": [
+            {
+              "email": "ResearchDept@thedacare.org",
+              "name": "Site Public Contact",
+              "phone": "920-364-3604",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Joyce Philip",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "ThedaCare Regional Cancer Center",
+          "geoPoint": {
+            "lat": 44.26193,
+            "lon": -88.41538
+          },
+          "state": "Wisconsin",
+          "status": "RECRUITING",
+          "zip": "54911"
+        },
+        {
+          "city": "Appleton",
+          "contacts": [
+            {
+              "email": "AWRI.inquiry@ascension.org",
+              "name": "Site Public Contact",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kamal Kant Singh Abbi",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Ascension Northeast Wisconsin-Saint Elizabeth Cancer Center-Appleton",
+          "geoPoint": {
+            "lat": 44.26193,
+            "lon": -88.41538
+          },
+          "state": "Wisconsin",
+          "status": "RECRUITING",
+          "zip": "54915"
+        },
+        {
+          "city": "Brookfield",
+          "contacts": [
+            {
+              "email": "AWRI.Inquiry@Ascension.org",
+              "name": "Site Public Contact",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kamal Kant Singh Abbi",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Ascension Southeast Wisconsin Hospital-Elmbrook Campus-Brookfield",
+          "geoPoint": {
+            "lat": 43.06057,
+            "lon": -88.10648
+          },
+          "state": "Wisconsin",
+          "status": "RECRUITING",
+          "zip": "53045"
+        },
+        {
+          "city": "Chilton",
+          "contacts": [
+            {
+              "email": "AWRI.inquiry@ascension.org",
+              "name": "Site Public Contact",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kamal Kant Singh Abbi",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Ascension Calumet Hospital-Chilton",
+          "geoPoint": {
+            "lat": 44.02888,
+            "lon": -88.16288
+          },
+          "state": "Wisconsin",
+          "status": "RECRUITING",
+          "zip": "53014"
+        },
+        {
+          "city": "Franklin",
+          "contacts": [
+            {
+              "email": "AWRI.Inquiry@Ascension.org",
+              "name": "Site Public Contact",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kamal Kant Singh Abbi",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Reiman Cancer Center-Ascension Wisconsin Health Center-Rawson",
+          "geoPoint": {
+            "lat": 42.88863,
+            "lon": -88.03842
+          },
+          "state": "Wisconsin",
+          "status": "RECRUITING",
+          "zip": "53132"
+        },
+        {
+          "city": "Green Bay",
+          "contacts": [
+            {
+              "email": "WI_research_admin@hshs.org",
+              "name": "Site Public Contact",
+              "phone": "920-433-8889",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Anthony J. Jaslowski",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Saint Vincent Hospital Cancer Center Green Bay",
+          "geoPoint": {
+            "lat": 44.51916,
+            "lon": -88.01983
+          },
+          "state": "Wisconsin",
+          "status": "RECRUITING",
+          "zip": "54301"
+        },
+        {
+          "city": "Green Bay",
+          "contacts": [
+            {
+              "email": "wi_research_admin@hshs.org",
+              "name": "Site Public Contact",
+              "phone": "920-433-8889",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Anthony J. Jaslowski",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Saint Vincent Hospital Cancer Center at Saint Mary's",
+          "geoPoint": {
+            "lat": 44.51916,
+            "lon": -88.01983
+          },
+          "state": "Wisconsin",
+          "status": "RECRUITING",
+          "zip": "54303"
+        },
+        {
+          "city": "Madison",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "608-256-1901",
+              "phoneExt": "17007",
+              "role": "CONTACT"
+            },
+            {
+              "name": "David Kosoff",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "William S Middleton VA Medical Center",
+          "geoPoint": {
+            "lat": 43.07305,
+            "lon": -89.40123
+          },
+          "state": "Wisconsin",
+          "status": "RECRUITING",
+          "zip": "53705"
+        },
+        {
+          "city": "Menomonee Falls",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "262-257-5100",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Deepak Kilari",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Froedtert Menomonee Falls Hospital",
+          "geoPoint": {
+            "lat": 43.1789,
+            "lon": -88.11731
+          },
+          "state": "Wisconsin",
+          "status": "RECRUITING",
+          "zip": "53051"
+        },
+        {
+          "city": "Mequon",
+          "contacts": [
+            {
+              "email": "AWRI.Inquiry@Ascension.org",
+              "name": "Site Public Contact",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kamal Kant Singh Abbi",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Ascension Columbia Saint Mary's Hospital-Ozaukee Campus-Mequon",
+          "geoPoint": {
+            "lat": 43.21555,
+            "lon": -88.03001
+          },
+          "state": "Wisconsin",
+          "status": "RECRUITING",
+          "zip": "53097"
+        },
+        {
+          "city": "Milwaukee",
+          "contacts": [
+            {
+              "email": "AWRI.Inquiry@Ascension.org",
+              "name": "Site Public Contact",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kamal Kant Singh Abbi",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Ascension Columbia Saint Mary's Hospital-Milwaukee Campus",
+          "geoPoint": {
+            "lat": 43.0389,
+            "lon": -87.90647
+          },
+          "state": "Wisconsin",
+          "status": "RECRUITING",
+          "zip": "53211"
+        },
+        {
+          "city": "Milwaukee",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "414-805-3666",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Deepak Kilari",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Medical College of Wisconsin",
+          "geoPoint": {
+            "lat": 43.0389,
+            "lon": -87.90647
+          },
+          "state": "Wisconsin",
+          "status": "RECRUITING",
+          "zip": "53226"
+        },
+        {
+          "city": "New Berlin",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "414-805-0505",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Deepak Kilari",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Froedtert and MCW Moorland Reserve Health Center",
+          "geoPoint": {
+            "lat": 42.9764,
+            "lon": -88.10842
+          },
+          "state": "Wisconsin",
+          "status": "RECRUITING",
+          "zip": "53151"
+        },
+        {
+          "city": "Oak Creek",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "414-805-0505",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Deepak Kilari",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Drexel Town Square Health Center",
+          "geoPoint": {
+            "lat": 42.88585,
+            "lon": -87.86314
+          },
+          "state": "Wisconsin",
+          "status": "RECRUITING",
+          "zip": "53154"
+        },
+        {
+          "city": "Oconto Falls",
+          "contacts": [
+            {
+              "email": "WI_research_admin@hshs.org",
+              "name": "Site Public Contact",
+              "phone": "920-433-8889",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Anthony J. Jaslowski",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Saint Vincent Hospital Cancer Center at Oconto Falls",
+          "geoPoint": {
+            "lat": 44.87388,
+            "lon": -88.14288
+          },
+          "state": "Wisconsin",
+          "status": "RECRUITING",
+          "zip": "54154"
+        },
+        {
+          "city": "Oshkosh",
+          "contacts": [
+            {
+              "email": "AWRI.inquiry@ascension.org",
+              "name": "Site Public Contact",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kamal Kant Singh Abbi",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Ascension Northeast Wisconsin-Mercy Hospital-Oshkosh",
+          "geoPoint": {
+            "lat": 44.02471,
+            "lon": -88.54261
+          },
+          "state": "Wisconsin",
+          "status": "RECRUITING",
+          "zip": "54904"
+        },
+        {
+          "city": "Racine",
+          "contacts": [
+            {
+              "email": "AWRI.Inquiry@Ascension.org",
+              "name": "Site Public Contact",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kamal Kant Singh Abbi",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Ascension All Saints Hospital-Spring Street-Racine",
+          "geoPoint": {
+            "lat": 42.72613,
+            "lon": -87.78285
+          },
+          "state": "Wisconsin",
+          "status": "RECRUITING",
+          "zip": "53405"
+        },
+        {
+          "city": "Sheboygan",
+          "contacts": [
+            {
+              "email": "wi_research_admin@hshs.org",
+              "name": "Site Public Contact",
+              "phone": "920-433-8889",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Anthony J. Jaslowski",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Saint Vincent Hospital Cancer Center at Sheboygan",
+          "geoPoint": {
+            "lat": 43.75083,
+            "lon": -87.71453
+          },
+          "state": "Wisconsin",
+          "status": "RECRUITING",
+          "zip": "53081"
+        },
+        {
+          "city": "Sheboygan",
+          "contacts": [
+            {
+              "email": "wi_research_admin@hshs.org",
+              "name": "Site Public Contact",
+              "phone": "920-433-8889",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Anthony J. Jaslowski",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Sheboygan Physicians Group",
+          "geoPoint": {
+            "lat": 43.75083,
+            "lon": -87.71453
+          },
+          "state": "Wisconsin",
+          "status": "RECRUITING",
+          "zip": "53081"
+        },
+        {
+          "city": "Sturgeon Bay",
+          "contacts": [
+            {
+              "email": "wi_research_admin@hshs.org",
+              "name": "Site Public Contact",
+              "phone": "920-433-8889",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Anthony J. Jaslowski",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Saint Vincent Hospital Cancer Center at Sturgeon Bay",
+          "geoPoint": {
+            "lat": 44.83416,
+            "lon": -87.37704
+          },
+          "state": "Wisconsin",
+          "status": "RECRUITING",
+          "zip": "54235-1495"
+        },
+        {
+          "city": "Wauwatosa",
+          "contacts": [
+            {
+              "email": "AWRI.Inquiry@Ascension.org",
+              "name": "Site Public Contact",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Kamal Kant Singh Abbi",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Ascension Southeast Wisconsin Hospital-Mayfair Road-Wauwatosa",
+          "geoPoint": {
+            "lat": 43.04946,
+            "lon": -88.00759
+          },
+          "state": "Wisconsin",
+          "status": "RECRUITING",
+          "zip": "53226"
+        },
+        {
+          "city": "West Bend",
+          "contacts": [
+            {
+              "name": "Site Public Contact",
+              "phone": "414-805-0505",
+              "role": "CONTACT"
+            },
+            {
+              "name": "Deepak Kilari",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "country": "United States",
+          "facility": "Froedtert West Bend Hospital/Kraemer Cancer Center",
+          "geoPoint": {
+            "lat": 43.42528,
+            "lon": -88.18343
+          },
+          "state": "Wisconsin",
+          "status": "RECRUITING",
+          "zip": "53095"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "This phase III trial compares the effect of adding docetaxel to hormonal therapy and apalutamide versus hormonal therapy and apalutamide alone in treating patients with prostate cancer that has spread from where it first started (primary site) to other places in the body (metastatic). Docetaxel is in a class of medications called taxanes. It stops tumor cells from growing and dividing and may kill them. Hormone therapy for prostate cancer, also called androgen deprivation therapy (ADT), uses surgery or drugs to lower the levels of male sex hormones in a man's body. This helps slow the growth of prostate cancer. Apalutamide is in a class of medications called androgen receptor inhibitors. It works by blocking the effects of androgen (a male reproductive hormone) to stop the growth and spread of tumor cells. Giving docetaxel in addition to the usual treatment of hormonal therapy and apalutamide may work better in treating patients with metastatic prostate cancer than the usual treatment alone.",
+      "detailedDescription": "PRIMARY OBJECTIVE:\n\nI. To determine if the addition of docetaxel to androgen deprivation therapy and apalutamide improves overall survival for men with metastatic castrate sensitive prostate cancer.\n\nSECONDARY OBJECTIVES:\n\nI. To determine if the addition of docetaxel to androgen deprivation therapy and apalutamide improves overall survival for men whose cancers have loss or inactivating mutations of TP53, PTEN, or RB1.\n\nII. To determine if the addition of docetaxel to ADT plus apalutamide improves the time to radiographic progression per Prostate Cancer Working Group 3 (PCWG3) guidelines.\n\nIII. To determine the time to castration-resistant prostate cancer (CRPC) between arms.\n\nIV. To determine symptomatic skeletal event free survival (SSE-FS) between arms.\n\nV. To determine the safety and tolerability of the triplet versus doublet using Common Terminology Criteria for Adverse Events (CTCAE) version (v)5.0.\n\nVI. To determine radiographic progression free survival (rPFS), and overall survival (OS) in patients by the stratification factors a) volume/timing of disease (metachronous high volume, synchronous high volume, and synchronous low volume metastases on conventional imaging) and b) tumor suppressor gene alteration status (0 versus \\[vs\\] 1 vs 2+) between arms.\n\nVII. To determine prostate specific antigen (PSA) 90 response rate at 6 weeks and 6 months between arms.\n\nVIII. To determine time to PSA progression by PCWG3 criteria between arms. IX. To determine objective response rate (ORR) in patients with measurable disease between arms.\n\nEXPLORATORY OBJECTIVES:\n\nI. To determine the time to worsening of physical symptoms of disease based on functional assessment of cancer therapy/National Comprehensive Cancer Network prostate cancer symptom index 17 item questionnaire (NCCN-FACT FPSI-17) between arms.\n\nII. To compare quality of life as measured by Functional Assessment of Cancer Therapy-Prostate (FACT-P) trial outcome index in patients with metastatic castrate-sensitive prostate cancer (mCSPC) who receive ADT + apalutamide + docetaxel vs ADT + apalutamide at the 24-month time point.\n\nIII. To compare quality of life as measured by other scales of the FACT-P in the two arms.\n\nIV. To compare quality of life as measured by FACT-P total outcome index in the two arms at other timepoints.\n\nV. To compare pain severity and interference as measured by the Brief Pain Inventory Short Form (BPI-SF) in the two arms.\n\nVI. To compare quality-adjusted life years which accounts for survival and utility (measured by European Quality of Life Five Dimension Five Level Scale \\[EQ-5D-5L\\]) in the two arms.\n\nVII. To correlate baseline volume of disease on prostate-specific membrane antigen-positron emission tomography/computed tomography (PSMA-PET/CT) with baseline volume of disease on conventional imaging (CI).\n\nVIII. To determine if baseline PSMA-PET/CT and CI are individually and jointly associated with OS, progression-free survival (PFS), PSA90 response, and PSA \\< 0.2 ng/ml after 6 months, and to estimate its clinical relevance when compared to these well characterized prognostic endpoints.\n\nIX. To correlate 6-month PSA level with the presence/absence and volume of residual disease on PSMA-PET/CT after 6 months of doublet or triplet therapy.\n\nX. To correlate the concordance of radiographic progression on CI versus PSMA-PET/CT at the time of PSA progression.\n\nXI. To determine rPFS, time to castration resistance, OS based on thresholds of volume of disease, and prostate-specific membrane antigen (PSMA) uptake (standardized uptake value \\[SUV\\]) based on baseline PSMA-PET/CT scan.\n\nXII. To compare rPFS, time to castration resistance, and OS between arms in patients with de novo metastatic disease having received primary directed radiation therapy.\n\nXIII. To determine rPFS, time to castration resistance, and OS correlation with PSA response at 6 weeks and 6 months.\n\nXIV. To compare the impact of treatment on aging trajectory, as measured by the change in Deficit-Accumulation Frailty Index (DAFI) from baseline, 6- and 12-months, in the two arms.\n\nOUTLINE: Patients are randomized to 1 of 2 arms.\n\nARM 1: Patients receive ADT at the discretion of the investigator and apalutamide orally (PO) once daily (QD). Cycles repeat every 12 weeks in the absence of disease progression or unacceptable toxicity. Additionally, patients undergo computed tomography (CT) scan or magnetic resonance imaging (MRI) and bone scan throughout the study. Patients may optionally undergo prostate-specific membrane antigen-positron emission tomography (PSMA-PET) scans and blood sample collection throughout the study.\n\nARM 2: Patients receive ADT at the discretion of the investigator and apalutamide PO QD. Cycles repeat every 12 weeks in the absence of disease progression or unacceptable toxicity. Patients also receive docetaxel intravenously (IV) over 1 hour every 21 days for up to 6 doses. Additionally, patients undergo CT scan or MRI and bone scan throughout the study. Patients may optionally undergo PSMA-PET scans and blood sample collection throughout the study.\n\nAfter completion of study treatment, patients are followed up every 6 months for up to 10 years."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "PARALLEL",
+        "maskingInfo": {
+          "masking": "NONE"
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 1260,
+        "type": "ESTIMATED"
+      },
+      "phases": [
+        "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* Documentation of disease:\n\n  \\* Histologically or cytologically confirmed adenocarcinoma of the prostate without small cell histology\n* Must have had evidence of metastatic disease (American Joint Committee on Cancer \\[AJCC\\] metastasis \\[M\\]1 disease) based on conventional CT/MRI and/or bone scan. This will be defined as:\n\n  * Bone metastases detected by CT, radionuclide technetium-99 (99Tc)- methylene bisphosphonate bone scan, or MRI as defined by PCWG3 criteria; OR\n  * Non-pelvic lymph node metastases (measurable lymph nodes above the aortic bifurcation; lymph nodes are measurable if the short axis diameter is \u2265 15 mm) detected on CT or MRI as defined by Response Evaluation Criteria in Solid Tumors (RECIST) version 1.1. Subjects with regional lymph node metastases only (nodes \\[N\\]1, below the aortic bifurcation) will not be eligible for the study; OR\n  * Visceral or soft tissue metastases detected on CT or MRI as defined by RECIST version 1.1. Soft tissue/visceral lesions are measurable if the long axis diameter is \u2265 10 mm\n  * Evidence of metastatic disease by PSMA-PET only and not visible by CT, radionuclide bone scan, or MRI will not satisfy eligibility criteria\n* No metachronous low-volume disease (defined as recurrent metastatic disease after definitive treatment of prostate primary) and with \u2264 4 bone metastasis and no visceral metastasis on conventional imaging by CT, radionuclide 99Tc-biphosphonate bone scan, or MRI)\n* Next generation sequencing (NGS) results from any tissue based Clinical Laboratory Improvement Act (CLIA) test must be available at the time of registration. NGS from soft tissue or visceral lesion if available is preferred. NGS from bone or primary prostate will be accepted. Patients with failed NGS testing are not eligible\n* Prior treatment\n\n  * ADT (luteinizing hormone-releasing hormone \\[LHRH\\] agonist/antagonist or orchiectomy) with or without first generation anti-androgen, or second-generation androgen receptor signaling inhibitor (ARSI) within 120 days of registration is permitted. No washout period will be needed for the first generation- androgen or ARSI prior to registration. Anti-androgen treatment is only permitted if used within 120 days of registration\n  * No prior chemotherapy for prostate cancer\n* Age \u2265 18 years\n* Eastern Cooperative Oncology Group (ECOG) performance status \u2264 2\n* Absolute neutrophil count (ANC) \u2265 1,500/mm\\^3\n* Hemoglobin \u2265 9.0 g/dL\n* Platelet count \u2265 100,000/mm\\^3\n* Total bilirubin \u2264 1 x upper limit of normal (ULN) (Note: In subjects with Gilbert's syndrome, if total bilirubin is \\> 1.5 \u00d7 ULN, measure direct and indirect bilirubin and if direct bilirubin is \u2264 1 \u00d7 ULN, subject may be eligible)\n* Aspartate aminotransferase (AST) (serum glutamic oxaloacetic transaminase \\[SGOT\\])/alanine aminotransferase (ALT) (serum glutamate transaminase \\[SGT\\]) \u2264 1.5 x upper limit of normal (ULN)\n* Calculated (Calc.) creatinine clearance \\> 30 mL/min\n* Serum potassium \u2265 3.5 mmol/L\n* Comorbid conditions\n\n  * Patients with a prior or concurrent malignancy whose natural history or treatment does not have the potential to interfere with the safety or efficacy assessment of the investigational regimen are eligible for this trial\n  * Leptomeningeal metastases: Patients with treated leptomeningeal metastases are eligible if follow-up brain imaging 30 days after central nervous system (CNS)-directed therapy shows no evidence of progression\n  * HIV: Patients with known HIV infection on effective anti-retroviral therapy with undetectable viral load within 6 months prior to registration are eligible for this trial\n  * Hepatitis B: For patients with evidence of chronic hepatitis B virus (HBV) infection, the HBV viral load must be undetectable on suppressive therapy, if indicated\n  * Hepatitis C: Patients with a history of hepatitis C virus (HCV) infection must have been treated and cured. For patients with HCV infection who are currently on treatment, they are eligible if they have an undetectable HCV viral load\n  * No seizure or known condition that may pre-dispose to seizure (e.g. prior stroke within 1 year to randomization, brain arteriovenous malformation or condition requiring CNS surgery or radiation therapy)\n  * Patients with known history or current symptoms of cardiac disease, or history of treatment with cardiotoxic agents, should have a clinical risk assessment of cardiac function using the New York Heart Association functional classification. To be eligible for this trial, patients should be class II or better. Any condition that in the opinion of the investigator, would preclude participation in this study. Patients with stable asymptomatic deep venous thromboembolism on stable anti-coagulation will be eligible\n  * Hypertension: Subjects with uncontrolled hypertension as indicated by a resting systolic blood pressure (BP) \\>= 160 mmHg or diastolic BP \\>= 100 mmHg despite medical management are not permitted to register\n  * Allergies: Subjects with known hypersensitivity to any of the study drugs, or excipients in the formulation of the study drugs are not permitted to register\n* Concomitant medications\n\n  * Chronic concomitant treatment with strong inhibitors of cytochrome P450 3A4 (CYP3A4) is not allowed on this study. Patients on strong CYP3A4 inhibitors must discontinue the drug prior to registration on the study. See Section 8.1.9 for more information\n  * Chronic concomitant treatment with strong CYP3A4 inducers is not allowed. Patients must discontinue the drug 14 days prior to the start of study treatment\n  * Medications known to lower the seizure threshold must be discontinued or substituted prior to study entry. See Section 8.1.9 for more information\n* Patient agrees to use a condom (even men with vasectomies) and another effective method of birth control if having sex with a woman of childbearing potential or agrees to use a condom if having sex with a woman who is pregnant while on study drug and for 3 months following the last dose of study drug. Must also agree not to donate sperm during the study and for 3 months after receiving the last dose of study drug",
+      "healthyVolunteers": false,
+      "minimumAge": "18 Years",
+      "sex": "MALE",
+      "stdAges": [
+        "ADULT",
+        "OLDER_ADULT"
+      ]
+    },
+    "identificationModule": {
+      "briefTitle": "Testing the Addition of Docetaxel (Chemotherapy) to the Usual Treatment (Hormonal Therapy and Apalutamide) for Metastatic Prostate Cancer, ASPIRE Trial",
+      "nctId": "NCT06931340",
+      "officialTitle": "Docetaxel Addition in Metastatic Castrate-Sensitive Prostate Cancer (ASPIRE)",
+      "orgStudyIdInfo": {
+        "id": "A032302"
+      },
+      "organization": {
+        "class": "OTHER",
+        "fullName": "Alliance for Clinical Trials in Oncology"
+      },
+      "secondaryIdInfos": [
+        {
+          "domain": "NCI Clinical Trial Reporting Program",
+          "id": "NCI-2025-00838",
+          "type": "OTHER"
+        }
+      ]
+    },
+    "ipdSharingStatementModule": {
+      "ipdSharing": "UNDECIDED"
+    },
+    "outcomesModule": {
+      "otherOutcomes": [
+        {
+          "description": "Estimates of treatment effect and the corresponding 95% confidence intervals (CIs) will be provided as follows (with an understanding that sometimes the CI or estimate will not be computable because of scant data):\n\n* Estimates of the OS hazard ratio and the corresponding 95% CIs by race.\n* Estimates of the OS hazard ratio and the corresponding 95% CIs by ethnicity.",
+          "measure": "Estimates of treatment effect",
+          "timeFrame": "up to 10 years."
+        }
+      ],
+      "primaryOutcomes": [
+        {
+          "description": "Will determine OS. To assess the potential OS benefit from the triplet therapy, a group sequential efficacy/futility monitoring design will be employed. The planned analyses for OS will be tested using a one-sided type 1 error rate of 0.025. An intent-to-treat approach will be used to evaluate OS between treatments. The stratified logrank test will be the primary analysis to compare OS between treatments. The Kaplan-Meier estimate will be used to evaluate the within treatment OS distributions. In addition, the proportional hazards model will be applied to assess the treatment comparison adjusting for important covariates in predicting OS.",
+          "measure": "Overall survival (OS)",
+          "timeFrame": "From randomization to death due to any cause, assessed up to 10 years"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "description": "Will determine if the addition of docetaxel to androgen deprivation therapy and apalutamide improves OS for men whose cancers have alterations of P53, PTEN, or RB1. To assess the potential OS benefit from the triplet therapy, a group sequential efficacy/futility monitoring design will be employed. The planned analyses for OS will be tested using a one-sided type 1 error rate of 0.025. An intent-to-treat approach will be used to evaluate OS between treatments. The stratified logrank test will be the primary analysis to compare OS between treatments. The Kaplan-Meier estimate will be used to evaluate the within treatment OS distributions. In addition, the proportional hazards model will be applied to assess the treatment comparison adjusting for important covariates in predicting OS.",
+          "measure": "Overall Survival (OS)",
+          "timeFrame": "From randomization to death due to any cause, assessed up to 10 years"
+        },
+        {
+          "description": "Will determine the time to radiographic progression- per Prostate Cancer Working Group (PCWG3) guidelines. Tumor response will be assessed utilizing imaging measurements, as defined by Response Evaluation Criteria in Solid Tumors (RECIST) 1.1. In this study, RECIST has been modified based on PCWG3 criteria, which are specific for this patient population.",
+          "measure": "Radiographic progression",
+          "timeFrame": "From randomization to first documentation of radiographic progressive disease or death due to any cause, assessed up to 10 years"
+        },
+        {
+          "description": "Will determine the time to CRPC",
+          "measure": "Castration-resistant prostate cancer (CRPC)",
+          "timeFrame": "Time to prostate-specific antigen progression with serum testosterone being at castrate level < 0.50 ng/mL, or the time to progression by soft tissue/visceral lesions or time to progression by bone lesions per PCWG3 guidelines, assessed up to 10 years"
+        },
+        {
+          "description": "Will determine SSE-FS. An SSE is defined as external beam radiation therapy to relieve skeletal symptoms, or new symptomatic pathologic bone fracture, or occurrence of spinal cord compression or tumor-related orthopedic surgical intervention, whichever comes first",
+          "measure": "Symptomatic skeletal event free survival (SSE-FS)",
+          "timeFrame": "From randomization to first occurrence of SSE or death from any cause, assessed up to 10 years"
+        },
+        {
+          "description": "Will determine the time to worsening of physical symptoms of disease based on functional assessment of cancer therapy / National Comprehensive Cancer Network prostate cancer symptom index 17 item questionnaire.",
+          "measure": "Worsening of physical symptoms of disease",
+          "timeFrame": "up to 10 years"
+        },
+        {
+          "description": "Will determine the safety and tolerability of the triplet versus doublet using Common Terminology Criteria for Adverse Events version 5.0.",
+          "measure": "Incidence of adverse events",
+          "timeFrame": "up to 10 years"
+        },
+        {
+          "description": "Will determine rPFS in patients by the stratification factors a) timing/volume of disease 1) metachronous high volume, 2) synchronous high volume and 3) synchronous low volume metastases on conventional imaging. Tumor response will be assessed utilizing imaging measurements, as defined by RECIST 1.1. In this study, RECIST has been modified based on PCWG3 criteria, which are specific for this patient population. Evaluation of rPFS will be assessed by the investigator.",
+          "measure": "Radiographic progression free survival (rPFS)",
+          "timeFrame": "From randomization to first documentation of radiographic progressive disease or death due to any cause, assessed up to 10 years"
+        },
+        {
+          "description": "Will determine OS in patients by the stratification factors a) timing/volume of disease 1) metachronous high volume, 2) synchronous high volume and 3) synchronous low volume metastases on conventional imaging. To assess the potential OS benefit from the triplet therapy, a group sequential efficacy/futility monitoring design will be employed. The planned analyses for OS will be tested using a one-sided type 1 error rate of 0.025. An intent-to-treat approach will be used to evaluate OS between treatments. The stratified logrank test will be the primary analysis to compare OS between treatments. The Kaplan-Meier estimate will be used to evaluate the within treatment OS distributions. In addition, the proportional hazards model will be applied to assess the treatment comparison adjusting for important covariates in predicting OS.",
+          "measure": "OS",
+          "timeFrame": "Will determine OS in patients by the stratification factors a) timing/volume of disease 1) metachronous high volume, 2) synchronous high volume and 3) synchronous low volume metastases on conventional imaging. To assess the potential OS benefit from the"
+        },
+        {
+          "description": "Will determine PSA 90 response rate.",
+          "measure": "Prostate specific antigen (PSA) 90 response rate",
+          "timeFrame": "At 6 weeks and 6 months"
+        },
+        {
+          "description": "Will determine PSA progression. PSA progression is defined as a \u2265 25% increase above the nadir (lowest screening or baseline) value, which is confirmed by a second value 3 or more weeks later, and an increase in absolute value of \u2265 2 ng/mL above nadir, at least 12 weeks from baseline. Subjects without PSA progression as of database cut-off, whether or not surviving, will be censored at the last total PSA lab assessment date.",
+          "measure": "Time to PSA progression",
+          "timeFrame": "From randomization to the date of PSA progression based on PCWG3 criteria, assessed up to 10 years"
+        },
+        {
+          "description": "Will determine ORR in patients with measurable disease. Tumor response will be assessed utilizing imaging measurements, as defined by RECIST 1.1. In this study, RECIST has been modified based on PCWG3 criteria, which are specific for this patient population",
+          "measure": "Objective response rate (ORR)",
+          "timeFrame": "up to 10 years"
+        }
+      ]
+    },
+    "oversightModule": {
+      "isFdaRegulatedDevice": false,
+      "isFdaRegulatedDrug": false,
+      "oversightHasDmc": false
+    },
+    "sponsorCollaboratorsModule": {
+      "collaborators": [
+        {
+          "class": "NIH",
+          "name": "National Cancer Institute (NCI)"
+        }
+      ],
+      "leadSponsor": {
+        "class": "OTHER",
+        "name": "Alliance for Clinical Trials in Oncology"
+      },
+      "responsibleParty": {
+        "type": "SPONSOR"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2039-05-08",
+        "type": "ESTIMATED"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2026-07-02",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2026-07-01",
+      "overallStatus": "RECRUITING",
+      "primaryCompletionDateStruct": {
+        "date": "2031-11-11",
+        "type": "ESTIMATED"
+      },
+      "startDateStruct": {
+        "date": "2025-12-01",
+        "type": "ACTUAL"
+      },
+      "statusVerifiedDate": "2026-07",
+      "studyFirstPostDateStruct": {
+        "date": "2025-04-17",
+        "type": "ACTUAL"
+      },
+      "studyFirstSubmitDate": "2025-04-09",
+      "studyFirstSubmitQcDate": "2025-04-09"
+    }
+  }
+}

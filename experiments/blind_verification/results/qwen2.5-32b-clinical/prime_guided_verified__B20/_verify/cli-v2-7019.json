@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7019",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Be \u226518 years of age;",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 3473,
+   "completion_tokens": 29,
+   "latency_s": 3.112,
+   "raw": "The document establishes the condition as all inclusion criteria across different treatment arms specify participants must be \u226518 years of age.\nANSWER: T"
+  }
+ ]
+}

@@ -1,0 +1,377 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Class II\"",
+    "params": {
+     "field_path": "classification",
+     "record_id": "D-0655-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "country",
+     "classification",
+     "product_quantity"
+    ],
+    "what": "the recall classification"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Terminated\"",
+    "params": {
+     "field_path": "status",
+     "record_id": "D-0655-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "country",
+     "status",
+     "product_description"
+    ],
+    "what": "the recall status"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "reason_for_recall",
+     "record_id": "D-0655-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "recall_number",
+     "reason_for_recall",
+     "distribution_pattern"
+    ],
+    "what": "the stated reason for the recall"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "voluntary_mandated",
+     "record_id": "D-0655-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "distribution_pattern",
+     "voluntary_mandated",
+     "recall_number"
+    ],
+    "what": "whether the recall was voluntary or mandated"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "event_id",
+     "record_id": "D-0655-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "product_description",
+     "event_id",
+     "recall_number"
+    ],
+    "what": "the event identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"A240467B, exp. date 07/2026\"",
+    "params": {
+     "field_path": "code_info",
+     "record_id": "D-0655-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "code_info",
+     "product_description",
+     "distribution_pattern"
+    ],
+    "what": "the lot or code information"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "status",
+     "record_id": "D-0655-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "country",
+     "status",
+     "report_date"
+    ],
+    "what": "the recall status"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "recalling_firm",
+     "record_id": "D-0655-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "distribution_pattern",
+     "recalling_firm",
+     "recall_number"
+    ],
+    "what": "the recalling firm"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "classification",
+      "equals",
+      "Class II"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The recall is identified with a stated classification (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "classification",
+      "equals",
+      "Class II"
+     ],
+     [
+      "status",
+      "equals",
+      "Terminated"
+     ],
+     [
+      "reason_for_recall",
+      "exists",
+      null
+     ]
+    ],
+    [
+     [
+      "classification",
+      "equals",
+      "Class II"
+     ],
+     [
+      "voluntary_mandated",
+      "exists",
+      null
+     ],
+     [
+      "event_id",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The recall is action-ready: identified, classified, with product description, reason, and status populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "classification",
+      "equals",
+      "Class II"
+     ],
+     [
+      "status",
+      "equals",
+      "Terminated"
+     ],
+     [
+      "reason_for_recall",
+      "exists",
+      null
+     ],
+     [
+      "code_info",
+      "equals",
+      "A240467B, exp. date 07/2026"
+     ],
+     [
+      "status",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The recall satisfies the checked completeness protocol: action-ready per the inspected fields, with consistent dates and populated distribution and firm fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "drugsafety_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "dru-v2-6106",
+ "notes_for_annotators": "{\"family\": \"drugsafety-branching-het-14\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 2, \"false_mech\": true, \"locator\": true, \"source_instance\": \"dru-v2-0106\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "D-0655-2023": {
+   "classification": "Class II",
+   "code_info": "Lot # 37-897075, Exp 05/11/2023",
+   "country": "United States",
+   "distribution_pattern": "Nationwide in the USA.",
+   "event_id": "92253",
+   "product_description": "Cardioplegia Solution, Warm Induction 4:1 HIGH POTASSIUM/low tromethamine, 40 mEq K, packaged in 500 mL per bag, Rx only, Central Admixture Pharmacy Services, Inc., Lehigh Valley, 6580 Snowdrift Road, Allentown, PA  18106, NDC 71285-0011-1.",
+   "product_quantity": "12 bags",
+   "reason_for_recall": "Lack of Assurance of Sterility: after an FDA inspection called into question the sterility of the products intended to be sterile.",
+   "recall_number": "D-0655-2023",
+   "recalling_firm": "Central Admixture Pharmacy Services, Inc.",
+   "report_date": "20230531",
+   "status": "Terminated",
+   "voluntary_mandated": "Voluntary: Firm initiated"
+  }
+ },
+ "scope": "The single named openFDA enforcement record, as retrieved and embedded; no external lookups. Record identifier: D-0655-2023.",
+ "seed": "D-0655-2023",
+ "user_prompt": "Is this recall record complete and correctly classified for downstream pharmacy action?",
+ "variant": "base"
+}

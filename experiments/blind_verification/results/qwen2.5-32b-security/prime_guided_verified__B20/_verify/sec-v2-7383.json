@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7383",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "The implementation of [`tf.raw_ops.EditDistance`]() has incomplete validation.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 806,
+   "completion_tokens": 23,
+   "latency_s": 1.458,
+   "raw": "The document mentions TensorFlow by its registered name, establishing that the affected package is indeed named. ANSWER: T"
+  }
+ ]
+}

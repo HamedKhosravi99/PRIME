@@ -1,0 +1,65 @@
+{
+  "id": "swe-0012",
+  "domain": "software_review",
+  "seed": "swe-0012",
+  "variant": "base",
+  "user_prompt": "Is this library ready for a 1.0 release?",
+  "artifact": {
+    "path": "artifacts/ordered-set@9dfc91c2",
+    "kind": "repo",
+    "commit": "9dfc91c27c0c56df2536036bec4a5b3f717ef2ba"
+  },
+  "scope": "Repository ordered-set@9dfc91c2 (github.com/rspeer/ordered-set) with its bundled test suite under test/, its doctested README.md, and packaging configuration, evaluated by running python3 -m pytest from the repository root in the pinned environment (Python 3.9, pytest 8.x). No CI workflow is configured at this commit (verified: no .github/workflows directory), so the declared protocol below does not include a CI component.",
+  "actions": ["inspect_file", "search_repo", "run_tests", "inspect_config", "ask_user", "emit_claim"],
+  "claims": [
+    {"id": "C1", "text": "The core module ordered_set/__init__.py is readable and documents its public API (module docstring and OrderedSet class attribution present as inspected).", "level": 1},
+    {"id": "C2", "text": "The documented OrderedSet API behaves as specified at this commit: ordered_set/__init__.py documentation inspected and the bundled suite (test/, README.md doctests) passes under the declared protocol.", "level": 2},
+    {"id": "C3", "text": "The package satisfies the checked typed-distribution protocol at this commit: documented core module, passing suite, packaging metadata declared in pyproject.toml, a shipped py.typed marker, and no TODO/FIXME/XXX markers under ordered_set/.", "level": 3}
+  ],
+  "order": [["C1", "C2"], ["C2", "C3"]],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "inspect",
+      "proposition": "ordered_set/__init__.py opens with a module docstring describing the OrderedSet type and its origin (span read).",
+      "resolver": {"tool": "inspect_file", "params_schema": {"path": "str"}, "params": {"path": "ordered_set/__init__.py"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E2",
+      "type": "execute",
+      "proposition": "python3 -m pytest test ordered_set README.md exits 0 at this commit in the pinned environment (53 tests, including doctests collected via --doctest-modules/--doctest-glob configured in pytest.ini).",
+      "resolver": {"tool": "run_tests", "params_schema": {"suite": "str"}, "params": {"suite": "test ordered_set README.md"}, "attest": "exit_code==0"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E3",
+      "type": "config",
+      "proposition": "pyproject.toml declares packaging metadata: project name, author, and requires-python.",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "pyproject.toml"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E4",
+      "type": "config",
+      "proposition": "The package ships a py.typed marker at ordered_set/py.typed (type hints consumable by downstream checkers).",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "ordered_set/py.typed"}, "attest": "file_exists"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E5",
+      "type": "search",
+      "proposition": "No TODO/FIXME/XXX markers are found under ordered_set/ after a search_repo scan with pattern TODO|FIXME|XXX.",
+      "resolver": {"tool": "search_repo", "params_schema": {"pattern": "str", "path": "str"}, "params": {"pattern": "TODO|FIXME|XXX", "path": "ordered_set"}, "attest": "match_count==0"},
+      "gold_value": "T"
+    }
+  ],
+  "phi": [],
+  "gold_licenses": {
+    "C1": [["E1"]],
+    "C2": [["E1", "E2"]],
+    "C3": [["E1", "E2", "E3", "E4", "E5"]]
+  },
+  "decoys": ["comment_density_analysis"],
+  "notes_for_annotators": "All gold_value entries verified by actual runs on 2026-07-29 (see artifact PROVENANCE): python3 -m pytest test ordered_set README.md -> 53 passed, exit 0 (matches the unscoped whole-repo run; pytest.ini sets addopts = --doctest-modules --doctest-glob=README.md --doctest-glob=*.py --ignore=setup.py, a built-in pytest feature requiring no extra dependency, so both the unit tests in test/ and the doctests embedded in ordered_set/__init__.py and README.md are exercised). This artifact has NO CI workflow at this commit (verified: no .github/workflows directory exists), so unlike other instances in this family the release-readiness protocol here is deliberately built around the typed-distribution signal (py.typed) rather than CI -- an honest claim about THIS artifact, not a template applied uniformly. Minimality, C1 [E1]: no span read, no documentation claim. C2 [E1,E2]: drop E1 and 'documented' is unsupported; drop E2 and 'behaves as specified' is unsupported. C3 [E1,E2,E3,E4,E5]: five enumerated protocol components -- drop E1, E2, E3 (no packaging metadata), E4 (no typed-marker evidence), or E5 (open work markers unexcluded) and a realizable assignment falsifies that component while the weakened route still holds, rejected by a competent evaluator for this protocol. Order-coherence: C3's route literal-contains C2's, which contains C1's. phi is empty: no genuinely impossible determined-value combination among these atoms (E2's doctest+unit selection and E5's marker scan are independent). Honest outcome: all route atoms resolve T, so C3 is reachable."
+}

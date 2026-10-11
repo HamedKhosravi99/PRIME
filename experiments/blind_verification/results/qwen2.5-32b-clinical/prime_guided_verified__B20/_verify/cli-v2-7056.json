@@ -1,0 +1,31 @@
+{
+ "instance": "cli-v2-7056",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Age \u2265 18 years old,",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 450,
+   "completion_tokens": 28,
+   "latency_s": 2.153,
+   "raw": "The document specifies an age criterion of \"Age \u2265 18 years old,\" which restricts enrollment to adults. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "F",
+   "quote": "Patient and/or trusted person (health care proxy) or close relative who has given their oral consent after being informed,",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 445,
+   "completion_tokens": 25,
+   "latency_s": 1.593,
+   "raw": "The document does not specify any restrictions based on sex; therefore, it does not establish the condition. ANSWER: F"
+  }
+ ]
+}

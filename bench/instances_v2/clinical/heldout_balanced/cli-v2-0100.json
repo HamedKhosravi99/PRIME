@@ -1,0 +1,283 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT07001254"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT07001254"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2027-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT07001254"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT07001254"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT07001254"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT07001254"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2027-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT07001254"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2027-01-01"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2027-01-01"
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-0100",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-07\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 3, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT07001254": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "This Phase II open-label interventional clinical trial aims to evaluate the efficacy of romiplostim, in patients with severe aplastic anemia (SAA), both treatment na\u00efve and relapsed/refractory, in inducing trilineage hematopoiesis in children and young adults."
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "INCLUSION CRITERIA\n\nIn order to be eligible to participate in this study, an individual must meet all of the following criteria:\n\n* Age \u22652 years to \u226421 years\n* Child should be receiving ongoing care with pediatric hematology/oncology provider.\n* Confirmed Diagnosis of SAA and other related conditions based on following criteria.\n\nDiagnosis of severe Aplastic anemia (newly diagnosed or refractory based on history of prior treatments) is established if bone marrow cellularity \\<25% to 30% and at least two of the following criteria are met: (a) absolute neutrophil count \\<0.5 \u00d7 10\\^9\n\n/L, (b) platelet count \\<20 \u00d7 10\\^9/L, and (c) hemoglobin \\<8 g/dL. In the event bone marrow cellularity is \\>30% but patient presents with severe pancytopenia and its complications; the diagnosis of SAA will be considered at the discretion of PI. For relapsed or refractory AA, minor variations in hematological parameters will be acceptable, e.g., platelet count of \\<50 x 10\\^9/L or hemoglobin of \u22649 g/dL.\n\nOR Diagnosis of refractory aplastic anemia will include a confirmed diagnosis of SAA and the clinical assessment by the treating physician that the patient has not responded to the frontline IST by 6 months.\n\nOR Diagnosis of relapsed aplastic anemia will be determined by previous diagnosis of SAA and the prior history of successful hematologic response to IST with subsequent loss of response and/or requirement of supportive therapy\\*.\n\n\\*Adequate organ function within 7 days of enrollment defined as: Creatinine: \u22642.0 mg/dL Hepatic function: Elevation of liver enzymes is acceptable for patients with hepatitis-induced SAA if patient does not have history of chronic liver problem such as liver cirrhosis. If necessary, liver biopsy will be performed.\n\n* Females of childbearing potential agree to use effective contraception during the study period and for 4 months after completion of therapy.\n* Patient with available allogenic stem cell donor chooses to defer HSCT option at least for 12-weeks.\n* Parent, guardian, or patient (if \\>18 years of old) must be able to provide written and voluntary informed consent and assent (if \\>12 years of age).\n\nEXCLUSION CRITERIA\n\nAn individual who meets any of the following criteria will be excluded from participation in this study:\n\n* Age \\< 2 years or \\>21 years \\*Availability of suitable HLA-matched related or HLA-matched unrelated (9/10 or 10/10) allogenic stem cell donor and the participant fulfills the requirement for HSCT and opts to undergo allogenic HSCT.\\*\\*\n* Patients with Symptomatic Paroxysmal Nocturnal Hemoglobinuria (PNH) and/or PNH clones \\>50% of granulocytes or RBC at time of enrollment.\n* Preexisting condition with predisposition for thrombosis such as protein C, S, antithrombin deficiency, homozygous factor V Leiden or prothrombin 20210 polymorphism, history of idiopathic thromboembolism with patient or first degree relative.\n* Diagnosis of bone marrow failure syndrome with cancer predisposition, including chromosomal fragility disorders (Fanconi anemia, Bloom syndrome, Ataxia Telangiectasia) and other conditions with known association towards cancer predisposition.#\n* Presence of complex karyotype or monosomy 7 or 5q- or other cytogenetic abnormality with known predisposition to cancer.\n* Diagnosis of MDS.\n* Patients taking concurrent therapy with eltrombopag, avatrombopag, and lusutrombopag\\*\\*\\*.\n* Patients taking concurrent therapy with androgens\\*\\*\\*.\n* Females who are nursing or pregnant (positive serum or urine \u03b2-human chorionic gonadotropin \\[\u03b2-hCG\\] pregnancy test) at screening or pre-dose on Day 1.\n* Current alcohol or drug abuse.\n* Treatment with an investigational drug within 30 days or 5 half-lives (whichever is longer) preceding the first dose of study medication.\n* Active and uncontrolled infections (e.g., sepsis, hepatitis B, hepatitis C).\n* Chronic liver disease, i.e., fibrosis or cirrhosis.\n* Patients infected with Human Immunodeficiency Virus (HIV).\n* Have a known immediate or delayed hypersensitivity reaction or idiosyncrasy to drugs chemically related to romiplostim that contraindicates the patient's participation.\n* Known history of sensitivity or allergy to the active substance, to any of the excipients, or to any E. coli-derived product.\n* Moribund status or concurrent hepatic, renal, cardiac, neurologic, pulmonary, infectious or metabolic disease of such severity that it would preclude the patient's ability to tolerate protocol therapy, or that death within 7-10 days is likely.\n* Current pregnancy or unwillingness to take oral contraceptives or use a barrier method of birth control or practice abstinence to refrain from pregnancy if of childbearing potential during this study.\n* Inability to understand investigational nature of the study or give informed consent.\n\n  \\# Clarification about exclusion criteria #5: Low cell counts could lead to failure to perform specific assays (e.g., cytogenetics, chromosomal fragility testing) for inherited bone marrow failure (BMF) syndrome. Furthermore, genetic testing for BMF could take weeks to get the results. Therefore, the intervention will be commenced based on diagnosis of SAA with peripheral cytopenia and bone marrow hypocellularity as per Camitta's criteria. If the participant is diagnosed with inherited BMF syndrome after the commencement of therapy requiring HSCT or other alternative therapy, the participant will be withdrawn from the study. The decision to withdraw the participant will be discussed with the adjudication committee.\n* All cases with relapsed and refractory aplastic anemia will be reviewed by the central adjudication committee to determine whether a patient qualifies for the inclusion criteria.\n\n  * Prior to participation in the study, patients will be offered available therapeutic options and concurrent competing studies evaluating alternative therapies for SAA. Matched sibling donor transplant is the preferred curative option and will be offered to all patients. If patient has a HLA-matched unrelated donor (9/10 or 10/10), and if there is an option to participate in a research study evaluating a cure with matched-unrelated donor transplant, the patient will offered those options prior to recruiting in the study. In US, TransIT (NCT05600426): \"A Trial Comparing Unrelated Donor BMT With IST for Pediatric and Young Adult Patients With Severe Aplastic Anemia\" is currently recruiting newly diagnosed children with SAA for matched unrelated donor transplant who are not eligible for matched sibling donor transplant. However, the study requires availability of two matched unrelated donors (9/10 or 10/10). If the patient chooses to undergo matched-unrelated donor transplantation either with participation with the research study or outside the research study, the patient will not be recruited in the study.\n\n    * Prior history of use of another TPO-mimetic (eltrombopag, avatrombopag and lusutrombopag) and androgen for more than 30 days ago will not be a contraindication. Dysplastic changes with diagnosis of SAA are acceptable as long as hematopathologist is not concerned about alternative diagnosis of MDS or refractory cytopenia of childhood. Patients who have discontinued androgen therapy for more than 2- weeks will be considered for study participation."
+    },
+    "identificationModule": {
+     "nctId": "NCT07001254",
+     "officialTitle": "Phase II Open-label Clinical Trial Evaluating Efficacy of Romiplostim Added to Standard of Care for Children and Young Adults With Treatment Naive and Relapsed or Refractory Severe Aplastic Anemia"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2025-12-17",
+     "overallStatus": "NOT_YET_RECRUITING",
+     "studyFirstSubmitDate": "2025-05-23"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT07001254.",
+ "seed": "NCT07001254",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

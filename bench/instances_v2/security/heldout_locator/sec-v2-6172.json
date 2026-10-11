@@ -1,0 +1,388 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"PyPI\"",
+    "params": {
+     "field_path": "affected.0.package.ecosystem",
+     "record_id": "GHSA-3p37-3636-q8wv"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "affected.0.package.ecosystem",
+     "summary",
+     "database_specific.severity"
+    ],
+    "what": "the ecosystem of the affected package"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2025-01-01\"",
+    "params": {
+     "field_path": "published",
+     "record_id": "GHSA-3p37-3636-q8wv"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "published",
+     "summary",
+     "details"
+    ],
+    "what": "the date the advisory was published"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2026-01-01\"",
+    "params": {
+     "field_path": "modified",
+     "record_id": "GHSA-3p37-3636-q8wv"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "modified",
+     "schema_version",
+     "severity.0.score"
+    ],
+    "what": "the date the advisory was last modified"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"True-alt\"",
+    "params": {
+     "field_path": "database_specific.github_reviewed",
+     "record_id": "GHSA-3p37-3636-q8wv"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.severity",
+     "database_specific.github_reviewed",
+     "schema_version"
+    ],
+    "what": "whether the advisory has been reviewed by the database maintainers"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.type",
+     "record_id": "GHSA-3p37-3636-q8wv"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "references.0.type",
+     "summary",
+     "schema_version"
+    ],
+    "what": "the type of the first reference"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "aliases.0",
+     "record_id": "GHSA-3p37-3636-q8wv"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "severity.0.score",
+     "aliases.0",
+     "database_specific.cwe_ids.0"
+    ],
+    "what": "the first alias identifier (such as a CVE)"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_after:\"1980-01-01\"",
+    "params": {
+     "field_path": "published",
+     "record_id": "GHSA-3p37-3636-q8wv"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "severity.0.score",
+     "affected.0.package.name",
+     "published"
+    ],
+    "what": "the date the advisory was published"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.url",
+     "record_id": "GHSA-3p37-3636-q8wv"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "details",
+     "references.0.url",
+     "affected.0.package.name"
+    ],
+    "what": "the URL of the first reference"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ],
+     [
+      "published",
+      "date_before",
+      "2025-01-01"
+     ],
+     [
+      "modified",
+      "date_before",
+      "2026-01-01"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ],
+     [
+      "published",
+      "date_before",
+      "2025-01-01"
+     ],
+     [
+      "modified",
+      "date_before",
+      "2026-01-01"
+     ],
+     [
+      "database_specific.github_reviewed",
+      "equals",
+      "True-alt"
+     ],
+     [
+      "references.0.type",
+      "exists",
+      null
+     ],
+     [
+      "aliases.0",
+      "exists",
+      null
+     ],
+     [
+      "published",
+      "date_after",
+      "1980-01-01"
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "sec-v2-6172",
+ "notes_for_annotators": "{\"family\": \"security-nested-het-06\", \"topology\": \"nested\", \"cost\": \"het\", \"target_level\": 2, \"false_mech\": true, \"locator\": true, \"source_instance\": \"sec-v2-0172\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-3p37-3636-q8wv": {
+   "affected": [
+    {
+     "package": {
+      "ecosystem": "PyPI",
+      "name": "vyper"
+     }
+    }
+   ],
+   "aliases": [
+    "CVE-2023-31146"
+   ],
+   "database_specific": {
+    "cwe_ids": [
+     "CWE-787"
+    ],
+    "github_reviewed": true,
+    "severity": "HIGH"
+   },
+   "details": "### Impact\nduring codegen, the length word of a dynarray is written before the data, which can result in OOB array access in the case where the dynarray is on both the lhs and rhs of an assignment. here is a minimal example producing the issue:\n```vyper\na:DynArray[uint256,3]\n@external\ndef test() -> DynArray[uint256,3]:\n    self.a = [1,2,3]\n    self.a = empty(DynArray[uint256,3])\n    self.a = [self.a[0],self.a[1],self.a[2]]\n    return self.a # return [1,2,3]\n```\n\nand here is an example demonstrating the issue can cause data corruption across call frames:\n\n```vyper\n@external\ndef test() -> DynArray[uint256,3]:\n    self.a()\n    return self.b() # return [1,2,3]\n\n@internal\ndef a():\n    a: uint256 = 0    \n    b: uint256 = 1    \n    c: uint256 = 2    \n    d: uint256 = 3\n\n@internal\ndef b() -> DynArray[uint256,3]:\n    a: DynArray[uint256,3] = empty(DynArray[uint256,3])\n    a = [a[0],a[1],a[2]]\n    return a\n```\n\nexamples involving append and pop:\n```vyper\n@internal\ndef foo():\n    c: DynArray[uint256, 1] = []\n    c.append(c[0])\n```\n\n```vyper\n@internal\ndef foo():\n    c: DynArray[uint256, 1] = [1]\n    c[0] = c.pop()\n```\n\nthe expected behavior in all of the above cases is to revert due to oob array access.\n\n### Patches\npatched in 4f8289a81206f767df1900ac48f485d90fc87edb\n\n### Workarounds\n_Is there a way for users to fix or remediate the vulnerability without upgrading?_\n\n### References\n_Are there any links users can visit to find out more?_\n",
+   "modified": "2024-11-19T16:50:06.826935Z",
+   "published": "2023-05-12T20:21:54Z",
+   "references": [
+    {
+     "type": "WEB",
+     "url": "https://github.com/vyperlang/vyper/security/advisories/GHSA-3p37-3636-q8wv"
+    }
+   ],
+   "schema_version": "1.7.3",
+   "severity": [
+    {
+     "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+    }
+   ],
+   "summary": "Vyper vulnerable to OOB DynArray access when array is on both LHS and RHS of an assignment"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-3p37-3636-q8wv.",
+ "seed": "GHSA-3p37-3636-q8wv",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

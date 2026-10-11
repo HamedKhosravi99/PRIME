@@ -1,0 +1,12 @@
+name: validators
+source_url: https://github.com/kvesteri/validators
+commit: 70de324322def13a49a93d222f798ec1ab700885
+ref_cloned: default HEAD
+clone_date: 2026-07-28
+license_file: LICENSE.txt
+license_first_line: The MIT License (MIT)
+size: 740K
+test_command: python3 -m pytest -q (cwd=repo root)
+environment: 3.9.6, pytest
+test_exit_code: 1
+test_result_line: 17 failed, 878 passed in 0.46s

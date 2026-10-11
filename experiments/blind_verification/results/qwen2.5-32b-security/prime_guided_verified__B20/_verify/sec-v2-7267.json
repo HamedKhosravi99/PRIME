@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7267",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Applications and libraries using urllib3 version 2.6.2 and earlier to stream content from untrusted sources by setting `preload_content=False` when they do not disable redirects.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 504,
+   "completion_tokens": 25,
+   "latency_s": 1.963,
+   "raw": "The document mentions \"urllib3\" by name multiple times, establishing it as the affected package. ANSWER: T"
+  }
+ ]
+}

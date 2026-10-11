@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7087",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "The implementation of the `EmbeddingLookup` TFLite operator is [vulnerable to a division by zero error]",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 532,
+   "completion_tokens": 28,
+   "latency_s": 2.28,
+   "raw": "The document mentions TensorFlow as the affected package by naming specific versions like TensorFlow 2.5.0 and others. ANSWER: T"
+  }
+ ]
+}

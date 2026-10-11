@@ -1,0 +1,2284 @@
+{
+  "derivedSection": {
+    "conditionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D017444",
+          "term": "Skin Diseases, Papulosquamous"
+        },
+        {
+          "id": "D012871",
+          "term": "Skin Diseases"
+        },
+        {
+          "id": "D017437",
+          "term": "Skin and Connective Tissue Diseases"
+        },
+        {
+          "id": "D003920",
+          "term": "Diabetes Mellitus"
+        },
+        {
+          "id": "D044882",
+          "term": "Glucose Metabolism Disorders"
+        },
+        {
+          "id": "D008659",
+          "term": "Metabolic Diseases"
+        },
+        {
+          "id": "D009750",
+          "term": "Nutritional and Metabolic Diseases"
+        },
+        {
+          "id": "D004700",
+          "term": "Endocrine System Diseases"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D011565",
+          "term": "Psoriasis"
+        },
+        {
+          "id": "D003924",
+          "term": "Diabetes Mellitus, Type 2"
+        }
+      ]
+    },
+    "interventionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D014230",
+          "term": "Triazoles"
+        },
+        {
+          "id": "D001393",
+          "term": "Azoles"
+        },
+        {
+          "id": "D006573",
+          "term": "Heterocyclic Compounds, 1-Ring"
+        },
+        {
+          "id": "D006571",
+          "term": "Heterocyclic Compounds"
+        },
+        {
+          "id": "D011719",
+          "term": "Pyrazines"
+        },
+        {
+          "id": "D000096926",
+          "term": "Benzenesulfonamides"
+        },
+        {
+          "id": "D013449",
+          "term": "Sulfonamides"
+        },
+        {
+          "id": "D000577",
+          "term": "Amides"
+        },
+        {
+          "id": "D009930",
+          "term": "Organic Chemicals"
+        },
+        {
+          "id": "D013453",
+          "term": "Sulfonylurea Compounds"
+        },
+        {
+          "id": "D014508",
+          "term": "Urea"
+        },
+        {
+          "id": "D001555",
+          "term": "Benzene Derivatives"
+        },
+        {
+          "id": "D006841",
+          "term": "Hydrocarbons, Aromatic"
+        },
+        {
+          "id": "D006844",
+          "term": "Hydrocarbons, Cyclic"
+        },
+        {
+          "id": "D006838",
+          "term": "Hydrocarbons"
+        },
+        {
+          "id": "D013450",
+          "term": "Sulfones"
+        },
+        {
+          "id": "D013457",
+          "term": "Sulfur Compounds"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D000068900",
+          "term": "Sitagliptin Phosphate"
+        },
+        {
+          "id": "D005907",
+          "term": "Gliclazide"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "versionHolder": "2026-07-29"
+    }
+  },
+  "hasResults": true,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "description": "Double blind phase (week 0-16):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nPlacebo Comparator: Gliclazide matched placebo One gliclazide matched placebo capsule daily for 4 weeks. If no severe hypoglycaemic episodes one gliclazide matched placebo capsule twice daily for 4 weeks. If no severe hypoglycaemic episodes two gliclazide matched placebo capsules twice daily for 8 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+          "interventionNames": [
+            "Drug: Sitagliptin",
+            "Drug: Gliclazide matched placebo capsule"
+          ],
+          "label": "Sitagliptin",
+          "type": "EXPERIMENTAL"
+        },
+        {
+          "description": "Double-blind phase (week 0-16):\n\nGliclazide 80mg once daily for 4 weeks Then if no severe hypoglycaemic episodes increase to Gliclazide 80mg twice daily for 4 weeks.\n\nThen if no severe hypoglycaemic episodes increase to Gliclazide 160mg twice daily for 8 weeks Placebo Comparator: Sitagliptin matched placebo Two tablets (or one tablet in participants with moderate kidney disease) once daily for 16 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+          "interventionNames": [
+            "Drug: Sitagliptin",
+            "Drug: Gliclazide",
+            "Drug: Sitagliptin matched placebo"
+          ],
+          "label": "Gliclazide",
+          "type": "ACTIVE_COMPARATOR"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "Gliclazide",
+            "Sitagliptin"
+          ],
+          "description": "Week 0-16: Two 50mg tablets (or one 50mg tablet for participants with moderate kidney disease) once daily for 16 weeks during the double-blind phase.\n\nWeek 16-32: Then two 50mg tablets (or one 50mg tablet for participants with moderate kidney disease) once daily for 16 weeks during the open-label phase of the trial.",
+          "name": "Sitagliptin",
+          "otherNames": [
+            "Januvia\u00ae"
+          ],
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "Gliclazide"
+          ],
+          "description": "Double-blind phase (week 0-16):\n\nOne 80mg capsule once daily for 4 weeks. The if no severe hypoglycaemic episodes one 80mg capsule twice daily for 4 weeks.\n\nThen if no severe hypoglycaemic episodes two 80mg capsules twice daily for 8 weeks.",
+          "name": "Gliclazide",
+          "otherNames": [
+            "Diamicron"
+          ],
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "Gliclazide"
+          ],
+          "description": "Week 0-16: Two tablets (or one tablet for those with moderate kidney disease) daily for 16 weeks during the double-blind phase.",
+          "name": "Sitagliptin matched placebo",
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "Sitagliptin"
+          ],
+          "description": "Double-blind phase (week 0-16):\n\nOne capsule daily for 4 weeks. Then if no severe hypoglycaemic episodes one capsule twice daily for 4 weeks. Then if no severe hypoglycaemic episodes two capsules twice daily for 8 weeks.",
+          "name": "Gliclazide matched placebo capsule",
+          "type": "DRUG"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Psoriasis",
+        "Type 2 Diabetes Mellitus"
+      ],
+      "keywords": [
+        "Psoriasis",
+        "Type 2 Diabetes",
+        "Dipeptidyl peptidase-4 inhibition",
+        "Sitagliptin",
+        "Gliclazide",
+        "Psoriasis area and severity index"
+      ]
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "city": "Dublin",
+          "country": "Ireland",
+          "facility": "The Adelaide and Meath Hospital",
+          "geoPoint": {
+            "lat": 53.33306,
+            "lon": -6.24889
+          }
+        },
+        {
+          "city": "Dublin",
+          "country": "Ireland",
+          "facility": "UCD Clinical Research Centre, St Vincent's University Hospital,",
+          "geoPoint": {
+            "lat": 53.33306,
+            "lon": -6.24889
+          }
+        }
+      ],
+      "overallOfficials": [
+        {
+          "affiliation": "UCD Clinical Research Centre, St Vincent's University Hospital",
+          "name": "Brian Kirby, MBBChBAOMD",
+          "role": "PRINCIPAL_INVESTIGATOR"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "The primary purpose of this study is to determine if sitagliptin (Januvia\u00ae) improves psoriasis severity after 16 weeks of treatment in 20 participants with both psoriasis and type 2 diabetes mellitus. We will compare the change in psoriasis severity in 20 participants treated with Januvia\u00ae to 20 participants treated with 16 weeks of a comparator drug (gliclazide, Diamicron\u00ae). Participants will be recruited from two centres and after a 4 week washout period will be followed prospectively for 36 weeks. Participants will be stratified by centre, psoriasis severity and obesity status after which they will be randomly allocated to Arm A or Arm B. Participants will be treated with either Januvia\u00ae and Diamicron\u00ae matched placebo capsules (Arm A), or Diamicron\u00ae and Januvia\u00ae matched placebo tablets (Arm B) for 16 weeks and then proceed to an open-label phase where all participants will receive Januvia\u00ae for a further 16 weeks.\n\nBoth the research participants and the investigators will be unaware of the trial arm to which the research participant has been allocated (double-blind study). Research participants will be prohibited from making any changes to the dose of medications used to treat psoriasis. If a participant's plasma glycated haemoglobin level (HbA1c) (reflects a participant's glucose control over the previous 3 months) is above 64mmol/mol eight weeks after commencing one of the study investigational medicinal products (IMPs) insulin therapy will be used to improve glycaemic control.\n\nParticipants will be assessed at 9 study visits over 40 weeks. Participants will complete questionnaires, have a medical history recorded and physical examination, blood sampling and skin biopsies taken (in a small number of willing participants at 3 visits).\n\nThe following endpoints will be analysed:\n\nChanges in psoriasis severity at 16 and 32 weeks; changes in validated quality of life scores; incidence of adverse events; incidence of discontinuation of one of the study IMPs, time to relapse of psoriasis; changes in cardiovascular disease risk factor profiles; changes in cytokines, hormones, expression of immune proteins in blood and skin biopsies; and genetic profiles that predicts best response to sitagliptin therapy.\n\nWe hypothesize that sitagliptin therapy decreases psoriasis severity.",
+      "detailedDescription": "Background:\n\nPsoriasis is a chronic, autoimmune skin disease affecting approximately 2% of the world's population. It is characterised by keratinocyte hyperproliferation, by aberrant keratinocyte differentiation and by cutaneous inflammation.\n\nDipeptidyl peptidase-4 (DPP-4) is expressed on keratinocytes and its activity is upregulated in psoriasis. DPP-4 inhibition suppresses keratinocyte proliferation and restores partially keratinocyte differentiation. The main site of DPP-4 activity is cluster of differentiation antigen 26 (CD26). CD26 is a marker of T cell activation and is a key molecule in the pathogenesis of autoimmune diseases. One case of DPP-4 inhibitor therapy improving psoriasis severity has been reported.\n\nAgents used to treat psoriasis target commonly the underlying inflammation. C-reactive protein (CRP) is a sensitive, systemic marker of inflammation. In people with type 2 diabetes (T2DM) DPP-4 inhibitor therapy decreases CRP concentrations. Serum CRP concentrations correlate with psoriasis severity and interventions that decrease the CRP concentration may decrease also psoriasis severity. Medications that improve insulin resistance may decrease also systemic inflammation and improve psoriasis. We have shown previously, in psoriasis patients without T2DM (both lean and obese), that the fasting insulin concentration and the homeostatic model of insulin resistance (measures of insulin resistance) correlate strongly with the psoriasis area and severity index (PASI, a measure of psoriasis severity: r=0.48, p\\<0.001; r=0.49, p\\<0.001).\n\nDPP-4 inhibitors prevent also the degradation of insulin secretagogues, such as glucagon-like peptide-1 (GLP-1), thereby ameliorating hyperglycaemia without causing hypoglycaemia. Due to this effect DPP-4 inhibitors are effective for the treatment of T2DM. Other interventions which increase GLP-1 receptor activation, such as roux-en-Y gastric bypass surgery and GLP-1 analogue therapy, can improve also psoriasis severity.\n\nWe have reported previously a significant improvement in two patients with psoriasis and diabetes treated with the GLP-1 analogue liraglutide. In a subsequent open study of 7 patients with both psoriasis and type 2 diabetes we found a significant reduction in psoriasis severity and a significant improvement in quality of life following treatment with liraglutide.\n\nName and Description of the Investigational Medicinal Products(s):\n\nFour investigational medicinal products will be used in this clinical trial:\n\n1. Januvia\u00ae 50 mg film-coated tablets, which are film-coated tablets for oral ingestion that contain 50mg of the dipeptidyl peptidase-4 inhibitor sitagliptin.\n2. Januvia\u00ae matched placebo tablets, which are tablets that are identical appearance and composition to Januvia\u00ae 50mg tablets with the exception of not containing sitagliptin, the active ingredient.\n3. Capsules containing Diamicron\u00ae 80mg tablets, which are tablets for oral ingestion that contain 80mg of the sulphonylurea gliclazide; and\n4. Diamicron\u00ae matched capsules, which will be identical in appearance and composition to capsules containing Diamicron\u00ae 80mg tablets with the exception of not containing the Diamicron\u00ae 80mg tablet.\n\nPotential risks and benefits:\n\nMore than 1% of people who take Januvia\u00ae tablets experience upper respiratory tract infection (no greater incidence than with placebo), hypoglycaemia (no greater incidence than with placebo), headache or limb pain.\n\nThe potential benefits of DPP-4 inhibition include decreased risk of cardiovascular disease and decreased risk of bone fracture.\n\nIn the ADVANCE trial participants allocated randomly to receive Diamicron modified release (MR)\u00ae tablets (n=5,571), when compared to their counterparts allocated to standard glucose control (n=5,569), experienced a greater incidence of severe hypoglycaemia (0.7 events per 100 patients per year versus 0.4 events per 100 patients per year), a greater incidence of hospitalisation (44.9% versus 42.8%) and less of a decrease in weight (0.7kg in the difference).\n\nOn the other hand, ADVANCE trial participants who were allocated to receive Diamicron MR\u00ae experienced improved glycaemic control (mean glycated haemoglobin \\[HbA1c\\] 6.5% versus 7.3%), improved blood pressure control (mean systolic blood pressure 135.5mmHg versus 137.9mmHg) and a decreased incidence of new or worsening nephropathy (4.1% versus 5.2%).\n\nThe anticipated benefits of Januvia\u00ae or Diamicron\u00ae therapy in psoriasis patients with type 2 diabetes thus justify the potential risks.\n\nDescription of and justification for the route of administration, dosage, dosage regimen and treatment period:\n\nThis will be a two centre, forty week, prospective, randomized, double-blind, placebo-controlled, cross-over clinical trial of oral Januvia\u00ae (sitagliptin) tablets and oral Diamicron\u00ae (gliclazide) capsules in 40 people with type 2 diabetes and psoriasis.\n\nFor the first four weeks participants who are in receipt of sulphonylurea or incretin therapy will stop taking this medication. During this period research participants will not receive either investigational medicinal product (IMP).\n\nAfter this four week washout period research participants will be stratified by centre, by psoriasis severity (PASI 7-10, 10.1-13 or \\>13) and by obesity status (BMI 18-24.9kg/m2, 25-29.9kg/m2 or \\>30kg/m2) after which they will be allocated randomly, in a 1:1 ratio using blocks, either to Arm A or to Arm B.\n\nResearch participants allocated to Arm A will receive an eighteen week supply of Januvia\u00ae 50mg tablets (DPP-4 inhibitor) and will receive a six week supply of Diamicron\u00ae matched placebo capsules (during visit 2). The research participants will be instructed to ingest orally two Januvia\u00ae 50mg tablets once daily for 16 weeks (until visit 5) and to ingest also one Diamicron\u00ae matched placebo capsule once daily for 4 weeks (until visit 3). If a participant has an estimated glomerular filtration rate (eGFR) less than 50ml/min/1.73m2 the participant will be instructed to ingest orally one Januvia\u00ae 50mg tablet once daily (in addition to one Diamicron\u00ae matched placebo). After four weeks research participants allocated to Arm A will receive a further six week supply of Diamicron\u00ae matched placebo capsules, provided that they have not experienced any severe hypoglycaemic episodes. At this stage they will be instructed to ingest orally one capsule twice daily for 4 weeks (until visit 4). After four weeks research participants allocated to Arm A will receive a further ten week supply of Diamicron\u00ae matched placebo capsules, provided that they have not experienced any severe hypoglycaemic episodes, and will be instructed to ingest orally two capsules twice daily for 8 weeks (until visit 5).\n\nResearch participants allocated to Arm B will receive an eighteen week supply of Januvia\u00ae matched placebo tablets and will receive a six week supply of capsules each containing a Diamicron\u00ae 80mg tablet (sulphonylurea, during visit 2). The research participants will be instructed to ingest orally two Januvia\u00ae matched placebo tablets once daily for 16 weeks (until visit 5) and to ingest also one capsule containing a Diamicron\u00ae 80mg tablet once daily for 4 weeks (until visit 3). If a participant has an estimated glomerular filtration rate (eGFR) less than 50ml/min/1.73m2 the participant will be instructed to ingest orally one Januvia\u00ae matched placebo tablet once daily (in addition to capsules containing Diamicron\u00ae 80mg tablets). After four weeks research participants allocated to Arm B will receive a further six weeks supply of capsules containing a Diamicron\u00ae 80mg tablet, provided that they have not experienced any severe hypoglycaemic episodes. At this stage they will be instructed to ingest orally one capsule twice daily for 4 weeks (until visit 4). After four weeks research participants allocated to Arm B will receive a further ten weeks supply of capsules containing a Diamicron\u00ae 80mg tablet, provided that they have not experienced any severe hypoglycaemic episodes, and will be instructed to ingest orally two capsules twice daily for 8 weeks (until visit 5).\n\nThe Januvia\u00ae 50mg tablets will be identical in appearance to the Januvia\u00ae matched placebo tablets. Similarly the capsules containing a Diamicron\u00ae 80mg tablet will be identical in appearance to the Diamicron\u00ae matched capsules.\n\nParticipants will be advised to take Diamicron\u00ae / Diamicron\u00ae matched capsules immediately prior to food intake/main meals.\n\nAfter the initial sixteen weeks of treatment all research participants (in both Arm A and Arm B) will progress to the open-label phase of the trial, and will receive an eighteen week supply of Januvia\u00ae 50mg tablets (DPP-4 Inhibitor) and will be instructed to ingest orally two tablets once daily for sixteen weeks (unless the eGFR is \\<50ml/min/1.73m2 in which case the participants will be instructed to ingest orally one tablet once daily for the sixteen weeks).\n\nNeither the research participants nor the investigators will be aware of the trial arm to which the research participant has been allocated (double-blinded study). After sixteen weeks both the research participants and the investigators will be aware that the research participants are receiving Januvia\u00ae 50mg tablets (open-label extension). Research participants will be prohibited from making any changes to the dose of medications used to treat psoriasis. If a participant's plasma glycated haemoglobin level (HbA1c) is above 64mmol/mol eight weeks after commencing one of the study IMPs insulin therapy will be used to improve glycaemic control. Participants who are already in receipt of metformin therapy will continue to take this medication. Every effort will be made not to make any (other) changes to the participant's current regimen of anti-psoriasis or anti-diabetes medications for the duration of their involvement in the study. Participants who require insulin therapy will be referred to the diabetes centre for standard initiation of insulin therapy and for monitoring of capillary glucose levels. Any other medications that are considered necessary for the participant's welfare and will not interfere with the study medication may be given at the discretion of the Investigator.\n\nJanuvia\u00ae is licensed to improve glycaemic control for people with type 2 diabetes (T2DM). The Summary of Product Characteristics (SPC) states that the dose of Januvia\u00ae is 100mg once daily (using tablets for oral ingestion). For research participants with moderate kidney disease (CrCl \\< 50 ml/min or eGFR \\< 50 ml/min/1.73m2), the Summary of Product Characteristics (SPC) states that the dose of Januvia\u00ae is 50mg once daily (using tablets for oral ingestion). In keeping with this all participants with an eGFR \\< 50ml/min/1.73m2 who are due to receive Januvia\u00ae will receive 50mg once daily.\n\nThe dose of Diamicron\u00ae to be used in the study (80mg per day initially and increasing to 320mg per day in successive steps) is consistent with the doses stated in the SPC for the marketed product.\n\nStudy Hypothesis:\n\nDipeptidyl peptidase-4 inhibitor therapy decreases psoriasis severity.\n\nStatement of Trial Conduct:\n\nThis trial will be conducted in compliance with the protocol, with the guidelines of the Declaration of Helsinki (see Appendix 2), with the International Conference of Harmonisation Tripartite Guideline on Good Clinical Practice, with all applicable regulatory requirements and with data protection legislation (Data Protection Act 1988 and Data Protection Amendment Act 2003)\n\nCohort:\n\nThe population to be studied will be psoriasis patients with type 2 diabetes.\n\nWe plan to enrol 40 research participants in total. Research participants will be recruited from two centres: St Vincent's University Hospital, Elm Park, Dublin 4 and Adelaide and Meath Hospital, Tallaght, Dublin 24. These hospitals provide outpatient dermatology services. Psoriasis patients attending these centres who have a psoriasis area and severity index (PASI) greater than 7 and who have been diagnosed with type 2 diabetes will be will be considered potentially eligible research participants and will be invited to attend for a screening visit.\n\nIdentification and Recruitment:\n\nPotentially eligible research participants will be identified through use of patient databases in St Vincent's University Hospital and in Adelaide and Meath Hospital and through review of healthcare records in St Vincent's University Hospital and in Adelaide and Meath Hospital.\n\nPotentially eligible research participants will be recruited in one of two ways by the study investigators or suitably qualified designee. One of these two ways will be during a clinic visit by the study investigators or suitably qualified designee. The other of the two ways will be mailing a letter of invitation. Before a potential research participant is mailed a letter of invitation.\n\nA record of all medication taken by study participants in the month before visit 1 and concomitant medication a participant takes throughout the study will be recorded on the appropriate page of the Case Report Form (CRF).\n\nTreatment compliance of research participants will be measured by pill counts. Research participants will be instructed to bring opened, unopened and empty investigational medicinal product packages to each visit in order to allow the assessment of compliance with study treatment. A record of all investigational medicinal product dispensed and returned will be documented on the investigational medicinal product dispensing and accountability log. Blood taken during stages when the participant is expected to be taking drug therapy will be used for future determination of plasma glucose and glycated haemoglobin concentrations. These concentrations will also be used to help ascertain compliance with the allocated treatment regimen.\n\nBlood samples for measurement of laboratory parameters will be taken between the hours of 0800 and 1200 after a greater than 12 hour overnight fast (with the exception of the Screening Visit when participants can attend in a non fasting state) and before ingestion of the study investigational medicinal product. The blood will be taken by a senior clinician, or suitably qualified designee, with competence and experience in the procedure of venepuncture.\n\n73.5ml of blood will be drawn from the research participants during Visit 2, 60ml of blood will be drawn during visits 3, 4, 6 \\& 7, 67.5 mls during visits 5 \\& 8, and 30ml of blood will be drawn during visit 1 and visit 9. Blood will be drawn into vacutainer tubes containing either ethylenediaminetetraacetic acid (EDTA), lithium heparin, sodium fluoride, clot activator or a DPP4 inhibitor cocktail.\n\nEach research participant will be asked to give a blood sample for genetic analysis at the 2nd Visit. These genetic samples will be analysed to try determine the genetic, and/or epigenetic, profile that predicts best response to DPP-4 inhibitor therapy.\n\nWhole blood will be stored for future DNA extraction using the protocols detailed in the Molecular Medicine Ireland Guideline for Standardised Biobanking (First Edition 2010). This involves drawing blood into a blood tube containing EDTA and storing the blood tube at -20\u00b0C in secure, dedicated freezers in the Research Laboratories in the Education and Research Centre in St Vincent's University Hospital. The blood will be stored within 12 hours of blood collection.\n\nBlood that has been stored for future DNA extraction will be destroyed once the DNA analyses are complete. Disposal of this material will be in accordance with current practice in this unit and with the written protocols in place in this unit. Disposal will involve the use of solid plastic waste containers which will be sent for incineration.\n\nTo protect the research participant's identity, a unique identification code will be assigned by the Investigator, or authorised designee, to each participant's genetic sample and used in lieu of the participant's name. This coded form of identification, instead of the participant's name, will appear on all documents/databases.\n\nStatistical Analysis Plan:\n\nDemographic and baseline clinical data will be summarized using descriptive statistics by treatment group. Similarly, the primary and secondary efficacy variables will be summarized using descriptive statistics by treatment group.\n\nData from research participants who are not allocated to either arm of the study and who do not receive a supply of either investigational medicinal product will be excluded from statistical analyses.\n\nT tests (or the appropriate alternative for non-parametric data), using two-sided tests, will be used to test for significant differences between the sets of data obtained. The independent samples T test will be used to assess for differences between the effects of the test product (Januvia\u00ae) compared to the differences of the comparator product (Diamicron\u00ae). Chi square analyses will be used to test for significant differences in categorical variables between the sets of data obtained.\n\nSubgroup analyses will be performed on those research participants who:\n\ncomplete the visit 6 assessment; have severe psoriasis; have non-severe psoriasis; are male; are female; are obese; and are older than 45 years.\n\nPackaging and Labelling:\n\nAll study medication will be labelled and stored in accordance with Annex 13 of the EU guidelines of good manufacturing practice in respect of investigational medicinal products for human use, the SPC and hospital procedures.\n\nThe following study assessments will then be performed:\n\nScreening Visit (Visit 1, week -4)\n\n1. Checking against inclusion and exclusion criteria to confirm suitability to participate in the study;\n2. Demographic information;\n3. Obtaining a detailed medical history (previously diagnosed illnesses etc);\n4. Obtaining a detailed medication history for the previous 6 months;\n5. Measurement of weight, blood pressure and heart rate;\n6. Performing a urine based pregnancy test (women of child bearing potential only);\n7. Assessment of PASI; and\n8. Blood sampling for laboratory examination as specified in Table 2; Laboratory Parameters above.\n\nBaseline (Visit 2, Day 0) The potential research participant will return for the baseline visit three to five weeks after the screening visit.\n\nThe following assessments will be performed:\n\n1. Completion of quality of life questionnaires by the research participant (Dermatology Life Quality Index (DLQI); EuroQol five item questionnaire (EQ-5D); Hospital Anxiety and Depression Scale (HADS); and Stanford HAQ 8-Item Disability Scale (HAQ-8);\n2. Recording of adverse events;\n3. Recording of changes in concomitant medication;\n4. Measurement of height, weight, blood pressure and heart rate;\n5. Performing a urine based pregnancy test (women of child bearing potential only);\n6. Assessment of PASI; and\n7. Blood sampling for laboratory examination as specified in Table 2; Laboratory Parameters.\n\nIf the participant is willing, a skin biopsy will be performed, using a sterile technique by an experienced physician, to determine skin immune cell number and skin pro-inflammatory protein level.\n\n1st Treatment visit (Visit 3, Week 4 +/- 7 days)\n\nThe following assessments will be performed:\n\n1. Completion of quality of life questionnaires by the research participant as detailed in Baseline visit above;\n2. Recording of adverse events;\n3. Recording of changes in concomitant medication;\n4. Assessment of study drug compliance (pill count);\n5. Measurement of weight, blood pressure and heart rate;\n6. Assessment of PASI; and\n7. Blood sampling for laboratory examination as specified in Table 2; Laboratory Parameters above.\n\n2nd Treatment visit (Visit 4, Week 8 +/- 7 days)\n\nThe following assessments will be performed:\n\n1. Completion of quality of life questionnaires by the research participant as detailed in Baseline visit above;\n2. Recording of adverse events;\n3. Recording of changes in concomitant medication;\n4. Assessment of study drug compliance (pill count);\n5. Measurement of weight, blood pressure and heart rate;\n6. Assessment of PASI; and\n7. Blood sampling for laboratory examination as specified in Table 2; Laboratory Parameters above.\n\n3rd Treatment visit (Visit 5, Week 16 +/- 7 days)\n\nThe following assessments will be performed:\n\n1. Completion of quality of life questionnaires by the research participant as detailed in Baseline visit above;\n2. Recording of adverse events;\n3. Recording of changes in concomitant medication;\n4. Assessment of study drug compliance (pill count);\n5. Collection of unused study investigational medicinal product;\n6. Measurement of weight, blood pressure and heart rate;\n7. Assessment of PASI; and\n8. Blood sampling for laboratory examination as specified in Table 2; Laboratory Parameters above.\n\nIf the participant is willing and had a skin biopsy performed during visit 2, a skin biopsy will be performed, using sterile technique by an experienced physician, to determine skin immune cell number and skin pro-inflammatory protein level.\n\n4th Treatment visit (Visit 6, Week 20 +/- 7 days)\n\nThe following assessments will be performed:\n\n1. Completion of quality of life questionnaires by the research participant as detailed in Baseline visit above;\n2. Recording of adverse events;\n3. Recording of changes in concomitant medication;\n4. Assessment of study drug compliance (pill count);\n5. Measurement of weight, blood pressure and heart rate;\n6. Assessment of PASI; and\n7. Blood sampling for laboratory examination as specified in Table 2; Laboratory Parameters above.\n\n5th Treatment visit (Visit 7, Week 24 +/- 7 days)\n\nThe following assessments will be performed:\n\n1. Completion of quality of life questionnaires by the research participant as detailed in Baseline visit above;\n2. Recording of adverse events;\n3. Recording of changes in concomitant medication;\n4. Assessment of study drug compliance (pill count);\n5. Measurement of weight, blood pressure and heart rate;\n6. Assessment of PASI; and\n7. Blood sampling for laboratory examination as specified in Table 2; Laboratory Parameters above.\n\nEnd of Treatment visit (Visit 8, Week 32 +/- 7 days)\n\nThe following assessments will be performed:\n\n1. Completion of quality of life questionnaires by the research participant as detailed in Baseline visit above;\n2. Recording of adverse events;\n3. Recording of changes in concomitant medication;\n4. Assessment of study drug compliance (pill count);\n5. Collection of unused study investigational medicinal product;\n6. Measurement of weight, blood pressure and heart rate;\n7. Assessment of PASI; and\n8. Blood sampling for laboratory examination as specified in Table 2; Laboratory Parameters above.\n\nIf the participant is willing and had a skin biopsy performed during visit 2, a skin biopsy will be performed, using sterile technique by an experienced physician, to determine skin immune cell number and skin pro-inflammatory protein level.\n\nEnd of Study visit (Visit 9, Week 36 +/- 7 days)\n\nThe following assessments will be performed:\n\n1. Recording of adverse events;\n2. Recording of changes in concomitant medication;\n3. Measurement of weight, blood pressure and heart rate;\n4. Performing a urine based pregnancy test (women of child bearing potential only); and\n5. Blood sampling for laboratory examination as specified in Table 2; Laboratory Parameters above.\n\nEarly Withdrawal visit All research participants who withdraw early from the study will be advised to agree to attend an early withdrawal visit.\n\nThere will be a separate section in the CRF to be completed if the research participant withdraws early from the study before week 36.\n\nThe research participant's involvement in this study will end following the completion of the End of Study Visit (or Early Withdrawal visit if applicable). Once participants have completed their involvement in this study they will be provided with standard treatment by their usual healthcare providers.\n\nAdverse Events:\n\nComprehensive assessments of any apparent toxicity experienced by the research participant will be performed throughout the course of the study from the time of participant's signature of informed consent.\n\nAdverse events (AEs) considered related to Study Drug at the End of Study Visit (or Early Withdrawal Visit, if applicable) will be followed until the participant is stable or the AE is resolved or the participant is lost to follow-up.\n\nAny medical condition, or clinically significant laboratory abnormality with an onset date before the Baseline Visit and not related to a protocol-associated procedure, is not an AE. It will be considered to be pre-existing.\n\nComplete and appropriate data on all Adverse Events experienced (observed, volunteered or elicited) during the reporting period will be reported on an ongoing basis in the Adverse Event Form pages of the Case Report Form. The investigator will classify the severity of an adverse event. The investigator will systematically assess the relationship of the adverse event to the investigational medicinal product.\n\nReporting of Serious Adverse Events (SAEs) Information about all SAEs will be collected and recorded on the SAE Report Form. Each SAE must be reported by the Investigator, or an authorised designee, to the Sponsor within 24 hours of learning of its occurrence.\n\nMedical and scientific judgement will be exercised in deciding whether expedited reporting is appropriate in other situations, such as important medical events that may not be immediately life-threatening or result in death or hospitalisation, but may jeopardise the research participant or may require intervention to prevent one of the other outcomes listed in the definition above. These will be considered also serious.\n\nJustification of Population and Method of Estimation:\n\nWe plan to enrol 40 research participants in total in the two sites. The primary objective of the research project is to determine the change in the psoriasis area and severity index (\u0394PASI) during 16 weeks of treatment with a dipeptidyl peptidase-4 inhibitor (Januvia\u00ae, 100mg daily, or 50mg daily for participants with moderate kidney disease) in psoriasis patients with type 2 diabetes. This will be compared to the \u0394PASI in psoriasis patients with type 2 diabetes during 16 weeks of treatment with a comparator (Diamicron\u00ae 80mg to 320mg daily).\n\nMittal et al. have determined previously the effect of twelve weeks of pioglitazone therapy (which lowers glucose levels) on the decrease in PASI in 41 psoriasis patients commencing acitretin therapy18. The decrease in the PASI was 64.2% (95% confidence interval (CI) 49.2%-79.3%) in those treated with pioglitazone compared to a decrease of 51.7% (95% CI, 38.7%-64.7%) in those treated with placebo (p=0.04).\n\nBased on these data, and assuming a 33% dropout rate, we have calculated that we will require 40 research participants to detect a greater than 5% difference in the change in PASI with 80% power at the 5% significance level.\n\nMethod of Randomisation:\n\nThe unit of randomisation will be the individual research participant. After stratification by centre, by psoriasis severity (PASI 7-10, 10.1-13 or \\>13) and by obesity status (BMI 18-24.9kg/m2, 25-29.9kg/m2 or \\>30kg/m2) 40 research participants will be assigned randomly, in a ratio of 1:1 using blocks of 2, to receive either:\n\n1. Januvia\u00ae tablets followed by Januvia\u00ae tablets; OR\n2. Diamicron\u00ae capsules followed by Januvia\u00ae tablets.\n\nIn order to achieve this we have prepared 9 randomisation lists using a web-based random generator programme. One copy of this document will be used for each centre.\n\nFor each participant the investigator, or authorised designee, will chose the appropriate list and will add the participant's identifier to the list in chronological order. This list will be thereby used to determine the study treatment which the participant will receive.\n\nRandom allocation will occur at visit 2 (baseline visit) once all screening procedures required at visit 1 (screening visit) have been completed, once it has been confirmed that the participant satisfies all inclusion and exclusion criteria and once the participant completes the four week run-in period.\n\nIdentification numbers will be assigned chronologically in consecutive, ascending order.\n\nIndependent Ethics Committee (IEC)/Institutional Review Board (IRB) Approval:\n\nBefore initiating this study the Study Protocol, Summary of Product Characteristics (SPC), Patient Information Leaflet and Informed Consent Form, applicable advertising, and any other written information to be given to participants will be reviewed and approved by a properly constituted Institutional Review Board/Independent Ethics Committee (IEC/IRB). A signed and dated statement that all documents submitted for review have been approved by the IEC/IRB will be given to the Sponsor or designee before the study can commence at a site. The membership and the constitution of the IEC/IRB who approved the documents will be also supplied to the Sponsor or designee.\n\nEthical Conduct of the Study:\n\nThis study will be carried out in compliance with the Study Protocol and in accordance with the Sponsor/Contract Research Organisations (CROs) Standard Operating Procedures (SOPs). These are designed to ensure adherence to Good Clinical Practice (GCP) guidelines, as described in:\n\n* International Conference on Harmonization of Technical Requirements for Registration of Pharmaceuticals for Human Use (ICH) Harmonized Tripartite Guidelines for Good Clinical Practice 1996.\n* European Union (EU) CT Directive 2001/20/EC.\n* GCP Commission Directive 2005/28/EC.\n* Declaration of Helsinki, concerning medical research in humans (1964) including all amendments up to and including the 2008 revision.\n* National laws. The investigator agrees, when signing the Study Protocol, to adhere to the instructions and procedures described in it and to the principles of GCP to which it conforms.\n\nThe regulatory permission to perform the study will be obtained in accordance with applicable regulatory requirements. All ethical and regulatory approvals must be available before a patient is exposed to any study-related procedure, including screening tests to determine eligibility.\n\nInsurance:\n\nIn case of any damage or injury occurring to a patient in association with the investigational medicinal product or their participation in the study, the sponsor has insurance which covers the liability of the sponsor, the investigator and other persons involved in the study in compliance with the laws of Ireland.\n\nAll investigators are qualified and practicing physicians and are thus insured by the clinical indemnity scheme."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "CROSSOVER",
+        "maskingInfo": {
+          "masking": "QUADRUPLE",
+          "whoMasked": [
+            "PARTICIPANT",
+            "CARE_PROVIDER",
+            "INVESTIGATOR",
+            "OUTCOMES_ASSESSOR"
+          ]
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 20,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\nPeople who satisfy all of the following may be included in the study:\n\n1. Have a diagnosis of generalized chronic plaque and/or guttate psoriasis;\n2. Are male or female aged between 18 and 75 years inclusive;\n3. Have a psoriasis area and severity index (PASI) greater than 7;\n4. Have a diagnosis of type 2 diabetes;\n5. Have a glycated haemoglobin (HbA1c) level between 48mmol/mol and 69mmol/mol;\n6. Are able and willing to stop sulphonylurea, dipeptidyl peptidase-4 (DPP-4) inhibitor and glucagon-like peptide-1 (GLP-1) analogue therapy for the duration of the study;\n7. Have a negative pregnancy test at screening (women of child bearing potential only); and\n8. Are willing to voluntarily sign a statement of informed consent to participate in the study.\n\nExclusion Criteria:\n\nPeople with any of the following conditions will be excluded from the study:\n\n1. Allergy or hypersensitivity to sitagliptin (Januvia\u00ae) or gliclazide (Diamicron\u00ae);\n2. Current or recent (within 8 weeks) receipt of phototherapy;\n3. Type 1 diabetes;\n4. Severe kidney disease as defined by a previous diagnosis of chronic kidney disease in the presence of an estimated glomerular filtration rate (eGFR) of less than 30ml/min/1.73 m2;\n5. Severe heart disease as defined by a previous diagnosis of heart disease and a left ventricular ejection fraction which is known to be less than 35% (as measured by echocardiogram or cardiac catheterisation study);\n6. Severe lung disease as defined by a previous diagnosis of chronic lung disease and a forced expiratory volume in 1 second (FEV1) or a forced vital capacity (FVC) that is known to be less than 50% that which would be estimated for a person of that age and gender;\n7. Severe liver disease as defined by a previous diagnosis of chronic liver disease in the presence of an alanine transferase concentration greater than 150 international units (IU)/L (greater than three times the upper limit of the normal reference range);\n8. Any other contraindications, as stated in the SPCs for sitagliptin (Januvia\u00ae) or gliclazide (Diamicron\u00ae);\n9. Female patients of child bearing potential who are pregnant, breastfeeding, or unwilling to practice an acceptable barrier and/or hormonal method of contraception during participation in the study - abstinence will be permitted only if it is in keeping with a person's lifestyle;\n10. Any clinically significant chronic disease that might, in the opinion of the investigator, interfere with the evaluations or preclude completion of the trial;\n11. Any current or recent (within the past 4 weeks) acute serious illness, acute psychiatric illness or severe uncontrolled/unstable illness;\n12. Previous randomisation into this study;\n13. Concurrent participation in another clinical trial; and\n14. Participation in another clinical trial during the twelve weeks prior to study entry (i.e.\n\nscreening visit).",
+      "healthyVolunteers": false,
+      "maximumAge": "75 Years",
+      "minimumAge": "18 Years",
+      "sex": "ALL",
+      "stdAges": [
+        "ADULT",
+        "OLDER_ADULT"
+      ]
+    },
+    "identificationModule": {
+      "acronym": "DIP",
+      "briefTitle": "Dipeptidyl Peptidase-4 Inhibition in Psoriasis Patients With Diabetes (DIP): A Randomized Clinical Trial.",
+      "nctId": "NCT01991197",
+      "officialTitle": "Dipeptidyl Peptidase-4 Inhibition in Psoriasis Patients With Diabetes (DIP): A Randomized Clinical Trial.",
+      "orgStudyIdInfo": {
+        "id": "DPIDM-2012-01"
+      },
+      "organization": {
+        "class": "OTHER",
+        "fullName": "University College Dublin"
+      },
+      "secondaryIdInfos": [
+        {
+          "id": "2012-005505-51",
+          "type": "EUDRACT_NUMBER"
+        }
+      ]
+    },
+    "outcomesModule": {
+      "otherOutcomes": [
+        {
+          "description": "Interleukin 17 levels in skin (0-no maximum)",
+          "measure": "The Effect of Treatment With Sitagliptin and With Gliclazide From Baseline to 16 Weeks on the Change in Interleukin-17 Levels in the Skin (in a Sub-group of Participants Willing to Undergo Skin Biopsies).",
+          "timeFrame": "16 weeks"
+        },
+        {
+          "description": "Dipeptidyl peptidase-4 levels levels in skin (0-no maximum)",
+          "measure": "The Effect of Treatment With Sitagliptin and With Gliclazide From Baseline to 16 Weeks on the Change in Dipeptidyl Peptidase-4 Levels in the Skin (in a Sub-group of Participants Willing to Undergo Skin Biopsies).",
+          "timeFrame": "16 weeks"
+        }
+      ],
+      "primaryOutcomes": [
+        {
+          "description": "Psoriasis area and severity index (0-72), higher scores worse outcome",
+          "measure": "The Change in the Psoriasis Area and Severity Index (PASI) From Baseline to 16 Weeks in Psoriasis Patients With Type 2 Diabetes Treated With Sitagliptin Compared to Patients Treated With Gliclazide.",
+          "timeFrame": "16 weeks"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "description": "Dosage: Sitagliptin: 100mg daily, or 50mg daily for participants with moderate kidney disease Gliclazide: 80-320 mg daily.\n\nSecondary outcomes: the number participants with adverse events.",
+          "measure": "The Number of Patricipants in the Sitagliptin and Gliclazide Arms With Adverse Events at 32 Weeks.",
+          "timeFrame": "32 weeks"
+        },
+        {
+          "description": "Dermatology life quality index (a skin related quality of life measure) (0-10), higher score worse outcome EQ-5D Euroqol 5 item quality of life index comprising 5 dimensions mobility, self-care, usual activities, pain, anxiety. An index can be derived from these 5 dimensions by conversion with a table of scores. The maximum score of 1 indicates the best health state and minimum score indicating the worst health outcome -0.594.\n\nHADS Hospital anxiety and depression scale 0-16 for anxiety and 0-16 for depression, higher score worse outcome HAQ-8 Stanford 8 item disability scale. Scoring is from 0 (without any difficulty) to 3 (unable to do). The 8 scores from the 8 sections are summed and divided by 8. The result is the disability index (range 0-3 with 25 possible values). A",
+          "measure": "The Change in Quality of Life Scores From Baseline to 16 Weeks in the Sitagliptin and Gliclazide Arms.",
+          "timeFrame": "16 weeks"
+        },
+        {
+          "description": "Secondary outcomes:\n\nd. number or participants who acheived a greater than 50% reduction in PASI from baseline (PASI-50); e. number of participants who achieved PASI-75 and PASI-90.",
+          "measure": "The Effects of Treatment With Sitagliptin and Treatment With Gliclazide on Other Efficacy Endpoints.",
+          "timeFrame": "16 weeks"
+        },
+        {
+          "description": "High sensitivity C-reactive protein (range 0 - no maximum)",
+          "measure": "The Change in Levels of High Sensitivity C-reactive Protein From Baseline to 16 Weeks in the Sitagliptin and Gliclazide Arms.",
+          "timeFrame": "16 weeks"
+        },
+        {
+          "description": "Secondary outcomes:\n\nThe change in serum concentrations of the cytokines tumour necrosis factor alpha (TNF\u03b1) Range: 0-no maximum",
+          "measure": "The Effects of Treatment With Sitagliptin and Treatment With Gliclazide on the Serum Cytokine Tumour Necrosis Factor Alpha.",
+          "timeFrame": "16 weeks"
+        },
+        {
+          "description": "Psoriasis area and severity index 0-72, higher score worse outcome",
+          "measure": "The Change in PASI From Baseline to 32 Weeks in Psoriasis Patients With Type 2 Diabetes Treated With Sitagliptin Compared to Patients Treated With Gliclazide.",
+          "timeFrame": "baseline and 32 weeks"
+        },
+        {
+          "description": "The change in weight from baseline to 16 weeks measured in kg",
+          "measure": "The Change in Weight From Baseline to 16 Weeks in the Sitagliptin and Gliclazide Arms.",
+          "timeFrame": "16 weeks"
+        },
+        {
+          "description": "The change in systolic blood pressure from baseline to 16 weeks measured in kg",
+          "measure": "The Change in Levels of Systolic Blood Pressure From Baseline to 16 Weeks in the Sitagliptin and Gliclazide Arms.",
+          "timeFrame": "16 weeks"
+        },
+        {
+          "description": "The change in glucose from baseline to 16 weeks",
+          "measure": "The Change in Levels of Serum Glucose From Baseline to 16 Weeks in the Sitagliptin and Gliclazide Arms.",
+          "timeFrame": "16 weeks"
+        },
+        {
+          "description": "The change in total cholesterol from baseline to 16 weeks",
+          "measure": "The Change in Levels of Total Cholesterol From Baseline to 16 Weeks in the Sitagliptin and Gliclazide Arms.",
+          "timeFrame": "16 weeks"
+        },
+        {
+          "description": "Secondary outcomes:\n\nThe change in serum concentrations of the cytokine interleukin-23 (IL-23) Range: 0-no maximum",
+          "measure": "The Effects of Treatment With Sitagliptin and Treatment With Gliclazide From Baseline to 16 Weeks on Serum Levels Interleukin-23.",
+          "timeFrame": "16 weeks"
+        },
+        {
+          "description": "Secondary outcomes:\n\nThe change in serum concentrations of the cytokine interleukin-17 (IL-17) Range: 0-no maximum",
+          "measure": "The Effects of Treatment With Sitagliptin and Treatment With Gliclazide From Baseline to 16 Weeks on Serum Levels Interleukin-17.",
+          "timeFrame": "16 weeks"
+        },
+        {
+          "description": "Secondary outcomes:\n\nThe change in serum concentrations of the adipokine leptin Range: 0-no maximum",
+          "measure": "The Effects of Treatment With Sitagliptin and Treatment With Gliclazide on the Change in Serum Leptin From Baseline to 16 Weeks.",
+          "timeFrame": "16 weeks"
+        }
+      ]
+    },
+    "oversightModule": {
+      "oversightHasDmc": true
+    },
+    "referencesModule": {
+      "references": [
+        {
+          "citation": "Schon MP, Boehncke WH. Psoriasis. N Engl J Med. 2005 May 5;352(18):1899-912. doi: 10.1056/NEJMra041320. No abstract available.",
+          "pmid": "15872205",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Nestle FO, Kaplan DH, Barker J. Psoriasis. N Engl J Med. 2009 Jul 30;361(5):496-509. doi: 10.1056/NEJMra0804595. No abstract available.",
+          "pmid": "19641206",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Novelli M, Savoia P, Fierro MT, Verrone A, Quaglino P, Bernengo MG. Keratinocytes express dipeptidyl-peptidase IV (CD26) in benign and malignant skin diseases. Br J Dermatol. 1996 Jun;134(6):1052-6.",
+          "pmid": "8763423",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "van Lingen RG, van de Kerkhof PC, Seyger MM, de Jong EM, van Rens DW, Poll MK, Zeeuwen PL, van Erp PE. CD26/dipeptidyl-peptidase IV in psoriatic skin: upregulation and topographical changes. Br J Dermatol. 2008 Jun;158(6):1264-72. doi: 10.1111/j.1365-2133.2008.08515.x. Epub 2008 Mar 29.",
+          "pmid": "18384439",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Thielitz A, Reinhold D, Vetter R, Bank U, Helmuth M, Hartig R, Wrenger S, Wiswedel I, Lendeckel U, Kahne T, Neubert K, Faust J, Zouboulis CC, Ansorge S, Gollnick H. Inhibitors of dipeptidyl peptidase IV and aminopeptidase N target major pathogenetic steps in acne initiation. J Invest Dermatol. 2007 May;127(5):1042-51. doi: 10.1038/sj.jid.5700439. Epub 2006 Jun 15.",
+          "pmid": "16778789",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Ohnuma K, Hosono O, Dang NH, Morimoto C. Dipeptidyl peptidase in autoimmune pathophysiology. Adv Clin Chem. 2011;53:51-84. doi: 10.1016/b978-0-12-385855-9.00003-5.",
+          "pmid": "21404914",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Nishioka T, Shinohara M, Tanimoto N, Kumagai C, Hashimoto K. Sitagliptin, a dipeptidyl peptidase-IV inhibitor, improves psoriasis. Dermatology. 2012;224(1):20-1. doi: 10.1159/000333358. Epub 2011 Nov 1.",
+          "pmid": "22056790",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Heydendael VM, Spuls PI, Opmeer BC, de Borgie CA, Reitsma JB, Goldschmidt WF, Bossuyt PM, Bos JD, de Rie MA. Methotrexate versus cyclosporine in moderate-to-severe chronic plaque psoriasis. N Engl J Med. 2003 Aug 14;349(7):658-65. doi: 10.1056/NEJMoa021359.",
+          "pmid": "12917302",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Griffiths CE, Strober BE, van de Kerkhof P, Ho V, Fidelus-Gort R, Yeilding N, Guzzo C, Xia Y, Zhou B, Li S, Dooley LT, Goldstein NH, Menter A; ACCEPT Study Group. Comparison of ustekinumab and etanercept for moderate-to-severe psoriasis. N Engl J Med. 2010 Jan 14;362(2):118-28. doi: 10.1056/NEJMoa0810652.",
+          "pmid": "20071701",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Pepys MB, Hirschfield GM. C-reactive protein: a critical update. J Clin Invest. 2003 Jun;111(12):1805-12. doi: 10.1172/JCI18921. No abstract available.",
+          "pmid": "12813013",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Hattori S. Sitagliptin reduces albuminuria in patients with type 2 diabetes. Endocr J. 2011;58(1):69-73. doi: 10.1507/endocrj.k10e-382. Epub 2010 Dec 28.",
+          "pmid": "21206136",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Derosa G, Maffioli P, Salvadeo SA, Ferrari I, Ragonesi PD, Querci F, Franzetti IG, Gadaleta G, Ciccarelli L, Piccinni MN, D'Angelo A, Cicero AF. Effects of sitagliptin or metformin added to pioglitazone monotherapy in poorly controlled type 2 diabetes mellitus patients. Metabolism. 2010 Jun;59(6):887-95. doi: 10.1016/j.metabol.2009.10.007. Epub 2009 Dec 16.",
+          "pmid": "20015525",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Williams-Herman D, Engel SS, Round E, Johnson J, Golm GT, Guo H, Musser BJ, Davies MJ, Kaufman KD, Goldstein BJ. Safety and tolerability of sitagliptin in clinical studies: a pooled analysis of data from 10,246 patients with type 2 diabetes. BMC Endocr Disord. 2010 Apr 22;10:7. doi: 10.1186/1472-6823-10-7.",
+          "pmid": "20412573",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Lamanna C, Monami M, Bartoli N, Zannoni S, Mannucci E. Dipeptidyl peptidase- 4 inhibitors and cardiovascular events: a protective effect? Diabetologia. 2011;54:S109.",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Chodorowska G, Wojnowska D, Juszkiewicz-Borowiec M. C-reactive protein and alpha2-macroglobulin plasma activity in medium-severe and severe psoriasis. J Eur Acad Dermatol Venereol. 2004 Mar;18(2):180-3. doi: 10.1111/j.1468-3083.2004.00863.x.",
+          "pmid": "15009298",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Gisondi P, Malerba M, Malara G, Puglisi Guerra A, Sala R, Radaeli A, Calzavara-Pinton P, Girolomoni G. C-reactive protein and markers for thrombophilia in patients with chronic plaque psoriasis. Int J Immunopathol Pharmacol. 2010 Oct-Dec;23(4):1195-202. doi: 10.1177/039463201002300423.",
+          "pmid": "21244768",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Nisa N, Ahmed Q. High-sensitivity C-reactive protein in psoriasis. Int J Dermatol. 2012 Nov;51(11):1393-4. doi: 10.1111/j.1365-4632.2010.04761.x. Epub 2011 May 30. No abstract available.",
+          "pmid": "21623773",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Mittal R, Malhotra S, Pandhi P, Kaur I, Dogra S. Efficacy and safety of combination Acitretin and Pioglitazone therapy in patients with moderate to severe chronic plaque-type psoriasis: a randomized, double-blind, placebo-controlled clinical trial. Arch Dermatol. 2009 Apr;145(4):387-93. doi: 10.1001/archdermatol.2009.5.",
+          "pmid": "19380660",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Drucker DJ, Sherman SI, Gorelick FS, Bergenstal RM, Sherwin RS, Buse JB. Incretin-based therapies for the treatment of type 2 diabetes: evaluation of the risks and benefits. Diabetes Care. 2010 Feb;33(2):428-33. doi: 10.2337/dc09-1499. No abstract available.",
+          "pmid": "20103558",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Hossler EW, Maroon MS, Mowad CM. Gastric bypass surgery improves psoriasis. J Am Acad Dermatol. 2011 Jul;65(1):198-200. doi: 10.1016/j.jaad.2010.01.001. Epub 2010 Jul 22.",
+          "pmid": "20655127",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Hogan AE, Tobin AM, Ahern T, Corrigan MA, Gaoatswe G, Jackson R, O'Reilly V, Lynch L, Doherty DG, Moynagh PN, Kirby B, O'Connell J, O'Shea D. Glucagon-like peptide-1 (GLP-1) and the regulation of human invariant natural killer T cells: lessons from obesity, diabetes and psoriasis. Diabetologia. 2011 Nov;54(11):2745-54. doi: 10.1007/s00125-011-2232-3. Epub 2011 Jul 9.",
+          "pmid": "21744074",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Ahern T, Tobin AM, Corrigan M, Hogan A, Sweeney C, Kirby B, O'Shea D. Glucagon-like peptide-1 analogue therapy for psoriasis patients with obesity and type 2 diabetes: a prospective cohort study. J Eur Acad Dermatol Venereol. 2013 Nov;27(11):1440-3. doi: 10.1111/j.1468-3083.2012.04609.x. Epub 2012 Jun 13.",
+          "pmid": "22691169",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Monami M, Dicembrini I, Antenore A, Mannucci E. Dipeptidyl peptidase-4 inhibitors and bone fractures: a meta-analysis of randomized clinical trials. Diabetes Care. 2011 Nov;34(11):2474-6. doi: 10.2337/dc11-1099.",
+          "pmid": "22025784",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "ADVANCE Collaborative Group; Patel A, MacMahon S, Chalmers J, Neal B, Billot L, Woodward M, Marre M, Cooper M, Glasziou P, Grobbee D, Hamet P, Harrap S, Heller S, Liu L, Mancia G, Mogensen CE, Pan C, Poulter N, Rodgers A, Williams B, Bompoint S, de Galan BE, Joshi R, Travert F. Intensive blood glucose control and vascular outcomes in patients with type 2 diabetes. N Engl J Med. 2008 Jun 12;358(24):2560-72. doi: 10.1056/NEJMoa0802987. Epub 2008 Jun 6.",
+          "pmid": "18539916",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Tobin AM, personal communication.",
+          "type": "BACKGROUND"
+        }
+      ],
+      "seeAlsoLinks": [
+        {
+          "label": "A web-based randomization plan generator.",
+          "url": "http://www.randomization.com"
+        }
+      ]
+    },
+    "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+        "class": "OTHER",
+        "name": "University College Dublin"
+      },
+      "responsibleParty": {
+        "investigatorAffiliation": "University College Dublin",
+        "investigatorFullName": "Maeve Lynch",
+        "investigatorTitle": "MD student, Medical Doctor",
+        "type": "PRINCIPAL_INVESTIGATOR"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2016-01",
+        "type": "ACTUAL"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2020-05-14",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2020-05-13",
+      "overallStatus": "COMPLETED",
+      "primaryCompletionDateStruct": {
+        "date": "2016-01",
+        "type": "ACTUAL"
+      },
+      "resultsFirstPostDateStruct": {
+        "date": "2020-05-14",
+        "type": "ACTUAL"
+      },
+      "resultsFirstSubmitDate": "2020-04-15",
+      "resultsFirstSubmitQcDate": "2020-05-13",
+      "startDateStruct": {
+        "date": "2014-04"
+      },
+      "statusVerifiedDate": "2020-05",
+      "studyFirstPostDateStruct": {
+        "date": "2013-11-25",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2013-11-10",
+      "studyFirstSubmitQcDate": "2013-11-17"
+    }
+  },
+  "resultsSection": {
+    "adverseEventsModule": {
+      "eventGroups": [
+        {
+          "deathsNumAffected": 0,
+          "deathsNumAtRisk": 9,
+          "description": "Double blind phase (week 0-16):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nPlacebo Comparator: Gliclazide matched placebo One gliclazide matched placebo capsule daily for 4 weeks. If no severe hypoglycaemic episodes one gliclazide matched placebo capsule twice daily for 4 weeks. If no severe hypoglycaemic episodes two gliclazide matched placebo capsules twice daily for 8 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+          "id": "EG000",
+          "otherNumAffected": 6,
+          "otherNumAtRisk": 9,
+          "seriousNumAffected": 1,
+          "seriousNumAtRisk": 9,
+          "title": "Sitagliptin"
+        },
+        {
+          "deathsNumAffected": 0,
+          "deathsNumAtRisk": 11,
+          "description": "Double-blind phase (week 0-16):\n\nGliclazide 80mg once daily for 4 weeks Then if no severe hypoglycaemic episodes increase to Gliclazide 80mg twice daily for 4 weeks.\n\nThen if no severe hypoglycaemic episodes increase to Gliclazide 160mg twice daily for 8 weeks Placebo Comparator: Sitagliptin matched placebo Two tablets (or one tablet in participants with moderate kidney disease) once daily for 16 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+          "id": "EG001",
+          "otherNumAffected": 10,
+          "otherNumAtRisk": 11,
+          "seriousNumAffected": 2,
+          "seriousNumAtRisk": 11,
+          "title": "Gliclazide"
+        }
+      ],
+      "frequencyThreshold": "0",
+      "otherEvents": [
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Endocrine disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 9,
+              "numAtRisk": 11,
+              "numEvents": 16
+            }
+          ],
+          "term": "Hypoglycaemia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 9,
+              "numEvents": 3
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 3,
+              "numAtRisk": 11,
+              "numEvents": 5
+            }
+          ],
+          "term": "Respiratory tract infections"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 2,
+              "numAtRisk": 11,
+              "numEvents": 2
+            }
+          ],
+          "term": "Nasopharyngitis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 11,
+              "numEvents": 2
+            }
+          ],
+          "term": "Cellulitis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Endocrine disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 11,
+              "numEvents": 1
+            }
+          ],
+          "term": "Hyperglycaemia"
+        }
+      ],
+      "seriousEvents": [
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 9,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 11,
+              "numEvents": 1
+            }
+          ],
+          "term": "Clinically isolated syndrome"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 9,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 11,
+              "numEvents": 1
+            }
+          ],
+          "term": "Osteomyelitis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 11,
+              "numEvents": 0
+            }
+          ],
+          "term": "Vasovagal episode leading to anoxic seizure"
+        }
+      ],
+      "timeFrame": "Participants attended the clinical research centre 9 times over the course of 40 weeks and adverse event data was collected at each visit after the baseline visit."
+    },
+    "baselineCharacteristicsModule": {
+      "denoms": [
+        {
+          "counts": [
+            {
+              "groupId": "BG000",
+              "value": "9"
+            },
+            {
+              "groupId": "BG001",
+              "value": "11"
+            },
+            {
+              "groupId": "BG002",
+              "value": "20"
+            }
+          ],
+          "units": "Participants"
+        }
+      ],
+      "groups": [
+        {
+          "description": "Double blind phase (week 0-16):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nPlacebo Comparator: Gliclazide matched placebo One gliclazide matched placebo capsule daily for 4 weeks. If no severe hypoglycaemic episodes one gliclazide matched placebo capsule twice daily for 4 weeks. If no severe hypoglycaemic episodes two gliclazide matched placebo capsules twice daily for 8 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\n.",
+          "id": "BG000",
+          "title": "Sitagliptin"
+        },
+        {
+          "description": "Double-blind phase (week 0-16):\n\nGliclazide 80mg once daily for 4 weeks Then if no severe hypoglycaemic episodes increase to Gliclazide 80mg twice daily for 4 weeks.\n\nThen if no severe hypoglycaemic episodes increase to Gliclazide 160mg twice daily for 8 weeks Placebo Comparator: Sitagliptin matched placebo Two tablets (or one tablet in participants with moderate kidney disease) once daily for 16 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\n.",
+          "id": "BG001",
+          "title": "Gliclazide"
+        },
+        {
+          "description": "Total of all reporting groups",
+          "id": "BG002",
+          "title": "Total"
+        }
+      ],
+      "measures": [
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "lowerLimit": "54.4",
+                      "upperLimit": "61.1",
+                      "value": "57.2"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "lowerLimit": "58.2",
+                      "upperLimit": "64.3",
+                      "value": "59.8"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "lowerLimit": "55.7",
+                      "upperLimit": "63.4",
+                      "value": "58.4"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "dispersionType": "INTER_QUARTILE_RANGE",
+          "paramType": "MEDIAN",
+          "title": "Age, Continuous",
+          "unitOfMeasure": "years"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "2"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "2"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "4"
+                    }
+                  ],
+                  "title": "Female"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "7"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "9"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "16"
+                    }
+                  ],
+                  "title": "Male"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Sex: Female, Male",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "American Indian or Alaska Native"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Asian"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Native Hawaiian or Other Pacific Islander"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Black or African American"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "9"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "11"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "20"
+                    }
+                  ],
+                  "title": "White"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "More than one race"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Unknown or Not Reported"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Race (NIH/OMB)",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "9"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "11"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "20"
+                    }
+                  ]
+                }
+              ],
+              "title": "Ireland"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Region of Enrollment",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "lowerLimit": "7.8",
+                      "upperLimit": "9.6",
+                      "value": "9.5"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "lowerLimit": "7.6",
+                      "upperLimit": "12",
+                      "value": "9.4"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "lowerLimit": "7.7",
+                      "upperLimit": "10.1",
+                      "value": "9.4"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "description": "Psoriasis area and severity index (PASI): the scale is an objective measure of psoriasis severity. The range for PASI is 0-72 with higher values indicating a worse outcome.",
+          "dispersionType": "INTER_QUARTILE_RANGE",
+          "paramType": "MEDIAN",
+          "title": "PASI",
+          "unitOfMeasure": "units on a scale"
+        }
+      ]
+    },
+    "moreInfoModule": {
+      "certainAgreement": {
+        "piSponsorEmployee": false,
+        "restrictiveAgreement": false
+      },
+      "limitationsAndCaveats": {
+        "description": "Despite a significant effort to recruit eligible patients (89 screened), we were unable to meet the required target of 40 and recruited 20 participants. Therefore the study was underpowered to achieve its endpoints."
+      },
+      "pointOfContact": {
+        "email": "maeve.lynch2@hse.ie",
+        "organization": "Clinical Research Centre, St Vincent's University Hospital, Dublin, Ireland",
+        "title": "Dr Maeve Lynch"
+      }
+    },
+    "outcomeMeasuresModule": {
+      "outcomeMeasures": [
+        {
+          "analyses": [
+            {
+              "ciNumSides": "TWO_SIDED",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.648",
+              "paramType": "U value",
+              "paramValue": "43.5",
+              "statisticalMethod": "Wilcoxon (Mann-Whitney)"
+            }
+          ],
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "7.8",
+                      "upperLimit": "9.6",
+                      "value": "9.5"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "7.6",
+                      "upperLimit": "12",
+                      "value": "9.4"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "9"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "11"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Psoriasis area and severity index (0-72), higher scores worse outcome",
+          "dispersionType": "Inter-Quartile Range",
+          "groups": [
+            {
+              "description": "Double blind phase (week 0-16):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nPlacebo Comparator: Gliclazide matched placebo One gliclazide matched placebo capsule daily for 4 weeks. If no severe hypoglycaemic episodes one gliclazide matched placebo capsule twice daily for 4 weeks. If no severe hypoglycaemic episodes two gliclazide matched placebo capsules twice daily for 8 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+              "id": "OG000",
+              "title": "Sitagliptin"
+            },
+            {
+              "description": "Double-blind phase (week 0-16):\n\nGliclazide 80mg once daily for 4 weeks Then if no severe hypoglycaemic episodes increase to Gliclazide 80mg twice daily for 4 weeks.\n\nThen if no severe hypoglycaemic episodes increase to Gliclazide 160mg twice daily for 8 weeks Placebo Comparator: Sitagliptin matched placebo Two tablets (or one tablet in participants with moderate kidney disease) once daily for 16 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+              "id": "OG001",
+              "title": "Gliclazide"
+            }
+          ],
+          "paramType": "MEDIAN",
+          "reportingStatus": "POSTED",
+          "timeFrame": "16 weeks",
+          "title": "The Change in the Psoriasis Area and Severity Index (PASI) From Baseline to 16 Weeks in Psoriasis Patients With Type 2 Diabetes Treated With Sitagliptin Compared to Patients Treated With Gliclazide.",
+          "type": "PRIMARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "6"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "10"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "9"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "11"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Dosage: Sitagliptin: 100mg daily, or 50mg daily for participants with moderate kidney disease Gliclazide: 80-320 mg daily.\n\nSecondary outcomes: the number participants with adverse events.",
+          "groups": [
+            {
+              "description": "Double blind phase (week 0-16):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nPlacebo Comparator: Gliclazide matched placebo One gliclazide matched placebo capsule daily for 4 weeks. If no severe hypoglycaemic episodes one gliclazide matched placebo capsule twice daily for 4 weeks. If no severe hypoglycaemic episodes two gliclazide matched placebo capsules twice daily for 8 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+              "id": "OG000",
+              "title": "Sitagliptin"
+            },
+            {
+              "description": "Double-blind phase (week 0-16):\n\nGliclazide 80mg once daily for 4 weeks Then if no severe hypoglycaemic episodes increase to Gliclazide 80mg twice daily for 4 weeks.\n\nThen if no severe hypoglycaemic episodes increase to Gliclazide 160mg twice daily for 8 weeks Placebo Comparator: Sitagliptin matched placebo Two tablets (or one tablet in participants with moderate kidney disease) once daily for 16 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+              "id": "OG001",
+              "title": "Gliclazide"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "reportingStatus": "POSTED",
+          "timeFrame": "32 weeks",
+          "title": "The Number of Patricipants in the Sitagliptin and Gliclazide Arms With Adverse Events at 32 Weeks.",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "-1.0",
+                      "upperLimit": "1.0",
+                      "value": "0.0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "-5.0",
+                      "upperLimit": "1",
+                      "value": "-1.0"
+                    }
+                  ]
+                }
+              ],
+              "title": "DLQI"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "0.0",
+                      "upperLimit": "0.0",
+                      "value": "0.0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "0.0",
+                      "upperLimit": "0.0",
+                      "value": "0.0"
+                    }
+                  ]
+                }
+              ],
+              "title": "HAQ-8"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "-3",
+                      "upperLimit": "-1",
+                      "value": "-1"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "-3",
+                      "upperLimit": "0",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ],
+              "title": "HADS Anxiety"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "-1",
+                      "upperLimit": "1",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "-3",
+                      "upperLimit": "1",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ],
+              "title": "HADS Depression"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "0",
+                      "upperLimit": "0",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "-0.3",
+                      "upperLimit": "0",
+                      "value": "-0.2"
+                    }
+                  ]
+                }
+              ],
+              "title": "EQ-5D"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "9"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "11"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Dermatology life quality index (a skin related quality of life measure) (0-10), higher score worse outcome EQ-5D Euroqol 5 item quality of life index comprising 5 dimensions mobility, self-care, usual activities, pain, anxiety. An index can be derived from these 5 dimensions by conversion with a table of scores. The maximum score of 1 indicates the best health state and minimum score indicating the worst health outcome -0.594.\n\nHADS Hospital anxiety and depression scale 0-16 for anxiety and 0-16 for depression, higher score worse outcome HAQ-8 Stanford 8 item disability scale. Scoring is from 0 (without any difficulty) to 3 (unable to do). The 8 scores from the 8 sections are summed and divided by 8. The result is the disability index (range 0-3 with 25 possible values). A",
+          "dispersionType": "Inter-Quartile Range",
+          "groups": [
+            {
+              "description": "Double blind phase (week 0-16):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nPlacebo Comparator: Gliclazide matched placebo One gliclazide matched placebo capsule daily for 4 weeks. If no severe hypoglycaemic episodes one gliclazide matched placebo capsule twice daily for 4 weeks. If no severe hypoglycaemic episodes two gliclazide matched placebo capsules twice daily for 8 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+              "id": "OG000",
+              "title": "Sitagliptin"
+            },
+            {
+              "description": "Double-blind phase (week 0-16):\n\nGliclazide 80mg once daily for 4 weeks Then if no severe hypoglycaemic episodes increase to Gliclazide 80mg twice daily for 4 weeks.\n\nThen if no severe hypoglycaemic episodes increase to Gliclazide 160mg twice daily for 8 weeks Placebo Comparator: Sitagliptin matched placebo Two tablets (or one tablet in participants with moderate kidney disease) once daily for 16 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+              "id": "OG001",
+              "title": "Gliclazide"
+            }
+          ],
+          "paramType": "MEDIAN",
+          "reportingStatus": "POSTED",
+          "timeFrame": "16 weeks",
+          "title": "The Change in Quality of Life Scores From Baseline to 16 Weeks in the Sitagliptin and Gliclazide Arms.",
+          "type": "SECONDARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "analyses": [
+            {
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "1",
+              "statisticalMethod": "Fisher Exact"
+            }
+          ],
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ],
+              "title": "PASI 50"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ],
+              "title": "PASI 75"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ],
+              "title": "PASI 90"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "9"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "11"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Secondary outcomes:\n\nd. number or participants who acheived a greater than 50% reduction in PASI from baseline (PASI-50); e. number of participants who achieved PASI-75 and PASI-90.",
+          "groups": [
+            {
+              "description": "Double blind phase (week 0-16):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nPlacebo Comparator: Gliclazide matched placebo One gliclazide matched placebo capsule daily for 4 weeks. If no severe hypoglycaemic episodes one gliclazide matched placebo capsule twice daily for 4 weeks. If no severe hypoglycaemic episodes two gliclazide matched placebo capsules twice daily for 8 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+              "id": "OG000",
+              "title": "Sitagliptin"
+            },
+            {
+              "description": "Double-blind phase (week 0-16):\n\nGliclazide 80mg once daily for 4 weeks Then if no severe hypoglycaemic episodes increase to Gliclazide 80mg twice daily for 4 weeks.\n\nThen if no severe hypoglycaemic episodes increase to Gliclazide 160mg twice daily for 8 weeks Placebo Comparator: Sitagliptin matched placebo Two tablets (or one tablet in participants with moderate kidney disease) once daily for 16 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+              "id": "OG001",
+              "title": "Gliclazide"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "reportingStatus": "POSTED",
+          "timeFrame": "16 weeks",
+          "title": "The Effects of Treatment With Sitagliptin and Treatment With Gliclazide on Other Efficacy Endpoints.",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "-0.83",
+                      "upperLimit": "0.16",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2.37",
+                      "upperLimit": "11.19",
+                      "value": "8.4"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "9"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "11"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "High sensitivity C-reactive protein (range 0 - no maximum)",
+          "dispersionType": "Inter-Quartile Range",
+          "groups": [
+            {
+              "description": "Double blind phase (week 0-16):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nPlacebo Comparator: Gliclazide matched placebo One gliclazide matched placebo capsule daily for 4 weeks. If no severe hypoglycaemic episodes one gliclazide matched placebo capsule twice daily for 4 weeks. If no severe hypoglycaemic episodes two gliclazide matched placebo capsules twice daily for 8 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+              "id": "OG000",
+              "title": "Sitagliptin"
+            },
+            {
+              "description": "Double-blind phase (week 0-16):\n\nGliclazide 80mg once daily for 4 weeks Then if no severe hypoglycaemic episodes increase to Gliclazide 80mg twice daily for 4 weeks.\n\nThen if no severe hypoglycaemic episodes increase to Gliclazide 160mg twice daily for 8 weeks Placebo Comparator: Sitagliptin matched placebo Two tablets (or one tablet in participants with moderate kidney disease) once daily for 16 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nSitagliptin: Week 0-16: Two 50mg tablets (or one 50mg tablet for participants with moderate kidney disease) once daily for 16 weeks during the double-blind phase.\n\nWeek 16-32: Then two 50mg tablets (or one 50mg tablet for participants with moderate kidney disease) once daily for 16 weeks during the open-label phase of the trial.",
+              "id": "OG001",
+              "title": "Gliclazide"
+            }
+          ],
+          "paramType": "MEDIAN",
+          "reportingStatus": "POSTED",
+          "timeFrame": "16 weeks",
+          "title": "The Change in Levels of High Sensitivity C-reactive Protein From Baseline to 16 Weeks in the Sitagliptin and Gliclazide Arms.",
+          "type": "SECONDARY",
+          "unitOfMeasure": "\u00b5g/ml"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "-2.08",
+                      "upperLimit": "0",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "-1.64",
+                      "upperLimit": "10.87",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "9"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "11"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Secondary outcomes:\n\nThe change in serum concentrations of the cytokines tumour necrosis factor alpha (TNF\u03b1) Range: 0-no maximum",
+          "dispersionType": "Inter-Quartile Range",
+          "groups": [
+            {
+              "description": "Double blind phase (week 0-16):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nPlacebo Comparator: Gliclazide matched placebo One gliclazide matched placebo capsule daily for 4 weeks. If no severe hypoglycaemic episodes one gliclazide matched placebo capsule twice daily for 4 weeks. If no severe hypoglycaemic episodes two gliclazide matched placebo capsules twice daily for 8 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+              "id": "OG000",
+              "title": "Sitagliptin"
+            },
+            {
+              "description": "Double-blind phase (week 0-16):\n\nGliclazide 80mg once daily for 4 weeks Then if no severe hypoglycaemic episodes increase to Gliclazide 80mg twice daily for 4 weeks.\n\nThen if no severe hypoglycaemic episodes increase to Gliclazide 160mg twice daily for 8 weeks Placebo Comparator: Sitagliptin matched placebo Two tablets (or one tablet in participants with moderate kidney disease) once daily for 16 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+              "id": "OG001",
+              "title": "Gliclazide"
+            }
+          ],
+          "paramType": "MEDIAN",
+          "reportingStatus": "POSTED",
+          "timeFrame": "16 weeks",
+          "title": "The Effects of Treatment With Sitagliptin and Treatment With Gliclazide on the Serum Cytokine Tumour Necrosis Factor Alpha.",
+          "type": "SECONDARY",
+          "unitOfMeasure": "pg/ml"
+        },
+        {
+          "analyses": [
+            {
+              "ciNumSides": "TWO_SIDED",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.128",
+              "paramType": "U",
+              "paramValue": "29.5",
+              "statisticalMethod": "Wilcoxon (Mann-Whitney)"
+            }
+          ],
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "2",
+                      "upperLimit": "5.6",
+                      "value": "3"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "0.3",
+                      "upperLimit": "3",
+                      "value": "1.8"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "9"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "11"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Psoriasis area and severity index 0-72, higher score worse outcome",
+          "dispersionType": "Inter-Quartile Range",
+          "groups": [
+            {
+              "description": "Double blind phase (week 0-16):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nPlacebo Comparator: Gliclazide matched placebo One gliclazide matched placebo capsule daily for 4 weeks. If no severe hypoglycaemic episodes one gliclazide matched placebo capsule twice daily for 4 weeks. If no severe hypoglycaemic episodes two gliclazide matched placebo capsules twice daily for 8 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+              "id": "OG000",
+              "title": "Sitagliptin"
+            },
+            {
+              "description": "Double-blind phase (week 0-16):\n\nGliclazide 80mg once daily for 4 weeks Then if no severe hypoglycaemic episodes increase to Gliclazide 80mg twice daily for 4 weeks.\n\nThen if no severe hypoglycaemic episodes increase to Gliclazide 160mg twice daily for 8 weeks Placebo Comparator: Sitagliptin matched placebo Two tablets (or one tablet in participants with moderate kidney disease) once daily for 16 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nSitagliptin: Week 0-16: Two 50mg tablets (or one 50mg tablet for participants with moderate kidney disease) once daily for 16 weeks during the double-blind phase.\n\nWeek 16-32: Then two 50mg tablets (or one 50mg tablet for participants with moderate kidney disease) once daily for 16 weeks during the open-label phase of the trial.",
+              "id": "OG001",
+              "title": "Gliclazide"
+            }
+          ],
+          "paramType": "MEDIAN",
+          "populationDescription": "The change in PASI at 32 weeks",
+          "reportingStatus": "POSTED",
+          "timeFrame": "baseline and 32 weeks",
+          "title": "The Change in PASI From Baseline to 32 Weeks in Psoriasis Patients With Type 2 Diabetes Treated With Sitagliptin Compared to Patients Treated With Gliclazide.",
+          "type": "SECONDARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "-1.3",
+                      "upperLimit": "0",
+                      "value": "-0.5"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "-2.9",
+                      "upperLimit": "2.6",
+                      "value": "-0.6"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "9"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "11"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The change in weight from baseline to 16 weeks measured in kg",
+          "dispersionType": "Inter-Quartile Range",
+          "groups": [
+            {
+              "description": "Double blind phase (week 0-16):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nPlacebo Comparator: Gliclazide matched placebo One gliclazide matched placebo capsule daily for 4 weeks. If no severe hypoglycaemic episodes one gliclazide matched placebo capsule twice daily for 4 weeks. If no severe hypoglycaemic episodes two gliclazide matched placebo capsules twice daily for 8 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+              "id": "OG000",
+              "title": "Sitagliptin"
+            },
+            {
+              "description": "Double-blind phase (week 0-16):\n\nGliclazide 80mg once daily for 4 weeks Then if no severe hypoglycaemic episodes increase to Gliclazide 80mg twice daily for 4 weeks.\n\nThen if no severe hypoglycaemic episodes increase to Gliclazide 160mg twice daily for 8 weeks Placebo Comparator: Sitagliptin matched placebo Two tablets (or one tablet in participants with moderate kidney disease) once daily for 16 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nSitagliptin: Week 0-16: Two 50mg tablets (or one 50mg tablet for participants with moderate kidney disease) once daily for 16 weeks during the double-blind phase.\n\nWeek 16-32: Then two 50mg tablets (or one 50mg tablet for participants with moderate kidney disease) once daily for 16 weeks during the open-label phase of the trial.",
+              "id": "OG001",
+              "title": "Gliclazide"
+            }
+          ],
+          "paramType": "MEDIAN",
+          "reportingStatus": "POSTED",
+          "timeFrame": "16 weeks",
+          "title": "The Change in Weight From Baseline to 16 Weeks in the Sitagliptin and Gliclazide Arms.",
+          "type": "SECONDARY",
+          "unitOfMeasure": "kg"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "0",
+                      "upperLimit": "3.85",
+                      "value": "3.41"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "1.17",
+                      "upperLimit": "2.8",
+                      "value": "2.09"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "9"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "11"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Interleukin 17 levels in skin (0-no maximum)",
+          "dispersionType": "Inter-Quartile Range",
+          "groups": [
+            {
+              "id": "OG000",
+              "title": "Sitagliptin"
+            },
+            {
+              "id": "OG001",
+              "title": "Gliclazide"
+            }
+          ],
+          "paramType": "MEDIAN",
+          "populationDescription": "Skin cytokine endpoints",
+          "reportingStatus": "POSTED",
+          "timeFrame": "16 weeks",
+          "title": "The Effect of Treatment With Sitagliptin and With Gliclazide From Baseline to 16 Weeks on the Change in Interleukin-17 Levels in the Skin (in a Sub-group of Participants Willing to Undergo Skin Biopsies).",
+          "type": "OTHER_PRE_SPECIFIED",
+          "unitOfMeasure": "dCt"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "-2",
+                      "upperLimit": "8",
+                      "value": "4"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "-17",
+                      "upperLimit": "9",
+                      "value": "-9"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "9"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "11"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The change in systolic blood pressure from baseline to 16 weeks measured in kg",
+          "dispersionType": "Inter-Quartile Range",
+          "groups": [
+            {
+              "description": "Double blind phase (week 0-16):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nPlacebo Comparator: Gliclazide matched placebo One gliclazide matched placebo capsule daily for 4 weeks. If no severe hypoglycaemic episodes one gliclazide matched placebo capsule twice daily for 4 weeks. If no severe hypoglycaemic episodes two gliclazide matched placebo capsules twice daily for 8 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+              "id": "OG000",
+              "title": "Sitagliptin"
+            },
+            {
+              "description": "Double-blind phase (week 0-16):\n\nGliclazide 80mg once daily for 4 weeks Then if no severe hypoglycaemic episodes increase to Gliclazide 80mg twice daily for 4 weeks.\n\nThen if no severe hypoglycaemic episodes increase to Gliclazide 160mg twice daily for 8 weeks Placebo Comparator: Sitagliptin matched placebo Two tablets (or one tablet in participants with moderate kidney disease) once daily for 16 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nSitagliptin: Week 0-16: Two 50mg tablets (or one 50mg tablet for participants with moderate kidney disease) once daily for 16 weeks during the double-blind phase.\n\nWeek 16-32: Then two 50mg tablets (or one 50mg tablet for participants with moderate kidney disease) once daily for 16 weeks during the open-label phase of the trial.",
+              "id": "OG001",
+              "title": "Gliclazide"
+            }
+          ],
+          "paramType": "MEDIAN",
+          "reportingStatus": "POSTED",
+          "timeFrame": "16 weeks",
+          "title": "The Change in Levels of Systolic Blood Pressure From Baseline to 16 Weeks in the Sitagliptin and Gliclazide Arms.",
+          "type": "SECONDARY",
+          "unitOfMeasure": "mmHg"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "-1.3",
+                      "upperLimit": "0.8",
+                      "value": "-0.2"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "-1.7",
+                      "upperLimit": "0.3",
+                      "value": "-0.1"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "9"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "11"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The change in glucose from baseline to 16 weeks",
+          "dispersionType": "Inter-Quartile Range",
+          "groups": [
+            {
+              "description": "Double blind phase (week 0-16):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nPlacebo Comparator: Gliclazide matched placebo One gliclazide matched placebo capsule daily for 4 weeks. If no severe hypoglycaemic episodes one gliclazide matched placebo capsule twice daily for 4 weeks. If no severe hypoglycaemic episodes two gliclazide matched placebo capsules twice daily for 8 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+              "id": "OG000",
+              "title": "Sitagliptin"
+            },
+            {
+              "description": "Double-blind phase (week 0-16):\n\nGliclazide 80mg once daily for 4 weeks Then if no severe hypoglycaemic episodes increase to Gliclazide 80mg twice daily for 4 weeks.\n\nThen if no severe hypoglycaemic episodes increase to Gliclazide 160mg twice daily for 8 weeks Placebo Comparator: Sitagliptin matched placebo Two tablets (or one tablet in participants with moderate kidney disease) once daily for 16 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nSitagliptin: Week 0-16: Two 50mg tablets (or one 50mg tablet for participants with moderate kidney disease) once daily for 16 weeks during the double-blind phase.\n\nWeek 16-32: Then two 50mg tablets (or one 50mg tablet for participants with moderate kidney disease) once daily for 16 weeks during the open-label phase of the trial.",
+              "id": "OG001",
+              "title": "Gliclazide"
+            }
+          ],
+          "paramType": "MEDIAN",
+          "reportingStatus": "POSTED",
+          "timeFrame": "16 weeks",
+          "title": "The Change in Levels of Serum Glucose From Baseline to 16 Weeks in the Sitagliptin and Gliclazide Arms.",
+          "type": "SECONDARY",
+          "unitOfMeasure": "mmol/L"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "-0.3",
+                      "upperLimit": "0.1",
+                      "value": "0.1"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "-0.5",
+                      "upperLimit": "0.1",
+                      "value": "-0.1"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "9"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "11"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The change in total cholesterol from baseline to 16 weeks",
+          "dispersionType": "Inter-Quartile Range",
+          "groups": [
+            {
+              "description": "Double blind phase (week 0-16):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nPlacebo Comparator: Gliclazide matched placebo One gliclazide matched placebo capsule daily for 4 weeks. If no severe hypoglycaemic episodes one gliclazide matched placebo capsule twice daily for 4 weeks. If no severe hypoglycaemic episodes two gliclazide matched placebo capsules twice daily for 8 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+              "id": "OG000",
+              "title": "Sitagliptin"
+            },
+            {
+              "description": "Double-blind phase (week 0-16):\n\nGliclazide 80mg once daily for 4 weeks Then if no severe hypoglycaemic episodes increase to Gliclazide 80mg twice daily for 4 weeks.\n\nThen if no severe hypoglycaemic episodes increase to Gliclazide 160mg twice daily for 8 weeks Placebo Comparator: Sitagliptin matched placebo Two tablets (or one tablet in participants with moderate kidney disease) once daily for 16 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nSitagliptin: Week 0-16: Two 50mg tablets (or one 50mg tablet for participants with moderate kidney disease) once daily for 16 weeks during the double-blind phase.\n\nWeek 16-32: Then two 50mg tablets (or one 50mg tablet for participants with moderate kidney disease) once daily for 16 weeks during the open-label phase of the trial.",
+              "id": "OG001",
+              "title": "Gliclazide"
+            }
+          ],
+          "paramType": "MEDIAN",
+          "reportingStatus": "POSTED",
+          "timeFrame": "16 weeks",
+          "title": "The Change in Levels of Total Cholesterol From Baseline to 16 Weeks in the Sitagliptin and Gliclazide Arms.",
+          "type": "SECONDARY",
+          "unitOfMeasure": "mmol/L"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "0",
+                      "upperLimit": "0",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "0",
+                      "upperLimit": "46.1",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "9"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "11"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Secondary outcomes:\n\nThe change in serum concentrations of the cytokine interleukin-23 (IL-23) Range: 0-no maximum",
+          "dispersionType": "Inter-Quartile Range",
+          "groups": [
+            {
+              "description": "Double blind phase (week 0-16):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nPlacebo Comparator: Gliclazide matched placebo One gliclazide matched placebo capsule daily for 4 weeks. If no severe hypoglycaemic episodes one gliclazide matched placebo capsule twice daily for 4 weeks. If no severe hypoglycaemic episodes two gliclazide matched placebo capsules twice daily for 8 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+              "id": "OG000",
+              "title": "Sitagliptin"
+            },
+            {
+              "description": "Double-blind phase (week 0-16):\n\nGliclazide 80mg once daily for 4 weeks Then if no severe hypoglycaemic episodes increase to Gliclazide 80mg twice daily for 4 weeks.\n\nThen if no severe hypoglycaemic episodes increase to Gliclazide 160mg twice daily for 8 weeks Placebo Comparator: Sitagliptin matched placebo Two tablets (or one tablet in participants with moderate kidney disease) once daily for 16 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+              "id": "OG001",
+              "title": "Gliclazide"
+            }
+          ],
+          "paramType": "MEDIAN",
+          "reportingStatus": "POSTED",
+          "timeFrame": "16 weeks",
+          "title": "The Effects of Treatment With Sitagliptin and Treatment With Gliclazide From Baseline to 16 Weeks on Serum Levels Interleukin-23.",
+          "type": "SECONDARY",
+          "unitOfMeasure": "pg/ml"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "0",
+                      "upperLimit": "0",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "0",
+                      "upperLimit": "0",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "9"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "11"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Secondary outcomes:\n\nThe change in serum concentrations of the cytokine interleukin-17 (IL-17) Range: 0-no maximum",
+          "dispersionType": "Inter-Quartile Range",
+          "groups": [
+            {
+              "description": "Double blind phase (week 0-16):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nPlacebo Comparator: Gliclazide matched placebo One gliclazide matched placebo capsule daily for 4 weeks. If no severe hypoglycaemic episodes one gliclazide matched placebo capsule twice daily for 4 weeks. If no severe hypoglycaemic episodes two gliclazide matched placebo capsules twice daily for 8 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+              "id": "OG000",
+              "title": "Sitagliptin"
+            },
+            {
+              "description": "Double-blind phase (week 0-16):\n\nGliclazide 80mg once daily for 4 weeks Then if no severe hypoglycaemic episodes increase to Gliclazide 80mg twice daily for 4 weeks.\n\nThen if no severe hypoglycaemic episodes increase to Gliclazide 160mg twice daily for 8 weeks Placebo Comparator: Sitagliptin matched placebo Two tablets (or one tablet in participants with moderate kidney disease) once daily for 16 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+              "id": "OG001",
+              "title": "Gliclazide"
+            }
+          ],
+          "paramType": "MEDIAN",
+          "reportingStatus": "POSTED",
+          "timeFrame": "16 weeks",
+          "title": "The Effects of Treatment With Sitagliptin and Treatment With Gliclazide From Baseline to 16 Weeks on Serum Levels Interleukin-17.",
+          "type": "SECONDARY",
+          "unitOfMeasure": "pg/ml"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "-2.42",
+                      "upperLimit": "0",
+                      "value": "-0.07"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "-3.25",
+                      "upperLimit": "8.37",
+                      "value": "0.43"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "9"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "11"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Secondary outcomes:\n\nThe change in serum concentrations of the adipokine leptin Range: 0-no maximum",
+          "dispersionType": "Inter-Quartile Range",
+          "groups": [
+            {
+              "description": "Double blind phase (week 0-16):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nPlacebo Comparator: Gliclazide matched placebo One gliclazide matched placebo capsule daily for 4 weeks. If no severe hypoglycaemic episodes one gliclazide matched placebo capsule twice daily for 4 weeks. If no severe hypoglycaemic episodes two gliclazide matched placebo capsules twice daily for 8 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+              "id": "OG000",
+              "title": "Sitagliptin"
+            },
+            {
+              "description": "Double-blind phase (week 0-16):\n\nGliclazide 80mg once daily for 4 weeks Then if no severe hypoglycaemic episodes increase to Gliclazide 80mg twice daily for 4 weeks.\n\nThen if no severe hypoglycaemic episodes increase to Gliclazide 160mg twice daily for 8 weeks Placebo Comparator: Sitagliptin matched placebo Two tablets (or one tablet in participants with moderate kidney disease) once daily for 16 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+              "id": "OG001",
+              "title": "Gliclazide"
+            }
+          ],
+          "paramType": "MEDIAN",
+          "reportingStatus": "POSTED",
+          "timeFrame": "16 weeks",
+          "title": "The Effects of Treatment With Sitagliptin and Treatment With Gliclazide on the Change in Serum Leptin From Baseline to 16 Weeks.",
+          "type": "SECONDARY",
+          "unitOfMeasure": "pg/ml"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "-2.63",
+                      "upperLimit": "0.39",
+                      "value": "-1.12"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "-0.43",
+                      "upperLimit": "4.8",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "11"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "9"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Dipeptidyl peptidase-4 levels levels in skin (0-no maximum)",
+          "dispersionType": "Inter-Quartile Range",
+          "groups": [
+            {
+              "id": "OG000",
+              "title": "Gliclazide"
+            },
+            {
+              "id": "OG001",
+              "title": "Sitagliptin"
+            }
+          ],
+          "paramType": "MEDIAN",
+          "populationDescription": "Skin cytokine endpoints",
+          "reportingStatus": "POSTED",
+          "timeFrame": "16 weeks",
+          "title": "The Effect of Treatment With Sitagliptin and With Gliclazide From Baseline to 16 Weeks on the Change in Dipeptidyl Peptidase-4 Levels in the Skin (in a Sub-group of Participants Willing to Undergo Skin Biopsies).",
+          "type": "OTHER_PRE_SPECIFIED",
+          "unitOfMeasure": "dCt"
+        }
+      ]
+    },
+    "participantFlowModule": {
+      "groups": [
+        {
+          "description": "Double blind phase (week 0-16):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.\n\nPlacebo Comparator: Gliclazide matched placebo One gliclazide matched placebo capsule daily for 4 weeks. If no severe hypoglycaemic episodes one gliclazide matched placebo capsule twice daily for 4 weeks. If no severe hypoglycaemic episodes two gliclazide matched placebo capsules twice daily for 8 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+          "id": "FG000",
+          "title": "Sitagliptin"
+        },
+        {
+          "description": "Double-blind phase (week 0-16):\n\nGliclazide 80mg once daily for 4 weeks Then if no severe hypoglycaemic episodes increase to Gliclazide 80mg twice daily for 4 weeks.\n\nThen if no severe hypoglycaemic episodes increase to Gliclazide 160mg twice daily for 8 weeks Placebo Comparator: Sitagliptin matched placebo Two tablets (or one tablet in participants with moderate kidney disease) once daily for 16 weeks.\n\nOpen-label phase (week 16-32):\n\nSitagliptin two 50mg tablets (or one 50mg in participants with moderate kidney disease) once daily for 16 weeks.",
+          "id": "FG001",
+          "title": "Gliclazide"
+        }
+      ],
+      "periods": [
+        {
+          "dropWithdraws": [
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "1"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "1"
+                }
+              ],
+              "type": "Lost to Follow-up"
+            },
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "0"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "2"
+                }
+              ],
+              "type": "Physician Decision"
+            },
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "2"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "0"
+                }
+              ],
+              "type": "Withdrawal by Subject"
+            }
+          ],
+          "milestones": [
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "9"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "11"
+                }
+              ],
+              "type": "STARTED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "6"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "8"
+                }
+              ],
+              "type": "COMPLETED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "3"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "3"
+                }
+              ],
+              "type": "NOT COMPLETED"
+            }
+          ],
+          "title": "Overall Study"
+        }
+      ],
+      "recruitmentDetails": "From April 25 2014 to April 22 2015 20 participants were recruited from Dermatology and Endocrinology outpatient clinics and through national newspaper advertisements."
+    }
+  }
+}

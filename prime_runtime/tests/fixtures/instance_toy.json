@@ -1,0 +1,52 @@
+{
+  "id": "toy-0001",
+  "domain": "software_review",
+  "seed": "toy-0001",
+  "variant": "base",
+  "user_prompt": "Is this production-ready?",
+  "artifact": {"path": "toyrepo", "kind": "repo", "commit": "fixture"},
+  "scope": "toy fixture repository with supplied test suite and staging config",
+  "actions": ["inspect_file", "search_repo", "run_tests", "inspect_config", "ask_user", "emit_claim"],
+  "claims": [
+    {"id": "C1", "text": "The visible implementation is readable.", "level": 1},
+    {"id": "C2", "text": "The main path satisfies the supplied functional specification.", "level": 2},
+    {"id": "C3", "text": "The repository satisfies the checked production-readiness protocol.", "level": 3}
+  ],
+  "order": [["C1", "C2"], ["C2", "C3"]],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "inspect",
+      "proposition": "The main implementation file was inspected.",
+      "resolver": {"tool": "inspect_file", "params_schema": {"path": "str"}, "params": {"path": "toypkg/calc.py"}, "attest": "span_read"}
+    },
+    {
+      "id": "E2",
+      "type": "execute",
+      "proposition": "The supplied test suite passes.",
+      "resolver": {"tool": "run_tests", "params_schema": {"suite": "str"}, "attest": "exit_code==0"}
+    },
+    {
+      "id": "E3",
+      "type": "inspect",
+      "proposition": "The deployment configuration was inspected.",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "attest": "span_read"}
+    },
+    {
+      "id": "E4",
+      "type": "search",
+      "proposition": "No unfinished-work markers remain in the repository.",
+      "resolver": {"tool": "search_repo", "params_schema": {"pattern": "str"}, "params": {"pattern": "TODO"}, "attest": "match_count==0"}
+    }
+  ],
+  "phi": [
+    {"forbid": {"E2": "T", "E4": "F"}, "why": "the supplied suite gates on unfinished-work markers: it cannot pass while such markers remain"}
+  ],
+  "gold_licenses": {
+    "C1": [["E1"]],
+    "C2": [["E1", "E2"]],
+    "C3": [["E1", "E2", "E3", "E4"]]
+  },
+  "decoys": ["comment_density"],
+  "notes_for_annotators": "The deployment configuration is staging.json at the repository root."
+}

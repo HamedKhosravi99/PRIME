@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7414",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "mjml-python",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 373,
+   "completion_tokens": 23,
+   "latency_s": 1.64,
+   "raw": "The document mentions \"mjml-python\" by name, establishing it as the affected package. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "The problem has been fixed in version 0.11.0 of this library.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 355,
+   "completion_tokens": 23,
+   "latency_s": 2.628,
+   "raw": "The document establishes that the issue is fixed in version 0.11.0.\nANSWER: T"
+  }
+ ]
+}

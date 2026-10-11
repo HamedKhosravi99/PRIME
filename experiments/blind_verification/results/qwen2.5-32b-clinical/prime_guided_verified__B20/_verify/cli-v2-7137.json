@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7137",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Adult patients aged 18 to 90 years undergoing a split skin graft harvest under local anaesthesia",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 293,
+   "completion_tokens": 29,
+   "latency_s": 2.058,
+   "raw": "The inclusion criteria explicitly state \"Adult patients aged 18 to 90 years,\" establishing the minimum age requirement. ANSWER: T"
+  }
+ ]
+}

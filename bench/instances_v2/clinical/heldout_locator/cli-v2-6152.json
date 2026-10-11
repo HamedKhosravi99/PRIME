@@ -1,0 +1,356 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2022-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT04625959"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.statusModule.studyFirstSubmitDate",
+     "protocolSection.identificationModule.nctId"
+    ],
+    "what": "the date the registration was first submitted"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2025-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT04625959"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.statusModule.lastUpdateSubmitDate",
+     "protocolSection.statusModule.overallStatus"
+    ],
+    "what": "the date of the most recent update submission"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"INTERVENTIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT04625959"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.designModule.studyType",
+     "protocolSection.identificationModule.nctId"
+    ],
+    "what": "the study type"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT04625959"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.eligibilityModule.sex"
+    ],
+    "what": "the brief summary"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT04625959"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.identificationModule.nctId"
+    ],
+    "what": "the eligibility criteria text"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:false",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.healthyVolunteers",
+     "record_id": "NCT04625959"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.eligibilityModule.healthyVolunteers"
+    ],
+    "what": "whether healthy volunteers are accepted"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT04625959"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.identificationModule.briefTitle"
+    ],
+    "what": "the official title"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2022-01-01"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2022-01-01"
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2025-01-01"
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ]
+    ],
+    [
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2022-01-01"
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2022-01-01"
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2025-01-01"
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ],
+     [
+      "protocolSection.eligibilityModule.healthyVolunteers",
+      "equals",
+      false
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-6152",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-hom-19\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": 3, \"false_mech\": false, \"locator\": true, \"source_instance\": \"cli-v2-0152\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT04625959": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "The current study will use a full factorial design to identify the independent and combined effects of four core MABT components when combined with standard behavioral treatment for BN and BED. The primary aim of the study will be to evaluate the independent efficacy of Mindful Awareness, Distress Tolerance, Emotion Modulation, and Values-Based Decision Making on eating pathology (at posttreatment and at 6 and 12-month follow-ups). Secondary aims will be (1) to test target engagement of each MABT component, i.e., to confirm that each treatment component impacts both the variable which it targets and self-regulation and that improvements in these are associated with improvements in outcomes and (2) to test the hypotheses that the efficacy of each component is moderated by related baseline deficits in self-regulation (e.g. individuals with worse distress tolerance at baseline are most likely to benefit from conditions that include the Distress Tolerance component). A final exploratory aim will be to quantify the component interaction effects, which may be partially additive (because components overlap and/or there is diminishing return), fully additive, or synergistic (in that components may partially depend on each other)."
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n1. Have experienced 12 or more loss of control episodes within the previous 3 months\n2. Have a BMI above 16\n3. Are located in the US and wiling/able to participate in remote treatment and assessments\n4. Are able to give consent\n\nExclusion Criteria:\n\n1. Are unable to fluently speak, write and read English\n2. Have a BMI below 16\n3. Are receiving treatment for an eating disorder\n4. Require immediate treatment for medical complications as a result of eating disorder symptoms\n5. Have a mental handicap, or are experiencing other severe psychopathology that would limit the participants' ability to comply with the demands of the current study (e.g. severe depression with suicidal intent, active psychotic disorder)",
+     "healthyVolunteers": false,
+     "minimumAge": "18 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "Optimizing Mindfulness and Acceptance Based Behavioral Treatment for Bulimia Nervosa and Binge Eating Disorder",
+     "nctId": "NCT04625959",
+     "officialTitle": "Optimizing Mindfulness and Acceptance Based Behavioral Treatment for Bulimia Nervosa and Binge Eating Disorder"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2023-09-21",
+     "overallStatus": "UNKNOWN",
+     "studyFirstSubmitDate": "2020-09-16"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT04625959.",
+ "seed": "NCT04625959",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

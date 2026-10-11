@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7284",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "vLLM's GGUF dequantize kernels (`csrc/quantization/gguf/gguf_kernel.cu`) causes partial tensor processing.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 1380,
+   "completion_tokens": 22,
+   "latency_s": 1.693,
+   "raw": "The document mentions \"vLLM\" as the affected package by its registered name. ANSWER: T"
+  }
+ ]
+}

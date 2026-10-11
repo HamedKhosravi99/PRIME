@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7299",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "OpenStack Neutron before 2013.2.4, 2014.x before 2014.1.2, and Juno before Juno-2",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 223,
+   "completion_tokens": 25,
+   "latency_s": 1.372,
+   "raw": "The document specifies versions of OpenStack Neutron, which is a distinctive part of the package name. ANSWER: T"
+  }
+ ]
+}

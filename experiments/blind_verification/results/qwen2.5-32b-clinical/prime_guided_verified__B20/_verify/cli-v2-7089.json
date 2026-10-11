@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7089",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "F",
+   "quote": "Patients within the age group of 4 to 8 years of age.",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 279,
+   "completion_tokens": 39,
+   "latency_s": 2.92,
+   "raw": "The document specifies inclusion criteria for patients aged 4 to 8 years, which does not meet the stated condition of restricting enrollment to adults aged 18 or older. ANSWER: F"
+  }
+ ]
+}

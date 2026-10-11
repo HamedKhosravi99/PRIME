@@ -1,0 +1,67 @@
+{
+  "protocolSection": {
+    "conditionsModule": {
+      "conditions": [
+        "Colonic Diseases"
+      ]
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "NON_RANDOMIZED",
+        "interventionModel": "SINGLE_GROUP",
+        "maskingInfo": {
+          "masking": "SINGLE",
+          "whoMasked": [
+            "OUTCOMES_ASSESSOR"
+          ]
+        },
+        "primaryPurpose": "DIAGNOSTIC"
+      },
+      "enrollmentInfo": {
+        "count": 332,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "identificationModule": {
+      "briefTitle": "PillCam\u2122 Colon Capsule Endoscopy (PCCE) in the Visualization of the Colon",
+      "nctId": "NCT00604162",
+      "organization": {
+        "class": "INDUSTRY",
+        "fullName": "Medtronic - MITG"
+      }
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "measure": "Number of Participants With Successful Capsule Endoscopies or Standard Colonoscopies",
+          "timeFrame": "1 day"
+        },
+        {
+          "measure": "Number of Participants With Indicated Lesions Detected by Standard Colonoscopy",
+          "timeFrame": "1 day"
+        }
+      ]
+    },
+    "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+        "class": "INDUSTRY",
+        "name": "Medtronic - MITG"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2007-10",
+        "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+        "date": "2006-10"
+      },
+      "statusVerifiedDate": "2010-08"
+    }
+  }
+}

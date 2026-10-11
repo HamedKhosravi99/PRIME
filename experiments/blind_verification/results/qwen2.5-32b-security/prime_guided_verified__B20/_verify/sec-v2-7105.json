@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7105",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "This issue affects Apache Superset",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 224,
+   "completion_tokens": 22,
+   "latency_s": 1.673,
+   "raw": "The document mentions \"Apache Superset\" as the affected package by its registered name. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E4",
+   "attested": "T",
+   "quote": "This issue affects Apache Superset: before 3.0.4, from 3.1.0 before 3.1.1.",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 211,
+   "completion_tokens": 28,
+   "latency_s": 2.486,
+   "raw": "The document does not specify the exact version where the issue was first introduced, only the range of affected versions. ANSWER: UNCLEAR"
+  }
+ ]
+}

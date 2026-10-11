@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7046",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "young adults",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 267,
+   "completion_tokens": 36,
+   "latency_s": 1.965,
+   "raw": "The document does not specify a minimum age requirement of 18 years or more for enrollment, only referring to \"young adults\" which is vague. ANSWER: UNCLEAR"
+  }
+ ]
+}

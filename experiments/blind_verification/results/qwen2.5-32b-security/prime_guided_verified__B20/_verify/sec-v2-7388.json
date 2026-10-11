@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7388",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "An attacker can craft a TFLite model that would allow limited reads and writes outside of arrays in TFLite.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 496,
+   "completion_tokens": 18,
+   "latency_s": 1.111,
+   "raw": "The document mentions TensorFlow by its registered name, establishing the condition. ANSWER: T"
+  }
+ ]
+}

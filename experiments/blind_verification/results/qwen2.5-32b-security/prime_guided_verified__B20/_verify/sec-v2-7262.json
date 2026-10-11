@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7262",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "`concat` built-in can write over the bounds of the memory buffer that was allocated for it",
+   "verdict": "F",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 2103,
+   "completion_tokens": 37,
+   "latency_s": 2.939,
+   "raw": "The document mentions \"vyper\" multiple times but does not explicitly name the affected package by its registered name or a distinctive part of it beyond the language name. ANSWER: F"
+  }
+ ]
+}

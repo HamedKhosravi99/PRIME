@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7280",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Django 1.10 before 1.10.7, 1.9 before 1.9.13, and 1.8 before 1.8.18 relies on user input in some cases to redirect the user to an \"on success\" URL.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 288,
+   "completion_tokens": 21,
+   "latency_s": 2.186,
+   "raw": "The document specifies the exact versions of Django that are affected, establishing the condition. ANSWER: T"
+  }
+ ]
+}

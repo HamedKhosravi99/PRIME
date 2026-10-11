@@ -1,0 +1,281 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT03738891"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2020-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT03738891"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT03738891"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT03738891"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT03738891"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"INTERVENTIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT03738891"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2020-01-01"
+     ]
+    ],
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2020-01-01"
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-9054",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-hom-17\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": 2, \"false_mech\": false, \"one_branch\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT03738891": {
+   "protocolSection": {
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria\n\n* Male and female subjects \\> 22 years of age and \u226465 years of age.\n* Subject has not had weight change exceeding 5% of body weight in the preceding month.\n* Subject agrees to maintain her weight (i.e., within 5%) by not making any major changes in diet or exercise routine during the course of the study.\n* Subject agrees to refrain from any new abdominal training exercises during the course of the study.\n* BMI \u2264 30 kg/m\\^2 as determined at screening.\n* Abdominal skin fold thickness 2.0 to 5.0 cm, as measured by caliper below umbilicus.\n* Cohort 4 only: Subject participated in protocol ZA18-003 in Cohort 3, and received the CoolSculpting treatment no more than 6 months prior.\n* Subject has read and signed a written informed consent form.\n\nExclusion Criteria\n\n* Subject has had a surgical procedure(s) in the area of intended treatment.\n* Subject has had an invasive fat reduction procedure (e.g., liposuction, mesotherapy) in the area of intended treatment.\n* Subject has had a non-invasive fat reduction, body contouring and/or skin tightening procedure in the area of intended treatment within the past 12 months.\n* Subject has numbness, tingling or other altered sensation in the treatment area.\n* Subject needs to administer, or has a known history of subcutaneous injections into the area of intended treatment (e.g., heparin, insulin) within the past month.\n* Subject has not had an intrauterine contraceptive device inserted or removed within the past month.\n* Subject has a known history of cryoglobulinemia, cold urticaria, cold agglutinin disease, or paroxysmal cold hemoglobinuria\n* Subject has a known history of Raynaud's disease, or any known condition with a response to cold exposure that limits blood flow to the skin.\n* Subject has a history of bleeding disorder or is taking any medication that in the Investigator's opinion may increase the subject's risk of bruising.\n* Subject has known sensitivity or allergy to isopropyl alcohol and propylene glycol, or latex.\n* Subject is taking or has taken diet pills or supplements within the past month.\n* Subject has any dermatological conditions, such as moderate to excessive skin laxity, or scars in the location of the treatment sites, that may interfere with the treatment or evaluation (stretch marks is not an exclusion).\n* Subject has a metal implant or active implanted device such as a pacemaker, defibrillator, or drug delivery system.\n* Subject has been involved in any type of abdominal muscle training program within the previous 6 months.\n* Subject has pulmonary insufficiency.\n* Subject has a cardiac disorder.\n* Subject has a malignant tumor.\n* Subject has been diagnosed with epilepsy.\n* Subject currently has a fever.\n* Subject is pregnant or intending to become pregnant during the study period (in the next 9 months).\n* Subject is lactating or has been lactating in the past 6 months.\n* Subject is unable or unwilling to comply with the study requirements.\n* Subject is currently enrolled in a clinical study of any other investigational drug or device.\n* Any other condition or laboratory value that would, in the professional opinion of the Investigator, potentially affect the subject's response or the integrity of the data or would pose an unacceptable risk to the subject.",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "nctId": "NCT03738891",
+     "officialTitle": "A Feasibility Study to Evaluate Electromagnetic Muscle Stimulation and CoolSculpting for Abdominal Contouring"
+    },
+    "statusModule": {
+     "studyFirstSubmitDate": "2018-11-08"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT03738891.",
+ "seed": "NCT03738891",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

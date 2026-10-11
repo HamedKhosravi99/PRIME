@@ -1,0 +1,295 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "affected.0.package.name",
+     "record_id": "GHSA-2g6r-c272-w58r"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "details",
+     "record_id": "GHSA-2g6r-c272-w58r"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"PyPI\"",
+    "params": {
+     "field_path": "affected.0.package.ecosystem",
+     "record_id": "GHSA-2g6r-c272-w58r"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2028-01-01\"",
+    "params": {
+     "field_path": "modified",
+     "record_id": "GHSA-2g6r-c272-w58r"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.url",
+     "record_id": "GHSA-2g6r-c272-w58r"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "aliases.0",
+     "record_id": "GHSA-2g6r-c272-w58r"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-2g6r-c272-w58r"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ],
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ]
+    ],
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ],
+     [
+      "modified",
+      "date_before",
+      "2028-01-01"
+     ],
+     [
+      "references.0.url",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ],
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ],
+     [
+      "aliases.0",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "sec-v2-0216",
+ "notes_for_annotators": "{\"family\": \"security-branching-hom-15\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": null, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-2g6r-c272-w58r": {
+   "affected": [
+    {
+     "package": {
+      "ecosystem": "PyPI",
+      "name": "langchain-core"
+     }
+    }
+   ],
+   "aliases": [
+    "CVE-2026-26013"
+   ],
+   "details": "## Server-Side Request Forgery (SSRF) in ChatOpenAI Image Token Counting\n\n### Summary\nThe `ChatOpenAI.get_num_tokens_from_messages()` method fetches arbitrary `image_url` values without validation when computing token counts for vision-enabled models. This allows attackers to trigger Server-Side Request Forgery (SSRF) attacks by providing malicious image URLs in user input.\n\n### Severity\n**Low** - The vulnerability allows SSRF attacks but has limited impact due to:\n- Responses are not returned to the attacker (blind SSRF)\n- Default 5-second timeout limits resource exhaustion\n- Non-image responses fail at PIL image parsing\n\n### Impact\nAn attacker who can control image URLs passed to `get_num_tokens_from_messages()` can:\n- Trigger HTTP requests from the application server to arbitrary internal or external URLs\n- Cause the server to access internal network resources (private IPs, cloud metadata endpoints)\n- Cause minor resource consumption through image downloads (bounded by timeout)\n\n**Note:** This vulnerability occurs during token counting, which may happen outside of model invocation (e.g., in logging, metrics, or token budgeting flows).\n\n### Details\nThe vulnerable code path:\n1. `get_num_tokens_from_messages()` processes messages containing `image_url` content blocks\n2. For images without `detail: \"low\"`, it calls `_url_to_size()` to fetch the image and compute token counts\n3. `_url_to_size()` performs `httpx.get(image_source)` on any URL without validation\n4. Prior to the patch, there was no SSRF protection, size limits, or explicit timeout\n\n**File:** `libs/partners/openai/langchain_openai/chat_models/base.py`\n\n### Patches\nThe vulnerability has been patched in `langchain-openai==1.1.9` (requires `langchain-core==1.2.11`).\n\nThe patch adds:\n1. **SSRF validation** using `langchain_core._security._ssrf_protection.validate_safe_url()` to block:\n   - Private IP ranges (RFC 1918, loopback, link-local)\n   - Cloud metadata endpoints (169.254.169.254, etc.)\n   - Invalid URL schemes\n2. **Explicit size limits** (50 MB maximum, matching OpenAI's payload limit)\n3. **Explicit timeout** (5 seconds, same as `httpx.get` default)\n4. **Allow disabling image fetching** via `allow_fetching_images=False` parameter\n\n### Workarounds\nIf you cannot upgrade immediately:\n\n1. **Sanitize input:** Validate and filter `image_url` values before passing messages to token counting or model invocation\n2. **Use network controls:** Implement egress filtering to prevent outbound requests to private IPs",
+   "modified": "2026-07-13T16:43:30.756724986Z",
+   "references": [
+    {
+     "url": "https://github.com/langchain-ai/langchain/security/advisories/GHSA-2g6r-c272-w58r"
+    }
+   ],
+   "summary": "LangChain affected by SSRF via image_url token counting in ChatOpenAI.get_num_tokens_from_messages"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-2g6r-c272-w58r.",
+ "seed": "GHSA-2g6r-c272-w58r",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

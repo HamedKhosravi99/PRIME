@@ -1,0 +1,72 @@
+{
+  "protocolSection": {
+    "conditionsModule": {
+      "conditions": [
+        "Metastatic Breast Cancer"
+      ]
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "PARALLEL",
+        "maskingInfo": {
+          "masking": "TRIPLE",
+          "whoMasked": [
+            "PARTICIPANT",
+            "INVESTIGATOR",
+            "OUTCOMES_ASSESSOR"
+          ]
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 808,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "identificationModule": {
+      "briefTitle": "A Study to Evaluate Pertuzumab + Trastuzumab + Docetaxel vs. Placebo + Trastuzumab + Docetaxel in Previously Untreated HER2-Positive Metastatic Breast Cancer",
+      "nctId": "NCT00567190",
+      "organization": {
+        "class": "INDUSTRY",
+        "fullName": "Genentech, Inc."
+      }
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "measure": "Progression-Free Survival (PFS) Determined by an Independent Review Facility",
+          "timeFrame": "Tumor assessments every 9 weeks from randomization to IRF-determined PD or death from any cause, whichever occurred first, up to the primary completion date (up to 3 years, 3 months)"
+        }
+      ]
+    },
+    "sponsorCollaboratorsModule": {
+      "collaborators": [
+        {
+          "class": "INDUSTRY",
+          "name": "Hoffmann-La Roche"
+        }
+      ],
+      "leadSponsor": {
+        "class": "INDUSTRY",
+        "name": "Genentech, Inc."
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2018-11-23",
+        "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+        "date": "2008-02-12",
+        "type": "ACTUAL"
+      },
+      "statusVerifiedDate": "2019-12"
+    }
+  }
+}

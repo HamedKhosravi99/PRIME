@@ -1,0 +1,319 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-4w8p-x6g8-fv64"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"## Summary\\n\\nThe AWS Cloud Development Kit (AWS CDK) is an open-source software development framework for defining cloud infrastructure in code and provisioning it through AWS CloudFormation. We identified an issue in which explicitly setting `encrypted: true` on the `S3LoggingOptions` property of an AWS CodeBuild project construct produces the opposite of the intended behavior, disabling encryption on CodeBuild build logs stored in S3.\\n\\n## Impact\\n\\nThe `S3LoggingOptions.encrypted` property in the `aws-codebuild` module uses positive polarity (`true` = encryption ON), but is mapped directly to the CloudFormation `S3LogsConfig.EncryptionDisabled` field, which uses negative polarity (`true` = encryption OFF). Because the value is not negated before being passed to CloudFormation, any explicit assignment produces inverted behavior:\\n\\n* Setting `encrypted: true` (intending encryption ON) causes CloudFormation to receive `EncryptionDisabled: true`, disabling encryption.\\n\\n* Setting `encrypted: false` (intending encryption OFF) causes CloudFormation to receive `EncryptionDisabled: false`, enabling encryption.\\n\\nUsers who omit the property entirely are not affected, as `undefined` passes through to CloudFormation, which defaults to encryption enabled.\\n\\nUsers affected by this issue could have CodeBuild S3 build logs stored using SSE-S3 (Amazon S3-managed keys, AES-256) rather than the AWS managed keys that CodeBuild applies by default. Since January 5, 2023, Amazon S3 automatically encrypts all new object uploads with SSE-S3, so logs written after that date remain encrypted at rest. However, logs written prior to that date to buckets that did not have default encryption configured at the time are potentially not encrypted at rest.\\n\\nImpacted versions: >= 1.75.0 and <= 2.252.0\\n\\n## Patches\\n\\nThis issue has been addressed in `aws-cdk-lib` version 2.253.0. Upgrade to the latest version and ensure any forked or derivative code is patched to incorporate the new fixes.\\n\\n## Workarounds\\n\\nUsers who are unable to immediately upgrade to version 2.253.0 should omit the `encrypted` property from their `S3LoggingOptions` configuration entirely. When the property is omitted, the value is not passed to CloudFormation, and CodeBuild applies its default behavior of encrypting build logs using AWS managed keys.\\n\\n## References\\n\\nIf you have any questions or comments about this advisory, contact AWS Security via our issue reporting page \\\\[1\\\\] or directly via email to [aws-security@amazon.com](mailto:aws-security@amazon.com). Please do not create a public GitHub issue.\\n\\n\\\\[1\\\\] <https://aws.amazon.com/security/vulnerability-reporting/>\\n\\n## Acknowledgement\\n\\nAWS thanks AISafe for collaborating on this issue through the coordinated disclosure process.\"",
+    "params": {
+     "field_path": "details",
+     "record_id": "GHSA-4w8p-x6g8-fv64"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2026-01-01\"",
+    "params": {
+     "field_path": "modified",
+     "record_id": "GHSA-4w8p-x6g8-fv64"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.type",
+     "record_id": "GHSA-4w8p-x6g8-fv64"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.url",
+     "record_id": "GHSA-4w8p-x6g8-fv64"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.cwe_ids.0",
+     "record_id": "GHSA-4w8p-x6g8-fv64"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "details",
+     "record_id": "GHSA-4w8p-x6g8-fv64"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "severity.0.score",
+     "record_id": "GHSA-4w8p-x6g8-fv64"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "summary",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "summary",
+      "exists",
+      null
+     ],
+     [
+      "details",
+      "equals",
+      "## Summary\n\nThe AWS Cloud Development Kit (AWS CDK) is an open-source software development framework for defining cloud infrastructure in code and provisioning it through AWS CloudFormation. We identified an issue in which explicitly setting `encrypted: true` on the `S3LoggingOptions` property of an AWS CodeBuild project construct produces the opposite of the intended behavior, disabling encryption on CodeBuild build logs stored in S3.\n\n## Impact\n\nThe `S3LoggingOptions.encrypted` property in the `aws-codebuild` module uses positive polarity (`true` = encryption ON), but is mapped directly to the CloudFormation `S3LogsConfig.EncryptionDisabled` field, which uses negative polarity (`true` = encryption OFF). Because the value is not negated before being passed to CloudFormation, any explicit assignment produces inverted behavior:\n\n* Setting `encrypted: true` (intending encryption ON) causes CloudFormation to receive `EncryptionDisabled: true`, disabling encryption.\n\n* Setting `encrypted: false` (intending encryption OFF) causes CloudFormation to receive `EncryptionDisabled: false`, enabling encryption.\n\nUsers who omit the property entirely are not affected, as `undefined` passes through to CloudFormation, which defaults to encryption enabled.\n\nUsers affected by this issue could have CodeBuild S3 build logs stored using SSE-S3 (Amazon S3-managed keys, AES-256) rather than the AWS managed keys that CodeBuild applies by default. Since January 5, 2023, Amazon S3 automatically encrypts all new object uploads with SSE-S3, so logs written after that date remain encrypted at rest. However, logs written prior to that date to buckets that did not have default encryption configured at the time are potentially not encrypted at rest.\n\nImpacted versions: >= 1.75.0 and <= 2.252.0\n\n## Patches\n\nThis issue has been addressed in `aws-cdk-lib` version 2.253.0. Upgrade to the latest version and ensure any forked or derivative code is patched to incorporate the new fixes.\n\n## Workarounds\n\nUsers who are unable to immediately upgrade to version 2.253.0 should omit the `encrypted` property from their `S3LoggingOptions` configuration entirely. When the property is omitted, the value is not passed to CloudFormation, and CodeBuild applies its default behavior of encrypting build logs using AWS managed keys.\n\n## References\n\nIf you have any questions or comments about this advisory, contact AWS Security via our issue reporting page \\[1\\] or directly via email to [aws-security@amazon.com](mailto:aws-security@amazon.com). Please do not create a public GitHub issue.\n\n\\[1\\] <https://aws.amazon.com/security/vulnerability-reporting/>\n\n## Acknowledgement\n\nAWS thanks AISafe for collaborating on this issue through the coordinated disclosure process."
+     ],
+     [
+      "modified",
+      "date_before",
+      "2026-01-01"
+     ]
+    ],
+    [
+     [
+      "summary",
+      "exists",
+      null
+     ],
+     [
+      "references.0.type",
+      "exists",
+      null
+     ],
+     [
+      "references.0.url",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "summary",
+      "exists",
+      null
+     ],
+     [
+      "details",
+      "equals",
+      "## Summary\n\nThe AWS Cloud Development Kit (AWS CDK) is an open-source software development framework for defining cloud infrastructure in code and provisioning it through AWS CloudFormation. We identified an issue in which explicitly setting `encrypted: true` on the `S3LoggingOptions` property of an AWS CodeBuild project construct produces the opposite of the intended behavior, disabling encryption on CodeBuild build logs stored in S3.\n\n## Impact\n\nThe `S3LoggingOptions.encrypted` property in the `aws-codebuild` module uses positive polarity (`true` = encryption ON), but is mapped directly to the CloudFormation `S3LogsConfig.EncryptionDisabled` field, which uses negative polarity (`true` = encryption OFF). Because the value is not negated before being passed to CloudFormation, any explicit assignment produces inverted behavior:\n\n* Setting `encrypted: true` (intending encryption ON) causes CloudFormation to receive `EncryptionDisabled: true`, disabling encryption.\n\n* Setting `encrypted: false` (intending encryption OFF) causes CloudFormation to receive `EncryptionDisabled: false`, enabling encryption.\n\nUsers who omit the property entirely are not affected, as `undefined` passes through to CloudFormation, which defaults to encryption enabled.\n\nUsers affected by this issue could have CodeBuild S3 build logs stored using SSE-S3 (Amazon S3-managed keys, AES-256) rather than the AWS managed keys that CodeBuild applies by default. Since January 5, 2023, Amazon S3 automatically encrypts all new object uploads with SSE-S3, so logs written after that date remain encrypted at rest. However, logs written prior to that date to buckets that did not have default encryption configured at the time are potentially not encrypted at rest.\n\nImpacted versions: >= 1.75.0 and <= 2.252.0\n\n## Patches\n\nThis issue has been addressed in `aws-cdk-lib` version 2.253.0. Upgrade to the latest version and ensure any forked or derivative code is patched to incorporate the new fixes.\n\n## Workarounds\n\nUsers who are unable to immediately upgrade to version 2.253.0 should omit the `encrypted` property from their `S3LoggingOptions` configuration entirely. When the property is omitted, the value is not passed to CloudFormation, and CodeBuild applies its default behavior of encrypting build logs using AWS managed keys.\n\n## References\n\nIf you have any questions or comments about this advisory, contact AWS Security via our issue reporting page \\[1\\] or directly via email to [aws-security@amazon.com](mailto:aws-security@amazon.com). Please do not create a public GitHub issue.\n\n\\[1\\] <https://aws.amazon.com/security/vulnerability-reporting/>\n\n## Acknowledgement\n\nAWS thanks AISafe for collaborating on this issue through the coordinated disclosure process."
+     ],
+     [
+      "modified",
+      "date_before",
+      "2026-01-01"
+     ],
+     [
+      "database_specific.cwe_ids.0",
+      "exists",
+      null
+     ],
+     [
+      "details",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "sec-v2-9013",
+ "notes_for_annotators": "{\"family\": \"security-branching-het-18\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 2, \"false_mech\": true, \"one_branch\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-4w8p-x6g8-fv64": {
+   "database_specific": {
+    "cwe_ids": [
+     "CWE-918"
+    ]
+   },
+   "details": "calibreweb prior to version 0.6.16 contains a Server-Side Request Forgery (SSRF) vulnerability.",
+   "modified": "2024-11-19T19:42:14.341819Z",
+   "references": [
+    {
+     "type": "ADVISORY",
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-0339"
+    }
+   ],
+   "severity": [
+    {
+     "score": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
+    }
+   ],
+   "summary": "Server-Side Request Forgery in calibreweb"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-4w8p-x6g8-fv64.",
+ "seed": "GHSA-4w8p-x6g8-fv64",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

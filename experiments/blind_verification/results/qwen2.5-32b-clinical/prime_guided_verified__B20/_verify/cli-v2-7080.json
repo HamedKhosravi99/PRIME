@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7080",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "F",
+   "quote": "Children with carious primary anterior teeth.",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 225,
+   "completion_tokens": 29,
+   "latency_s": 2.126,
+   "raw": "The document specifies inclusion criteria for children, which directly contradicts the eligibility criteria for adults aged 18 or more. ANSWER: F"
+  }
+ ]
+}

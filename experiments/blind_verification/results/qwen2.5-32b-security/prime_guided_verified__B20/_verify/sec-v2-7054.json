@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7054",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "OpenStack Keystone 10.x through 16.x before 16.0.2, 17.x before 17.0.1, 18.x before 18.0.1, and 19.x before 19.0.1 allows information disclosure during account locking",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 283,
+   "completion_tokens": 31,
+   "latency_s": 2.388,
+   "raw": "The document specifies the affected package as \"OpenStack Keystone\" with detailed version ranges, thus naming the package by its registered name. ANSWER: T"
+  }
+ ]
+}

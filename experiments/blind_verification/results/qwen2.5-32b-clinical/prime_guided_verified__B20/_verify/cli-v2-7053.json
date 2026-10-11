@@ -1,0 +1,31 @@
+{
+ "instance": "cli-v2-7053",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Age: \u2265 18 years \u2264 50 years.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 1004,
+   "completion_tokens": 27,
+   "latency_s": 1.705,
+   "raw": "The inclusion criteria explicitly state an age range of \u2265 18 years, which confirms the restriction to adults. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "F",
+   "quote": "Male or female subjects who have given written informed consent.",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 999,
+   "completion_tokens": 24,
+   "latency_s": 1.927,
+   "raw": "The inclusion criteria specify both male and female subjects, thus not restricting enrollment to one sex only. ANSWER: F"
+  }
+ ]
+}

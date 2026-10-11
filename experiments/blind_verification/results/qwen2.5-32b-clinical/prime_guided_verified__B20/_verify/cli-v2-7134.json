@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7134",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Age: \\< 18 years having sleep study before.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 263,
+   "completion_tokens": 22,
+   "latency_s": 1.758,
+   "raw": "The document specifies exclusion of patients under 18 years old, establishing the condition. ANSWER: T"
+  }
+ ]
+}

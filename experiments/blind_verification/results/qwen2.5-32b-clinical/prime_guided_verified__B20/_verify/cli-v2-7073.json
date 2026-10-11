@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7073",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Patient has stable Type 2 diabetes mellitus at Visit 1.",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 234,
+   "completion_tokens": 29,
+   "latency_s": 2.401,
+   "raw": "The document does not mention any age restrictions, thus it is unclear if the eligibility criteria restrict enrollment to adults only. ANSWER: UNCLEAR"
+  }
+ ]
+}

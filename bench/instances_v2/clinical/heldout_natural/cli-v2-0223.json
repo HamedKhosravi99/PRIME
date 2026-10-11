@@ -1,0 +1,293 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2016-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT02199145"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2028-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT02199145"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"INTERVENTIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT02199145"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT02199145"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT02199145"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:false",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.healthyVolunteers",
+     "record_id": "NCT02199145"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT02199145"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2016-01-01"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2016-01-01"
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2028-01-01"
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ]
+    ],
+    [
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2016-01-01"
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2016-01-01"
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2028-01-01"
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ],
+     [
+      "protocolSection.eligibilityModule.healthyVolunteers",
+      "equals",
+      false
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-0223",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-hom-19\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": null, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT02199145": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "Membranous Nephropathy (MN) is an auto-immune kidney disease and a common cause of nephrotic syndrome. About 30% of MN patients progress to end-stage kidney disease (ESKD) while 30% undergo spontaneous remission. The phospholipase A2 receptor (PLA2R1) is the major auto-antigen in idiopathic MN. Anti-PLA2R1 autoantibodies are found during the active phase of MN. Predictors of disease progression include high titers of anti-PLA2R1 autoantibodies and serum creatinine levels at presentation, as well as decline in renal function during the first six months of follow-up. Investigators identified new prognostic factors in a cohort of 41 idiopathic MN patients with nephrotic syndrome and anti-PLA2R1 autoantibodies at the time of presentation. During a follow-up of at least 36 months, 21 patients had a persistent nephrotic syndrome (group A) and 20 showed partial or total remission (group R). We first measured the cross-reactivity of their sera at the time of presentation to human, rabbit and mouse recombinant PLA2R1 by western blot. All patients exhibited reactivity against human and rabbit PLA2R1, but only some of them did against mouse PLA2R1. These results suggest the presence of distinct epitopes that are differentially conserved among PLA2R1 orthologs.Investigators then set-up three parallel ELISAs using human, rabbit and mouse recombinant PLA2R1. All 41 MN patients showed activity in human and rabbit ELISAs at presentation but only 32 of them (78%) in mouse ELISA.They finally analyzed the association between anti-PLA2R1 titers at presentation in the different ELISAs and the subsequent clinical outcome. The mean anti-PLA2R1 activity was significantly different between group A and R in mouse ELISA but not in human and rabbit ELISA. Patients with anti-mouse PLA2R1 activity over 605 RU (relative unit)/ml showed a significantly lower survival without doubling of serum creatinine or ESKD , but patients in the highest tertile of anti-PLA2R1 activity in rabbit and human ELISA did not show a significant increased risk of renal failure progression. The results suggest that the specific detection of particular anti-PLA2R1 autoantibodies using the novel anti-mouse PLA2R1 ELISA can identify MN patients at risk for ESKD. The aim is to confirm these result on a prospective cohort."
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Adult patients\n* Patients with MN stade I-II confirmed by kidney biopsy\n* Patients with MDRD\\>30 ml/mn/1.73m2\n* Patients with anti-PLA2R1 antibodies\n* Effective Contraception for women of childbearing age\n\nExclusion Criteria:\n\n* Patients minors\n* Patients refusing to participate in the study\n* Patients with secondary MN (systemic Lupus, hepatitis B virus, hepatitis C virus or cancer)\n* Pregnant women: a urine pregnancy test will be performed for women of childbearing age. The results will be communicated to the patient by a doctor of his choice.\n* Persons deprived of liberty (administrative or judicial)\n* Persons under guardianship\n* People may not understand the research\n* Persons under guardianship, under judicial protection",
+     "healthyVolunteers": false,
+     "minimumAge": "18 Years"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2026-03-20",
+     "studyFirstSubmitDate": "2014-07-22"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT02199145.",
+ "seed": "NCT02199145",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

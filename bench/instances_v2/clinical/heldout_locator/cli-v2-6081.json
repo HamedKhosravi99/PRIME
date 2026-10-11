@@ -1,0 +1,363 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT05593380"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.statusModule.overallStatus"
+    ],
+    "what": "the NCT identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT05593380"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.identificationModule.officialTitle"
+    ],
+    "what": "the brief title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.statusVerifiedDate",
+     "record_id": "NCT05593380"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.statusModule.overallStatus"
+    ],
+    "what": "the date the status was last verified"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT05593380"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.identificationModule.officialTitle"
+    ],
+    "what": "the eligibility criteria text"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT05593380"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.identificationModule.officialTitle"
+    ],
+    "what": "the sex eligibility field"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E6",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT05593380"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.identificationModule.officialTitle"
+    ],
+    "what": "the brief title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT05593380"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.identificationModule.officialTitle"
+    ],
+    "what": "the brief summary"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ]
+    ],
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "cli-v2-6081",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-het-10\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 2, \"false_mech\": false, \"locator\": true, \"source_instance\": \"cli-v2-0081\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT05593380": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "Spontaneous cerebral hemorrhage (SICH) is a hemorrhage caused by the rupture of a blood vessel within the brain parenchyma that is non-traumatic. Its rapid onset and dangerous condition seriously threaten human health; it accounts for about 15% of strokes and 50% of stroke-related mortality. Hunan Province is recognized as one of the high incidence areas of cerebral hemorrhage in the world; according to statistics, the direct economic loss caused by cerebral hemorrhage in Hunan Province is more than 1 billion yuan per year, which should be paid great attention. A 30-day follow-up study of large-volume cerebral hemorrhage (defined as supratentorial hemorrhage greater than 30 ml, infratentorial greater than 5 ml, and thalamus and cerebellum greater than 15 ml) found that the morbidity and mortality rate of ICH with hemorrhage of 30-60 ml was as high as 44-74%, while the morbidity and mortality rate of ICH with hemorrhage of \\&lt;30 ml was 19% and that of \\&gt;60 ml was 91%. According to studies, the occurrence of hematoma occupancy and malignant cerebral edema in large-volume cerebral hemorrhage can lead to secondary malignant intracranial pressure elevation and subsequent secondary brain injury, which are the main factors of high morbidity and mortality and poor prognosis in patients with large-volume cerebral hemorrhage. Clinical monitoring and management is the key to treatment, and despite aggressive surgical treatment and anti-brain edema therapy, a large number of patients progress to malignant brain edema disease, leading to poor outcomes. This study aims to conduct a multicenter clinical trial in China investigating the role of invasive intracranial pressure (ICP) monitoring in managing patients with large-volume supratentorial intracerebral hemorrhage. The trial will evaluate whether ICP-guided treatment protocols for cerebral edema improve patient outcomes and generate evidence to support the clinical application of invasive ICP monitoring in this patient population."
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n1. Age \u226518 years old and Age \\<80 years old.\n2. Diagnosed of a supratentorial spontaneous intracerebral hemorrhage.\n3. Diagnosis of supratentorial large-volume cerebral hemorrhage by CT or other imaging and meeting the diagnostic criteria for large-volume cerebral hemorrhage(hemorrhage volume \u2265 30 mL of supratentorial cerebral parenchymal hematoma volume according to the Coniglobus formula on the first CT scan at onset).\n4. Participants were enrolled within 48 hours of symptom onset.\n5. The family signed the informed consent.\n\nExclusion Criteria:\n\n1. Traumatic cerebral hemorrhage, cerebral amyloid angiopathy(CAA), secondary cerebral hemorrhage due to other specific etiologies (aneurysm, vascular malformation, smoker's disease, coagulopathy, aneurysmal stroke, vasculitis, cerebral venous thrombosis, hemorrhagic cerebral infarction, etc.)\n2. The presence of fixed bilateral dilated pupils on admission, no recovery of pupils after initial dehydration treatment, and very poor survival\n3. Patients with extremely unstable vital signs after admission, with extremely poor prognosis and those considered non-viable, and patients whose families have abandoned follow-up treatment\n4. Patients who are pregnant or lactating.\n5. Patients with bilateral temporal skin ulceration, or subcutaneous hematoma in which monitoring electrode placement cannot be implemented\n6. The presence of other serious underlying diseases (intractable hypoxemia and circulatory failure with cardiopulmonary insufficiency that is difficult to correct by treatment, severe abnormal coagulation, severely reduced platelets, severe hepatic and renal insufficiency, combined neurodegenerative diseases, psychiatric diseases, autoimmune diseases, malignant tumors, thyroid diseases, etc.)\n7. The patient is agitated, coughing or choking too frequently, unable to be sedated or has difficulty in handling.\n8. Those with mRS score \\> 2 before this onset.\n9. Individuals unable to complete the follow-up phase of this trial due to psychiatric, cognitive, or emotional conditions;\n10. Family members decline to provide informed consent.\n\nExit criteria:\n\n1. Acute onset of other life-threatening illnesses identified as the primary cause of mortality;\n2. Participants who voluntarily withdraw from the study before completion;\n3. Participants deemed unsuitable for the trial's monitoring protocol post-enrollment;\n4. Participants requiring a modification of the treatment plan post-enrollment due to medical reasons, resulting in compromised monitoring feasibility or significant deviations in monitoring accuracy that undermine the integrity of the final analysis.\n\nElimination criteria\uff1a\n\n1. Participants who failed to record any data post-enrollment;\n2. Participants who did not receive per-protocol treatment post-enrollment, were discharged within 72 hours, and had their families voluntarily withdraw informed consent;\n3. Participants whose invasive intracranial pressure (ICP) monitoring probes shifted and were not promptly reinserted or calibrated, leading to excessive data errors precluding analysis;\n4. Participants not receiving the invasive intracranial pressure (ICP) monitoring module according to their assigned group.",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "Bleeding Intracerebral Hemorrhage With Early Invasive Intracranial Pressure Monitoring Trial",
+     "nctId": "NCT05593380",
+     "officialTitle": "The Impact of Invasive Intracranial Pressure Monitoring Guided Management on the Functional Outcomes of Patients With Supratentorial Large Volume Cerebral Hemorrhage: An Open Label, Randomized, Controlled, Multi-center Trial (BIATICH)"
+    },
+    "statusModule": {
+     "overallStatus": "COMPLETED",
+     "statusVerifiedDate": "2025-02"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT05593380.",
+ "seed": "NCT05593380",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

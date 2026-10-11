@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7135",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "F",
+   "quote": "Male and female children ages 7 through 17 years of age at the start of the Screening Period.",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 418,
+   "completion_tokens": 33,
+   "latency_s": 2.432,
+   "raw": "The inclusion criteria specify ages 7 through 17 years, which does not meet the requirement for adults aged 18 or older. ANSWER: F"
+  }
+ ]
+}

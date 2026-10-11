@@ -1,0 +1,273 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "product_description",
+     "record_id": "D-1168-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "reason_for_recall",
+     "record_id": "D-1168-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "recalling_firm",
+     "record_id": "D-1168-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:20250825",
+    "params": {
+     "field_path": "recall_initiation_date",
+     "record_id": "D-1168-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "distribution_pattern",
+     "record_id": "D-1168-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "product_quantity",
+     "record_id": "D-1168-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:20250927",
+    "params": {
+     "field_path": "report_date",
+     "record_id": "D-1168-2023"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "product_description",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The recall is identified with a stated classification (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "product_description",
+      "exists",
+      null
+     ],
+     [
+      "reason_for_recall",
+      "exists",
+      null
+     ],
+     [
+      "recalling_firm",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The recall is action-ready: identified, classified, with product description, reason, and status populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "product_description",
+      "exists",
+      null
+     ],
+     [
+      "reason_for_recall",
+      "exists",
+      null
+     ],
+     [
+      "recalling_firm",
+      "exists",
+      null
+     ],
+     [
+      "recall_initiation_date",
+      "numeric_le",
+      20250825
+     ],
+     [
+      "distribution_pattern",
+      "exists",
+      null
+     ],
+     [
+      "product_quantity",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The recall satisfies the checked completeness protocol: action-ready per the inspected fields, with consistent dates and populated distribution and firm fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "drugsafety_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "dru-v2-0099",
+ "notes_for_annotators": "{\"family\": \"drugsafety-nested-hom-07\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 3, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "D-1168-2023": {
+   "distribution_pattern": "Distributed nationwide to 100 consignees. Please refer to consignee list.",
+   "product_description": "BD ChloraPrep Clear, 2% w/v chlorhexidine gluconate (CHG) and 70% v/v isopropyl alcohol (IPA) Sterile Solution, 0.03mL (1 ml) each, 60 applicators in carton, applicator is sterile if package is intact. CareFusion 213, LLC, El Paso, TX 79912, subsidiary of Becton, Dickinson and Co., NDC 54365-400-31 REF 930480  Product is packaged in the following manner: There is one (1) sterile applicator (sponge) per pouch. Each inner carton contains sixty (60) pouches. There are four (4) inner cartons per shipping case (total of 240 pouches per case).",
+   "product_quantity": "398,160 cartons",
+   "reason_for_recall": "Stability data does not support expiry: Shelf-life of the impacted lots of BD ChloraPrep\" Clear 1 mL Applicator cannot be substantiated beyond 12-months although labeled with 36-month expiry. Stability studies indicate that the impacted lots, if stored at 30\u00bfC/75% relative humidity continuously beyond 12 months, may exhibit growth of Aspergillus penicillioides.",
+   "recall_initiation_date": "20230825",
+   "recalling_firm": "CareFusion 213, LLC",
+   "report_date": "20230927"
+  }
+ },
+ "scope": "The single named openFDA enforcement record, as retrieved and embedded; no external lookups. Record identifier: D-1168-2023.",
+ "seed": "D-1168-2023",
+ "user_prompt": "Is this recall record complete and correctly classified for downstream pharmacy action?",
+ "variant": "base"
+}

@@ -1,0 +1,291 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "details",
+     "record_id": "GHSA-5h3g-px23-w6vw"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"PyPI\"",
+    "params": {
+     "field_path": "affected.0.package.ecosystem",
+     "record_id": "GHSA-5h3g-px23-w6vw"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:true",
+    "params": {
+     "field_path": "database_specific.github_reviewed",
+     "record_id": "GHSA-5h3g-px23-w6vw"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.cwe_ids.0",
+     "record_id": "GHSA-5h3g-px23-w6vw"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "severity.0.score",
+     "record_id": "GHSA-5h3g-px23-w6vw"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "schema_version",
+     "record_id": "GHSA-5h3g-px23-w6vw"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.url",
+     "record_id": "GHSA-5h3g-px23-w6vw"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ],
+     [
+      "database_specific.github_reviewed",
+      "equals",
+      true
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ],
+     [
+      "database_specific.github_reviewed",
+      "equals",
+      true
+     ],
+     [
+      "database_specific.cwe_ids.0",
+      "exists",
+      null
+     ],
+     [
+      "severity.0.score",
+      "exists",
+      null
+     ],
+     [
+      "schema_version",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "sec-v2-0238",
+ "notes_for_annotators": "{\"family\": \"security-nested-hom-07\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": null, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-5h3g-px23-w6vw": {
+   "affected": [
+    {
+     "package": {
+      "ecosystem": "PyPI"
+     }
+    }
+   ],
+   "database_specific": {
+    "cwe_ids": [
+     "CWE-22"
+    ],
+    "github_reviewed": true
+   },
+   "details": "### Summary\n\nThe `fileID` field from `Manifest.db` (a SQLite database inside iOS backups, generated by the device) is used directly in filesystem path construction without validation. This affects two commands through a shared code path:\n\n- **`mvt-ios decrypt-backup`** (`decrypt.py`): `file_id` is used to construct both read source and write destination paths. Traversal sequences in `file_id` cause decrypted content to be written to an arbitrary location on the analyst's filesystem.\n- **`mvt-ios check-backup`** (via `_get_backup_file_from_id()` in `ios/modules/base.py`): the same unvalidated `fileID` resolves to files outside the backup directory, which are then opened and parsed. Parsed contents flow into JSON results and CSV timeline.\n\n### Impact\n\n**File write (decrypt-backup):** An adversary delivering a crafted iOS backup can cause attacker controlled content to be written to arbitrary paths writable by the analyst process. This could be leveraged for code execution via shell profile modification or SSH key injection. Severity is assessed as Moderate because exploitation requires a specifically crafted malicious bundle to be parsed by the\nanalyst. There are trust mitigations between stakeholders involved in the handoff of the sample that reduce the likelihood of this scenario.\n\n**File read (check-backup):** An adversary can force MVT to open and parse files outside the backup directory. Practical exploitation is reduced as it requires the attacker to know or guess the analyst\u2019s directory layout for cross-case targeting, and the traversed file from the host must be a valid SQLite database or plist whose schema matches what the specific MVT module expects.\n\n### Patched version\n[2026.5.12](https://github.com/mvt-project/mvt/releases/tag/v2026.5.12)\n\n### Credits\nThis issue was identified during a security assessment conducted by 0xche.",
+   "references": [
+    {
+     "url": "https://github.com/mvt-project/mvt/security/advisories/GHSA-5h3g-px23-w6vw"
+    }
+   ],
+   "schema_version": "1.7.5",
+   "severity": [
+    {
+     "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N"
+    }
+   ]
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-5h3g-px23-w6vw.",
+ "seed": "GHSA-5h3g-px23-w6vw",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

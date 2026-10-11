@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7101",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "* 18 years or older",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 225,
+   "completion_tokens": 24,
+   "latency_s": 1.813,
+   "raw": "The inclusion criteria explicitly state \"18 years or older,\" which restricts enrollment to adults. ANSWER: T"
+  }
+ ]
+}

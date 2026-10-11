@@ -1,0 +1,305 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT01390259"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2013-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT01390259"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT01390259"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"ALL-alt\"",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT01390259"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT01390259"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT01390259"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_after:\"1980-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT01390259"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:false",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.healthyVolunteers",
+     "record_id": "NCT01390259"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2013-01-01"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2013-01-01"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "equals",
+      "ALL-alt"
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_after",
+      "1980-01-01"
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "cli-v2-0139",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-het-06\", \"topology\": \"nested\", \"cost\": \"het\", \"target_level\": 2, \"false_mech\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT01390259": {
+   "protocolSection": {
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* 12 years of age and up to and including 18 years of age.\n* Have type 1 diabetes mellitus as defined by American Diabetes Association criteria or judgment of physician for at least 1 year (including those who may also be treated with metformin).\n* Use of an insulin pump\n* If on antihypertensive, thyroid, anti-depressant or lipid lowering medication, have stability on the medication for at least 2 months prior to enrollment in the study\n* Willingness to use lispro (Humalog) insulin for the duration of the inpatient study\n* Demonstration of proper mental status and cognition for the study\n* Willingness to stop using any dietary supplements for two weeks prior to admission and for the duration of their participation\n* HemoglobinA1c \\< 10.0\n* A score of 2 or greater on the hypoglycemia unawareness scale, see Attachment A\n* Tanner Stage II or greater (not pre-pubertal) on screening physical exam\n* Body weight of 30 kg or more at screening\n* BMI must be under 95th percentile for age based on published BMI reference standards\n\nExclusion Criteria:\n\n* Age \\<12 or \\>18\n* Pregnancy\n* Hematocrit \\<37% (females); \\<36% (males)\n* HemoglobinA1c \u2265 10.0\n* Any symptomatic coronary artery disease, or a history of congenital heart abnormalities.\n* Score of less than 2 on the hypoglycemia unawareness scale\n* Tanner Stage I on screening physical exam\n* Use of a medication that significantly lowers heart rate (beta blockers, reserpine, guanethidine, methyldopa, clonidine, cimetidine, digitalis, calcium channel blockers, amiodarone, antiarrythmic drugs, or lithium)\n* Congestive heart failure\n* History of a cerebrovascular event\n* Use of a medication that significantly impacts glucose metabolism (oral steroids)\n* Atrial fibrillation\n* Uncontrolled hypertension (resting blood pressure \\>140/90)\n* History of a systemic or deep tissue infection with methicillin-resistant staph aureus or Candida albicans\n* Use of a device that may pose electromagnetic compatibility issues and/or radiofrequency interference with the FreeStyle NavigatorTM CGM or DexCom Seven\u00ae (implantable cardioverter-defibrillator, electronic pacemaker, neurostimulator, intrathecal pump, and cochlear implants)\n* Active enrollment in another clinical trial\n* Allergy or adverse reaction to lispro insulin\n* Known adrenal gland problem, pancreatic tumor, or insulinoma\n* Current alcohol abuse by patient history, substance abuse by patient history, or severe mental illness\n* Retinopathy and renal failure\n* Uncontrolled anxiety or panic disorder\n* Known bleeding diathesis or dyscrasia\n* Renal insufficiency (creatinine \\>1.5)\n* Any comorbid condition affecting glucose metabolism\n* Body weight of less than 30 kg at screening\n* BMI equal to or greater than 95th percentile for age based on published BMI reference standards. See Appendix B.\n* Asthma or exercise -induced asthma\n* Any mobility-restrictive condition\n* Children who are wards of state or at high risk for becoming wards of state",
+     "healthyVolunteers": false,
+     "minimumAge": "12 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "Hypoglycemia Prevention After Exercise in Adolescent T1DM Patients Using a Control to Range System",
+     "officialTitle": "Hypoglycemia Prevention After Exercise in Adolescent T1DM Patients Using a Control to Range System"
+    },
+    "statusModule": {
+     "studyFirstSubmitDate": "2011-07-06"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT01390259.",
+ "seed": "NCT01390259",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

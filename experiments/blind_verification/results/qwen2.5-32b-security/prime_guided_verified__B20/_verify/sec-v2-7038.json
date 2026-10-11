@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7038",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "tensorflow as tf",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 578,
+   "completion_tokens": 33,
+   "latency_s": 1.892,
+   "raw": "The document mentions \"TensorFlow\" multiple times, including in the context of the affected versions, which is the registered name of the package. ANSWER: T"
+  }
+ ]
+}

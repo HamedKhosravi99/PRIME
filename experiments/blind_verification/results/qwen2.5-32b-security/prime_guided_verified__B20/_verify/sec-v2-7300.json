@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7300",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "redis-py before 4.5.3, as used in ChatGPT and other products",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 298,
+   "completion_tokens": 23,
+   "latency_s": 1.691,
+   "raw": "The document establishes the condition because it names \"redis-py\" as the affected package. ANSWER: T"
+  }
+ ]
+}

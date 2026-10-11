@@ -1,0 +1,386 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT02706717"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.eligibilityModule.minimumAge"
+    ],
+    "what": "the NCT identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT02706717"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.identificationModule.briefTitle"
+    ],
+    "what": "the brief title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.statusVerifiedDate",
+     "record_id": "NCT02706717"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.statusModule.statusVerifiedDate"
+    ],
+    "what": "the date the status was last verified"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2018-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT02706717"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.studyFirstSubmitDate",
+     "protocolSection.eligibilityModule.healthyVolunteers",
+     "protocolSection.statusModule.lastUpdateSubmitDate"
+    ],
+    "what": "the date the registration was first submitted"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT02706717"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.eligibilityModule.eligibilityCriteria"
+    ],
+    "what": "the brief summary"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"ALL-alt\"",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT02706717"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.eligibilityModule.minimumAge"
+    ],
+    "what": "the sex eligibility field"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT02706717"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.eligibilityModule.eligibilityCriteria"
+    ],
+    "what": "the brief title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT02706717"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.statusModule.overallStatus"
+    ],
+    "what": "the official title"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ]
+    ],
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2018-01-01"
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "equals",
+      "ALL-alt"
+     ],
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "cli-v2-6053",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-het-12\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 2, \"false_mech\": true, \"locator\": true, \"source_instance\": \"cli-v2-0053\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT02706717": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "The purpose of the study was to evaluate whether the probiotic Visbiome Extra Strength reduces inflammation in HIV-infected men and women when compared to a placebo (inactive medication like a dummy pill). The study evaluated whether taking Visbiome Extra Strength by mouth for 24 weeks was safe and well-tolerated for HIV-infected persons on antiretroviral therapy (ART). Probiotics are germs such as yeast or bacteria that are found in food and supplements that are used to improve the health of the digestive system. Many people refer to probiotics as \"helpful bacteria.\" These bacteria live in the body and help the body work normally. In some medical conditions, including HIV infection, helpful bacteria are replaced with bacteria that can change the normal intestinal function and increase inflammation. The investigators tested whether giving a probiotic restored normal intestinal function and decreased inflammation."
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n\\- HIV-1 infection, documented by any licensed rapid HIV test or HIV enzyme or chemiluminescence immunoassay (E/CIA) test kit at any time prior to study entry and confirmed by a licensed Western blot or a second antibody test by a method other than the initial rapid HIV and/or E/CIA, or by HIV-1 antigen, plasma HIV-1 RNA viral load.\n\nNOTE: The term \"licensed\" refers to a US FDA-approved kit.\n\nWHO (World Health Organization) and CDC (Centers for Disease Control and Prevention) guidelines mandate that confirmation of the initial test result must use a test that is different from the one used for the initial assessment. A reactive initial rapid test should be confirmed by either another type of rapid assay or an E/CIA that is based on a different antigen preparation and/or different test principle (eg, indirect versus competitive), or a Western blot or a plasma HIV-1 RNA viral load.\n\n\\- Currently on continuous antiretroviral therapy (ART) for \u226548 weeks prior to study entry with no change in the ART regimen within the 24 weeks prior to study entry except as noted below.\n\nNOTE A: Continuous ART is defined as continuous ART for the 48-week period prior to study entry with no ART interruption longer than 7 consecutive days.\n\nNOTE B: Modifications of ART during the 24 weeks prior to study entry are permitted in certain circumstances. For example, the change in formulation (eg, from standard formulation to fixed-dose combination including ART modifications switching from ritonavir- to cobicistat-boosted protease inhibitors or from tenofovir disoproxil fumarate to tenofovir alafenamide) is allowed within 24 weeks prior to study entry. A within-class, single-drug substitution (eg, switch from nevirapine to efavirenz or from atazanavir to darunavir) is allowed within 24 weeks prior to study entry, with the exception of a switch between any other NRTI to/from abacavir. No other changes in ART within the 24 weeks prior to study entry are permitted.\n\n* No plan to change ART regimen for the study duration.\n* Screening CD4+ cell count \\>200 cells/mm3 obtained within 45 days prior to study entry by any US laboratory that has a CLIA certification or its equivalent.\n* Screening HIV-1 RNA levels \\<50 copies/mL using a FDA-approved assay performed by any laboratory that has a CLIA certification or its equivalent within 45 days prior to study entry.\n* HIV-1 RNA levels below the limit of quantification using a FDA-approved assay with a quantification limit of 50 copies/mL or lower for at least 48 weeks prior to study entry performed by any laboratory that has a CLIA certification or its equivalent.\n\nNOTE: Single determinations that are between the assay quantification limit and 500 copies/mL (ie, \"blips\") are allowed as long as the preceding and subsequent determinations are below the level of quantification. The screening value may serve as the subsequent undetectable value following a blip.\n\n* The following laboratory values obtained within 45 days prior to entry by any US laboratory that has a CLIA certification or its equivalent:\n\n  * Absolute neutrophil count (ANC) \u22651000/mm3\n  * Hemoglobin \u226510.0 g/dL for men and 9.0 g/dL for women\n  * Platelet count \u226550,000/mm3\n  * Aspartate aminotransferase (AST) (SGOT) \u22645 x upper limit normal (ULN)\n  * Alanine aminotransferase (ALT) (SGPT) \u22645 x ULN\n  * Alkaline phosphatase \u22645 x upper limit normal ULN\n  * Total bilirubin \u22642.5 x ULN (if on atazanavir \u22645 x ULN)\n  * Calculated creatinine clearance (CrCl) \\>60 mL/min, as estimated by the Cockcroft-Gault equation.\n* For females of reproductive potential, negative serum or urine pregnancy test within 45 days prior to entry by any US clinic or laboratory that has a CLIA certification or its equivalent, or is using a point-of-care (POC)/ CLIA-waived test, or at any network-approved non-US laboratory or clinic that operates in accordance with Good Clinical Laboratory Practices (GCLP) and participates in appropriate external quality assurance programs.\n* If participating in sexual activity that could lead to pregnancy, the female study participant must be willing to use a contraceptive while receiving protocol-specified medication. At least one of the following methods MUST be used:\n\n  * Condoms (male or female), with or without a spermicidal agent\n  * Diaphragm or cervical cap with spermicide\n  * Intrauterine device (IUD)\n  * Hormone-based contraceptive\n* Ability and willingness of participant or legal guardian/representative to provide informed consent.\n\nExclusion Criteria:\n\n\\- Initiation of ART during acute HIV infection.\n\nNOTE: Participants who initiate ART within 6 months of HIV seroconversion are considered to have been initiated during acute infection and are excluded.\n\n\\- Receipt of antibiotic therapy within 60 days prior to study entry.\n\nNOTE: Antibiotics for opportunistic infection prophylaxis are exclusionary.\n\n* Known allergy/sensitivity or any hypersensitivity to components of Visbiome Extra Strength or its formulation.\n* Use of investigational therapies or investigational vaccines within 90 days prior to study entry.\n* Non-investigational vaccinations within 2 weeks prior to study entry.\n* Active drug or alcohol use or dependence that in the opinion of the site investigator would interfere with adherence to study requirements.\n* Serious illness requiring systemic treatment and/or hospitalization within 30 days prior to entry.\n* History of positive HCV antibody with detectable HCV RNA in plasma within 48 weeks prior to study entry.\n\nNOTE: Persons with positive HCV Ab but negative plasma HCV RNA are allowed to participate. Sites must document negative HCV RNA within 24 weeks of study entry.\n\n* History of positive HBsAg within 48 weeks prior to study entry.\n* Liver cirrhosis, history of inflammatory bowel disease, total colectomy, colon or rectal anastomosis, bowel resection, or current colostomy.\n* Current diagnosis of diabetes.\n* Either breastfeeding or pregnant within 24 weeks prior to study entry.\n* OIs within 45 days prior to study entry.\n* Use of any of the following medications/products for more than 3 consecutive days within the 60 days prior to study entry:\n\n  * Immunosuppressives (eg, azathioprine, corticosteroids greater than 20 mg per day \\[physiologic replacement doses are allowed\\], cyclosporine, mycophenolate, intravenous immunoglobulin (IVIG), interferon, sirolimus, sulfasalazine, tacrolimus).\n  * Immune modulators (eg, cytokines \\[eg, IL-2\\], granulocyte colony stimulating factor, growth hormone, tumor necrosis factor antagonists, thalidomide).\n  * Antineoplastic agents (except for topical agents for skin cancer).\n  * Probiotics and prebiotics (supplements and products).\n\nNOTE: Yogurt with live cultures is allowed.\n\n* History of lactose intolerance or milk allergy.\n* Any episode of acute or persistent diarrhea within 60 days prior to study entry.\n\nNOTES:\n\n1. Diarrhea is defined as three or more stools per day that are liquid/loose/watery and will take the shape of a container. If the duration of loose stools meeting this criterion definition is greater than 30 days, this is chronic diarrhea and is not exclusionary.\n2. Acute diarrhea is defined as 3-14 day duration.\n3. Persistent diarrhea is defined as 15-30 day duration.\n\n   * Weight loss or gain of more than 25 pounds in the 24 weeks prior to study entry.",
+     "healthyVolunteers": false,
+     "minimumAge": "18 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "Effects of the Probiotic Visbiome Extra Strength on Gut Microbiome & Immune Activation Markers",
+     "nctId": "NCT02706717",
+     "officialTitle": "Safety, Tolerability, and Effects of the Probiotic Visbiome Extra Strength on Gut Microbiome and Immune Activation Markers in HIV-Infected Participants on Suppressive Antiretroviral Therapy: A Phase II Study"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2019-12-18",
+     "overallStatus": "COMPLETED",
+     "statusVerifiedDate": "2019-12",
+     "studyFirstSubmitDate": "2016-03-08"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT02706717.",
+ "seed": "NCT02706717",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

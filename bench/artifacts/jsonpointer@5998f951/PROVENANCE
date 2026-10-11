@@ -1,0 +1,17 @@
+name: jsonpointer
+source_url: https://github.com/stefankoegl/python-json-pointer
+commit: 5998f951dcc5ace60f67f35afe6778c445401a07
+ref_cloned: default HEAD
+clone_date: 2026-07-28
+license_file: LICENSE.txt
+license_first_line: Copyright (c) 2011 Stefan Kögl <stefan@skoegl.net>
+size: 112K
+test_command: python3 -m pytest -q (cwd=repo root)
+environment: 3.9.6, pytest
+test_exit_code: 5
+test_result_line: no tests ran in 0.00s
+caveat: the suite lives in tests.py, which does not match pytest's default
+  test_*.py/*_test.py discovery pattern, so an unscoped `pytest -q` collects
+  nothing (exit 5). Explicitly targeted, it collects and passes:
+subset_results (verified):
+  - python3 -m pytest -q tests.py -> 23 passed ; exit code 0

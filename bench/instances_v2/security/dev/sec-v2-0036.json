@@ -1,0 +1,313 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "F",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Mercurial vulnerable to arbitrary code execution when converting Git repos\"",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-65pg-qhhw-mxwg"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "details",
+     "record_id": "GHSA-65pg-qhhw-mxwg"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"PyPI\"",
+    "params": {
+     "field_path": "affected.0.package.ecosystem",
+     "record_id": "GHSA-65pg-qhhw-mxwg"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:true",
+    "params": {
+     "field_path": "database_specific.github_reviewed",
+     "record_id": "GHSA-65pg-qhhw-mxwg"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.cwe_ids.0",
+     "record_id": "GHSA-65pg-qhhw-mxwg"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "aliases.0",
+     "record_id": "GHSA-65pg-qhhw-mxwg"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "details",
+     "record_id": "GHSA-65pg-qhhw-mxwg"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.type",
+     "record_id": "GHSA-65pg-qhhw-mxwg"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "summary",
+      "equals",
+      "Mercurial vulnerable to arbitrary code execution when converting Git repos"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "summary",
+      "equals",
+      "Mercurial vulnerable to arbitrary code execution when converting Git repos"
+     ],
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "summary",
+      "equals",
+      "Mercurial vulnerable to arbitrary code execution when converting Git repos"
+     ],
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ],
+     [
+      "database_specific.github_reviewed",
+      "equals",
+      true
+     ],
+     [
+      "database_specific.cwe_ids.0",
+      "exists",
+      null
+     ],
+     [
+      "aliases.0",
+      "exists",
+      null
+     ],
+     [
+      "details",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "sec-v2-0036",
+ "notes_for_annotators": "{\"family\": \"security-nested-het-02\", \"topology\": \"nested\", \"cost\": \"het\", \"target_level\": 0, \"false_mech\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-65pg-qhhw-mxwg": {
+   "affected": [
+    {
+     "package": {
+      "ecosystem": "PyPI"
+     }
+    }
+   ],
+   "aliases": [
+    "CVE-2026-45397"
+   ],
+   "database_specific": {
+    "cwe_ids": [
+     "CWE-306"
+    ],
+    "github_reviewed": true
+   },
+   "details": "**Vulnerability Type:** Information Disclosure / Missing Authentication  \n**Severity:** Medium  \n**Component:** `backend/open_webui/routers/retrieval.py` \u2014 `get_status()` (`GET /`)  \n**Affected Endpoint:** `GET /api/v1/retrieval/`  \n**Affected Version:** Open WebUI `main` branch \u2014 confirmed unpatched through **v0.9.2**  \n**Authentication Required:** None \u2014 internet-facing with zero credentials  \n**CVSSv3.1 Score:** 5.3 (AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N)\n\n---\n\n## Summary\n\n`GET /api/v1/retrieval/` returns live RAG pipeline configuration to any unauthenticated HTTP client. No `Authorization` header, cookie, or API key is required. Every adjacent endpoint on the same router (`/embedding`, `/config`) is correctly guarded by `get_admin_user` making this a targeted omission.\n\n---\n\n## Root Cause\n\n`backend/open_webui/routers/retrieval.py:262`\n\n```python\n@router.get('/')\nasync def get_status(request: Request):   # \u2190 no Depends(get_verified_user)\n    return {\n        'status': True,\n        'CHUNK_SIZE': request.app.state.config.CHUNK_SIZE,\n        'CHUNK_OVERLAP': request.app.state.config.CHUNK_OVERLAP,\n        'RAG_TEMPLATE': request.app.state.config.RAG_TEMPLATE,\n        'RAG_EMBEDDING_ENGINE': request.app.state.config.RAG_EMBEDDING_ENGINE,\n        'RAG_EMBEDDING_MODEL': request.app.state.config.RAG_EMBEDDING_MODEL,\n        'RAG_RERANKING_MODEL': request.app.state.config.RAG_RERANKING_MODEL,\n        'RAG_EMBEDDING_BATCH_SIZE': request.app.state.config.RAG_EMBEDDING_BATCH_SIZE,\n        'ENABLE_ASYNC_EMBEDDING': request.app.state.config.ENABLE_ASYNC_EMBEDDING,\n        'RAG_EMBEDDING_CONCURRENT_REQUESTS': request.app.state.config.RAG_EMBEDDING_CONCURRENT_REQUESTS,\n    }\n```\n\nCompare with every adjacent endpoint on the same router:\n\n```python\n@router.get('/embedding')\nasync def get_embedding_config(request: Request, user=Depends(get_admin_user)):  # \u2705\n\n@router.get('/config')\nasync def get_rag_config(request: Request, user=Depends(get_admin_user)):        # \u2705\n```\n\n---\n\n## Proof Of Concept \u2014 No Token Required\n\n```bash\ncurl -s http://TARGET/api/v1/retrieval/\n```\n\n```json\n{\n  \"status\": true,\n  \"CHUNK_SIZE\": 1000,\n  \"CHUNK_OVERLAP\": 100,\n  \"RAG_TEMPLATE\": \"### Task:\\nRespond to the user query using the provided context...\\n<context>\\n{{CONTEXT}}\\n</context>\",\n  \"RAG_EMBEDDING_ENGINE\": \"\",\n  \"RAG_EMBEDDING_MODEL\": \"sentence-transformers/all-MiniLM-L6-v2\",\n  \"RAG_RERANKING_MODEL\": \"\",\n  \"RAG_EMBEDDING_BATCH_SIZE\": 1,\n  \"ENABLE_ASYNC_EMBEDDING\": true,\n  \"RAG_EMBEDDING_CONCURRENT_REQUESTS\": 0\n}\n```\n\n---\n\n## Disclosed Information and Its Value to an Attacker\n\n| Field | What it reveals |\n|---|---|\n| `RAG_EMBEDDING_ENGINE` | Backend type (OpenAI, Ollama, Azure, etc.) |\n| `RAG_EMBEDDING_MODEL` | Exact model name \u2014 reveals embedding model |\n| `RAG_RERANKING_MODEL` | Reranker in use \u2014 reveals reranker |\n| `RAG_TEMPLATE` | **RAG template** \u2014 exposes the RAG template |\n| `CHUNK_SIZE` / `CHUNK_OVERLAP` | Chunking parameters \u2014 enables exact reconstruction of how documents are split and retrieved |\n\n---\n\n## Attack Scenario\n\n1. Attacker sends one unauthenticated HTTP GET to `/api/v1/retrieval/`.\n2. Response reveals the embedding model and chunking parameters.\n3. Attacker uses the exact chunk size/overlap to craft RAG poisoning payloads that are guaranteed to be retrieved.\n\n---\n\n## Impact\n\n1. **RAG template disclosure**\n2. **Infrastructure fingerprinting** \u2014 embedding engine and model name reveal the AI stack to an internet scanner\n3. **RAG attack surface mapping** \u2014 chunk parameters enable precise calculation of retrieval boundaries\n4. **Zero-effort recon** \u2014 no brute force, no credentials, no rate-limit concern. Single request from any IP.\n\n---\n\n## Recommended Fix\n\nAdd `get_verified_user` dependency (or `get_admin_user` for stricter control):\n\n```python\n# BEFORE (vulnerable)\n@router.get('/')\nasync def get_status(request: Request):\n\n\n# AFTER\n@router.get('/')\nasync def get_status(request: Request, user=Depends(get_verified_user)):\n```",
+   "references": [
+    {
+     "type": "WEB"
+    }
+   ],
+   "summary": "Open WebUI Vulnerable to Unauthenticated RAG Configuration Disclosure"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-65pg-qhhw-mxwg.",
+ "seed": "GHSA-65pg-qhhw-mxwg",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

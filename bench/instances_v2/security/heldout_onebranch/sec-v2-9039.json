@@ -1,0 +1,319 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "affected.0.package.name",
+     "record_id": "GHSA-22fp-mf44-f2mq"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"OpenStack Keystone allows information disclosure during account locking\"",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-22fp-mf44-f2mq"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "details",
+     "record_id": "GHSA-22fp-mf44-f2mq"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"PyPI\"",
+    "params": {
+     "field_path": "affected.0.package.ecosystem",
+     "record_id": "GHSA-22fp-mf44-f2mq"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.severity",
+     "record_id": "GHSA-22fp-mf44-f2mq"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.type",
+     "record_id": "GHSA-22fp-mf44-f2mq"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-22fp-mf44-f2mq"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "schema_version",
+     "record_id": "GHSA-22fp-mf44-f2mq"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ],
+     [
+      "summary",
+      "equals",
+      "OpenStack Keystone allows information disclosure during account locking"
+     ],
+     [
+      "details",
+      "exists",
+      null
+     ]
+    ],
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ],
+     [
+      "database_specific.severity",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ],
+     [
+      "summary",
+      "equals",
+      "OpenStack Keystone allows information disclosure during account locking"
+     ],
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "references.0.type",
+      "exists",
+      null
+     ],
+     [
+      "summary",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "sec-v2-9039",
+ "notes_for_annotators": "{\"family\": \"security-branching-het-10\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 2, \"false_mech\": true, \"one_branch\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-22fp-mf44-f2mq": {
+   "affected": [
+    {
+     "package": {
+      "ecosystem": "PyPI",
+      "name": "youtube-dl"
+     }
+    }
+   ],
+   "database_specific": {
+    "severity": "HIGH"
+   },
+   "details": "#### Description\nThis advisory follows the security advisory [GHSA-79w7-vh3h-8g4j published by the _yt-dlp/yt-dlp_ project](https://github.com/yt-dlp/yt-dlp/security/advisories/GHSA-79w7-vh3h-8g4j) to aid remediation of the issue in the _ytdl-org/youtube-dl_ project.\n\n### Vulnerability\n_youtube-dl_ does not limit the extensions of downloaded files, which could lead to arbitrary filenames being created in the download folder (and path traversal on Windows). \n\n### Impact\nSince _youtube-dl_ also reads config from the working directory (and, on Windows, executables will be executed from the _youtube-dl_ directory by default) the vulnerability could allow the unwanted execution of local code, including downloads masquerading as, eg, subtitles.\n\n### Patches\nThe versions of _youtube-dl_ listed as _Patched_ remediate this vulnerability by disallowing path separators and whitelisting allowed extensions. As a result, some very uncommon extensions might not get downloaded.\n\n**Master code d42a222 or later and nightly builds tagged 2024-07-03 or later** contain the remediation.\n\n### Workarounds\nAny/all of the below considerations may limit exposure in case it is necessary to use a vulnerable version\n* have `.%(ext)s` at the end of the output template\n* download from websites that you trust\n* do not download to a directory within the executable search `PATH` or other sensitive locations, such as your user directory or system directories\n* in Windows versions that support it, set [`NoDefaultCurrentDirectoryInExePath`](https://stackoverflow.com/a/50118548) to prevent the _cmd_ shell's executable search adding the default directory before `PATH`\n* consider that the path traversal vulnerability as a result of resolving `non_existent_dir\\..\\..\\target` does not exist in Linux or macOS\n* ensure the extension of the media to download is a common video/audio/... one (use `--get-filename`)\n* omit any of the subtitle options (`--write-subs`/` --write-srt`, `--write-auto-subs`/`--write-automatic-subs`, `--all-subs`).\n\n### References\n* [GHSA-79w7-vh3h-8g4j](https://github.com/yt-dlp/yt-dlp/security/advisories/GHSA-79w7-vh3h-8g4j)\n* https://github.com/ytdl-org/youtube-dl/pull/32830",
+   "references": [
+    {
+     "type": "WEB"
+    }
+   ],
+   "schema_version": "1.7.3",
+   "summary": "youtube-dl vulnerable to file system modification and RCE through improper file-extension sanitization"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-22fp-mf44-f2mq.",
+ "seed": "GHSA-22fp-mf44-f2mq",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

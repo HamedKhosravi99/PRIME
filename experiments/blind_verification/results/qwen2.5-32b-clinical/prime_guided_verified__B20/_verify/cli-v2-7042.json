@@ -1,0 +1,31 @@
+{
+ "instance": "cli-v2-7042",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "* Disease duration of more than 14 days\uff0c less than 1 year",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 233,
+   "completion_tokens": 17,
+   "latency_s": 0.976,
+   "raw": "The document does not mention any age restrictions for eligibility. ANSWER: UNCLEAR"
+  },
+  {
+   "attempt": 2,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "First-time occurrence of stroke confirmed by computed tomography or magnetic resonance imagingClinical diagnosis of stroke",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": false,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "raw": "The document does not mention any age restrictions for eligibility. ANSWER: UNCLEAR"
+  }
+ ]
+}

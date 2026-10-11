@@ -1,0 +1,77 @@
+{
+  "protocolSection": {
+    "conditionsModule": {
+      "conditions": [
+        "Urothelial Carcinoma"
+      ]
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "PARALLEL",
+        "maskingInfo": {
+          "masking": "TRIPLE",
+          "maskingDescription": "The study was unblinded with Amendment 3.",
+          "whoMasked": [
+            "PARTICIPANT",
+            "INVESTIGATOR",
+            "OUTCOMES_ASSESSOR"
+          ]
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 505,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "identificationModule": {
+      "briefTitle": "Study of First-line Pembrolizumab (MK-3475) With Lenvatinib (MK-7902/E7080) in Urothelial Carcinoma Cisplatin-ineligible Participants Whose Tumors Express Programmed Cell Death-Ligand 1 and in Participants Ineligible for Platinum-containing Chemotherapy (MK-7902-011/E7080-G000-317/ LEAP-011)",
+      "nctId": "NCT03898180",
+      "organization": {
+        "class": "INDUSTRY",
+        "fullName": "Merck Sharp & Dohme LLC"
+      }
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "measure": "Progression-free Survival (PFS)",
+          "timeFrame": "Up to approximately 25 months"
+        },
+        {
+          "measure": "Overall Survival (OS)",
+          "timeFrame": "Up to approximately 25 months"
+        }
+      ]
+    },
+    "sponsorCollaboratorsModule": {
+      "collaborators": [
+        {
+          "class": "INDUSTRY",
+          "name": "Eisai Inc."
+        }
+      ],
+      "leadSponsor": {
+        "class": "INDUSTRY",
+        "name": "Merck Sharp & Dohme LLC"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2024-05-20",
+        "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+        "date": "2019-05-06",
+        "type": "ACTUAL"
+      },
+      "statusVerifiedDate": "2025-12"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7430",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Locks of the type `@nonreentrant(\"\")` or `@nonreentrant('')` do not produce reentrancy checks at runtime.",
+   "verdict": "F",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 276,
+   "completion_tokens": 24,
+   "latency_s": 1.746,
+   "raw": "The document does not mention any specific package by its registered name or a distinctive part of it. ANSWER: F"
+  }
+ ]
+}

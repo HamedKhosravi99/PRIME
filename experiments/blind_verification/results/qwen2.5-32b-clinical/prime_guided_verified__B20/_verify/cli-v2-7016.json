@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7016",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "2. Aged 18-75 years;",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 258,
+   "completion_tokens": 35,
+   "latency_s": 2.359,
+   "raw": "The inclusion criteria specify an age range of 18-75 years, which meets the requirement for a minimum age of 18 years. ANSWER: T"
+  }
+ ]
+}

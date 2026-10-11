@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7104",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "men and women aged \\&amp;gt;18 years;",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 339,
+   "completion_tokens": 32,
+   "latency_s": 2.701,
+   "raw": "The inclusion criteria explicitly state that participants must be aged &gt;18 years, which meets the condition for restricting enrollment to adults. ANSWER: T"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7148",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "An attacker can craft a TFLite model that would trigger a division by zero in [the implementation of depthwise convolutions]",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 529,
+   "completion_tokens": 21,
+   "latency_s": 1.304,
+   "raw": "The document mentions TensorFlow by its registered name when discussing the affected versions and patches. ANSWER: T"
+  }
+ ]
+}

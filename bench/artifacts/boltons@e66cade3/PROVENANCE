@@ -1,0 +1,18 @@
+name: boltons
+source_url: https://github.com/mahmoud/boltons
+commit: e66cade323f5c11cebb4bd0f099e634b245adccd
+short_sha: e66cade3
+ref_cloned: master (HEAD at clone time), git clone --depth 1
+clone_date: 2026-07-24
+license: BSD-3-Clause (LICENSE, Copyright (c) 2013 Mahmoud Hashemi)
+checkout_size_no_git: 1.2M (.git removed after recording sha)
+test_command: python3 -m pytest -q   (run from repo root; collects tests/)
+test_environment: Python 3.9.6, pytest 8.4.2, macOS (darwin)
+test_result: 445 passed in 1.55s ; exit code 0
+notes: pyproject.toml declares name/requires-python (version dynamic).
+  CI at .github/workflows/tests.yaml runs tox (tests). CHANGELOG.md at root.
+  Deliberately marker-rich source: 92 TODO/FIXME/XXX matches under boltons/
+  (verified by grep), plus a TODO.rst file at repo root — used to author a
+  genuinely-false negative atom (overblocking probe). Module docstrings
+  verified in boltons/iterutils.py (line 31) and boltons/dictutils.py
+  (line 31).

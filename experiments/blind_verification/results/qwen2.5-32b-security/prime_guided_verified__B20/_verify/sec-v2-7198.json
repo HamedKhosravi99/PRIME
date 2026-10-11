@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7198",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Multiple TensorFlow operations misbehave in eager mode when the resource handle provided to them is invalid:",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 589,
+   "completion_tokens": 24,
+   "latency_s": 1.582,
+   "raw": "The document mentions \"TensorFlow\" explicitly, which is the registered name of the affected package. ANSWER: T"
+  }
+ ]
+}

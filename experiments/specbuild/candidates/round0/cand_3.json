@@ -1,0 +1,121 @@
+{
+ "k": 3,
+ "temperature": 0.7,
+ "seed": 3,
+ "reply": "```python\nimport datetime\n\ndef derive(record):\n    derived = {}\n    \n    # Determine if the primary completion date is after 2017-01-18\n    primary_completion_date = record[\"protocolSection\"][\"statusModule\"][\"primaryCompletionDateStruct\"][\"date\"]\n    if len(primary_completion_date.split(\"-\")) == 3:\n        derived[\"primary_completion_date_after_2017\"] = datetime.datetime.strptime(primary_completion_date, \"%Y-%m-%d\") >= datetime.datetime(2017, 1, 18)\n    else:\n        derived[\"primary_completion_date_after_2017\"] = False\n    \n    # Check if there is at least one location in the US\n    us_locations = [loc for loc in record[\"protocolSection\"][\"contactsLocationsModule\"][\"locations\"] if loc[\"country\"] == \"United States\"]\n    derived[\"has_us_location\"] = len(us_locations) > 0\n    \n    # Check if the study is an interventional study\n    derived[\"is_interventional_study\"] = record[\"protocolSection\"][\"designModule\"][\"studyType\"] == \"INTERVENTIONAL\"\n    \n    # Check if the study is studying an FDA-regulated drug product\n    derived[\"studies_fda_regulated_drug\"] = record[\"protocolSection\"][\"oversightModule\"].get(\"isFdaRegulatedDrug\", False)\n    \n    # Check if the study is studying an FDA-regulated device product\n    derived[\"studies_fda_regulated_device\"] = record[\"protocolSection\"][\"oversightModule\"].get(\"isFdaRegulatedDevice\", False)\n    \n    # Calculate the results submission deadline\n    if derived[\"primary_completion_date_after_2017\"]:\n        deadline = datetime.datetime.strptime(primary_completion_date, \"%Y-%m-%d\") + datetime.timedelta(days=365)\n        derived[\"results_submission_deadline\"] = deadline.strftime(\"%Y-%m-%d\")\n    else:\n        derived[\"results_submission_deadline\"] = None\n    \n    return derived\n```\n\n```json\n{\n  \"atoms\": [\n    {\n      \"id\": \"A1\",\n      \"field\": \"derived.primary_completion_date_after_2017\",\n      \"predicate\": \"equals\",\n      \"argument\": true,\n      \"meaning\": \"Primary completion date is after 2017-01-18\"\n    },\n    {\n      \"id\": \"A2\",\n      \"field\": \"derived.has_us_location\",\n      \"predicate\": \"equals\",\n      \"argument\": true,\n      \"meaning\": \"At least one location is in the US\"\n    },\n    {\n      \"id\": \"A3\",\n      \"field\": \"derived.is_interventional_study\",\n      \"predicate\": \"equals\",\n      \"argument\": true,\n      \"meaning\": \"Study type is interventional\"\n    },\n    {\n      \"id\": \"A4\",\n      \"field\": \"derived.studies_fda_regulated_drug\",\n      \"predicate\": \"equals\",\n      \"argument\": true,\n      \"meaning\": \"Studies an FDA-regulated drug product\"\n    },\n    {\n      \"id\": \"A5\",\n      \"field\": \"derived.studies_fda_regulated_device\",\n      \"predicate\": \"equals\",\n      \"argument\": true,\n      \"meaning\": \"Studies an FDA-regulated device product\"\n    },\n    {\n      \"id\": \"A6\",\n      \"field\": \"derived.results_submission_deadline\",\n      \"predicate\": \"date_before\",\n      \"argument\": \"2026-08-03\",\n      \"meaning\": \"Results submission deadline is before 2026-08-03\"\n    },\n    {\n      \"id\": \"A7\",\n      \"field\": \"protocolSection.statusModule.resultsFirstSubmitDate\",\n      \"predicate\": \"exists\",\n      \"argument\": null,\n      \"meaning\": \"Results information was submitted\"\n    },\n    {\n      \"id\": \"A8\",\n      \"field\": \"derived.results_submission_deadline\",\n      \"predicate\": \"date_after\",\n      \"argument\": \"2026-08-03\",\n      \"meaning\": \"Results submission deadline is after 2026-08-03\"\n    }\n  ],\n  \"routes\": {\n    \"C1\": [\n      [\"A1\", \"A2\", \"A3\", \"A4\"],\n      [\"A1\", \"A2\", \"A3\", \"A5\"]\n    ],\n    \"C2\": [\n      [\"A1\", \"A2\", \"A3\", \"A4\", \"A6\"],\n      [\"A1\", \"A2\", \"A3\", \"A5\", \"A6\"]\n    ],\n    \"C3\": [\n      [\"A1\", \"A2\", \"A3\", \"A4\", \"A6\", \"A7\"],\n      [\"A1\", \"A2\", \"A3\", \"A5\", \"A6\", \"A7\"]\n    ]\n  }\n}\n```",
+ "usage": {
+  "prompt_tokens": 6285,
+  "completion_tokens": 1040
+ },
+ "program": {
+  "atoms": [
+   {
+    "id": "A1",
+    "field": "derived.primary_completion_date_after_2017",
+    "predicate": "equals",
+    "argument": true,
+    "meaning": "Primary completion date is after 2017-01-18"
+   },
+   {
+    "id": "A2",
+    "field": "derived.has_us_location",
+    "predicate": "equals",
+    "argument": true,
+    "meaning": "At least one location is in the US"
+   },
+   {
+    "id": "A3",
+    "field": "derived.is_interventional_study",
+    "predicate": "equals",
+    "argument": true,
+    "meaning": "Study type is interventional"
+   },
+   {
+    "id": "A4",
+    "field": "derived.studies_fda_regulated_drug",
+    "predicate": "equals",
+    "argument": true,
+    "meaning": "Studies an FDA-regulated drug product"
+   },
+   {
+    "id": "A5",
+    "field": "derived.studies_fda_regulated_device",
+    "predicate": "equals",
+    "argument": true,
+    "meaning": "Studies an FDA-regulated device product"
+   },
+   {
+    "id": "A6",
+    "field": "derived.results_submission_deadline",
+    "predicate": "date_before",
+    "argument": "2026-08-03",
+    "meaning": "Results submission deadline is before 2026-08-03"
+   },
+   {
+    "id": "A7",
+    "field": "protocolSection.statusModule.resultsFirstSubmitDate",
+    "predicate": "exists",
+    "argument": null,
+    "meaning": "Results information was submitted"
+   },
+   {
+    "id": "A8",
+    "field": "derived.results_submission_deadline",
+    "predicate": "date_after",
+    "argument": "2026-08-03",
+    "meaning": "Results submission deadline is after 2026-08-03"
+   }
+  ],
+  "routes": {
+   "C1": [
+    [
+     "A1",
+     "A2",
+     "A3",
+     "A4"
+    ],
+    [
+     "A1",
+     "A2",
+     "A3",
+     "A5"
+    ]
+   ],
+   "C2": [
+    [
+     "A1",
+     "A2",
+     "A3",
+     "A4",
+     "A6"
+    ],
+    [
+     "A1",
+     "A2",
+     "A3",
+     "A5",
+     "A6"
+    ]
+   ],
+   "C3": [
+    [
+     "A1",
+     "A2",
+     "A3",
+     "A4",
+     "A6",
+     "A7"
+    ],
+    [
+     "A1",
+     "A2",
+     "A3",
+     "A5",
+     "A6",
+     "A7"
+    ]
+   ]
+  },
+  "derive": "import datetime\n\ndef derive(record):\n    derived = {}\n    \n    # Determine if the primary completion date is after 2017-01-18\n    primary_completion_date = record[\"protocolSection\"][\"statusModule\"][\"primaryCompletionDateStruct\"][\"date\"]\n    if len(primary_completion_date.split(\"-\")) == 3:\n        derived[\"primary_completion_date_after_2017\"] = datetime.datetime.strptime(primary_completion_date, \"%Y-%m-%d\") >= datetime.datetime(2017, 1, 18)\n    else:\n        derived[\"primary_completion_date_after_2017\"] = False\n    \n    # Check if there is at least one location in the US\n    us_locations = [loc for loc in record[\"protocolSection\"][\"contactsLocationsModule\"][\"locations\"] if loc[\"country\"] == \"United States\"]\n    derived[\"has_us_location\"] = len(us_locations) > 0\n    \n    # Check if the study is an interventional study\n    derived[\"is_interventional_study\"] = record[\"protocolSection\"][\"designModule\"][\"studyType\"] == \"INTERVENTIONAL\"\n    \n    # Check if the study is studying an FDA-regulated drug product\n    derived[\"studies_fda_regulated_drug\"] = record[\"protocolSection\"][\"oversightModule\"].get(\"isFdaRegulatedDrug\", False)\n    \n    # Check if the study is studying an FDA-regulated device product\n    derived[\"studies_fda_regulated_device\"] = record[\"protocolSection\"][\"oversightModule\"].get(\"isFdaRegulatedDevice\", False)\n    \n    # Calculate the results submission deadline\n    if derived[\"primary_completion_date_after_2017\"]:\n        deadline = datetime.datetime.strptime(primary_completion_date, \"%Y-%m-%d\") + datetime.timedelta(days=365)\n        derived[\"results_submission_deadline\"] = deadline.strftime(\"%Y-%m-%d\")\n    else:\n        derived[\"results_submission_deadline\"] = None\n    \n    return derived"
+ }
+}

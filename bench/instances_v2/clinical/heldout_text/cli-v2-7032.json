@@ -1,0 +1,181 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT05606146"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT05606146"
+    },
+    "what": "the eligibility criteria restrict enrollment to adults, that is, a minimum age of 18 years or more"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT05606146"
+    },
+    "what": "the eligibility criteria restrict enrollment to one sex only (only male or only female participants)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT05606146"
+    },
+    "what": "the eligibility criteria accept healthy volunteers"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready for an adult cohort: identified, and the eligibility text restricts enrollment to adults."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked adult-cohort protocol: identified, adults only, open to both sexes, and not a healthy-volunteer study, as established from the eligibility text."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "!E3",
+    "!E4"
+   ]
+  ]
+ },
+ "id": "cli-v2-7032",
+ "notes_for_annotators": "{\"family\": \"clinical-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, true, false], \"twins\": [\"protocolSection.eligibilityModule.minimumAge\", \"protocolSection.eligibilityModule.sex\", \"protocolSection.eligibilityModule.healthyVolunteers\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT05606146": {
+   "protocolSection": {
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n1. Female subject age 40 to 50 years, inclusive\n2. Suffering from the symptom of heavy menstrual bleeding (HMB) from benign causes with no definable organic cause and are candidates for endometrial ablation or surgical treatment.\n3. PBAC score of \\>150 - an average of 2 consecutive screening scores prior to study treatment\n4. Are thought to be ovulatory with cyclic predictable onset of menses with a cycle length of 24-38 days.\n5. Have either a normal appearing endometrial cavity as assessed by hysteroscopy performed within 90 days of study treatment, or one that is distorted by a FIGO Type 2 submucous leiomyoma \u22643 cm in mean diameter.\n6. Have endometrial sampling with normal histology within 6 months of the study procedure.\n7. Premenopausal status confirmed by FSH level measurement at screening (FSH \\< 40 IU/L). FSH level measurement will be repeated in case of a borderline result\n8. Screening hemoglobin levels \\>9.0 g/dL\n9. Uterine sound measurement of 6.5-12 cm (external os to internal fundus)\n10. Negative serum pregnancy test at the Screening visit and on the day of SEAD\u2122 treatment\n11. women whose sexual activity places them at risk for pregnancy must agree to use an effective, non-hormonal, non-intrauterine method of contraception throughout the course of the study. For this study, acceptable effective methods of contraception are considered to be those listed below:\n\n    * Barrier method, i.e., (a) condom (male or female) with spermicide or (b) diaphragm with spermicide or\n    * Vasectomy (partner), or\n    * Abstinence, if in line with the preferred and usual lifestyle of the subject \\[where abstinence is defined as refraining from heterosexual intercourse\\]\n12. Subject is able to understand and sign a written informed consent form\n13. Subject is willing and able to comply with scheduled visits, treatment plan, laboratory tests, and other study procedures\n14. The subject demonstrates an understanding of how to record menstrual blood loss using a menstrual pictogram\n\nExclusion Criteria:\n\n1. Pregnant women or those who desire to conceive at any time in the future\n2. An endometrial cavity with any of the following: congenital malformation of (eg septate uterus), endometrial polyp \\>8 mm in largest dimension, FIGO Type 0 or 1 leiomyomas of any diameter or Type 2 leiomyomas \\> 3 cm in mean diameter; intrauterine adhesions/ synechiae that distort the endometrial cavity sufficient to impair deployment of the SEAD device.\n3. Underwent prior uterine surgery that interrupts the integrity of the uterine wall (e.g., transmural abdominal (laparoscopic or laparotomic) or hysteroscopic myomectomy and/or metroplasty during last 3 months prior to screening, classical Cesarean section, or endometrial ablation\n4. Have an abnormal endometrial biopsy that suggests either anovulation or a risk for the development of endometrial cancer (i.e., benign hyperplasia, endometrial hyperplasia with atypia, endometrial intraepithelial neoplasia, endometrial cancer)\n5. Have a documented clinical history of titanium allergy or hypersensitivity to any component of IUB\u2122SEAD\u2122.\n6. Suffers from active endometritis, active pelvic inflammatory disease (PID) or active sexually transmitted disease (STD)\n7. Suffers from active infection of the genitals, vagina, cervix, or uterus\n8. Presence of bacteremia, sepsis, or other active systemic infection\n9. Known/suspected abdominal, pelvic, or gynecological malignancy within the past 5 years\n10. Known clotting defects or bleeding disorders\n11. Currently using anticoagulant treatment\n12. Subjects with abnormal Papanicolaou (Pap) test or atypical squamous cells of undetermined significance (ASCUS) with positive high-risk human papilloma virus (HPV) test result within the appropriate screen timeframe, and prior to SEAD\u2122 treatment. Alternatively, a colposcopy performed prior to SEAD\u2122 treatment, that showed evidence of dysplasia requiring treatment. In case treatment was performed \\> 6 months prior to enrollment and follow-up was done with no evidence of disease by clinical evaluation, the subject is eligible.\n13. Suffers from clinically significant adenomyosis indicated by subject complaints or imaging\n14. Presence of an implantable contraceptive device, unless subject agrees to have the device removed immediately on screening, and prior to PBLAC assessment\n15. Post-partum \u2264 6-months\n16. Currently participating in or considering participation in a research study of an investigational drug or device that would begin during the course of this investigational study\n17. Any general health or mental, or other situation or condition which, in the opinion of the Investigator, could present an increased risk for the subject or impact the subject's ability to comply with protocol requirements.\n18. Has a polyp that was not removed before day of treatment"
+    },
+    "identificationModule": {
+     "briefTitle": "IUB SEAD RED (Revolutionary Endometrial Ablation Device Study)"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT05606146.",
+ "seed": "NCT05606146",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "text"
+}

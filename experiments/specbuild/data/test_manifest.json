@@ -1,0 +1,15 @@
+{
+ "n_test": 1999,
+ "A": {
+  "not-act": 370,
+  "applicability-undeterminable": 353,
+  "instance": 526,
+  "not-due": 750,
+  "agent_instances": 161
+ },
+ "B": {
+  "instance": 1999,
+  "agent_instances": 600
+ },
+ "frozen_sha256": "7cbae0727ca28b8c6569b498c80f480a8f1a099346f536955757c40755fbe15f"
+}

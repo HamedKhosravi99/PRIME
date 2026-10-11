@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7082",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Age 21 to 80",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 257,
+   "completion_tokens": 37,
+   "latency_s": 2.046,
+   "raw": "The inclusion criteria specify an age range of 21 to 80, which meets the requirement of enrolling only adults aged 18 or older. ANSWER: T"
+  }
+ ]
+}

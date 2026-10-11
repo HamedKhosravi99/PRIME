@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7147",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "Upgrade to at least urllib3 v2.6.0 in which the library avoids decompressing data that exceeds the requested amount.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 607,
+   "completion_tokens": 26,
+   "latency_s": 2.015,
+   "raw": "The document establishes that the issue is fixed in urllib3 version 2.6.0 and later. ANSWER: T"
+  }
+ ]
+}

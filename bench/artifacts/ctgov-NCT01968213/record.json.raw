@@ -1,0 +1,5270 @@
+{
+  "derivedSection": {
+    "conditionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D004701",
+          "term": "Endocrine Gland Neoplasms"
+        },
+        {
+          "id": "D009371",
+          "term": "Neoplasms by Site"
+        },
+        {
+          "id": "D009369",
+          "term": "Neoplasms"
+        },
+        {
+          "id": "D010049",
+          "term": "Ovarian Diseases"
+        },
+        {
+          "id": "D000291",
+          "term": "Adnexal Diseases"
+        },
+        {
+          "id": "D005831",
+          "term": "Genital Diseases, Female"
+        },
+        {
+          "id": "D052776",
+          "term": "Female Urogenital Diseases"
+        },
+        {
+          "id": "D005261",
+          "term": "Female Urogenital Diseases and Pregnancy Complications"
+        },
+        {
+          "id": "D000091642",
+          "term": "Urogenital Diseases"
+        },
+        {
+          "id": "D005833",
+          "term": "Genital Neoplasms, Female"
+        },
+        {
+          "id": "D014565",
+          "term": "Urogenital Neoplasms"
+        },
+        {
+          "id": "D000091662",
+          "term": "Genital Diseases"
+        },
+        {
+          "id": "D004700",
+          "term": "Endocrine System Diseases"
+        },
+        {
+          "id": "D006058",
+          "term": "Gonadal Disorders"
+        },
+        {
+          "id": "D005184",
+          "term": "Fallopian Tube Diseases"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D010051",
+          "term": "Ovarian Neoplasms"
+        },
+        {
+          "id": "D005185",
+          "term": "Fallopian Tube Neoplasms"
+        }
+      ]
+    },
+    "interventionBrowseModule": {
+      "meshes": [
+        {
+          "id": "C531549",
+          "term": "rucaparib"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "versionHolder": "2026-07-29"
+    }
+  },
+  "documentSection": {
+    "largeDocumentModule": {
+      "largeDocs": [
+        {
+          "date": "2020-07-06",
+          "filename": "Prot_002.pdf",
+          "hasIcf": false,
+          "hasProtocol": true,
+          "hasSap": false,
+          "label": "Study Protocol",
+          "size": 1833986,
+          "typeAbbrev": "Prot",
+          "uploadDate": "2022-10-20T11:48"
+        },
+        {
+          "date": "2017-04-21",
+          "filename": "SAP_001.pdf",
+          "hasIcf": false,
+          "hasProtocol": false,
+          "hasSap": true,
+          "label": "Statistical Analysis Plan",
+          "size": 519373,
+          "typeAbbrev": "SAP",
+          "uploadDate": "2018-05-04T12:11"
+        }
+      ]
+    }
+  },
+  "hasResults": true,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "description": "Oral tablets administered twice daily with 8 oz (240 mL) of water on an empty stomach or with food; 28-day cycles of treatment. Doses should be taken as close to 12 hours apart as possible, preferably at the same times every day. Tablets should be swallowed whole.",
+          "interventionNames": [
+            "Drug: Rucaparib"
+          ],
+          "label": "Rucaparib",
+          "type": "EXPERIMENTAL"
+        },
+        {
+          "description": "Oral tablets administered twice daily with 8 oz (240 mL) of water on an empty stomach or with food; 28-day cycles of treatment. Doses should be taken as close to 12 hours apart as possible, preferably at the same times every day. Tablets should be swallowed whole.",
+          "interventionNames": [
+            "Drug: Placebo"
+          ],
+          "label": "Placebo",
+          "type": "PLACEBO_COMPARATOR"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "Rucaparib"
+          ],
+          "description": "Oral tablets administered twice daily with 8 oz (240 mL) of water on an empty stomach or with food; 28-day cycles of treatment. Doses should be taken as close to 12 hours apart as possible, preferably at the same times every day. Tablets should be swallowed whole.",
+          "name": "Rucaparib",
+          "otherNames": [
+            "CO-338",
+            "PF 01367338",
+            "AG 14699"
+          ],
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "Placebo"
+          ],
+          "description": "Oral tablets administered twice daily with 8 oz (240 mL) of water on an empty stomach or with food; 28-day cycles of treatment. Doses should be taken as close to 12 hours apart as possible, preferably at the same times every day. Tablets should be swallowed whole.",
+          "name": "Placebo",
+          "type": "DRUG"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Ovarian Cancer",
+        "Fallopian Tube Cancer",
+        "Peritoneal Cancer"
+      ],
+      "keywords": [
+        "ARIEL3",
+        "ARIEL 3",
+        "platinum sensitive",
+        "PARP Inhibitor",
+        "rucaparib",
+        "homologous recombination",
+        "homologous recombination deficiency",
+        "CO-338",
+        "PF 01367338",
+        "AG 14699",
+        "platinum sensitive ovarian cancer",
+        "platinum sensitive fallopian tube cancer",
+        "platinum sensitive primary peritoneal cancer",
+        "platinum sensitive peritoneal cancer",
+        "gynecological cancer",
+        "Clovis",
+        "Clovis Oncology"
+      ]
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "city": "Tucson",
+          "country": "United States",
+          "facility": "University of Arizona Cancer Center",
+          "geoPoint": {
+            "lat": 32.22174,
+            "lon": -110.92648
+          },
+          "state": "Arizona",
+          "zip": "85704"
+        },
+        {
+          "city": "Fullerton",
+          "country": "United States",
+          "facility": "Saint Jude Heritage Medical Center",
+          "geoPoint": {
+            "lat": 33.87029,
+            "lon": -117.92534
+          },
+          "state": "California",
+          "zip": "92835"
+        },
+        {
+          "city": "Sacramento",
+          "country": "United States",
+          "facility": "UC Davis Comprehensive Cancer Center",
+          "geoPoint": {
+            "lat": 38.58157,
+            "lon": -121.4944
+          },
+          "state": "California",
+          "zip": "95817"
+        },
+        {
+          "city": "San Francisco",
+          "country": "United States",
+          "facility": "University of California San Francisco (UCSF)",
+          "geoPoint": {
+            "lat": 37.77493,
+            "lon": -122.41942
+          },
+          "state": "California",
+          "zip": "94158"
+        },
+        {
+          "city": "San Luis Obispo",
+          "country": "United States",
+          "facility": "Coastal Integrative Cancer Care",
+          "geoPoint": {
+            "lat": 35.28275,
+            "lon": -120.65962
+          },
+          "state": "California",
+          "zip": "93422"
+        },
+        {
+          "city": "Santa Maria",
+          "country": "United States",
+          "facility": "Central Coast Medical Oncology",
+          "geoPoint": {
+            "lat": 34.95303,
+            "lon": -120.43572
+          },
+          "state": "California",
+          "zip": "93454"
+        },
+        {
+          "city": "Santa Monica",
+          "country": "United States",
+          "facility": "University of California Los Angeles (UCLA)",
+          "geoPoint": {
+            "lat": 34.01949,
+            "lon": -118.49138
+          },
+          "state": "California",
+          "zip": "90404"
+        },
+        {
+          "city": "Lakewood",
+          "country": "United States",
+          "facility": "Rocky Mountain Cancer Centers",
+          "geoPoint": {
+            "lat": 39.70471,
+            "lon": -105.08137
+          },
+          "state": "Colorado",
+          "zip": "80228"
+        },
+        {
+          "city": "Hollywood",
+          "country": "United States",
+          "facility": "Memorial Healthcare System",
+          "geoPoint": {
+            "lat": 26.0112,
+            "lon": -80.14949
+          },
+          "state": "Florida",
+          "zip": "33021"
+        },
+        {
+          "city": "Miami",
+          "country": "United States",
+          "facility": "Sylvester Comprehensive Cancer Center",
+          "geoPoint": {
+            "lat": 25.77427,
+            "lon": -80.19366
+          },
+          "state": "Florida",
+          "zip": "33136"
+        },
+        {
+          "city": "Orlando",
+          "country": "United States",
+          "facility": "Florida Hospital",
+          "geoPoint": {
+            "lat": 28.53834,
+            "lon": -81.37924
+          },
+          "state": "Florida",
+          "zip": "32804"
+        },
+        {
+          "city": "Baltimore",
+          "country": "United States",
+          "facility": "Johns Hopkins Universty",
+          "geoPoint": {
+            "lat": 39.29038,
+            "lon": -76.61219
+          },
+          "state": "Maryland",
+          "zip": "21287"
+        },
+        {
+          "city": "Boston",
+          "country": "United States",
+          "facility": "Massachusetts General Hospital",
+          "geoPoint": {
+            "lat": 42.35843,
+            "lon": -71.05977
+          },
+          "state": "Massachusetts",
+          "zip": "02114"
+        },
+        {
+          "city": "Boston",
+          "country": "United States",
+          "facility": "Beth Israel Deaconess Medical Center",
+          "geoPoint": {
+            "lat": 42.35843,
+            "lon": -71.05977
+          },
+          "state": "Massachusetts",
+          "zip": "02215"
+        },
+        {
+          "city": "Detroit",
+          "country": "United States",
+          "facility": "Karmanos Cancer Institute - Wayne State University",
+          "geoPoint": {
+            "lat": 42.33143,
+            "lon": -83.04575
+          },
+          "state": "Michigan",
+          "zip": "48201"
+        },
+        {
+          "city": "St Louis",
+          "country": "United States",
+          "facility": "Washington University School of Medicine - Division of Gynaecological Oncology",
+          "geoPoint": {
+            "lat": 38.62727,
+            "lon": -90.19789
+          },
+          "state": "Missouri",
+          "zip": "63110"
+        },
+        {
+          "city": "New York",
+          "country": "United States",
+          "facility": "Memorial Sloan-Kettering Cancer Center",
+          "geoPoint": {
+            "lat": 40.71427,
+            "lon": -74.00597
+          },
+          "state": "New York",
+          "zip": "10065"
+        },
+        {
+          "city": "Asheville",
+          "country": "United States",
+          "facility": "Hope Women's Cancer Centers",
+          "geoPoint": {
+            "lat": 35.60095,
+            "lon": -82.55402
+          },
+          "state": "North Carolina",
+          "zip": "28806"
+        },
+        {
+          "city": "Columbus",
+          "country": "United States",
+          "facility": "The Ohio State University Wexner Medical Center",
+          "geoPoint": {
+            "lat": 39.96118,
+            "lon": -82.99879
+          },
+          "state": "Ohio",
+          "zip": "43210"
+        },
+        {
+          "city": "Philadelphia",
+          "country": "United States",
+          "facility": "University of Pennsylvania",
+          "geoPoint": {
+            "lat": 39.95238,
+            "lon": -75.16362
+          },
+          "state": "Pennsylvania",
+          "zip": "19104"
+        },
+        {
+          "city": "Houston",
+          "country": "United States",
+          "facility": "University of Texas MD Anderson Cancer Center",
+          "geoPoint": {
+            "lat": 29.76328,
+            "lon": -95.36327
+          },
+          "state": "Texas",
+          "zip": "77030"
+        },
+        {
+          "city": "Seattle",
+          "country": "United States",
+          "facility": "University of Washington at Seattle",
+          "geoPoint": {
+            "lat": 47.60621,
+            "lon": -122.33207
+          },
+          "state": "Washington",
+          "zip": "98109"
+        },
+        {
+          "city": "Sydney",
+          "country": "Australia",
+          "facility": "Prince of Wales Hospital",
+          "geoPoint": {
+            "lat": -33.86785,
+            "lon": 151.20732
+          },
+          "state": "New South Wales",
+          "zip": "2031"
+        },
+        {
+          "city": "Westmead",
+          "country": "Australia",
+          "facility": "Westmead Hospital",
+          "geoPoint": {
+            "lat": -33.80383,
+            "lon": 150.98768
+          },
+          "state": "New South Wales",
+          "zip": "2145"
+        },
+        {
+          "city": "Herston",
+          "country": "Australia",
+          "facility": "Royal Brisbane & Women's Hospital",
+          "geoPoint": {
+            "lat": -27.44453,
+            "lon": 153.01852
+          },
+          "state": "Queensland",
+          "zip": "4029"
+        },
+        {
+          "city": "Bedford Park",
+          "country": "Australia",
+          "facility": "Flinders Medical Centre",
+          "geoPoint": {
+            "lat": -35.02204,
+            "lon": 138.56815
+          },
+          "state": "South Australia",
+          "zip": "5042"
+        },
+        {
+          "city": "Parkville",
+          "country": "Australia",
+          "facility": "Royal Melbourne Hospital",
+          "geoPoint": {
+            "lat": -37.78333,
+            "lon": 144.95
+          },
+          "state": "Victoria",
+          "zip": "3052"
+        },
+        {
+          "city": "Nedlands",
+          "country": "Australia",
+          "facility": "Sir Charles Gairdner Hospital",
+          "geoPoint": {
+            "lat": -31.98184,
+            "lon": 115.8073
+          },
+          "state": "Western Australia",
+          "zip": "6009"
+        },
+        {
+          "city": "Subiaco",
+          "country": "Australia",
+          "facility": "St John of God Hospital Subiaco",
+          "geoPoint": {
+            "lat": -31.9485,
+            "lon": 115.8268
+          },
+          "state": "Western Australia",
+          "zip": "608"
+        },
+        {
+          "city": "Antwerp",
+          "country": "Belgium",
+          "facility": "AZ St Augustinus",
+          "geoPoint": {
+            "lat": 51.22047,
+            "lon": 4.40026
+          },
+          "zip": "2610"
+        },
+        {
+          "city": "Ghent",
+          "country": "Belgium",
+          "facility": "UZ Gent",
+          "geoPoint": {
+            "lat": 51.05,
+            "lon": 3.71667
+          },
+          "zip": "B-9000"
+        },
+        {
+          "city": "Leuven",
+          "country": "Belgium",
+          "facility": "UZ Leuven",
+          "geoPoint": {
+            "lat": 50.87959,
+            "lon": 4.70093
+          },
+          "zip": "3000"
+        },
+        {
+          "city": "Namur",
+          "country": "Belgium",
+          "facility": "Clinique Sainte-Elisabeth",
+          "geoPoint": {
+            "lat": 50.4669,
+            "lon": 4.86746
+          },
+          "zip": "5000"
+        },
+        {
+          "city": "Calgary",
+          "country": "Canada",
+          "facility": "Tom Baker Cancer Centre",
+          "geoPoint": {
+            "lat": 51.05011,
+            "lon": -114.08529
+          },
+          "state": "Alberta",
+          "zip": "T2N4N2"
+        },
+        {
+          "city": "Edmonton",
+          "country": "Canada",
+          "facility": "Cross Cancer Institute",
+          "geoPoint": {
+            "lat": 53.55014,
+            "lon": -113.46871
+          },
+          "state": "Alberta",
+          "zip": "T6G1Z2"
+        },
+        {
+          "city": "Hamilton",
+          "country": "Canada",
+          "facility": "Juravinski Cancer Centre",
+          "geoPoint": {
+            "lat": 43.25011,
+            "lon": -79.84963
+          },
+          "state": "Ontario",
+          "zip": "L8V5C2"
+        },
+        {
+          "city": "London",
+          "country": "Canada",
+          "facility": "London Regional Cancer Centre",
+          "geoPoint": {
+            "lat": 42.98339,
+            "lon": -81.23304
+          },
+          "state": "Ontario",
+          "zip": "N6A4L6"
+        },
+        {
+          "city": "Ottawa",
+          "country": "Canada",
+          "facility": "Ottawa Hospital Cancer Centre",
+          "geoPoint": {
+            "lat": 45.41117,
+            "lon": -75.69812
+          },
+          "state": "Ontario",
+          "zip": "K1H8L6"
+        },
+        {
+          "city": "Toronto",
+          "country": "Canada",
+          "facility": "Princess Margaret Cancer Centre",
+          "geoPoint": {
+            "lat": 43.70643,
+            "lon": -79.39864
+          },
+          "state": "Ontario",
+          "zip": "M5G2M9"
+        },
+        {
+          "city": "Montreal",
+          "country": "Canada",
+          "facility": "CHUM Centre Hospitalier de l'Universit\u00e9 de Montr\u00e9al",
+          "geoPoint": {
+            "lat": 45.50884,
+            "lon": -73.58781
+          },
+          "state": "Quebec",
+          "zip": "H2L4M1"
+        },
+        {
+          "city": "Qu\u00e9bec",
+          "country": "Canada",
+          "facility": "Centre Hospitalier Universitaire de Qu\u00e9bec",
+          "geoPoint": {
+            "lat": 46.81228,
+            "lon": -71.21454
+          },
+          "zip": "G1R2J6"
+        },
+        {
+          "city": "Lyon",
+          "country": "France",
+          "facility": "Centre Leon Berard",
+          "geoPoint": {
+            "lat": 45.74906,
+            "lon": 4.84789
+          },
+          "state": "Auvergne-Rh\u00f4ne-Alpes",
+          "zip": "69373"
+        },
+        {
+          "city": "Pierre-B\u00e9nite",
+          "country": "France",
+          "facility": "Centre Hospitalier Lyon Sud",
+          "geoPoint": {
+            "lat": 45.70359,
+            "lon": 4.82424
+          },
+          "state": "Auvergne-Rh\u00f4ne-Alpes",
+          "zip": "69495"
+        },
+        {
+          "city": "Caen",
+          "country": "France",
+          "facility": "Centre Francois Baclesse",
+          "geoPoint": {
+            "lat": 49.18585,
+            "lon": -0.35912
+          },
+          "state": "Basse-Normandie",
+          "zip": "14076"
+        },
+        {
+          "city": "Toulouse",
+          "country": "France",
+          "facility": "Institut Claudius Regaud",
+          "geoPoint": {
+            "lat": 43.60426,
+            "lon": 1.44367
+          },
+          "state": "Midi-Pyrenees",
+          "zip": "31052"
+        },
+        {
+          "city": "Nantes",
+          "country": "France",
+          "facility": "Centre Catherine de Sienne",
+          "geoPoint": {
+            "lat": 47.21725,
+            "lon": -1.55336
+          },
+          "state": "Pays de la Loire Region",
+          "zip": "44202"
+        },
+        {
+          "city": "Bordeaux",
+          "country": "France",
+          "facility": "Institute Bergonie",
+          "geoPoint": {
+            "lat": 44.84124,
+            "lon": -0.58046
+          },
+          "zip": "33076"
+        },
+        {
+          "city": "Paris",
+          "country": "France",
+          "facility": "Hospital Tenon",
+          "geoPoint": {
+            "lat": 48.85341,
+            "lon": 2.3488
+          },
+          "zip": "75020"
+        },
+        {
+          "city": "Paris",
+          "country": "France",
+          "facility": "H\u00f4pital Europ\u00e9en Georges-Pompidou",
+          "geoPoint": {
+            "lat": 48.85341,
+            "lon": 2.3488
+          },
+          "state": "\u00cele-de-France Region",
+          "zip": "75908"
+        },
+        {
+          "city": "Villejuif",
+          "country": "France",
+          "facility": "Institut Gustave Roussy",
+          "geoPoint": {
+            "lat": 48.7939,
+            "lon": 2.35992
+          },
+          "state": "\u00cele-de-France Region",
+          "zip": "94805"
+        },
+        {
+          "city": "Ludwigsburg",
+          "country": "Germany",
+          "facility": "Klinikum Ludwigsburg-Bietigheim gGmbH",
+          "geoPoint": {
+            "lat": 48.89731,
+            "lon": 9.19161
+          },
+          "state": "Baden-Wuerttembert",
+          "zip": "71640"
+        },
+        {
+          "city": "Stuttgart",
+          "country": "Germany",
+          "facility": "Klinikum Stuttgart",
+          "geoPoint": {
+            "lat": 48.78232,
+            "lon": 9.17702
+          },
+          "state": "Baden-Wurttemberg",
+          "zip": "70174"
+        },
+        {
+          "city": "Munich",
+          "country": "Germany",
+          "facility": "Rotkreuzklinikum Muenchen gGmbH",
+          "geoPoint": {
+            "lat": 48.13743,
+            "lon": 11.57549
+          },
+          "state": "Bavaria",
+          "zip": "80637"
+        },
+        {
+          "city": "Frankfurt am Main",
+          "country": "Germany",
+          "facility": "Universit\u00e4tsklinikum Frankfurt",
+          "geoPoint": {
+            "lat": 50.11552,
+            "lon": 8.68417
+          },
+          "state": "Hesse",
+          "zip": "60596"
+        },
+        {
+          "city": "Wiesbaden",
+          "country": "Germany",
+          "facility": "Dr. Horst Schmidt Klinik, Klinik fuer Gynaekologie und Gyn. Onkologie",
+          "geoPoint": {
+            "lat": 50.08601,
+            "lon": 8.24435
+          },
+          "state": "Hesse",
+          "zip": "65199"
+        },
+        {
+          "city": "Chemnitz",
+          "country": "Germany",
+          "facility": "Klinikum Chemnitz gGmbH",
+          "geoPoint": {
+            "lat": 50.8357,
+            "lon": 12.92922
+          },
+          "state": "Saxony",
+          "zip": "09116"
+        },
+        {
+          "city": "Dresden",
+          "country": "Germany",
+          "facility": "Technische Universit\u00e4t Dresden",
+          "geoPoint": {
+            "lat": 51.05089,
+            "lon": 13.73832
+          },
+          "state": "Saxony",
+          "zip": "01307"
+        },
+        {
+          "city": "Haifa",
+          "country": "Israel",
+          "facility": "Rambam Health Care Campus",
+          "geoPoint": {
+            "lat": 32.81303,
+            "lon": 34.99928
+          },
+          "zip": "31096"
+        },
+        {
+          "city": "Haifa",
+          "country": "Israel",
+          "facility": "Lady Davis Carmel Medical Center",
+          "geoPoint": {
+            "lat": 32.81303,
+            "lon": 34.99928
+          }
+        },
+        {
+          "city": "Petah Tikva",
+          "country": "Israel",
+          "facility": "Rabin Medical Center",
+          "geoPoint": {
+            "lat": 32.08707,
+            "lon": 34.88747
+          },
+          "zip": "49100"
+        },
+        {
+          "city": "Ramat Gan",
+          "country": "Israel",
+          "facility": "Oncology Institute, Sheba Medical Center",
+          "geoPoint": {
+            "lat": 32.08227,
+            "lon": 34.81065
+          },
+          "zip": "52621"
+        },
+        {
+          "city": "Tel Aviv",
+          "country": "Israel",
+          "facility": "Sourasky Medical Center",
+          "geoPoint": {
+            "lat": 32.08088,
+            "lon": 34.78057
+          },
+          "zip": "64239"
+        },
+        {
+          "city": "\u1e94erifin",
+          "country": "Israel",
+          "facility": "Assaf Harofeh M.C.",
+          "geoPoint": {
+            "lat": 31.95731,
+            "lon": 34.84852
+          },
+          "zip": "70300"
+        },
+        {
+          "city": "Faenza",
+          "country": "Italy",
+          "facility": "Oncology Unit City Hospital degli Infermi",
+          "geoPoint": {
+            "lat": 44.29007,
+            "lon": 11.87948
+          },
+          "state": "Ravenna",
+          "zip": "48018"
+        },
+        {
+          "city": "Reggio Emilia",
+          "country": "Italy",
+          "facility": "Arcispedale Santa Maria Nuova IRCCS",
+          "geoPoint": {
+            "lat": 44.69825,
+            "lon": 10.63125
+          },
+          "state": "Reggio Nella Emilia",
+          "zip": "42100"
+        },
+        {
+          "city": "Bologna",
+          "country": "Italy",
+          "facility": "Azienda Ospedaliero-Universitaria di Bologna - Policlinico S.Orsola-Malpighi",
+          "geoPoint": {
+            "lat": 44.49381,
+            "lon": 11.33875
+          },
+          "zip": "40138"
+        },
+        {
+          "city": "Milan",
+          "country": "Italy",
+          "facility": "Fondazione IRCCS National Cancer Institute",
+          "geoPoint": {
+            "lat": 45.46427,
+            "lon": 9.18951
+          },
+          "zip": "20133"
+        },
+        {
+          "city": "Milan",
+          "country": "Italy",
+          "facility": "Instituto Europeo di Oncologia",
+          "geoPoint": {
+            "lat": 45.46427,
+            "lon": 9.18951
+          },
+          "zip": "20141"
+        },
+        {
+          "city": "Modena",
+          "country": "Italy",
+          "facility": "Azienda Ospedaliero Universitaria Policlinico di Modena",
+          "geoPoint": {
+            "lat": 44.64783,
+            "lon": 10.92539
+          },
+          "zip": "41124"
+        },
+        {
+          "city": "Naples",
+          "country": "Italy",
+          "facility": "Istituto Nazionale Tumori IRCCS Fondazione Pascale",
+          "geoPoint": {
+            "lat": 40.85216,
+            "lon": 14.26811
+          },
+          "zip": "80131"
+        },
+        {
+          "city": "Roma",
+          "country": "Italy",
+          "facility": "Policlinico Universitario Agostino Gemelli",
+          "geoPoint": {
+            "lat": 44.99364,
+            "lon": 11.10642
+          },
+          "zip": "00158"
+        },
+        {
+          "city": "Auckland",
+          "country": "New Zealand",
+          "facility": "Auckland City Hospital",
+          "geoPoint": {
+            "lat": -36.84853,
+            "lon": 174.76349
+          },
+          "state": "Grafton",
+          "zip": "1023"
+        },
+        {
+          "city": "Palmerston North",
+          "country": "New Zealand",
+          "facility": "Palmsteron North Hospital",
+          "geoPoint": {
+            "lat": -40.35636,
+            "lon": 175.61113
+          },
+          "state": "Manawatu",
+          "zip": "4442"
+        },
+        {
+          "city": "Newtown",
+          "country": "New Zealand",
+          "facility": "Wellington Hospital",
+          "geoPoint": {
+            "lat": -41.31115,
+            "lon": 174.77935
+          },
+          "state": "Wellington Region",
+          "zip": "6021"
+        },
+        {
+          "city": "Oviedo",
+          "country": "Spain",
+          "facility": "Hospital Central de Asturias",
+          "geoPoint": {
+            "lat": 43.36029,
+            "lon": -5.84476
+          },
+          "state": "Principality of Asturias",
+          "zip": "33011"
+        },
+        {
+          "city": "A Coru\u00f1a",
+          "country": "Spain",
+          "facility": "Centro Oncologico de Galica",
+          "geoPoint": {
+            "lat": 43.37135,
+            "lon": -8.396
+          },
+          "zip": "15009"
+        },
+        {
+          "city": "Barcelona",
+          "country": "Spain",
+          "facility": "Hospital Vall D'Hebron",
+          "geoPoint": {
+            "lat": 41.38879,
+            "lon": 2.15899
+          },
+          "zip": "8035"
+        },
+        {
+          "city": "Madrid",
+          "country": "Spain",
+          "facility": "Hospital Ram\u00f3n y Cajal",
+          "geoPoint": {
+            "lat": 40.4165,
+            "lon": -3.70256
+          },
+          "zip": "28034"
+        },
+        {
+          "city": "Madrid",
+          "country": "Spain",
+          "facility": "Hospital Universitario San Carlos",
+          "geoPoint": {
+            "lat": 40.4165,
+            "lon": -3.70256
+          },
+          "zip": "28040"
+        },
+        {
+          "city": "Madrid",
+          "country": "Spain",
+          "facility": "Centro Integral Oncol\u00f3gico Clara Campal, Hospital de Madrid Norte-San Chinarro",
+          "geoPoint": {
+            "lat": 40.4165,
+            "lon": -3.70256
+          },
+          "zip": "28050"
+        },
+        {
+          "city": "M\u00e1laga",
+          "country": "Spain",
+          "facility": "Hospital Regional Universitario Carlos Haya de Malaga",
+          "geoPoint": {
+            "lat": 36.72016,
+            "lon": -4.42034
+          },
+          "zip": "29011"
+        },
+        {
+          "city": "Seville",
+          "country": "Spain",
+          "facility": "Hospital Universitario Virgen del Roc\u00edo",
+          "geoPoint": {
+            "lat": 37.38283,
+            "lon": -5.97317
+          },
+          "zip": "41013"
+        },
+        {
+          "city": "Valencia",
+          "country": "Spain",
+          "facility": "Instituto Valencia de Oncologia-Fundacion",
+          "geoPoint": {
+            "lat": 39.47391,
+            "lon": -0.37966
+          },
+          "zip": "46009"
+        },
+        {
+          "city": "Valencia",
+          "country": "Spain",
+          "facility": "Hospital Clinico Universitario de Valencia",
+          "geoPoint": {
+            "lat": 39.47391,
+            "lon": -0.37966
+          },
+          "zip": "46010"
+        },
+        {
+          "city": "London",
+          "country": "United Kingdom",
+          "facility": "Royal Marsden Hospital",
+          "geoPoint": {
+            "lat": 51.50853,
+            "lon": -0.12574
+          },
+          "state": "England",
+          "zip": "SW3 6JJ"
+        },
+        {
+          "city": "Belfast",
+          "country": "United Kingdom",
+          "facility": "Belfast City Hospital",
+          "geoPoint": {
+            "lat": 54.59682,
+            "lon": -5.92541
+          },
+          "state": "Northern Ireland",
+          "zip": "BT9 7AB"
+        },
+        {
+          "city": "Glasgow",
+          "country": "United Kingdom",
+          "facility": "Beatson West of Scotland Cancer Centre",
+          "geoPoint": {
+            "lat": 55.86515,
+            "lon": -4.25763
+          },
+          "state": "Scotland",
+          "zip": "G120YN"
+        },
+        {
+          "city": "Sutton",
+          "country": "United Kingdom",
+          "facility": "The Royal Marsden NHS Foundation Trust",
+          "geoPoint": {
+            "lat": 51.35,
+            "lon": -0.2
+          },
+          "state": "Surrey",
+          "zip": "SM2 5PT"
+        },
+        {
+          "city": "Leeds",
+          "country": "United Kingdom",
+          "facility": "St. James University Hospital",
+          "geoPoint": {
+            "lat": 53.79648,
+            "lon": -1.54785
+          },
+          "state": "West Yorkshire",
+          "zip": "LS97TF"
+        },
+        {
+          "city": "Cambridge",
+          "country": "United Kingdom",
+          "facility": "Addenbrookes Hospital",
+          "geoPoint": {
+            "lat": 52.2,
+            "lon": 0.11667
+          },
+          "zip": "CB20QQ"
+        },
+        {
+          "city": "London",
+          "country": "United Kingdom",
+          "facility": "Barts Health NHS Trust",
+          "geoPoint": {
+            "lat": 51.50853,
+            "lon": -0.12574
+          },
+          "zip": "EC1M6BQ"
+        },
+        {
+          "city": "London",
+          "country": "United Kingdom",
+          "facility": "Imperial College Healthcare NHS Trust",
+          "geoPoint": {
+            "lat": 51.50853,
+            "lon": -0.12574
+          },
+          "zip": "W120HS"
+        },
+        {
+          "city": "London",
+          "country": "United Kingdom",
+          "facility": "Sarah Cannon Reserach Institute UK",
+          "geoPoint": {
+            "lat": 51.50853,
+            "lon": -0.12574
+          },
+          "zip": "W1G6AD"
+        },
+        {
+          "city": "London",
+          "country": "United Kingdom",
+          "facility": "University College London",
+          "geoPoint": {
+            "lat": 51.50853,
+            "lon": -0.12574
+          },
+          "zip": "W1T4TJ"
+        },
+        {
+          "city": "Manchester",
+          "country": "United Kingdom",
+          "facility": "The Christie NHS Foundation Trust",
+          "geoPoint": {
+            "lat": 53.48095,
+            "lon": -2.23743
+          },
+          "zip": "M204BX"
+        },
+        {
+          "city": "Newcastle upon Tyne",
+          "country": "United Kingdom",
+          "facility": "Sir Bobby Robson Cancer trials research Centre, Northern Centre For Cancer Care",
+          "geoPoint": {
+            "lat": 54.97328,
+            "lon": -1.61396
+          },
+          "zip": "NE77DN"
+        }
+      ],
+      "overallOfficials": [
+        {
+          "affiliation": "Clovis Oncology, Inc.",
+          "name": "Heidi Giordano",
+          "role": "STUDY_DIRECTOR"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "Patients enrolled into this study will be stratified into 3 groups based on gene mutations identified in their tumor tissue. The purpose of this study is to evaluate patient response to maintenance treatment with rucaparib versus placebo. Response to treatment will be analyzed based on homologous recombination (HR) status of tumor samples.",
+      "detailedDescription": "Rucaparib is an orally available, small molecule inhibitor of poly-adenosine diphosphate \\[ADP\\] ribose polymerase (PARP) being developed for treatment of ovarian cancer associated with homologous recombination (HR) DNA repair deficiency (HRD). Clinical data have shown that ovarian cancer patients with and without evidence of a gBRCA mutation benefit from treatment with a PARP and that maintenance treatment with a PARP inhibitor following a response to platinum-based treatment increases PFS in patients with ovarian cancer. While patients with a BRCA mutation derived the most benefit, patients without evidence of a BRCA mutation also derived significant benefit.\n\nPatients enrolled into this study will be stratified into 3 groups based on tumor HRD status. The purpose of this study is to identify which of these groups of patients will most likely benefit from treatment with rucaparib. It is anticipated that rucaparib will provide therapeutic benefit and increase PFS in patients with HRD associated with a BRCA gene mutation or other HR gene alteration."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "PARALLEL",
+        "maskingInfo": {
+          "masking": "DOUBLE",
+          "whoMasked": [
+            "PARTICIPANT",
+            "INVESTIGATOR"
+          ]
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 564,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* Confirmed diagnosis of high-grade serous or endometrioid epithelial ovarian, primary peritoneal, or fallopian tube cancer.\n* Received \u22652 prior platinum-based treatment regimens including platinum based regimen that must have been administered immediately prior to maintenance therapy in this trial.\n* Received no more than 1 non-platinum chemotherapy regimen. Prior hormonal therapy will not be counted as a non-platinum regimen.\n* Must have had at least a 6-month disease-free period following prior treatment with the penultimate platinum-based chemotherapy and achieved a response.\n* For the last chemotherapy course prior to study entry, patients must have received a platinum-based doublet chemotherapy regimen and have achieved a CR or PR (as defined by RECIST) and/or a GCIG CA-125 response.\n* Have sufficient archival tumor tissue for analysis.\n\nExclusion Criteria:\n\n* History of prior cancer except for non-melanoma skin cancer, breast cancer curatively \\> 3 years ago, curatively treated solid tumor (\\>5 years ago without evidence of recurrence), and synchronous endometrial cancer (Stage 1A) with ovarian cancer.\n* Prior treatment with any PARP inhibitor, including rucaparib. Patients who received prior iniparib are eligible.\n* Untreated or symptomatic central nervous system metastases.\n* Pre-existing duodenal stent and/or any gastrointestinal disorder or defect that would, in the opinion of the Investigator, interfere with absorption of study drug.\n* Required drainage of ascites during the final 2 cycles of their last platinum-based regimen and/or during the period between the last dose of chemotherapy of that regimen and randomization to maintenance treatment in this study.",
+      "healthyVolunteers": false,
+      "minimumAge": "18 Years",
+      "sex": "FEMALE",
+      "stdAges": [
+        "ADULT",
+        "OLDER_ADULT"
+      ]
+    },
+    "identificationModule": {
+      "acronym": "ARIEL3",
+      "briefTitle": "Phase 3 Study of Rucaparib as Switch Maintenance After Platinum in Relapsed High Grade Serous or Endometrioid Ovarian Cancer (ARIEL3)",
+      "nctId": "NCT01968213",
+      "officialTitle": "A Study of Rucaparib as Switch Maintenance Following Platinum-Based Chemotherapy in Patients With Platinum-Sensitive, High-Grade Serous or Endometrioid Epithelial Ovarian, Primary Peritoneal or Fallopian Tube Cancer ( ARIEL3 )",
+      "orgStudyIdInfo": {
+        "id": "CO-338-014"
+      },
+      "organization": {
+        "class": "INDUSTRY",
+        "fullName": "pharmaand GmbH"
+      },
+      "secondaryIdInfos": [
+        {
+          "id": "2013-000518-39",
+          "type": "EUDRACT_NUMBER"
+        }
+      ]
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "description": "Progression-free survival by Investigator (invPFS) is defined as the time from randomization to disease progression, according to RECIST v1.1 criteria as assessed by the investigator, or death due to any cause, whichever occurs first. Progressive disease is defined using Response Evaluation Criteria In Solid Tumors Criteria (RECIST v1.1), as a 20% increase in the sum of the longest diameter of measurable lesions, an unequivocal increase in existing non-measurable lesion(s), or the appearance of unequivocal new lesion(s).",
+          "measure": "Disease Progression According to RECIST Version 1.1, as Assessed by the Investigator, or Death From Any Cause (Investigator Progression Free Survival as Per invPFS)",
+          "timeFrame": "Every 12 calendar weeks (within 7 days prior is permitted) after start of treatment until treatment discontinuation due to disease progression. Total follow-up was up to approximately 3 years."
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "description": "To evaluate PFS by RECIST v1.1, as assessed by independent radiology review (IRR).",
+          "measure": "Disease Progression According to RECIST v1.1, as Assessed by Independent Radiology Review (IRR), or Death From Any Cause (irrPFS)",
+          "timeFrame": "Every 12 calendar weeks (within 7 days prior is permitted) after start of treatment until treatment discontinuation due to disease progression. Total follow-up was up to approximately 8.2 years."
+        },
+        {
+          "description": "Overall survival (OS) is defined as the number of days from the date of randomization to the date of death (due to any cause). Patients who are still alive were censored on the date of their last available visit or last date known to be alive.",
+          "measure": "Overall Survival (OS)",
+          "timeFrame": "All patients were followed for survival up to approximately 8.2 years."
+        },
+        {
+          "description": "The National Comprehensive Cancer Network-Functional Assessment of Cancer Therapy (NCCN-FACT) FACT-Ovarian Symptom Index (FOSI-18) is a questionnaire, for completion by patients, designed to assess the impact of cancer therapy on ovarian cancer-related symptoms and is based on numerical point scoring of symptoms. The DRS-P subscale of the questionnaire is specifically designed to assess physical symptoms of ovarian cancer and evaluate changes in the subscale point score in individual assessments over time. This study looked at the time to a 4-point reduction in subscale score as an indicator of improvement in disease-related physical symptoms on cancer therapy.",
+          "measure": "Time to a 4-point Decrease in the Disease-related Symptoms - Physical (DRS-P) Subscale of the FOSI-18",
+          "timeFrame": "Screening, Day 1 of each treatment cycle, Treatment Discontinuation visit, and 28-day Follow-up visit. Total follow-up was up to approximately 6.4 years."
+        },
+        {
+          "description": "The National Comprehensive Cancer Network-Functional Assessment of Cancer Therapy (NCCN-FACT) FACT-Ovarian Symptom Index (FOSI-18) is a questionnaire, for completion by patients, designed to assess the impact of cancer therapy on ovarian cancer-related physical, emotional and treatment-related symptoms, and is based on numerical point scoring of symptoms. The questionnaire is designed to evaluate changes in the total score in individual assessments over time. This study looked at the time to an 8-point reduction in the total score as an indicator of improvement in disease-related symptoms on cancer therapy.",
+          "measure": "Time to an 8-point Decrease in the Total Score of the FOSI-18",
+          "timeFrame": "Screening, Day 1 of each treatment cycle, Treatment Discontinuation visit, and 28-day Follow-up visit. Total follow-up was up to approximately 6.4 years."
+        },
+        {
+          "description": "Concentration summary statistics",
+          "measure": "Individual Model Parameter Estimates of Rucaparib and Covariates Identification",
+          "timeFrame": "Study data collection occurred over approximately 7 months."
+        }
+      ]
+    },
+    "oversightModule": {
+      "oversightHasDmc": true
+    },
+    "referencesModule": {
+      "references": [
+        {
+          "citation": "Peipert JD, Goble S, Isaacson J, Tang X, Wallace K, Coleman RL, Ledermann JA, Cella D. Patient-reported outcomes of maintenance rucaparib in patients with recurrent ovarian carcinoma in ARIEL3, a phase III, randomized, placebo-controlled trial. Gynecol Oncol. 2023 Aug;175:1-7. doi: 10.1016/j.ygyno.2023.05.060. Epub 2023 May 30.",
+          "pmid": "37262961",
+          "type": "DERIVED"
+        },
+        {
+          "citation": "Green ML, Ma SC, Goble S, Giordano H, Maloney L, Simmons AD, Beltman J, Harding TC, Xiao JJ. Population pharmacokinetics of rucaparib in patients with advanced ovarian cancer or other solid tumors. Cancer Chemother Pharmacol. 2022 May;89(5):671-682. doi: 10.1007/s00280-022-04413-7. Epub 2022 Apr 10.",
+          "pmid": "35397664",
+          "type": "DERIVED"
+        },
+        {
+          "citation": "Tattersall A, Ryan N, Wiggans AJ, Rogozinska E, Morrison J. Poly(ADP-ribose) polymerase (PARP) inhibitors for the treatment of ovarian cancer. Cochrane Database Syst Rev. 2022 Feb 16;2(2):CD007929. doi: 10.1002/14651858.CD007929.pub4.",
+          "pmid": "35170751",
+          "type": "DERIVED"
+        },
+        {
+          "citation": "Colombo N, Oza AM, Lorusso D, Aghajanian C, Oaknin A, Dean A, Weberpals JI, Clamp AR, Scambia G, Leary A, Holloway RW, Gancedo MA, Fong PC, Goh JC, O'Malley DM, Armstrong DK, Banerjee S, Garcia-Donas J, Swisher EM, Meunier J, Cameron T, Maloney L, Goble S, Bedel J, Ledermann JA, Coleman RL. The effect of age on efficacy, safety and patient-centered outcomes with rucaparib: A post hoc exploratory analysis of ARIEL3, a phase 3, randomized, maintenance study in patients with recurrent ovarian carcinoma. Gynecol Oncol. 2020 Oct;159(1):101-111. doi: 10.1016/j.ygyno.2020.05.045. Epub 2020 Aug 26.",
+          "pmid": "32861537",
+          "type": "DERIVED"
+        },
+        {
+          "citation": "Ledermann JA, Oza AM, Lorusso D, Aghajanian C, Oaknin A, Dean A, Colombo N, Weberpals JI, Clamp AR, Scambia G, Leary A, Holloway RW, Gancedo MA, Fong PC, Goh JC, O'Malley DM, Armstrong DK, Banerjee S, Garcia-Donas J, Swisher EM, Cameron T, Maloney L, Goble S, Coleman RL. Rucaparib for patients with platinum-sensitive, recurrent ovarian carcinoma (ARIEL3): post-progression outcomes and updated safety results from a randomised, placebo-controlled, phase 3 trial. Lancet Oncol. 2020 May;21(5):710-722. doi: 10.1016/S1470-2045(20)30061-9.",
+          "pmid": "32359490",
+          "type": "DERIVED"
+        },
+        {
+          "citation": "Coleman RL, Oza AM, Lorusso D, Aghajanian C, Oaknin A, Dean A, Colombo N, Weberpals JI, Clamp A, Scambia G, Leary A, Holloway RW, Gancedo MA, Fong PC, Goh JC, O'Malley DM, Armstrong DK, Garcia-Donas J, Swisher EM, Floquet A, Konecny GE, McNeish IA, Scott CL, Cameron T, Maloney L, Isaacson J, Goble S, Grace C, Harding TC, Raponi M, Sun J, Lin KK, Giordano H, Ledermann JA; ARIEL3 investigators. Rucaparib maintenance treatment for recurrent ovarian carcinoma after response to platinum therapy (ARIEL3): a randomised, double-blind, placebo-controlled, phase 3 trial. Lancet. 2017 Oct 28;390(10106):1949-1961. doi: 10.1016/S0140-6736(17)32440-6. Epub 2017 Sep 12.",
+          "pmid": "28916367",
+          "type": "DERIVED"
+        }
+      ],
+      "seeAlsoLinks": [
+        {
+          "label": "ARIEL program website",
+          "url": "http://www.arielstudy.com"
+        }
+      ]
+    },
+    "sponsorCollaboratorsModule": {
+      "collaborators": [
+        {
+          "class": "INDUSTRY",
+          "name": "Foundation Medicine"
+        },
+        {
+          "class": "INDUSTRY",
+          "name": "Myriad Genetics, Inc."
+        }
+      ],
+      "leadSponsor": {
+        "class": "INDUSTRY",
+        "name": "pharmaand GmbH"
+      },
+      "responsibleParty": {
+        "type": "SPONSOR"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2022-07-07",
+        "type": "ACTUAL"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2023-06-09",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2023-06-07",
+      "overallStatus": "COMPLETED",
+      "primaryCompletionDateStruct": {
+        "date": "2017-04-01",
+        "type": "ACTUAL"
+      },
+      "resultsFirstPostDateStruct": {
+        "date": "2018-08-03",
+        "type": "ACTUAL"
+      },
+      "resultsFirstSubmitDate": "2018-05-08",
+      "resultsFirstSubmitQcDate": "2018-08-01",
+      "startDateStruct": {
+        "date": "2014-04-07",
+        "type": "ACTUAL"
+      },
+      "statusVerifiedDate": "2023-06",
+      "studyFirstPostDateStruct": {
+        "date": "2013-10-23",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2013-10-17",
+      "studyFirstSubmitQcDate": "2013-10-18"
+    }
+  },
+  "resultsSection": {
+    "adverseEventsModule": {
+      "description": "Three patients were randomized to the rucaparib arm and discontinued prior to receiving study drug.\n\nReasons for discontinuation were due to withdrawal of consent, physician decision, and laboratory value (did not meet eligibility criteria)",
+      "eventGroups": [
+        {
+          "deathsNumAffected": 9,
+          "deathsNumAtRisk": 372,
+          "description": "Taken orally twice daily (continuous 28 day treatment cycles)",
+          "id": "EG000",
+          "otherNumAffected": 372,
+          "otherNumAtRisk": 372,
+          "seriousNumAffected": 91,
+          "seriousNumAtRisk": 372,
+          "title": "Rucaparib 600 mg Tablets"
+        },
+        {
+          "deathsNumAffected": 2,
+          "deathsNumAtRisk": 189,
+          "description": "Taken orally twice daily (continuous 28 day treatment cycles)",
+          "id": "EG001",
+          "otherNumAffected": 182,
+          "otherNumAtRisk": 189,
+          "seriousNumAffected": 20,
+          "seriousNumAtRisk": 189,
+          "title": "Placebo Tablets"
+        }
+      ],
+      "frequencyThreshold": "5",
+      "otherEvents": [
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 49,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 22,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Abdominal distension"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 121,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 50,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Abdominal pain"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 57,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 11,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Abdominal pain upper"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 143,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 44,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Constipation"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 130,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 43,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Diarrhoea"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 30,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 9,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Dry mouth"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 58,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 9,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Dyspepsia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 284,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 70,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Nausea"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 35,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 5,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Stomatitis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 140,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 29,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Vomiting"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 34,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 9,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Mucosal inflammation"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 43,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 16,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Oedema peripheral"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 54,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 9,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Pyrexia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 32,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 4,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Influenza"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 38,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 12,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Nasopharyngitis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 20,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 3,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Sinusitis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 48,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 6,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Upper respiratory tract infection"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 39,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 9,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Urinary tract infection"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Investigations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 22,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Blood alkaline phosphatase increased"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Investigations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 64,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 3,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Blood creatinine increased"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Investigations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 30,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 3,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Weight decreased"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Investigations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 26,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 8,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "White blood cell count decreased"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Metabolism and nutrition disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 94,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 25,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Decreased appetite"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Metabolism and nutrition disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 28,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 4,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Hypercholesterolaemia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Metabolism and nutrition disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 44,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 11,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Hypomagnesaemia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 81,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 27,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Arthralgia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 57,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 26,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Back pain"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 17,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 15,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Muscle spasms"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 25,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 7,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Myalgia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 21,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 17,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Pain in extremity"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 61,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 15,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Dizziness"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA 19.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 114,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 11,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Dysgeusia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 74,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 31,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Headache"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 31,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 14,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Anxiety"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 33,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 6,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Depression"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 58,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 15,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Insomnia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 67,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 25,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Cough"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 57,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 14,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Dyspnoea"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Skin and subcutaneous tissue disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 36,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 13,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Alopecia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Skin and subcutaneous tissue disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 39,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 16,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Dry skin"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Skin and subcutaneous tissue disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 32,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 5,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Erythema"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Skin and subcutaneous tissue disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 69,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Photosensitivity reaction"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Skin and subcutaneous tissue disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 54,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 22,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Pruritus"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Skin and subcutaneous tissue disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 54,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 17,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Rash"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Vascular disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 23,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 8,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Hot flush"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Vascular disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 43,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 16,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Hypertension"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Blood and lymphatic system disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 139,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 9,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Anaemia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Blood and lymphatic system disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 51,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 3,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Neutropenia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Blood and lymphatic system disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 65,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 2,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Thrombocytopenia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 21,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 7,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Gastrooesophageal reflux disease"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 87,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 20,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Asthenia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 192,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 66,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Fatigue"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 22,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 2,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Influenza like illness"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Investigations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 129,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 4,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Alanine aminotransferase increased"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Investigations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 102,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 3,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Aspartate aminotransferase increased"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Investigations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 31,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 6,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Neutrophil count decreased"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Investigations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 52,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 3,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Platelet count decreased"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 21,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 5,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Neck pain"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 38,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 2,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Taste disorder"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 26,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 7,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Oropharyngeal pain"
+        }
+      ],
+      "seriousEvents": [
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Blood and lymphatic system disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 5,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Febrile neutropenia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Blood and lymphatic system disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Pancytopenia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Cardiac disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Atrial fibrillation"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Cardiac disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Pericardial effusion"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Cardiac disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Sinus bradycardia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Eye disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Diplopia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Abdominal hernia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 6,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Abdominal pain"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 5,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 2,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Constipation"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Diarrhoea"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Duodenal obstruction"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Faecaloma"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 3,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 2,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Gastrointestinal pain"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Intestinal obstruction"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Nausea"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Neutropenic colitis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 4,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 3,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Small intestinal obstruction"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 9,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 2,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Vomiting"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "General physical health deterioration"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Incarcerated hernia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 6,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Pyrexia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Hepatobiliary disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Cholecystitis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Arthritis infective"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Cellulitis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Gastroenteritis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Lower respiratory tract infection"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Pyelonephritis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Sepsis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Sinusitis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Stoma site infection"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Upper respiratory tract infection"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Urinary tract infection"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA 19.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Varicella"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Viral infection"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Injury, poisoning and procedural complications",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Femoral neck fracture"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Injury, poisoning and procedural complications",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Femur fracture"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Injury, poisoning and procedural complications",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Fibula fracture"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Injury, poisoning and procedural complications",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Forearm fracture"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Injury, poisoning and procedural complications",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Incisional hernia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Injury, poisoning and procedural complications",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Tibia fracture"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Investigations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 3,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Blood creatinine increased"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Investigations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Gastrointestinal stoma output increased"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Investigations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "White blood cell count decreased"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Metabolism and nutrition disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Decreased appetite"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Metabolism and nutrition disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 3,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Dehydration"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Metabolism and nutrition disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Hyponatraemia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Back pain"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Groin pain"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Muscular weakness"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 3,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Osteoarthritis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Neoplasms benign, malignant and unspecified (incl cysts and polyps)",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Acute myeloid leukaemia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Neoplasms benign, malignant and unspecified (incl cysts and polyps)",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "B-cell unclassifiable lymphoma high grade"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Neoplasms benign, malignant and unspecified (incl cysts and polyps)",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Malignant melanoma"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Neoplasms benign, malignant and unspecified (incl cysts and polyps)",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Malignant neoplasm progression"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Neoplasms benign, malignant and unspecified (incl cysts and polyps)",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Metastases to meninges"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Neoplasms benign, malignant and unspecified (incl cysts and polyps)",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 5,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Myelodysplastic syndrome"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Neoplasms benign, malignant and unspecified (incl cysts and polyps)",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Squamous cell carcinoma of lung"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Amnesia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Cognitive disorder"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Hypoaesthesia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Sciatica"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 3,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Seizure"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Confusional state"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Mental status changes"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Renal and urinary disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 4,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Acute kidney injury"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Renal and urinary disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Renal failure"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Renal and urinary disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Urinary tract obstruction"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Reproductive system and breast disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Female genital tract fistula"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Acute pulmonary oedema"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "sourceVocabulary": "MedDRA 19.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Acute respiratory distress syndrome"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Cough"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Dyspnoea"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Pleural effusion"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Pulmonary embolism"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Vascular disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Hypertension"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Vascular disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Hypotension"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Cardiac disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Cardiac arrest"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Blood and lymphatic system disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 18,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Anaemia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Blood and lymphatic system disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Neutropenia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Blood and lymphatic system disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Thrombocytopenia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Colitis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Stomatitis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Varices oesophageal"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Asthenia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Hepatobiliary disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Biliary obstruction"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Hepatobiliary disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Portal hypertension"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Immune system disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Haemophagocytic lymphohistiocytosis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Pneumonia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Viral upper respiratory tract infection"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Injury, poisoning and procedural complications",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Fractured sacrum"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Injury, poisoning and procedural complications",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Joint dislocation"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Injury, poisoning and procedural complications",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Pelvic fracture"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Injury, poisoning and procedural complications",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Post procedural haematoma"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Injury, poisoning and procedural complications",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Seroma"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Investigations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 3,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Platelet count decreased"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Neoplasms benign, malignant and unspecified (incl cysts and polyps)",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Acute lymphocytic leukaemia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Neoplasms benign, malignant and unspecified (incl cysts and polyps)",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Basal cell carcinoma"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Neoplasms benign, malignant and unspecified (incl cysts and polyps)",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Invasive lobular breast carcinoma"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Neoplasms benign, malignant and unspecified (incl cysts and polyps)",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Lung squamous cell carcinoma recurrent"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Cerebrovascular accident"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Behaviour disorder"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Haemoptysis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Hypersensitivity pneumonitis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA 25.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 372
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 189
+            }
+          ],
+          "term": "Respiratory syncytial virus infection"
+        }
+      ],
+      "timeFrame": "Adverse events were reported from the date of first dose of study drug and until 28 days after last dose of study drug, approximately 8.2 years."
+    },
+    "baselineCharacteristicsModule": {
+      "denoms": [
+        {
+          "counts": [
+            {
+              "groupId": "BG000",
+              "value": "375"
+            },
+            {
+              "groupId": "BG001",
+              "value": "189"
+            },
+            {
+              "groupId": "BG002",
+              "value": "564"
+            }
+          ],
+          "units": "Participants"
+        }
+      ],
+      "groups": [
+        {
+          "description": "Taken orally twice daily (continuous 28 day treatment cycles)",
+          "id": "BG000",
+          "title": "Rucaparib 600 mg Tablets"
+        },
+        {
+          "description": "Taken orally twice daily (continuous 28 day treatment cycles)",
+          "id": "BG001",
+          "title": "Placebo Tablets"
+        },
+        {
+          "description": "Total of all reporting groups",
+          "id": "BG002",
+          "title": "Total"
+        }
+      ],
+      "measures": [
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "lowerLimit": "39",
+                      "upperLimit": "84",
+                      "value": "61"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "lowerLimit": "36",
+                      "upperLimit": "85",
+                      "value": "62"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "lowerLimit": "36",
+                      "upperLimit": "85",
+                      "value": "61"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "dispersionType": "FULL_RANGE",
+          "paramType": "MEDIAN",
+          "title": "Age, Continuous",
+          "unitOfMeasure": "Years"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "375"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "189"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "564"
+                    }
+                  ],
+                  "title": "Female"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Male"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Sex: Female, Male",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "3"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "4"
+                    }
+                  ],
+                  "title": "American Indian or Alaska Native"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "14"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "7"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "21"
+                    }
+                  ],
+                  "title": "Asian"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Native Hawaiian or Other Pacific Islander"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "6"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "2"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "8"
+                    }
+                  ],
+                  "title": "Black or African American"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "292"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "144"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "436"
+                    }
+                  ],
+                  "title": "White"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "12"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "8"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "20"
+                    }
+                  ],
+                  "title": "More than one race"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "48"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "27"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "75"
+                    }
+                  ],
+                  "title": "Unknown or Not Reported"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Race (NIH/OMB)",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "126"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "64"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "190"
+                    }
+                  ],
+                  "title": "RECIST CR"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "249"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "125"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "374"
+                    }
+                  ],
+                  "title": "RECIST / CA-125 PR"
+                }
+              ]
+            }
+          ],
+          "description": "Complete and partial responses at baseline must have been reported according to RECIST v1.1, as assessed by CT/MRI, and GCIG CA-125 response criteria, and defined as: Complete Response (CR) i.e. absence of any detectable disease and CA-125\\<ULN; Partial Response (PR), \u226530% decrease in the sum of the longest diameter of measurable lesions or if non-measurable disease at baseline, a GCIG CA-125 response (least a 50% reduction in CA-125 levels from a pretreatment sample (which must have initially been 2xULN) and confirmed after \u226521 days). CA-125 must have been \\<ULN for all PRs.",
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Best Response from Previous Platinum Therapy",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "151"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "76"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "227"
+                    }
+                  ],
+                  "title": "6-12 Months"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "224"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "113"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "337"
+                    }
+                  ],
+                  "title": ">12 Months"
+                }
+              ]
+            }
+          ],
+          "description": "Progressive disease is defined using Response Evaluation Criteria In Solid Tumors Criteria (RECIST v1.1), as a 20% increase in the sum of the longest diameter of measurable lesions, an unequivocal increase in existing non-measurable lesion(s), or the appearance of unequivocal new lesion(s).",
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Penultimate Progression-free (PF) Interval",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "71"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "29"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "100"
+                    }
+                  ],
+                  "title": "Yes"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "304"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "160"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "464"
+                    }
+                  ],
+                  "title": "No"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Bulky Lesions (lesion >20 mm) at Baseline",
+          "unitOfMeasure": "Participants"
+        }
+      ]
+    },
+    "moreInfoModule": {
+      "certainAgreement": {
+        "otherDetails": "Sponsor's agreements with investigators require proposed public disclosures of trial results to be submitted to Sponsor for review prior to publication. Sponsor may request deletion of confidential information or a delay in publication to address intellectual property concerns, but Sponsor may not suppress publication of the trial results indefinitely. Sponsor may request delay of a single-center publication until after the release of a multi-site publication or an agreed upon period of time.",
+        "piSponsorEmployee": false,
+        "restrictionType": "OTHER",
+        "restrictiveAgreement": true
+      },
+      "pointOfContact": {
+        "email": "medinfo@clovisoncology.com",
+        "organization": "Clovis Oncology, Inc.",
+        "phone": "+1 415 409 7220",
+        "title": "Medical Information Department"
+      }
+    },
+    "outcomeMeasuresModule": {
+      "outcomeMeasures": [
+        {
+          "analyses": [
+            {
+              "ciLowerLimit": "0.295",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "95",
+              "ciUpperLimit": "0.451",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "otherAnalysisDescription": "Analysis is performed by randomization strata of HRD classification by CTA, best response, and penultimate platinum progression-free interval.",
+              "pValue": "<0.0001",
+              "paramType": "Cox Proportional Hazard",
+              "paramValue": "0.365",
+              "statisticalMethod": "Regression, Cox"
+            }
+          ],
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "8.3",
+                      "upperLimit": "11.4",
+                      "value": "10.8"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "5.3",
+                      "upperLimit": "5.5",
+                      "value": "5.4"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "375"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "189"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Progression-free survival by Investigator (invPFS) is defined as the time from randomization to disease progression, according to RECIST v1.1 criteria as assessed by the investigator, or death due to any cause, whichever occurs first. Progressive disease is defined using Response Evaluation Criteria In Solid Tumors Criteria (RECIST v1.1), as a 20% increase in the sum of the longest diameter of measurable lesions, an unequivocal increase in existing non-measurable lesion(s), or the appearance of unequivocal new lesion(s).",
+          "dispersionType": "95% Confidence Interval",
+          "groups": [
+            {
+              "description": "Taken orally twice daily (continuous 28 day treatment cycles)",
+              "id": "OG000",
+              "title": "Rucaparib 600 mg Tablets"
+            },
+            {
+              "description": "Taken orally twice daily (continuous 28 day treatment cycles)",
+              "id": "OG001",
+              "title": "Placebo Tablets"
+            }
+          ],
+          "paramType": "MEDIAN",
+          "populationDescription": "Intent-to-treat: All patients randomized",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Every 12 calendar weeks (within 7 days prior is permitted) after start of treatment until treatment discontinuation due to disease progression. Total follow-up was up to approximately 3 years.",
+          "title": "Disease Progression According to RECIST Version 1.1, as Assessed by the Investigator, or Death From Any Cause (Investigator Progression Free Survival as Per invPFS)",
+          "type": "PRIMARY",
+          "unitOfMeasure": "Months"
+        },
+        {
+          "analyses": [
+            {
+              "ciLowerLimit": "0.278",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "95",
+              "ciUpperLimit": "0.450",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "otherAnalysisDescription": "Analysis is performed by randomization strata of HRD classification by CTA, best response, and penultimate platinum progression-free interval.",
+              "pValue": "<0.0001",
+              "paramType": "Cox Proportional Hazard",
+              "paramValue": "0.354",
+              "statisticalMethod": "Regression, Cox"
+            }
+          ],
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "11.0",
+                      "upperLimit": "19.1",
+                      "value": "13.7"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "5.1",
+                      "upperLimit": "5.5",
+                      "value": "5.4"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "375"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "189"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "To evaluate PFS by RECIST v1.1, as assessed by independent radiology review (IRR).",
+          "dispersionType": "95% Confidence Interval",
+          "groups": [
+            {
+              "description": "Taken orally twice daily (continuous 28 day treatment cycles)",
+              "id": "OG000",
+              "title": "Rucaparib 600 mg Tablets"
+            },
+            {
+              "description": "Taken orally twice daily (continuous 28 day treatment cycles)",
+              "id": "OG001",
+              "title": "Placebo Tablets"
+            }
+          ],
+          "paramType": "MEDIAN",
+          "populationDescription": "Intent-to-treat: All patients randomized",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Every 12 calendar weeks (within 7 days prior is permitted) after start of treatment until treatment discontinuation due to disease progression. Total follow-up was up to approximately 8.2 years.",
+          "title": "Disease Progression According to RECIST v1.1, as Assessed by Independent Radiology Review (IRR), or Death From Any Cause (irrPFS)",
+          "type": "SECONDARY",
+          "unitOfMeasure": "months"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "32.8",
+                      "upperLimit": "39.4",
+                      "value": "36.0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "38.1",
+                      "upperLimit": "46.9",
+                      "value": "43.2"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "375"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "189"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Overall survival (OS) is defined as the number of days from the date of randomization to the date of death (due to any cause). Patients who are still alive were censored on the date of their last available visit or last date known to be alive.",
+          "dispersionType": "95% Confidence Interval",
+          "groups": [
+            {
+              "description": "Taken orally twice daily (continuous 28 day treatment cycles)",
+              "id": "OG000",
+              "title": "Rucaparib 600 mg Tablets"
+            },
+            {
+              "description": "Taken orally twice daily (continuous 28 day treatment cycles)",
+              "id": "OG001",
+              "title": "Placebo Tablets"
+            }
+          ],
+          "paramType": "MEDIAN",
+          "populationDescription": "Intent-to-treat: All patients randomized",
+          "reportingStatus": "POSTED",
+          "timeFrame": "All patients were followed for survival up to approximately 8.2 years.",
+          "title": "Overall Survival (OS)",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Months"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "1.8",
+                      "upperLimit": "2.8",
+                      "value": "1.9"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "4.6",
+                      "upperLimit": "9.2",
+                      "value": "6.4"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "375"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "189"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The National Comprehensive Cancer Network-Functional Assessment of Cancer Therapy (NCCN-FACT) FACT-Ovarian Symptom Index (FOSI-18) is a questionnaire, for completion by patients, designed to assess the impact of cancer therapy on ovarian cancer-related symptoms and is based on numerical point scoring of symptoms. The DRS-P subscale of the questionnaire is specifically designed to assess physical symptoms of ovarian cancer and evaluate changes in the subscale point score in individual assessments over time. This study looked at the time to a 4-point reduction in subscale score as an indicator of improvement in disease-related physical symptoms on cancer therapy.",
+          "dispersionType": "95% Confidence Interval",
+          "groups": [
+            {
+              "description": "Taken orally twice daily (continuous 28 day treatment cycles)",
+              "id": "OG000",
+              "title": "Rucaparib 600 mg Tablets"
+            },
+            {
+              "description": "Taken orally twice daily (continuous 28 day treatment cycles)",
+              "id": "OG001",
+              "title": "Placebo Tablets"
+            }
+          ],
+          "paramType": "MEDIAN",
+          "populationDescription": "Intent-to-treat: All patients randomized",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Screening, Day 1 of each treatment cycle, Treatment Discontinuation visit, and 28-day Follow-up visit. Total follow-up was up to approximately 6.4 years.",
+          "title": "Time to a 4-point Decrease in the Disease-related Symptoms - Physical (DRS-P) Subscale of the FOSI-18",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Months"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "2.7",
+                      "upperLimit": "3.7",
+                      "value": "2.9"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "9.2",
+                      "upperLimit": "17.5",
+                      "value": "10.8"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "375"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "189"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The National Comprehensive Cancer Network-Functional Assessment of Cancer Therapy (NCCN-FACT) FACT-Ovarian Symptom Index (FOSI-18) is a questionnaire, for completion by patients, designed to assess the impact of cancer therapy on ovarian cancer-related physical, emotional and treatment-related symptoms, and is based on numerical point scoring of symptoms. The questionnaire is designed to evaluate changes in the total score in individual assessments over time. This study looked at the time to an 8-point reduction in the total score as an indicator of improvement in disease-related symptoms on cancer therapy.",
+          "dispersionType": "95% Confidence Interval",
+          "groups": [
+            {
+              "description": "Taken orally twice daily (continuous 28 day treatment cycles)",
+              "id": "OG000",
+              "title": "Rucaparib 600 mg Tablets"
+            },
+            {
+              "description": "Taken orally twice daily (continuous 28 day treatment cycles)",
+              "id": "OG001",
+              "title": "Placebo Tablets"
+            }
+          ],
+          "paramType": "MEDIAN",
+          "populationDescription": "Intent-to-treat: All patients randomized",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Screening, Day 1 of each treatment cycle, Treatment Discontinuation visit, and 28-day Follow-up visit. Total follow-up was up to approximately 6.4 years.",
+          "title": "Time to an 8-point Decrease in the Total Score of the FOSI-18",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Months"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "95.42",
+                      "value": "1128"
+                    }
+                  ]
+                }
+              ],
+              "title": "Cycle 2 Day 1"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "86.19",
+                      "value": "1136"
+                    }
+                  ]
+                }
+              ],
+              "title": "Cycle 4 Day 1"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "78.53",
+                      "value": "1165"
+                    }
+                  ]
+                }
+              ],
+              "title": "Cycle 7 Day 1"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "295"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Concentration summary statistics",
+          "dispersionType": "Geometric Coefficient of Variation",
+          "groups": [
+            {
+              "description": "Taken orally twice daily (continuous 28 day treatment cycles)",
+              "id": "OG000",
+              "title": "Rucaparib 600 mg Tablets"
+            }
+          ],
+          "paramType": "GEOMETRIC_MEAN",
+          "populationDescription": "All patients who are treated with rucaparib with at least one pharmacokinetic (PK) measurement",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Study data collection occurred over approximately 7 months.",
+          "title": "Individual Model Parameter Estimates of Rucaparib and Covariates Identification",
+          "type": "SECONDARY",
+          "unitOfMeasure": "ng/mL"
+        }
+      ]
+    },
+    "participantFlowModule": {
+      "groups": [
+        {
+          "description": "Taken orally twice daily (continuous 28 day treatment cycles)",
+          "id": "FG000",
+          "title": "Rucaparib 600 mg Tablets"
+        },
+        {
+          "description": "Taken orally twice daily (continuous 28 day treatment cycles)",
+          "id": "FG001",
+          "title": "Placebo Tablets"
+        }
+      ],
+      "periods": [
+        {
+          "milestones": [
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "375"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "189"
+                }
+              ],
+              "type": "STARTED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "375"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "189"
+                }
+              ],
+              "type": "COMPLETED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "0"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "0"
+                }
+              ],
+              "type": "NOT COMPLETED"
+            }
+          ],
+          "title": "Overall Study"
+        }
+      ],
+      "recruitmentDetails": "564 subjects were recruited from 87 sites across 11 countries and randomized (2:1) to treatment with rucaparib or placebo"
+    }
+  }
+}

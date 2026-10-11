@@ -1,0 +1,143 @@
+{
+ "n_test": 1999,
+ "programs": {
+  "A": {
+   "coverage_on_due": {
+    "n": 1112,
+    "covered": 494
+   },
+   "level_agreement_due": 40.91726618705036,
+   "level_agreement_not_due": 0.0,
+   "unsupported_fixed": {
+    "n": 36,
+    "with_certification": 16,
+    "by_status_and_stated": {
+     "ongoing->C2": 25,
+     "overdue->C3": 2,
+     "reported->C2": 7,
+     "reported->C3": 2
+    }
+   },
+   "classification_agreement": {
+    "classified": 526,
+    "agree": 518,
+    "pct": 98.47908745247149,
+    "verdicts": {
+     "compliant": 165,
+     "overdue": 197,
+     "late": 164
+    },
+    "definition": "builder verdicts"
+   },
+   "arms": {
+    "react_program_attested": {
+     "episodes": 161,
+     "episode_errors": 0,
+     "emissions": 237,
+     "emissions_without_route": 0,
+     "tool_calls_per_episode": 3.9937888198757765,
+     "completion_calls_per_episode": 0.0,
+     "tokens_per_episode": 6785.086956521739
+    },
+    "prime_guided": {
+     "episodes": 161,
+     "episode_errors": 0,
+     "emissions": 161,
+     "emissions_without_route": 0,
+     "tool_calls_per_episode": 3.198757763975155,
+     "completion_calls_per_episode": 0.0,
+     "tokens_per_episode": 10791.496894409938
+    },
+    "prime_complete": {
+     "episodes": 161,
+     "episode_errors": 0,
+     "emissions": 161,
+     "emissions_without_route": 0,
+     "tool_calls_per_episode": 5.043478260869565,
+     "completion_calls_per_episode": 1.8385093167701863,
+     "tokens_per_episode": 10768.124223602485
+    }
+   }
+  },
+  "B": {
+   "coverage_on_due": {
+    "n": 1112,
+    "covered": 969
+   },
+   "level_agreement_due": 71.58273381294964,
+   "level_agreement_not_due": 94.25028184892898,
+   "unsupported_fixed": {
+    "n": 70,
+    "with_certification": 55,
+    "by_status_and_stated": {
+     "reported->C3": 31,
+     "ongoing->C2": 31,
+     "overdue->C3": 2,
+     "ongoing->C3": 5,
+     "reported->C2": 1
+    }
+   },
+   "classification_agreement": {
+    "classified": 922,
+    "agree": 843,
+    "pct": 91.43167028199566,
+    "verdicts": {
+     "overdue": 474,
+     "late": 257,
+     "compliant": 191
+    },
+    "definition": "levels; due-not-late split by a recorded results submission"
+   },
+   "arms": {
+    "react_program_attested": {
+     "episodes": 600,
+     "episode_errors": 0,
+     "emissions": 561,
+     "emissions_without_route": 0,
+     "tool_calls_per_episode": 2.9516666666666667,
+     "completion_calls_per_episode": 0.0,
+     "tokens_per_episode": 3722.338333333333
+    },
+    "prime_guided": {
+     "episodes": 600,
+     "episode_errors": 0,
+     "emissions": 555,
+     "emissions_without_route": 0,
+     "tool_calls_per_episode": 2.8383333333333334,
+     "completion_calls_per_episode": 0.0,
+     "tokens_per_episode": 9424.855
+    },
+    "prime_complete": {
+     "episodes": 600,
+     "episode_errors": 0,
+     "emissions": 555,
+     "emissions_without_route": 0,
+     "tool_calls_per_episode": 4.536666666666667,
+     "completion_calls_per_episode": 1.6833333333333333,
+     "tokens_per_episode": 9441.231666666667
+    }
+   }
+  }
+ },
+ "validation_sample": {
+  "n": 600,
+  "status": {
+   "reported-late": 221,
+   "reported": 262,
+   "overdue": 117
+  },
+  "due": 587,
+  "with_certification": 58
+ },
+ "test_sample": {
+  "status": {
+   "ongoing": 878,
+   "reported": 273,
+   "overdue": 490,
+   "reported-late": 357,
+   "overdue-cancelled": 1
+  },
+  "due": 1112,
+  "with_certification": 96
+ }
+}

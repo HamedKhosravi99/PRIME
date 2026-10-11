@@ -1,0 +1,361 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "F",
+   "id": "E1",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:true",
+    "params": {
+     "field_path": "database_specific.github_reviewed",
+     "record_id": "GHSA-555p-6grf-mh7f"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "severity.0.score",
+     "database_specific.github_reviewed",
+     "summary"
+    ],
+    "what": "whether the advisory has been reviewed by the database maintainers"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.severity",
+     "record_id": "GHSA-555p-6grf-mh7f"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.severity",
+     "details",
+     "severity.0.score"
+    ],
+    "what": "the maintainers' severity label"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.cwe_ids.0",
+     "record_id": "GHSA-555p-6grf-mh7f"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "details",
+     "database_specific.cwe_ids.0",
+     "references.0.url"
+    ],
+    "what": "the first CWE identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "aliases.0",
+     "record_id": "GHSA-555p-6grf-mh7f"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "aliases.0",
+     "details",
+     "summary"
+    ],
+    "what": "the first alias identifier (such as a CVE)"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "schema_version",
+     "record_id": "GHSA-555p-6grf-mh7f"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "references.0.url",
+     "schema_version",
+     "references.0.type"
+    ],
+    "what": "the schema version of the record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.github_reviewed",
+     "record_id": "GHSA-555p-6grf-mh7f"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.github_reviewed",
+     "details",
+     "summary"
+    ],
+    "what": "whether the advisory has been reviewed by the database maintainers"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2028-01-01\"",
+    "params": {
+     "field_path": "published",
+     "record_id": "GHSA-555p-6grf-mh7f"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "published",
+     "details",
+     "modified"
+    ],
+    "what": "the date the advisory was published"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.github_reviewed",
+      "equals",
+      true
+     ],
+     [
+      "database_specific.severity",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.github_reviewed",
+      "equals",
+      true
+     ],
+     [
+      "database_specific.severity",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.cwe_ids.0",
+      "exists",
+      null
+     ],
+     [
+      "aliases.0",
+      "exists",
+      null
+     ],
+     [
+      "schema_version",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.github_reviewed",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "sec-v2-6179",
+ "notes_for_annotators": "{\"family\": \"security-nested-het-08\", \"topology\": \"nested\", \"cost\": \"het\", \"target_level\": 0, \"false_mech\": false, \"locator\": true, \"source_instance\": \"sec-v2-0179\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-555p-6grf-mh7f": {
+   "aliases": [
+    "CVE-2026-47712"
+   ],
+   "database_specific": {
+    "cwe_ids": [
+     "CWE-22"
+    ],
+    "github_reviewed": true,
+    "severity": "LOW"
+   },
+   "details": "### Impact\n\ndulwich.porcelain.format_patch(outdir=...) derives each patch filename from the commit's subject line. Prior to this fix, get_summary only replaced spaces with dashes - path separators (/, \\),   parent-directory components (..), and   other filename-hostile characters (e.g. :)  were preserved verbatim and passed   straight into os.path.join(outdir,   f\"{i:04d}-{summary}.patch\").\n\nA malicious commit subject could therefore direct the generated patch file outside the requested outdir. Reduced examples:\n\n- x/../../x produced <outdir>/0001-x/../../x.patch, resolving\n  two directories above outdir.\n- x\\..\\..\\x produced the equivalent escape on Windows, here \\ is also a path separator.\n\nRelated issues from the same root cause:\n\n- Subjects containing characters that are illegal in Windows filenames (e.g. :) caused format_patch to fail outright on  Windows, where git would have succeeded.\n- Very long subjects produced excessively long filenames that could exceed filesystem limits; git truncates them.\n\nAnyone calling porcelain.format_patch (or the dulwich format-patch CLI) against untrusted commits - for example, a service that runs format-patch over user-supplied repositories or pull requests - could have patch files written to attacker-chosen locations within the process's write permissions.\n\n### Patches\n\nFixed in Dulwich 1.2.5. Users should upgrade.\n\n dulwich.patch.get_summary now mirrors git's format_sanitized_subject: only `[A-Za-z0-9._]` are kept, runs of other characters collapse to a single -, consecutive . collapse to a single ., trailing ./- are stripped, and the result is length-limited. This makes the returned string safe to embed as a filename component, so format_patch can no longer be steered out of outdir via the commit subject.\n\n###  Workarounds\n\nUntil upgrading, callers that pass untrusted commits to   porcelain.format_patch can:\n\n- Use stdout=True and write the patch to a destination they control, rather than letting format_patch choose the filename.\n- Validate the chosen path before opening - e.g. compare os.path.realpath(returned_path) against  os.path.realpath(outdir) and reject any patch whose resolved path is not inside outdir.\n- Pre-screen commits and refuse to format any whose subject's first line contains /, \\, .., or other characters that are not safe on the target filesystem.\n\n### Resources\n\n- Fix commit: https://github.com/jelmer/dulwich/commit/c2446e51b\n- Affected API: dulwich.porcelain.format_patch / dulwich format-patch\n- Reference behavior: git's format_sanitized_subject in pretty.c",
+   "modified": "2026-07-13T16:43:37.445090093Z",
+   "published": "2026-06-08T23:04:48Z",
+   "references": [
+    {
+     "type": "WEB",
+     "url": "https://github.com/jelmer/dulwich/security/advisories/GHSA-555p-6grf-mh7f"
+    }
+   ],
+   "schema_version": "1.7.5",
+   "severity": [
+    {
+     "score": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N"
+    }
+   ],
+   "summary": "Dulwich doesn't sanitize commit subjects in `porcelain.format_patch`"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-555p-6grf-mh7f.",
+ "seed": "GHSA-555p-6grf-mh7f",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

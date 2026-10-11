@@ -1,0 +1,344 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "F",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"NCT01542346\"",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT04472325"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.eligibilityModule.sex"
+    ],
+    "what": "the NCT identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT04472325"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.statusModule.statusVerifiedDate"
+    ],
+    "what": "the overall recruitment status"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2023-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT04472325"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.healthyVolunteers",
+     "protocolSection.statusModule.lastUpdateSubmitDate",
+     "protocolSection.statusModule.studyFirstSubmitDate"
+    ],
+    "what": "the date of the most recent update submission"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT04472325"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.identificationModule.briefTitle"
+    ],
+    "what": "the brief summary"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT04472325"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.statusModule.statusVerifiedDate"
+    ],
+    "what": "the eligibility criteria text"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT04472325"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.statusModule.statusVerifiedDate"
+    ],
+    "what": "the official title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT04472325"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.eligibilityModule.minimumAge"
+    ],
+    "what": "the minimum age for eligibility"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "equals",
+      "NCT01542346"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "equals",
+      "NCT01542346"
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2023-01-01"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "equals",
+      "NCT01542346"
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2023-01-01"
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-6166",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-07\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 0, \"false_mech\": true, \"locator\": true, \"source_instance\": \"cli-v2-0166\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT04472325": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "The hypothesis is that the differential extent of microstructural damages in the affected brain regions can be specific to the disease of interest and could reflect the clinical severity. Therefore, we propose that the whole brain parcellation of diffusion MRI can be used to improve the diagnosis and prediction of clinical outcomes in Parkinson's Disease.\n\n1. A regression model between clinical severity and two-year clinical outcomes and diffusion properties from multiple parcellated regions will be developed.\n2. Blind validation will be performed."
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n\\-\n\nExclusion Criteria:\n\n* Cardiac pacemaker or defibrillator implantation Intracranial metal device implantation\n* Other major systemic diseases, such as renal failure, heart failure, stroke, AMI/unstable angina, poorly controlled diabetes mellitus, poorly controlled hypertension\n* Alcohol or drug abuse\n* Moderate to severe dementia\n* Severe movement disorders\n* Imaging data is similar to a nuclear medical examination, exclusion criteria is any abnormality that may affect cognitive function as reflected in computer tomography or MRI records, such as hydrocephalus or encephalitis. Mild cortical atrophy is acceptable.\n* History of intracranial surgery including thalamotomy, pallidotomy, and/or deep brain stimulation\n* Major physical or neuropsychiatric disorders\n* Structural abnormalities that may cause dementia, such as cortical infarction, tumour, or subdural hematoma\n* Besides medication for Parkinson's Disease, taking other medication with substances that can pass through the blood-brain barrier\n* Besides medication for Parkinson's Disease, taking other medication for more than 10 years\n* Treatments or concurrent illnesses other than Alzheimer's Disease that could interfere with cognitive function\n* Meet the criteria for dementia (DSM-IV)\n* Head trauma with loss of consciousness greater than 10 minutes\n* Severe loss of sensation",
+     "healthyVolunteers": true,
+     "minimumAge": "50 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "The Differential Diagnosis and Prognosis of Idiopathic and Atypical Parkinson Disease by Using Diffusion MRI",
+     "nctId": "NCT04472325",
+     "officialTitle": "The Differential Diagnosis and Prognosis of Idiopathic and Atypical Parkinson Disease by Using Diffusion MRI"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2021-08-05",
+     "overallStatus": "COMPLETED",
+     "statusVerifiedDate": "2021-08",
+     "studyFirstSubmitDate": "2020-06-14"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT04472325.",
+ "seed": "NCT04472325",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7093",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Unspecified vulnerability in the Password Reset Tool before 0.4.1 on Plone 2.5 and 2.5.1 Release Candidate",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 203,
+   "completion_tokens": 22,
+   "latency_s": 1.562,
+   "raw": "The document specifies \"Password Reset Tool\" as the affected package, establishing the condition. ANSWER: T"
+  }
+ ]
+}

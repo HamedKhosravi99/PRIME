@@ -1,0 +1,283 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT05977153"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT05977153"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2027-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT05977153"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT05977153"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT05977153"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT05977153"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT05977153"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2027-01-01"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2027-01-01"
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-0252",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-07\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": null, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT05977153": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "The goal of this study is to compare two different ways of helping patients with a condition called sepsis who need help breathing using a machine called a ventilator. The investigators want to study which way of setting the ventilator is better for the lungs.\n\nHere are the main questions the investigators want to answer:\n\n1. How does the amount of air in the lungs and the way it moves differ between the two ways?\n2. How does the way air spreads out in different parts of the lungs differ between the two ways? In this study, the investigators will take special pictures of the lungs using a machine called a CT scan. The pictures will show us how much the lungs stretch and how much air is in different parts of the lungs. The investigators will compare two different ways of using the ventilator: one personalized for each patient based on their breathing, and another way that is commonly used.\n\nBy comparing these two ways, the investigators hope to learn which one is better for helping patients with sepsis who need the ventilator. This information can help doctors make better decisions about how to care for these patients and improve their breathing."
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Following onset of mechanical ventilation and not longer than 5 days after intubation.\n* Sepsis as defined by the most recent criteria:\n\n  * Life-threatening organ dysfunction caused by a dysregulated host response to infection operationalized by presumed or documented infection and a Sequential \\[Sepsis-related\\] Organ Failure Assessment (SOFA) score \\>= 2 or a change by 2 from the baseline if baseline known to be different from 0;\n\nExclusion Criteria:\n\n* Age \\< 18 years;\n* Hemodynamic instability, defined as: systolic blood pressure (SBP) \\< 90 mmHg that is not adequately stabilized by vasopressors or inotropic agents. For these purposes, SBP will not be considered \"adequately stabilized\" if the dose of the vasopressor/inotrope has not been stable for at least one hour;\n* Hypoxemia, defined as: PaO2 \\< 70 mmHg on an inspired oxygen fraction (FiO2) greater than or equal to 0.9;\n* Hemodynamic and/or respiratory instability (as defined, in items 2 and 3) that develop when the patient is mobilized during routine nursing care such as repositioning/washing the patient or changing their bed linens;\n* Hemodynamic and/or respiratory instability (as defined, in items 2 and 3) that develop when a 20 second respiratory pause is required to implement the study protocol. This will be tested by inducing such a pause prior to transporting the patient;\n* Any acute or chronic condition which, in the opinion of the investigators, might confound the imaging measurements (such as, but not limited to, severe bronchospasm, pulmonary infection, and lung tumor);\n* Any acute or chronic condition which, in the opinion of the investigators or managing critical care team, could prevent safe transport to the CT suite.\n* \"Air leaks\" requiring tube thoracotomy (e.g., pneumothorax, bronchopleural fistula);\n* Body mass index \\> 40 kg/m2;\n* Pregnancy (since this is a study that would expose a fetus to radiation risk);\n* Patients who have taken part in other research studies involving radiation exposure, or those patients for whom this research radiation history is unavailable at the time of consent."
+    },
+    "identificationModule": {
+     "briefTitle": "CT for Personalized Mechanical Ventilation",
+     "nctId": "NCT05977153",
+     "officialTitle": "CT-Guided Personalized Mechanical Ventilation to Minimize Ventilator-Induced Lung Injury Study"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2025-09-23",
+     "overallStatus": "ACTIVE_NOT_RECRUITING"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT05977153.",
+ "seed": "NCT05977153",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

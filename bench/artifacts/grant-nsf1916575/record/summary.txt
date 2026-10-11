@@ -1,0 +1,27 @@
+NSF AWARD RECORD (public, structured) -- award id 1916575
+role: administrative/identifying facts
+
+AWARD_ID: 1916575
+TITLE: An integrated geophysics cruise to map the northern edge in the Chukchi Borderland and the adjacent Canada Basin - constraints on basin history and crustal structure
+PI: Bernard J Coakley
+PI_EMAIL: bjcoakley@alaska.edu
+AWARDEE_INSTITUTION: University of Alaska Fairbanks Campus
+AWARDEE_CITY_STATE: Fairbanks, AK
+DIRECTORATE: Directorate for Geosciences (GEO)
+DIVISION: Office of Polar Programs (OPP)
+PROGRAM: ANS-Arctic Natural Sciences
+TRANSACTION_TYPE: Standard Grant
+CFDA_NUMBER: 47.078
+START_DATE: 01/01/2021
+EXPIRATION_DATE: 12/31/2026
+INITIAL_AMENDMENT_DATE: 07/31/2019
+LATEST_AMENDMENT_DATE: 12/05/2025
+
+ABSTRACT:
+Over the last fifty years, we have learned the ocean basins are relatively young. Knowing their history is necessary to understand the ancient, adjacent continents. The Amerasia Basin of the Arctic Ocean is a mystery. While it is an ocean basin, the familiar patterns created by seafloor spreading are not obvious. As a result, it has not been possible to understand the basin history. This project will study the history of three adjacent features in the Amerasia Basin: the Chukchi Borderland, the Alpha Ridge and the Canada Basin. This project plan to use the Geological Survey of Denmark and Greenland (GEUS) portable, flexible multi-channel seismic reflection (MCS) system on a research vessel.
+
+SOURCE: https://api.nsf.gov/services/v1/awards.json?id=1916575 (NSF public Award Search API)
+RETRIEVED: 2026-07-29
+CONTENT NOTE: fields above are copied verbatim from the public API response (title
+truncated nowhere; abstract truncated to the first paragraph for artifact brevity --
+full abstract on file in PROVENANCE). No field value has been altered.

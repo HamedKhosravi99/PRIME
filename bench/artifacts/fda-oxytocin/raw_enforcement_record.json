@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "last_updated": "2026-07-22",
+    "license": "https://open.fda.gov/license/",
+    "results": {
+      "limit": 1,
+      "skip": 0,
+      "total": 1
+    },
+    "terms": "https://open.fda.gov/terms/"
+  },
+  "results": [
+    {
+      "address_1": "719 Kasota Ave Se",
+      "address_2": "",
+      "center_classification_date": "20251010",
+      "city": "Minneapolis",
+      "classification": "Class I",
+      "code_info": "Lot #: 20250620OXY-1, Expiration date 10/18/2025",
+      "country": "United States",
+      "distribution_pattern": "Nationwide in the USA",
+      "event_id": "97641",
+      "initial_firm_notification": "Letter",
+      "more_code_info": "",
+      "openfda": {},
+      "postal_code": "55414-2842",
+      "product_description": "Oxytocin 30 Units/500 mL in 0.9% Sodium Chloride for intravenous use, Rx only, IntegraDose Compounding Services LLC, 719 Kasota Ave Se, Minneapolis, MN 55414-2842  NDC 71139-0012-1",
+      "product_quantity": "853/500 mL bags",
+      "product_type": "Drugs",
+      "reason_for_recall": "Subpotent Drug: Testing revealed there was no oxytocin in the IV bag.",
+      "recall_initiation_date": "20250916",
+      "recall_number": "D-0015-2026",
+      "recalling_firm": "IntegraDose Compounding Services LLC",
+      "report_date": "20251022",
+      "state": "MN",
+      "status": "Ongoing",
+      "voluntary_mandated": "Voluntary: Firm initiated"
+    }
+  ]
+}

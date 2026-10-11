@@ -1,0 +1,69 @@
+{
+  "protocolSection": {
+    "conditionsModule": {
+      "conditions": [
+        "Castration-Sensitive Prostate Carcinoma",
+        "Metastatic Prostate Adenocarcinoma",
+        "Stage IVB Prostate Cancer AJCC v8"
+      ]
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "PARALLEL",
+        "maskingInfo": {
+          "masking": "NONE"
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 1260,
+        "type": "ESTIMATED"
+      },
+      "phases": [
+        "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "identificationModule": {
+      "briefTitle": "Testing the Addition of Docetaxel (Chemotherapy) to the Usual Treatment (Hormonal Therapy and Apalutamide) for Metastatic Prostate Cancer, ASPIRE Trial",
+      "nctId": "NCT06931340",
+      "organization": {
+        "class": "OTHER",
+        "fullName": "Alliance for Clinical Trials in Oncology"
+      }
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "measure": "Overall survival (OS)",
+          "timeFrame": "From randomization to death due to any cause, assessed up to 10 years"
+        }
+      ]
+    },
+    "sponsorCollaboratorsModule": {
+      "collaborators": [
+        {
+          "class": "NIH",
+          "name": "National Cancer Institute (NCI)"
+        }
+      ],
+      "leadSponsor": {
+        "class": "OTHER",
+        "name": "Alliance for Clinical Trials in Oncology"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2039-05-08",
+        "type": "ESTIMATED"
+      },
+      "overallStatus": "RECRUITING",
+      "startDateStruct": {
+        "date": "2025-12-01",
+        "type": "ACTUAL"
+      },
+      "statusVerifiedDate": "2026-07"
+    }
+  }
+}

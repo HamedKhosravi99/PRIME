@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7400",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "The Keycloak authentication manager in `apache-airflow-providers-keycloak`",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 287,
+   "completion_tokens": 25,
+   "latency_s": 1.519,
+   "raw": "The document mentions the specific package name `apache-airflow-providers-keycloak`, establishing the condition. ANSWER: T"
+  }
+ ]
+}

@@ -1,0 +1,335 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2023-01-01\"",
+    "params": {
+     "field_path": "published",
+     "record_id": "GHSA-4365-fhm5-qcrx"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.github_reviewed",
+     "references.0.url",
+     "published"
+    ],
+    "what": "the date the advisory was published"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.severity",
+     "record_id": "GHSA-4365-fhm5-qcrx"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.severity",
+     "references.0.type",
+     "references.0.url"
+    ],
+    "what": "the maintainers' severity label"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.cwe_ids.0",
+     "record_id": "GHSA-4365-fhm5-qcrx"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "references.0.type",
+     "summary",
+     "database_specific.cwe_ids.0"
+    ],
+    "what": "the first CWE identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "severity.0.score",
+     "record_id": "GHSA-4365-fhm5-qcrx"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "aliases.0",
+     "summary",
+     "severity.0.score"
+    ],
+    "what": "the first CVSS score string"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "schema_version",
+     "record_id": "GHSA-4365-fhm5-qcrx"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "aliases.0",
+     "schema_version",
+     "details"
+    ],
+    "what": "the schema version of the record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "affected.0.package.name",
+     "record_id": "GHSA-4365-fhm5-qcrx"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "details",
+     "affected.0.package.name",
+     "aliases.0"
+    ],
+    "what": "the name of the affected package"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "published",
+      "date_before",
+      "2023-01-01"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "published",
+      "date_before",
+      "2023-01-01"
+     ],
+     [
+      "modified",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.severity",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "published",
+      "date_before",
+      "2023-01-01"
+     ],
+     [
+      "modified",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.severity",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.cwe_ids.0",
+      "exists",
+      null
+     ],
+     [
+      "severity.0.score",
+      "exists",
+      null
+     ],
+     [
+      "schema_version",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "sec-v2-6176",
+ "notes_for_annotators": "{\"family\": \"security-nested-hom-05\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 1, \"false_mech\": false, \"locator\": true, \"source_instance\": \"sec-v2-0176\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-4365-fhm5-qcrx": {
+   "affected": [
+    {
+     "package": {
+      "name": "rasa"
+     }
+    }
+   ],
+   "aliases": [
+    "CVE-2021-41127"
+   ],
+   "database_specific": {
+    "cwe_ids": [
+     "CWE-22"
+    ],
+    "github_reviewed": true,
+    "severity": "HIGH"
+   },
+   "details": "### Impact\nAn Archive Extraction (Zip Slip) vulnerability in the functionality that allows a user to load a trained model archive in Rasa 2.8.9 and older allows an attacker arbitrary write capability within specific directories using a malicious crafted archive file.\n\n### Patches\nThe vulnerability is fixed in Rasa 2.8.10\n\n### Workarounds\nMitigating steps for vulnerable end users are to ensure that they do not upload untrusted model files, and restrict CLI or API endpoint access where a malicious actor could target a deployed Rasa instance.\n\n### For more information\nIf you have any questions or comments about this advisory:\n* Email [the Rasa Security Team](mailto:security@rasa.com)\n",
+   "published": "2021-10-22T16:19:13Z",
+   "references": [
+    {
+     "type": "WEB",
+     "url": "https://github.com/RasaHQ/rasa/security/advisories/GHSA-4365-fhm5-qcrx"
+    }
+   ],
+   "schema_version": "1.7.5",
+   "severity": [
+    {
+     "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:H/A:H"
+    }
+   ],
+   "summary": "Maliciously Crafted Model Archive Can Lead To Arbitrary File Write"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-4365-fhm5-qcrx.",
+ "seed": "GHSA-4365-fhm5-qcrx",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

@@ -1,0 +1,54 @@
+# Publish to PyPI
+name: package
+on:
+  workflow_dispatch:
+  # uncomment the following lines to enable workflow on package release
+  # release:
+  #   types: [published]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      BUILD_PATH: .
+      PIP_DISABLE_PIP_VERSION_CHECK: 1
+    steps:
+      # checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      # set up specific python version
+      - name: Set up Python v3.8
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.8"
+      # install dependencies
+      - name: Install dependencies
+        run: |
+          python -m venv .venv
+          ./.venv/bin/python -m pip install --upgrade pip
+          ./.venv/bin/pip install .
+          ./.venv/bin/pip install -r package/requirements.sphinx.txt
+          ./.venv/bin/pip install build
+      # build package
+      - name: Build package
+        run: |
+          . ./.venv/bin/activate
+          python package/export pkg
+          deactivate
+      # upload package as artifact
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.BUILD_PATH }}/dist
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    steps:
+      # publish package
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}

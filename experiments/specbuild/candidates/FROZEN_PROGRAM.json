@@ -1,0 +1,77 @@
+{
+ "program": {
+  "atoms": [
+   {
+    "id": "A1",
+    "field": "protocolSection.designModule.studyType",
+    "predicate": "equals",
+    "argument": "INTERVENTIONAL",
+    "meaning": "Study is interventional"
+   },
+   {
+    "id": "A2",
+    "field": "derived.is_applicable_trial",
+    "predicate": "equals",
+    "argument": true,
+    "meaning": "Study is an applicable clinical trial"
+   },
+   {
+    "id": "A3",
+    "field": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+    "predicate": "date_after",
+    "argument": "2017-01-17",
+    "meaning": "Primary completion date is on or after 2017-01-18"
+   },
+   {
+    "id": "A4",
+    "field": "derived.submission_deadline",
+    "predicate": "date_before",
+    "argument": "2026-08-03",
+    "meaning": "Submission deadline is before 2026-08-03"
+   },
+   {
+    "id": "A5",
+    "field": "derived.results_submitted_late",
+    "predicate": "equals",
+    "argument": true,
+    "meaning": "Results were submitted after the deadline"
+   }
+  ],
+  "routes": {
+   "C1": [
+    [
+     "A1",
+     "A2"
+    ]
+   ],
+   "C2": [
+    [
+     "A1",
+     "A2",
+     "A3",
+     "A4"
+    ]
+   ],
+   "C3": [
+    [
+     "A1",
+     "A2",
+     "A3",
+     "A4",
+     "A5"
+    ]
+   ]
+  },
+  "derive": "import datetime\n\ndef derive(record):\n    derived = {}\n\n    # Determine if the study is an applicable clinical trial based on the definitions\n    derived['is_applicable_trial'] = False\n    if record.get('protocolSection', {}).get('designModule', {}).get('studyType') == 'INTERVENTIONAL':\n        if record.get('protocolSection', {}).get('oversightModule', {}).get('isFdaRegulatedDevice', False):\n            derived['is_applicable_trial'] = True\n        elif record.get('protocolSection', {}).get('oversightModule', {}).get('isFdaRegulatedDrug', False):\n            derived['is_applicable_trial'] = True\n\n    # Calculate the submission deadline\n    primary_completion_date = record.get('protocolSection', {}).get('statusModule', {}).get('primaryCompletionDateStruct', {}).get('date')\n    if primary_completion_date:\n        try:\n            pc_date = datetime.datetime.strptime(primary_completion_date, \"%Y-%m-%d\")\n            derived['submission_deadline'] = (pc_date + datetime.timedelta(days=365)).strftime(\"%Y-%m-%d\")\n        except ValueError:\n            derived['submission_deadline'] = None\n\n    # Check if the study has results submitted\n    derived['results_submitted_late'] = False\n    if derived['is_applicable_trial']:\n        results_first_submit_date = record.get('protocolSection', {}).get('statusModule', {}).get('resultsFirstSubmitDate')\n        if results_first_submit_date and derived['submission_deadline']:\n            try:\n                rs_date = datetime.datetime.strptime(results_first_submit_date, \"%Y-%m-%d\")\n                sd_date = datetime.datetime.strptime(derived['submission_deadline'], \"%Y-%m-%d\")\n                derived['results_submitted_late'] = rs_date > sd_date\n            except ValueError:\n                derived['results_submitted_late'] = None\n\n    return derived"
+ },
+ "selected": {
+  "round": 1,
+  "k": 3,
+  "agree_pct": 71.0,
+  "over": 41,
+  "under": 133
+ },
+ "validation_n": 600,
+ "protocol": "PROTOCOL.md",
+ "program_sha256": "7cbae0727ca28b8c6569b498c80f480a8f1a099346f536955757c40755fbe15f"
+}

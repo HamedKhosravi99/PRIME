@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7183",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "Patched versions have been released as Wagtail 2.7.4 (for the LTS 2.7 branch) and Wagtail 2.9.3 (for the current 2.9 branch).",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 633,
+   "completion_tokens": 30,
+   "latency_s": 2.059,
+   "raw": "The document establishes that the issue is fixed in Wagtail 2.7.4 and 2.9.3. ANSWER: T"
+  }
+ ]
+}

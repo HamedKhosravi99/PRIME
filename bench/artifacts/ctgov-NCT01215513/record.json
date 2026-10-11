@@ -1,0 +1,70 @@
+{
+  "protocolSection": {
+    "conditionsModule": {
+      "conditions": [
+        "Prostate Cancer"
+      ]
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "NA",
+        "interventionModel": "SINGLE_GROUP",
+        "maskingInfo": {
+          "masking": "NONE"
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 127,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "identificationModule": {
+      "briefTitle": "Long-Term Safety and Tolerability of Degarelix One-Month Dosing Regimen in Korean Patients",
+      "nctId": "NCT01215513",
+      "organization": {
+        "class": "INDUSTRY",
+        "fullName": "Ferring Pharmaceuticals"
+      }
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "measure": "Number of Participants With Markedly Abnormal Values in Safety Laboratory Variables",
+          "timeFrame": "From baseline (day 0) to end of treatment (up to day 364)"
+        },
+        {
+          "measure": "Number of Participants With Markedly Abnormal Values in Vital Signs and Body Weight",
+          "timeFrame": "From baseline (day 0) to end of treatment (up to day 364)"
+        }
+      ]
+    },
+    "sponsorCollaboratorsModule": {
+      "collaborators": [
+        {
+          "class": "OTHER",
+          "name": "Ferring Pharmaceuticals Korea, Ltd."
+        }
+      ],
+      "leadSponsor": {
+        "class": "INDUSTRY",
+        "name": "Ferring Pharmaceuticals"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2012-04",
+        "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+        "date": "2010-09"
+      },
+      "statusVerifiedDate": "2013-04"
+    }
+  }
+}

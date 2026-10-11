@@ -1,0 +1,357 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT01513291"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.identificationModule.briefTitle"
+    ],
+    "what": "the NCT identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.statusVerifiedDate",
+     "record_id": "NCT01513291"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.statusModule.overallStatus"
+    ],
+    "what": "the date the status was last verified"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2014-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT01513291"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.lastUpdateSubmitDate",
+     "protocolSection.statusModule.studyFirstSubmitDate",
+     "protocolSection.identificationModule.officialTitle"
+    ],
+    "what": "the date the registration was first submitted"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"INTERVENTIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT01513291"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.healthyVolunteers",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.designModule.studyType"
+    ],
+    "what": "the study type"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT01513291"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.identificationModule.briefTitle"
+    ],
+    "what": "the sex eligibility field"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT01513291"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.eligibilityModule.minimumAge"
+    ],
+    "what": "the minimum age for eligibility"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT01513291"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.descriptionModule.briefSummary"
+    ],
+    "what": "the eligibility criteria text"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2014-01-01"
+     ]
+    ],
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2014-01-01"
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-6144",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-hom-11\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": 3, \"false_mech\": false, \"locator\": true, \"source_instance\": \"cli-v2-0144\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT01513291": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "The purpose of this study is to evaluate the safety and efficacy of MK-6096 versus placebo for preventing migraines in participants with episodic migraine. After a 28-day Screening period during which baseline number of monthly migraine days was assessed, participants were randomized to receive MK-6096 or placebo for a 12-week Treatment Period. Participants who completed all 12 weeks of the Treatment Period received drug or placebo for an additional 2 weeks in the Run-out Period. Treatment assignment in the Run-out Period was determined at the initial randomization. In the Run-out Period, participants who received placebo in the Treatment Period continued to receive placebo and participants who received MK-6096 in the Treatment Period 2 received either MK-6096 or placebo in a 1:1 ratio. The hypothesis tested in the study is that MK-6096 10 mg is superior to placebo in reducing migraine frequency as measured by the mean change from baseline in monthly migraine days averaged over the 12- week treatment period."
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* History of migraine with or without aura for \\>1 year and with \u22654 and \u226414 migraine days per month in the 3 months prior to study\n* Male, female not of reproductive potential, or female of reproductive potential who is not pregnant by pregnancy test and agrees to use acceptable contraception\n\nExclusion Criteria:\n\n* Pregnancy, breast-feeding, or expecting to become pregnant\n* Planning to donate egg or sperm during the study or within 90 days after last dose of study medication\n* Basilar or hemiplegic migraine headache\n* \\>50 years old at the age of migraine onset\n* \u226515 headache-days per month or medication taken for acute migraine or other headaches on more than 10 days per month in any of the three months prior to study\n* Migraine prophylactic medication (defined as medication taken daily to prevent migraines) taken in the 30 days prior to study\n* History of narcolepsy, cataplexy, circadian rhythm disorder, parasomnia, sleep related breathing disorder, restless legs syndrome, periodic limb movement disorder, excessive daytime sleepiness or difficulty sleeping due to a medical condition (e.g., asthma, gastroesophageal reflux disease, etc.)\n* Clinical, laboratory, or electrocardiogram (ECG) evidence of uncontrolled hypertension, uncontrolled diabetes, human immunodeficiency virus (HIV) disease, or significant pulmonary, renal, hepatic, endocrine, or other systemic disease\n* Myocardial infarction, unstable angina, coronary artery bypass surgery, or other revascularization procedure, stroke, or transient ischemic attack within 3 months of study\n* Other confounding pain syndromes (i.e., condition requiring daily use of opioids), psychiatric conditions such as uncontrolled major depression, dementia or significant neurological disorders other than migraine\n* Imminent risk of self-harm, based on clinical interview and responses on the Columbia Suicidality Severity Rating Scale (C-SSRS), or of harm to others. Exclude any prospective participant reporting suicidal ideation with intent, with or without a plan in the past 2 months or suicidal behavior in the past 6 months\n* History of malignancy \u22645 years prior to study, except for adequately treated basal cell or squamous cell skin cancer or in situ cervical cancer\n* History of hypersensitivity to more than two chemical classes of drugs, including prescription and over-the-counter medications\n* Recent history (within the past 1 year) or current evidence of drug or alcohol abuse or \"recreational use\" of illicit drugs or prescription medications\n* Donated blood products or has had phlebotomy of \\>300 ml within 8 weeks of study, or intends to donate blood products or receive blood products within 30 days before study and throughout study\n* Consumption of 3 or more alcoholic drinks per day\n* Body Mass Index \\>40 kg/m\\^2\n* History of transmeridian travel (across \\>3 time zones) or shift work (defined as permanent night shift or rotating day/night shift work) within the past 2 weeks or anticipates needing to travel (across \\>3 time zones) at any time during the study.",
+     "healthyVolunteers": false,
+     "minimumAge": "18 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "A Study of the Safety and Efficacy of MK-6096 for Migraine Prophylaxis in Participants With Episodic Migraine (MK-6096-020)",
+     "nctId": "NCT01513291",
+     "officialTitle": "A Phase IIa, Multicenter, Randomized, Placebo-Controlled Clinical Trial to Evaluate the Safety and Efficacy of MK-6096 for Migraine Prophylaxis in Patients With Episodic Migraine"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2018-10-08",
+     "overallStatus": "COMPLETED",
+     "statusVerifiedDate": "2018-10",
+     "studyFirstSubmitDate": "2012-01-16"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT01513291.",
+ "seed": "NCT01513291",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

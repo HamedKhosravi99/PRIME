@@ -1,0 +1,181 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT05454995"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT05454995"
+    },
+    "what": "the eligibility criteria restrict enrollment to adults, that is, a minimum age of 18 years or more"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT05454995"
+    },
+    "what": "the eligibility criteria restrict enrollment to one sex only (only male or only female participants)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT05454995"
+    },
+    "what": "the eligibility criteria accept healthy volunteers"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready for an adult cohort: identified, and the eligibility text restricts enrollment to adults."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked adult-cohort protocol: identified, adults only, open to both sexes, and not a healthy-volunteer study, as established from the eligibility text."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "!E3",
+    "!E4"
+   ]
+  ]
+ },
+ "id": "cli-v2-7030",
+ "notes_for_annotators": "{\"family\": \"clinical-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, false, false], \"twins\": [\"protocolSection.eligibilityModule.minimumAge\", \"protocolSection.eligibilityModule.sex\", \"protocolSection.eligibilityModule.healthyVolunteers\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT05454995": {
+   "protocolSection": {
+    "eligibilityModule": {
+     "eligibilityCriteria": "General Inclusion Criteria\n\n1. Subject (or Legal Guardian) is willing and able to provide consent before any study-specific tests or procedures are performed and agree to attend all required follow-up visits.\n2. Male or female subject of at least 18 years of age.\n3. Chronic symptomatic lower limb ischemia defined as Rutherford classification 2, 3, or 4.\n\nGeneral Exclusion Criteria\n\n1. Life expectancy, documented in the Investigator's opinion, of less than 1 year.\n2. Cerebrovascular accident (CVA) or transient ischemic attack (TIA) or cardiac event (e.g., PCI for STEMI/NSTEMI, unstable angina) within 6 months prior to the index procedure.\n3. Known allergies or sensitivities to heparin, aspirin (ASA), other anticoagulant/antiplatelet therapies.\n4. Use of rivaroxaban 2.5 mg BID with low-dose aspirin for the treatment of patients with symptomatic peripheral arterial disease is permitted as per local standard of care. Use of rivaroxaban 2.5 mg in conjunction with dual antiplatelet therapy (low-dose aspirin and a secondary agent) is not permitted.\n5. Known hypersensitivity or contraindication to contrast dye that, in the opinion of the investigator, cannot be adequately pre-medicated.\n6. Chronic renal insufficiency with serum creatinine \u22652.5 mg/dL or eGFR \\<45 ml/min within 30 days prior to the index procedure or treatment with peritoneal or hemodialysis.\n7. Subject has a platelet count \\< 100,000 cells/mm3 or \\> 700,000 cells/mm3 within 30 days prior to the index procedure or has a history of bleeding diathesis.\n8. Receiving oral or intravenous immunosuppressive therapy.\n9. Subject is currently receiving a medication that causes photosensitivity, with a prior documented photosensitive reaction.\n10. Subject has white blood cell (WBC) count \\<3.0 (3,000 cells/mm3) within 30 days prior to the index procedure.\n11. Subject has known or suspected active systemic infection evidenced by WBC \\> 14.0 (14,000/mm3).\n12. History of major amputation in the target limb.\n13. Any major intervention planned at the index procedure or within 30 days post-index procedure including treatment of contralateral limb.\n14. Any arterial access other than contralateral common femoral artery (CFA) or ipsilateral antegrade CFA is required to gain access to target vessel. All popliteal and infrapopliteal ipsilateral retrograde access are excluded.\n15. Subject has any permanent neurologic defect that may impair ambulation and/or cause non-compliance with the protocol.\n16. Subject has an active peptic ulcer or active gastrointestinal (GI) bleeding within 6 months prior to the index procedure.\n17. Subject has documented or suspected liver disease, including laboratory evidence of hepatitis.\n18. Subject is currently on oral anticoagulation therapy, such as warfarin, rivaroxaban, apixaban, or dabigatran etexilate, except when the subject is prescribed such medication as treatment for atrial fibrillation (medication and/or following ablation therapies and/or left atrial appendage occlusion procedure). Use of low-dose rivaroxaban 2.5 mg BID and low-dose aspirin to treat patients with symptomatic peripheral arterial disease is permitted as per local standard of care.\n19. Subject is planned to undergo treatment with the ShockWave\u00ae IVL (ShockWave Medical Inc. Santa Clara, CA, USA) and/or any adjunctive pre-dilatation vessel preparation angioplasty device.\n20. Subject is pregnant, breastfeeding, or planning to become pregnant in the next 30 days. Subjects (male and female) of childbearing potential must agree to use effective birth control measures for 30 days after the index procedure.\n21. Current or planned (within one-year post-index procedure) participation in another investigational drug or device clinical trial that has not completed the primary endpoint at the time of randomization/enrollment or that clinically interferes with the current trial endpoints.\n22. Any concurrent condition which in the investigator's opinion makes it undesirable for the subject to participate in the trial or which would jeopardize compliance with the protocol and follow-up visits."
+    },
+    "identificationModule": {
+     "briefTitle": "Feasibility Study of the Vessel Restoration System (VRS): ACTIVATE II"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT05454995.",
+ "seed": "NCT05454995",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "text"
+}

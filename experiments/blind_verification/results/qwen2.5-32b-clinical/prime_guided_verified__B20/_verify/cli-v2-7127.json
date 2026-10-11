@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7127",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Men and postmenopausal women",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 395,
+   "completion_tokens": 30,
+   "latency_s": 2.575,
+   "raw": "The document does not specify a minimum age requirement, thus it is unclear if the eligibility criteria restrict enrollment to adults only. ANSWER: UNCLEAR"
+  }
+ ]
+}

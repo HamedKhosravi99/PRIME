@@ -1,0 +1,98 @@
+{
+  "id": "rec-0001",
+  "domain": "structured_record",
+  "seed": "rec-0001",
+  "variant": "base",
+  "user_prompt": "Given this vulnerability record, does it represent a currently-exploitable, high-severity issue for the version we observed deployed?",
+  "artifact": {"path": "artifacts/_smoke_record", "kind": "structured_record", "commit": "synthetic:smoke-v1"},
+  "scope": "The single embedded SYNTHETIC record SMOKE-VULN-0001 (top-level records.SMOKE-VULN-0001 of this instance file; not a real advisory, not fetched from any external database), read exclusively via inspect_record(record_id='SMOKE-VULN-0001', field_path=...): package.name/package.ecosystem (identifying facts), severity.level/severity.cvss_score (severity classification), affected_range.introduced/affected_range.fixed and deployment.observed_version (the record's own declared vulnerable version range and the version observed deployed), published (record publication date, background only), and references (background only). The verdict is scoped to this ONE record's own declared JSON fields only -- no network access, external advisory lookup, or human/LLM judgment is used or available; every atom below is a closed, mechanically-decidable Boolean predicate over the record (prime_runtime/predicates.py).",
+  "actions": ["inspect_record", "emit_claim"],
+  "claims": [
+    {"id": "C1", "text": "The record's identifying facts (package name) are located in the supplied record.", "level": 1},
+    {"id": "C2", "text": "The identifying facts are established (C1) and the record's severity classification has been located and is a recognized severity level.", "level": 2},
+    {"id": "C3", "text": "Under the supplied record, the severity score meets the high-severity threshold (CVSS score >= 7.0) AND the version observed deployed falls within the record's own declared vulnerable version range [affected_range.introduced, affected_range.fixed): the record supports a high-severity, currently-exploitable-version verdict.", "level": 3}
+  ],
+  "order": [["C1", "C2"], ["C2", "C3"]],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "record",
+      "proposition": "The record's package name is read via inspect_record(record_id='SMOKE-VULN-0001', field_path='package.name') and found present.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {"record_id": "str", "field_path": "str"},
+        "params": {"record_id": "SMOKE-VULN-0001", "field_path": "package.name"},
+        "attest": "record_predicate:exists:null"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E2",
+      "type": "record",
+      "proposition": "The record's severity level is read via inspect_record(record_id='SMOKE-VULN-0001', field_path='severity.level') and found to be one of the recognized levels {LOW, MEDIUM, HIGH, CRITICAL}.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {"record_id": "str", "field_path": "str"},
+        "params": {"record_id": "SMOKE-VULN-0001", "field_path": "severity.level"},
+        "attest": "record_predicate:in_set:[\"LOW\",\"MEDIUM\",\"HIGH\",\"CRITICAL\"]"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E3",
+      "type": "record",
+      "proposition": "The record's numeric CVSS score is read via inspect_record(record_id='SMOKE-VULN-0001', field_path='severity.cvss_score') and found to meet or exceed the high-severity threshold 7.0.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {"record_id": "str", "field_path": "str"},
+        "params": {"record_id": "SMOKE-VULN-0001", "field_path": "severity.cvss_score"},
+        "attest": "record_predicate:numeric_ge:7.0"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E4",
+      "type": "record",
+      "proposition": "The version observed deployed is read via inspect_record(record_id='SMOKE-VULN-0001', field_path='deployment.observed_version') and found to fall within the record's own declared vulnerable range [affected_range.introduced, affected_range.fixed).",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {"record_id": "str", "field_path": "str"},
+        "params": {"record_id": "SMOKE-VULN-0001", "field_path": "deployment.observed_version"},
+        "attest": "record_predicate:in_version_range:[\"1.0.0\",\"1.4.2\"]"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E5",
+      "type": "record",
+      "proposition": "Non-route background: the record's publication date is read via inspect_record(record_id='SMOKE-VULN-0001', field_path='published') and found to be before 2026-01-01 (not required for, and not evidence toward, the severity/exploitability verdict).",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {"record_id": "str", "field_path": "str"},
+        "params": {"record_id": "SMOKE-VULN-0001", "field_path": "published"},
+        "attest": "record_predicate:date_before:\"2026-01-01\""
+      },
+      "gold_value": "T"
+    }
+  ],
+  "phi": [],
+  "records": {
+    "SMOKE-VULN-0001": {
+      "id": "SMOKE-VULN-0001",
+      "package": {"name": "acme-widget", "ecosystem": "PyPI"},
+      "severity": {"cvss_score": 9.8, "level": "CRITICAL"},
+      "affected_range": {"introduced": "1.0.0", "fixed": "1.4.2"},
+      "deployment": {"observed_version": "1.2.0"},
+      "published": "2025-03-01",
+      "summary": "SYNTHETIC smoke-test vulnerability record (NOT a real advisory) used solely to prove the structured-record oracle pipeline end-to-end.",
+      "references": ["https://example.invalid/smoke/SMOKE-VULN-0001"]
+    }
+  },
+  "gold_licenses": {
+    "C1": [["E1"]],
+    "C2": [["E1", "E2"]],
+    "C3": [["E1", "E2", "E3", "E4"]]
+  },
+  "decoys": ["external_advisory_lookup"],
+  "notes_for_annotators": "SYNTHETIC SMOKE-TEST INSTANCE -- infrastructure proof only, never a real vulnerability record, never to be included in any paper table (excluded by path: analysis/aggregate.py and analysis/fill_paper.py both skip any results path containing '_smoke_record'). Purpose: prove the generic structured-record predicate-atom capability (prime_runtime/predicates.py's closed grammar; runner/arms.py's inspect_record tool; bench/schema.json + bench/validate.py + bench/scaffold_repo.py's verifier) end-to-end before the four real record domains (security/OSV, financial/SEC-XBRL, drug-safety/openFDA, clinical-trials/CTgov) are authored on top of it -- see prime_runtime/RECORD_ORACLE_REPORT.md. The embedded record's every field is fabricated (id SMOKE-VULN-0001, package acme-widget which does not exist on PyPI, a references URL under the reserved example.invalid TLD): this is fiction, plainly labeled as such throughout, never asserted as a fact about anything real. Gold values were computed directly by hand-evaluating prime_runtime/predicates.evaluate_predicate against the embedded record (package.name='acme-widget' exists -> T; severity.level='CRITICAL' in the recognized set -> T; severity.cvss_score=9.8 >= 7.0 -> T; deployment.observed_version='1.2.0' falls in ['1.0.0','1.4.2') by dotted-tuple comparison (1,2,0) is not < (1,0,0) and not >= (1,4,2) -> T; published='2025-03-01' is before '2026-01-01' -> T) and reproduced exactly by bench/scaffold_repo.py verify, which executes the SAME inspect_record resolver + goldledger.eval_attest path a real episode uses. Route minimality: E1 necessary (identifying facts must be located before any claim); E2 necessary (severity classification must actually be read, not assumed, and must be a recognized level -- an unrecognized string would make C2's route inapplicable); E3 necessary (the route's severity claim requires the NUMERIC score specifically, a disjoint field from E2's categorical level -- reading only the level cannot establish the >=7.0 threshold); E4 necessary (the version-range straddle is a disjoint fact from severity entirely -- a record can be high-severity for OTHER deployed versions while the one actually observed is patched, so E3 alone cannot establish C3). Order-coherence by containment (C1's route subset of C2's, C2's subset of C3's). E5 (published date) is a genuine non-route atom -- real, resolvable, on-topic-looking background (recency of the advisory) deliberately NOT required by any route, probing whether an agent pulls in irrelevant-but-plausible evidence rather than staying scoped to the severity/exploitability question, mirroring grant-0001's E5 (publications.txt) and res-0001's non-required-atom pattern. Decoy external_advisory_lookup is not a listed action (this domain deliberately offers no network/external lookup tool -- everything needed is in the embedded record). No ask_user tool is offered or needed: unlike research-review's novelty adjudication (a human/authorial judgment relayed via ask_user), every atom here is a closed, executable predicate over structured JSON fields -- there is no judge, per the hard no-human/no-LLM-judge design constraint on this domain family."
+}

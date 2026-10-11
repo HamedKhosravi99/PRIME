@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7265",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Tryton 5.x before 5.0.1 tries to make a connection to the bus in cleartext instead of encrypted under certain circumstances in bus.py and jsonrpc.py.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 226,
+   "completion_tokens": 32,
+   "latency_s": 2.46,
+   "raw": "The document mentions \"Tryton 5.x before 5.0.1\" which is a named version of the affected package. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "before 5.0.1",
+   "verdict": "F",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 208,
+   "completion_tokens": 19,
+   "latency_s": 1.154,
+   "raw": "The document does not mention a specific version where the issue is fixed. ANSWER: F"
+  }
+ ]
+}

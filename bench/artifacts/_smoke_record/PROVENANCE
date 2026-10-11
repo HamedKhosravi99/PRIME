@@ -1,0 +1,25 @@
+name: _smoke_record
+kind: structured_record (Tier-M predicate-grammar infrastructure smoke test)
+source: SYNTHETIC -- fabricated by the author for this task, NOT a real
+  security/financial/drug-safety/clinical-trial record. This directory holds
+  no content files; it exists only so bench/validate.py's generic
+  "artifact dir exists and contains PROVENANCE" check applies uniformly to
+  every domain, including structured-record ones. The actual record data
+  the runtime reads at run time is embedded verbatim in the instance JSON's
+  top-level "records" field (bench/instances/_smoke_record/rec-0001.json),
+  per the structured-record capability's offline-replayable design -- see
+  prime_runtime/RECORD_ORACLE_REPORT.md.
+purpose: Proves the generic structured-record oracle pipeline end-to-end
+  (schema -> resolver -> goldledger -> oracle -> runner -> bench validator)
+  before any of the four real record domains (security/OSV, financial/
+  SEC-XBRL, drug-safety/openFDA, clinical-trials/CTgov) are authored on top
+  of this infrastructure.
+integrity: every field of every embedded record is authored plainly-labeled
+  fiction (ids like "SMOKE-VULN-0001", a package name "acme-widget" that
+  does not exist on any real package index, a URL under the reserved
+  example.invalid TLD). No claim is ever made that this is real-world data.
+exclusion: this instance (id rec-0001) and any run output under
+  results/_smoke_record/ are excluded by path from analysis/aggregate.py
+  and analysis/fill_paper.py so this synthetic instance can never leak into
+  a paper table.
+created: 2026-07-29

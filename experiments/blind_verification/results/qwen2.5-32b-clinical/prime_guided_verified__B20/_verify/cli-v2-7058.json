@@ -1,0 +1,31 @@
+{
+ "instance": "cli-v2-7058",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "* Patients over 18 years of age.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 337,
+   "completion_tokens": 24,
+   "latency_s": 1.988,
+   "raw": "The inclusion criteria explicitly state \"Patients over 18 years of age,\" establishing the condition. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "F",
+   "quote": "Women patients with positive pregnancy test.",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 332,
+   "completion_tokens": 37,
+   "latency_s": 2.717,
+   "raw": "The document does not exclusively restrict enrollment to one sex only, as it includes an exclusion criterion specifically for pregnant women but does not otherwise limit participation based on sex. ANSWER: F"
+  }
+ ]
+}

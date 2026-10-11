@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7091",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "F",
+   "quote": "Successful completion of AVA102670 or AVA102672 without safety or tolerability issues. Regular caregiver.",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 230,
+   "completion_tokens": 17,
+   "latency_s": 1.057,
+   "raw": "The document does not mention any age restrictions for eligibility. ANSWER: UNCLEAR"
+  }
+ ]
+}

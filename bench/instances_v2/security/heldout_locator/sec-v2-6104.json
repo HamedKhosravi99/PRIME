@@ -1,0 +1,387 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "affected.0.package.name",
+     "record_id": "GHSA-33qf-q99x-wpm8"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "severity.0.score",
+     "references.0.type",
+     "affected.0.package.name"
+    ],
+    "what": "the name of the affected package"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:true",
+    "params": {
+     "field_path": "database_specific.github_reviewed",
+     "record_id": "GHSA-33qf-q99x-wpm8"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "details",
+     "severity.0.score",
+     "database_specific.github_reviewed"
+    ],
+    "what": "whether the advisory has been reviewed by the database maintainers"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.severity",
+     "record_id": "GHSA-33qf-q99x-wpm8"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.severity",
+     "references.0.url",
+     "severity.0.score"
+    ],
+    "what": "the maintainers' severity label"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"CWE-78\"",
+    "params": {
+     "field_path": "database_specific.cwe_ids.0",
+     "record_id": "GHSA-33qf-q99x-wpm8"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "references.0.type",
+     "references.0.url",
+     "database_specific.cwe_ids.0"
+    ],
+    "what": "the first CWE identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "aliases.0",
+     "record_id": "GHSA-33qf-q99x-wpm8"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "details",
+     "references.0.type",
+     "aliases.0"
+    ],
+    "what": "the first alias identifier (such as a CVE)"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "schema_version",
+     "record_id": "GHSA-33qf-q99x-wpm8"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "schema_version",
+     "references.0.url",
+     "references.0.type"
+    ],
+    "what": "the schema version of the record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.github_reviewed",
+     "record_id": "GHSA-33qf-q99x-wpm8"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.github_reviewed",
+     "modified",
+     "published"
+    ],
+    "what": "whether the advisory has been reviewed by the database maintainers"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-33qf-q99x-wpm8"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "references.0.url",
+     "summary",
+     "severity.0.score"
+    ],
+    "what": "the advisory's one-line summary"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.github_reviewed",
+      "equals",
+      true
+     ],
+     [
+      "database_specific.severity",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.github_reviewed",
+      "equals",
+      true
+     ],
+     [
+      "database_specific.severity",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.cwe_ids.0",
+      "equals",
+      "CWE-78"
+     ],
+     [
+      "aliases.0",
+      "exists",
+      null
+     ],
+     [
+      "schema_version",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.github_reviewed",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "sec-v2-6104",
+ "notes_for_annotators": "{\"family\": \"security-nested-het-08\", \"topology\": \"nested\", \"cost\": \"het\", \"target_level\": 2, \"false_mech\": true, \"locator\": true, \"source_instance\": \"sec-v2-0104\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-33qf-q99x-wpm8": {
+   "affected": [
+    {
+     "package": {
+      "name": "homeassistant-cli"
+     }
+    }
+   ],
+   "aliases": [
+    "CVE-2026-40602"
+   ],
+   "database_specific": {
+    "cwe_ids": [
+     "CWE-1336"
+    ],
+    "github_reviewed": true,
+    "severity": "MODERATE"
+   },
+   "details": "### Impact\n\nUp to 1.0.0 of `home-assitant-cli` (or `hass-cli` for short) an unrestricted environment was used to handle Jninja2 templates instead of a sandboxed one. The user-supplied input within Jinja2 templates was rendered locally with no restrictions. This gave users access to Python's internals and extended the scope of templating beyond the intended usage.\n\nE. g., it was possible to render a template with `hass-cli template bad-template.j2 --local` that contained entries like\n\n````j2\n{%- set b   = environ.__globals__['__builtins__'] -%}\n{%- set os  = b['__import__']('os') -%}\n{%- set bio = b['__import__']('builtins') -%}\n...\n````\n\nor other malicious Jinja2 expressions. This can lead to arbitrary code execution on the local machine.\n\nIn a two step process an adversary could trick/convince an user to download third-party templates which contain harmful code (e. g., perform data manipulation or establish a remote shell)  then to render those templates unchecked/reviewed/verified with `--local`. \n\nThe issue only affect the local machine and not a remote Home Assistant instance. It also requires user interventions.\n\n### Patches\n\n1.0.0 uses `ImmutableSandboxedEnvironment` and restricts the usage of environment variables.\n\n### Workarounds\n\nEvaluate the Jninja2 templates manually or  tool-based before rendering with `hass-cli`.",
+   "modified": "2026-07-13T16:42:26.177701025Z",
+   "published": "2026-04-16T21:28:39Z",
+   "references": [
+    {
+     "type": "WEB",
+     "url": "https://github.com/home-assistant-ecosystem/home-assistant-cli/security/advisories/GHSA-33qf-q99x-wpm8"
+    }
+   ],
+   "schema_version": "1.7.5",
+   "severity": [
+    {
+     "score": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:N"
+    }
+   ],
+   "summary": "Home Assistant Command-line Interface: Handling of user-supplied Jinja2 templates"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-33qf-q99x-wpm8.",
+ "seed": "GHSA-33qf-q99x-wpm8",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

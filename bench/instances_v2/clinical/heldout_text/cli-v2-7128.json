@@ -1,0 +1,181 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT06716580"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT06716580"
+    },
+    "what": "the eligibility criteria restrict enrollment to adults, that is, a minimum age of 18 years or more"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT06716580"
+    },
+    "what": "the eligibility criteria restrict enrollment to one sex only (only male or only female participants)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT06716580"
+    },
+    "what": "the eligibility criteria accept healthy volunteers"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready for an adult cohort: identified, and the eligibility text restricts enrollment to adults."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked adult-cohort protocol: identified, adults only, open to both sexes, and not a healthy-volunteer study, as established from the eligibility text."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "!E3",
+    "!E4"
+   ]
+  ]
+ },
+ "id": "cli-v2-7128",
+ "notes_for_annotators": "{\"family\": \"clinical-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, false, true], \"twins\": [\"protocolSection.eligibilityModule.minimumAge\", \"protocolSection.eligibilityModule.sex\", \"protocolSection.eligibilityModule.healthyVolunteers\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT06716580": {
+   "protocolSection": {
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria (Aims 1, 2, and 3) for Group 1 (50 through 80 years of age):\n\n* Non-tobacco using (currently)\n* Self-identify as East Asian (including Southeast Asian) or Hispanic/Latinx.\n* East Asian includes those who self-identify as Chinese, Japanese, Korean, Taiwanese, Malaysian\n* Southeast Asian includes those who self-identify as Cambodian, Thai, Vietnamese, Filipino\n* Latinx includes those who self-identify as a person of Central or South American and the Caribbean including, Cuban, Puerto Rican, and Dominican culture or origin, excluding individuals originating from Spain\n* Aims 1 and 2: Able to complete and understand the study's informed consent in English, Mandarin, Cantonese, Japanese, Korean, Vietnamese, Spanish, Portuguese, or Cape Verdean\n* Aim 3: Able to complete and understand the study's informed consent and participate in a focus group in English, Mandarin, Vietnamese, or Spanish.\n\nInclusion Criteria (Aims 1, 2, and 3) for Group 2 (40 through 49 years of age):\n\n* Non-tobacco using (currently)\n* Self-identify as East Asian (including Southeast Asian) or Latinx, if any of the following criteria are met:\n\n  * Family history of EGFR positive LC L858R or exon 19\n  * Personal history of remote cancer that is not LC or other thoracic malignancies, including thymoma, thymic carcinoma, or sarcoma, as long as it was resolved over 5 years ago\n  * History of TB, asthma requiring daily inhaled corticosteroids or chronic bronchitis\n  * Symptoms of lung cancer for the past month, including hemoptysis, unexplained weight loss, voice hoarseness, cough or worsening cough, dyspnea or worsening dyspnea\n* Excluding individuals who concurrently present with fever, covid/influenza/RSV/adenovirus infection, runny nose, sore throat, productive cough with green or yellow sputum\n* Aims 1 and 2: Able to complete and understand the study's informed consent in English, Mandarin, Cantonese, Japanese, Korean, Vietnamese, Spanish, Portuguese, or Cape Verdean\n* Aim 3: Able to complete and understand the study's informed consent and participate in a focus group in English, Mandarin, Vietnamese, or Spanish.\n\nExclusion Criteria (Aims 1, 2, and 3) for Groups 1 and 2:\n\n* Having had a chest CT scan in the last 3 years or having an anticipated chest CT scan during the enrollment period.\n* Having a current cancer or history of cancer within the last 5 years, excluding localized non-melanoma skin cancer and breast ductal carcinoma in situ.\n* More than 400 lifetime cigarettes (i.e., 20 packs) of smoking or tobacco use\n* Adults unable to provide informed consent\n* Individuals \\<40 years of age\n* Prisoners\n* Pregnant women\n* Personal diagnosis of lung cancer\n* Not able to be compliant with study requirements"
+    },
+    "identificationModule": {
+     "briefTitle": "EQUAL: EGFR ctDNA QUantative Assessment for Lung Cancer Screening in Asian and Latinx Populations"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT06716580.",
+ "seed": "NCT06716580",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "text"
+}

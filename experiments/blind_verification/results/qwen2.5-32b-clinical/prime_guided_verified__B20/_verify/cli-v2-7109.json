@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7109",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Participants of childbearing potential, defined as a sexually mature woman who: (1) has not undergone a hysterectomy or bilateral oophorectomy or (2) has not been naturally postmenopausal for at least 24 consecutive months",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 858,
+   "completion_tokens": 34,
+   "latency_s": 3.161,
+   "raw": "The document does not explicitly state a minimum age requirement, making it unclear if the eligibility is restricted to adults aged 18 or older. ANSWER: UNCLEAR"
+  }
+ ]
+}

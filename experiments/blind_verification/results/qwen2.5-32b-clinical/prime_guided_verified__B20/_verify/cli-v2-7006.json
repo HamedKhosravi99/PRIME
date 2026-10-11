@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7006",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Adults in society over eighteen years old",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 229,
+   "completion_tokens": 24,
+   "latency_s": 1.677,
+   "raw": "The inclusion criteria explicitly state \"Adults in society over eighteen years old,\" establishing the condition. ANSWER: T"
+  }
+ ]
+}

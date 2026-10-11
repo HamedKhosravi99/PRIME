@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "last_updated": "2026-07-22",
+    "license": "https://open.fda.gov/license/",
+    "results": {
+      "limit": 1,
+      "skip": 0,
+      "total": 1
+    },
+    "terms": "https://open.fda.gov/terms/"
+  },
+  "results": [
+    {
+      "address_1": "3900 Howard Ln",
+      "address_2": "",
+      "center_classification_date": "20251124",
+      "city": "Austin",
+      "classification": "Class I",
+      "code_info": "Lot # 1030613, Exp Date: 09/30/2026",
+      "country": "United States",
+      "distribution_pattern": "US Nationwide.",
+      "event_id": "97888",
+      "initial_firm_notification": "Letter",
+      "more_code_info": "",
+      "openfda": {
+        "application_number": [
+          "NDA020161"
+        ],
+        "brand_name": [
+          "POTASSIUM CHLORIDE"
+        ],
+        "generic_name": [
+          "POTASSIUM CHLORIDE"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "manufacturer_name": [
+          "ICU Medical Inc."
+        ],
+        "package_ndc": [
+          "0990-7074-26",
+          "0990-7075-14",
+          "0990-7075-26",
+          "0990-7077-14",
+          "0990-7077-26"
+        ],
+        "product_ndc": [
+          "0990-7074",
+          "0990-7075",
+          "0990-7077"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "INTRAVENOUS"
+        ],
+        "rxcui": [
+          "312507",
+          "1860239",
+          "1860241",
+          "1860463",
+          "1860466"
+        ],
+        "spl_id": [
+          "e76c9e23-41f3-4d57-a5bf-684417a53e5e"
+        ],
+        "spl_set_id": [
+          "eb56a807-ea94-4edb-9811-a04b19568468"
+        ],
+        "substance_name": [
+          "POTASSIUM CHLORIDE"
+        ],
+        "unii": [
+          "660YQ98I10"
+        ]
+      },
+      "postal_code": "78728-6515",
+      "product_description": "POTASSIUM CHLORIDE Inj., 10 mEq total in 100 mL Flexible Container, Highly concentrated 100 mEq/L, Rx Only, ICU Medical, Inc., Lake Forest, Illinois, 60045, USA, NDC# 0990-7074-26",
+      "product_quantity": "",
+      "product_type": "Drugs",
+      "reason_for_recall": "Labeling: Label Error on Declared Strength-The overwrap label may incorrectly identify the product as POTASSIUM CHLORIDE Inj. 10 mEq instead of POTASSIUM CHLORIDE Inj. 20 mEq",
+      "recall_initiation_date": "20251029",
+      "recall_number": "D-0181-2026",
+      "recalling_firm": "Otsuka ICU Medical LLC",
+      "report_date": "20251126",
+      "state": "TX",
+      "status": "Ongoing",
+      "voluntary_mandated": "Voluntary: Firm initiated"
+    }
+  ]
+}

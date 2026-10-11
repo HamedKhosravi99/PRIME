@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7076",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "F",
+   "quote": "participants had to be between 11 and 13 years old",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 210,
+   "completion_tokens": 47,
+   "latency_s": 3.117,
+   "raw": "The document specifies an inclusion criterion that restricts participation to youth aged between 11 and 13 years old, which directly contradicts the condition of restricting enrollment to adults aged 18 or more. ANSWER: F"
+  }
+ ]
+}

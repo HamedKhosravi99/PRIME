@@ -1,0 +1,175 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-4mqg-h5jf-j9m7"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-4mqg-h5jf-j9m7"
+    },
+    "what": "the details text names the affected package (the package itself, by its registered name or a distinctive part of it, not only the vendor or the ecosystem)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-4mqg-h5jf-j9m7"
+    },
+    "what": "the details text states a version in which the issue is fixed"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-4mqg-h5jf-j9m7"
+    },
+    "what": "the details text states the first affected version, the version in which the issue was introduced"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory has a readable summary (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: it has a summary and its text names the affected package."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked completeness protocol: summary present, and the text names the package, a fixed version, and the first affected version."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4"
+   ]
+  ]
+ },
+ "id": "sec-v2-7065",
+ "notes_for_annotators": "{\"family\": \"security-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, true, true], \"twins\": [\"affected.0.package.name\", \"affected.*.ranges.*.events.*.fixed\", \"affected.*.ranges.*.events.*.introduced\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-4mqg-h5jf-j9m7": {
+   "details": "## Impact\n\n**Use of Open Source Library potentially exposed to RCE**\n    **Issue**: Use of a version of the SnakeYAML `v1.31 `open source library with multiple issues that potentially exposes the user to unsafe deserialization of Java objects. This could allow third parties to execute arbitrary code on the target system. This issue is present in versions `0.3.0` to `0.8.1`.\n    **Mitigation**: A pull request to address this issue has been merged - https://github.com/pytorch/serve/pull/2523. TorchServe release `0.8.2` includes this fix.\n\n## Patches\n\n## TorchServe release 0.8.2 includes fixes to address the previously listed issue:\n\nhttps://github.com/pytorch/serve/releases/tag/v0.8.2\n\n**Tags for upgraded DLC release**\nUser can use the following new image tags to pull DLCs that ship with patched TorchServe version 0.8.2:\nx86 GPU\n\n* v1.9-pt-ec2-2.0.1-inf-gpu-py310\n* v1.8-pt-sagemaker-2.0.1-inf-gpu-py310\n\nx86 CPU\n\n* v1.8-pt-ec2-2.0.1-inf-cpu-py310\n* v1.7-pt-sagemaker-2.0.1-inf-cpu-py310\n\nGraviton\n\n* v1.7-pt-graviton-ec2-2.0.1-inf-cpu-py310\n* v1.5-pt-graviton-sagemaker-2.0.1-inf-cpu-py310\n\nNeuron\n\n* 1.13.1-neuron-py310-sdk2.13.2-ubuntu20.04\n* 1.13.1-neuronx-py310-sdk2.13.2-ubuntu20.04\n* 1.13.1-neuronx-py310-sdk2.13.2-ubuntu20.04\n\nThe full DLC image URI details can be found at: https://github.com/aws/deep-learning-containers/blob/master/available_images.md#available-deep-learning-containers-images\n\n## References\nhttps://github.com/pytorch/serve/pull/2523\nhttps://github.com/pytorch/serve/releases/tag/v0.8.2\nhttps://github.com/aws/deep-learning-containers/blob/master/available_images.md#available-deep-learning-containers-images\n\n## Credit\nWe would like to thank Oligo Security for responsibly disclosing this issue and working with us on its resolution.\nIf you have any questions or comments about this advisory, we ask that you contact AWS/Amazon Security via our [vulnerability reporting page](https://aws.amazon.com/security/vulnerability-reporting[)](https://aws.amazon.com/security/vulnerability-reporting)) or directly via email to [aws-security@amazon.com](mailto:aws-security@amazon.com). Please do not create a public GitHub issue.",
+   "summary": "TorchServe Pre-Auth Remote Code Execution"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-4mqg-h5jf-j9m7.",
+ "seed": "GHSA-4mqg-h5jf-j9m7",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "text"
+}

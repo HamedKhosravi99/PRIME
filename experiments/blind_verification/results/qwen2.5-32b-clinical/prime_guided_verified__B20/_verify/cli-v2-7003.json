@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7003",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Healthy subjects aged 18-45 years (including the threshold);",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 1503,
+   "completion_tokens": 42,
+   "latency_s": 3.597,
+   "raw": "The inclusion criteria explicitly state \"Healthy subjects aged 18-45 years (including the threshold)\", establishing the condition that participants must be adults, aged 18 or older. ANSWER: T"
+  }
+ ]
+}

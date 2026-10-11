@@ -1,0 +1,31 @@
+{
+ "instance": "cli-v2-7070",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "* Ages 18 to 75;",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 367,
+   "completion_tokens": 32,
+   "latency_s": 3.005,
+   "raw": "The inclusion criteria specify ages 18 to 75, which meets the requirement for a minimum age of 18 years. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E4",
+   "attested": "F",
+   "quote": "Patients with chronic hepatitis B treated with interferon and / or nucleoside (acid) analogs (NA) antiviral therapy.",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 352,
+   "completion_tokens": 22,
+   "latency_s": 1.313,
+   "raw": "The document specifies inclusion criteria that require patients with chronic hepatitis B, not healthy volunteers. ANSWER: F"
+  }
+ ]
+}

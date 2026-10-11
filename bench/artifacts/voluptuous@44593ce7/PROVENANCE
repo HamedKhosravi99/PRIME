@@ -1,0 +1,12 @@
+name: voluptuous
+source_url: https://github.com/alecthomas/voluptuous
+commit: 44593ce7c330faf9418252c4b5448f4736144a7f
+ref_cloned: default HEAD
+clone_date: 2026-07-28
+license_file: COPYING
+license_first_line: Copyright (c) 2010, Alec Thomas
+size: 324K
+test_command: python3 -m pytest -q (cwd=repo root)
+environment: 3.9.6, pytest
+test_exit_code: 0
+test_result_line: ============================= 182 passed in 0.19s ==============================

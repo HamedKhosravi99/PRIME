@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7023",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "* Must be between 18 and 35 years of age.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 276,
+   "completion_tokens": 31,
+   "latency_s": 2.424,
+   "raw": "The document specifies an age range of 18 to 35 years, which meets the condition of restricting enrollment to adults. ANSWER: T"
+  }
+ ]
+}

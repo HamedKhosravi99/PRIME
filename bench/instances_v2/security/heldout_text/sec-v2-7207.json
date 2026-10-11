@@ -1,0 +1,175 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-3h9h-qfvw-98hq"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-3h9h-qfvw-98hq"
+    },
+    "what": "the details text names the affected package (the package itself, by its registered name or a distinctive part of it, not only the vendor or the ecosystem)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-3h9h-qfvw-98hq"
+    },
+    "what": "the details text states a version in which the issue is fixed"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-3h9h-qfvw-98hq"
+    },
+    "what": "the details text states the first affected version, the version in which the issue was introduced"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory has a readable summary (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: it has a summary and its text names the affected package."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked completeness protocol: summary present, and the text names the package, a fixed version, and the first affected version."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4"
+   ]
+  ]
+ },
+ "id": "sec-v2-7207",
+ "notes_for_annotators": "{\"family\": \"security-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, false, false], \"twins\": [\"affected.0.package.name\", \"affected.*.ranges.*.events.*.fixed\", \"affected.*.ranges.*.events.*.introduced\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-3h9h-qfvw-98hq": {
+   "details": "### Summary\nWhile fuzzing `openexr_exrcheck_fuzzer`, Valgrind reports a conditional branch depending on uninitialized data inside `generic_unpack`. This indicates a use of uninitialized memory (CWE-457). The issue is reproducible with the current OSS-Fuzz harness and a single-file PoC.\n\n### Details\n\n**Environment:**\n- Tooling: `valgrind --tool=memcheck --track-origins=yes`\n- Target: `openexr_exrcheck_fuzzer`\n- OS: Ubuntu 20.04.6 LTS focal x86_64\n- openexr version and Git-commit hash: ` openexr 3.4.2 | commit fd657e8a41e157e5841c7cc2e2a5efe094b069a1 (grafted, HEAD -> main, origin/main, origin/HEAD)`\n\nFunction: `generic_unpack`\n\nPossible root cause (based on observed symptoms):\nThe unpacker is branching on bytes in a scratch buffer that were never written because the decode step didn\u2019t fully populate it.\n- The first use flagged is in `generic_unpack()`. That function reads from the decompressed/expanded pixel buffer to scatter data into the framebuffer. A \u201cconditional jump depends on uninitialised value(s)\u201d means it\u2019s consulting bytes in that buffer before they were written.\n- Valgrind says the uninitialised value \u201cwas created by a heap allocation (malloc)\u201d, not the stack: this matches a per-tile/per-scanline decode scratch buffer allocated in `exr_decoding_run()`.\n\n**Valgrind Trace (top frames):**\n```bash\n==454== Conditional jump or move depends on uninitialised value(s)\n==454==    at 0x4539BE: generic_unpack (in /out/openexr_exrcheck_fuzzer)\n==454==    by 0x44B85F: exr_decoding_run (in /out/openexr_exrcheck_fuzzer)\n==454==    by 0x38BC5F: Imf_4_0::(anonymous namespace)::TileProcess::run_decode(_priv_exr_context_t const*, int, Imf_4_0::FrameBuffer const*, std::__1::vector<Imf_4_0::Slice, std::__1::allocator<Imf_4_0::Slice> > const&) (in /out/openexr_exrcheck_fuzzer)\n==454==    by 0x388BE1: Imf_4_0::TiledInputFile::Data::readTiles(int, int, int, int, int, int) (in /out/openexr_exrcheck_fuzzer)\n==454==    by 0x388619: Imf_4_0::TiledInputFile::readTiles(int, int, int, int, int, int) (in /out/openexr_exrcheck_fuzzer)\n==454==    by 0x353755: Imf_4_0::InputFile::Data::bufferedReadPixels(int, int) (in /out/openexr_exrcheck_fuzzer)\n==454==    by 0x352286: Imf_4_0::InputFile::readPixels(int) (in /out/openexr_exrcheck_fuzzer)\n==454==    by 0x3190FA: Imf_4_0::(anonymous namespace)::readMultiPart(Imf_4_0::MultiPartInputFile&, bool, bool) (in /out/openexr_exrcheck_fuzzer)\n==454==    by 0x314C4D: Imf_4_0::checkOpenEXRFile(char const*, unsigned long, bool, bool, bool) (in /out/openexr_exrcheck_fuzzer)\n==454==  Uninitialised value was created by a heap allocation at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)\n```\n\n### PoC\nIn the attached archive, you will find:\n- The executable used for our tests.\n- The testcase used to trigger the bug.\n\nTo observe the bug, simply run the OSS-Fuzz helper script:\n```bash\ngit clone https://github.com/google/oss-fuzz.git\ncd oss-fuzz\n\npython3 infra/helper.py build_image openexr\npython3 infra/helper.py build_fuzzers --sanitizer=none openexr\npython3 infra/helper.py shell openexr\n\napt update && apt install -y valgrind\nulimit -n 65535\nvalgrind --tool=memcheck --track-origins=yes /out/openexr_exrcheck_fuzzer /path/to/poc\n```\n\n### Impact\n- Undefined Behavior\n- Potential crash\n- Denial of Service\n\n**Credit:** Aldo Ristori\n[archive0.zip](https://github.com/user-attachments/files/23024726/archive0.zip)\n\n\n\n### Update Note:\nOther saved testcases from the fuzzing campaign trigger the same underlying bug, but with a different manifestation. So there is one root cause (missing post-decode validation / zero-init before any unpack), with different call-sites. Below there are several archives, formatted like the previous one, that reproduce the other test cases.\n\n**Other observed sinks (distinct manifestations of the same bug):**\n\n**Deep pointers path:**\ngeneric_unpack_deep_pointers (deep scanline/tiled)\n[archive1.zip](https://github.com/user-attachments/files/23024736/archive1.zip)\n\n\n**Deep sample table path:**\nunpack_sample_table (deep scanline)\n[archive2.zip](https://github.com/user-attachments/files/23024740/archive2.zip)\n\n\n**Half conversion path:**\nhalf_to_float_buffer_f16c via unpack_half_to_float_3chan_planar\n[archive3.zip](https://github.com/user-attachments/files/23024744/archive3.zip)\n\n\n**Deep compositing:**\nCompositeDeepScanLine::readPixels \u2192 ThreadPool::addTask \u2192 LineCompositeTask::execute\n[archive4.zip](https://github.com/user-attachments/files/23024746/archive4.zip)",
+   "summary": "OpenEXR Makes Use of Uninitialized Memory"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-3h9h-qfvw-98hq.",
+ "seed": "GHSA-3h9h-qfvw-98hq",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "text"
+}

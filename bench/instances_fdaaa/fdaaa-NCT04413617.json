@@ -1,0 +1,257 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"INTERVENTIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT04413617"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   }
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_after:\"2017-01-18\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.startDateStruct.date",
+     "record_id": "NCT04413617"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   }
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:true",
+    "params": {
+     "field_path": "protocolSection.oversightModule.isFdaRegulatedDrug",
+     "record_id": "NCT04413617"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   }
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+     "record_id": "NCT04413617"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   }
+  },
+  {
+   "gold_value": "F",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_after:\"2023-02-07\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.resultsFirstSubmitDate",
+     "record_id": "NCT04413617"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   }
+  },
+  {
+   "gold_value": "U",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.dispFirstSubmitDate",
+     "record_id": "NCT04413617"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "This registration is an applicable clinical trial subject to the Part 11 results-reporting requirement (42 CFR 11.22(b))."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.primaryCompletionDateStruct.date",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "Results information for this trial was therefore due by a determinate date under 42 CFR 11.44(a)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.resultsFirstSubmitDate",
+      "date_after",
+      "2023-02-07"
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "This trial submitted its results information after the deadline that 42 CFR 11.44(a) sets for it."
+  }
+ ],
+ "decoys": [],
+ "domain": "fdaaa_ctgov",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5"
+   ]
+  ]
+ },
+ "id": "fdaaa-NCT04413617",
+ "notes_for_annotators": "{\"family\": \"pfizer\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 3, \"false_mech\": false, \"contract\": \"42 CFR 11.22(b), 11.42, 11.44(a)-(c)\", \"contract_author\": \"Congress (FDAAA 801) and FDA/NLM (42 CFR 11)\", \"verdict\": \"compliant\", \"cert_filed\": false, \"cert_valid\": false, \"date_defaulted\": false, \"due\": \"2023-02-07\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT04413617": {
+   "derivedSection": {
+    "miscInfoModule": {
+     "submissionTracking": {
+      "firstMcpInfo": {
+       "postDateStruct": {
+        "date": "2023-03-01",
+        "type": "ACTUAL"
+       }
+      }
+     }
+    }
+   },
+   "protocolSection": {
+    "contactsLocationsModule": {
+     "locations": []
+    },
+    "designModule": {
+     "phases": [
+      "PHASE2"
+     ],
+     "studyType": "INTERVENTIONAL"
+    },
+    "identificationModule": {
+     "briefTitle": null,
+     "nctId": "NCT04413617"
+    },
+    "oversightModule": {
+     "isFdaRegulatedDevice": false,
+     "isFdaRegulatedDrug": true,
+     "isUsExport": true
+    },
+    "statusModule": {
+     "completionDateStruct": {
+      "date": "2022-02-07",
+      "type": "ACTUAL"
+     },
+     "overallStatus": "COMPLETED",
+     "primaryCompletionDateStruct": {
+      "date": "2022-02-07",
+      "type": "ACTUAL"
+     },
+     "resultsFirstSubmitDate": "2023-02-06",
+     "startDateStruct": {
+      "date": "2020-07-29",
+      "type": "ACTUAL"
+     }
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov registration, as retrieved and embedded; no external lookups. The governing standard is 42 CFR Part 11 (FDAAA 801). Record identifier: NCT04413617.",
+ "seed": "NCT04413617",
+ "user_prompt": "Under the FDAAA 801 results-reporting rule, is this trial delinquent?",
+ "variant": "base"
+}

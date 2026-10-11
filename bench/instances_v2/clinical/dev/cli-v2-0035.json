@@ -1,0 +1,315 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT05818137"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT05818137"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2025-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT05818137"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2028-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT05818137"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT05818137"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT05818137"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT05818137"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT05818137"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2025-01-01"
+     ]
+    ],
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2028-01-01"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2025-01-01"
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "cli-v2-0035",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-het-02\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 3, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT05818137": {
+   "protocolSection": {
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Documented diagnostic right heart catheterization (RHC) at any time prior to screening confirming the diagnosis of World Health Organization (WHO) pulmonary arterial hypertension (PAH) Group 1 in any of the following subtypes:\n\n  * Idiopathic PAH\n  * Heritable PAH\n  * Drug/toxin-induced PAH\n  * PAH associated with connective tissue disease\n  * PAH associated with simple, congenital systemic-to-pulmonary shunts at least 1 year following repair\n* PAH classified as WHO functional class (FC) I or symptomatic PAH classified as WHO FC II to IV\n* On stable doses of background PAH therapy and diuretics (if applicable) for at least 90 days prior to screening\n\nExclusion Criteria\n\n* Diagnosis of PH WHO Groups 2, 3, 4, or 5\n* Diagnosis of the following PAH Group 1 subtypes:\n\n  * Human immunodeficiency virus (HIV)-associated PAH\n  * PAH associated with portal hypertension\n  * Schistosomiasis-associated PAH\n  * PAH with features of significant venous/capillary pulmonary veno-occlusive disease/pulmonary capillary hemangiomatosis (PVOD/PCH) involvement\n* Is on the waiting list for lung transplant\n* Pregnant or breastfeeding women\n* History of full or partial pneumonectomy\n* Pulmonary function test (PFT) values of forced vital capacity (FVC) \\< 60% predicted at the screening visit or within 6 months prior to the screening visit.\n* Initiation of an exercise program for cardiopulmonary rehabilitation within 90 days prior to the screening visit or planned initiation during the study.\n* History of more than mild obstructive sleep apnea that is untreated\n* Known history of portal hypertension or chronic liver disease, including hepatitis B and/or hepatitis C (with evidence of recent infection and/or active virus replication), defined as mild to severe hepatic impairment.\n* History of restrictive, constrictive, or congestive cardiomyopathy.\n* History of atrial septostomy within 180 days prior to the screening visit.\n* Personal or family history of long QT syndrome (LQTS) or sudden cardiac death.\n* Left ventricular ejection fraction (LVEF) \\< 45% on historical Echocardiogram (ECHO) within 6 months prior to the screening visit.\n* Any symptomatic coronary disease events within 6 months prior to the screening visit.\n* Cerebrovascular accident within 3 months prior to the screening visit.\n* Significant (\u2265 2+ regurgitation) mitral regurgitation or aortic regurgitation valvular disease, mitral stenosis and more than mild aortic valve stenosis.\n* Prior exposure to sotatercept or luspatercept or history of allergic or anaphylactic reaction or hypersensitivity to recombinant proteins or excipients in investigational product\n* Received intravenous inotropes (e.g., dobutamine, dopamine, norepinephrine, vasopressin) within 30 days prior to the screening visit\n* Currently enrolled in or have completed any other investigational product study within 30 days\n* Weight at the screening is over 85 kg"
+    },
+    "identificationModule": {
+     "briefTitle": "A Study of Sotatercept in Japanese Pulmonary Arterial Hypertension (PAH) Participants (MK-7962-020)",
+     "nctId": "NCT05818137",
+     "officialTitle": "A Phase 3 Non-randomized, Non-controlled, Open Label Clinical Study to Evaluate the Efficacy and Safety of MK-7962 (Sotatercept) add-on to Background Therapy in Japanese Participants With Pulmonary Arterial Hypertension (PAH)"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2026-06-08",
+     "overallStatus": "COMPLETED",
+     "studyFirstSubmitDate": "2023-04-05"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT05818137.",
+ "seed": "NCT05818137",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

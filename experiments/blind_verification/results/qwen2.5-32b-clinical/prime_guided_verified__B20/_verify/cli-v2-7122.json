@@ -1,0 +1,31 @@
+{
+ "instance": "cli-v2-7122",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Age group : from 15 to 60 years old",
+   "verdict": "F",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 232,
+   "completion_tokens": 36,
+   "latency_s": 2.282,
+   "raw": "The inclusion criteria specify an age range starting from 15 years old, which does not meet the requirement for a minimum age of 18 years. ANSWER: F"
+  },
+  {
+   "attempt": 2,
+   "atom": "E2",
+   "attested": "F",
+   "quote": "Age group : from 15 to 60 years old",
+   "verdict": "F",
+   "agree": true,
+   "invoked": false,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "raw": "The inclusion criteria specify an age range starting from 15 years old, which does not meet the requirement for a minimum age of 18 years. ANSWER: F"
+  }
+ ]
+}

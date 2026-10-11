@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7081",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Healthy male and female subjects as defined in the protocol",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 351,
+   "completion_tokens": 30,
+   "latency_s": 1.724,
+   "raw": "The document does not specify a minimum age requirement, thus it is unclear if the eligibility criteria restrict enrollment to adults only. ANSWER: UNCLEAR"
+  }
+ ]
+}

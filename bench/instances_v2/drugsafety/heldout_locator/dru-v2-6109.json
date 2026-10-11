@@ -1,0 +1,346 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "F",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"D-336-2014\"",
+    "params": {
+     "field_path": "recall_number",
+     "record_id": "D-1060-2013"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "voluntary_mandated",
+     "recall_number",
+     "code_info"
+    ],
+    "what": "the recall number"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Class II\"",
+    "params": {
+     "field_path": "classification",
+     "record_id": "D-1060-2013"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "recall_initiation_date",
+     "classification",
+     "voluntary_mandated"
+    ],
+    "what": "the recall classification"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Terminated\"",
+    "params": {
+     "field_path": "status",
+     "record_id": "D-1060-2013"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "status",
+     "distribution_pattern",
+     "code_info"
+    ],
+    "what": "the recall status"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "reason_for_recall",
+     "record_id": "D-1060-2013"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "code_info",
+     "product_description",
+     "reason_for_recall"
+    ],
+    "what": "the stated reason for the recall"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:20150925",
+    "params": {
+     "field_path": "report_date",
+     "record_id": "D-1060-2013"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "report_date",
+     "event_id",
+     "recall_initiation_date"
+    ],
+    "what": "the date the recall was reported"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "product_quantity",
+     "record_id": "D-1060-2013"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "distribution_pattern",
+     "product_quantity",
+     "recalling_firm"
+    ],
+    "what": "the product quantity"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"United States\"",
+    "params": {
+     "field_path": "country",
+     "record_id": "D-1060-2013"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "recalling_firm",
+     "country",
+     "recall_initiation_date"
+    ],
+    "what": "the country"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "recall_number",
+      "equals",
+      "D-336-2014"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The recall is identified with a stated classification (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "recall_number",
+      "equals",
+      "D-336-2014"
+     ],
+     [
+      "classification",
+      "equals",
+      "Class II"
+     ],
+     [
+      "status",
+      "equals",
+      "Terminated"
+     ]
+    ],
+    [
+     [
+      "recall_number",
+      "equals",
+      "D-336-2014"
+     ],
+     [
+      "reason_for_recall",
+      "exists",
+      null
+     ],
+     [
+      "report_date",
+      "numeric_le",
+      20150925
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The recall is action-ready: identified, classified, with product description, reason, and status populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "recall_number",
+      "equals",
+      "D-336-2014"
+     ],
+     [
+      "classification",
+      "equals",
+      "Class II"
+     ],
+     [
+      "status",
+      "equals",
+      "Terminated"
+     ],
+     [
+      "product_quantity",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The recall satisfies the checked completeness protocol: action-ready per the inspected fields, with consistent dates and populated distribution and firm fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "drugsafety_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "dru-v2-6109",
+ "notes_for_annotators": "{\"family\": \"drugsafety-branching-hom-17\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": 0, \"false_mech\": true, \"locator\": true, \"source_instance\": \"dru-v2-0109\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "D-1060-2013": {
+   "classification": "Class II",
+   "code_info": "Lot #: 08022013@34, Exp11/3/2013",
+   "country": "United States",
+   "distribution_pattern": "CT",
+   "event_id": "66198",
+   "product_description": "Hydroxocobalamin MDV 5 mg/mL (5,000 mcg/mL) Inj., 10 mL vial X 3, Eastern States Compounding Pharmacy, Littleton, NH 03561",
+   "product_quantity": "1 Vial",
+   "reason_for_recall": "Lack of Assurance of Sterility: The pharmacy is recalling one lot of Hydroxocobalamin MDV 5mg/mL due to failed sterility results by a third party contract testing lab. Hence the sterility of the product cannot be assured.",
+   "recall_initiation_date": "20130905",
+   "recall_number": "D-1060-2013",
+   "recalling_firm": "Northern New England Compounding Pharmacy LLC",
+   "report_date": "20130925",
+   "status": "Terminated",
+   "voluntary_mandated": "Voluntary: Firm initiated"
+  }
+ },
+ "scope": "The single named openFDA enforcement record, as retrieved and embedded; no external lookups. Record identifier: D-1060-2013.",
+ "seed": "D-1060-2013",
+ "user_prompt": "Is this recall record complete and correctly classified for downstream pharmacy action?",
+ "variant": "base"
+}

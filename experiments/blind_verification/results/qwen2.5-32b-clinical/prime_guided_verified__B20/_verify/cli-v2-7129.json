@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7129",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "F",
+   "quote": "Be 2 to 21 years of age.",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 379,
+   "completion_tokens": 32,
+   "latency_s": 1.994,
+   "raw": "The inclusion criteria specify participants must be between 2 to 21 years of age, which does not restrict enrollment to adults only. ANSWER: F"
+  }
+ ]
+}

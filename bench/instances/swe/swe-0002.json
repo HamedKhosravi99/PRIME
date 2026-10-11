@@ -1,0 +1,84 @@
+{
+  "id": "swe-0002",
+  "domain": "software_review",
+  "seed": "swe-0002",
+  "variant": "base",
+  "user_prompt": "Is this good code?",
+  "artifact": {
+    "path": "artifacts/six@c8e39406",
+    "kind": "repo",
+    "commit": "c8e394065cd541a16c040515dc0afb85cf22a7c3"
+  },
+  "scope": "Repository six@c8e39406 (github.com/benjaminp/six): the single module six.py, its bundled suite test_six.py, and packaging/CI/changelog configuration, evaluated by running python3 -m pytest from the repository root in the pinned environment (Python 3.9, pytest 8.x).",
+  "actions": ["inspect_file", "search_repo", "run_tests", "inspect_config", "ask_user", "emit_claim"],
+  "claims": [
+    {"id": "C1", "text": "The single-module implementation six.py is readable and its public compatibility helpers are documented (docstrings present as inspected).", "level": 1},
+    {"id": "C2", "text": "The documented compatibility helpers behave as specified on this interpreter: six.py documentation inspected and the bundled suite test_six.py passes under the declared protocol.", "level": 2},
+    {"id": "C3", "text": "The library satisfies the checked maintenance-quality protocol at this commit: documented module, passing suite, packaging metadata declared in setup.py, and maintenance discipline evidenced by either a configured CI workflow running the suite or a maintained release changelog.", "level": 3}
+  ],
+  "order": [["C1", "C2"], ["C2", "C3"]],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "inspect",
+      "proposition": "six.py carries a module docstring and docstrings on public helpers (span read).",
+      "resolver": {"tool": "inspect_file", "params_schema": {"path": "str"}, "params": {"path": "six.py"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E2",
+      "type": "execute",
+      "proposition": "python3 -m pytest test_six.py exits 0 at this commit in the pinned environment (199 passed, 1 skipped).",
+      "resolver": {"tool": "run_tests", "params_schema": {"suite": "str"}, "params": {"suite": "test_six.py"}, "attest": "exit_code==0"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E3",
+      "type": "search",
+      "proposition": "test_six.py defines at least one collectible test function (pattern 'def test_' matches under search_repo).",
+      "resolver": {"tool": "search_repo", "params_schema": {"pattern": "str", "path": "str"}, "params": {"pattern": "def test_", "path": "test_six.py"}, "attest": "match_count>0"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E4",
+      "type": "config",
+      "proposition": "setup.py declares packaging metadata: name, version, and python_requires.",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "setup.py"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E5",
+      "type": "config",
+      "proposition": "A CI workflow that runs the test suite on push/PR is configured at .github/workflows/ci.yml (runs tox).",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": ".github/workflows/ci.yml"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E6",
+      "type": "search",
+      "proposition": "No TODO/FIXME/XXX markers are found in six.py after a search_repo scan with pattern TODO|FIXME|XXX.",
+      "resolver": {"tool": "search_repo", "params_schema": {"pattern": "str", "path": "str"}, "params": {"pattern": "TODO|FIXME|XXX", "path": "six.py"}, "attest": "match_count==0"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E7",
+      "type": "config",
+      "proposition": "A maintained release changelog exists at CHANGES (file present, releases enumerated).",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "CHANGES"}, "attest": "file_exists"},
+      "gold_value": "T"
+    }
+  ],
+  "phi": [
+    {
+      "forbid": {"E2": "T", "E3": "F"},
+      "why": "The suite cannot pass (exit 0 on a non-empty selection) if test_six.py contains no collectible test functions; a ledger asserting both is evidence corruption."
+    }
+  ],
+  "gold_licenses": {
+    "C1": [["E1"]],
+    "C2": [["E1", "E2"]],
+    "C3": [["E1", "E2", "E4", "E5"], ["E1", "E2", "E4", "E7"]]
+  },
+  "decoys": ["count_lines_of_code"],
+  "notes_for_annotators": "All gold_value entries verified by actual runs on 2026-07-24 (see artifact PROVENANCE). MULTIPLE-ROUTE split instance: C3 has two alternative routes matching the disjunctive final protocol component (CI evidence E5, or changelog evidence E7). Minimality, C1 [E1]: without the span read no readability claim is acceptable. C2 [E1,E2]: drop E1 and 'documented' is unsupported; drop E2 and 'behave as specified' is unsupported. C3 route A [E1,E2,E4,E5]: drop E1 (documentation component false-able), E2 (suite component false-able), E4 (no packaging metadata evidence), or E5 (no maintenance-discipline evidence on this route) and a realizable assignment falsifies the corresponding protocol component while the weakened route still holds. C3 route B [E1,E2,E4,E7]: same argument with E7 as the maintenance-discipline witness. Neither C3 route entails the other modulo phi (E5 and E7 are independent), so neither is dominated; both are kept as genuine alternatives. E3 appears in no route because modulo phi E2=T already entails E3=T — including it would violate primeness; it exists to ground the phi rule and as a cheap decoy-ish probe. E6 (marker-free module) is true but not a protocol component; requiring it would inflate the license. Order-coherence: both C3 routes literal-contain C2's route [E1,E2], which contains C1's [E1]. Honest outcome: C3 reachable by either route."
+}

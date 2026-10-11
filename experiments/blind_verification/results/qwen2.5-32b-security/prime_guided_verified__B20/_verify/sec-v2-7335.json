@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7335",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "A flaw was found in the way Ansible",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 243,
+   "completion_tokens": 24,
+   "latency_s": 1.481,
+   "raw": "The document specifies the affected package as \"Ansible\" with version ranges, establishing the condition. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "Ansible (2.3.x before 2.3.3, and 2.4.x before 2.4.1) passed certain parameters to the jenkins_plugin module.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 225,
+   "completion_tokens": 43,
+   "latency_s": 3.404,
+   "raw": "The document specifies versions in which the issue was fixed (2.3.3 for 2.3.x series and 2.4.1 for 2.4.x series). ANSWER: T"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7032",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Female subject age 40 to 50 years, inclusive",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 1272,
+   "completion_tokens": 40,
+   "latency_s": 3.614,
+   "raw": "The document establishes the condition as it specifies inclusion criterion for female subjects aged 40 to 50 years, which is above the minimum age of 18 years. ANSWER: T"
+  }
+ ]
+}

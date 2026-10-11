@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7224",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "A malicious user can cause a denial of service by altering a `SavedModel` such that [`TensorByteSize`](https://github.com/tensorflow/tensorflow/blob/a1320ec1eac186da1d03f033109191f715b2b130/tensorflow/core/framework/attr_value_util.cc#L46-L50) would trigger `CHECK` failures.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 594,
+   "completion_tokens": 24,
+   "latency_s": 2.271,
+   "raw": "The document mentions TensorFlow by its registered name multiple times, establishing that it is the affected package. ANSWER: T"
+  }
+ ]
+}

@@ -1,0 +1,77 @@
+{
+  "protocolSection": {
+    "conditionsModule": {
+      "conditions": [
+        "Ovarian Cancer",
+        "Fallopian Tube Cancer",
+        "Peritoneal Cancer"
+      ]
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "PARALLEL",
+        "maskingInfo": {
+          "masking": "DOUBLE",
+          "whoMasked": [
+            "PARTICIPANT",
+            "INVESTIGATOR"
+          ]
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 564,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "identificationModule": {
+      "briefTitle": "Phase 3 Study of Rucaparib as Switch Maintenance After Platinum in Relapsed High Grade Serous or Endometrioid Ovarian Cancer (ARIEL3)",
+      "nctId": "NCT01968213",
+      "organization": {
+        "class": "INDUSTRY",
+        "fullName": "pharmaand GmbH"
+      }
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "measure": "Disease Progression According to RECIST Version 1.1, as Assessed by the Investigator, or Death From Any Cause (Investigator Progression Free Survival as Per invPFS)",
+          "timeFrame": "Every 12 calendar weeks (within 7 days prior is permitted) after start of treatment until treatment discontinuation due to disease progression. Total follow-up was up to approximately 3 years."
+        }
+      ]
+    },
+    "sponsorCollaboratorsModule": {
+      "collaborators": [
+        {
+          "class": "INDUSTRY",
+          "name": "Foundation Medicine"
+        },
+        {
+          "class": "INDUSTRY",
+          "name": "Myriad Genetics, Inc."
+        }
+      ],
+      "leadSponsor": {
+        "class": "INDUSTRY",
+        "name": "pharmaand GmbH"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2022-07-07",
+        "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+        "date": "2014-04-07",
+        "type": "ACTUAL"
+      },
+      "statusVerifiedDate": "2023-06"
+    }
+  }
+}

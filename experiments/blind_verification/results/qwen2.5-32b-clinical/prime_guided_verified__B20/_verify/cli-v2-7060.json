@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7060",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "* Be the primary caregiver of a military veteran with dementia for at least 6 months and planning to remain the primary caregiver for the next 2 months",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 364,
+   "completion_tokens": 35,
+   "latency_s": 2.825,
+   "raw": "The document does not mention any age requirement for participants, thus it is unclear if there is a minimum age of 18 years or more. ANSWER: UNCLEAR"
+  }
+ ]
+}

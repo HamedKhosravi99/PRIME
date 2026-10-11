@@ -1,0 +1,293 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT03707340"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT03707340"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2020-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT03707340"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT03707340"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT03707340"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:false",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.healthyVolunteers",
+     "record_id": "NCT03707340"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT03707340"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2020-01-01"
+     ]
+    ],
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2020-01-01"
+     ],
+     [
+      "protocolSection.eligibilityModule.healthyVolunteers",
+      "equals",
+      false
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-0221",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-hom-17\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": null, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT03707340": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "The purpose of this study is to determine if it is feasible for women to take both Flibanserin and tamoxifen for the duration of the study. This study is also trying to find out if Flibanserin improves or has any effect on hyposexual desire disorder/HSDD in women who are taking tamoxifen for breast cancer."
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Women age 21 and older\n* Able to swallow tablets\n* History of stage 0-III breast cancer that is estrogen and/or progesterone receptor positive\n* History of breast cancer with no current evidence of disease and have completed primary treatment with any combination of surgery, radiation and/or chemotherapy at least 3 months ago and is currently on Tamoxifen, an AI, or ovarian suppression.\n* Has been taking tamoxifen, an AI, ,or ovarian suppression for at least 3 months.\n* Has LFTS within 2 times the upper limit of normal proven by a Comprehensive Metabolic Panel (CMP) performed within 6 months of protocol enrollment and while the patient was on Tamoxifen, an AI, or ovarian suppression\n* Patients meet criteria for the diagnosis of HSDD as defined by the DSM-IV and ISSWSH Consensus paper. The criteria states that there must be a decrease in sexual desire and this must be a change for at least 3 months from what it was previously. Personal distress resulting from this change must occur. Initial screening will take place with The Decreased Sexual Desire Screener, a 5-question screening tool developed and validated to aid clinicians in making the diagnosis of HSDD. A \"yes\" response to the first 4 questions on the screener is consistent with HSDD.\n* Patients must agree to follow the guidelines for alcohol consumption during the 24 weeks of treatment on study\n* English speaking\n* Able to participate in the informed consent process\n\nExclusion Criteria:\n\n* Active secondary cancer requiring cytotoxic chemotherapy\n* History or current diagnosis of metastatic breast cancer.\n* Unwillingness to follow alcohol guidelines while taking flibanserin\n* Hepatic dysfunction (more than 2 times the upper limit of normal for alt, ast, t.bili or alk phos) proven by Comprehensive Metabolic Panel (CMP) performed within 6 months of protocol enrollment and while the patient was on Tamoxifen or an AI\n* Patients on strong CYP3A4 inhibitors including ketoconazole, itraconazole, posaconazole, clarithromycin, nefazodone, ritonavir, saquinavir, nelfinavir, indinavir, boceprevir, telaprevir, telithromycin, conivaptan\n* Patients on moderate CYP3A4 inhibitors including Amprenavir, atazanavir, ciprofloxacin, diltiazem, erythromycin, fluconazole, fosamprenavir, verapamil, grapefruit juice\n* Non-English speaking\n* Unable to participate in the informed consent process",
+     "healthyVolunteers": false,
+     "minimumAge": "21 Years"
+    },
+    "identificationModule": {
+     "briefTitle": "A Study of Flibanserin in Breast Cancer Survivors on Tamoxifen or Aromatase Inhibitors",
+     "nctId": "NCT03707340"
+    },
+    "statusModule": {
+     "studyFirstSubmitDate": "2018-09-17"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT03707340.",
+ "seed": "NCT03707340",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

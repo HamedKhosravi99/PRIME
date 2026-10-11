@@ -1,0 +1,1265 @@
+{
+  "derivedSection": {
+    "conditionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D007410",
+          "term": "Intestinal Diseases"
+        },
+        {
+          "id": "D005767",
+          "term": "Gastrointestinal Diseases"
+        },
+        {
+          "id": "D004066",
+          "term": "Digestive System Diseases"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D003108",
+          "term": "Colonic Diseases"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "versionHolder": "2026-07-29"
+    }
+  },
+  "hasResults": true,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "description": "Subjects that are indicated for colonoscopy, who are suspected or known to suffer from large bowel diseases, had capsule endoscopy with PillCam COLON after bowel preparation and before standard colonoscopy.",
+          "interventionNames": [
+            "Device: PillCam COLON",
+            "Procedure: Standard colonoscopy"
+          ],
+          "label": "PillCam COLON and Colonoscopy",
+          "type": "EXPERIMENTAL"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "PillCam COLON and Colonoscopy"
+          ],
+          "description": "The PillCam COLON capsule is an ingestible capsule equipped with an endoscope that has two imagers, enabling it to acquire video images from both ends. the device measures 31 by 11 mm and acquires images at a rate of 4 frames per second. Recording and downloading of data are similar those of the data for small-bowel capsule endoscopy.",
+          "name": "PillCam COLON",
+          "type": "DEVICE"
+        },
+        {
+          "armGroupLabels": [
+            "PillCam COLON and Colonoscopy"
+          ],
+          "description": "Standard colonoscopy was the standard against which capsule endoscopy was compared,and it was performed after capsule endoscopy (after capsule excretion or at least 10 hours after capsule ingestion, whichever came first), on either the same day as ingestion or the next morning.",
+          "name": "Standard colonoscopy",
+          "type": "PROCEDURE"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Colonic Diseases"
+      ],
+      "keywords": [
+        "Suspected colonic disease",
+        "Known colonic disease"
+      ]
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "city": "Lyon",
+          "country": "France",
+          "facility": "CHU Lyon",
+          "geoPoint": {
+            "lat": 45.74906,
+            "lon": 4.84789
+          }
+        },
+        {
+          "city": "Nancy",
+          "country": "France",
+          "facility": "CHU Nancy",
+          "geoPoint": {
+            "lat": 48.68439,
+            "lon": 6.18496
+          }
+        },
+        {
+          "city": "D\u00fcsseldorf",
+          "country": "Germany",
+          "facility": "Evangelisches Krankenhaus",
+          "geoPoint": {
+            "lat": 51.22319,
+            "lon": 6.77927
+          }
+        },
+        {
+          "city": "Hamburg",
+          "country": "Germany",
+          "facility": "AK Altona",
+          "geoPoint": {
+            "lat": 53.55073,
+            "lon": 9.99302
+          }
+        },
+        {
+          "city": "Rome",
+          "country": "Italy",
+          "facility": "Ospedale Gemelli",
+          "geoPoint": {
+            "lat": 41.89193,
+            "lon": 12.51133
+          }
+        },
+        {
+          "city": "Pamplona",
+          "country": "Spain",
+          "facility": "Clinica Universitaria de Navarra",
+          "geoPoint": {
+            "lat": 42.81687,
+            "lon": -1.64323
+          }
+        },
+        {
+          "city": "Harrow",
+          "country": "United Kingdom",
+          "facility": "St.Marks&Northwick Park hospital",
+          "geoPoint": {
+            "lat": 51.57835,
+            "lon": -0.33208
+          }
+        }
+      ],
+      "overallOfficials": [
+        {
+          "affiliation": "Erasme University Hospital",
+          "name": "Jacques DEVIERE, M.D",
+          "role": "PRINCIPAL_INVESTIGATOR"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "To see if PillCam COLON will demonstrate diagnostic yield \\>80% in detecting significant colonic pathologies when compared to colonoscopy in the target population.",
+      "detailedDescription": "The development and introduction of a specially designed, customized colon capsule combined with a dedicated capsule colonoscopy procedure protocol will allow for more efficient evaluation of the colonic mucosa. This is expected to improve the capability of the Given\u00ae Diagnostic System to detect colonic pathologies and to serve as a diagnostic and screening tool for colonic disease.\n\nThis study is designed to compare capsule colonoscopy and colonoscopy procedures in detecting colon abnormalities. Note that the physician performing the capsule endoscopy and reading the capsule videos and the physician performing the colonoscopy were unaware of each other's findings until completion of the examinations and reports (assessor-blind)."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "NON_RANDOMIZED",
+        "interventionModel": "SINGLE_GROUP",
+        "maskingInfo": {
+          "masking": "SINGLE",
+          "whoMasked": [
+            "OUTCOMES_ASSESSOR"
+          ]
+        },
+        "primaryPurpose": "DIAGNOSTIC"
+      },
+      "enrollmentInfo": {
+        "count": 332,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* Subject was referred for colonoscopy for one of the following reasons:\n\n  * Subjects over \u2265 50 years of age with one or more of the following clinical symptoms: rectal bleeding, hematochezia, melena, positive Fecal Occoult Blood Test (FOBT), recent change of bowel habits, or diarrhea/constipation of recent onset.\n  * Any subject \u2265 18 years of age with:\n\n    * Positive findings in the colon on a GastroIntestinal (GI) radiographic study\n    * Personal history of colorectal cancer (CRC) or adenomatous colonic polyps and at least 3 years since last colonoscopy\n    * Suspected or known ulcerative colitis\n\nExclusion Criteria:\n\n* Subject has dysphagia\n* Subject has congestive heart failure\n* Subject has renal insufficiency\n* Subject is known or is suspected to suffer from intestinal obstruction.\n* Chronic use of laxatives\n* Subject has a cardiac pacemakers or other implanted electro medical devices.\n* Women who are either pregnant or nursing at the time of screening, who intend to be during the study period, or are of child-bearing potential and do not practice medically acceptable methods of contraception.\n* Subject is expected to undergo MRI examination within 7 days after ingestion of the capsule.\n* Subject has had prior abdominal surgery of the gastrointestinal tract other than uncomplicated procedures that would be unlikely to lead to bowel obstruction based on the clinical judgment of the investigator.\n* Subject has any condition, which precludes compliance with study and/or device instructions.\n* Age \\< 18 years\n* Subject suffers from life threatening conditions\n* Subject is currently participating in another clinical study\n* Subject has known slow gastric emptying time",
+      "healthyVolunteers": false,
+      "maximumAge": "75 Years",
+      "minimumAge": "18 Years",
+      "sex": "ALL",
+      "stdAges": [
+        "ADULT",
+        "OLDER_ADULT"
+      ]
+    },
+    "identificationModule": {
+      "acronym": "MA-53",
+      "briefTitle": "PillCam\u2122 Colon Capsule Endoscopy (PCCE) in the Visualization of the Colon",
+      "nctId": "NCT00604162",
+      "officialTitle": "Evaluation of PillCam\u2122 Colon Capsule Endoscopy (PCCE) in the Visualization of the Colon",
+      "orgStudyIdInfo": {
+        "id": "MA-53"
+      },
+      "organization": {
+        "class": "INDUSTRY",
+        "fullName": "Medtronic - MITG"
+      }
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "description": "The number of participants that completed the capsule endoscopy procedure with video images of the entire colon that could be read by a clinician, or subsequently had a full colonoscopy with visualization by a different clinician. The number of successful procedures of each type are reported.",
+          "measure": "Number of Participants With Successful Capsule Endoscopies or Standard Colonoscopies",
+          "timeFrame": "1 day"
+        },
+        {
+          "description": "Since the standard colonoscopy is the \"gold standard\" to which the PillCam is to be compared, the number of participants with the indicated lesions identified by a trained clinician using standard colonoscopy procedures is reported here. Note that some Participants had multiple lesions and so could be included in more than one size category. Advanced adenoma is defined as 1) an adenoma 1 cm or larger or 2) an adenoma with villous features or high-grade dysplasia. All colorectal cancers were 6mm or larger.",
+          "measure": "Number of Participants With Indicated Lesions Detected by Standard Colonoscopy",
+          "timeFrame": "1 day"
+        },
+        {
+          "description": "Readings of videos from the PillCam COLON were performed by trained physicians who identified lesions (types and sizes). Sensitivity was calculated as the percentage of participants who had positive findings on capsule endoscopy (of a specified category) among those participants who had positive findings on colonoscopy of the same category (reported in Outcome Measure 1). The false negative rate is equal to 1 - sensitivity and indicated the percentage of lesions missed by capsule endoscopy.",
+          "measure": "Sensitivity of Capsule Endoscopy for Indicated Lesions",
+          "timeFrame": "1 day"
+        },
+        {
+          "description": "Readings of videos from the PillCam COLON were performed by trained physicians who identified lesions (types and sizes). Specificity was calculated as the percentage of participants who had negative findings on capsule endoscopy (of a specified category) among participants with negative colonoscopy findings of the same category (reported in Outcome Measure 1). This corresponds to 1 - the false positive rate.",
+          "measure": "Specificity of Capsule Endoscopy for Indicated Lesions",
+          "timeFrame": "1 day"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "description": "Overall colon cleanliness was judged for capsule endoscopy and colonoscopy on a four-point grading index scale as follows:\n\n1. poor cleansing level (Large amount of fecal residue.)\n2. fair cleansing level (Enough feces or dark fluid present to preclude a completely reliable examination.)\n3. good cleansing level (Small amount of feces or dark fluid, but not enough to interfere with examination.)\n4. excellent cleansing level (No more than small bits of adherent feces.)",
+          "measure": "Percent of Participants With Scoring Index 3 or 4",
+          "timeFrame": "1 day"
+        },
+        {
+          "measure": "Number, Type and Severity of Adverse Events",
+          "timeFrame": "Within 7 days"
+        },
+        {
+          "measure": "Accuracy Parameters (Sensitivity, Specificity, Negative Predicted Value, Positive Predicted Value) of Colon Capsule Endoscopy, Compared to Standard Colonoscopy",
+          "timeFrame": "within 7 days"
+        },
+        {
+          "measure": "Percentage of Excreted Colon Capsules",
+          "timeFrame": "Within 7 days"
+        },
+        {
+          "measure": "Colon Capsule Endoscopy Transit Time Per Section (Stomach, Small Bowel, Colon)",
+          "timeFrame": "within 7 days"
+        }
+      ]
+    },
+    "oversightModule": {
+      "oversightHasDmc": false
+    },
+    "referencesModule": {
+      "references": [
+        {
+          "citation": "Van Gossum A, Munoz-Navas M, Fernandez-Urien I, Carretero C, Gay G, Delvaux M, Lapalus MG, Ponchon T, Neuhaus H, Philipper M, Costamagna G, Riccioni ME, Spada C, Petruzziello L, Fraser C, Postgate A, Fitzpatrick A, Hagenmuller F, Keuchel M, Schoofs N, Deviere J. Capsule endoscopy versus colonoscopy for the detection of polyps and cancer. N Engl J Med. 2009 Jul 16;361(3):264-70. doi: 10.1056/NEJMoa0806347.",
+          "pmid": "19605831",
+          "type": "RESULT"
+        }
+      ]
+    },
+    "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+        "class": "INDUSTRY",
+        "name": "Medtronic - MITG"
+      },
+      "responsibleParty": {
+        "oldNameTitle": "Hila Debby",
+        "oldOrganization": "Given Imaging Ltd."
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2007-10",
+        "type": "ACTUAL"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2019-08-01",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2019-07-29",
+      "overallStatus": "COMPLETED",
+      "primaryCompletionDateStruct": {
+        "date": "2007-10",
+        "type": "ACTUAL"
+      },
+      "resultsFirstPostDateStruct": {
+        "date": "2011-02-18",
+        "type": "ESTIMATED"
+      },
+      "resultsFirstSubmitDate": "2010-07-07",
+      "resultsFirstSubmitQcDate": "2011-01-23",
+      "startDateStruct": {
+        "date": "2006-10"
+      },
+      "statusVerifiedDate": "2010-08",
+      "studyFirstPostDateStruct": {
+        "date": "2008-01-30",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2008-01-24",
+      "studyFirstSubmitQcDate": "2008-01-29"
+    }
+  },
+  "resultsSection": {
+    "adverseEventsModule": {
+      "eventGroups": [
+        {
+          "description": "AE related to colonoscopy procedure",
+          "id": "EG000",
+          "otherNumAffected": 0,
+          "otherNumAtRisk": 328,
+          "seriousNumAffected": 0,
+          "seriousNumAtRisk": 328,
+          "title": "Adverse Events Related to Colonoscopy"
+        },
+        {
+          "description": "AE related to the capsule endoscopy procedure",
+          "id": "EG001",
+          "otherNumAffected": 0,
+          "otherNumAtRisk": 328,
+          "seriousNumAffected": 0,
+          "seriousNumAtRisk": 328,
+          "title": "Adverse Events Related to the Capsule"
+        }
+      ],
+      "frequencyThreshold": "1.52"
+    },
+    "baselineCharacteristicsModule": {
+      "denoms": [
+        {
+          "counts": [
+            {
+              "groupId": "BG000",
+              "value": "328"
+            }
+          ],
+          "units": "Participants"
+        }
+      ],
+      "groups": [
+        {
+          "description": "Capsule endoscopy was ingested following colon preparation without colon insufflation or sedation.The purpose was to detect patients with polyps equal or larger than 6mm. Patients subsequently had standard colonoscopy as \"gold standard\" comparison.",
+          "id": "BG000",
+          "title": "Colon Capsule Endoscopy, Then Standard Colonoscopy"
+        }
+      ],
+      "measures": [
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "<=18 years"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "227"
+                    }
+                  ],
+                  "title": "Between 18 and 65 years"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "101"
+                    }
+                  ],
+                  "title": ">=65 years"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Age, Categorical",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "spread": "12.1",
+                      "value": "58.5"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "dispersionType": "STANDARD_DEVIATION",
+          "paramType": "MEAN",
+          "title": "Age, Continuous",
+          "unitOfMeasure": "years"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "147"
+                    }
+                  ],
+                  "title": "Female"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "181"
+                    }
+                  ],
+                  "title": "Male"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Sex: Female, Male",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "96"
+                    }
+                  ]
+                }
+              ],
+              "title": "France"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "63"
+                    }
+                  ]
+                }
+              ],
+              "title": "Spain"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "49"
+                    }
+                  ]
+                }
+              ],
+              "title": "Germany"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "53"
+                    }
+                  ]
+                }
+              ],
+              "title": "Italy"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "20"
+                    }
+                  ]
+                }
+              ],
+              "title": "United Kingdom"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "47"
+                    }
+                  ]
+                }
+              ],
+              "title": "Belgium"
+            }
+          ],
+          "paramType": "NUMBER",
+          "title": "Region of Enrollment",
+          "unitOfMeasure": "participants"
+        }
+      ]
+    },
+    "moreInfoModule": {
+      "certainAgreement": {
+        "piSponsorEmployee": false,
+        "restrictiveAgreement": false
+      },
+      "pointOfContact": {
+        "email": "Hila.Debby@givenimaging.com",
+        "organization": "Given Imaging",
+        "phone": "+972 4 9097774",
+        "title": "Hila Debby"
+      }
+    },
+    "outcomeMeasuresModule": {
+      "outcomeMeasures": [
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "322"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "326"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "328"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "328"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The number of participants that completed the capsule endoscopy procedure with video images of the entire colon that could be read by a clinician, or subsequently had a full colonoscopy with visualization by a different clinician. The number of successful procedures of each type are reported.",
+          "groups": [
+            {
+              "description": "Ingestible capsule equipped with an endoscope with two imagers, given after bowel preparation and before standard colonoscopy.",
+              "id": "OG000",
+              "title": "PillCam COLON"
+            },
+            {
+              "description": "After bowel preparation and capsule endoscopy, patients subsequently had standard colonoscopy as \"gold standard\" comparison (with colon insufflation and sedation).",
+              "id": "OG001",
+              "title": "Standard Colonoscopy"
+            }
+          ],
+          "paramType": "NUMBER",
+          "reportingStatus": "POSTED",
+          "timeFrame": "1 day",
+          "title": "Number of Participants With Successful Capsule Endoscopies or Standard Colonoscopies",
+          "type": "PRIMARY",
+          "unitOfMeasure": "participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "66",
+                      "upperLimit": "77",
+                      "value": "72"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "83",
+                      "upperLimit": "91",
+                      "value": "87"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "320"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "320"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Overall colon cleanliness was judged for capsule endoscopy and colonoscopy on a four-point grading index scale as follows:\n\n1. poor cleansing level (Large amount of fecal residue.)\n2. fair cleansing level (Enough feces or dark fluid present to preclude a completely reliable examination.)\n3. good cleansing level (Small amount of feces or dark fluid, but not enough to interfere with examination.)\n4. excellent cleansing level (No more than small bits of adherent feces.)",
+          "dispersionType": "95% Confidence Interval",
+          "groups": [
+            {
+              "description": "Ingestible capsule equipped with an endoscope with two imagers, given after bowel preparation and before standard colonoscopy.",
+              "id": "OG000",
+              "title": "PillCam COLON"
+            },
+            {
+              "description": "After bowel preparation and capsule endoscopy, patients subsequently had standard colonoscopy as \"gold standard\" comparison (with colon insufflation and sedation).",
+              "id": "OG001",
+              "title": "Standard Colonoscopy"
+            }
+          ],
+          "paramType": "NUMBER",
+          "reportingStatus": "POSTED",
+          "timeFrame": "1 day",
+          "title": "Percent of Participants With Scoring Index 3 or 4",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Percentage of Participants"
+        },
+        {
+          "denomUnitsSelected": "Participants",
+          "reportingStatus": "NOT_POSTED",
+          "timeFrame": "Within 7 days",
+          "title": "Number, Type and Severity of Adverse Events",
+          "type": "SECONDARY"
+        },
+        {
+          "denomUnitsSelected": "Participants",
+          "reportingStatus": "NOT_POSTED",
+          "timeFrame": "within 7 days",
+          "title": "Accuracy Parameters (Sensitivity, Specificity, Negative Predicted Value, Positive Predicted Value) of Colon Capsule Endoscopy, Compared to Standard Colonoscopy",
+          "type": "SECONDARY"
+        },
+        {
+          "denomUnitsSelected": "Participants",
+          "reportingStatus": "NOT_POSTED",
+          "timeFrame": "Within 7 days",
+          "title": "Percentage of Excreted Colon Capsules",
+          "type": "SECONDARY"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "66",
+                      "upperLimit": "77",
+                      "value": "212"
+                    }
+                  ]
+                }
+              ],
+              "title": "Polyp, Any Size"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "188"
+                    }
+                  ]
+                }
+              ],
+              "title": "Polyp, < 6 mm"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "87"
+                    }
+                  ]
+                }
+              ],
+              "title": "Polyp, >= 6 mm"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "50"
+                    }
+                  ]
+                }
+              ],
+              "title": "Polyp, >= 10 mm"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "71"
+                    }
+                  ]
+                }
+              ],
+              "title": "Adenoma, >= 6 mm"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "45"
+                    }
+                  ]
+                }
+              ],
+              "title": "Adenoma, >= 10 mm"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "52"
+                    }
+                  ]
+                }
+              ],
+              "title": "Advanced Adenoma, Any Size"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "49"
+                    }
+                  ]
+                }
+              ],
+              "title": "Advanced Adenoma, >= 6 mm"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "45"
+                    }
+                  ]
+                }
+              ],
+              "title": "Advanced Adenoma, >= 10 mm"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    }
+                  ]
+                }
+              ],
+              "title": "Colorectal Cancer"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "320"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Since the standard colonoscopy is the \"gold standard\" to which the PillCam is to be compared, the number of participants with the indicated lesions identified by a trained clinician using standard colonoscopy procedures is reported here. Note that some Participants had multiple lesions and so could be included in more than one size category. Advanced adenoma is defined as 1) an adenoma 1 cm or larger or 2) an adenoma with villous features or high-grade dysplasia. All colorectal cancers were 6mm or larger.",
+          "groups": [
+            {
+              "description": "After bowel preparation and capsule endoscopy, patients subsequently had standard colonoscopy as \"gold standard\" comparison (with colon insufflation and sedation).",
+              "id": "OG000",
+              "title": "Standard Colonoscopy"
+            }
+          ],
+          "paramType": "NUMBER",
+          "populationDescription": "Participants in the Accuracy Analysis successfully had both capsule endoscopy and colonoscopy.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "1 day",
+          "title": "Number of Participants With Indicated Lesions Detected by Standard Colonoscopy",
+          "type": "PRIMARY",
+          "unitOfMeasure": "participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "68",
+                      "upperLimit": "75",
+                      "value": "72"
+                    }
+                  ]
+                }
+              ],
+              "title": "Polyp, Any Size (n=212)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "57",
+                      "upperLimit": "64",
+                      "value": "61"
+                    }
+                  ]
+                }
+              ],
+              "title": "Polyp, < 6 mm (n=188)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "59",
+                      "upperLimit": "72",
+                      "value": "64"
+                    }
+                  ]
+                }
+              ],
+              "title": "Polyp, >= 6 mm (n=87)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "51",
+                      "upperLimit": "66",
+                      "value": "60"
+                    }
+                  ]
+                }
+              ],
+              "title": "Polyp, >= 10 mm (n=50)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "58",
+                      "upperLimit": "76",
+                      "value": "68"
+                    }
+                  ]
+                }
+              ],
+              "title": "Adenoma, >= 6 mm (n=71)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "54",
+                      "upperLimit": "72",
+                      "value": "64"
+                    }
+                  ]
+                }
+              ],
+              "title": "Adenoma, >= 10 mm (n=45)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "73",
+                      "upperLimit": "93",
+                      "value": "85"
+                    }
+                  ]
+                }
+              ],
+              "title": "Advanced Adenoma, Any Size (n=52)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "61",
+                      "upperLimit": "83",
+                      "value": "73"
+                    }
+                  ]
+                }
+              ],
+              "title": "Advanced Adenoma, >= 6 mm (n=49)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "54",
+                      "upperLimit": "72",
+                      "value": "64"
+                    }
+                  ]
+                }
+              ],
+              "title": "Advanced Adenoma, >= 10 mm (n=45)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "52",
+                      "upperLimit": "88",
+                      "value": "74"
+                    }
+                  ]
+                }
+              ],
+              "title": "Colorectal Cancer (n=19)"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "320"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Readings of videos from the PillCam COLON were performed by trained physicians who identified lesions (types and sizes). Sensitivity was calculated as the percentage of participants who had positive findings on capsule endoscopy (of a specified category) among those participants who had positive findings on colonoscopy of the same category (reported in Outcome Measure 1). The false negative rate is equal to 1 - sensitivity and indicated the percentage of lesions missed by capsule endoscopy.",
+          "dispersionType": "95% Confidence Interval",
+          "groups": [
+            {
+              "description": "Ingestible capsule equipped with an endoscope with two imagers, given after bowel preparation and before standard colonoscopy.",
+              "id": "OG000",
+              "title": "PillCam COLON"
+            }
+          ],
+          "paramType": "NUMBER",
+          "populationDescription": "Accuracy Analysis population had both successful capsule endoscopy and colonoscopy.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "1 day",
+          "title": "Sensitivity of Capsule Endoscopy for Indicated Lesions",
+          "type": "PRIMARY",
+          "unitOfMeasure": "Percentage of Participants"
+        },
+        {
+          "denomUnitsSelected": "Participants",
+          "reportingStatus": "NOT_POSTED",
+          "timeFrame": "within 7 days",
+          "title": "Colon Capsule Endoscopy Transit Time Per Section (Stomach, Small Bowel, Colon)",
+          "type": "SECONDARY"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "71",
+                      "upperLimit": "84",
+                      "value": "78"
+                    }
+                  ]
+                }
+              ],
+              "title": "Polyp, Any Size (n=108)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "76",
+                      "upperLimit": "87",
+                      "value": "82"
+                    }
+                  ]
+                }
+              ],
+              "title": "Polyp, < 6 mm (n=132)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "81",
+                      "upperLimit": "87",
+                      "value": "84"
+                    }
+                  ]
+                }
+              ],
+              "title": "Polyp, >= 6 mm (n=233)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "96",
+                      "upperLimit": "99",
+                      "value": "98"
+                    }
+                  ]
+                }
+              ],
+              "title": "Polyp, >= 10 mm (n=270)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "79",
+                      "upperLimit": "84",
+                      "value": "82"
+                    }
+                  ]
+                }
+              ],
+              "title": "Adenoma, >= 6 mm (n=249)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "96",
+                      "upperLimit": "99",
+                      "value": "97"
+                    }
+                  ]
+                }
+              ],
+              "title": "Adenoma, >= 10 mm (n=275)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "48",
+                      "upperLimit": "51",
+                      "value": "50"
+                    }
+                  ]
+                }
+              ],
+              "title": "Advanced Adenoma, Any Size (n=268)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "77",
+                      "upperLimit": "81",
+                      "value": "79"
+                    }
+                  ]
+                }
+              ],
+              "title": "Advanced Adenoma, >= 6 mm (n=271)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "96",
+                      "upperLimit": "99",
+                      "value": "97"
+                    }
+                  ]
+                }
+              ],
+              "title": "Advanced Adenoma, >= 10 mm (n=275)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "72",
+                      "upperLimit": "75",
+                      "value": "74"
+                    }
+                  ]
+                }
+              ],
+              "title": "Colorectal Cancer (n=301)"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "320"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Readings of videos from the PillCam COLON were performed by trained physicians who identified lesions (types and sizes). Specificity was calculated as the percentage of participants who had negative findings on capsule endoscopy (of a specified category) among participants with negative colonoscopy findings of the same category (reported in Outcome Measure 1). This corresponds to 1 - the false positive rate.",
+          "dispersionType": "95% Confidence Interval",
+          "groups": [
+            {
+              "description": "Ingestible capsule equipped with an endoscope with two imagers, given after bowel preparation and before standard colonoscopy.",
+              "id": "OG000",
+              "title": "PillCam COLON"
+            }
+          ],
+          "paramType": "NUMBER",
+          "populationDescription": "Accuracy Analysis population had both successful capsule endoscopy and colonoscopy.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "1 day",
+          "title": "Specificity of Capsule Endoscopy for Indicated Lesions",
+          "type": "PRIMARY",
+          "unitOfMeasure": "Percentage of Participants"
+        }
+      ]
+    },
+    "participantFlowModule": {
+      "groups": [
+        {
+          "description": "Capsule endoscopy was ingested following colon preparation without colon insufflation or sedation.The purpose was to detect patients with polyps equal or larger than 6mm. Patients subsequently had standard colonoscopy as \"gold standard\" comparison.",
+          "id": "FG000",
+          "title": "Colon Capsule Endoscopy, Then Standard Colonoscopy"
+        }
+      ],
+      "periods": [
+        {
+          "dropWithdraws": [
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "3"
+                }
+              ],
+              "type": "Physician Decision"
+            },
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "1"
+                }
+              ],
+              "type": "Withdrawal by Subject"
+            }
+          ],
+          "milestones": [
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "332"
+                }
+              ],
+              "type": "STARTED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "328"
+                }
+              ],
+              "type": "COMPLETED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "4"
+                }
+              ],
+              "type": "NOT COMPLETED"
+            }
+          ],
+          "title": "Overall Study"
+        }
+      ],
+      "preAssignmentDetails": "Four patients withdrew before completing the study documents and were not included in the analysis.An additional 8 patients were not included in the analysis of the accuracy of polyp detection.",
+      "recruitmentDetails": "8 Hospital sites"
+    }
+  }
+}

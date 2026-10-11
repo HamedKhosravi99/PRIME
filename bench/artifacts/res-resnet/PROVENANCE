@@ -1,0 +1,11 @@
+name: res-resnet
+domain: research_review
+target: arXiv:1512.03385 (Deep Residual Learning for Image Recognition)
+corpus: 10 real arXiv abstracts (Highway Networks 1505.00387, VGG 1409.1556,
+  GoogLeNet 1409.4842, Batch Normalization 1502.03167, Network In Network 1312.4400,
+  Deeply-Supervised Nets 1409.5185, Rethinking Inception 1512.00567, Identity
+  Mappings in Deep Residual Networks 1603.05027, FCN 1411.4038, R-CNN 1311.2524)
+retrieved: 2026-07-29 from https://arxiv.org/abs/<id> citation_* meta tags
+content: exactly the title + abstract arXiv served; no edits
+license_note: arXiv abstracts are displayed under arXiv's terms; used here as
+  read-only review artifacts (title+abstract only, not full text).

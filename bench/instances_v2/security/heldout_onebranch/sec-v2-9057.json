@@ -1,0 +1,301 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "affected.0.package.name",
+     "record_id": "GHSA-27mf-ghqm-j3j8"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"### Summary\\n\\nAn unsafe extraction is being performed using `tarfile.extractall()` from a remotely retrieved tarball. Which may lead to the writing of the extracted files to an unintended location. Sometimes, the vulnerability is called a TarSlip or a ZipSlip variant.\\n\\n### Details\\n\\nI commented the following snippet of code as a vulnerability details. The code is from [file.py#L26..L134](https://github.com/mindsdb/mindsdb/blob/afedd37c16e579b6dc075b0814e42d0505ccdc07/mindsdb/api/http/namespaces/file.py#L26..L134)\\n\\n```python\\n@ns_conf.route('/<name>')\\n@ns_conf.param('name', \\\"MindsDB's name for file\\\")\\nclass File(Resource):\\n    @ns_conf.doc('put_file')\\n    def put(self, name: str):\\n        ''' add new file\\n            params in FormData:\\n                - file\\n                - original_file_name [optional]\\n        '''\\n\\n        data = {}\\n\\n        ... omitted for brevity\\n\\n            url = data['source']\\n            data['file'] = data['name']\\n\\n            ... omitted for brevity \\n\\n            with requests.get(url, stream=True) as r:                   # Source: retrieve the URL which point to a remotely located tarball \\n                if r.status_code != 200:\\n                    return http_error(\\n                        400,\\n                        \\\"Error getting file\\\",\\n                        f\\\"Got status code: {r.status_code}\\\"\\n                    )\\n                file_path = os.path.join(temp_dir_path, data['file'])\\n                with open(file_path, 'wb') as f:\\n                    for chunk in r.iter_content(chunk_size=8192):   # write with chunks the remote retrieved file into file_path location \\n                        f.write(chunk)\\n\\n        original_file_name = data.get('original_file_name')\\n\\n        file_path = os.path.join(temp_dir_path, data['file'])      \\n        lp = file_path.lower()\\n        if lp.endswith(('.zip', '.tar.gz')):\\n            if lp.endswith('.zip'):\\n                with zipfile.ZipFile(file_path) as f:\\n                    f.extractall(temp_dir_path)\\n            elif lp.endswith('.tar.gz'):\\n                with tarfile.open(file_path) as f:  # Just after \\n                    f.extractall(temp_dir_path)  # Sink: the tarball located by file_path is supposed to be extracted to temp_dir_path. \\n```\\n\\nSo, a remotely available tarball is being retrieved and written to the server filesystem in chunks, and then, if the extension ends with `.tar.gz` of a compressed tarball, the mindsdb app applies `tarfile.extractall()` directly with no checks for the destination. \\n\\nHowever, according to the following [warning](https://docs.python.org/3/library/tarfile.html#tarfile.TarFile.extractall) from the official documentation;\\n\\n> Warning: Never extract archives from untrusted sources without prior inspection. It is possible that files are created outside of path, e.g. members that have absolute filenames starting with \\\"/\\\" or filenames with two dots \\\"..\\\". \\n\\n\\n### PoC\\n\\nThe following PoC is provided for illustration purposes only. It showcases the risk of extracting a non-harmless text file `sim4n6.txt` to one of the parent locations rather than the intended current folder.\\n\\n```bash\\n> tar --list -v -f archive.tar.gz\\ntar: Removing leading \\\"../../../\\\" from member names\\n../../../sim4n6.txt\\n\\n> python3 \\nPython 3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0] on linux\\nType \\\"help\\\", \\\"copyright\\\", \\\"credits\\\" or \\\"license\\\" for more information.\\n>>> import tarfile\\n>>> with tarfile.open(\\\"archive.tar.gz\\\") as tf:\\n>>>         tf.extractall()\\n>>> exit()\\n\\n> test -f ../../../sim4n6.txt && echo \\\"sim4n6.txt exists\\\"\\nsim4n6.txt exists\\n```\\n\\n### Attack Scenario\\n\\nAn attacker could craft a malicious tarball with a filename path, such as ../../../../../../../../etc/passwd, and then serve the archive remotely, proceed to the PUT request of the tarball through mindsdb and overwrite the system files of the hosting server for instance.\\n\\n### Mitigation \\n\\nPotential mitigation could be to:\\n - Use a safer module, like `zipfile`.\\n - Use an alternative of `tarfile`, such as `tarsafe`. \\n  - Validate the location or the absolute path of the extracted files and discard those with malicious paths such as relative path `../../..` or absolute path such as `/etc/password`. A simple wrapper could be written to raise an exception when a path traversal may be identified.\\n\\nThis is similar to the other report [GHSA-7x45-phmr-9wqp](https://github.com/mindsdb/mindsdb/security/advisories/GHSA-7x45-phmr-9wqp).\"",
+    "params": {
+     "field_path": "details",
+     "record_id": "GHSA-27mf-ghqm-j3j8"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2026-01-01\"",
+    "params": {
+     "field_path": "published",
+     "record_id": "GHSA-27mf-ghqm-j3j8"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.type",
+     "record_id": "GHSA-27mf-ghqm-j3j8"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.cwe_ids.0",
+     "record_id": "GHSA-27mf-ghqm-j3j8"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "severity.0.score",
+     "record_id": "GHSA-27mf-ghqm-j3j8"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"PyPI\"",
+    "params": {
+     "field_path": "affected.0.package.ecosystem",
+     "record_id": "GHSA-27mf-ghqm-j3j8"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ],
+     [
+      "details",
+      "equals",
+      "### Summary\n\nAn unsafe extraction is being performed using `tarfile.extractall()` from a remotely retrieved tarball. Which may lead to the writing of the extracted files to an unintended location. Sometimes, the vulnerability is called a TarSlip or a ZipSlip variant.\n\n### Details\n\nI commented the following snippet of code as a vulnerability details. The code is from [file.py#L26..L134](https://github.com/mindsdb/mindsdb/blob/afedd37c16e579b6dc075b0814e42d0505ccdc07/mindsdb/api/http/namespaces/file.py#L26..L134)\n\n```python\n@ns_conf.route('/<name>')\n@ns_conf.param('name', \"MindsDB's name for file\")\nclass File(Resource):\n    @ns_conf.doc('put_file')\n    def put(self, name: str):\n        ''' add new file\n            params in FormData:\n                - file\n                - original_file_name [optional]\n        '''\n\n        data = {}\n\n        ... omitted for brevity\n\n            url = data['source']\n            data['file'] = data['name']\n\n            ... omitted for brevity \n\n            with requests.get(url, stream=True) as r:                   # Source: retrieve the URL which point to a remotely located tarball \n                if r.status_code != 200:\n                    return http_error(\n                        400,\n                        \"Error getting file\",\n                        f\"Got status code: {r.status_code}\"\n                    )\n                file_path = os.path.join(temp_dir_path, data['file'])\n                with open(file_path, 'wb') as f:\n                    for chunk in r.iter_content(chunk_size=8192):   # write with chunks the remote retrieved file into file_path location \n                        f.write(chunk)\n\n        original_file_name = data.get('original_file_name')\n\n        file_path = os.path.join(temp_dir_path, data['file'])      \n        lp = file_path.lower()\n        if lp.endswith(('.zip', '.tar.gz')):\n            if lp.endswith('.zip'):\n                with zipfile.ZipFile(file_path) as f:\n                    f.extractall(temp_dir_path)\n            elif lp.endswith('.tar.gz'):\n                with tarfile.open(file_path) as f:  # Just after \n                    f.extractall(temp_dir_path)  # Sink: the tarball located by file_path is supposed to be extracted to temp_dir_path. \n```\n\nSo, a remotely available tarball is being retrieved and written to the server filesystem in chunks, and then, if the extension ends with `.tar.gz` of a compressed tarball, the mindsdb app applies `tarfile.extractall()` directly with no checks for the destination. \n\nHowever, according to the following [warning](https://docs.python.org/3/library/tarfile.html#tarfile.TarFile.extractall) from the official documentation;\n\n> Warning: Never extract archives from untrusted sources without prior inspection. It is possible that files are created outside of path, e.g. members that have absolute filenames starting with \"/\" or filenames with two dots \"..\". \n\n\n### PoC\n\nThe following PoC is provided for illustration purposes only. It showcases the risk of extracting a non-harmless text file `sim4n6.txt` to one of the parent locations rather than the intended current folder.\n\n```bash\n> tar --list -v -f archive.tar.gz\ntar: Removing leading \"../../../\" from member names\n../../../sim4n6.txt\n\n> python3 \nPython 3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0] on linux\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n>>> import tarfile\n>>> with tarfile.open(\"archive.tar.gz\") as tf:\n>>>         tf.extractall()\n>>> exit()\n\n> test -f ../../../sim4n6.txt && echo \"sim4n6.txt exists\"\nsim4n6.txt exists\n```\n\n### Attack Scenario\n\nAn attacker could craft a malicious tarball with a filename path, such as ../../../../../../../../etc/passwd, and then serve the archive remotely, proceed to the PUT request of the tarball through mindsdb and overwrite the system files of the hosting server for instance.\n\n### Mitigation \n\nPotential mitigation could be to:\n - Use a safer module, like `zipfile`.\n - Use an alternative of `tarfile`, such as `tarsafe`. \n  - Validate the location or the absolute path of the extracted files and discard those with malicious paths such as relative path `../../..` or absolute path such as `/etc/password`. A simple wrapper could be written to raise an exception when a path traversal may be identified.\n\nThis is similar to the other report [GHSA-7x45-phmr-9wqp](https://github.com/mindsdb/mindsdb/security/advisories/GHSA-7x45-phmr-9wqp)."
+     ],
+     [
+      "published",
+      "date_before",
+      "2026-01-01"
+     ]
+    ],
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ],
+     [
+      "references.0.type",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.cwe_ids.0",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "affected.0.package.name",
+      "exists",
+      null
+     ],
+     [
+      "details",
+      "equals",
+      "### Summary\n\nAn unsafe extraction is being performed using `tarfile.extractall()` from a remotely retrieved tarball. Which may lead to the writing of the extracted files to an unintended location. Sometimes, the vulnerability is called a TarSlip or a ZipSlip variant.\n\n### Details\n\nI commented the following snippet of code as a vulnerability details. The code is from [file.py#L26..L134](https://github.com/mindsdb/mindsdb/blob/afedd37c16e579b6dc075b0814e42d0505ccdc07/mindsdb/api/http/namespaces/file.py#L26..L134)\n\n```python\n@ns_conf.route('/<name>')\n@ns_conf.param('name', \"MindsDB's name for file\")\nclass File(Resource):\n    @ns_conf.doc('put_file')\n    def put(self, name: str):\n        ''' add new file\n            params in FormData:\n                - file\n                - original_file_name [optional]\n        '''\n\n        data = {}\n\n        ... omitted for brevity\n\n            url = data['source']\n            data['file'] = data['name']\n\n            ... omitted for brevity \n\n            with requests.get(url, stream=True) as r:                   # Source: retrieve the URL which point to a remotely located tarball \n                if r.status_code != 200:\n                    return http_error(\n                        400,\n                        \"Error getting file\",\n                        f\"Got status code: {r.status_code}\"\n                    )\n                file_path = os.path.join(temp_dir_path, data['file'])\n                with open(file_path, 'wb') as f:\n                    for chunk in r.iter_content(chunk_size=8192):   # write with chunks the remote retrieved file into file_path location \n                        f.write(chunk)\n\n        original_file_name = data.get('original_file_name')\n\n        file_path = os.path.join(temp_dir_path, data['file'])      \n        lp = file_path.lower()\n        if lp.endswith(('.zip', '.tar.gz')):\n            if lp.endswith('.zip'):\n                with zipfile.ZipFile(file_path) as f:\n                    f.extractall(temp_dir_path)\n            elif lp.endswith('.tar.gz'):\n                with tarfile.open(file_path) as f:  # Just after \n                    f.extractall(temp_dir_path)  # Sink: the tarball located by file_path is supposed to be extracted to temp_dir_path. \n```\n\nSo, a remotely available tarball is being retrieved and written to the server filesystem in chunks, and then, if the extension ends with `.tar.gz` of a compressed tarball, the mindsdb app applies `tarfile.extractall()` directly with no checks for the destination. \n\nHowever, according to the following [warning](https://docs.python.org/3/library/tarfile.html#tarfile.TarFile.extractall) from the official documentation;\n\n> Warning: Never extract archives from untrusted sources without prior inspection. It is possible that files are created outside of path, e.g. members that have absolute filenames starting with \"/\" or filenames with two dots \"..\". \n\n\n### PoC\n\nThe following PoC is provided for illustration purposes only. It showcases the risk of extracting a non-harmless text file `sim4n6.txt` to one of the parent locations rather than the intended current folder.\n\n```bash\n> tar --list -v -f archive.tar.gz\ntar: Removing leading \"../../../\" from member names\n../../../sim4n6.txt\n\n> python3 \nPython 3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0] on linux\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n>>> import tarfile\n>>> with tarfile.open(\"archive.tar.gz\") as tf:\n>>>         tf.extractall()\n>>> exit()\n\n> test -f ../../../sim4n6.txt && echo \"sim4n6.txt exists\"\nsim4n6.txt exists\n```\n\n### Attack Scenario\n\nAn attacker could craft a malicious tarball with a filename path, such as ../../../../../../../../etc/passwd, and then serve the archive remotely, proceed to the PUT request of the tarball through mindsdb and overwrite the system files of the hosting server for instance.\n\n### Mitigation \n\nPotential mitigation could be to:\n - Use a safer module, like `zipfile`.\n - Use an alternative of `tarfile`, such as `tarsafe`. \n  - Validate the location or the absolute path of the extracted files and discard those with malicious paths such as relative path `../../..` or absolute path such as `/etc/password`. A simple wrapper could be written to raise an exception when a path traversal may be identified.\n\nThis is similar to the other report [GHSA-7x45-phmr-9wqp](https://github.com/mindsdb/mindsdb/security/advisories/GHSA-7x45-phmr-9wqp)."
+     ],
+     [
+      "published",
+      "date_before",
+      "2026-01-01"
+     ],
+     [
+      "severity.0.score",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "sec-v2-9057",
+ "notes_for_annotators": "{\"family\": \"security-branching-hom-11\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": 2, \"false_mech\": true, \"one_branch\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-27mf-ghqm-j3j8": {
+   "affected": [
+    {
+     "package": {
+      "ecosystem": "PyPI",
+      "name": "aiohttp"
+     }
+    }
+   ],
+   "database_specific": {
+    "cwe_ids": [
+     "CWE-772"
+    ]
+   },
+   "details": "### Summary\n\nA memory leak can occur when a request produces a `MatchInfoError`. This was caused by adding an entry to a cache on each request, due to the building of each `MatchInfoError` producing a unique cache entry.\n\n### Impact\n\nIf the user is making use of any middlewares with `aiohttp.web` then it is advisable to upgrade immediately.\n\nAn attacker may be able to exhaust the memory resources of a server by sending a substantial number (100,000s to millions) of such requests.\n\n-----\n\nPatch: https://github.com/aio-libs/aiohttp/commit/bc15db61615079d1b6327ba42c682f758fa96936",
+   "published": "2024-11-18T21:02:17Z",
+   "references": [
+    {
+     "type": "WEB"
+    }
+   ],
+   "severity": [
+    {
+     "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+    }
+   ]
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-27mf-ghqm-j3j8.",
+ "seed": "GHSA-27mf-ghqm-j3j8",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

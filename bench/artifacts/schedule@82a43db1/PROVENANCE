@@ -1,0 +1,16 @@
+name: schedule
+source_url: https://github.com/dbader/schedule
+commit: 82a43db1b938d8fdf60103bd41f329e06c8d3651
+short_sha: 82a43db1
+ref_cloned: master (HEAD at clone time), git clone --depth 1
+clone_date: 2026-07-24
+license: MIT (LICENSE.txt, "The MIT License (MIT)", Copyright (c) 2013 Daniel Bader)
+checkout_size_no_git: 236K (.git removed after recording sha)
+test_command: python3 -m pytest -q   (run from repo root)
+test_environment: Python 3.9.6, pytest 8.4.2, macOS (darwin)
+test_result: 81 passed in 0.08s ; exit code 0
+notes: Flat layout; suite is test_schedule.py at repo root. Packaging metadata
+  (name, version, python_requires>=3.7) lives in setup.py, not setup.cfg
+  (setup.cfg only holds mypy config). CI at .github/workflows/ci.yml runs tox.
+  py.typed marker present at schedule/py.typed. Zero TODO/FIXME/XXX markers
+  under schedule/ (verified by grep).

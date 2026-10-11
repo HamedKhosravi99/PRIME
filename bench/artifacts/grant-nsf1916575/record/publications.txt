@@ -1,0 +1,24 @@
+NSF AWARD RECORD (public, structured) -- award id 1916575
+role: associated publications (non-route background; not needed for the
+funding-reconciliation claim in this instance)
+
+PUBLICATIONS_RESULTING_FROM_THIS_AWARD (verbatim from the public API's
+publicationResearch/jrnl fields):
+  1. "PERI-GLACIAL FEATURES MAPPED IN THE CHUKCHI BORDERLAND; CONSTRAINTS ON
+     GLACIAL EXTENT AND MOTION" -- Keith, Bradley; Anfinson, Owen A.;
+     Coakley, Bernard J. -- Geological Society of America Abstracts with
+     Programs, 2022. DOI: https://doi.org/10.1130/abs/2022CD-373936
+  2. "Seismic Imaging across the Northern Chukchi Borderland: Implications
+     of the Canada Basin Opening" -- Priyanto, Wisnu; Coakley, Bernard --
+     Transactions American Geophysical Union, 2022.
+  3. "Crustal Images of the Canada Basin and Its Relationship with the
+     Extinct Mid Oceanic Ridge" -- Priyanto, W.S.; Coakley, B.J. --
+     Transactions of the American Geophysical Union, 2023.
+
+SOURCE: https://api.nsf.gov/services/v1/awards.json?id=1916575 (NSF public Award Search API)
+RETRIEVED: 2026-07-29
+CONTENT NOTE: this file is provided as background context (the award's
+resulting publications) and is NOT part of the funding-reconciliation
+evidence chain in this instance -- it is a non-route atom, included to
+probe whether an agent pulls in irrelevant evidence rather than staying
+scoped to the funding-reconciliation question.

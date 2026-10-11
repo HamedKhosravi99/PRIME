@@ -1,0 +1,20 @@
+name: more-itertools
+source_url: https://github.com/more-itertools/more-itertools
+commit: 28ab73678adc39eacc2610bd67c1c4a37def6c28
+short_sha: 28ab7367
+ref_cloned: tag v10.7.0, git clone --depth 1 --branch v10.7.0
+  (repo HEAD of the default branch requires Python >=3.10; the pinned tag
+  v10.7.0 supports the pinned Python 3.9 environment. Still a real released
+  commit of the real repository.)
+clone_date: 2026-07-24
+license: MIT (LICENSE, Copyright (c) 2012 Erik Rose)
+checkout_size_no_git: 672K (.git removed after recording sha)
+test_command: python3 -m pytest -q   (run from repo root; collects tests/)
+test_environment: Python 3.9.6, pytest 8.4.2, macOS (darwin)
+test_result: 668 passed, 3 skipped in 8.79s ; exit code 0
+notes: pyproject.toml declares name/requires-python (version dynamic).
+  CI at .github/workflows/python-app.yml runs make coverage/check.
+  py.typed marker present at more_itertools/py.typed. Zero TODO/FIXME/XXX
+  markers under more_itertools/ (verified by grep). more.py has no
+  module-level docstring but extensive per-function docstrings
+  (224 docstring-delimiter lines, verified).

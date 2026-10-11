@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7024",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "`ASGIRequest` allows a remote attacker to cause a potential denial-of-service via a crafted request with multiple duplicate headers.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 274,
+   "completion_tokens": 22,
+   "latency_s": 1.305,
+   "raw": "The document mentions \"Django\" which is the registered name of the affected package. ANSWER: T"
+  }
+ ]
+}

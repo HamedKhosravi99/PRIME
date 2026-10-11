@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7042",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Since version 61.0, there's a vulnerability which allows attaching content of arbitrary files and URLs to a generated PDF document",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 259,
+   "completion_tokens": 50,
+   "latency_s": 3.707,
+   "raw": "The document does not explicitly name the affected package by its registered name or a distinctive part of it; it only refers to \"WeasyPrint\" in the workarounds section without clearly establishing it as the affected package. ANSWER: UNCLEAR"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7136",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Patients who \u2265 18 years of age",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 521,
+   "completion_tokens": 29,
+   "latency_s": 1.984,
+   "raw": "The inclusion criteria specify that patients must be \u2265 18 years of age, which meets the condition for adult enrollment. ANSWER: T"
+  }
+ ]
+}

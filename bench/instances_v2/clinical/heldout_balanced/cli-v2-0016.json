@@ -1,0 +1,283 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT06998927"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT06998927"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2027-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT06998927"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT06998927"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT06998927"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT06998927"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2027-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT06998927"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2027-01-01"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2027-01-01"
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-0016",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-07\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 3, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT06998927": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "In intensive care units, many critically ill patients need help from a machine called a ventilator to breathe. Once these patients start to recover, doctors try to gradually reduce this support and help them breathe on their own again. However, not all patients are ready to be taken off the ventilator right away. During this transition, it's important to find the right amount of help-enough to support their breathing, but not so much that the machine does all the work for them.\n\nThis study focuses on a special type of ventilator setting called Proportional Assist Ventilation Plus (PAV+). Unlike traditional modes, which give a fixed level of support, PAV+ adjusts the amount of help it gives based on how hard the patient is trying to breathe. The more effort a patient makes, the more support the machine provides-and vice versa. This can make breathing feel more natural and may protect the lungs and breathing muscles during recovery.\n\nModern ventilators also display a measurement called \"Work of Breathing,\" which tells how much effort the patient is using to breathe. This study wants to find out whether this measurement from the ventilator is a reliable way to monitor a patient's breathing effort, compared to other more invasive or complex methods.\n\nThe research will include 20 adult patients who are recovering in the ICU and have been on mechanical ventilation for more than 48 hours. All patients will have already met some criteria showing they're ready to begin breathing more on their own, but are not quite ready to have the breathing tube removed.\n\nEach patient will go through different levels of PAV+ support, and researchers will record how much effort they make to breathe using several methods, including special pressure sensors and data from the ventilator.\n\nThe goal of the study is to better understand how to measure breathing effort safely and easily, and to improve how we support patients as they recover the ability to breathe on their own. If successful, this could help reduce complications and improve recovery for people on ventilators.\n\nThere are no added risks or costs for the patients involved. All equipment used in the study is already part of regular ICU care. Participation requires informed consent and the privacy of all participants will be fully protected."
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Adults (\\>18 yrs) requiring invasive MV \\>48 hrs\n* Meeting spontaneous breathing transition criteria:\n\n  * Hemodynamic stability (NE \\<0.1 \u03bcg/kg/min)\n  * Spontaneous breathing efforts\n  * RASS -2 to +1\n  * FiO\u2082 \\<50% or PaO\u2082 \\>60mmHg with PEEP \u226410cmH\u2082O\n* Pre-existing esophageal balloon\n* Tolerates spontaneous modes \\>5 mins\n* Signed informed consent\n\nExclusion Criteria:\n\n* Meets extubation criteria\n* Hemodynamic instability\n* Psychomotor agitation (RASS \\>+1)\n* Bronchopleural fistula\n* Severe weakness (MRC \\<36)\n* Neuromuscular disease\n* Pregnancy"
+    },
+    "identificationModule": {
+     "nctId": "NCT06998927",
+     "officialTitle": "Proportional Assist Ventilation Plus and Estimation of Respiratory Effort in Critically Ill Patients During the Transition to Spontaneous Ventilation: A Prospective Cohort Study"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2025-06-04",
+     "overallStatus": "ACTIVE_NOT_RECRUITING",
+     "studyFirstSubmitDate": "2025-05-21"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT06998927.",
+ "seed": "NCT06998927",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

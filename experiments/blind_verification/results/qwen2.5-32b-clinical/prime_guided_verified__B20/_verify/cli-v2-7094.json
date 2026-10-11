@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7094",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Subjects aged between 18 and 60 years",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 232,
+   "completion_tokens": 29,
+   "latency_s": 2.157,
+   "raw": "The inclusion criteria specify subjects aged between 18 and 60 years, which aligns with the stated condition. ANSWER: T"
+  }
+ ]
+}

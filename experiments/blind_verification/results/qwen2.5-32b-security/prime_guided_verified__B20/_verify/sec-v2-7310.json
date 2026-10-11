@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7310",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Unspecified vulnerability in MoinMoin",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 236,
+   "completion_tokens": 23,
+   "latency_s": 1.401,
+   "raw": "The document specifies \"MoinMoin\" as the affected package, establishing the condition. ANSWER: T"
+  }
+ ]
+}

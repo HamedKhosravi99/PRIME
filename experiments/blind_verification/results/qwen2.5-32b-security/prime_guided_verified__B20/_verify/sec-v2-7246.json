@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7246",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "A PyPI user account compromised by an attacker and was able to upload a malicious version (1.1.5.post1) of the `dydx-v4-client` package.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 374,
+   "completion_tokens": 24,
+   "latency_s": 1.411,
+   "raw": "The document explicitly mentions the affected package by its registered name, `dydx-v4-client`. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E4",
+   "attested": "T",
+   "quote": "A PyPI user account compromised by an attacker and was able to upload a malicious version (1.1.5.post1) of the `dydx-v4-client` package.",
+   "verdict": "F",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 361,
+   "completion_tokens": 39,
+   "latency_s": 3.311,
+   "raw": "The document does not specify the first affected version or the version in which the issue was introduced; it only mentions the malicious version (1.1.5.post1). ANSWER: F"
+  }
+ ]
+}

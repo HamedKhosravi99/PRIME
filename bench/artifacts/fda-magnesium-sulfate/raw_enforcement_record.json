@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "last_updated": "2026-07-22",
+    "license": "https://open.fda.gov/license/",
+    "results": {
+      "limit": 1,
+      "skip": 0,
+      "total": 1
+    },
+    "terms": "https://open.fda.gov/terms/"
+  },
+  "results": [
+    {
+      "address_1": "400 Crossing Blvd Fl 3",
+      "address_2": "",
+      "center_classification_date": "20260413",
+      "city": "Bridgewater",
+      "classification": "Class I",
+      "code_info": "Lot: AH250162, Exp 8/31/2027",
+      "country": "United States",
+      "distribution_pattern": "U.S.A. Nationwide",
+      "event_id": "98587",
+      "initial_firm_notification": "Letter",
+      "more_code_info": "",
+      "openfda": {
+        "application_number": [
+          "ANDA216597"
+        ],
+        "brand_name": [
+          "MAGNESIUM SULFATE"
+        ],
+        "generic_name": [
+          "MAGNESIUM SULFATE IN WATER FOR"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "manufacturer_name": [
+          "Amneal Pharmaceuticals LLC"
+        ],
+        "package_ndc": [
+          "70121-1719-9",
+          "70121-1719-2",
+          "70121-1720-9",
+          "70121-1720-3"
+        ],
+        "product_ndc": [
+          "70121-1719",
+          "70121-1720"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "INTRAVENOUS"
+        ],
+        "rxcui": [
+          "1658259",
+          "1658262"
+        ],
+        "spl_id": [
+          "8ec55093-e97e-4389-b992-36a61608bf5a"
+        ],
+        "spl_set_id": [
+          "29241655-49c9-4bc4-89f2-79a0b24b562e"
+        ],
+        "substance_name": [
+          "MAGNESIUM SULFATE HEPTAHYDRATE"
+        ],
+        "unii": [
+          "SK47B8698T"
+        ]
+      },
+      "postal_code": "08807-2863",
+      "product_description": "Magnesium Sulfate in Water for Injection, 4g/100 mL (40mg/mL) IV bag, further packaged in cartons of 12 x 100 mL IV bags, Rx only, Manufactured by: Amneal Pharmaceuticals Pvt. Ltd., Ahmedabad, 382110, India, Distributed by: Amneal Pharmaceuticals LLC, Bridgewater, NJ 08807, NDC 70121-1720-3.",
+      "product_quantity": "784 (12x100mL) cartons",
+      "product_type": "Drugs",
+      "reason_for_recall": "Product mix up: a foil pouch labeled \"Magnesium Sulfate in Water for Injection, 4 g/100 mL\" actually contained an IV bag of Tranexamic Acid instead.",
+      "recall_initiation_date": "20260318",
+      "recall_number": "D-0478-2026",
+      "recalling_firm": "Amneal Pharmaceuticals, LLC",
+      "report_date": "20260408",
+      "state": "NJ",
+      "status": "Ongoing",
+      "voluntary_mandated": "Voluntary: Firm initiated"
+    }
+  ]
+}

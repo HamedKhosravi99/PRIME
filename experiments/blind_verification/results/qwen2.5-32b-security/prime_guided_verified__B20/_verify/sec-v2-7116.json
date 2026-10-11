@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7116",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "pyOpenSSL would overflow an OpenSSL provided buffer.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 198,
+   "completion_tokens": 23,
+   "latency_s": 1.293,
+   "raw": "The document mentions \"pyOpenSSL\" which is a distinctive name of the affected package. ANSWER: T"
+  }
+ ]
+}

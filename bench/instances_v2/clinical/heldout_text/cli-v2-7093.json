@@ -1,0 +1,181 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT05131022"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT05131022"
+    },
+    "what": "the eligibility criteria restrict enrollment to adults, that is, a minimum age of 18 years or more"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT05131022"
+    },
+    "what": "the eligibility criteria restrict enrollment to one sex only (only male or only female participants)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT05131022"
+    },
+    "what": "the eligibility criteria accept healthy volunteers"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready for an adult cohort: identified, and the eligibility text restricts enrollment to adults."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked adult-cohort protocol: identified, adults only, open to both sexes, and not a healthy-volunteer study, as established from the eligibility text."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "!E3",
+    "!E4"
+   ]
+  ]
+ },
+ "id": "cli-v2-7093",
+ "notes_for_annotators": "{\"family\": \"clinical-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, false, false], \"twins\": [\"protocolSection.eligibilityModule.minimumAge\", \"protocolSection.eligibilityModule.sex\", \"protocolSection.eligibilityModule.healthyVolunteers\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT05131022": {
+   "protocolSection": {
+    "eligibilityModule": {
+     "eligibilityCriteria": "Key Inclusion Criteria:\n\n* Age \u226518 years\n* Patients in Phase 1a (Dose Escalation) must have histologically confirmed R/R CLL, SLL, DLBCL (subgroups include Richter-transformed DLBCL, germinal center B-cell type, activated B-cell type, high-grade B-cell lymphoma with MYC and BCL-2 and/or BCL-6 rearrangements, high-grade B-cell lymphomas NOS), FL, MCL, MZL (subtypes include EMZL, MALT, NMZL, SMZL), WM, or PCNSL.\n* Patients in Phase 1a must meet the following:\n\n  o For non-PCNSL indications, received at least 2 prior lines of therapy and have no other available therapies known to provide clinical benefit. For PCNSL, received at least 1 prior line of therapy\n* Patients in Phase 1b (Safety and Cohort Expansion) must have 1 of the following histologically documented B-cell malignancies, must meet criteria for systemic treatment, and must have received prior therapies and/or molecular features based on details described for each cohort: CLL or SLL, DLBCL, MCL, FL, MZL, WM, or PCNSL/SCNSL.\n* Measurable disease per response criteria specific to the malignancy.\n* Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1 (0-2 for patients with PCNSL and secondary CNS involvement).\n* Adequate organ and bone marrow function\n\nKey Exclusion Criteria:\n\n* Known or suspected active prolymphocytic leukemia or Richter's transformation to Hodgkin's lymphoma prior to study enrollment\n* Prior treatment for the indication under study for anti-cancer intent that includes:\n\n  1. Radiotherapy within 2 weeks of planned start of study drug (excluding limited palliative radiation).\n  2. Prior systemic chemotherapy within 2 weeks of planned start of study drug.\n  3. Prior monoclonal antibody therapy within 4 weeks of planned start of study drug, except for patients enrolling in Cohort 16 (CLL with secondary wAIHA) where a 16-week washout period is required.\n  4. Prior small molecule therapy within 2 weeks or 5 half-lives (whichever is shorter) of planned start of study drug.\n  5. Autologous or allogeneic stem cell transplant within 100 days prior to planned start of study drug.\n  6. Chimeric antigen receptor (CAR) T-cell therapy within 100 days prior to start of study drug (within 60 days prior to start of study drug for Phase 1b).\n  7. Use of systemic corticosteroids outside of dosing limits described below and within 7 days prior to initiation of study treatment excepting those used as prophylaxis for radio diagnostic contrast. Patients with PCNSL/SCNSL: no greater than 40 mg/day prednisone, or equivalent. Patients with PCNSL/SCNSL using greater than 20 mg/day prednisone, or equivalent, must be clinically stable at that dose for 7 days. All other diagnoses: no greater than 20 mg/day prednisone or equivalent.\n  8. Use of systemic immunosuppressive drugs other than systemic corticosteroids for any medical condition within 60 days prior to first dose of study drug\n  9. Previously treated with a BTK degrader\n* Active, uncontrolled autoimmune hemolytic anemia (except for patients enrolling in Cohort 16) or active, uncontrolled autoimmune thrombocytopenia.\n* Patient has any of the following within 6 months of planned start of study drug:\n\n  1. Myocardial infarction, unstable angina, unstable symptomatic ischemic heart disease, or placement of a coronary arterial stent\n  2. Uncontrolled atrial fibrillation or other clinically significant arrhythmias, conduction abnormalities, or New York Heart Association (NYHA) class III or IV heart failure\n  3. Thromboembolic events (e.g., deep vein thrombosis, pulmonary embolism, or symptomatic cerebrovascular events), stroke, or intracranial hemorrhage\n  4. Any other significant cardiac condition (e.g., pericardial effusion, restrictive cardiomyopathy, severe untreated valvular stenosis, severe congenital heart disease, or persistent uncontrolled hypertension defined as systolic blood pressure \\> 160 mmHg or diastolic blood pressure \\> 100 mmHg despite optimal medical management)\n* Bleeding diathesis, or other known risk for acute blood loss.\n* History of Grade \u2265 2 hemorrhage within 28 days of planned start of study drug.\n* Active known concurrent malignancy or malignancy other than the one under study within the past 3 years. (Exceptions include, but are not limited to, patients with more recent history of basal or squamous cell skin cancer, superficial bladder cancer, or carcinoma in situ of the cervix or breast may enroll if they have undergone curative therapy and have no evidence of disease)."
+    },
+    "identificationModule": {
+     "briefTitle": "A Study of NX-5948 in Adults With Relapsed/Refractory B-cell Malignancies"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT05131022.",
+ "seed": "NCT05131022",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "text"
+}

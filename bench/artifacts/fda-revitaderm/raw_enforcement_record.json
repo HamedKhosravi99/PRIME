@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "last_updated": "2026-07-22",
+    "license": "https://open.fda.gov/license/",
+    "results": {
+      "limit": 1,
+      "skip": 0,
+      "total": 1
+    },
+    "terms": "https://open.fda.gov/terms/"
+  },
+  "results": [
+    {
+      "address_1": "11037 Lockport Pl",
+      "address_2": "N/A",
+      "center_classification_date": "20260716",
+      "city": "Santa Fe Springs",
+      "classification": "Class I",
+      "code_info": "Lot#: BL3608, Exp. 07/01/28.",
+      "country": "United States",
+      "distribution_pattern": "Nationwide in the USA",
+      "event_id": "98731",
+      "initial_firm_notification": "Press Release",
+      "openfda": {},
+      "postal_code": "90670-4634",
+      "product_description": "Revitaderm Wound Care Gel, Benzalkonium Chloride 0.1%, packaged in 1.0 FL OZ (37 mL) bottle, shorter twist cap, Manufactured By: Blaine Labs, Inc. 11037 Lockport Place Santa Fe Springs, CA 90670, NDC 63347-120-02.",
+      "product_quantity": "1,171 - 1 oz bottles",
+      "product_type": "Drugs",
+      "reason_for_recall": "Microbial contamination of Non-Sterile Product: samples identified the presence of Lysinibacillus fusiformis and other Bacillus spp",
+      "recall_initiation_date": "20260408",
+      "recall_number": "D-0692-2026",
+      "recalling_firm": "Blaine Labs Inc",
+      "report_date": "20260708",
+      "state": "CA",
+      "status": "Ongoing",
+      "voluntary_mandated": "Voluntary: Firm initiated"
+    }
+  ]
+}

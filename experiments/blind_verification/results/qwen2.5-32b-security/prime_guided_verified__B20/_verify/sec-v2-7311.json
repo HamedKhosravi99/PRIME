@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7311",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "measurement plug-ins written in Python using version 1.1.0 of the `ni-measurementlink-service` Python package",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 298,
+   "completion_tokens": 19,
+   "latency_s": 1.811,
+   "raw": "The document specifies the affected package as `ni-measurementlink-service`. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E4",
+   "attested": "T",
+   "quote": "This affects measurement plug-ins written in Python using version 1.1.0 of the `ni-measurementlink-service` Python package and all previous versions.",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 285,
+   "completion_tokens": 41,
+   "latency_s": 3.613,
+   "raw": "The document indicates that the issue affects version 1.1.0 and all previous versions but does not explicitly state which is the first affected version where the issue was introduced. ANSWER: UNCLEAR"
+  }
+ ]
+}

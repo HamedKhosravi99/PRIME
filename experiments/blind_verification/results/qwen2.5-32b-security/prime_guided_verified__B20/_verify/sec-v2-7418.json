@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7418",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "Versions 2.3.3 and newer of Poetry resolve the target paths and ensure that they are inside the target directory. Otherwise, installation is aborted.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 743,
+   "completion_tokens": 29,
+   "latency_s": 2.156,
+   "raw": "The document states that versions 2.3.3 and newer of Poetry resolve the issue, thus establishing the condition. ANSWER: T"
+  }
+ ]
+}

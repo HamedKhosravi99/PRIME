@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7029",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "F",
+   "quote": "Age 8-17",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 322,
+   "completion_tokens": 37,
+   "latency_s": 2.495,
+   "raw": "The inclusion criteria specify an age range of 8-17, which does not meet the condition of restricting enrollment to adults aged 18 or older. ANSWER: F"
+  }
+ ]
+}

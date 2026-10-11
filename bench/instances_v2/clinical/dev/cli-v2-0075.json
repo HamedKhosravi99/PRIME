@@ -1,0 +1,293 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT01736540"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT01736540"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2019-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT01736540"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT01736540"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT01736540"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT01736540"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT01736540"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2019-01-01"
+     ]
+    ],
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2019-01-01"
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-0075",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-hom-07\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": 3, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT01736540": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "Iron, one of the most common elements in nature and the most abundant transition metal in the body, is readily capable of accepting and donating electrons. This capability makes iron a useful component of various, essential biochemical processes. Despite the essential role of iron, the excess of iron is toxic to the human body. It is critical for the human body to maintain iron balance, since humans have no physiologic mechanism for actively removing iron from the body.\n\nThe development of iron overload occurs when iron intake exceeds the body's capacity to safely store the iron in the liver, which is the primary store for iron. Long-term transfusion therapy, a life-giving treatment for patients with intractable chronic anemia is currently the most frequent cause of secondary iron overload.\n\nThe mounting evidence regarding the mortality and morbidity due to chronic iron overload in transfusion dependent anaemias has led to the establishment of guidelines that aim the improvement of patient outcomes. Further prospective studies are warranted in order to assess the impact of iron overload in patients with acquired anaemias.\n\nIn this study, non-invasive R2- and T2\\*-MRI techniques were applied to the liver and the heart, respectively, to complement the primary variable (serum ferritin) assessed in patients with various transfusion-dependent anaemias. The main objective of this study was to assess the prevalence and severity of cardiac and liver siderosis in patients with transfusional siderosis. This study was also aim to establish possible correlations between cardiac and liver iron levels with clinical effects in patients with different transfusion-dependent anaemias. Patients were eligible for enrollment irrespective of receiving chelation therapy or not (and irrespective of the chelating agent used)."
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Age \u226518 years\n* Confirmed clinical diagnosis of one of the following disease states: 1. Myelodysplastic syndromes, 2. Thalassaemia major, 3.Other anaemias (e.g. NTDT, SCD, Diamond-Blackfan anaemia, aplastic anaemia, myeloproliferative disease)\n* Lifetime history of at least 20 units of red blood cell transfusions AND serum ferritin level \\> 500 ng/ml; patients with NTDT are not required to have a minimum of 20 units of red blood cell transfusions, but must have serum ferritin level \\> 300 ng/ml (serum ferritin for all patients must be measured up to 1 month prior to enrollment)\n* Written informed consent obtained prior to any procedure required by this protocol\n\nExclusion Criteria:\n\nAny condition that does not allow the MRI test to be performed: 1. Cardiac pacemaker, 2. Ferromagnetic metal implants other than those approved as safe for use in MR scanners (Example: some types of aneurysm clips, shrapnel), 3. Obesity (exceeding the equipment limits), 4. Patients who are claustrophobic to MR Women who are pregnant Unwillingness or being unable to give consent",
+     "minimumAge": "18 Years"
+    },
+    "identificationModule": {
+     "nctId": "NCT01736540",
+     "officialTitle": "An Epidemiological Study to Assess the Prevalence of Iron Overload Using MRI in Patients With Transfusional Siderosis (TIMES Study)"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2017-03-14",
+     "overallStatus": "COMPLETED"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT01736540.",
+ "seed": "NCT01736540",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

@@ -1,0 +1,344 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT00242866"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.statusModule.statusVerifiedDate"
+    ],
+    "what": "the NCT identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT00242866"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.identificationModule.briefTitle"
+    ],
+    "what": "the overall recruitment status"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2018-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT00242866"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.studyFirstSubmitDate",
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.statusModule.lastUpdateSubmitDate"
+    ],
+    "what": "the date of the most recent update submission"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT00242866"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.descriptionModule.briefSummary"
+    ],
+    "what": "the brief summary"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT00242866"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.eligibilityModule.sex"
+    ],
+    "what": "the eligibility criteria text"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT00242866"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.identificationModule.officialTitle"
+    ],
+    "what": "the official title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:false",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.healthyVolunteers",
+     "record_id": "NCT00242866"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.eligibilityModule.healthyVolunteers",
+     "protocolSection.eligibilityModule.minimumAge"
+    ],
+    "what": "whether healthy volunteers are accepted"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2018-01-01"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2018-01-01"
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-6181",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-07\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 3, \"false_mech\": false, \"locator\": true, \"source_instance\": \"cli-v2-0181\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT00242866": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "Nitric oxide (NO) is likely to be involved in the development of migraine headache. Nitric oxide synthase (NOS) is an important chemical involved in the production of NO. Reduction of NOS, and therefore NO, may be an effective technique for the prevention of migraine headache. GW274150 is a highly selective inhibitor of NOS and offers the potential of anti-inflammatory activity in migraine through a novel mechanism of action. The intent of this study is to investigate the safety and efficacy of GW274150 for the prophylactic treatment of migraine headache."
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Suffering from migraine with or without aura.\n* Migraine for at least one year, and the age of onset was prior to 50 years.\n* Consistent migraine headache over time and has had at least 3 migraine headache attacks but less than 15 days with headache (migraine or non-migraine) per month in each of the three months prior to the Screening Visit and maintains this requirement during the baseline period.\n* Able to distinguish migraine headache attacks as discreet attacks from other headaches (i.e. tension-type headaches).\n* No clinically significant abnormality identified on the medical or laboratory evaluation. A subject with a clinical abnormality or laboratory parameters outside the reference range may be included only if the doctor considers that the finding will not introduce additional risk factors and will not interfere with the study procedures.\n* Written informed consent prior to entry into the study.\n* Females who are: a) non-childbearing potential or, b) of child-bearing potential, has a negative pregnancy test at screen, and is taken adequate contraceptive measures.\n\nExclusion Criteria:\n\n* As a result of the medical interview, physical examination or screening investigations, that the doctor considers the subject unfit for the study.\n* Headache for 15 days per month or greater in any of the three months (90 days) preceding the Screening Visit.\n* History of alcohol, substance or drug abuse within the last year.\n* Taken a migraine prophylactic medication within 1 month of the Screening Visit.\n* Uses an opiate as first line acute treatment for migraine attacks.\n* History of ergotamine, triptan, opioid, or combination medication intake on greater than/equal 10 days per month on a regular basis for greater than/equal 3 months.\n* History of simple analgesic intake on greater than/equal 15 days per month for greater than/equal 3 months.\n* Failed two or more adequate treatments of migraine prophylaxis, where failure is defined as a lack of efficacy with a treatment duration of at least 8 weeks or withdrawal of treatment due to treatment intolerance.\n* Uncontrolled hypertension at the Screening Visit, defined as systolic blood pressure \\>140mmHg or diastolic blood pressure \\>90mmHg.\n* Taking cyclosporine and/or aminoglycosides.\n* Evidence of renal impairment - calculated creatinine clearance \\<60ml/min or clinically relevant finding on urinalysis.\n* History of drug or other allergy which, in the opinion of the doctor, makes the subject unsuitable for participation in the study.\n* Concurrently participating in another clinical study or investigational drug trial or has participated within the previous 3 months or is planning to participate in another drug or device study at any time during this study (screening through follow-up) or has had previous exposure to GW274150 in Part 1 of the study.\n* Felt to be at risk of non-compliance (for taking study medication or for completing the electronic diary (e-diary)), in the doctor's opinion.\n* Pregnant or nursing women.\n* History of, or risk factors for, HIV, Hepatitis B and Hepatitis C.\n* Past or present disease, which as judged by the doctor, may affect the outcome of this study. These diseases include, but are not limited to history of liver or renal disease in the 6 months prior to screening.\n* Clinically significant abnormalities in safety laboratory analysis at the Screening Visit, particularly any abnormal liver or pancreatic function test at the Screening Visit.\n* Not covered by social security.",
+     "healthyVolunteers": false,
+     "minimumAge": "18 Years",
+     "sex": "FEMALE"
+    },
+    "identificationModule": {
+     "briefTitle": "Use Of GW274150 In The Prophylactic Treatment Of Migraine",
+     "nctId": "NCT00242866",
+     "officialTitle": "A Multicentre, Two-part, Randomised, Double-blind, Placebo-controlled, Parallel-group Study to Evaluate the Efficacy, Tolerability and Pharmacokinetics of the iNOS Inhibitor GW274150 Administered up to 120mg Daily for 12 Weeks in the Prophylactic Treatment of Migraine."
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2016-05-05",
+     "overallStatus": "COMPLETED",
+     "statusVerifiedDate": "2015-09",
+     "studyFirstSubmitDate": "2005-10-19"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT00242866.",
+ "seed": "NCT00242866",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

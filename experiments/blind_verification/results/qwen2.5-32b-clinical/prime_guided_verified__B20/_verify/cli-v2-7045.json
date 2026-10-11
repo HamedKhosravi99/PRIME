@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7045",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "full-aged patient",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 242,
+   "completion_tokens": 35,
+   "latency_s": 3.448,
+   "raw": "The term \"full-aged\" could imply adults but is not explicitly clear or standard for indicating a minimum age of 18 years or more. ANSWER: UNCLEAR"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7394",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "An attacker can craft a TFLite model that would trigger a division by zero error in LSH",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 539,
+   "completion_tokens": 19,
+   "latency_s": 1.149,
+   "raw": "The document mentions \"TensorFlow\" as the affected package by name. ANSWER: T"
+  }
+ ]
+}

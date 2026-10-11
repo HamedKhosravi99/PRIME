@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7221",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Users of JupyterLab who click on a malicious link may get their `Authorization` and `XSRFToken` tokens exposed to a third party when running an older `jupyter-server` version.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 373,
+   "completion_tokens": 22,
+   "latency_s": 1.259,
+   "raw": "The document mentions \"jupyter-server\" as the affected package by its registered name. ANSWER: T"
+  }
+ ]
+}

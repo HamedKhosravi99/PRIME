@@ -1,0 +1,295 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "F",
+   "id": "E1",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT03825250"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2020-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT03825250"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2025-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT03825250"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT03825250"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT03825250"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT03825250"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT03825250"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2020-01-01"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2020-01-01"
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2025-01-01"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "cli-v2-0115",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-het-02\", \"topology\": \"nested\", \"cost\": \"het\", \"target_level\": 0, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT03825250": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "The Val-CARD trial aims to answer the question: \"Does the drug sodium valproate reduce complications affecting the heart and kidneys in patients having heart operations?\" Sodium valproate is a drug commonly used in the treatment of epilepsy. Recently it has been shown to protect against heart and kidney damage in laboratory tests. This has led to trials evaluating whether it can prevent heart and kidney damage in patients. The investigators wish to evaluate whether treatment with sodium valproate for a short period can reduce levels of organ damage following heart surgery by measuring this in blood tests, exercise tests, a special x-ray measuring body fat content, a walk exercise and muscle strength tests. The investigators now want to establish if sodium valproate works by making the heart and kidney more resistant to any injury that results from the use of the heart lung machine."
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Adult cardiac surgery patients (\u226518 years) undergoing cardiac surgery (CABG, Valve, or CABG and Valve) with cardiopulmonary bypass (CPB).\n* Able, in the opinion of the investigator, and willing to give informed consent.\n\nExclusion Criteria:\n\n* Emergency or salvage procedure\n* Patients with end stage renal failure defined as an estimated Glomerular Filtration rate (eGFR) \\<15 mL/min/1.72 m2 calculated from the Modification of Diet in Renal Disease equation,1 or patients who are on long-term haemodialysis or have undergone renal transplantation.\n* Patients with persistent or chronic atrial fibrillation.\n* Patients with acute liver disease.\n* Personal or family history of severe hepatic dysfunction, especially drug related.\n* Patients allergic to sodium valproate.\n* Patients with thrombocytopaenia (platelet count \\<150x109 per mL).\n* Patients taking long-term Histone Deacetylase Inhibitors such as sodium valproate.\n* Patients taking any of the following medications: antipsychotics, MAO inhibitors, antidepressants and benzodiazepines, Lithium, Olanzepine, Phenobarbital, Primidone, Phenytoin, Carbamazepine, Lamotrigine, Felbamate.\n* Patients diagnosed with a mitochondrial deficiency disorder.\n* Patients with porphyria.\n* Patients with known urea cycle disorders.\n* Women of child bearing potential (WOCBP) are excluded from the study. A woman is defined as being of childbearing potential (WOCBP), i.e. fertile, following menarche and until becoming post-menopausal, unless permanently sterile. Permanent sterilisation methods include hysterectomy, bilateral salpingectomy and bilateral oophorectomy. A postmenopausal state is defined as no menses for 12 months without an alternative medical cause.\n* Patients who are participating in another interventional clinical trial.\n* Unable, in the opinion of the investigator, or unwilling to give informed consent protocol."
+    },
+    "identificationModule": {
+     "officialTitle": "A Randomised Controlled Trial of Pre-surgery Sodium ValpRoate, for the Prevention of Organ Injury in Cardiac Surgery: THE Val-CARD TRIAL"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2023-11-09",
+     "overallStatus": "UNKNOWN",
+     "studyFirstSubmitDate": "2018-08-31"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT03825250.",
+ "seed": "NCT03825250",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

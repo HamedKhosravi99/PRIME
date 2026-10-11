@@ -1,0 +1,12 @@
+name: pypika
+source_url: https://github.com/kayak/pypika
+commit: 5e800d83a0f0ae14210410c02fd97e51e2e3f1d5
+ref_cloned: default HEAD
+clone_date: 2026-07-28
+license_file: LICENSE.txt
+license_first_line: Apache License
+size: 880K
+test_command: python3 -m pytest -q (cwd=repo root)
+environment: 3.9.6, pytest
+test_exit_code: 2
+test_result_line: 6 errors in 0.22s

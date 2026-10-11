@@ -1,0 +1,31 @@
+{
+ "instance": "cli-v2-7103",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Patients over the age of 20",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 267,
+   "completion_tokens": 39,
+   "latency_s": 2.669,
+   "raw": "The document specifies an inclusion criterion of patients over the age of 20, which is more restrictive than the stated condition of a minimum age of 18 years. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "F",
+   "quote": "Any condition which, in the opinion of the Investigator, places the patient at unacceptable risk if he/she were to participate in the study",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 262,
+   "completion_tokens": 18,
+   "latency_s": 1.424,
+   "raw": "The document does not specify any restrictions based on sex for enrollment. ANSWER: F"
+  }
+ ]
+}

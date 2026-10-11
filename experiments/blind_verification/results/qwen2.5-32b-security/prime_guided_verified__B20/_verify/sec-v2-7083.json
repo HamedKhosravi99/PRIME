@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7083",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "run-llama/llama_index",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 269,
+   "completion_tokens": 22,
+   "latency_s": 1.884,
+   "raw": "The document specifies the affected package as \"run-llama/llama_index\". ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "The vulnerability is fixed in version 0.12.41.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 251,
+   "completion_tokens": 29,
+   "latency_s": 2.369,
+   "raw": "The document specifies that the vulnerability is fixed in version 0.12.41, thus establishing the condition.\nANSWER: T"
+  }
+ ]
+}

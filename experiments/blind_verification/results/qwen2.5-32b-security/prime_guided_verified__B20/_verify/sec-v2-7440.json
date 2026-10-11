@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7440",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "The implementation of [`tf.sparse.split`](https://github.com/tensorflow/tensorflow/blob/5100e359aef5c8021f2e71c7b986420b85ce7b3d/tensorflow/core/kernels/sparse_split_op.cc#L26-L102) does not fully validate the input arguments.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 674,
+   "completion_tokens": 27,
+   "latency_s": 2.23,
+   "raw": "The document mentions \"TensorFlow\" by its registered name multiple times, establishing that it is the affected package. ANSWER: T"
+  }
+ ]
+}

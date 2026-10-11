@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7052",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "18 years of age or older",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 224,
+   "completion_tokens": 26,
+   "latency_s": 2.405,
+   "raw": "The inclusion criterion explicitly states \"18 years of age or older,\" which aligns with the condition. ANSWER: T"
+  }
+ ]
+}

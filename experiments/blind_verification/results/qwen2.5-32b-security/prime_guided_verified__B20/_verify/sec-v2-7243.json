@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7243",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "This issue affects Apache Airflow Providers FAB: 1.2.1 (when used with Apache Airflow 2.9.3) and FAB 1.2.0 for all Airflow versions.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 433,
+   "completion_tokens": 21,
+   "latency_s": 1.628,
+   "raw": "The document does name the affected package as \"Apache Airflow Providers FAB\". ANSWER: T"
+  }
+ ]
+}

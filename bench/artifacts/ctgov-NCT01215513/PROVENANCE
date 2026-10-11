@@ -1,0 +1,38 @@
+name: ctgov-NCT01215513
+domain: clinical_trial (ClinicalTrials.gov structured-record domain, Tier-M predicate grammar)
+role: ctgov-0003: full C3-reachable (Phase 3, Completed, Ferring, n=127)
+source: ClinicalTrials.gov public API v2, GET https://clinicaltrials.gov/api/v2/studies/NCT01215513
+        (no authentication, no API key required)
+nct_id: NCT01215513
+title: Long-Term Safety and Tolerability of Degarelix One-Month Dosing Regimen in Korean Patients
+lead_sponsor: Ferring Pharmaceuticals
+retrieved: 2026-07-29 via curl against clinicaltrials.gov/api/v2 (see bench/fetch_ctgov.py)
+fetch_tool: bench/fetch_ctgov.py fetch NCT01215513 bench/artifacts/ctgov-NCT01215513/record.json
+files:
+  record.json      - pruned, embeddable subset of the real API response (exactly
+                      the protocolSection.{identificationModule,statusModule,
+                      designModule,sponsorCollaboratorsModule,outcomesModule,
+                      conditionsModule} sub-objects this domain's atoms read;
+                      every field value copied byte-for-byte from the API
+                      response via bench/fetch_ctgov.py, none edited, none
+                      paraphrased, none invented) -- this exact JSON is embedded
+                      verbatim under the instance's top-level "records" field.
+  record.json.raw  - the FULL untouched API response, kept for audit (confirms
+                      record.json is a strict subset, not an edited copy).
+observed_key_fields (copied from record.json, reproduced here for a quick human
+  check against the instance's atoms and gold_value table):
+  protocolSection.designModule.studyType = 'INTERVENTIONAL'
+  protocolSection.designModule.phases = ['PHASE3']
+  protocolSection.statusModule.overallStatus = 'COMPLETED'
+  protocolSection.sponsorCollaboratorsModule.leadSponsor.name = 'Ferring Pharmaceuticals'
+  protocolSection.designModule.enrollmentInfo = {'count': 127, 'type': 'ACTUAL'}
+  protocolSection.outcomesModule.primaryOutcomes[0].measure = 'Number of Participants With Markedly Abnormal Values in Safety Laboratory Variables'
+license_note: ClinicalTrials.gov study records are public U.S. government /
+  NLM data made freely available via the public API for reuse; used here
+  read-only as a review artifact, exactly like the grant/NSF and research/
+  arXiv domains' public-API artifacts.
+integrity: no field in record.json was invented, edited, or paraphrased --
+  every value is a direct copy from the API JSON response captured in
+  record.json.raw at the retrieval timestamp above. bench/scaffold_repo.py
+  verify independently re-derives every atom's gold_value from this SAME
+  embedded record.json content via the real inspect_record resolver path.

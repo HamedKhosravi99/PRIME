@@ -1,0 +1,398 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "details",
+     "record_id": "GHSA-3f6c-7fw2-ppm4"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "summary",
+     "details",
+     "database_specific.cwe_ids.0"
+    ],
+    "what": "the advisory's detailed description"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2027-01-01\"",
+    "params": {
+     "field_path": "published",
+     "record_id": "GHSA-3f6c-7fw2-ppm4"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "schema_version",
+     "affected.0.package.ecosystem",
+     "published"
+    ],
+    "what": "the date the advisory was published"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2028-01-01\"",
+    "params": {
+     "field_path": "modified",
+     "record_id": "GHSA-3f6c-7fw2-ppm4"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "modified",
+     "database_specific.cwe_ids.0",
+     "severity.0.score"
+    ],
+    "what": "the date the advisory was last modified"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.severity",
+     "record_id": "GHSA-3f6c-7fw2-ppm4"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "aliases.0",
+     "severity.0.score",
+     "database_specific.severity"
+    ],
+    "what": "the maintainers' severity label"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.type",
+     "record_id": "GHSA-3f6c-7fw2-ppm4"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "aliases.0",
+     "severity.0.score",
+     "references.0.type"
+    ],
+    "what": "the type of the first reference"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.url",
+     "record_id": "GHSA-3f6c-7fw2-ppm4"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.cwe_ids.0",
+     "references.0.url",
+     "severity.0.score"
+    ],
+    "what": "the URL of the first reference"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_after:\"1980-01-01\"",
+    "params": {
+     "field_path": "published",
+     "record_id": "GHSA-3f6c-7fw2-ppm4"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "published",
+     "severity.0.score",
+     "database_specific.github_reviewed"
+    ],
+    "what": "the date the advisory was published"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "affected.0.package.name",
+     "record_id": "GHSA-3f6c-7fw2-ppm4"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "aliases.0",
+     "affected.0.package.name",
+     "database_specific.cwe_ids.0"
+    ],
+    "what": "the name of the affected package"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "published",
+      "date_before",
+      "2027-01-01"
+     ],
+     [
+      "modified",
+      "date_before",
+      "2028-01-01"
+     ]
+    ],
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.severity",
+      "exists",
+      null
+     ],
+     [
+      "references.0.type",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "published",
+      "date_before",
+      "2027-01-01"
+     ],
+     [
+      "modified",
+      "date_before",
+      "2028-01-01"
+     ],
+     [
+      "references.0.url",
+      "exists",
+      null
+     ],
+     [
+      "published",
+      "date_after",
+      "1980-01-01"
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "sec-v2-6152",
+ "notes_for_annotators": "{\"family\": \"security-branching-het-16\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 3, \"false_mech\": false, \"locator\": true, \"source_instance\": \"sec-v2-0152\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-3f6c-7fw2-ppm4": {
+   "affected": [
+    {
+     "package": {
+      "ecosystem": "PyPI",
+      "name": "vllm"
+     }
+    }
+   ],
+   "aliases": [
+    "CVE-2025-6242"
+   ],
+   "database_specific": {
+    "cwe_ids": [
+     "CWE-601"
+    ],
+    "github_reviewed": true,
+    "severity": "HIGH"
+   },
+   "details": "### Summary\n\nA Server-Side Request Forgery (SSRF) vulnerability exists in the `MediaConnector` class within the vLLM project's multimodal feature set. The `load_from_url` and `load_from_url_async` methods fetch and process media from user-provided URLs without adequate restrictions on the target hosts. This allows an attacker to coerce the vLLM server into making arbitrary requests to internal network resources.\n\nThis vulnerability is particularly critical in containerized environments like `llm-d`, where a compromised vLLM pod could be used to scan the internal network, interact with other pods, and potentially cause denial of service or access sensitive data. For example, an attacker could make the vLLM pod send malicious requests to an internal `llm-d` management endpoint, leading to system instability by falsely reporting metrics like the KV cache state.\n\n### Vulnerability Details\n\nThe core of the vulnerability lies in the `MediaConnector.load_from_url` method and its asynchronous counterpart. These methods accept a URL string to fetch media content (images, audio, video).\n\nhttps://github.com/vllm-project/vllm/blob/119f683949dfed10df769fe63b2676d7f1eb644e/vllm/multimodal/utils.py#L97-L113\n\nThe function directly processes URLs with `http`, `https`, and `file` schemes. An attacker can supply a URL pointing to an internal IP address or a `localhost` endpoint. The vLLM server will then initiate a connection to this internal resource.\n\n* **HTTP/HTTPS Scheme:** An attacker can craft a request like `{\"image_url\": \"http://127.0.0.1:8080/internal_api\"}`. The vLLM server will send a GET request to this internal endpoint.\n* **File Scheme:** The `_load_file_url` method attempts to restrict file access to a subdirectory defined by `--allowed-local-media-path`. While this is a good security measure for local file access, it does not prevent network-based SSRF attacks.\n\n### Impact in `llm-d` Environments\n\nThe risk is significantly amplified in orchestrated environments such as `llm-d`, where multiple pods communicate over an internal network.\n\n1.  **Denial of Service (DoS):** An attacker could target internal management endpoints of other services within the `llm-d` cluster. For instance, if a monitoring or metrics service is exposed internally, an attacker could send malformed requests to it. A specific example is an attacker causing the vLLM pod to call an internal API that reports a false KV cache utilization, potentially triggering incorrect scaling decisions or even a system shutdown.\n\n2.  **Internal Network Reconnaissance:** Attackers can use the vulnerability to scan the internal network for open ports and services by providing URLs like `http://10.0.0.X:PORT` and observing the server's response time or error messages.\n\n3.  **Interaction with Internal Services:** Any unsecured internal service becomes a potential target. This could include databases, internal APIs, or other model pods that might not have robust authentication, as they are not expected to be directly exposed.\n\nDelegating this security responsibility to an upper-level orchestrator like `llm-d` is problematic. **The orchestrator cannot easily distinguish between legitimate requests initiated by the vLLM engine for its own purposes and malicious requests originating from user input, thus complicating traffic filtering rules and increasing management overhead.**\n\n### Fix\n\nSee the `--allowed-media-domains` option discussed here: https://docs.vllm.ai/en/latest/usage/security.html#4-restrict-domains-access-for-media-urls",
+   "modified": "2026-07-07T17:57:19.957237175Z",
+   "published": "2025-10-07T22:14:15Z",
+   "references": [
+    {
+     "type": "WEB",
+     "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-3f6c-7fw2-ppm4"
+    }
+   ],
+   "schema_version": "1.7.3",
+   "severity": [
+    {
+     "score": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:L/A:H"
+    }
+   ],
+   "summary": "vLLM is vulnerable to Server-Side Request Forgery (SSRF) through `MediaConnector` class"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-3f6c-7fw2-ppm4.",
+ "seed": "GHSA-3f6c-7fw2-ppm4",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

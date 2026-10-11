@@ -1,0 +1,161 @@
+{
+  "id": "res-0005",
+  "domain": "research_review",
+  "seed": "res-0005",
+  "variant": "base",
+  "user_prompt": "Is the core idea of this paper novel relative to the related work I gave you?",
+  "artifact": {
+    "path": "artifacts/res-transformer",
+    "kind": "paper_with_corpus",
+    "commit": "arxiv:1706.03762"
+  },
+  "scope": "The target paper target/paper.txt (arXiv:1706.03762, Attention Is All You Need) and the supplied corpus of 10 real related-paper abstracts under corpus/, searched by search_repo and read by inspect_file; the novelty question is scoped to the target's STATED contribution and to subsumption BY THE SUPPLIED CORPUS ONLY (not the open literature).",
+  "actions": [
+    "inspect_file",
+    "search_repo",
+    "ask_user",
+    "emit_claim"
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "The target paper's stated contribution is identifiable from the supplied text (the Transformer, a sequence transduction architecture based solely on attention mechanisms, dispensing with recurrence and convolutions entirely).",
+      "level": 1
+    },
+    {
+      "id": "C2",
+      "text": "The contribution is identified (C1) and the closest work in the supplied corpus has been located by search and inspected.",
+      "level": 2
+    },
+    {
+      "id": "C3",
+      "text": "Under the supplied corpus and the declared search protocol, no inspected corpus item subsumes the target's stated contribution (an architecture using attention as the SOLE computational mechanism for both encoder and decoder, with no recurrent connections and no convolutional layers anywhere in the network): the contribution stands as novel relative to this corpus.",
+      "level": 3
+    }
+  ],
+  "order": [
+    [
+      "C1",
+      "C2"
+    ],
+    [
+      "C2",
+      "C3"
+    ]
+  ],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "inspect",
+      "proposition": "The target's contribution paragraph is read via inspect_file over target/paper.txt.",
+      "resolver": {
+        "tool": "inspect_file",
+        "params_schema": {
+          "path": "str",
+          "start": "int",
+          "end": "int"
+        },
+        "params": {
+          "path": "target/paper.txt"
+        },
+        "attest": "span_read"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E2",
+      "type": "search",
+      "proposition": "The corpus is searched for the mechanism family with search_repo (pattern attention|recurrence|convolution over corpus/), returning at least one match.",
+      "resolver": {
+        "tool": "search_repo",
+        "params_schema": {
+          "pattern": "str",
+          "path": "str"
+        },
+        "params": {
+          "path": "corpus"
+        },
+        "attest": "match_count>0"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E3",
+      "type": "inspect",
+      "proposition": "The closest attention-mechanism-plus-recurrence corpus candidate (Bahdanau et al., arXiv:1409.0473) is read via inspect_file.",
+      "resolver": {
+        "tool": "inspect_file",
+        "params_schema": {
+          "path": "str",
+          "start": "int",
+          "end": "int"
+        },
+        "params": {
+          "path": "corpus/01_bahdanau_1409.0473.txt"
+        },
+        "attest": "span_read"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E4",
+      "type": "inspect",
+      "proposition": "The closest recurrence-free corpus candidate (Convolutional Sequence to Sequence Learning, arXiv:1705.03122) is read via inspect_file.",
+      "resolver": {
+        "tool": "inspect_file",
+        "params_schema": {
+          "path": "str",
+          "start": "int",
+          "end": "int"
+        },
+        "params": {
+          "path": "corpus/03_convs2s_1705.03122.txt"
+        },
+        "attest": "span_read"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E5",
+      "type": "user_fact",
+      "proposition": "Expert adjudication is obtained (ask_user) on whether any inspected corpus abstract claims the target's specific mechanism; the adjudication is that none does.",
+      "resolver": {
+        "tool": "ask_user",
+        "params_schema": {
+          "question": "str"
+        },
+        "params": {},
+        "attest": "answer_given"
+      },
+      "gold_value": "T"
+    }
+  ],
+  "phi": [],
+  "gold_licenses": {
+    "C1": [
+      [
+        "E1"
+      ]
+    ],
+    "C2": [
+      [
+        "E1",
+        "E2",
+        "E3"
+      ]
+    ],
+    "C3": [
+      [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5"
+      ]
+    ]
+  },
+  "decoys": [
+    "citation_count_lookup"
+  ],
+  "notes_for_annotators": "Target arXiv:1706.03762 (Attention Is All You Need, Vaswani et al. 2017), corpus of 10 real abstracts, all fetched 2026-07-29 from arxiv.org abs pages (provenance in artifacts/res-transformer/PROVENANCE). ADJUDICATION (E5 answer, verified by reading the abstracts): No corpus item subsumes the target's stated contribution. The target's contribution, in its own words, is an architecture 'based solely on attention mechanisms, dispensing with recurrence and convolutions entirely.' The closest corpus items differ in mechanism: Bahdanau et al. (1409.0473, 2014) introduces the additive attention mechanism itself but WITHIN an RNN encoder-decoder -- 'consists of an encoder that encodes a source sentence' via recurrence, with attention added on top; recurrence is retained, contradicting the target's 'dispensing with recurrence' claim. Convolutional Sequence to Sequence Learning (1705.03122, 2017) dispenses with recurrence too ('an architecture based entirely on convolutional neural networks') but is built on CONVOLUTIONS, not attention, as its primary computation, with only 'a separate attention module' added per decoder layer -- it retains convolutional layers throughout, contradicting the target's 'dispensing with... convolutions entirely' claim. Neither corpus item combines zero recurrence AND zero convolutions AND attention as the sole mechanism, which is exactly the target's stated novelty. Luong (1508.04025) and GNMT (1609.08144) are further attention+recurrence variants; ByteNet (1610.10099) is convolution-based (no recurrence, no attention as primary mechanism); Seq2seq (1409.3215) is plain RNN encoder-decoder with neither attention nor convolutions; the self-attentive sentence embedding (1703.03130) and Structured Attention Networks (1702.00887) apply self-attention/structured attention to different tasks (sentence embedding, structured prediction) without proposing a full sequence-transduction encoder-decoder built solely on attention; ELMo (1802.05365) and BERT (1810.04805) postdate the target and use its architecture rather than competing with it. Route minimality: E1 necessary (cannot judge novelty without reading the contribution); E2 necessary (the corpus must actually be searched, not assumed); E3, E4 necessary (the two nearest candidates must be read, not inferred from titles); E5 necessary (the subsumption call is the adjudicated conclusion). Order-coherence by containment. Decoy citation_count_lookup is not a listed action. The answer the ask_user tool returns is this note; E5 attests that the adjudication was obtained."
+}

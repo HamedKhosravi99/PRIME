@@ -1,0 +1,31 @@
+{
+ "instance": "cli-v2-7038",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "Females of couples with an indication for COH and IVF or ICSI;",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 604,
+   "completion_tokens": 24,
+   "latency_s": 1.976,
+   "raw": "The inclusion criteria specify \"Females of couples,\" which restricts enrollment to only female participants. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "\\>=18 and \\<=39 years of age at the time of signing informed consent;",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 609,
+   "completion_tokens": 28,
+   "latency_s": 1.714,
+   "raw": "The inclusion criteria specify a minimum age of 18 years, which meets the condition for restricting enrollment to adults. ANSWER: T"
+  }
+ ]
+}

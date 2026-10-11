@@ -1,0 +1,19 @@
+name: texttable
+source_url: https://github.com/foutaise/texttable
+commit: b4c00a68626a58944e9bf4d48b1e8d758efa6edb
+ref_cloned: default HEAD
+clone_date: 2026-07-28
+license_file: LICENSE
+license_first_line: The MIT License (MIT)
+size: 84K
+test_command: python3 -m pytest -q (cwd=repo root)
+environment: 3.9.6, pytest
+test_exit_code: 5
+test_result_line: no tests ran in 0.00s
+caveat: the suite lives in tests.py, which does not match pytest's default
+  test_*.py/*_test.py discovery pattern, so an unscoped `pytest -q` collects
+  nothing (exit 5). Explicitly targeted, it collects and passes:
+subset_results (verified):
+  - python3 -m pytest -q tests.py -> 15 passed ; exit code 0
+no .github/workflows directory present (no CI configured at this commit,
+  verified by directory listing).

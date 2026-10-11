@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7180",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Sentry SaaS users do not need to take any action. [Self-Hosted Sentry](https://github.com/getsentry/self-hosted) users should upgrade to version **24.9.0** or higher.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 277,
+   "completion_tokens": 20,
+   "latency_s": 1.128,
+   "raw": "The document mentions \"Self-Hosted Sentry\" as the affected package. ANSWER: T"
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "instance": "cli-v2-7062",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "patients older then 18 years at diagnosis of pituitary tumors;",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 213,
+   "completion_tokens": 39,
+   "latency_s": 2.681,
+   "raw": "The inclusion criterion specifies patients must be older than 18 years at diagnosis, and the exclusion criterion explicitly removes those under 18 years, thus establishing the condition.\nANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "F",
+   "quote": "Patients underwent surgery for pituitary tumors;",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 208,
+   "completion_tokens": 24,
+   "latency_s": 1.596,
+   "raw": "The document does not specify any restrictions based on sex, thus it does not establish the condition. ANSWER: F"
+  }
+ ]
+}

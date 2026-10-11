@@ -1,0 +1,161 @@
+{
+  "id": "res-0006",
+  "domain": "research_review",
+  "seed": "res-0006",
+  "variant": "base",
+  "user_prompt": "Is the core idea of this paper novel relative to the related work I gave you?",
+  "artifact": {
+    "path": "artifacts/res-resnet",
+    "kind": "paper_with_corpus",
+    "commit": "arxiv:1512.03385"
+  },
+  "scope": "The target paper target/paper.txt (arXiv:1512.03385, Deep Residual Learning) and the supplied corpus of 10 real related-paper abstracts under corpus/, searched by search_repo and read by inspect_file; the novelty question is scoped to the target's STATED contribution and to subsumption BY THE SUPPLIED CORPUS ONLY (not the open literature).",
+  "actions": [
+    "inspect_file",
+    "search_repo",
+    "ask_user",
+    "emit_claim"
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "The target paper's stated contribution is identifiable from the supplied text (a residual learning framework that reformulates network layers as learning residual functions, via parameter-free identity shortcut connections, to ease training of substantially deeper networks).",
+      "level": 1
+    },
+    {
+      "id": "C2",
+      "text": "The contribution is identified (C1) and the closest work in the supplied corpus has been located by search and inspected.",
+      "level": 2
+    },
+    {
+      "id": "C3",
+      "text": "Under the supplied corpus and the declared search protocol, no inspected corpus item subsumes the target's stated contribution (parameter-free identity shortcut connections that let a layer learn a residual function against its input, with no learned gating and no auxiliary per-layer loss, enabling networks over 100 layers deep to be trained and to gain accuracy from depth): the contribution stands as novel relative to this corpus.",
+      "level": 3
+    }
+  ],
+  "order": [
+    [
+      "C1",
+      "C2"
+    ],
+    [
+      "C2",
+      "C3"
+    ]
+  ],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "inspect",
+      "proposition": "The target's contribution paragraph is read via inspect_file over target/paper.txt.",
+      "resolver": {
+        "tool": "inspect_file",
+        "params_schema": {
+          "path": "str",
+          "start": "int",
+          "end": "int"
+        },
+        "params": {
+          "path": "target/paper.txt"
+        },
+        "attest": "span_read"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E2",
+      "type": "search",
+      "proposition": "The corpus is searched for the mechanism family with search_repo (pattern residual|shortcut|deep network|very deep over corpus/), returning at least one match.",
+      "resolver": {
+        "tool": "search_repo",
+        "params_schema": {
+          "pattern": "str",
+          "path": "str"
+        },
+        "params": {
+          "path": "corpus"
+        },
+        "attest": "match_count>0"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E3",
+      "type": "inspect",
+      "proposition": "The closest gated-shortcut corpus candidate (Highway Networks, arXiv:1505.00387) is read via inspect_file.",
+      "resolver": {
+        "tool": "inspect_file",
+        "params_schema": {
+          "path": "str",
+          "start": "int",
+          "end": "int"
+        },
+        "params": {
+          "path": "corpus/01_highway_1505.00387.txt"
+        },
+        "attest": "span_read"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E4",
+      "type": "inspect",
+      "proposition": "The closest deep-training-aid corpus candidate (Deeply-Supervised Nets, arXiv:1409.5185) is read via inspect_file.",
+      "resolver": {
+        "tool": "inspect_file",
+        "params_schema": {
+          "path": "str",
+          "start": "int",
+          "end": "int"
+        },
+        "params": {
+          "path": "corpus/06_deeply_supervised_1409.5185.txt"
+        },
+        "attest": "span_read"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E5",
+      "type": "user_fact",
+      "proposition": "Expert adjudication is obtained (ask_user) on whether any inspected corpus abstract claims the target's specific mechanism; the adjudication is that none does.",
+      "resolver": {
+        "tool": "ask_user",
+        "params_schema": {
+          "question": "str"
+        },
+        "params": {},
+        "attest": "answer_given"
+      },
+      "gold_value": "T"
+    }
+  ],
+  "phi": [],
+  "gold_licenses": {
+    "C1": [
+      [
+        "E1"
+      ]
+    ],
+    "C2": [
+      [
+        "E1",
+        "E2",
+        "E3"
+      ]
+    ],
+    "C3": [
+      [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5"
+      ]
+    ]
+  },
+  "decoys": [
+    "citation_count_lookup"
+  ],
+  "notes_for_annotators": "Target arXiv:1512.03385 (ResNet, He et al. 2015), corpus of 10 real abstracts, all fetched 2026-07-29 from arxiv.org abs pages (provenance in artifacts/res-resnet/PROVENANCE). ADJUDICATION (E5 answer, verified by reading the abstracts): No corpus item subsumes the target's stated contribution. The target's contribution is a PARAMETER-FREE identity-shortcut reformulation -- 'reformulate the layers as learning residual functions with reference to the layer inputs' -- trained with a single end-to-end objective, scaling cleanly to 152 layers (and 100-1000 on CIFAR-10). The closest corpus items differ in mechanism: Highway Networks (1505.00387, 2015) also eases very-deep-network training via shortcut-like information flow, but through LEARNED GATING UNITS ('the use of gating units which learn to regulate the flow of information') -- extra transform/carry-gate parameters at every layer, not the target's simple parameter-free addition; Deeply-Supervised Nets (1409.5185, 2014) eases deep-network training by adding a 'companion objective' (auxiliary classification loss) AT each hidden layer -- a fundamentally different mechanism (multi-loss supervision, no shortcut connections at all) from the target's single-objective identity-shortcut reformulation. Neither prior work proposes gate-free identity shortcuts trained with one end-to-end loss at 100+ layer depth. VGG (1409.1556) and GoogLeNet (1409.4842) are deep/wide plain- or inception-module architectures without any shortcut mechanism; Batch Normalization (1502.03167) and Network In Network (1312.4400) address different training/architecture aspects (internal covariate shift; 1x1-conv micro-networks); Rethinking Inception (1512.00567) is a concurrent inception-family paper (no shortcuts); Identity Mappings in Deep Residual Networks (1603.05027) is the target's OWN follow-up, postdating it (March 2016 vs December 2015); FCN (1411.4038) and R-CNN (1311.2524) are unrelated downstream application architectures (segmentation, detection) with no depth-training mechanism proposed. Route minimality: E1 necessary (cannot judge novelty without reading the contribution); E2 necessary (the corpus must actually be searched, not assumed); E3, E4 necessary (the two nearest candidates must be read, not inferred from titles); E5 necessary (the subsumption call is the adjudicated conclusion). Order-coherence by containment. Decoy citation_count_lookup is not a listed action. The answer the ask_user tool returns is this note; E5 attests that the adjudication was obtained."
+}

@@ -1,0 +1,239 @@
+{
+  "id": "ctgov-0002__noev",
+  "domain": "clinical_trial",
+  "seed": "ctgov-0002",
+  "variant": "noev",
+  "user_prompt": "Given this ClinicalTrials.gov study record (NCT00604162), is this a completed, adequately-powered Phase 3 interventional trial sponsored by Medtronic - MITG?",
+  "artifact": {
+    "path": "artifacts/ctgov-NCT00604162",
+    "kind": "structured_record",
+    "commit": "ctgov:NCT00604162"
+  },
+  "scope": "The single embedded REAL ClinicalTrials.gov study record NCT00604162 (top-level records.NCT00604162 of this instance file; fetched verbatim from the public v2 API, GET https://clinicaltrials.gov/api/v2/studies/NCT00604162, no field edited or paraphrased -- see bench/artifacts/ctgov-NCT00604162/PROVENANCE), read exclusively via inspect_record(record_id='NCT00604162', field_path=...): protocolSection.designModule.studyType (interventional/observational classification), protocolSection.designModule.phases (trial phase), protocolSection.statusModule.overallStatus (recruitment/completion status), protocolSection.sponsorCollaboratorsModule.leadSponsor.name (lead sponsor identity), protocolSection.designModule.enrollmentInfo.count (enrollment count), and protocolSection.outcomesModule.primaryOutcomes (primary outcome text, background only). The verdict is scoped to this ONE record's own declared JSON fields only -- no network access, external registry cross-check, or human/LLM judgment is used or available; every atom below is a closed, mechanically-decidable Boolean predicate over the record (prime_runtime/predicates.py).",
+  "actions": [
+    "inspect_record",
+    "emit_claim"
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "level": 1,
+      "text": "The trial's study type is confirmed, from the record's own designModule field, to be INTERVENTIONAL (not observational)."
+    },
+    {
+      "id": "C2",
+      "level": 2,
+      "text": "The trial is confirmed interventional (C1) and its own declared phase (designModule.phases) is Phase 3."
+    },
+    {
+      "id": "C3",
+      "level": 3,
+      "text": "The trial is confirmed interventional and Phase 3 (C2), its overall status is COMPLETED, its lead sponsor is Medtronic - MITG, and its enrollment count meets or exceeds 300 participants: the record supports a 'completed, adequately-powered Phase 3 pivotal trial sponsored by Medtronic - MITG' verdict."
+    }
+  ],
+  "order": [
+    [
+      "C1",
+      "C2"
+    ],
+    [
+      "C2",
+      "C3"
+    ]
+  ],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "record",
+      "proposition": "The trial's study type is read via inspect_record(record_id='NCT00604162', field_path='protocolSection.designModule.studyType') and found to equal 'INTERVENTIONAL'.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "NCT00604162",
+          "field_path": "protocolSection.designModule.studyType"
+        },
+        "attest": "record_predicate:equals:\"INTERVENTIONAL\""
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E2",
+      "type": "record",
+      "proposition": "The trial's declared phase is read via inspect_record(record_id='NCT00604162', field_path='protocolSection.designModule.phases.0') and found to be 'PHASE3'.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "NCT00604162",
+          "field_path": "protocolSection.designModule.phases.0"
+        },
+        "attest": "record_predicate:in_set:[\"PHASE3\"]"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E3",
+      "type": "record",
+      "proposition": "The trial's overall status is read via inspect_record(record_id='NCT00604162', field_path='protocolSection.statusModule.overallStatus') and found to equal 'COMPLETED'.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "NCT00604162",
+          "field_path": "protocolSection.statusModule.overallStatus"
+        },
+        "attest": "record_predicate:equals:\"COMPLETED\""
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E4",
+      "type": "record",
+      "proposition": "The trial's lead sponsor name is read via inspect_record(record_id='NCT00604162', field_path='protocolSection.sponsorCollaboratorsModule.leadSponsor.name') and found to be the named sponsor 'Medtronic - MITG'.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "NCT00604162",
+          "field_path": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name"
+        },
+        "attest": "record_predicate:in_set:[\"Medtronic - MITG\"]"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E5",
+      "type": "record",
+      "proposition": "The trial's enrollment count is read via inspect_record(record_id='NCT00604162', field_path='protocolSection.designModule.enrollmentInfo.count') and found to meet or exceed 300 participants.",
+      "resolver": null
+    },
+    {
+      "id": "E6",
+      "type": "record",
+      "proposition": "Non-route background: the trial's primary outcome measure text is read via inspect_record(record_id='NCT00604162', field_path='protocolSection.outcomesModule.primaryOutcomes.0.measure') and found present (not required for, and not evidence toward, the interventional/Phase-3/completed/sponsor/enrollment verdict).",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "NCT00604162",
+          "field_path": "protocolSection.outcomesModule.primaryOutcomes.0.measure"
+        },
+        "attest": "record_predicate:exists:null"
+      },
+      "gold_value": "T"
+    }
+  ],
+  "phi": [],
+  "gold_licenses": {
+    "C1": [
+      [
+        "E1"
+      ]
+    ],
+    "C2": [
+      [
+        "E1",
+        "E2"
+      ]
+    ],
+    "C3": [
+      [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5"
+      ]
+    ]
+  },
+  "decoys": [
+    "external_registry_crosscheck"
+  ],
+  "records": {
+    "NCT00604162": {
+      "protocolSection": {
+        "conditionsModule": {
+          "conditions": [
+            "Colonic Diseases"
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NON_RANDOMIZED",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "SINGLE",
+              "whoMasked": [
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "DIAGNOSTIC"
+          },
+          "enrollmentInfo": {
+            "count": 332,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE3"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "PillCam\u2122 Colon Capsule Endoscopy (PCCE) in the Visualization of the Colon",
+          "nctId": "NCT00604162",
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Medtronic - MITG"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Number of Participants With Successful Capsule Endoscopies or Standard Colonoscopies",
+              "timeFrame": "1 day"
+            },
+            {
+              "measure": "Number of Participants With Indicated Lesions Detected by Standard Colonoscopy",
+              "timeFrame": "1 day"
+            }
+          ]
+        },
+        "sponsorCollaboratorsModule": {
+          "leadSponsor": {
+            "class": "INDUSTRY",
+            "name": "Medtronic - MITG"
+          }
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2007-10",
+            "type": "ACTUAL"
+          },
+          "overallStatus": "COMPLETED",
+          "startDateStruct": {
+            "date": "2006-10"
+          },
+          "statusVerifiedDate": "2010-08"
+        }
+      }
+    }
+  },
+  "notes_for_annotators": "EVIDENCE-UNAVAILABLE variant of ctgov-0002: atom E5's resolver is programmatically disabled (set to null) to simulate the genuine real-world sparse-field scenario this domain warns about (enrollment counts are frequently absent in older ClinicalTrials.gov records; here the field IS present in the underlying real record -- see the base instance's PROVENANCE -- but this variant deliberately withholds it to test evidence-unavailable handling, exactly as swe-0001__noev / res-0004__noev do for their domains). ctgov-0002's every gold C3 route contains E5 (so C3 becomes unreachable), and no route of any weaker claim contains E5 (so the downgrade target stays reachable). Correct agent behavior: complete C2 and emit C2, not C3. Disabled atom's original proposition (for reference): \"The trial's enrollment count is read via inspect_record(record_id='NCT00604162', field_path='protocolSection.designModule.enrollmentInfo.count') and found to meet or exceed 300 participants.\".",
+  "split": "evidence_unavailable"
+}

@@ -1,0 +1,279 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT06063486"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT06063486"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT06063486"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT06063486"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT06063486"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:false",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.healthyVolunteers",
+     "record_id": "NCT06063486"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT06063486"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.healthyVolunteers",
+      "equals",
+      false
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-0224",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-05\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": null, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT06063486": {
+   "protocolSection": {
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Age \\>= 18\n* Eastern Cooperative Oncology Group (ECOG) =\\< 2\n* Ability to understand and willingness to sign a written informed consent\n* Diagnosis of polycythemia vera (PV), essential thrombocytosis (ET) or myelofibrosis (MF) per World Health Organization (WHO) 2016 diagnostic criteria\n\n  * Presence of at least one symptom measurable using the MPN-/Symptom Assessment Form (SAF) with a severity greater than 3\n  * MPN patients determined to have stable disease undergoing surveillance and unlikely to require initiation of new cytoreductive therapy (i.e., hydroxyurea, ruxotinib, interferon within the study period); patients on a stable dose of hydroxyurea for at least 6 months who meet the other inclusion/exclusion criteria may be included\n* A diagnosis of CCUS or LR-MDS\n\n  * CCUS defined as persistent cytopenia for \\> 6 months (hemoglobin \\[Hgb\\] \\< 11.3 g/dL \\[7 mmol/L\\] in women and Hgb \\< 12.9 g/dL \\[8 mmol/L\\] in men, platelet \\< 150 x 10\\^9/L or neutrophils \\< 1.8 x 10\\^9/L), normal cytogenetics, presence of detectable MDS associated mutations and bone marrow morphology non-diagnostic of MDS or any other malignancies\n  * LR-MDS as defined by WHO 2016 diagnosis criteria\n  * Minimum baseline symptom score of 25 in the fatigue section of the symptom questionnaire\n\nExclusion Criteria:\n\n* Patients with intake of curcumin as a dietary supplement, including multivitamin and unwillingness to quit more than 24 hours before study start\n* Patients with inability to understand and adhere to information given\n* Patients receiving active treatment for another malignancy except with hormonal therapy for a malignancy considered to be in remission or growth factors (erythropoietin, granulocyte colony-stimulating factor \\[G-CSF\\] and luspatercept)\n* Patients with intermediate or high-risk MDS\n* Patients must not be pregnant or nursing\n* Patients must not be on any oral or intravenous steroid or any other anti-inflammatories (ibuprofen \\> 200mg/week or 400mg/month, naproxen of any dose, \\> 325mg aspirin daily, any herbal anti-inflammatory concoction of any dose)",
+     "healthyVolunteers": false,
+     "minimumAge": "18 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "Curcumin to Improve Inflammation and Symptoms in Patients With Clonal Cytopenia of Undetermined Significance, Low Risk Myelodysplastic Syndrome, and Myeloproliferative Neoplasms",
+     "nctId": "NCT06063486",
+     "officialTitle": "A Phase 2, Double-blind, Randomized Study to Compare the Effect of Curcumin Versus Placebo on Inflammatory Cytokines, Symptoms and Disease Parameters in Clonal Cytopenia of Undetermined Significance (CCUS), Low-Risk Myelodysplastic Syndrome (LR-MDS), and Myeloproliferative Neoplasms (MPNs)"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT06063486.",
+ "seed": "NCT06063486",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

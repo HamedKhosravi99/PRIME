@@ -1,0 +1,307 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2016-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT02263183"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2018-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT02263183"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"INTERVENTIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT02263183"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Pre-Operative Inclusion Criteria:\\n\\n* Failed standard non-surgical management (analgesics, nsaids, physiotherapy, activity modification)\\n* Persistent pain and disability for at least 6 months\\n* Imaging demonstrates advanced humeral head cartilage loss\\n\\nPre-Operative Exclusion Criteria:\\n\\n* Active or systemic joint infection\\n* Significant muscle paralysis of shoulder girdle\\n* Charcot's Arthropathy\\n* Major medical illness (life expectancy \\\\<2years)\\n* Unable to speak and read English/French\\n* Psychiatric illness that precludes informed consent\\n* Unwilling/unable to remain in study for one year\\n\\nIntra-Operative Inclusion Criteria:\\n\\nAdvanced humeral head cartilage loss AND ONE of:\\n\\n* minimal/no glenoid cartilage loss\\n* complete glenoid cartilage loss and no bony erosion\\n* complete glenoid cartilage loss and concentric bony erosion with no humeral anterior/posterior subluxation\\n\\nIntra-Operative Exclusion Criteria:\\n\\n* Eccentric glenoid erosion with biconcavity of glenoid and subluxation of humeral head\\n* Inability of humeral head to support the CAP surface replacement\"",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT02263183"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT02263183"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT02263183"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_after:\"1980-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT02263183"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT02263183"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2016-01-01"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2016-01-01"
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2018-01-01"
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2016-01-01"
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2018-01-01"
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "equals",
+      "Pre-Operative Inclusion Criteria:\n\n* Failed standard non-surgical management (analgesics, nsaids, physiotherapy, activity modification)\n* Persistent pain and disability for at least 6 months\n* Imaging demonstrates advanced humeral head cartilage loss\n\nPre-Operative Exclusion Criteria:\n\n* Active or systemic joint infection\n* Significant muscle paralysis of shoulder girdle\n* Charcot's Arthropathy\n* Major medical illness (life expectancy \\<2years)\n* Unable to speak and read English/French\n* Psychiatric illness that precludes informed consent\n* Unwilling/unable to remain in study for one year\n\nIntra-Operative Inclusion Criteria:\n\nAdvanced humeral head cartilage loss AND ONE of:\n\n* minimal/no glenoid cartilage loss\n* complete glenoid cartilage loss and no bony erosion\n* complete glenoid cartilage loss and concentric bony erosion with no humeral anterior/posterior subluxation\n\nIntra-Operative Exclusion Criteria:\n\n* Eccentric glenoid erosion with biconcavity of glenoid and subluxation of humeral head\n* Inability of humeral head to support the CAP surface replacement"
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_after",
+      "1980-01-01"
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "cli-v2-0092",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-het-00\", \"topology\": \"nested\", \"cost\": \"het\", \"target_level\": 2, \"false_mech\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT02263183": {
+   "protocolSection": {
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Abdominally obese males and females (waist circumference \\> 90 cm for male, \\> 80 cm for female), age between 20-60 years and BMI \u226518.5kgm2 will be recruited.\n\nExclusion Criteria:\n\n* Medical history of myocardial infarction, angina, thrombosis, stroke, cancer or diabetes\n* Blood glucose; \\>7.0 mmol/L\n* Serum triacylglycerol; \\>4.5 mmol/L\n* Serum total cholesterol; \\>6.5 mmol/L\n* Body mass index \\<18.5 kg/m2\n* Current use of antihypertensive or lipid lowering medication\n* Alcohol intake exceeding a moderate intake (\\>28 units per week)\n* Breastfeeding or pregnant\n* Consume supplement such as herbs and hormone pills\n* Smoking",
+     "minimumAge": "18 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "Red Palm Olein and Cardiovascular Health"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2016-09-13",
+     "studyFirstSubmitDate": "2014-09-22"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT02263183.",
+ "seed": "NCT02263183",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

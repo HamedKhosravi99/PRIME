@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7241",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "in the Multipart Request Parser in Django",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 244,
+   "completion_tokens": 21,
+   "latency_s": 1.255,
+   "raw": "The document mentions \"Django\" as the affected package by its registered name. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E4",
+   "attested": "T",
+   "quote": "Django 3.2 before 3.2.18, 4.0 before 4.0.10, and 4.1 before 4.1.7.",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 231,
+   "completion_tokens": 25,
+   "latency_s": 1.795,
+   "raw": "The document does not specify the first affected version but lists multiple versions where the issue is present. ANSWER: UNCLEAR"
+  }
+ ]
+}

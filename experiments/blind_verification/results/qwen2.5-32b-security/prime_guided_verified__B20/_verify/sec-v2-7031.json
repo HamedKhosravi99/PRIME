@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7031",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "OpenStack Image Service (Glance)",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 224,
+   "completion_tokens": 26,
+   "latency_s": 2.049,
+   "raw": "The document specifies \"OpenStack Image Service (Glance)\" as the affected package, establishing the condition. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E4",
+   "attested": "T",
+   "quote": "before 2015.1.3 (kilo) and 11.0.x before 11.0.2 (liberty)",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 211,
+   "completion_tokens": 40,
+   "latency_s": 2.494,
+   "raw": "The document does not specify the first affected version but rather lists versions before certain releases that are vulnerable; therefore, it does not clearly state where the issue was first introduced. ANSWER: UNCLEAR"
+  }
+ ]
+}

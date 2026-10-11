@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7039",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "in the URLTool class in in_portal.py in Plone",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 268,
+   "completion_tokens": 21,
+   "latency_s": 2.046,
+   "raw": "The document specifies \"Plone\" as the affected package, establishing the condition. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "Plone 2.1 through 4.1, 4.2.x through 4.2.5, and 4.3.x through 4.3.1",
+   "verdict": "F",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 250,
+   "completion_tokens": 20,
+   "latency_s": 1.445,
+   "raw": "The document does not mention any fixed version; it only lists affected versions. ANSWER: F"
+  }
+ ]
+}

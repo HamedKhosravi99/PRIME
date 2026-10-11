@@ -1,0 +1,346 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT01554059"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.identificationModule.nctId"
+    ],
+    "what": "the brief title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT01554059"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.eligibilityModule.eligibilityCriteria"
+    ],
+    "what": "the eligibility criteria text"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT01554059"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.eligibilityModule.sex"
+    ],
+    "what": "the sex eligibility field"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Targeting Burdensomeness Among Clinic Referred Youth\"",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT01554059"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.identificationModule.officialTitle"
+    ],
+    "what": "the official title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT01554059"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.eligibilityModule.minimumAge"
+    ],
+    "what": "the minimum age for eligibility"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:false",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.healthyVolunteers",
+     "record_id": "NCT01554059"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.eligibilityModule.healthyVolunteers",
+     "protocolSection.identificationModule.nctId"
+    ],
+    "what": "whether healthy volunteers are accepted"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"INTERVENTIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT01554059"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.studyFirstSubmitDate",
+     "protocolSection.designModule.studyType",
+     "protocolSection.statusModule.overallStatus"
+    ],
+    "what": "the study type"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "equals",
+      "Targeting Burdensomeness Among Clinic Referred Youth"
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.healthyVolunteers",
+      "equals",
+      false
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-6138",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-05\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 2, \"false_mech\": true, \"locator\": true, \"source_instance\": \"cli-v2-0138\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT01554059": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "The purpose of the study is to evaluate the efficacy and safety of the combination of cytotoxic chemotherapy (Oxaliplatin and 5Fu) with bevacizumab concomitantly with radiotherapy as neoadjuvant treatment for patients with locally advanced but resectable rectal adenocarcinoma."
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* ECOG status of 0 or 1.\n* All patients must have histologically confirmed adenocarcinoma of the rectum. The clinical stage must be T3, T4, or regional lymphnode involvement based on CT, MRI or EUS criteria. Criteria for pathologic enlargement of lymph nodes is \\> 15 mm on short axis dimension. If CT findings of lung, liver, or peritoneal metastases are equivocal, patients are eligible to participate.\n* All patients must have no distant metastatic disease on abdominopelvic CT scan performed with IV contrast.\n* The rectal tumor must be either palpable on digital rectal exam or the inferior edge of the tumor must be within 12 cm of the anal verge based on rigid proctoscopy.\n* Patients must have WBC \\> 4\\*10E9/L, ANC of \\> 1.5 \\*10E9/L, platelets \\> 100\\*10E9/L, Hemoglobin of \\> 90 g/L and adequate hepatic and renal function.\n* Patients must have signed informed consent indicating that they are aware of the investigational nature of the study, and are aware that participation is voluntary.\n\nExclusion Criteria:\n\n* Known compromised renal or hepatic function.\n* Participation in any other experimental drug study.\n* AST or ALT \\> 5 times upper limit of normal for subjects with documented liver metastases; \\> 2.5 times the upper limit of normal for subjects without evidence of liver metastases.\n* Pregnant or lactating woman. Woman of childbearing potential with either a positive or no pregnancy test at baseline. Woman/men of childbearing potential not using a reliable contraceptive method. (Postmenopausal woman must have been amenorrheic for at least 12 months to be considered of non-childbearing potential). Patients must agree to continue contraception for 30 days from the date of the last study drug administration.\n* Any prior chemotherapy.\n* Any prior radiation therapy.\n* Serious, uncontrolled, concurrent infection(s) requiring IV antibiotics.\n* Treatment for other carcinomas within the last five years, except cure non-melanoma skin cancer and treated in-situ cervical cancer.\n* Clinically significant cardiac disease (e.g., uncontrolled hypertension \\[blood pressure of \\> 160/110 mmHg on medication\\], any history of myocardial infarction, unstable angina), New York Heart Association (NYHA) Grade II or greater congestive heart failure (see Appendix H), unstable symptomatic arrhythmia requiring medication (subjects with chronic atrial arrhythmia, i.e., atrial fibrillation or paroxysmal supraventricular tachycardia are eligible), or grade II or greater peripheral vascular disease(see Appendix H).\n* Evidence of bleeding diathesis or coagulopathy, INR greater than or equal to 1.5.\n* Major surgical procedure, open biopsy, or significant traumatic injury within 28 days prior to Day 0, or anticipation of need for major surgical procedure during the course of the study; fine needle aspirations or core biopsies within 7 days prior to Day 0.\n* Proteinuria at baseline or clinically significant impairment of renal function Subjects unexpectedly discovered to have 1+ proteinuria at baseline should undergo a 24-hour urine collection, which must be an adequate collection and must demonstrate \\< 500 mg of protein/24 hr to allow participation in the study.\n* Currently has serious, nonhealing wound, ulcer, or bone fracture.\n* Had aneurysms, strokes, transient ischemic attacks, and arteriovenous malformations within the past year.\n* Patients who have had an organ allograft.\n* Patients taking cimetidine must have this drug discontinued. Ranitidine or a drug from another anti-ulcer class can be substituted for cimetidine if necessary. If patient is currently receiving allopurinol, must discuss with PI to see of another agent may substitute for it.",
+     "healthyVolunteers": false,
+     "minimumAge": "18 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "Neoadjuvant Chemoradiation With Bevacizumab for Chinese Rectal Cancer Patients",
+     "nctId": "NCT01554059",
+     "officialTitle": "Phase II Trial of Neoadjuvant Chemoradiation With Bevacizumab for Chinese Locally Advanced Rectal Adenocarcinoma"
+    },
+    "statusModule": {
+     "overallStatus": "COMPLETED",
+     "statusVerifiedDate": "2014-11",
+     "studyFirstSubmitDate": "2012-03-11"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT01554059.",
+ "seed": "NCT01554059",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

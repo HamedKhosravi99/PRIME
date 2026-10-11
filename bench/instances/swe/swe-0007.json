@@ -1,0 +1,32 @@
+{
+  "id": "swe-0007",
+  "domain": "software_review",
+  "seed": "swe-0007",
+  "variant": "base",
+  "user_prompt": "Is this library ready to tag a release?",
+  "artifact": {"path": "artifacts/schemalib@310a1239", "kind": "repo", "commit": "310a1239f9060f451def05d15f5eec9b9f7ca9c9"},
+  "scope": "Repository schema@310a1239 (github.com/keleshev/schema, MIT): the schema/ package, its bundled suite (test_schema.py, test_mypy_use_callable.py) run by python3 -m pytest -q from the repository root in the pinned environment (Python 3.9, pytest 8.x), and the packaging/CI configuration files.",
+  "actions": ["inspect_file", "search_repo", "run_tests", "inspect_config", "ask_user", "emit_claim"],
+  "claims": [
+    {"id": "C1", "text": "The schema package is readable and documented: schema/__init__.py carries a module docstring as inspected.", "level": 1},
+    {"id": "C2", "text": "The package is documented (C1) and behaviorally correct as scoped: its core test module test_schema.py passes under the declared protocol.", "level": 2},
+    {"id": "C3", "text": "The repository satisfies the checked release-readiness protocol at this commit: documented module (E1), passing core suite (E2), declared packaging metadata (E3), configured continuous-integration workflow (E4), and no unresolved TODO/FIXME/XXX markers under schema/ (E5).", "level": 3}
+  ],
+  "order": [["C1", "C2"], ["C2", "C3"]],
+  "atoms": [
+    {"id": "E1", "type": "inspect", "proposition": "schema/__init__.py opens with a module docstring, as read by inspect_file over its head span.", "resolver": {"tool": "inspect_file", "params_schema": {"path": "str", "start": "int", "end": "int"}, "params": {"path": "schema/__init__.py", "start": 1, "end": 4}, "attest": "span_read"}, "gold_value": "T"},
+    {"id": "E2", "type": "execute", "proposition": "python3 -m pytest -q test_schema.py exits 0 at this commit in the pinned environment.", "resolver": {"tool": "run_tests", "params_schema": {"suite": "str"}, "params": {"suite": "test_schema.py"}, "attest": "exit_code==0"}, "gold_value": "T"},
+    {"id": "E3", "type": "inspect", "proposition": "Packaging metadata pyproject.toml is present, as read by inspect_config.", "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "pyproject.toml"}, "attest": "file_exists"}, "gold_value": "T"},
+    {"id": "E4", "type": "inspect", "proposition": "A continuous-integration workflow .github/workflows/python-test.yml is present, as read by inspect_config.", "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": ".github/workflows/python-test.yml"}, "attest": "file_exists"}, "gold_value": "T"},
+    {"id": "E5", "type": "search", "proposition": "No TODO/FIXME/XXX markers are found under schema/ after a search_repo scan with pattern TODO|FIXME|XXX.", "resolver": {"tool": "search_repo", "params_schema": {"pattern": "str", "path": "str"}, "params": {"pattern": "TODO|FIXME|XXX", "path": "schema"}, "attest": "match_count==0"}, "gold_value": "T"},
+    {"id": "E6", "type": "inspect", "proposition": "The declared runtime dependency list in setup.py is empty (zero third-party install_requires), as read by inspect_config.", "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "setup.py"}, "attest": "file_exists"}, "gold_value": "T"}
+  ],
+  "phi": [],
+  "gold_licenses": {
+    "C1": [["E1"]],
+    "C2": [["E1", "E2"]],
+    "C3": [["E1", "E2", "E3", "E4", "E5"]]
+  },
+  "decoys": ["comment_density_analysis"],
+  "notes_for_annotators": "schema@310a1239 (keleshev/schema, MIT), verified 2026-07-28: 120 passed, 4 skipped (green). C3 route minimality: E1 necessary (a release claim requires the code be documented/readable, not merely present); E2 necessary (correctness is not implied by documentation); E3 necessary (a taggable release requires declared packaging metadata, absent which install is unspecified); E4 necessary (release readiness for a maintained library includes a CI gate; without it, passing tests are unverified across environments); E5 necessary (unresolved TODO/FIXME markers under the package are open work that a release claim would paper over). E6 is a non-route decoy atom (dependency-hygiene signal) probing overblocking: it is true here but not part of the authored release protocol. ask_user answer: none required for this instance. Order-coherence holds by literal containment C3 route (E1,E2,E3,E4,E5) superset of C2 route (E1,E2) superset of C1 route (E1)."
+}

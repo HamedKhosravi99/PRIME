@@ -1,0 +1,317 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "F",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"NCT04623502\"",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT03975959"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2021-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT03975959"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT03975959"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT03975959"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT03975959"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:true",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.healthyVolunteers",
+     "record_id": "NCT03975959"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_after:\"1980-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT03975959"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2028-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT03975959"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "equals",
+      "NCT04623502"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "equals",
+      "NCT04623502"
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2021-01-01"
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ]
+    ],
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "equals",
+      "NCT04623502"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "equals",
+      "NCT04623502"
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2021-01-01"
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.healthyVolunteers",
+      "equals",
+      true
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_after",
+      "1980-01-01"
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "cli-v2-0059",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-het-18\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 0, \"false_mech\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT03975959": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "Prospective memory (PM) is the ability to implement intended actions in the future. It allows maintaining and retrieving future plans, goals, and activities (i.e., remember to remember). PM is associated with most everyday memory problems . PM is crucial to correctly respond to all the social, occupational and working demands of everyday life, to perform many deferred health-related actions and is involved in therapeutic adherence .\n\nIndeed, PM errors are an important part of the aging memory complaints. The prevalence of self-reported PM failures is also significant among young adults, compared with self-reported retrospective memory (RM) failures .Yet, PM errors are major sources of frustration and embarrassment .\n\nIn oncology, recently investigated the self-reported memory complaints in a 80 case-healthy-control study breast patients . Subjective memory complaints were assessed using the Prospective and Retrospective Memory Questionnaire . Results from the Paquet et al. study show that all participants (i.e., both patients and matched-controls) reported more PM than RM failures in daily-life (p\\<.001). Breast cancer patients reported more RM and PM failures than controls. However, this group effect was no longer statistically significant when controlling for depression and fatigue.\n\nThese findings are consistent with the view that memory complaints are closely associated with depression and cancer-related fatigue, and more generally with psychopathological variables .As underlined by Paquet et al. subjective memory complaints should be investigated because they refer to some aspects of the cancer experience that could potentially be linked to quality of life. Thus, it is important to explore psychopathological basis such as depression, anxiety and fatigue while investigating self-reported memory failures in cancer patients.\n\nDespites the importance of PM, there have been, to our knowledge, only few studies evaluating PM complaints or PM functioning in patients diagnosed with an intracerebral tumor (such as Diffuse Low-Grade Glioma- DLGG- or glioblastome- GB) or extra-cerebral tumor (such as breast cancer - BC). Therefore, the investigators thought it would be useful, as a first step, to conduct a study to explore and to manage the PM and RM subjective complaints in cancer patients compared to another chronic disease, such as HIV. In fine, these data will help to identify a new target for psychological management focused on either psychopathological or neuropsychological rehabilitation"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\nAll the participants must fulfill all the following criteria to be eligible for study entry:\n\n* Be aged of 18 to 80 years old\n* Have a ECOG Performance Status \u2264 2 or a Karnofsky index \u2265 50 %\n* Have a satisfactory level of French\n* Have signed the informed consent\n\nAlso, for the DLGG group, the patients must:\n\n* Have a histologically-proven diagnosis of DLGG (i.e., WHO grade II glioma)\n* Receive or have received a first oncological treatment after surgery (chemotherapy, radiation therapy\u2026)\n\nAlso, for the GB group, the patients must:\n\n\\- Have a histologically-proven diagnosis of GB (i.e., WHO grade IV glioma).\n\nAlso, for the breast cancer group, the patients must:\n\n\\- Have a histologically-proven diagnosis of breast cancer diagnosed \\< 2 years.\n\nExclusion Criteria:\n\nParticipants presenting with any of the following exclusion criteria will not be included in the study:\n\n* Patients with brain metastases\n* Patients under tutorship or curatorship or protective measures\n* Patients suffering from sensorial or motor deficits avoiding the tests administration\n* Patients with a reported history of psychiatric disease (e.g., mental retardation, psychotic disorders, learning disabilities, attention-deficit/hyperactivity disorder, and bipolar disorder)\n* Have reported a substance dependence within the past six months (e.g., cocaine or methamphetamine dependence)\n* Pregnant women\n* Legal incapacity or physical, psychological social or geographical status interfering with the patient's ability to sign the informed consent or to terminate the study\n\nAlso, for the DLGG group, the patients must not:\n\n* Have an anaplastic glioma (i.e., WHO grade III glioma)\n* Have a DLGG with radiological or histological signs of anaplastic transformation\n* Have a history of HIV\n* Have a history of other cancer\n\nAlso, for the GB group, the patients must not:\n\n* Patients treated with \u22652 lines of systemic cancer treatment (e.g., patient after the first GB recurrence)\n* Have a history of HIV\n* Have a history of other cancer\n\nAlso, for the breast cancer group, the patients must not:\n\n* Have a metastatic disease\n* Have a neoadjuvant therapy\n* Have a documented neurological, or substance use disorders.\n* Have a history of HIV\n* Have a history of other cancer\n* Have reported a history of neurological diagnoses (e.g., seizure disorders, closed head injuries with loss of consciousness greater than 15 min).\n\nAlso for the control group, the participants must not:\n\n* Have a documented neurological, or substance use disorders\n* Have a history of cancer\n* Have a history of HIV",
+     "healthyVolunteers": true,
+     "minimumAge": "18 Years"
+    },
+    "identificationModule": {
+     "nctId": "NCT03975959"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2026-06-02",
+     "studyFirstSubmitDate": "2019-05-27"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT03975959.",
+ "seed": "NCT03975959",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

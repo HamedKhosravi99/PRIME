@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7066",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "* At least 18 years of age",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 1761,
+   "completion_tokens": 28,
+   "latency_s": 2.514,
+   "raw": "The document specifies an inclusion criterion that participants must be at least 18 years of age, establishing the condition. ANSWER: T"
+  }
+ ]
+}

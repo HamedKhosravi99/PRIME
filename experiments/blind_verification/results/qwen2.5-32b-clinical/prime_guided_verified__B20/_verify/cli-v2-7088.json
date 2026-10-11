@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7088",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "F",
+   "quote": "children suffering from beta thalassemia major with age range from 4-18 years",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 203,
+   "completion_tokens": 26,
+   "latency_s": 2.004,
+   "raw": "The document specifies an age range for inclusion that includes only children, thus establishing the opposite of the condition. ANSWER: F"
+  }
+ ]
+}

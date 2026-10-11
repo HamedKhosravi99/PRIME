@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7017",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "1. Age \u2265 18 years old at index date.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 363,
+   "completion_tokens": 29,
+   "latency_s": 2.107,
+   "raw": "The inclusion criteria explicitly state \"Age \u2265 18 years old at index date,\" which restricts enrollment to adults. ANSWER: T"
+  }
+ ]
+}

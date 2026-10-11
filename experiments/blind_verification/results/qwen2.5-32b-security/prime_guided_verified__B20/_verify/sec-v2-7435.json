@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7435",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "In Shuup, versions 1.6.0 through 2.10.8 are vulnerable",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 211,
+   "completion_tokens": 22,
+   "latency_s": 1.542,
+   "raw": "The document mentions \"Shuup\" as the affected package by its registered name. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "versions 1.6.0 through 2.10.8 are vulnerable",
+   "verdict": "F",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 193,
+   "completion_tokens": 21,
+   "latency_s": 1.212,
+   "raw": "The document does not mention a fixed version, only the range of vulnerable versions. ANSWER: F"
+  }
+ ]
+}

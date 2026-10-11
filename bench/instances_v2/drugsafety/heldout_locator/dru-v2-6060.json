@@ -1,0 +1,346 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "recall_number",
+     "record_id": "D-0088-2019"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "recall_number",
+     "product_description",
+     "reason_for_recall"
+    ],
+    "what": "the recall number"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Class II-alt\"",
+    "params": {
+     "field_path": "classification",
+     "record_id": "D-0088-2019"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "classification",
+     "product_description",
+     "status"
+    ],
+    "what": "the recall classification"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "recalling_firm",
+     "record_id": "D-0088-2019"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "product_description",
+     "reason_for_recall",
+     "recalling_firm"
+    ],
+    "what": "the recalling firm"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"United States-alt\"",
+    "params": {
+     "field_path": "country",
+     "record_id": "D-0088-2019"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "status",
+     "recall_initiation_date",
+     "country"
+    ],
+    "what": "the country"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "event_id",
+     "record_id": "D-0088-2019"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "event_id",
+     "voluntary_mandated",
+     "product_description"
+    ],
+    "what": "the event identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "code_info",
+     "record_id": "D-0088-2019"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "code_info",
+     "distribution_pattern",
+     "reason_for_recall"
+    ],
+    "what": "the lot or code information"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:20201017",
+    "params": {
+     "field_path": "report_date",
+     "record_id": "D-0088-2019"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "report_date",
+     "recall_initiation_date",
+     "product_quantity"
+    ],
+    "what": "the date the recall was reported"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "recall_number",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The recall is identified with a stated classification (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "recall_number",
+      "exists",
+      null
+     ],
+     [
+      "classification",
+      "equals",
+      "Class II-alt"
+     ],
+     [
+      "recalling_firm",
+      "exists",
+      null
+     ]
+    ],
+    [
+     [
+      "recall_number",
+      "exists",
+      null
+     ],
+     [
+      "country",
+      "equals",
+      "United States-alt"
+     ],
+     [
+      "event_id",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The recall is action-ready: identified, classified, with product description, reason, and status populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "recall_number",
+      "exists",
+      null
+     ],
+     [
+      "classification",
+      "equals",
+      "Class II-alt"
+     ],
+     [
+      "recalling_firm",
+      "exists",
+      null
+     ],
+     [
+      "code_info",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The recall satisfies the checked completeness protocol: action-ready per the inspected fields, with consistent dates and populated distribution and firm fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "drugsafety_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "dru-v2-6060",
+ "notes_for_annotators": "{\"family\": \"drugsafety-branching-hom-19\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": 1, \"false_mech\": true, \"locator\": true, \"source_instance\": \"dru-v2-0060\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "D-0088-2019": {
+   "classification": "Class II",
+   "code_info": "1-bottle cartons lot #:  GE2743, GE4570, GG0536, Exp 9/30/2018; GE3445, GG4810, Exp 11/30/2018; A38M, Exp 12/31/2018; K63J, Exp 4/30/2018; H24T, Exp 5/31/2018; RS4U, M721601MA, Exp 7/31/2018; 379H, Exp 8/31/2018; A93E, AE2S, Exp 10/31/2018; GB7D, GS5B, M801001MA, M807901MA, M807902MA, exp 11/30/2019; D88E, Exp 11/30/2020    2-bottle cartons lot#:  GJ0440, Exp 1/31/2019; LE6J, Exp 7/31/2018; A93E, Exp 10/31/2018    3-bottle cartons lot#: 17D19N, Exp 8/31/2018; 1GE2743, GE4570, GG0536, Exp 9/30/2018; GA8391, Exp 10/31/2018; GE3445, GA6310, Exp 11/30/2018; GG1094, GH1913, GH8818, M703002EH, M703003EH, M703004EH, M703006EH, M703007EH, M703008EH, M713101EH, M707401MB, M707402MB, M707403MB, M707404MB, M707405MB, M707406MB, M721201MB, M717001MA, M717002MA, Exp 1/31/2018; AF5C, AK2T, AV5T, M713102EH, M713104EH, M716001EH, M716002EH, M716003EH, M716004EH, M716005EH, M721202MB, M721203MB, M721204MB, M717003MA, M717004MA, M717005MA, M717006MA, Exp 4/30/2019; FL8P, FM4K, M720505EH, M720507EH, M720508EH, M720509EH, M721205MB, M721206MB, M721207MB, Exp 5/31/2019; P77N, P77P, PN3Y, R72E, Exp 8/31/2019; 728J, 728K, 728L, 8E6T, A93E, Exp 10/31/2019; H43X, HT4P, M85L, Exp 11/30/2019; T73J, UT9X, UV7Y, Exp 2/29/2019; BR4Y, FN2N, Exp 11/30/2020; MC2P, MJ9F, RC2T, Exp 1/31/2021",
+   "country": "United States",
+   "distribution_pattern": "Nationwide USA and Puerto Rico",
+   "event_id": "81041",
+   "product_description": "Prevacid 24HR (Lansoprazole) delayed-release capsules, 15 mg, 14 capsules per bottle in a carton containing 1 bottle (NDC: 0067-6286-14), 2 bottles (NDC: 0067-6286-28) or 3 bottles (NDC: 0067-6286-42), Over-the-counter, Distributed By: GSK Consumer Healthcare, Warren, NJ 07059.",
+   "product_quantity": "5,548,673 bottles",
+   "reason_for_recall": "CGMP deviations",
+   "recall_initiation_date": "20180926",
+   "recall_number": "D-0088-2019",
+   "recalling_firm": "GLAXOSMITHKLINE NEBRASKA",
+   "report_date": "20181017",
+   "status": "Terminated",
+   "voluntary_mandated": "Voluntary: Firm initiated"
+  }
+ },
+ "scope": "The single named openFDA enforcement record, as retrieved and embedded; no external lookups. Record identifier: D-0088-2019.",
+ "seed": "D-0088-2019",
+ "user_prompt": "Is this recall record complete and correctly classified for downstream pharmacy action?",
+ "variant": "base"
+}

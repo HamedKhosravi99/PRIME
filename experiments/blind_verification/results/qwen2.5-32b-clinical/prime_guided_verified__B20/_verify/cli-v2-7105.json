@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7105",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "* Female gender;",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 1053,
+   "completion_tokens": 30,
+   "latency_s": 2.309,
+   "raw": "The inclusion criteria specify \"Female gender,\" which means the study restricts enrollment to one sex only, fulfilling the stated condition. ANSWER: T"
+  }
+ ]
+}

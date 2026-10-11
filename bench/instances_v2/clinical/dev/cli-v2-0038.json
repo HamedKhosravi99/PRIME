@@ -1,0 +1,283 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT02638454"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT02638454"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT02638454"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2024-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT02638454"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"INTERVENTIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT02638454"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:true",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.healthyVolunteers",
+     "record_id": "NCT02638454"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT02638454"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2024-01-01"
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ],
+     [
+      "protocolSection.eligibilityModule.healthyVolunteers",
+      "equals",
+      true
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-0038",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-03\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 2, \"false_mech\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT02638454": {
+   "protocolSection": {
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Male and Female\n* 20-30 or 70-85 years of age\n* Sedentary: Must not participate in any regular exercise sessions (participants who walk regularly or walk for exercise are eligible)\n* Individuals must confirm good health\n* BMI must be between 19-35 kg/m2\n* Individuals must be fluent in English\n* Willing to come to the HNRCA laboratory for study visits\n* Short Physical Performance Battery of less than 9 (70-85 years of age cohort)\n* 10 subjects with Normal Muscle Mass and 10 subjects with Low Muscle Mass as determined by DXA scan (70-85 years of age cohort) Low Muscle Mass is defined as Class I Sarcopenia, Skeletal Muscle Index within 1 to 2 standard deviations from the sex-specific mean of young adults\n\nExclusion Criteria:\n\n* Lost or gained 7.5% or more of their body weight in the past 6 months\n* Acute or terminal disease\n* Significant immune disorder\n* Types I and II Diabetes mellitus\n* Uncontrolled hypertension (\\>180/100 mmHg)\n* Neuromuscular disease\n* Subjects must also not be participating in any regular endurance or resistance training exercise during the previous six months.\n* Mini-mental state examination (MMSE) score of \\<23\n* Because of the DXA scan and the unknown risk associated with the muscle biopsy procedure, women who are pregnant, planning to become pregnant, or are breastfeeding will be excluded from the study.\n\nSubjects with a history of any of the following within the past 6 months will be excluded:\n\n* Myocardial infarction in the past 6 months, or other symptomatic coronary artery disease.\n* Surgery in previous 6 months\n* Upper or lower extremity fracture in the previous 6 months\n* Allergy to lidocaine\n\nSubjects currently taking any of the following drugs or classes of drugs will be excluded:\n\n* Anticoagulant therapy (Warfarin, Coumadin, or Plavix)\n* ACE inhibitors\n* Drugs that affects neuromuscular function\n* Angiotensin receptor blockers\n* Androgen or estrogen therapy or other hormone replacement therapy\n* Low dose aspirin with known cardiovascular disease (e.g.: reported coronary artery disease, peripheral vascular disease, or previous stroke, or history of transient ischemic attacks)\n* Diabetes medications (ie. metformin, insulin therapy, thiazolidinediones, sulfonylureas etc.)\n* Chronic corticosteroid therapy\n\nLaboratory blood test exclusions:\n\n* Estimated GFR \\<30 mL/min/1.73m2\n* Other abnormal screening lab values will be at the discretion of the study physician",
+     "healthyVolunteers": true
+    },
+    "identificationModule": {
+     "briefTitle": "Role of MicroRNAs on Age and Contraction-induced Skeletal Muscle Growth",
+     "nctId": "NCT02638454"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2025-07-16",
+     "overallStatus": "COMPLETED"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT02638454.",
+ "seed": "NCT02638454",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

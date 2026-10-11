@@ -1,0 +1,181 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT04015141"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT04015141"
+    },
+    "what": "the eligibility criteria restrict enrollment to adults, that is, a minimum age of 18 years or more"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT04015141"
+    },
+    "what": "the eligibility criteria restrict enrollment to one sex only (only male or only female participants)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT04015141"
+    },
+    "what": "the eligibility criteria accept healthy volunteers"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready for an adult cohort: identified, and the eligibility text restricts enrollment to adults."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked adult-cohort protocol: identified, adults only, open to both sexes, and not a healthy-volunteer study, as established from the eligibility text."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "!E3",
+    "!E4"
+   ]
+  ]
+ },
+ "id": "cli-v2-7037",
+ "notes_for_annotators": "{\"family\": \"clinical-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [false, false, false], \"twins\": [\"protocolSection.eligibilityModule.minimumAge\", \"protocolSection.eligibilityModule.sex\", \"protocolSection.eligibilityModule.healthyVolunteers\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT04015141": {
+   "protocolSection": {
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Male or female participants. Cohort 1: age 1 month to less than 18 years; Cohort 2: age 1 month to less than 2 years at the time of informed consent/assent. Participants below the age of 1 year must have been at least 36 weeks of gestational age at birth.\n* Have a diagnosis of epilepsy with a pediatric epileptic syndrome (Cohort 1) or epilepsy with POS with or without secondary generalization (Cohort 2).\n* Have had equal or greater than 4 seizures over the 4-week interval prior to enrollment visit.\n* Absence of any progressive cause of epilepsy that has been confirmed clinically or based on brain imaging (example, magnetic resonance imaging \\[MRI\\] scan or computed tomography \\[CT\\] or ultrasound \\[for less than 1 year old\\]).\n* Currently maintained on stable doses of 1 to a maximum of 4 approved antiepileptic drugs (AEDs). A prescription medical marijuana (including products containing cannabidiol) is counted as 1 of the maximum of 4 allowed AEDs; however, it cannot be the only concomitant AED if this product is not an approved AED in the country where the study site is located. Doses must be stable for at least 4 weeks (at least 2 weeks for participant less than \\[\\<\\] 6 months old) before Visit 1/Baseline or screening; only 1 enzyme-inducing antiepileptic drug (EIAED) (defined as carbamazepine, phenytoin, oxcarbazepine, or eslicarbazepine) out of the maximum of 4 AEDs is allowed.\n\nExclusion Criteria:\n\n* Current or history of pseudo-seizures (psychogenic nonepileptic seizures) within approximately 5 years before screening visit.\n* Have a history of status epilepticus that required hospitalization within 6 months before screening visit.\n* Have an unstable psychiatric diagnosis that may confound participant's ability to participate in the study or that may prevent completion of the protocol specified tests (example, significant suicide risk, including suicidal behavior and ideation within 6 months before screening visit 1, current psychotic disorder, acute mania).\n* Any suicidal ideation with intent with or without a plan within 6 months before enrollment visit (answering \"Yes\" to questions 4 or 5 on the Suicidal Ideation section of the C-SSRS) in participants aged 6 and above or based on the opinion of the Investigator for participants less than 6 years.\n* Are scheduled or confirmed or both to have epilepsy surgery within 6 months after screening visit; however, those who have previously documented \"failed\" epilepsy surgery will be allowed.\n* Have a progressive central nervous system (CNS) disease, including degenerative CNS diseases and progressive tumors.\n* Benzodiazepines for any indications other than epilepsy (example, anxiety/sleep disorders) prohibited from 1 month before Visit 1/Baseline or screening and during the study. Benzodiazepines for seizure control and as rescue medication are allowed.\n* A vagal nerve stimulator (VNS), responsive neurostimulator (RNS), or deep brain stimulator (DBS) implanted less than 5 months before screening visit or changes in parameter less than 4 weeks before screening visit (or thereafter during the study).\n* Use of perampanel within 30 days before screening visit, or perampanel was discontinued due to adverse reactions (perampanel-related) or lack of efficacy in case of previous exposure.\n* Weight less than 4.0 kilogram (kg) at Visit 1 (Baseline or screening)."
+    },
+    "identificationModule": {
+     "briefTitle": "A Study to Evaluate Efficacy and Safety of Perampanel Administered as an Adjunctive Therapy in Pediatric Participants With Childhood Epilepsy"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT04015141.",
+ "seed": "NCT04015141",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "text"
+}

@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7404",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "The `unarchive` internal module's archive extraction commands perform no code-level validation on extracted file paths",
+   "verdict": "F",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 269,
+   "completion_tokens": 34,
+   "latency_s": 2.678,
+   "raw": "The document does not explicitly name an affected package by its registered name or a distinctive part of it; it refers to modules and tools generically. ANSWER: F"
+  }
+ ]
+}

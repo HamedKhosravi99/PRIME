@@ -1,0 +1,283 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT03862313"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.statusVerifiedDate",
+     "record_id": "NCT03862313"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2023-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT03862313"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"INTERVENTIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT03862313"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT03862313"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT03862313"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT03862313"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2023-01-01"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2023-01-01"
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-0173",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-09\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 3, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT03862313": {
+   "protocolSection": {
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\nParticipants fulfilling all of the following inclusion criteria are eligible for the study:\n\n* Informed Consent as documented by signature\n* Participants are capable of giving informed consent\n* Participant who have a good knowledge of German (patient information and consent must be understood)\n* Patients, presenting with typical signs and symptoms suggestive of a first-ever episode of unilateral acute autoimmune, inflammatory, demyelinating ON, including idiopathic ON and ON suggestive of multiple sclerosis (MS) (typical clinically isolated syndrome, or with an established diagnosis of relapsing-remitting MS according to latest panel criteria and no better explanation)\n* Patients with high-contrast visual acuity of \u2264 0.63 (decimal system) corresponding to a LogMAR value of \u2265 0.2 on the affected eye (assessed using a Snellen chart during clinical routine)\n* Patients presenting in clinics within 14 days of symptom onset\n* In principle 18-50 year old female and male patients may be recruited. However, since the randomization of patients will be controlled for gender and participants will be enrolled one at a time on a continuous basis, the gender might become relevant late in the study (e.g. if the female block has already been fully recruited and only males might still be enrolled).\n* Patients are receiving standard-of-care treatment for ON (cortisone therapy)\n\nExclusion Criteria:\n\nThe presence of any one of the following exclusion criteria will lead to exclusion of the participant:\n\n* Patient without legal capacity who is unable to understand the nature, significance and consequences of the trial\n* Women who are pregnant or have the intention to become pregnant during the course of the study (For women who can get pregnant, pregnancy will be omitted using a pregnancy test when checking for inclusion and exclusion criteria. Patients will be informed that they must use contraception during the study)\n* Patients with a previous clinical history of ON in the respective eye\n* Patients with obvious retinal pathology other than that associated with ON\n* Patients who are unable to perform the study assessments (e.g. OCT examination) because of a severe nystagmus (repetitive, uncontrolled eye movements causing unsteady fixation)\n* Patients with a recent eye surgery\n* Patients with known anti-aquaporin-4- or myelin oligodendrocyte glycoprotein- antibody seropositivity\n* Patients with contraindications to the class of device under study (for rtACS): implanted electronic devices, metallic artefacts in the head (excluding dentition), epilepsy, brain cancer, pregnancy, breastfeeding, increased intraocular pressure without appropriate treatment, arterial hypertension without appropriate treatment, skin irritations at intended positions of electrodes, cognitive deficits (unable to provide written informed consent or follow the instructions)\n* Known or suspected non-compliance, drug or alcohol abuse\n* Inability to follow the procedures of the study, e.g. due to language problems, psychological disorders, dementia, etc. of the participant\n* Participation in another study with investigational drug/device within the 30 days preceding and during the present study\n* Previous enrolment into the current study\n* Enrolment of the investigator, his/her family members, employees and other dependent persons",
+     "minimumAge": "18 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "Repetitive Transorbital Alternating Current Stimulation in Acute Autoimmune Optic Neuritis"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2021-03-25",
+     "statusVerifiedDate": "2021-03"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT03862313.",
+ "seed": "NCT03862313",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

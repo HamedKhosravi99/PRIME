@@ -1,0 +1,46 @@
+{
+ "agreement_adverse": 0.9847908745247148,
+ "agreement_ci": [
+  0.9702784864056657,
+  0.9922735967718395
+ ],
+ "agreement_on_original_statuses": 0.9960079840319361,
+ "agreement_on_original_statuses_ci": [
+  0.9855629205934197,
+  0.9989045617352458
+ ],
+ "attrition": {
+  "applicability-undeterminable": 353,
+  "fetch-failed": 1,
+  "not-act": 370,
+  "not-due": 750
+ },
+ "confusion": {
+  "compliant|ongoing": 19,
+  "compliant|reported": 146,
+  "late|overdue": 5,
+  "late|reported": 2,
+  "late|reported-late": 157,
+  "overdue|ongoing": 6,
+  "overdue|overdue": 191
+ },
+ "coverage_of_fetched": 0.26313156578289143,
+ "disagreements_with_certification": 3,
+ "n_checked": 526,
+ "n_classified": 526,
+ "n_original_statuses": 501,
+ "n_sampled": 2000,
+ "protocol": "FDAAA: the frozen program on untouched registrations (review W5).\n\nPROTOCOL, frozen before any label is read (2026-10-10):\n  population   trials listed in the FDAAA TrialsTracker export of 3 August\n               2026 (bench/fdaaa/external/trialstracker_2026-08-03.csv) that\n               are NOT in the 6,000-registration development pool and whose\n               sponsor_slug does not occur in that pool\n  sample       2,000 of them, drawn uniformly at random with seed 20261010\n               from the sorted list of eligible registry ids\n  records      fetched from the public ClinicalTrials.gov API v2, one request\n               per trial, stored verbatim (results/records/<NCT>.json); a\n               trial whose fetch fails is reported as such, never backfilled\n  program      the FDAAA program exactly as committed: compile_contract and\n               build_instance imported, unmodified, from\n               bench/fdaaa/build_fdaaa_instances.py (reading D: calendar\n               year, certification timeliness, no administrative grace; the\n               runtime's predicate grammar decides every atom)\n  selection    the builder's own: drop withheld, not applicable (not an ACT),\n               no deadline, not yet due; then the runtime applicability check\n               (E1, E2, E3 all attest T); the sponsor-size and cap rules of\n               the instance builder are NOT applied (they shaped the 319 for\n               clustering, not for classification)\n  reference    the tracker's status, read only after classification:\n               adverse = {reported-late, overdue, overdue-cancelled}; the\n               program's adverse = {late, overdue}\n  reported     agreement adverse-vs-adverse with a Wilson interval, the\n               three-way cross-tabulation, coverage (share of fetched trials\n               that reach a classification), attrition by reason, and the\n               same figures restricted to the tracker statuses the original\n               319 covered (reported, reported-late, overdue)\nNo reading is reselected, no threshold tuned, nothing rerun after reading\nthe labels. The snapshot date of the program (3 August 2026) is kept; a\ntrial whose deadline falls after that date is \"not yet due\" exactly as in\nthe builder.\n\n",
+ "tracker_statuses": {
+  "ongoing": 25,
+  "overdue": 196,
+  "reported": 148,
+  "reported-late": 157
+ },
+ "verdicts": {
+  "compliant": 165,
+  "late": 164,
+  "overdue": 197
+ },
+ "with_certification": 41
+}

@@ -1,0 +1,181 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT05206370"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT05206370"
+    },
+    "what": "the eligibility criteria restrict enrollment to adults, that is, a minimum age of 18 years or more"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT05206370"
+    },
+    "what": "the eligibility criteria restrict enrollment to one sex only (only male or only female participants)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT05206370"
+    },
+    "what": "the eligibility criteria accept healthy volunteers"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready for an adult cohort: identified, and the eligibility text restricts enrollment to adults."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked adult-cohort protocol: identified, adults only, open to both sexes, and not a healthy-volunteer study, as established from the eligibility text."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "!E3",
+    "!E4"
+   ]
+  ]
+ },
+ "id": "cli-v2-7130",
+ "notes_for_annotators": "{\"family\": \"clinical-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, false, false], \"twins\": [\"protocolSection.eligibilityModule.minimumAge\", \"protocolSection.eligibilityModule.sex\", \"protocolSection.eligibilityModule.healthyVolunteers\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT05206370": {
+   "protocolSection": {
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n1. Male or female subjects, age \u2265 18 years.\n2. Current daily cigarette smokers (averaging at least 10 cigarettes per day upon completing a 7-day screening smoking diary) and who intend to quit smoking.\n3. Expired air carbon monoxide (CO) \u2265 10 ppm.\n4. Failed at least one previous attempt to stop smoking with or without therapeutic support.\n5. Willing to initiate study treatment on the day after randomization and set a quit date within 5-7 days of starting treatment.\n6. Willing to actively participate in the study's smoking cessation behavioral support provided throughout the study.\n7. Able to fully understand all study requirements, willing to participate, and comply with dosing schedule.\n8. Sign the Informed Consent Form.\n\nExclusion Criteria:\n\n1. More than 1 study participant in same household during the 12-week treatment period.\n2. Previous cytisinicline treatment in a prior clinical study or any other cytisine usage.\n3. Known hypersensitivity to cytisinicline or any of the excipients.\n4. Positive urinary drugs of abuse screen, determined within 28 days before the first dose of cytisinicline.\n5. Clinically significant abnormal serum chemistry or hematology values within 28 days of randomization (ie, requiring treatment or monitoring).\n6. Clinically significant abnormalities in 12-lead ECG determined after minimum of 5 minutes in supine position within 28 days of randomization (ie, requiring treatment or further assessment).\n7. Recent history (within 3 months) of acute myocardial infarction, unstable angina, stroke, cerebrovascular incident, or hospitalization for congestive heart failure.\n8. Current uncontrolled hypertension (blood pressure \u2265160/100 mmHg).\n9. Currently psychotic or having had a psychotic event within 3 months. If any subject becomes psychotic during the study, they must be removed from treatment and/or additional study visits.\n10. Currently having suicidal ideation or risk for suicide (\"Yes\" to either question 4 or question 5 OR \"Yes\" to any suicidal behavior question on the Columbia Suicide Severity Rating Scale \\[C-SSRS\\] with clear suicidal intent or previous attempt).\n11. Current symptoms of moderate to severe depression (depression score \u226511on the HADS).\n12. Renal impairment defined as a creatinine clearance (CrCl) \\<60 mL/min (estimated with the Cockroft-Gault equation).\n13. Hepatic impairment defined as alanine aminotransferase (ALT) or aspartate aminotransferase (AST) \\>2.0 x the upper limit of normal (ULN).\n14. Women who are pregnant or breast-feeding.\n15. Male or female subjects of childbearing potential who do not agree to use acceptable methods of birth control during the study treatment period.\n16. Participation in a clinical study with an investigational drug in the 4 weeks prior to randomization.\n17. Treatment with other smoking cessation medications (bupropion, varenicline, nortriptyline, or any nicotine replacement therapy \\[NRT\\]) in the 4 weeks prior to randomization or planned use of these other smoking cessation medications during the study.\n18. Use within the 2 weeks prior to randomization or planned use during the study of non-cigarette and/or noncombustible nicotine products (pipe tobacco, cigars, snuff, smokeless tobacco, hookah, e-cigarettes/vaping) or marijuana smoking or vaping.\n19. Any other reason that the investigator views the subject should not participate or would be unable to fulfill the requirements for the study."
+    },
+    "identificationModule": {
+     "briefTitle": "A Second Study of Cytisinicline for Smoking Cessation in Adult Smokers"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT05206370.",
+ "seed": "NCT05206370",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "text"
+}

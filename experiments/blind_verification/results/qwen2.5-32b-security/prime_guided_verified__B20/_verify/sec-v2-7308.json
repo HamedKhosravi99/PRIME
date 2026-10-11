@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7308",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "The fix will be included in TensorFlow 2.6.0. We will also cherrypick this commit on TensorFlow 2.5.1, TensorFlow 2.4.3, and TensorFlow 2.3.4, as these are also affected and still in supported range.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 661,
+   "completion_tokens": 44,
+   "latency_s": 4.55,
+   "raw": "The document indicates the fix will be included in TensorFlow 2.6.0 and mentions cherrypicking the commit for other versions, establishing that a version exists where the issue is fixed. ANSWER: T"
+  }
+ ]
+}

@@ -1,0 +1,355 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2022-01-01\"",
+    "params": {
+     "field_path": "published",
+     "record_id": "GHSA-2wx6-wc87-rmjm"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "affected.0.package.name",
+     "references.0.url",
+     "published"
+    ],
+    "what": "the date the advisory was published"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2028-01-01\"",
+    "params": {
+     "field_path": "modified",
+     "record_id": "GHSA-2wx6-wc87-rmjm"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "aliases.0",
+     "affected.0.package.ecosystem",
+     "modified"
+    ],
+    "what": "the date the advisory was last modified"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.severity",
+     "record_id": "GHSA-2wx6-wc87-rmjm"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "references.0.type",
+     "database_specific.severity",
+     "affected.0.package.name"
+    ],
+    "what": "the maintainers' severity label"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.cwe_ids.0",
+     "record_id": "GHSA-2wx6-wc87-rmjm"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "affected.0.package.name",
+     "database_specific.cwe_ids.0",
+     "references.0.url"
+    ],
+    "what": "the first CWE identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "severity.0.score",
+     "record_id": "GHSA-2wx6-wc87-rmjm"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "aliases.0",
+     "severity.0.score",
+     "affected.0.package.name"
+    ],
+    "what": "the first CVSS score string"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "schema_version",
+     "record_id": "GHSA-2wx6-wc87-rmjm"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "details",
+     "aliases.0",
+     "schema_version"
+    ],
+    "what": "the schema version of the record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:true",
+    "params": {
+     "field_path": "database_specific.github_reviewed",
+     "record_id": "GHSA-2wx6-wc87-rmjm"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "database_specific.github_reviewed",
+     "aliases.0",
+     "details"
+    ],
+    "what": "whether the advisory has been reviewed by the database maintainers"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "published",
+      "date_before",
+      "2022-01-01"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "published",
+      "date_before",
+      "2022-01-01"
+     ],
+     [
+      "modified",
+      "date_before",
+      "2028-01-01"
+     ],
+     [
+      "database_specific.severity",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "published",
+      "date_before",
+      "2022-01-01"
+     ],
+     [
+      "modified",
+      "date_before",
+      "2028-01-01"
+     ],
+     [
+      "database_specific.severity",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.cwe_ids.0",
+      "exists",
+      null
+     ],
+     [
+      "severity.0.score",
+      "exists",
+      null
+     ],
+     [
+      "schema_version",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "sec-v2-6012",
+ "notes_for_annotators": "{\"family\": \"security-nested-hom-05\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 3, \"false_mech\": false, \"locator\": true, \"source_instance\": \"sec-v2-0012\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-2wx6-wc87-rmjm": {
+   "affected": [
+    {
+     "package": {
+      "ecosystem": "PyPI",
+      "name": "easybuild-framework"
+     }
+    }
+   ],
+   "aliases": [
+    "CVE-2020-5262"
+   ],
+   "database_specific": {
+    "cwe_ids": [
+     "CWE-532"
+    ],
+    "github_reviewed": true,
+    "severity": "CRITICAL"
+   },
+   "details": "### Impact\n\nThe GitHub Personal Access Token (PAT) used by EasyBuild for the GitHub integration features (like `--new-pr`, `--from-pr`, etc.) is shown in plain text in EasyBuild debug log files.\n\nScope:\n\n* the log message only appears in the top-level log file, *not* in the individual software installation logs (see https://easybuild.readthedocs.io/en/latest/Logfiles.html);\n    - as a consequence, tokens are *not* included in the partial log files that are uploaded into a gist when using `--upload-test-report` in combination with `--from-pr`, nor in the installation logs that are copied to the software installation directories;\n* the message is only logged when using `--debug`, so it will not appear when using the default EasyBuild configuration (only info messages are logged by default);\n* the log message is triggered via `--from-pr`, but also via various other GitHub integration options like `--new-pr`, `--merge-pr`, `--close-pr`, etc., but usually only appears in the temporary log file that is cleaned up automatically as soon as eb completes successfully;\n* you may have several debug log files that include your GitHub token in `/tmp` (or a different location if you've set the `--tmpdir` EasyBuild configuration option) on the systems where you use EasyBuild, but they are located in a subdirectory that is only accessible to your account (permissions set to 700);\n* the only way that a log file that may include your token could have been made public is *if you shared it yourself*, for example by copying the contents of the log file into a gist manually, or by sending a log file to someone;\n* for log files uploaded to GitHub, your token would be revoked automatically when GitHub notices it;\n\n### Patches\n\nThe issue is fixed with the changes in https://github.com/easybuilders/easybuild-framework/pull/3248.\n\nThis fix is included in EasyBuild v4.1.2 (released on Mon Mar 16th 2020), and in the `master`+  `develop` branches of the `easybuild-framework` repository since Mon Mar 16th 2020 (see https://github.com/easybuilders/easybuild-framework/pull/3248 and https://github.com/easybuilders/easybuild-framework/pull/3249 resp.).\n\n**Make sure you revoke the existing GitHub tokens you're using with EasyBuild** (via https://github.com/settings/tokens), and install new ones using \"`eb --install-github-token --force`\" (see also https://easybuild.readthedocs.io/en/latest/Integration_with_GitHub.html#installing-a-github-token-install-github-token).\n\n### Workarounds\n\n* avoid using the GitHub integration features (see https://easybuild.readthedocs.io/en/latest/Integration_with_GitHub.html) with EasyBuild versions older than version 4.1.2;\n* don't share top-level EasyBuild (debug) log files with others, unless you are sure your GitHub token is not included in them;\n* clean up temporary EasyBuild log files in `/tmp`on the system(s) where you`re using EasyBuild\n\n### References\n\n* https://github.com/easybuilders/easybuild-framework/pull/3248 (PR that fixes the issue)\n* (release announcement to EasyBuild mailing list)\n\n### For more information\n\n* Open an issue in [the `easybuild-framework` repository](https://github.com/easybuilders/easybuild-framework)\n* Email us at [easybuild-admin@lists.ugent.be](mailto:easybuild-admin@lists.ugent.be)",
+   "modified": "2026-07-08T06:29:54.447447817Z",
+   "published": "2020-03-19T17:29:58Z",
+   "references": [
+    {
+     "type": "WEB",
+     "url": "https://github.com/easybuilders/easybuild-framework/security/advisories/GHSA-2wx6-wc87-rmjm"
+    }
+   ],
+   "schema_version": "1.7.5",
+   "severity": [
+    {
+     "score": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+    }
+   ]
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-2wx6-wc87-rmjm.",
+ "seed": "GHSA-2wx6-wc87-rmjm",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

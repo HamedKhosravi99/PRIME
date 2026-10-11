@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7014",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Patients aged 35 years or older",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 445,
+   "completion_tokens": 28,
+   "latency_s": 1.655,
+   "raw": "The inclusion criteria specify patients aged 35 years or older, which satisfies the condition of restricting enrollment to adults. ANSWER: T"
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7120",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "tuf maintainers would like to thank Erik MacLean of Analog Devices, Inc. for reporting this issue.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 349,
+   "completion_tokens": 21,
+   "latency_s": 2.23,
+   "raw": "The document mentions \"tuf\" as the affected package by its registered name. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "F",
+   "quote": "No fix exists for this issue.",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 331,
+   "completion_tokens": 27,
+   "latency_s": 2.406,
+   "raw": "The document does not mention any version where the issue is fixed, stating \"No fix exists for this issue.\" ANSWER: F"
+  }
+ ]
+}

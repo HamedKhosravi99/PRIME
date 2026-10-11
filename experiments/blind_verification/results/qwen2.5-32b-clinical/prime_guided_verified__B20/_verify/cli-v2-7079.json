@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7079",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "* They are between 18 and 75 yrs.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 456,
+   "completion_tokens": 27,
+   "latency_s": 1.562,
+   "raw": "The inclusion criteria specify participants must be between 18 and 75 years old, establishing the condition. ANSWER: T"
+  }
+ ]
+}

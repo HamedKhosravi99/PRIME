@@ -1,0 +1,175 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-5jq8-q6rj-9gq4"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-5jq8-q6rj-9gq4"
+    },
+    "what": "the details text names the affected package (the package itself, by its registered name or a distinctive part of it, not only the vendor or the ecosystem)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-5jq8-q6rj-9gq4"
+    },
+    "what": "the details text states a version in which the issue is fixed"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-5jq8-q6rj-9gq4"
+    },
+    "what": "the details text states the first affected version, the version in which the issue was introduced"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory has a readable summary (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: it has a summary and its text names the affected package."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked completeness protocol: summary present, and the text names the package, a fixed version, and the first affected version."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4"
+   ]
+  ]
+ },
+ "id": "sec-v2-7141",
+ "notes_for_annotators": "{\"family\": \"security-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, true, false], \"twins\": [\"affected.0.package.name\", \"affected.*.ranges.*.events.*.fixed\", \"affected.*.ranges.*.events.*.introduced\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-5jq8-q6rj-9gq4": {
+   "details": "### Impact\n\nDue to a bug in Red's Core API, 3rd-party cogs using the [`@commands.can_manage_channel()`](https://docs.discord.red/en/stable/framework_checks.html#redbot.core.commands.can_manage_channel) command permission check without additional permission controls may authorize a user to run a command even when that user doesn't have permissions to manage a channel.\nNone of the core commands or core cogs are affected. The maintainers of the project are not aware of any _public_ 3rd-party cog utilizing this API at the time of writing this advisory.\n\nThe [`@commands.mod_or_can_manage_channel()`](https://docs.discord.red/en/stable/framework_checks.html#redbot.core.commands.mod_or_can_manage_channel), [`@commands.admin_or_can_manage_channel()`](https://docs.discord.red/en/stable/framework_checks.html#redbot.core.commands.admin_or_can_manage_channel), and [`@commands.guildowner_or_can_manage_channel()`](https://docs.discord.red/en/stable/framework_checks.html#redbot.core.commands.guildowner_or_can_manage_channel) command permission checks are unaffected.\n\nCVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N\nCVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:L/SA:N/AU:Y/R:U/RE:L\n\n### Patches\n\nThe problem was patched in PR #6398 and later released in version [3.5.10](https://pypi.org/project/Red-DiscordBot/3.5.10/).\n\n### Workarounds\n\nAny cog using the [`@commands.can_manage_channel()`](https://docs.discord.red/en/stable/framework_checks.html#redbot.core.commands.can_manage_channel) command permission check should be unloaded until an upgrade to a patched version can be performed.\n\n### References\n\nhttps://github.com/Cog-Creators/Red-DiscordBot/pull/6398\nhttps://github.com/Cog-Creators/Red-DiscordBot/releases/tag/3.5.10\nhttps://pypi.org/project/Red-DiscordBot/3.5.10/\n\n",
+   "summary": "Red-DiscordBot vulnerable to Incorrect Authorization in commands API"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-5jq8-q6rj-9gq4.",
+ "seed": "GHSA-5jq8-q6rj-9gq4",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "text"
+}

@@ -1,0 +1,44 @@
+{
+ "instance": "cli-v2-7120",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E3",
+   "attested": "F",
+   "quote": "Subject and/or parent guardian must be able to understand and provide informed consent.",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 909,
+   "completion_tokens": 31,
+   "latency_s": 2.494,
+   "raw": "The inclusion criteria mention the use of effective birth control by female participants of childbearing potential but do not restrict enrollment based on sex. ANSWER: F"
+  },
+  {
+   "attempt": 2,
+   "atom": "E4",
+   "attested": "F",
+   "quote": "Use of effective birth control by female participants of childbearing potential.",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 899,
+   "completion_tokens": 29,
+   "latency_s": 1.841,
+   "raw": "The document does not establish the condition since it specifically includes individuals with peanut and other food allergies, rather than healthy volunteers. ANSWER: F"
+  },
+  {
+   "attempt": 3,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "* Age 4 through 55 years (inclusive).",
+   "verdict": "F",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 914,
+   "completion_tokens": 33,
+   "latency_s": 2.952,
+   "raw": "The inclusion criteria specify an age range of 4 through 55 years, which includes children, thus not restricting enrollment to adults only. ANSWER: F"
+  }
+ ]
+}

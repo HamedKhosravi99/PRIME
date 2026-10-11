@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7125",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Adult aged 18-75 years.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 554,
+   "completion_tokens": 27,
+   "latency_s": 2.483,
+   "raw": "The inclusion criteria explicitly state \"Adult aged 18-75 years,\" establishing the minimum age requirement. ANSWER: T"
+  }
+ ]
+}

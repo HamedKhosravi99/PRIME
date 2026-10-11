@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7156",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "This has been patched in CKAN 2.10.5 and 2.11.0",
+   "verdict": "F",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 220,
+   "completion_tokens": 39,
+   "latency_s": 3.456,
+   "raw": "The document does not explicitly name an affected package by its registered name or a distinctive part of it; instead, it refers to the issue in relation to CKAN versions. ANSWER: F"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7443",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "urllib3 >=1.26.4 has the issue resolved",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 342,
+   "completion_tokens": 21,
+   "latency_s": 1.212,
+   "raw": "The document mentions \"urllib3\" specifically, which is the affected package. ANSWER: T"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7059",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Female subjects aged 50 to 75 years of age, inclusive, at Screening Visit.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 546,
+   "completion_tokens": 37,
+   "latency_s": 3.298,
+   "raw": "The inclusion criteria specify a female subject age range of 50 to 75 years, which meets the condition of being 18 years or older. ANSWER: T"
+  }
+ ]
+}

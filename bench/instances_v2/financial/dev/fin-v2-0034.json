@@ -1,0 +1,333 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "F",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_ge:682320000000.0",
+    "params": {
+     "field_path": "facts.us-gaap.Assets.units.USD.0.val",
+     "record_id": "CIK0001103982"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_ge:0",
+    "params": {
+     "field_path": "facts.us-gaap.LiabilitiesAndStockholdersEquity.units.USD.0.val",
+     "record_id": "CIK0001103982"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_ge:0",
+    "params": {
+     "field_path": "facts.us-gaap.NetIncomeLoss.units.USD.0.val",
+     "record_id": "CIK0001103982"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_ge:-3670000001.0",
+    "params": {
+     "field_path": "facts.us-gaap.AccumulatedOtherComprehensiveIncomeLossNetOfTax.units.USD.0.val",
+     "record_id": "CIK0001103982"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_ge:0",
+    "params": {
+     "field_path": "facts.us-gaap.EarningsPerShareBasic.units.USD/shares.0.val",
+     "record_id": "CIK0001103982"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_ge:0",
+    "params": {
+     "field_path": "facts.us-gaap.CashAndCashEquivalentsAtCarryingValue.units.USD.0.val",
+     "record_id": "CIK0001103982"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_ge:-17460000001.0",
+    "params": {
+     "field_path": "facts.us-gaap.AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment.units.USD.0.val",
+     "record_id": "CIK0001103982"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "facts.us-gaap.Assets.units.USD.0.val",
+      "numeric_ge",
+      682320000000.0
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The filer is identified and reports a total-assets figure (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "facts.us-gaap.Assets.units.USD.0.val",
+      "numeric_ge",
+      682320000000.0
+     ],
+     [
+      "facts.us-gaap.LiabilitiesAndStockholdersEquity.units.USD.0.val",
+      "numeric_ge",
+      0
+     ],
+     [
+      "facts.us-gaap.NetIncomeLoss.units.USD.0.val",
+      "numeric_ge",
+      0
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The filer's core balance-sheet figures are present and positive as inspected under the declared protocol."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "facts.us-gaap.Assets.units.USD.0.val",
+      "numeric_ge",
+      682320000000.0
+     ],
+     [
+      "facts.us-gaap.LiabilitiesAndStockholdersEquity.units.USD.0.val",
+      "numeric_ge",
+      0
+     ],
+     [
+      "facts.us-gaap.NetIncomeLoss.units.USD.0.val",
+      "numeric_ge",
+      0
+     ],
+     [
+      "facts.us-gaap.AccumulatedOtherComprehensiveIncomeLossNetOfTax.units.USD.0.val",
+      "numeric_ge",
+      -3670000001.0
+     ],
+     [
+      "facts.us-gaap.EarningsPerShareBasic.units.USD/shares.0.val",
+      "numeric_ge",
+      0
+     ],
+     [
+      "facts.us-gaap.CashAndCashEquivalentsAtCarryingValue.units.USD.0.val",
+      "numeric_ge",
+      0
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The filer satisfies the checked reporting protocol: core figures present, positive, and within the declared magnitude bounds, with cash and equity fields populated as inspected."
+  }
+ ],
+ "decoys": [],
+ "domain": "financial_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "fin-v2-0034",
+ "notes_for_annotators": "{\"family\": \"financial-nested-hom-01\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 0, \"false_mech\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "CIK0001103982": {
+   "facts": {
+    "us-gaap": {
+     "AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment": {
+      "units": {
+       "USD": [
+        {
+         "val": -8730000000
+        }
+       ]
+      }
+     },
+     "AccumulatedOtherComprehensiveIncomeLossNetOfTax": {
+      "units": {
+       "USD": [
+        {
+         "val": -1835000000
+        }
+       ]
+      }
+     },
+     "Assets": {
+      "units": {
+       "USD": [
+        {
+         "val": 68132000000
+        }
+       ]
+      }
+     },
+     "CashAndCashEquivalentsAtCarryingValue": {
+      "units": {
+       "USD": [
+        {
+         "val": 316000000
+        }
+       ]
+      }
+     },
+     "EarningsPerShareBasic": {
+      "units": {
+       "USD/shares": [
+        {
+         "val": 1.84
+        }
+       ]
+      }
+     },
+     "LiabilitiesAndStockholdersEquity": {
+      "units": {
+       "USD": [
+        {
+         "val": 68132000000
+        }
+       ]
+      }
+     },
+     "NetIncomeLoss": {
+      "units": {
+       "USD": [
+        {
+         "val": 3060000000
+        }
+       ]
+      }
+     }
+    }
+   }
+  }
+ },
+ "scope": "The single named SEC companyfacts record, as retrieved and embedded; no external lookups. Record identifier: CIK0001103982.",
+ "seed": "CIK0001103982",
+ "user_prompt": "Are this filer's reported balance-sheet figures present and within the declared plausibility protocol for the latest filings?",
+ "variant": "base"
+}

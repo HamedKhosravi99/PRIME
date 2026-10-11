@@ -1,0 +1,79 @@
+{
+  "id": "swe-0004",
+  "domain": "software_review",
+  "seed": "swe-0004",
+  "variant": "base",
+  "user_prompt": "Should we adopt this as a production dependency as-is?",
+  "artifact": {
+    "path": "artifacts/boltons@e66cade3",
+    "kind": "repo",
+    "commit": "e66cade323f5c11cebb4bd0f099e634b245adccd"
+  },
+  "scope": "Repository boltons@e66cade3 (github.com/mahmoud/boltons) with its bundled test suite under tests/ and packaging/CI/changelog configuration, evaluated by running python3 -m pytest from the repository root in the pinned environment (Python 3.9, pytest 8.x).",
+  "actions": ["inspect_file", "search_repo", "run_tests", "inspect_config", "ask_user", "emit_claim"],
+  "claims": [
+    {"id": "C1", "text": "The inspected core modules boltons/iterutils.py and boltons/dictutils.py are readable and documented (module and class docstrings present as inspected).", "level": 1},
+    {"id": "C2", "text": "The documented core utilities behave as specified at this commit: both inspected core modules are documented and the full bundled test suite passes under the declared protocol.", "level": 2},
+    {"id": "C3", "text": "The library satisfies the checked dependency-adoption protocol at this commit: documented core modules, passing full suite, packaging metadata declared in pyproject.toml, and maintenance discipline evidenced by either a configured CI test workflow or a maintained changelog.", "level": 3}
+  ],
+  "order": [["C1", "C2"], ["C2", "C3"]],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "inspect",
+      "proposition": "boltons/iterutils.py carries a module docstring and documented public functions (span read).",
+      "resolver": {"tool": "inspect_file", "params_schema": {"path": "str"}, "params": {"path": "boltons/iterutils.py"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E2",
+      "type": "inspect",
+      "proposition": "boltons/dictutils.py carries a module docstring and documented public classes (span read).",
+      "resolver": {"tool": "inspect_file", "params_schema": {"path": "str"}, "params": {"path": "boltons/dictutils.py"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E3",
+      "type": "execute",
+      "proposition": "python3 -m pytest tests exits 0 at this commit in the pinned environment (445 tests).",
+      "resolver": {"tool": "run_tests", "params_schema": {"suite": "str"}, "params": {"suite": "tests"}, "attest": "exit_code==0"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E4",
+      "type": "config",
+      "proposition": "pyproject.toml declares packaging metadata: project name and requires-python (version dynamic).",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "pyproject.toml"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E5",
+      "type": "config",
+      "proposition": "A CI workflow that runs the test suite on push/PR is configured at .github/workflows/tests.yaml (runs tox).",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": ".github/workflows/tests.yaml"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E6",
+      "type": "config",
+      "proposition": "A maintained changelog exists at CHANGELOG.md (file present, releases enumerated).",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "CHANGELOG.md"}, "attest": "file_exists"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E7",
+      "type": "search",
+      "proposition": "No TODO/FIXME/XXX markers are found under boltons/ after a search_repo scan with pattern TODO|FIXME|XXX.",
+      "resolver": {"tool": "search_repo", "params_schema": {"pattern": "str", "path": "str"}, "params": {"pattern": "TODO|FIXME|XXX", "path": "boltons"}, "attest": "match_count==0"},
+      "gold_value": "F"
+    }
+  ],
+  "phi": [],
+  "gold_licenses": {
+    "C1": [["E1", "E2"]],
+    "C2": [["E1", "E2", "E3"]],
+    "C3": [["E1", "E2", "E3", "E4", "E5"], ["E1", "E2", "E3", "E4", "E6"]]
+  },
+  "decoys": ["docstring_spellcheck"],
+  "notes_for_annotators": "All gold_value entries verified by actual runs on 2026-07-24 (see artifact PROVENANCE): E7 is F (92 TODO/FIXME/XXX matches under boltons/; the repo also ships TODO.rst at root). MULTIPLE-ROUTE split instance: C3 has two alternative routes matching the disjunctive maintenance-discipline component (CI E5, or changelog E6). Minimality, C1 [E1,E2]: the claim names both modules, so both spans are necessary — drop either and that module's documentation is unverified. C2 [E1,E2,E3]: drop E1 or E2 and the 'documented' half fails for that module; drop E3 and behavior is unsupported. C3 route A [E1,E2,E3,E4,E5]: drop E4 and packaging metadata is unverified; drop E5 and route A carries no maintenance-discipline witness; drop E1/E2/E3 as in C2. C3 route B [E1,E2,E3,E4,E6]: same with E6 as the witness. Neither C3 route entails the other (E5 and E6 independent, phi empty), so neither is dominated. E7 appears in no route: marker-freedom is not a component of the adoption protocol, and on this artifact it is genuinely false — an agent that treats it as an obligation overblocks against a true, adoptable library (445 passing tests with TODOs is normal OSS reality). phi is empty: no determined-value combination among these atoms is impossible. Order-coherence: both C3 routes literal-contain C2's route [E1,E2,E3], which literal-contains C1's [E1,E2]. Honest outcome: C3 reachable by either route."
+}

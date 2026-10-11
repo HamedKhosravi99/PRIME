@@ -1,0 +1,31 @@
+{
+ "instance": "cli-v2-7037",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E3",
+   "attested": "F",
+   "quote": "Male or female participants.",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 920,
+   "completion_tokens": 29,
+   "latency_s": 2.192,
+   "raw": "The inclusion criteria explicitly state \"Male or female participants,\" which means the study does not restrict enrollment to one sex only. ANSWER: F"
+  },
+  {
+   "attempt": 2,
+   "atom": "E4",
+   "attested": "F",
+   "quote": "Have a diagnosis of epilepsy with a pediatric epileptic syndrome (Cohort 1) or epilepsy with POS with or without secondary generalization (Cohort 2).",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 910,
+   "completion_tokens": 27,
+   "latency_s": 1.751,
+   "raw": "The document does not establish the condition as it specifically includes participants with a diagnosis of epilepsy and excludes healthy volunteers. ANSWER: F"
+  }
+ ]
+}

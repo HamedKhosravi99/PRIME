@@ -1,0 +1,44 @@
+{
+ "instance": "sec-v2-7008",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Multiple cross-site scripting (XSS) vulnerabilities in MoinMoin",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 311,
+   "completion_tokens": 23,
+   "latency_s": 1.269,
+   "raw": "The document mentions \"MoinMoin\" as the affected package by its registered name. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "1.8.8, and 1.9.x before 1.9.3",
+   "verdict": "F",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 293,
+   "completion_tokens": 31,
+   "latency_s": 1.774,
+   "raw": "The document does not state a specific version in which the issue is fixed; it only mentions versions that are affected by the vulnerabilities. ANSWER: F"
+  },
+  {
+   "attempt": 3,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "1.8.8, and 1.9.x before 1.9.3 allow remote attackers",
+   "verdict": "F",
+   "agree": false,
+   "invoked": false,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "raw": "The document does not state a specific version in which the issue is fixed; it only mentions versions that are affected by the vulnerabilities. ANSWER: F"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+arXiv:1505.00387  role:corpus
+TITLE: Highway Networks
+AUTHORS: Srivastava, Rupesh Kumar, Greff, Klaus, Schmidhuber, Jürgen
+DATE: 2015/05/03
+URL: https://arxiv.org/abs/1505.00387
+
+ABSTRACT:
+There is plenty of theoretical and empirical evidence that depth of neural networks is a crucial ingredient for their success. However, network training becomes more difficult with increasing depth and training of very deep networks remains an open problem. In this extended abstract, we introduce a new architecture designed to ease gradient-based training of very deep networks. We refer to networks with this architecture as highway networks, since they allow unimpeded information flow across several layers on "information highways". The architecture is characterized by the use of gating units which learn to regulate the flow of information through a network. Highway networks with hundreds of layers can be trained directly using stochastic gradient descent and with a variety of activation functions, opening up the possibility of studying extremely deep and efficient architectures.

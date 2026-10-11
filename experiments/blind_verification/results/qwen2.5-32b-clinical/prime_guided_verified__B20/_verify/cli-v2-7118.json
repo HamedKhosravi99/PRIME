@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7118",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "* Age \\< 18 y",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 259,
+   "completion_tokens": 37,
+   "latency_s": 2.04,
+   "raw": "The exclusion criterion explicitly states \"Age < 18 y\", indicating that only individuals aged 18 years or older can participate, thus establishing the condition. ANSWER: T"
+  }
+ ]
+}

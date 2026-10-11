@@ -1,0 +1,14 @@
+2026-07-29T16:33:32Z  OSV FETCH OK id=GHSA-3pqx-4fqf-j49f url=https://api.osv.dev/v1/vulns/GHSA-3pqx-4fqf-j49f http_status=200 summary='Deserialization of Untrusted Data in PyYAML'
+2026-07-29T16:33:32Z  NVD FETCH OK cve=CVE-2019-20477 url=https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2019-20477 http_status=200 base_score=9.8 base_severity=CRITICAL
+2026-07-29T16:33:33Z  OSV FETCH OK id=GHSA-x4qr-2fvf-3mr5 url=https://api.osv.dev/v1/vulns/GHSA-x4qr-2fvf-3mr5 http_status=200 summary='Vulnerable OpenSSL included in cryptography wheels'
+2026-07-29T16:33:33Z  NVD FETCH OK cve=CVE-2023-0286 url=https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2023-0286 http_status=200 base_score=7.4 base_severity=HIGH
+2026-07-29T16:33:35Z  OSV FETCH OK id=GHSA-cx63-2mw6-8hw5 url=https://api.osv.dev/v1/vulns/GHSA-cx63-2mw6-8hw5 http_status=200 summary='setuptools vulnerable to Command Injection via package URL'
+2026-07-29T16:33:35Z  NVD FETCH OK cve=CVE-2024-6345 url=https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2024-6345 http_status=200 base_score=8.8 base_severity=HIGH
+2026-07-29T16:33:37Z  OSV FETCH OK id=GHSA-jf85-cpcp-j695 url=https://api.osv.dev/v1/vulns/GHSA-jf85-cpcp-j695 http_status=200 summary='Prototype Pollution in lodash'
+2026-07-29T16:33:37Z  NVD FETCH OK cve=CVE-2019-10744 url=https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2019-10744 http_status=200 base_score=9.1 base_severity=CRITICAL
+2026-07-29T16:33:39Z  OSV FETCH OK id=GHSA-xvch-5gv4-984h url=https://api.osv.dev/v1/vulns/GHSA-xvch-5gv4-984h http_status=200 summary='Prototype Pollution in minimist'
+2026-07-29T16:33:39Z  NVD FETCH OK cve=CVE-2021-44906 url=https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2021-44906 http_status=200 base_score=9.8 base_severity=CRITICAL
+2026-07-29T16:33:41Z  OSV FETCH OK id=GHSA-jfh8-c2jp-5v3q url=https://api.osv.dev/v1/vulns/GHSA-jfh8-c2jp-5v3q http_status=200 summary='Remote code injection in Log4j'
+2026-07-29T16:33:41Z  NVD FETCH OK cve=CVE-2021-44228 url=https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2021-44228 http_status=200 base_score=10.0 base_severity=CRITICAL
+2026-07-29T16:33:43Z  OSV FETCH OK id=GHSA-4w82-r329-3q67 url=https://api.osv.dev/v1/vulns/GHSA-4w82-r329-3q67 http_status=200 summary='Deserialization of Untrusted Data in jackson-databind'
+2026-07-29T16:33:43Z  NVD FETCH OK cve=CVE-2020-8840 url=https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2020-8840 http_status=200 base_score=9.8 base_severity=CRITICAL

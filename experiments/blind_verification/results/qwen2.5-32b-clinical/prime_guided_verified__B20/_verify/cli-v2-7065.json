@@ -1,0 +1,31 @@
+{
+ "instance": "cli-v2-7065",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "* Over 18 years of age",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 234,
+   "completion_tokens": 26,
+   "latency_s": 2.564,
+   "raw": "The inclusion criteria explicitly state \"Over 18 years of age,\" which restricts enrollment to adults. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "F",
+   "quote": "Presence of isolated buccal Cairo RT1 gingival recessions",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 229,
+   "completion_tokens": 22,
+   "latency_s": 2.035,
+   "raw": "The document does not specify any restrictions based on sex for the inclusion or exclusion criteria. ANSWER: F"
+  }
+ ]
+}

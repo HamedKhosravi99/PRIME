@@ -1,0 +1,15 @@
+name: six
+source_url: https://github.com/benjaminp/six
+commit: c8e394065cd541a16c040515dc0afb85cf22a7c3
+short_sha: c8e39406
+ref_cloned: master (HEAD at clone time), git clone --depth 1
+clone_date: 2026-07-24
+license: MIT (LICENSE, Copyright (c) 2010-2024 Benjamin Peterson)
+checkout_size_no_git: 176K (.git removed after recording sha)
+test_command: python3 -m pytest -q   (run from repo root)
+test_environment: Python 3.9.6, pytest 8.4.2, macOS (darwin)
+test_result: 199 passed, 1 skipped in 0.20s ; exit code 0
+notes: Single-module library (six.py) with test_six.py at root. Module
+  docstring at six.py:21. Packaging metadata in setup.py (name, version,
+  python_requires). CI at .github/workflows/ci.yml runs tox. Changelog file
+  CHANGES at repo root. Zero TODO/FIXME/XXX markers in six.py (verified).

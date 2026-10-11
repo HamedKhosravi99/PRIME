@@ -1,0 +1,230 @@
+{
+  "actions": [
+    "inspect_record",
+    "emit_claim"
+  ],
+  "artifact": {
+    "commit": "osv:GHSA-4w82-r329-3q67",
+    "kind": "structured_record",
+    "path": "artifacts/osv"
+  },
+  "atoms": [
+    {
+      "gold_value": "T",
+      "id": "E1",
+      "proposition": "The record's affected-package name is read via inspect_record(record_id='GHSA-4w82-r329-3q67', field_path='affected.0.package.name') and found present.",
+      "resolver": {
+        "attest": "record_predicate:exists:null",
+        "params": {
+          "field_path": "affected.0.package.name",
+          "record_id": "GHSA-4w82-r329-3q67"
+        },
+        "params_schema": {
+          "field_path": "str",
+          "record_id": "str"
+        },
+        "tool": "inspect_record"
+      },
+      "type": "record"
+    },
+    {
+      "gold_value": "T",
+      "id": "E2",
+      "proposition": "The record's severity classification is read via inspect_record(record_id='GHSA-4w82-r329-3q67', field_path='database_specific.severity') and found to be one of the recognized levels {LOW, MODERATE, HIGH, CRITICAL} (OSV/GHSA's own categorical vocabulary).",
+      "resolver": {
+        "attest": "record_predicate:in_set:[\"LOW\",\"MODERATE\",\"HIGH\",\"CRITICAL\"]",
+        "params": {
+          "field_path": "database_specific.severity",
+          "record_id": "GHSA-4w82-r329-3q67"
+        },
+        "params_schema": {
+          "field_path": "str",
+          "record_id": "str"
+        },
+        "tool": "inspect_record"
+      },
+      "type": "record"
+    },
+    {
+      "gold_value": "T",
+      "id": "E3",
+      "proposition": "The record's severity classification is re-read via inspect_record(record_id='GHSA-4w82-r329-3q67', field_path='database_specific.severity') and found to be specifically HIGH or CRITICAL (the high-severity threshold subset of the recognized levels).",
+      "resolver": {
+        "attest": "record_predicate:in_set:[\"HIGH\",\"CRITICAL\"]",
+        "params": {
+          "field_path": "database_specific.severity",
+          "record_id": "GHSA-4w82-r329-3q67"
+        },
+        "params_schema": {
+          "field_path": "str",
+          "record_id": "str"
+        },
+        "tool": "inspect_record"
+      },
+      "type": "record"
+    },
+    {
+      "gold_value": "T",
+      "id": "E4",
+      "proposition": "The version observed deployed is read via inspect_record(record_id='GHSA-4w82-r329-3q67', field_path='deployment.observed_version') and checked against the record's own declared vulnerable range [affected.0.ranges.0.events: introduced='2.9.0', fixed='2.9.10.3').",
+      "resolver": {
+        "attest": "record_predicate:in_version_range:[\"2.9.0\", \"2.9.10.3\"]",
+        "params": {
+          "field_path": "deployment.observed_version",
+          "record_id": "GHSA-4w82-r329-3q67"
+        },
+        "params_schema": {
+          "field_path": "str",
+          "record_id": "str"
+        },
+        "tool": "inspect_record"
+      },
+      "type": "record"
+    },
+    {
+      "gold_value": "T",
+      "id": "E5",
+      "proposition": "Non-route background: the record's affected-package ecosystem is read via inspect_record(record_id='GHSA-4w82-r329-3q67', field_path='affected.0.package.ecosystem') and found to equal the declared ecosystem 'Maven' (not required for, and not evidence toward, the exploitability verdict -- the ecosystem is already given in the user prompt/scope).",
+      "resolver": {
+        "attest": "record_predicate:equals:\"Maven\"",
+        "params": {
+          "field_path": "affected.0.package.ecosystem",
+          "record_id": "GHSA-4w82-r329-3q67"
+        },
+        "params_schema": {
+          "field_path": "str",
+          "record_id": "str"
+        },
+        "tool": "inspect_record"
+      },
+      "type": "record"
+    },
+    {
+      "gold_value": "T",
+      "id": "E6",
+      "proposition": "Non-route background: the record's publication date is read via inspect_record(record_id='GHSA-4w82-r329-3q67', field_path='published') and found to be before 2027-01-01 (not required for, and not evidence toward, the exploitability verdict).",
+      "resolver": {
+        "attest": "record_predicate:date_before:\"2027-01-01\"",
+        "params": {
+          "field_path": "published",
+          "record_id": "GHSA-4w82-r329-3q67"
+        },
+        "params_schema": {
+          "field_path": "str",
+          "record_id": "str"
+        },
+        "tool": "inspect_record"
+      },
+      "type": "record"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "level": 1,
+      "text": "The record's identifying facts (affected package name) are located in the supplied advisory."
+    },
+    {
+      "id": "C2",
+      "level": 2,
+      "text": "The identifying facts are established (C1) and the record's severity classification has been located and is a recognized OSV/GHSA severity level."
+    },
+    {
+      "id": "C3",
+      "level": 3,
+      "text": "Under the supplied advisory, the severity meets the high-severity threshold AND the version observed deployed falls within the record's own declared vulnerable version range [introduced, fixed): the advisory supports a high-severity, currently-exploitable-and-unpatched verdict for the deployed version."
+    }
+  ],
+  "decoys": [
+    "external_advisory_lookup"
+  ],
+  "domain": "security_vuln",
+  "gold_licenses": {
+    "C1": [
+      [
+        "E1"
+      ]
+    ],
+    "C2": [
+      [
+        "E1",
+        "E2"
+      ]
+    ],
+    "C3": [
+      [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ]
+    ]
+  },
+  "id": "osv-0007",
+  "notes_for_annotators": "REAL OSV advisory, fetched 2020-03-04 (see bench/artifacts/osv/PROVENANCE for the exact fetch log and http status). GHSA-4w82-r329-3q67 = CVE-2020-8840 (Deserialization of Untrusted Data in jackson-databind), package com.fasterxml.jackson.core:jackson-databind (Maven ecosystem), OSV severity=CRITICAL. Route minimality: E1 necessary (identifying facts -- the package name -- must be located before any claim, exactly the domain's C1 'exists over the affected package' pattern); E2 necessary (severity classification must actually be read and be a recognized level -- an unrecognized string would make C2's route inapplicable). E3 necessary: the route's severity-THRESHOLD claim requires the NARROW {HIGH,CRITICAL} subset specifically, a strictly stronger condition than E2's 'is any recognized level' -- E2 alone does not establish the high-severity threshold (a MODERATE or LOW record satisfies E2 but not E3). E4 necessary (the version-range straddle is a fact disjoint from severity entirely -- a package can be high-severity for OTHER deployed versions while the one actually observed is outside the declared range, so E2/E3 alone cannot establish the version-specific exploitability verdict). Order-coherence by containment (C1's route subset of C2's, C2's subset of C3's). E5 (package ecosystem, via 'equals' -- the domain's other C1-eligible predicate type) and E6 (published date) are genuine non-route atoms -- real, resolvable, on-topic-looking background deliberately NOT required by any route (the ecosystem is already given in the user prompt/scope, so confirming it against the record is background verification, not new identifying evidence), probing whether an agent pulls in irrelevant-but-plausible evidence, mirroring rec-0001's E5/grant-0001's E5/res-*'s non-required-atom pattern. Decoy external_advisory_lookup is not a listed action (this domain deliberately offers no network/external lookup tool -- everything needed is in the embedded record). No ask_user tool is offered or needed: every atom here is a closed, executable predicate over structured JSON fields fetched verbatim from a real, public vulnerability database -- there is no judge, per the hard no-human/no-LLM-judge design constraint on this domain family. phi: [] (no genuine physically-impossible combination identified for this record; not invented for show, per AUTHORING.md SS4). C3 is the honest maximal claim for this instance: the deployed version falls inside the advisory's own declared vulnerable range, so all 4 route atoms are gold T.",
+  "order": [
+    [
+      "C1",
+      "C2"
+    ],
+    [
+      "C2",
+      "C3"
+    ]
+  ],
+  "phi": [],
+  "records": {
+    "GHSA-4w82-r329-3q67": {
+      "affected": [
+        {
+          "package": {
+            "ecosystem": "Maven",
+            "name": "com.fasterxml.jackson.core:jackson-databind",
+            "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+          },
+          "ranges": [
+            {
+              "events": [
+                {
+                  "introduced": "2.9.0"
+                },
+                {
+                  "fixed": "2.9.10.3"
+                }
+              ],
+              "type": "ECOSYSTEM"
+            }
+          ]
+        }
+      ],
+      "aliases": [
+        "CVE-2020-8840"
+      ],
+      "database_specific": {
+        "severity": "CRITICAL"
+      },
+      "deployment": {
+        "observed_version": "2.9.8"
+      },
+      "id": "GHSA-4w82-r329-3q67",
+      "nvd_cvss_v3": {
+        "base_score": 9.8,
+        "base_severity": "CRITICAL",
+        "cve_id": "CVE-2020-8840",
+        "retrieved": "2026-07-29T16:33:43Z",
+        "source": "NVD API v2.0 (services.nvd.nist.gov), cvssMetricV31[0].cvssData"
+      },
+      "published": "2020-03-04T20:52:14Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-8840",
+        "https://github.com/FasterXML/jackson-databind/issues/2620",
+        "https://github.com/FasterXML/jackson-databind/commit/74aba4042fce35ee0b91bd2847e788c10040d78b"
+      ],
+      "summary": "Deserialization of Untrusted Data in jackson-databind"
+    }
+  },
+  "scope": "The single embedded REAL vulnerability advisory GHSA-4w82-r329-3q67 (top-level records.GHSA-4w82-r329-3q67 of this instance file, fetched verbatim from the OSV API https://api.osv.dev/v1/vulns/GHSA-4w82-r329-3q67 -- see bench/artifacts/osv/PROVENANCE for the exact fetch log; no live network lookup performed for this instance beyond the OSV fetch itself), read exclusively via inspect_record(record_id='GHSA-4w82-r329-3q67', field_path=...): affected.0.package.name (identifying fact for the com.fasterxml.jackson.core:jackson-databind/Maven package), database_specific.severity (OSV/GHSA's own categorical severity classification), affected.0.ranges.0.events (the advisory's own declared introduced/fixed vulnerable version bounds), deployment.observed_version (AUTHORED scenario context -- the version we are asking about; NOT part of the advisory itself, exactly mirroring bench/instances/_smoke_record/rec-0001.json's deployment.observed_version field), affected.0.package.ecosystem, published (record publication date), and references -- the last three background only. The verdict is scoped to this ONE record's own declared JSON fields only -- no network access, external advisory lookup, or human/LLM judgment is used or available; every atom below is a closed, mechanically-decidable Boolean predicate over the record (prime_runtime/predicates.py).",
+  "seed": "osv-0007",
+  "user_prompt": "Given this real vulnerability advisory (GHSA-4w82-r329-3q67 / CVE-2020-8840), is the version we observed deployed (2.9.8 of com.fasterxml.jackson.core:jackson-databind) currently affected by a high-severity, unpatched vulnerability?",
+  "variant": "base"
+}

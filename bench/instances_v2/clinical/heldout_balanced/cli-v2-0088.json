@@ -1,0 +1,281 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT07521579"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT07521579"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2027-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT07521579"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT07521579"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT07521579"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E6",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT07521579"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2027-01-01"
+     ]
+    ],
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2027-01-01"
+     ],
+     [
+      "protocolSection.eligibilityModule.healthyVolunteers",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-0088",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-hom-17\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": 2, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT07521579": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "Obesity is a chronic, complex disease that can harm one's health; obesity is characterized by excessive fat deposits. In 2022, 37 million children under the age of 5 were overweight. Over 390 million children and adolescents aged 5-19 years were overweight in 2022, including 160 million who were living with obesity. Childhood obesity can increase the risk of chronic diseases later in life. According to the World Obesity Federation, 5.4 million Pakistani school-aged children will be obese by 2030, thus identified as a leading public health problem. Obesity is a multifactorial problem, and several stakeholders are responsible. From only 8% in 1990 to 20% in 2022, the prevalence of overweight (including obesity) among children and adolescents aged 5-19 has increased significantly. Similar increases have been seen in boys and girls: in 2022, 21% of boys and 19% of girls were overweight. In addition to genetic factors, there are several environmental factors responsible, such as excessive intake of a caloric-dense diet and lack of physical activity. Thus, early childhood interventions are highly recommended to prevent or minimize the risk of being overweight and obese. To reduce obesity among children, school-based healthy lifestyle interventions are identified as a useful setting, as children from different socioeconomic statuses spend a number of hours at school, have one to two lunches, and have opportunities for sports or physical activity.\n\nIn Pakistan, few studies are conducted to assess the risk factors contributing to obesity in early childhood. For instance, the results of the Nutritional Assessment among School-going Children in Lahore, Pakistan (NASCL) study were conducted to assess the lifestyle (diet, physical activity, and its association with the weight status and socio-demographic status of primary school children. Results revealed that 57% of children consumed fast food less than a week, whereas 30% consumed it 1-2 times per week and 13% more than three times a week. Moreover, an inverse relationship was found between physical activity, overweight, and obesity (P = 0.001). Similarly, the School Health Education Program in Pakistan (SHEPP) was recently initiated, targeting children aged 8-11 years enrolled in the schools to promote healthy diet and physical activity among 9-11-year-old children.\n\nApproximately 29.8% of school-age children in Pakistan are estimated to be overweight or obese, making childhood obesity a serious public health concern. Sedentary lifestyles and longer sleep durations relative to children of normal weight are risk factors for obesity in Pakistani school children. The Toybox study is a multidisciplinary, evidence-based intervention initiated to reduce obesity in early childhood. The focus is on promoting a healthy diet, consumption of healthy drinks, and physical activity. This study is already implemented in six European countries, namely Belgium, Bulgaria, Greece, Germany, Poland, and Spain, and involved 266 kindergartens; 8709 children and their caregivers were enrolled. One of the strengths of the Toybox study is room for slight adjustments to adapt to the policies, political structures, economic conditions, and cultural attitudes (towards diet and physical activity) of other countries; thus, the first feasibility study outside Europe is planned in Malaysia, which is a Southeast Asian country. To the best of our knowledge, there are no obesity prevention initiatives targeting children (4-7 years of age); hence, we considered it appropriate to start the Toybox Study in Pakistan, as it could be a useful intervention to alleviate the obesity issue, given the high prevalence of childhood obesity in Pakistan. The proposed project will implement culturally specific health promotion to improve the health and well-being of the Pakistani population. We aim to conduct a project in 2 government and 2 private schools located in the District East of Karachi.\n\nThe proposed project will target the following Sustainable Development Goals (SDGs): \"Good Health and Well-being\" (SDG 3).\n\nObesity is the main driver for the number of chronic diseases. Thus, prevention of childhood obesity can reduce the burden of chronic diseases like diabetes, hypertension, cardiovascular diseases, and a few cancers later in life and decrease morbidity and mortality, along with improving quality of life by reducing the triple burden of disease. In order to lower early death from NCDs and to promote healthy lives for all children, it is imperative that childhood obesity be addressed. Encouraging healthy behaviors from an early age requires a multi-sectoral, comprehensive approach."
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Children aged 4-7 years of either gender whose parents provide consent and actively engage in the intervention.\n* Schools willing to participate in the study and allow the intervention in their premises\n* Teachers who provided consent and are currently teaching in that school to the children of this age group\n\nExclusion Criteria:\n\n* Children with existing diagnosed chronic diseases or medical conditions that affect growth or metabolism (e.g., food allergies, endocrine disorders, severe asthma, physical disabilities that limit activity).\n* Children currently enrolled in other weight management or obesity-related interventions",
+     "minimumAge": "4 Years"
+    },
+    "identificationModule": {
+     "briefTitle": "A School-based to Prevent Obesity Among Children Aged 4-7 Years- A Feasibility Quasi-Experimental Trial in Karachi, Pakistan",
+     "nctId": "NCT07521579"
+    },
+    "statusModule": {
+     "studyFirstSubmitDate": "2025-12-28"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT07521579.",
+ "seed": "NCT07521579",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

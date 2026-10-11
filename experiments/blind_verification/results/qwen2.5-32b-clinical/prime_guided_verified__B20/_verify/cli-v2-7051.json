@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7051",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "F",
+   "quote": "\u22652 years of age on the day of signing the informed consent form;",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 638,
+   "completion_tokens": 29,
+   "latency_s": 1.741,
+   "raw": "The inclusion criteria specify a minimum age of 2 years, not 18, thus not restricting enrollment to adults. ANSWER: F"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7157",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E4",
+   "attested": "F",
+   "quote": "allows remote authenticated users to hijack web sessions",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 232,
+   "completion_tokens": 32,
+   "latency_s": 1.738,
+   "raw": "The document does not specify the exact version where the issue was first introduced; it only lists the versions before which the issue is present. ANSWER: F"
+  }
+ ]
+}

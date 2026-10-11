@@ -1,0 +1,31 @@
+{
+ "instance": "cli-v2-7030",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "2. Male or female subject of at least 18 years of age.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 1097,
+   "completion_tokens": 27,
+   "latency_s": 2.446,
+   "raw": "The document specifies that subjects must be \"of at least 18 years of age,\" establishing the condition. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E4",
+   "attested": "F",
+   "quote": "3. Chronic symptomatic lower limb ischemia defined as Rutherford classification 2, 3, or 4.",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 1082,
+   "completion_tokens": 35,
+   "latency_s": 2.872,
+   "raw": "The document does not establish the condition since the inclusion criteria specify subjects must have chronic symptomatic lower limb ischemia, indicating they are not healthy volunteers. ANSWER: F"
+  }
+ ]
+}

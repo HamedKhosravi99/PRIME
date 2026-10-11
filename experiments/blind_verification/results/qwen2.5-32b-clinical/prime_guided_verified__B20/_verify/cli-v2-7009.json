@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7009",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "* Patients diagnosed with osteoarthritis of the knee of not less than six weeks.",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 224,
+   "completion_tokens": 34,
+   "latency_s": 2.156,
+   "raw": "The document does not mention any age restrictions for eligibility, thus it is unclear if the minimum age requirement of 18 years is established. ANSWER: UNCLEAR"
+  }
+ ]
+}

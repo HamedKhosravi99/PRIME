@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7132",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Age less than to 18 years.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 354,
+   "completion_tokens": 36,
+   "latency_s": 2.691,
+   "raw": "The exclusion criterion explicitly states that participants under 18 years of age are not eligible, which aligns with the condition that restricts enrollment to adults. ANSWER: T"
+  }
+ ]
+}

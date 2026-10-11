@@ -1,0 +1,31 @@
+{
+ "instance": "cli-v2-7041",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Hypogonadal males between 18-70 years old",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 189,
+   "completion_tokens": 38,
+   "latency_s": 2.839,
+   "raw": "The inclusion criteria specify that participants must be males between 18-70 years old, which meets the requirement for a minimum age of 18 years. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "Hypogonadal males",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 184,
+   "completion_tokens": 26,
+   "latency_s": 2.21,
+   "raw": "The inclusion criteria specify \"Hypogonadal males,\" which restricts enrollment to male participants only. ANSWER: T"
+  }
+ ]
+}

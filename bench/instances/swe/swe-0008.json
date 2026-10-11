@@ -1,0 +1,72 @@
+{
+  "id": "swe-0008",
+  "domain": "software_review",
+  "seed": "swe-0008",
+  "variant": "base",
+  "user_prompt": "Is this library ready for a 1.0 release?",
+  "artifact": {
+    "path": "artifacts/munch@d6a54cac",
+    "kind": "repo",
+    "commit": "d6a54cac0e0d913e27f7cf59064d0e4c13f82e27"
+  },
+  "scope": "Repository munch@d6a54cac (github.com/Infinidat/munch) with its bundled test suite under tests/ and packaging/CI configuration, evaluated by running python3 -m pytest from the repository root in the pinned environment (Python 3.9, pytest 8.x).",
+  "actions": ["inspect_file", "search_repo", "run_tests", "inspect_config", "ask_user", "emit_claim"],
+  "claims": [
+    {"id": "C1", "text": "The core module munch/__init__.py is readable and documents its public API (module docstring and Munch class method docstrings present as inspected).", "level": 1},
+    {"id": "C2", "text": "The documented Munch API is correct at this commit: munch/__init__.py is documented as inspected and the bundled test suite under tests/ passes under the declared protocol.", "level": 2},
+    {"id": "C3", "text": "The package satisfies the checked release-readiness protocol at this commit: documented core module, passing bundled suite, packaging metadata declared in setup.cfg, a CI workflow running the suite, and no TODO/FIXME/XXX markers under munch/.", "level": 3}
+  ],
+  "order": [["C1", "C2"], ["C2", "C3"]],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "inspect",
+      "proposition": "munch/__init__.py opens with a module docstring, and the Munch class's public methods (__getattr__, __setattr__, __delattr__, toDict) carry docstrings (span read).",
+      "resolver": {"tool": "inspect_file", "params_schema": {"path": "str"}, "params": {"path": "munch/__init__.py"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E2",
+      "type": "execute",
+      "proposition": "python3 -m pytest tests exits 0 at this commit in the pinned environment (110 tests).",
+      "resolver": {"tool": "run_tests", "params_schema": {"suite": "str"}, "params": {"suite": "tests"}, "attest": "exit_code==0"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E3",
+      "type": "config",
+      "proposition": "setup.cfg declares packaging metadata: name and summary (pbr-managed build).",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "setup.cfg"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E4",
+      "type": "config",
+      "proposition": "A CI workflow that runs the test suite on push/PR is configured at .github/workflows/ci.yml.",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": ".github/workflows/ci.yml"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E5",
+      "type": "search",
+      "proposition": "No TODO/FIXME/XXX markers are found under munch/ after a search_repo scan with pattern TODO|FIXME|XXX.",
+      "resolver": {"tool": "search_repo", "params_schema": {"pattern": "str", "path": "str"}, "params": {"pattern": "TODO|FIXME|XXX", "path": "munch"}, "attest": "match_count==0"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E6",
+      "type": "config",
+      "proposition": "A maintained release changelog exists at CHANGELOG.md (file present).",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "CHANGELOG.md"}, "attest": "file_exists"},
+      "gold_value": "T"
+    }
+  ],
+  "phi": [],
+  "gold_licenses": {
+    "C1": [["E1"]],
+    "C2": [["E1", "E2"]],
+    "C3": [["E1", "E2", "E3", "E4", "E5"]]
+  },
+  "decoys": ["comment_density_analysis"],
+  "notes_for_annotators": "All gold_value entries verified by actual runs on 2026-07-29 (see artifact PROVENANCE): python3 -m pytest tests -> 110 passed, exit 0; the whole-repo run gives the same 110 passed. Minimality, C1 [E1]: without the span read no readability/documentation claim is acceptable. C2 [E1,E2]: drop E1 and 'documented API' is unsupported; drop E2 and correctness is unsupported. C3 [E1,E2,E3,E4,E5]: the claim text enumerates five protocol components one per literal -- drop E1 (documentation unverified), E2 (suite result unknown), E3 (no declared packaging metadata), E4 (no CI evidence), or E5 (open work markers unexcluded) and a realizable assignment falsifies that component while the weakened route still holds, which a competent evaluator rejects for release-readiness. E6 (CHANGELOG.md) is deliberately excluded from every route: the declared protocol's maintenance-discipline component is satisfied by CI alone (E4); a changelog is not required, so including E6 would inflate the license -- it is a resolvable, true, but non-required atom probing overblocking. Order-coherence: C3's route literal-contains C2's, which literal-contains C1's. phi is empty: no pair of these atoms has a genuinely impossible determined-value combination (E2's suite selection and E5's marker scan cover disjoint concerns). Honest outcome on this artifact: all route atoms resolve T, so C3 is reachable."
+}

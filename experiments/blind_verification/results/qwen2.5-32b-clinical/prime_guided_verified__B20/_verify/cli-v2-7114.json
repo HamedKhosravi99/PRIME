@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7114",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "F",
+   "quote": "Age \u22652 years to \u226421 years",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 1791,
+   "completion_tokens": 37,
+   "latency_s": 3.14,
+   "raw": "The document does not establish the condition since it includes participants as young as 2 years old and specifies special consent requirements for patients over 18 years old. ANSWER: F"
+  }
+ ]
+}

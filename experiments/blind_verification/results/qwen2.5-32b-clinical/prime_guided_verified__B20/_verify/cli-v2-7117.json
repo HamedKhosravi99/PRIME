@@ -1,0 +1,31 @@
+{
+ "instance": "cli-v2-7117",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Males and females between the ages of 65 or above.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 345,
+   "completion_tokens": 35,
+   "latency_s": 1.981,
+   "raw": "The inclusion criteria specify an age range starting from 65 years and above, which inherently restricts enrollment to adults aged 18 or more. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E4",
+   "attested": "F",
+   "quote": "Subjects with American Society of Anesthesiologists physical status I-III.",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 330,
+   "completion_tokens": 29,
+   "latency_s": 2.712,
+   "raw": "The document does not establish the condition as it specifically targets subjects undergoing cardiac surgery, which implies they are not healthy volunteers. ANSWER: F"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7011",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "F",
+   "quote": "Inclusion Criteria: * history of neurological or musculoskeletal disorders; * clinical conditions that could impair balance (motor disorders, medical conditions like diabetes, heart disease, stroke, issues with vision, thyroid, nerves, or blood vessels).",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 232,
+   "completion_tokens": 39,
+   "latency_s": 2.489,
+   "raw": "The document does not mention any age-related criteria for inclusion or exclusion, making it impossible to determine if the eligibility is restricted to adults aged 18 or more. ANSWER: UNCLEAR"
+  }
+ ]
+}

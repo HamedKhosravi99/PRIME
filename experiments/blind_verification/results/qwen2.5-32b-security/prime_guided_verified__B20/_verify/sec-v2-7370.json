@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7370",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "An issue was discovered in 6.0 before 6.0.4, 5.2 before 5.2.13, and 4.2 before 4.2.30.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 280,
+   "completion_tokens": 19,
+   "latency_s": 2.098,
+   "raw": "The document specifies \"Django\" as the affected package by name. ANSWER: T"
+  }
+ ]
+}

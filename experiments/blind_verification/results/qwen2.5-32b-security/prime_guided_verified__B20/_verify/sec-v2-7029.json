@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7029",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "The fix will be included in TensorFlow 2.9.0. We will also cherrypick this commit on TensorFlow 2.8.1, TensorFlow 2.7.2, and TensorFlow 2.6.4, as these are also affected and still in supported range.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 457,
+   "completion_tokens": 44,
+   "latency_s": 4.605,
+   "raw": "The document indicates that the fix will be included in TensorFlow 2.9.0 and mentions specific versions where the patch will be applied, thus stating a version in which the issue is fixed. ANSWER: T"
+  }
+ ]
+}

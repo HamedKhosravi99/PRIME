@@ -1,0 +1,175 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-38jr-29fh-w9vm"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-38jr-29fh-w9vm"
+    },
+    "what": "the details text names the affected package (the package itself, by its registered name or a distinctive part of it, not only the vendor or the ecosystem)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-38jr-29fh-w9vm"
+    },
+    "what": "the details text states a version in which the issue is fixed"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-38jr-29fh-w9vm"
+    },
+    "what": "the details text states the first affected version, the version in which the issue was introduced"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory has a readable summary (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: it has a summary and its text names the affected package."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked completeness protocol: summary present, and the text names the package, a fixed version, and the first affected version."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4"
+   ]
+  ]
+ },
+ "id": "sec-v2-7082",
+ "notes_for_annotators": "{\"family\": \"security-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, false, false], \"twins\": [\"affected.0.package.name\", \"affected.*.ranges.*.events.*.fixed\", \"affected.*.ranges.*.events.*.introduced\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-38jr-29fh-w9vm": {
+   "details": "subprocess call with shell=True identified, security issue.\n\n#### Code\n\nOn file [src/ansys/geometry/core/connection/product_instance.py](https://github.com/ansys/pyansys-geometry/blob/52cba1737a8a7812e5430099f715fa2160ec007b/src/ansys/geometry/core/connection/product_instance.py#L403-L428):\n\n```\n403 def _start_program(args: List[str], local_env: Dict[str, str]) -> subprocess.Popen:\n404     \"\"\"\n405     Start the program where the path is the first item of the ``args`` array argument.\n406\n407     Parameters\n408     ----------\n409     args : List[str]\n410         List of arguments to be passed to the program. The first list's item shall\n411         be the program path.\n412     local_env : Dict[str,str]\n413         Environment variables to be passed to the program.\n414\n415     Returns\n416     -------\n417     subprocess.Popen\n418         The subprocess object.\n419     \"\"\"\n420      return subprocess.Popen(\n421         args,\n422         shell=os.name != \"nt\",\n423         stdin=subprocess.DEVNULL,\n424         stdout=subprocess.DEVNULL,\n425         stderr=subprocess.DEVNULL,\n426         env=local_env,\n427      )\n428 \n429 \n\n```\n\nUpon calling this method ``_start_program`` directly, users could exploit its usage to perform malicious operations on the current machine where the script is ran. With this resolution made through #1076 and #1077, we make sure that this method is only called from within the library and we are no longer enabling the ``shell=True`` option.\n\n#### CWE - 78\n\nFor more information see https://cwe.mitre.org/data/definitions/78.html\n\n#### More information\n\nVisit https://bandit.readthedocs.io/en/1.7.8/plugins/b602_subprocess_popen_with_shell_equals_true.html to find out more information.",
+   "summary": "ansys-geometry-core OS Command Injection vulnerability"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-38jr-29fh-w9vm.",
+ "seed": "GHSA-38jr-29fh-w9vm",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "text"
+}

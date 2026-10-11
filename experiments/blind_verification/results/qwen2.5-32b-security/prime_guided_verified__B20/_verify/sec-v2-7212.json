@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7212",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "The problem has been patched in `Products.isurlinportal`.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 487,
+   "completion_tokens": 28,
+   "latency_s": 2.308,
+   "raw": "The document establishes the condition as it mentions the affected package by its registered name, `Products.isurlinportal`. ANSWER: T"
+  }
+ ]
+}

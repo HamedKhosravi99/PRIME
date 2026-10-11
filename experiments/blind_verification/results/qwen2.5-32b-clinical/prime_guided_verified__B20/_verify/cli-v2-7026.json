@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7026",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "* age ranged from 18-80 years and right-handed;",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 374,
+   "completion_tokens": 26,
+   "latency_s": 2.08,
+   "raw": "The inclusion criteria specify an age range starting from 18 years, which confirms the restriction to adults. ANSWER: T"
+  }
+ ]
+}

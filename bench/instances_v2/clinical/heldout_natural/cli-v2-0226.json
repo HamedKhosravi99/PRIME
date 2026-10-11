@@ -1,0 +1,283 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT00009854"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT00009854"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2015-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT00009854"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT00009854"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT00009854"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT00009854"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2003-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT00009854"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2015-01-01"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2015-01-01"
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-0226",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-07\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": null, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT00009854": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "RATIONALE: Drugs used in chemotherapy use different ways to stop tumor cells from dividing so they stop growing or die.\n\nPURPOSE: Phase I/II trial to study the effectiveness of carmustine followed by surgery in treating patients who have recurrent supratentorial malignant glioma or metastatic brain neoplasm."
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "DISEASE CHARACTERISTICS:\n\n* Histologically confirmed recurrent supratentorial malignant glioma with clear evidence of progression by MRI\n\n  * Glioblastoma multiforme\n  * Anaplastic ependymoma\n  * Anaplastic astrocytoma\n  * Anaplastic oligodendroglioma OR\n* Metastatic tumor to the brain other than melanoma\n* Planned resection of tumor (must be first surgery for recurrent disease)\n* Tumor volume of each tumor component or residual tumor must be at least 4 cm3 and no greater than 33.4 cm3\n* Tumor shape and surrounding structure(s) unlikely to cause an irregular distribution of the injected study drug\n\n  * Tumor is spherical, spheroid, or ovoid\n  * No tumors shaped into 3 or more components (e.g., multicentric or multilobulated)\n  * No tumors extending into the ventricular system\n  * Tumor has an intact stroma (i.e., tumor mass not partially incised or punctured)\n  * Central necrosis and/or central cystic areas allowed if an enhancing rim with a thickness of more than 5 mm is present\n* No tumors in the following locations of the brain:\n\n  * Brainstem (pons or medulla)\n  * Midbrain (mesencephalon)\n  * Primary sensorimotor cortex in the dominant hemisphere\n  * Within 1.5 cm of the optic chiasm, either optic nerve, or any other cranial nerve\n\nPATIENT CHARACTERISTICS:\n\nAge:\n\n* 18 to 75\n\nPerformance status:\n\n* Karnofsky 60-100%\n\nLife expectancy:\n\n* Not specified\n\nHematopoietic:\n\n* Absolute neutrophil count at least 1,500/mm\\^3\n* Platelet count at least 100,000/mm\\^3\n* No evidence of bleeding diathesis\n\nHepatic:\n\n* Bilirubin no greater than 2.0 mg/dL\n* SGOT and SGPT no greater than 2.5 times normal\n\nRenal:\n\n* Creatinine no greater than 2.0 mg/dL OR\n* Creatinine clearance at least 40 mL/min OR\n* BUN no greater than 30 mg/dL\n\nOther:\n\n* No active uncontrolled infection\n* Afebrile (37.5 degrees C) unless fever due to tumor\n* No other unstable or severe medical condition\n* No complicating medical or psychiatric problem that would preclude study\n* Not pregnant or nursing\n* Negative pregnancy test\n* Fertile patients must use effective contraception\n\nPRIOR CONCURRENT THERAPY:\n\nBiologic therapy:\n\n* Not specified\n\nChemotherapy:\n\n* At least 4 weeks since prior systemic chemotherapy (6 weeks for nitrosoureas, mitomycin, or Gliadel wafers) and recovered\n* No anti-tumor chemotherapy within 12 weeks after study drug unless tumor volume increases by more than 25% by MRI\n\nEndocrine therapy:\n\n* Not specified\n\nRadiotherapy:\n\n* At least 4 weeks since prior radiotherapy and recovered\n* No prior intracranial brachytherapy\n* No anti-tumor radiotherapy within 12 weeks after study drug unless tumor volume increases by more than 25% by MRI\n\nSurgery:\n\n* See Disease Characteristics\n* Prior surgery allowed\n* No anti-tumor surgery within 12 weeks after study drug\n\nOther:\n\n* No concurrent anticoagulants\n* No other concurrent investigational agents"
+    },
+    "identificationModule": {
+     "nctId": "NCT00009854",
+     "officialTitle": "Phase I/II Study of Intratumoral Injection of DTI-015 Prior to Tumor Resection in Patients With Recurrent Malignant Glioma or Metastatic Neoplasm to Brain"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2013-11-05",
+     "overallStatus": "UNKNOWN",
+     "studyFirstSubmitDate": "2001-02-02"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT00009854.",
+ "seed": "NCT00009854",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

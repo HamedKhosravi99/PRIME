@@ -1,0 +1,236 @@
+[
+ {
+  "path": "derivedSection.miscInfoModule.submissionTracking.estimatedResultsFirstSubmitDate",
+  "type": "str",
+  "description": "Date results information was first submitted, when results are submitted but not yet posted (set by ClinicalTrials.gov).",
+  "values": "dates"
+ },
+ {
+  "path": "hasResults",
+  "type": "bool",
+  "description": "Whether posted results exist on ClinicalTrials.gov.",
+  "values": [
+   true,
+   false
+  ]
+ },
+ {
+  "path": "protocolSection.armsInterventionsModule.interventions",
+  "type": "list",
+  "description": "List of interventions; each has a type (DRUG, DEVICE, BIOLOGICAL, PROCEDURE, ...)."
+ },
+ {
+  "path": "protocolSection.armsInterventionsModule.interventions.N.type",
+  "type": "str",
+  "description": "List of interventions; each has a type (DRUG, DEVICE, BIOLOGICAL, PROCEDURE, ...).",
+  "values": [
+   "DRUG",
+   "DEVICE",
+   "OTHER",
+   "BIOLOGICAL",
+   "PROCEDURE",
+   "RADIATION",
+   "BEHAVIORAL",
+   "DIAGNOSTIC_TEST",
+   "COMBINATION_PRODUCT",
+   "DIETARY_SUPPLEMENT",
+   "GENETIC"
+  ]
+ },
+ {
+  "path": "protocolSection.contactsLocationsModule.locations",
+  "type": "list",
+  "description": "List of facility locations; each has a country."
+ },
+ {
+  "path": "protocolSection.contactsLocationsModule.locations.N.country",
+  "type": "str",
+  "description": "List of facility locations; each has a country."
+ },
+ {
+  "path": "protocolSection.designModule.designInfo.primaryPurpose",
+  "type": "str",
+  "description": "Primary purpose of an interventional study (for example TREATMENT, PREVENTION, DEVICE_FEASIBILITY).",
+  "values": [
+   "TREATMENT",
+   "PREVENTION",
+   "DIAGNOSTIC",
+   "SUPPORTIVE_CARE",
+   "OTHER",
+   "BASIC_SCIENCE",
+   "SCREENING",
+   "HEALTH_SERVICES_RESEARCH"
+  ]
+ },
+ {
+  "path": "protocolSection.designModule.phases",
+  "type": "list",
+  "description": "List of study phases (for example PHASE1, PHASE2, PHASE3, PHASE4, EARLY_PHASE1, NA)."
+ },
+ {
+  "path": "protocolSection.designModule.phases.N",
+  "type": "str",
+  "description": "List of study phases (for example PHASE1, PHASE2, PHASE3, PHASE4, EARLY_PHASE1, NA).",
+  "values": [
+   "PHASE2",
+   "NA",
+   "PHASE3",
+   "PHASE4",
+   "PHASE1"
+  ]
+ },
+ {
+  "path": "protocolSection.designModule.studyType",
+  "type": "str",
+  "description": "Study type: INTERVENTIONAL, OBSERVATIONAL, or EXPANDED_ACCESS.",
+  "values": [
+   "INTERVENTIONAL"
+  ]
+ },
+ {
+  "path": "protocolSection.identificationModule.briefTitle",
+  "type": "str",
+  "description": "Short title of the study.",
+  "values": "free text"
+ },
+ {
+  "path": "protocolSection.oversightModule.isFdaRegulatedDevice",
+  "type": "bool",
+  "description": "Whether the study studies a U.S. FDA-regulated device product (absent if not reported).",
+  "values": [
+   false,
+   true
+  ]
+ },
+ {
+  "path": "protocolSection.oversightModule.isFdaRegulatedDrug",
+  "type": "bool",
+  "description": "Whether the study studies a U.S. FDA-regulated drug product (absent if not reported).",
+  "values": [
+   true,
+   false
+  ]
+ },
+ {
+  "path": "protocolSection.oversightModule.isUnapprovedDevice",
+  "type": "bool",
+  "description": "Whether a device product studied is not approved or cleared by FDA.",
+  "values": [
+   true
+  ]
+ },
+ {
+  "path": "protocolSection.oversightModule.isUsExport",
+  "type": "bool",
+  "description": "Whether a product under investigation is manufactured in and exported from the U.S. for study in another country.",
+  "values": [
+   false,
+   true
+  ]
+ },
+ {
+  "path": "protocolSection.sponsorCollaboratorsModule.leadSponsor.class",
+  "type": "str",
+  "description": "Class of the lead sponsor (INDUSTRY, NIH, FED, OTHER, ...).",
+  "values": [
+   "OTHER",
+   "INDUSTRY",
+   "NIH",
+   "FED",
+   "NETWORK",
+   "OTHER_GOV",
+   "INDIV"
+  ]
+ },
+ {
+  "path": "protocolSection.statusModule.completionDateStruct.date",
+  "type": "str",
+  "description": "Study completion date (actual or estimated); YYYY-MM-DD or YYYY-MM.",
+  "values": "dates"
+ },
+ {
+  "path": "protocolSection.statusModule.completionDateStruct.type",
+  "type": "str",
+  "description": "Whether the study completion date is ACTUAL or ESTIMATED.",
+  "values": [
+   "ACTUAL",
+   "ESTIMATED"
+  ]
+ },
+ {
+  "path": "protocolSection.statusModule.dispFirstSubmitDate",
+  "type": "str",
+  "description": "Date the responsible party first submitted a certification or request to delay the submission of results information (absent if none).",
+  "values": "dates"
+ },
+ {
+  "path": "protocolSection.statusModule.overallStatus",
+  "type": "str",
+  "description": "Recruitment status of the study as a whole.",
+  "values": [
+   "COMPLETED",
+   "TERMINATED",
+   "UNKNOWN",
+   "ACTIVE_NOT_RECRUITING",
+   "RECRUITING",
+   "SUSPENDED",
+   "NOT_YET_RECRUITING"
+  ]
+ },
+ {
+  "path": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+  "type": "str",
+  "description": "Primary completion date: the date the final participant was examined or received an intervention for the primary outcome (actual or estimated); YYYY-MM-DD or YYYY-MM.",
+  "values": "dates"
+ },
+ {
+  "path": "protocolSection.statusModule.primaryCompletionDateStruct.type",
+  "type": "str",
+  "description": "Whether the primary completion date is ACTUAL or ESTIMATED.",
+  "values": [
+   "ACTUAL",
+   "ESTIMATED"
+  ]
+ },
+ {
+  "path": "protocolSection.statusModule.resultsFirstPostDateStruct.date",
+  "type": "str",
+  "description": "Date results information was first posted on ClinicalTrials.gov after quality control.",
+  "values": "dates"
+ },
+ {
+  "path": "protocolSection.statusModule.resultsFirstPostDateStruct.type",
+  "type": "str",
+  "description": null,
+  "values": [
+   "ACTUAL"
+  ]
+ },
+ {
+  "path": "protocolSection.statusModule.resultsFirstSubmitDate",
+  "type": "str",
+  "description": "Date the responsible party first submitted results information to ClinicalTrials.gov (absent if never submitted).",
+  "values": "dates"
+ },
+ {
+  "path": "protocolSection.statusModule.startDateStruct.date",
+  "type": "str",
+  "description": "Study start date: the date the first participant was enrolled (actual or estimated); YYYY-MM-DD or YYYY-MM.",
+  "values": "dates"
+ },
+ {
+  "path": "protocolSection.statusModule.startDateStruct.type",
+  "type": "str",
+  "description": "Whether the start date is ACTUAL or ESTIMATED.",
+  "values": [
+   "ACTUAL",
+   "ESTIMATED"
+  ]
+ },
+ {
+  "path": "protocolSection.statusModule.studyFirstSubmitDate",
+  "type": "str",
+  "description": "Date the study was first submitted for registration.",
+  "values": "dates"
+ }
+]

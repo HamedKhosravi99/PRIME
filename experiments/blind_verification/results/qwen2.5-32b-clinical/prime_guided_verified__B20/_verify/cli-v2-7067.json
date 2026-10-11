@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7067",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "All Veterans that are referred to orthopedics surgical clinic for a total knee replacement for osteoarthritis and meet study criteria will be invited to participate.",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 216,
+   "completion_tokens": 31,
+   "latency_s": 3.04,
+   "raw": "The document does not specify any age requirement for participants, thus it is unclear if the eligibility criteria restrict enrollment to adults only. ANSWER: UNCLEAR"
+  }
+ ]
+}

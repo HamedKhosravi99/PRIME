@@ -1,0 +1,283 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT02385851"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.statusVerifiedDate",
+     "record_id": "NCT02385851"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2017-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT02385851"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Inclusion Criteria:\\n\\n* Age greater or equal to 18 years, and lower or equal to 80 years.\\n* Signs and symptoms of acute ischemic stroke.\\n* Symptoms present upon awakening.\\n* Arriving to the Emergency Department within 4.5 hours of awakening. Treatment with IV tPA must be initiated prior to 4.5hours from waking up.\\n* NIHSS \\\\>3\\n* A non-contrast head CT without hemorrhage and without hypodensity more than 1/3 of the middle cerebral artery (MCA) territory; or MRI demonstrating no hemorrhage, and with a diffusion-weighted imaging (DWI) lesion no greater than 70 mL and FLAIR without a well defined hyperintense lesion that is more than 1/3 of the MCA territory.\\n* Pre-morbid modified Rankin score of 0 or 1.\\n\\nExclusion Criteria:\\n\\n* Rapidly improving deficit to an NIHSS less than 3.\\n* Sustained systolic blood pressure greater than 185 mmHg or diastolic blood pressure greater than 110 mmHg despite treatment.\\n* Glucose less than 50 mg/dL.\\n* Stroke or head trauma within last 3 months.\\n* History of intracranial hemorrhage. Symptoms of subarachnoid hemorrhage.\\n* Major surgery within 14 days.\\n* Gastrointestinal (GI)/Genito-urinary (GU) hemorrhage within 21 days.\\n* International normalized ratio (INR) \\\\> 1.7.\\n* Heparin within 48 hours with an elevated activated partial thromboplastin time (aPTT).\\n* Platelet count less than 100,000.\\n* Presumed septic embolus or suspicion of bacterial endocarditis.\\n* Suspicion of aortic dissection.\\n* Use of anticoagulants such as dabigatran, rivaroxaban, apixaban, enoxaparin.\\n* Pregnant or lactating women.\\n* Known allergy or sensitivity to tPA.\"",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT02385851"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT02385851"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT02385851"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"INTERVENTIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT02385851"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2017-01-01"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2017-01-01"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "equals",
+      "Inclusion Criteria:\n\n* Age greater or equal to 18 years, and lower or equal to 80 years.\n* Signs and symptoms of acute ischemic stroke.\n* Symptoms present upon awakening.\n* Arriving to the Emergency Department within 4.5 hours of awakening. Treatment with IV tPA must be initiated prior to 4.5hours from waking up.\n* NIHSS \\>3\n* A non-contrast head CT without hemorrhage and without hypodensity more than 1/3 of the middle cerebral artery (MCA) territory; or MRI demonstrating no hemorrhage, and with a diffusion-weighted imaging (DWI) lesion no greater than 70 mL and FLAIR without a well defined hyperintense lesion that is more than 1/3 of the MCA territory.\n* Pre-morbid modified Rankin score of 0 or 1.\n\nExclusion Criteria:\n\n* Rapidly improving deficit to an NIHSS less than 3.\n* Sustained systolic blood pressure greater than 185 mmHg or diastolic blood pressure greater than 110 mmHg despite treatment.\n* Glucose less than 50 mg/dL.\n* Stroke or head trauma within last 3 months.\n* History of intracranial hemorrhage. Symptoms of subarachnoid hemorrhage.\n* Major surgery within 14 days.\n* Gastrointestinal (GI)/Genito-urinary (GU) hemorrhage within 21 days.\n* International normalized ratio (INR) \\> 1.7.\n* Heparin within 48 hours with an elevated activated partial thromboplastin time (aPTT).\n* Platelet count less than 100,000.\n* Presumed septic embolus or suspicion of bacterial endocarditis.\n* Suspicion of aortic dissection.\n* Use of anticoagulants such as dabigatran, rivaroxaban, apixaban, enoxaparin.\n* Pregnant or lactating women.\n* Known allergy or sensitivity to tPA."
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-0094",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-01\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 2, \"false_mech\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT02385851": {
+   "protocolSection": {
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n1. Adult male or female of ages 18 to 50 inclusive\n2. Body weight \\> 50 kg (110 lb.) and body mass index between 18 and 32 kg/m2 inclusive\n3. Medically healthy with clinically insignificant findings based on medical history, 12-lead ECG, and physical examination\n4. Negative urine pregnancy test in women of childbearing potential\n\nExclusion Criteria:\n\n1. Previous exposure to pegfilgrastim or filgrastim, or known allergy to PEG (polyethylene glycol)\n2. Chemistry and hematology values outside protocol specified range\n3. Current or previous cancer, diabetes, or any clinically significant cardiovascular, metabolic, renal, hepatic, gastrointestinal, hematologic, respiratory, dermatological, neurological, psychiatric, or other disorder\n4. History of chronic or acute respiratory illness within the past 4 weeks\n5. Positive urine drug or alcohol screen or unwillingness to abstain from alcohol or recreational drugs for the duration of study participation\n6. No prescription or nonprescription drugs during the study\n7. Participation in an investigational clinical study within 30 days prior to screening\n8. Known or suspected allergic reaction to latex",
+     "minimumAge": "18 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "nctId": "NCT02385851"
+    },
+    "statusModule": {
+     "statusVerifiedDate": "2015-08",
+     "studyFirstSubmitDate": "2015-03-02"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT02385851.",
+ "seed": "NCT02385851",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

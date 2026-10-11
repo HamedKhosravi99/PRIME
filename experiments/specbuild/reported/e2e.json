@@ -1,0 +1,415 @@
+{
+ "n_test": 1999,
+ "n_subset": 600,
+ "reference_levels": {
+  "1": 887,
+  "2": 755,
+  "3": 357
+ },
+ "programs": {
+  "A": {
+   "instances": 526,
+   "level_agreement": 22.761380690345174,
+   "fixed_all": {
+    "n": 1999,
+    "unsupported": 1.8009004502251125,
+    "unsupported_k": 36,
+    "unsupported_ci": [
+     1.3036446618608242,
+     2.4830551949825725
+    ],
+    "utility": 18.375854593963673,
+    "coverage": 26.313156578289142,
+    "abstain": 73.68684342171086,
+    "by_status": {
+     "reported": {
+      "n": 273,
+      "unsupported": 3.2967032967032965,
+      "coverage": 54.21245421245421,
+      "utility": 33.94383394383396
+     },
+     "reported-late": {
+      "n": 357,
+      "unsupported": 0.0,
+      "coverage": 43.977591036414566,
+      "utility": 40.70961718020539
+     },
+     "overdue": {
+      "n": 491,
+      "unsupported": 0.4073319755600815,
+      "coverage": 39.91853360488798,
+      "utility": 26.340801086218544
+     },
+     "ongoing": {
+      "n": 878,
+      "unsupported": 2.847380410022779,
+      "coverage": 2.847380410022779,
+      "utility": 0.0
+     }
+    }
+   },
+   "fixed_subset": {
+    "n": 600,
+    "unsupported": 1.6666666666666667,
+    "unsupported_k": 10,
+    "unsupported_ci": [
+     0.9077631854320565,
+     3.0405570362949668
+    ],
+    "utility": 18.999999999999986,
+    "coverage": 26.833333333333332,
+    "abstain": 73.16666666666667,
+    "by_status": {
+     "reported": {
+      "n": 96,
+      "unsupported": 2.0833333333333335,
+      "coverage": 51.041666666666664,
+      "utility": 32.63888888888887
+     },
+     "reported-late": {
+      "n": 105,
+      "unsupported": 0.0,
+      "coverage": 47.61904761904762,
+      "utility": 44.444444444444436
+     },
+     "overdue": {
+      "n": 134,
+      "unsupported": 0.0,
+      "coverage": 40.298507462686565,
+      "utility": 26.865671641791025
+     },
+     "ongoing": {
+      "n": 265,
+      "unsupported": 3.018867924528302,
+      "coverage": 3.018867924528302,
+      "utility": 0.0
+     }
+    }
+   },
+   "arms": {
+    "react_program_attested": {
+     "n": 600,
+     "unsupported": 0.16666666666666666,
+     "unsupported_k": 1,
+     "unsupported_ci": [
+      0.02942606305477184,
+      0.9379799586568826
+     ],
+     "utility": 13.111111111111109,
+     "coverage": 26.833333333333332,
+     "abstain": 73.16666666666667,
+     "by_status": {
+      "reported": {
+       "n": 96,
+       "unsupported": 0.0,
+       "coverage": 51.041666666666664,
+       "utility": 25.34722222222223
+      },
+      "reported-late": {
+       "n": 105,
+       "unsupported": 0.0,
+       "coverage": 47.61904761904762,
+       "utility": 24.126984126984134
+      },
+      "overdue": {
+       "n": 134,
+       "unsupported": 0.0,
+       "coverage": 40.298507462686565,
+       "utility": 19.651741293532346
+      },
+      "ongoing": {
+       "n": 265,
+       "unsupported": 0.37735849056603776,
+       "coverage": 3.018867924528302,
+       "utility": 1.0062893081761006
+      }
+     },
+     "episode_errors": 0,
+     "calls": 3.9937888198757765
+    },
+    "prime_guided": {
+     "n": 600,
+     "unsupported": 0.16666666666666666,
+     "unsupported_k": 1,
+     "unsupported_ci": [
+      0.02942606305477184,
+      0.9379799586568826
+     ],
+     "utility": 9.888888888888875,
+     "coverage": 26.833333333333332,
+     "abstain": 73.16666666666667,
+     "by_status": {
+      "reported": {
+       "n": 96,
+       "unsupported": 1.0416666666666667,
+       "coverage": 51.041666666666664,
+       "utility": 17.361111111111104
+      },
+      "reported-late": {
+       "n": 105,
+       "unsupported": 0.0,
+       "coverage": 47.61904761904762,
+       "utility": 19.04761904761904
+      },
+      "overdue": {
+       "n": 134,
+       "unsupported": 0.0,
+       "coverage": 40.298507462686565,
+       "utility": 14.925373134328352
+      },
+      "ongoing": {
+       "n": 265,
+       "unsupported": 0.0,
+       "coverage": 3.018867924528302,
+       "utility": 1.0062893081761006
+      }
+     },
+     "episode_errors": 0,
+     "calls": 3.198757763975155
+    },
+    "prime_complete": {
+     "n": 600,
+     "unsupported": 1.6666666666666667,
+     "unsupported_k": 10,
+     "unsupported_ci": [
+      0.9077631854320565,
+      3.0405570362949668
+     ],
+     "utility": 18.999999999999986,
+     "coverage": 26.833333333333332,
+     "abstain": 73.16666666666667,
+     "by_status": {
+      "reported": {
+       "n": 96,
+       "unsupported": 2.0833333333333335,
+       "coverage": 51.041666666666664,
+       "utility": 32.63888888888887
+      },
+      "reported-late": {
+       "n": 105,
+       "unsupported": 0.0,
+       "coverage": 47.61904761904762,
+       "utility": 44.444444444444436
+      },
+      "overdue": {
+       "n": 134,
+       "unsupported": 0.0,
+       "coverage": 40.298507462686565,
+       "utility": 26.865671641791025
+      },
+      "ongoing": {
+       "n": 265,
+       "unsupported": 3.018867924528302,
+       "coverage": 3.018867924528302,
+       "utility": 0.0
+      }
+     },
+     "episode_errors": 0,
+     "calls": 5.043478260869565
+    }
+   }
+  },
+  "B": {
+   "instances": 1999,
+   "level_agreement": 81.64082041020511,
+   "fixed_all": {
+    "n": 1999,
+    "unsupported": 3.5017508754377187,
+    "unsupported_k": 70,
+    "unsupported_ci": [
+     2.7809402034624098,
+     4.400935787130155
+    ],
+    "utility": 47.49041187260165,
+    "coverage": 92.39619809904951,
+    "abstain": 7.603801900950479,
+    "by_status": {
+     "reported": {
+      "n": 273,
+      "unsupported": 11.72161172161172,
+      "coverage": 89.74358974358974,
+      "utility": 50.671550671550555
+     },
+     "reported-late": {
+      "n": 357,
+      "unsupported": 0.0,
+      "coverage": 80.3921568627451,
+      "utility": 72.9225023342671
+     },
+     "overdue": {
+      "n": 491,
+      "unsupported": 0.4073319755600815,
+      "coverage": 90.83503054989816,
+      "utility": 55.60081466395135
+     },
+     "ongoing": {
+      "n": 878,
+      "unsupported": 4.100227790432802,
+      "coverage": 98.9749430523918,
+      "utility": 31.62490508731933
+     }
+    }
+   },
+   "fixed_subset": {
+    "n": 600,
+    "unsupported": 3.1666666666666665,
+    "unsupported_k": 19,
+    "unsupported_ci": [
+     2.0364748182018033,
+     4.892759603540588
+    ],
+    "utility": 47.7222222222219,
+    "coverage": 92.5,
+    "abstain": 7.499999999999996,
+    "by_status": {
+     "reported": {
+      "n": 96,
+      "unsupported": 8.333333333333334,
+      "coverage": 88.54166666666667,
+      "utility": 51.73611111111112
+     },
+     "reported-late": {
+      "n": 105,
+      "unsupported": 0.0,
+      "coverage": 80.95238095238095,
+      "utility": 74.60317460317462
+     },
+     "overdue": {
+      "n": 134,
+      "unsupported": 0.0,
+      "coverage": 91.7910447761194,
+      "utility": 55.72139303482592
+     },
+     "ongoing": {
+      "n": 265,
+      "unsupported": 4.150943396226415,
+      "coverage": 98.86792452830188,
+      "utility": 31.57232704402506
+     }
+    }
+   },
+   "arms": {
+    "react_program_attested": {
+     "n": 600,
+     "unsupported": 0.0,
+     "unsupported_k": 0,
+     "unsupported_ci": [
+      0.0,
+      0.6361933328210577
+     ],
+     "utility": 31.16666666666672,
+     "coverage": 92.5,
+     "abstain": 7.499999999999996,
+     "by_status": {
+      "reported": {
+       "n": 96,
+       "unsupported": 0.0,
+       "coverage": 88.54166666666667,
+       "utility": 29.513888888888903
+      },
+      "reported-late": {
+       "n": 105,
+       "unsupported": 0.0,
+       "coverage": 80.95238095238095,
+       "utility": 26.984126984127
+      },
+      "overdue": {
+       "n": 134,
+       "unsupported": 0.0,
+       "coverage": 91.7910447761194,
+       "utility": 32.08955223880601
+      },
+      "ongoing": {
+       "n": 265,
+       "unsupported": 0.0,
+       "coverage": 98.86792452830188,
+       "utility": 32.95597484276722
+      }
+     },
+     "episode_errors": 0,
+     "calls": 2.9516666666666667
+    },
+    "prime_guided": {
+     "n": 600,
+     "unsupported": 0.3333333333333333,
+     "unsupported_k": 2,
+     "unsupported_ci": [
+      0.091457753841235,
+      1.2071609567610158
+     ],
+     "utility": 32.333333333333336,
+     "coverage": 92.5,
+     "abstain": 7.499999999999996,
+     "by_status": {
+      "reported": {
+       "n": 96,
+       "unsupported": 0.0,
+       "coverage": 88.54166666666667,
+       "utility": 32.638888888888914
+      },
+      "reported-late": {
+       "n": 105,
+       "unsupported": 0.0,
+       "coverage": 80.95238095238095,
+       "utility": 29.206349206349227
+      },
+      "overdue": {
+       "n": 134,
+       "unsupported": 0.0,
+       "coverage": 91.7910447761194,
+       "utility": 33.8308457711443
+      },
+      "ongoing": {
+       "n": 265,
+       "unsupported": 0.7547169811320755,
+       "coverage": 98.86792452830188,
+       "utility": 32.704402515723196
+      }
+     },
+     "episode_errors": 0,
+     "calls": 2.8383333333333334
+    },
+    "prime_complete": {
+     "n": 600,
+     "unsupported": 3.1666666666666665,
+     "unsupported_k": 19,
+     "unsupported_ci": [
+      2.0364748182018033,
+      4.892759603540588
+     ],
+     "utility": 47.7222222222219,
+     "coverage": 92.5,
+     "abstain": 7.499999999999996,
+     "by_status": {
+      "reported": {
+       "n": 96,
+       "unsupported": 8.333333333333334,
+       "coverage": 88.54166666666667,
+       "utility": 51.73611111111112
+      },
+      "reported-late": {
+       "n": 105,
+       "unsupported": 0.0,
+       "coverage": 80.95238095238095,
+       "utility": 74.60317460317462
+      },
+      "overdue": {
+       "n": 134,
+       "unsupported": 0.0,
+       "coverage": 91.7910447761194,
+       "utility": 55.72139303482592
+      },
+      "ongoing": {
+       "n": 265,
+       "unsupported": 4.150943396226415,
+       "coverage": 98.86792452830188,
+       "utility": 31.57232704402506
+      }
+     },
+     "episode_errors": 0,
+     "calls": 4.536666666666667
+    }
+   }
+  }
+ }
+}

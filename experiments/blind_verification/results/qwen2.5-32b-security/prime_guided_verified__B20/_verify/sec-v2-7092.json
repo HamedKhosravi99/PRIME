@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7092",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "OpenStack Identity (Keystone)",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 233,
+   "completion_tokens": 33,
+   "latency_s": 2.112,
+   "raw": "The document mentions \"mamcache\" and \"KVS\" as specific parts of the affected packages within OpenStack Identity (Keystone). ANSWER: T"
+  }
+ ]
+}

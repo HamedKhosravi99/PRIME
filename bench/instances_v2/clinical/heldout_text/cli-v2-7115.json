@@ -1,0 +1,181 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT07470840"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT07470840"
+    },
+    "what": "the eligibility criteria restrict enrollment to adults, that is, a minimum age of 18 years or more"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT07470840"
+    },
+    "what": "the eligibility criteria restrict enrollment to one sex only (only male or only female participants)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT07470840"
+    },
+    "what": "the eligibility criteria accept healthy volunteers"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready for an adult cohort: identified, and the eligibility text restricts enrollment to adults."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked adult-cohort protocol: identified, adults only, open to both sexes, and not a healthy-volunteer study, as established from the eligibility text."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "!E3",
+    "!E4"
+   ]
+  ]
+ },
+ "id": "cli-v2-7115",
+ "notes_for_annotators": "{\"family\": \"clinical-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, false, false], \"twins\": [\"protocolSection.eligibilityModule.minimumAge\", \"protocolSection.eligibilityModule.sex\", \"protocolSection.eligibilityModule.healthyVolunteers\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT07470840": {
+   "protocolSection": {
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n1. Aged 18 to 80 years, regardless of sex.\n2. Histologically or cytologically confirmed locally advanced/metastatic renal cell carcinoma (RCC) inoperable/refused for surgery, or post-operative locally recurrent/metastatic RCC; pathological types include clear cell carcinoma and papillary renal cell carcinoma.\n3. ECOG performance status 0 or 1.\n4. At least 50% of all evaluable metastatic lesions are eligible for stereotactic body radiation therapy (SBRT).\n5. No contraindications to radiotherapy, targeted therapy or immunotherapy.\n6. At least one radiologically measurable lesion according to Response Evaluation Criteria in Solid Tumors (RECIST) version 1.1.\n7. Capable and willing to comply with the study protocol including scheduled visits, treatment plan, laboratory tests and other study-related procedures during the study period.\n8. Signed written informed consent form.\n\nExclusion Criteria:\n\n1. With contraindications to targeted or immunotherapeutic drugs.\n2. A history of other malignant diseases in the recent 5 years, except for cured skin cancer and carcinoma in situ of the cervix.\n3. With active autoimmune diseases, organ transplantation, or other diseases requiring immunosuppressive therapy or long-term hormone therapy.\n4. Extensive diffuse metastasis with an expected survival of less than 3 months.\n5. A history of uncontrolled epilepsy, central nervous system diseases or mental disorders, whose clinical severity is judged by the investigator to potentially hinder the signing of the informed consent form or affect the patient's compliance with oral medication.\n6. With severe uncontrolled recurrent infections or other serious uncontrolled concomitant diseases.\n7. Allergic to any component of the study drugs.\n8. The subject's baseline blood routine and biochemical indicators do not meet the following criteria: hemoglobin \u226580g/L; absolute neutrophil count (ANC) \u22651.5\u00d710\u2079/L; platelet \u2265100\u00d710\u2079/L; ALT and AST \u22642.5 times the upper limit of normal; serum total bilirubin \\<1.5 times the upper limit of normal; serum creatinine \\<2 times the upper limit of normal."
+    },
+    "identificationModule": {
+     "briefTitle": "SBRT Plus Anlotinib and Bimepolizumab in Locally Advanced or Metastatic Renal Cell Carcinoma"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT07470840.",
+ "seed": "NCT07470840",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "text"
+}

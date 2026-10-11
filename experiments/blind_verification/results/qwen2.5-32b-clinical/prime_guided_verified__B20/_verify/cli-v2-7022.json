@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7022",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "* minimum age 18 years",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 369,
+   "completion_tokens": 23,
+   "latency_s": 1.657,
+   "raw": "The inclusion criteria explicitly state a minimum age of 18 years, establishing the condition. ANSWER: T"
+  }
+ ]
+}

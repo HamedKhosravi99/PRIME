@@ -1,0 +1,36 @@
+{
+  "id": "tiny-refine",
+  "domain": "test",
+  "seed": "tiny-refine",
+  "variant": "base",
+  "user_prompt": "Is claim C1 supported?",
+  "artifact": {},
+  "scope": "synthetic 2-atom fixture for oracle-guided refinement tests",
+  "actions": ["inspect_file"],
+  "claims": [
+    {"id": "C1", "text": "Both pieces of evidence hold.", "level": 1}
+  ],
+  "order": [],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "inspect",
+      "proposition": "First piece of evidence.",
+      "resolver": {"tool": "inspect_file", "params_schema": {"path": "str"}, "params": {"path": "a.py"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E2",
+      "type": "inspect",
+      "proposition": "Second piece of evidence.",
+      "resolver": {"tool": "inspect_file", "params_schema": {"path": "str"}, "params": {"path": "b.py"}, "attest": "span_read"},
+      "gold_value": "T"
+    }
+  ],
+  "phi": [],
+  "gold_licenses": {
+    "C1": [["E1", "E2"]]
+  },
+  "decoys": [],
+  "notes_for_annotators": "gold route requires BOTH E1 and E2; a route citing only E1 over-authorizes whenever E1=T,E2=F."
+}

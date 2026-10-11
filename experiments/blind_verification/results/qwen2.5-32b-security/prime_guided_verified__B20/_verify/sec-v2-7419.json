@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7419",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Zope is an open-source web application server.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 474,
+   "completion_tokens": 26,
+   "latency_s": 2.054,
+   "raw": "The document mentions \"Zope\" by its registered name multiple times, establishing it as the affected package. ANSWER: T"
+  }
+ ]
+}

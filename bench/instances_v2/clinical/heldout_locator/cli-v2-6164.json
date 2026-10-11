@@ -1,0 +1,347 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT07149896"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.identificationModule.nctId"
+    ],
+    "what": "the brief title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT07149896"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.descriptionModule.briefSummary"
+    ],
+    "what": "the eligibility criteria text"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT07149896"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.descriptionModule.briefSummary"
+    ],
+    "what": "the sex eligibility field"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"A Phase II Study of XELOX in Locally Advanced or Metastatic Gastric Cancer\"",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT07149896"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.statusModule.statusVerifiedDate"
+    ],
+    "what": "the official title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT07149896"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.eligibilityModule.minimumAge"
+    ],
+    "what": "the minimum age for eligibility"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:false",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.healthyVolunteers",
+     "record_id": "NCT07149896"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.healthyVolunteers",
+     "protocolSection.designModule.studyType",
+     "protocolSection.statusModule.statusVerifiedDate"
+    ],
+    "what": "whether healthy volunteers are accepted"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2027-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT07149896"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.lastUpdateSubmitDate",
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.statusModule.studyFirstSubmitDate"
+    ],
+    "what": "the date the registration was first submitted"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "equals",
+      "A Phase II Study of XELOX in Locally Advanced or Metastatic Gastric Cancer"
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.healthyVolunteers",
+      "equals",
+      false
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-6164",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-05\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 2, \"false_mech\": true, \"locator\": true, \"source_instance\": \"cli-v2-0164\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT07149896": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "The goal of this clinical trial is to test whether adding a collagen protein scaffold can improve cartilage repair in elbow joint injuries, compared to standard surgery alone. The study will enroll 90 patients (aged 18-55) with elbow cartilage damage who haven't responded to conservative treatments.\n\nThe main questions it aims to answer are:\n\n* Does the collagen scaffold help regenerate better-quality cartilage (measured by MRI scans at 3 and 6 months)?\n* Do patients experience better pain relief and elbow function after this combined treatment?\n\nResearchers will compare two groups:\n\n* Experimental group : Receives microfracture surgery + collagen scaffold implant\n* Active Comparator group : Receives microfracture surgery alone\n\nParticipants will:\n\n* Undergo arthroscopic surgery (either procedure)\n* Complete follow-up visits at 1 week, 1 month, 3 months, and 6 months\n* Have MRI scans and functional assessments\n* Report pain levels and daily activity limitations through questionnaires"
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n1. Subjects are between the ages of 18 and 55 (including 18 and 55 years old);\n2. Articular cartilage defect reaches Outerbridge grade III/IV;\n3. The area of cartilage defect in a single site is 0.5cm\u00b2-2cm\u00b2;\n4. BMI 18\u2264BMI\u226430;\n5. Clinically diagnosed cartilage defect requiring arthroscopic microfracture;\n6. Have not participated in other clinical trials within 3 months;\n7. Conservative treatment such as rest/topical/oral non-steroidal anti-inflammatory drugs for more than 3 months has not been effective\n8. Subjects fully understand the benefits and risks of this trial, are willing to participate and sign the informed consent form, and are able to cooperate with clinical follow-up.\n\nExclusion Criteria:\n\n1. Obvious narrowing of the elbow joint space or bone ankylosis formed between joints;\n2. Severe subchondral bone injury that cannot be undergoing microfracture surgery;\n3. Those with severe elbow deformity or systemic osteoarticular diseases;\n4. Secondary elbow arthritis with psoriasis, syphilitic neuropathy, brown yellow disease, metabolic bone disease;\n5. Elbow joint cartilage damage caused by joint fractures, infections, tumors, and immune diseases;\n6. Elbow joint tumors, rheumatoid, tuberculosis, suppuration and complications affecting the joint structure;\n7. Those who have undergone cartilage defect transplantation from bone marrow mesenchymal stem cell transplantation or other cartilage regeneration surgery within 12 months before surgery;\n8. Allergies, such as porcine protein allergy, past history or family history of autoimmune diseases;\n9. Those who regularly use sedatives, sleeping pills, tranquilizers or other addictive drugs;\n10. Combined with cardiovascular, cerebrovascular, liver, kidney and hematopoietic system and other serious primary diseases, mental illness;\n11. Those who cannot receive long-term and complex rehabilitation training after surgery;\n12. Women who are planning to have children, breastfeeding and pregnant women within 12 months;\n13. Those who have contraindications to MRI examination;\n14. Those who have special beliefs and cannot accept it (the product source is pig source);\n15. Those who are not suitable for inclusion by other researchers, such as those who cannot be judged for efficacy.",
+     "healthyVolunteers": false,
+     "minimumAge": "18 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "A Study of Collagen Scaffold for the Repair of Elbow Cartilage Injury",
+     "nctId": "NCT07149896",
+     "officialTitle": "A Prospective Randomized Controlled Study Of Collagen Scaffold For The Repair Of Elbow Cartilage Injury"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2025-08-24",
+     "overallStatus": "NOT_YET_RECRUITING",
+     "statusVerifiedDate": "2025-08",
+     "studyFirstSubmitDate": "2025-07-23"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT07149896.",
+ "seed": "NCT07149896",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

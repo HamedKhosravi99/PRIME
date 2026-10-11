@@ -1,0 +1,31 @@
+{
+ "instance": "cli-v2-7018",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "age \\>18 years",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 211,
+   "completion_tokens": 26,
+   "latency_s": 1.434,
+   "raw": "The inclusion criteria specify an age >18 years, which aligns with the condition for adult enrollment. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "F",
+   "quote": "male and female patients",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 206,
+   "completion_tokens": 24,
+   "latency_s": 2.499,
+   "raw": "The inclusion criteria specify both male and female patients, thus not restricting enrollment to one sex only. ANSWER: F"
+  }
+ ]
+}

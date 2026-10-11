@@ -1,0 +1,359 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "F",
+   "id": "E1",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.statusVerifiedDate",
+     "record_id": "NCT05732025"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.statusModule.overallStatus"
+    ],
+    "what": "the date the status was last verified"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"INTERVENTIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT05732025"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.designModule.studyType",
+     "protocolSection.statusModule.lastUpdateSubmitDate"
+    ],
+    "what": "the study type"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT05732025"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.statusModule.overallStatus"
+    ],
+    "what": "the sex eligibility field"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT05732025"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.descriptionModule.briefSummary"
+    ],
+    "what": "the official title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT05732025"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.eligibilityModule.eligibilityCriteria"
+    ],
+    "what": "the minimum age for eligibility"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.statusVerifiedDate",
+     "record_id": "NCT05732025"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.descriptionModule.briefSummary"
+    ],
+    "what": "the date the status was last verified"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2025-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT05732025"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.healthyVolunteers",
+     "protocolSection.statusModule.lastUpdateSubmitDate",
+     "protocolSection.statusModule.studyFirstSubmitDate"
+    ],
+    "what": "the date the registration was first submitted"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "cli-v2-6121",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-het-08\", \"topology\": \"nested\", \"cost\": \"het\", \"target_level\": 0, \"false_mech\": false, \"locator\": true, \"source_instance\": \"cli-v2-0121\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT05732025": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "Calcified coronary lesions often run through various complex lesions, which increases the difficulty of coronary intervention, is one of the main challenges faced by interventional cardiovascular physicians. Severely calcified lesions, or severely calcified lesions with twisted, angulated, diffused, significantly increase rates of immediate complications and early and late major adverse cardiovascular events. Correctly identifying and evaluating calcified lesions, and selecting the most appropriate treatment strategy according to the degree of coronary artery calcification are very important for improving the success rate of intervention, reducing complications, and improving the short-term and long-term prognosis of patients."
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Clinical Criteria:\n\n  1. Age \u2265 18 years old\n  2. Evidence of asymptomatic ischemia, stable or unstable angina\n  3. Patients who can understand the purpose of the trial, voluntarily participate and sign the informed consent, and are willing to accept angiography, OCT examination and clinical follow-up.\n* Angiographic Criteria:\n\n  1. The target lesion is primary and in situ coronary artery lesion\n  2. The length of the target lesion is \u226460mm, and the diameter of the target lesion is 2.5-4.0mm (visually)\n  3. The stenosis rate of the target lesion diameter is \u226570%, and the doctor judges that it is necessary to implant a stent (visual inspection method) to meet one of the following:\n\n     1. Diameter stenosis \u2265 70%, \\< 100%\n     2. \u226550%, \\<70% with evidence of ischemia\n  4. The lesion allows a 0.014 guidewire to pass\n  5. Under multi-angle imaging conditions, calcified shadow lesions can be seen on both sides of the lesion vessel wall (the target lesion meets the definition of severe calcification)\n\nExclusion Criteria:\n\n* Clinical Criteria:\n\n  1. Acute myocardial infarction occurred within 30 days before operation\n  2. Use special balloons (chocolate balloons, scored balloons, spinous balloons, etc.) to treat lesions at the same time\n  3. Troponin is greater than 5 times the upper limit of laboratory normal value within one week before operation\n  4. Severe cardiac dysfunction (grade III or IV)\n  5. Left ventricular ejection fraction \\<25%\n  6. The patient refuses emergency CABG surgery or does not have indications for emergency CABG surgery\n  7. Severe uncontrolled hypertension (systolic blood pressure \\>180 mm Hg or diastolic blood pressure \\>110 mm Hg)\n  8. Severe renal failure (serum creatinine \\> 221 \u03bcmol/L)\n  9. Preoperative hemoglobin \\<100g/L\n  10. Obvious coagulation dysfunction (platelet count\\<100\u00d7109/L or INR\\>1.7, INR is only required for patients who have taken warfarin orally within 2 weeks before enrollment)\n  11. Blood hypercoagulability diseases (such as polycythemia vera, platelet count \\>750\u00d7109/L, etc.)\n  12. History of stroke or TIA within 3 months\n  13. History of active peptic ulcer or upper gastrointestinal bleeding within 6 months\n  14. The life expectancy of the patient is less than 12 months\n  15. The patient has an active systemic infection\n  16. The patient has a connective tissue disorder (such as Marfan syndrome)\n  17. Patient is allergic to contrast material\n  18. Patients undergoing heart transplantation\n  19. Patients with implanted cardiac pacemakers\n  20. The patient is pregnant or breastfeeding\n  21. Those who have participated in clinical trials of other drugs or medical devices within one month before enrollment;\n  22. Other circumstances that the investigator considers inappropriate to participate in the trial\n* Angiographic Criteria:\n\n  1. Unprotected left main lesion (left main visual stenosis \\>50%)\n  2. Baseline TIMI blood flow is less than grade 3 (evaluation after pre-dilation is allowed)\n  3. A stent has been implanted within 10mm of the proximal or distal end of the target lesion\n  4. The target lesion is located distal to the saphenous vein or LIMA/RIMA bypass graft\n  5. Aneurysm in the target vessel\n  6. Angiography confirmed the presence of thrombus in the target vessel\n  7. Chronic total occlusive disease\n  8. Angiography confirmed the presence of severe dissection of the target lesion before hydroelectric shock wave lithotripsy (D-F type dissection (NHLBI classification)\n  9. The investigator judged that the target lesion is not suitable for patients with vasodilation",
+     "healthyVolunteers": false,
+     "minimumAge": "18 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "Evaluation of Safety and Effectiveness of the SONICO-CX Intracoronary Electrohydraulic Shockwave Balloon Catheter",
+     "officialTitle": "Evaluation of Safety and Effectiveness of the SONICO-CX Intracoronary Electrohydraulic Shockwave Balloon Catheter/Hydraulic Shock Wave Lithotripsy, A Prospective, Single-center, Randomized Controlled Exploratory Clinical Study"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2023-02-07",
+     "overallStatus": "UNKNOWN",
+     "statusVerifiedDate": "2022-07",
+     "studyFirstSubmitDate": "2023-02-07"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT05732025.",
+ "seed": "NCT05732025",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

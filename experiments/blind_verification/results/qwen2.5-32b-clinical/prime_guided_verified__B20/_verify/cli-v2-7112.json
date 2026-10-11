@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7112",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "F",
+   "quote": "Children having myopia (myopic spherical equivalent refractive error of \\<= -0.5D in one or both eyes) at baseline are excluded from the primary analysis, although they will be included in the secondary analyses, so there will be no need to exclude them from continuing to study with their classmates and use the assigned classroom.",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 253,
+   "completion_tokens": 32,
+   "latency_s": 2.144,
+   "raw": "The document does not establish the condition as it mentions criteria involving parental consent and school classes, suggesting the participants are children, not adults. ANSWER: F"
+  }
+ ]
+}

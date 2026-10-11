@@ -1,0 +1,72 @@
+{
+  "id": "swe-0017",
+  "domain": "software_review",
+  "seed": "swe-0017",
+  "variant": "base",
+  "user_prompt": "Is this library ready for a 1.0 release?",
+  "artifact": {
+    "path": "artifacts/pypika@5e800d83",
+    "kind": "repo",
+    "commit": "5e800d83a0f0ae14210410c02fd97e51e2e3f1d5"
+  },
+  "scope": "Repository pypika@5e800d83 (github.com/kayak/pypika) with its bundled test suite under pypika/tests/ (core query-builder tests and the dialects/ subdirectory) and packaging/CI configuration, evaluated by running python3 -m pytest from the repository root in the pinned environment (Python 3.9, pytest 8.x). The pypika/tests/clickhouse/ subdirectory is OUT OF SCOPE: it imports the optional third-party `parameterized` package, not part of the declared stdlib+pytest protocol, and is excluded from every atom's test selection (verified: those files fail collection with ModuleNotFoundError under the pinned environment).",
+  "actions": ["inspect_file", "search_repo", "run_tests", "inspect_config", "ask_user", "emit_claim"],
+  "claims": [
+    {"id": "C1", "text": "The package is readable and documents its architecture (pypika/__init__.py module docstring surveying queries/terms/dialects/functions/analytics present as inspected).", "level": 1},
+    {"id": "C2", "text": "The documented SQL query-builder API behaves as specified at this commit: pypika/__init__.py documentation inspected and the core query-builder test suite (pypika/tests/, excluding clickhouse/ and dialects/) passes under the declared protocol.", "level": 2},
+    {"id": "C3", "text": "The package satisfies the checked release-readiness protocol at this commit: documented core module, passing core query-builder suite, passing cross-dialect suite (pypika/tests/dialects/), packaging metadata declared in setup.py, and a CI workflow running the suite.", "level": 3}
+  ],
+  "order": [["C1", "C2"], ["C2", "C3"]],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "inspect",
+      "proposition": "pypika/__init__.py opens with a module docstring surveying the package's modules (queries, terms, dialects, functions, analytics, etc.) (span read).",
+      "resolver": {"tool": "inspect_file", "params_schema": {"path": "str"}, "params": {"path": "pypika/__init__.py"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E2",
+      "type": "execute",
+      "proposition": "python3 -m pytest on the 25 core query-builder test modules directly under pypika/tests/ (excluding the dialects/ and clickhouse/ subdirectories) exits 0 at this commit (923 tests).",
+      "resolver": {"tool": "run_tests", "params_schema": {"suite": "str"}, "params": {"suite": "pypika/tests/test_aggregate.py pypika/tests/test_analytic_queries.py pypika/tests/test_create.py pypika/tests/test_criterions.py pypika/tests/test_custom_functions.py pypika/tests/test_data_types.py pypika/tests/test_date_math.py pypika/tests/test_deletes.py pypika/tests/test_drop.py pypika/tests/test_formats.py pypika/tests/test_functions.py pypika/tests/test_groupby_modifiers.py pypika/tests/test_immutability.py pypika/tests/test_inserts.py pypika/tests/test_internals.py pypika/tests/test_joins.py pypika/tests/test_negation.py pypika/tests/test_parameter.py pypika/tests/test_pseudocolumns.py pypika/tests/test_query.py pypika/tests/test_selects.py pypika/tests/test_tables.py pypika/tests/test_terms.py pypika/tests/test_tuples.py pypika/tests/test_updates.py pypika/tests/test_utils.py"}, "attest": "exit_code==0"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E3",
+      "type": "execute",
+      "proposition": "python3 -m pytest pypika/tests/dialects exits 0 at this commit in the pinned environment (100 tests, covering MySQL/PostgreSQL/Oracle/MSSQL/Snowflake/etc. query generation).",
+      "resolver": {"tool": "run_tests", "params_schema": {"suite": "str"}, "params": {"suite": "pypika/tests/dialects"}, "attest": "exit_code==0"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E4",
+      "type": "config",
+      "proposition": "setup.py declares packaging metadata: name (PyPika), version, and description.",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "setup.py"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E5",
+      "type": "config",
+      "proposition": "A CI workflow that runs the test suite on push/PR is configured at .github/workflows/ci.yml.",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": ".github/workflows/ci.yml"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E6",
+      "type": "search",
+      "proposition": "No TODO/FIXME/XXX markers are found under pypika/ after a search_repo scan with pattern TODO|FIXME|XXX.",
+      "resolver": {"tool": "search_repo", "params_schema": {"pattern": "str", "path": "str"}, "params": {"pattern": "TODO|FIXME|XXX", "path": "pypika"}, "attest": "match_count==0"},
+      "gold_value": "F"
+    }
+  ],
+  "phi": [],
+  "gold_licenses": {
+    "C1": [["E1"]],
+    "C2": [["E1", "E2"]],
+    "C3": [["E1", "E2", "E3", "E4", "E5"]]
+  },
+  "decoys": ["comment_density_analysis"],
+  "notes_for_annotators": "All gold_value entries verified by actual runs on 2026-07-29 (see artifact PROVENANCE): the 25-file core selection -> 923 passed, exit 0; pypika/tests/dialects -> 100 passed, exit 0; the two selections are disjoint files and sum exactly to the 1023 passed obtained by running the whole pypika/tests tree with only clickhouse/ excluded (verified). E6 is F: markers are present in pypika/terms.py and pypika/queries.py, verified by search_repo scan. Minimality, C1 [E1]: no span read, no documentation claim. C2 [E1,E2]: drop E1 and 'documented' is unsupported; drop E2 and 'behaves as specified' is unsupported (C2's correctness claim is scoped to the core query-builder, deliberately not yet claiming cross-dialect correctness -- that is C3's addition). C3 [E1,E2,E3,E4,E5]: five enumerated protocol components on DISJOINT test selections (E2: core builder; E3: dialects) per AUTHORING.md's rule that co-occurring execute atoms in one route must not overlap -- dropping E1, E2, E3 (dialect correctness unverified), E4 (no packaging metadata), or E5 (no CI evidence) leaves a realizable assignment where that component is false yet the weakened route holds, rejected by a competent evaluator for release-readiness. E6 is false and excluded from every route: this protocol does not require marker-freedom, and E6 exists to probe whether an agent wrongly treats it as required. Order-coherence: C3's route literal-contains C2's, which contains C1's. phi is empty: E2 and E3 run disjoint test files with no genuinely impossible determined-value combination between them (mirrors swe-0003/toolz's E2/E3 pairing, but here both resolve T instead of one resolving F)."
+}

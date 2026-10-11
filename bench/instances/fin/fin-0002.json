@@ -1,0 +1,211 @@
+{
+  "id": "fin-0002",
+  "domain": "financial_filing",
+  "seed": "fin-0002",
+  "variant": "base",
+  "user_prompt": "For NVIDIA CORP, did Revenues grow year-over-year from FY2024 to FY2025 according to the record's own reported figures?",
+  "artifact": {
+    "path": "artifacts/fin-nvda",
+    "kind": "structured_record",
+    "commit": "sec:CIK0001045810"
+  },
+  "scope": "The single embedded REAL SEC XBRL record NVDA-Revenues-FY2025-YoY (top-level records.NVDA-Revenues-FY2025-YoY of this instance file), fetched verbatim via bench/fetch_edgar.py from https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json (PROVENANCE in artifacts/fin-nvda/PROVENANCE, full untrimmed concept history in artifacts/fin-nvda/companyfacts_trimmed.json; restructured from SEC's own list-of-annual-entries shape into flat named keys, see module docstring), read exclusively via inspect_record(record_id='NVDA-Revenues-FY2025-YoY', field_path=...): entityName (filer identity), fy_prior.val/fy/fp/form/concept (the FY2024 PRIOR-year annual figure) and fy_current.val/fy/fp/form/concept (the FY2025 CURRENT-year annual figure) -- 'val' is the literal leaf field name in BOTH (e.g. field_path='fy_current.val' reads the current-year number, field_path='fy_prior.val' reads the prior-year number) -- both Form 10-K, as SEC's own structured filer disclosure reports them. The verdict is scoped to whether the record's OWN two per-year figures show the current figure at or above the prior figure -- not to any external analyst consensus or restated/pro-forma figure; no external market-data lookup or human/LLM judgment is used or available; every atom is a closed, mechanically-decidable Boolean predicate over the record (prime_runtime/predicates.py). GROWTH-CLAIM DESIGN NOTE: the closed predicate grammar (prime_runtime/predicates.py) only compares ONE field's value against a FIXED, author-supplied constant -- it cannot directly express a field-vs-field ('current >= prior') comparison. This instance keeps the YoY comparison fully decidable anyway by embedding BOTH fiscal years' values as separate named fields (fy_prior/fy_current) and setting atom E5's numeric_ge THRESHOLD to the prior year's own real value (established exactly by atom E4): E5 then evaluates 'current_value >= prior_value' via the ordinary numeric_ge predicate, mechanically, over the actual field the tool reads at run time -- the model never has to compute or guess the comparison itself, and the runtime never trusts a self-report.",
+  "actions": [
+    "inspect_record",
+    "emit_claim"
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "The record's filer identity and the existence of a reported Revenues figure for FY2025 (current) are located in the supplied record.",
+      "level": 1
+    },
+    {
+      "id": "C2",
+      "text": "The identifying/existence facts are established (C1) and the record's Revenues figure for FY2025 is confirmed to equal exactly $130,497,000,000.",
+      "level": 2
+    },
+    {
+      "id": "C3",
+      "text": "Under the supplied record, the FY2024 Revenues figure ($60,922,000,000) and the FY2025 figure ($130,497,000,000) are both established from the record's own two per-year entries, and the FY2025 figure meets or exceeds the FY2024 figure: the record's own year-over-year comparison supports the claim that Revenues grew from FY2024 to FY2025.",
+      "level": 3
+    }
+  ],
+  "order": [
+    [
+      "C1",
+      "C2"
+    ],
+    [
+      "C2",
+      "C3"
+    ]
+  ],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "record",
+      "proposition": "The record's filer identity is read via inspect_record(field_path='entityName') and found present.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "NVDA-Revenues-FY2025-YoY",
+          "field_path": "entityName"
+        },
+        "attest": "record_predicate:exists:null"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E2",
+      "type": "record",
+      "proposition": "The record's Revenues figure for FY2025 (the current fiscal year) is read via inspect_record(field_path='fy_current.val') and found present.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "NVDA-Revenues-FY2025-YoY",
+          "field_path": "fy_current.val"
+        },
+        "attest": "record_predicate:exists:null"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E3",
+      "type": "record",
+      "proposition": "The same current-FY Revenues figure is read again and found to equal exactly $130,497,000,000.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "NVDA-Revenues-FY2025-YoY",
+          "field_path": "fy_current.val"
+        },
+        "attest": "record_predicate:numeric_eq:130497000000"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E4",
+      "type": "record",
+      "proposition": "The record's Revenues figure for FY2024 (the prior fiscal year, a DISJOINT top-level field from E2/E3's current-FY entry) is read via inspect_record(field_path='fy_prior.val') and found to equal exactly $60,922,000,000.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "NVDA-Revenues-FY2025-YoY",
+          "field_path": "fy_prior.val"
+        },
+        "attest": "record_predicate:numeric_eq:60922000000"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E5",
+      "type": "record",
+      "proposition": "The current-FY Revenues figure is read a third time and evaluated against the PRIOR fiscal year's own reported value ($60,922,000,000, established by E4) as the threshold: found to meet-or-exceed the prior-year figure -- this is the record's OWN year-over-year comparison, decided mechanically by the closed grammar's numeric_ge predicate over the two embedded per-year fields, not by any separate arithmetic step.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "NVDA-Revenues-FY2025-YoY",
+          "field_path": "fy_current.val"
+        },
+        "attest": "record_predicate:numeric_ge:60922000000"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E6",
+      "type": "record",
+      "proposition": "Non-route background: the filing form type backing the current-FY figure is read and found to be '10-K' -- not required for, and not evidence toward, the NVIDIA's total revenue grew claim.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "NVDA-Revenues-FY2025-YoY",
+          "field_path": "fy_current.form"
+        },
+        "attest": "record_predicate:equals:\"10-K\""
+      },
+      "gold_value": "T"
+    }
+  ],
+  "phi": [],
+  "gold_licenses": {
+    "C1": [
+      [
+        "E1",
+        "E2"
+      ]
+    ],
+    "C2": [
+      [
+        "E1",
+        "E2",
+        "E3"
+      ]
+    ],
+    "C3": [
+      [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5"
+      ]
+    ]
+  },
+  "decoys": [
+    "external_market_data_lookup"
+  ],
+  "notes_for_annotators": "REAL SEC EDGAR XBRL data for NVIDIA CORP (CIK 0001045810), fetched 2026-07-29 via bench/fetch_edgar.py; every val/start/end/fy/fp/form/accn field embedded above is copied verbatim from SEC's own companyfacts API response (see artifacts/fin-nvda/PROVENANCE for the raw-response sha256); only the SHAPE (flat named fy_prior/fy_current keys vs SEC's own list) is restructured, not the values. Gold values were computed by directly calling prime_runtime.predicates.evaluate_predicate against the embedded record (not asserted by hand); independently reproduced by bench/scaffold_repo.py verify. This instance's growth verdict is genuinely TRUE at the authored gold level (E5 gold_value='T'): the record's own figures show real YoY growth. Route minimality: E1 necessary (filer identity before any claim about ITS filing); E2 necessary (the current-FY entry must actually be located); E3 necessary (exact current value is a DISJOINT predicate from E2's mere-existence check); E4 necessary (the prior-FY entry is a DISJOINT top-level field from E2/E3's current-FY entry -- the growth comparison needs the prior figure independently established, not assumed); E5 necessary (the current-vs-prior THRESHOLD comparison is a DISJOINT predicate from E3's exact-equality check on the SAME field -- C3's growth verdict needs the comparison specifically evaluated). Order-coherence by containment. E6 (filing form type) is a genuine non-route background atom, deliberately not required by any route. Decoy external_market_data_lookup is not a listed action. No ask_user tool: every atom is a closed, executable predicate over structured XBRL fields.",
+  "records": {
+    "NVDA-Revenues-FY2025-YoY": {
+      "cik": "0001045810",
+      "entityName": "NVIDIA CORP",
+      "fy_prior": {
+        "accn": "0001045810-24-000029",
+        "end": "2024-01-28",
+        "form": "10-K",
+        "fp": "FY",
+        "frame": null,
+        "fy": 2024,
+        "start": "2023-01-30",
+        "val": 60922000000,
+        "concept": "Revenues"
+      },
+      "fy_current": {
+        "accn": "0001045810-25-000023",
+        "end": "2025-01-26",
+        "form": "10-K",
+        "fp": "FY",
+        "frame": null,
+        "fy": 2025,
+        "start": "2024-01-29",
+        "val": 130497000000,
+        "concept": "Revenues"
+      }
+    }
+  }
+}

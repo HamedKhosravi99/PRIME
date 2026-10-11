@@ -1,0 +1,283 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT06314659"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.statusVerifiedDate",
+     "record_id": "NCT06314659"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2026-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT06314659"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"INTERVENTIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT06314659"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT06314659"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT06314659"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2026-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT06314659"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2026-01-01"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2026-01-01"
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-0254",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-09\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": null, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT06314659": {
+   "protocolSection": {
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\nFor primary immunization stage\n\n* Subjects aged 3-5 months;\n* Subjects should be full-term (37-42 weeks of gestation) and their birth weight should meet the requirements (2500g \u2264 body weight \u2264 4000g);\n* Axillary body temperature \u2264 37.0 \u2103;\n* The guardian signs the informed consent form;\n* The guardian and his family agree to comply with the requirements of the clinical trial protocol;\n* Subjects who have not been vaccinated with meningococcal group A and C conjugate vaccine;\n* Subjects who had no history of other live vaccines within 14 days before vaccination and no history of other inactivated vaccines within 7 days;\n\nFor booster immunization and immune persistence stage\n\n* Infants in the experimental group who have completed primary immunization in this clinical trial and reach the age of 18 months;\n* Infants and young children who have completed primary or booster immunization in this clinical trial;\n* According to the judgment of the investigator, the subject has any other factors that are not suitable for participating in the clinical trial.\n\nExclusion Criteria:\n\nFor primary immunization stage\n\n* Test-tube baby who is suffering from perianal abscess, severe eczema or pathological jaundice;\n* History of severe allergic reactions requiring medical intervention (such as swelling of mouth and throat, dyspnea, hypotension or shock);\n* A clearly diagnosed history of thrombocytopenia or other coagulation disorders that may cause contraindications to intramuscular injection;\n* History of severe abnormal labor and delivery, asphyxia rescue, congenital malformation, serious developmental disorder, serious genetic defect, serious malnutrition or serious chronic disease;\n* Suffering from serious cardiovascular diseases (pulmonary heart disease, pulmonary edema), serious liver and kidney diseases, and diabetes with complications;\n* Has been diagnosed as infectious diseases, such as tuberculosis, viral hepatitis or their parents infected with human immunodeficiency virus (HIV);\n* History or family history of encephalopathy, epilepsy, convulsions or seizures, and other progressive neurological diseases;\n* Suffering from acute illness or in the acute phase of chronic illness, or using antipyretic, analgesic, and antiallergic drugs (such as acetaminophen, ibuprofen, aspirin, etc.) three days before vaccination;\n* Long term treatment with immunosuppressants, such as long-term (continuous for more than 2 weeks) use of glucocorticoids (such as prednisone or inhaled steroids (budesonide, fluticasone) and similar drugs);\n* History of using immunoglobulins and / or any blood products (except hepatitis B immunoglobulin) within 3 months before enrollment;\n* Plan to participate or be participating in any other drug clinical research;\n* Plan to move out of the local area before the end of the study or leave for a long time during the scheduled study visit period;\n* According to the judgment of the investigator, the subject has any other factors that are not suitable for participating in the clinical trial.\n\nFor booster immunization and immune persistence stage\n\n* Has been vaccinated with any meningococcal vaccine after primary immunization and before blood collection of booster immunization;\n* Has been vaccinated with any meningococcal vaccine after booster immunization and before blood collection of immune persistence;\n* Has been known or suspected to have immunological defects since participating in this clinical trial, including being treated with immunosuppressants (such as chemotherapy, corticosteroids, antimetabolics, cytotoxic drugs, etc.) and HIV infection;\n* History of using immunoglobulins and / or any blood products within 3 months before booster immunization;\n* According to the judgment of the investigator, the subject has any other factors that are not suitable for participating in the clinical trial.",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "Immunogenicity and Safety of Group A and C Meningococcal Polysaccharide Conjugate Vaccine in Volunteers Aged 3-5 Months"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2024-04-02",
+     "statusVerifiedDate": "2024-03",
+     "studyFirstSubmitDate": "2024-03-11"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT06314659.",
+ "seed": "NCT06314659",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

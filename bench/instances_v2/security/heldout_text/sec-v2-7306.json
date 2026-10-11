@@ -1,0 +1,175 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-4jqp-9qjv-57m2"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-4jqp-9qjv-57m2"
+    },
+    "what": "the details text names the affected package (the package itself, by its registered name or a distinctive part of it, not only the vendor or the ecosystem)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-4jqp-9qjv-57m2"
+    },
+    "what": "the details text states a version in which the issue is fixed"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-4jqp-9qjv-57m2"
+    },
+    "what": "the details text states the first affected version, the version in which the issue was introduced"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory has a readable summary (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: it has a summary and its text names the affected package."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked completeness protocol: summary present, and the text names the package, a fixed version, and the first affected version."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4"
+   ]
+  ]
+ },
+ "id": "sec-v2-7306",
+ "notes_for_annotators": "{\"family\": \"security-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, true, true], \"twins\": [\"affected.0.package.name\", \"affected.*.ranges.*.events.*.fixed\", \"affected.*.ranges.*.events.*.introduced\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-4jqp-9qjv-57m2": {
+   "details": "### Impact\n\nThe Keylime registrar does not enforce mutual TLS (mTLS) client certificate authentication since version 7.12.0. The registrar's TLS context is configured with `ssl.CERT_OPTIONAL` instead of `ssl.CERT_REQUIRED`, allowing any client to connect to protected API endpoints without presenting a valid client certificate.\n\n**Who is impacted:**\n  - All Keylime deployments running versions 7.12.0 through 7.13.0\n  - Environments where the registrar HTTPS port (default 8891) is network-accessible to untrusted clients\n\n**What an attacker can do:**\n  - **List all registered agents** (`GET /v2/agents/`) - enumerate the entire agent inventory\n  - **Retrieve agent details** (`GET /v2/agents/{uuid}`) - obtain public TPM keys, certificates, and network locations (IP/port) of any agent\n  - **Delete any agent** (`DELETE /v2/agents/{uuid}`) - remove agents from the registry, disrupting attestation services\n\nNote: The exposed TPM data (EK, AK, certificates) consists of public keys and certificates. Private keys remain protected within TPM hardware. The HMAC secret used for challenge-response validation is stored in the database but is not exposed via the API.\n\n**Affected versions:** >= 7.12.0, <= 7.13.0\n\n**Fixed versions:** 7.12.2, >= 7.13.1\n\n### Patches\n\nA patch for the affected released versions is available. It removes the line that override the configuration of `ssl.verify_mode`, leaving the `CERT_REQUIRED` value set by `web_util.init_mtls()`:\n\n```diff\ndiff --git a/keylime/web/base/server.py b/keylime/web/base/server.py\nindex 1d9a9c2..859b23a 100644\n--- a/keylime/web/base/server.py\n+++ b/keylime/web/base/server.py\n@@ -2,7 +2,6 @@ import asyncio\n import multiprocessing\n from abc import ABC, abstractmethod\n from functools import wraps\n-from ssl import CERT_OPTIONAL\n from typing import TYPE_CHECKING, Any, Callable, Optional\n\n import tornado\n@@ -252,7 +251,6 @@ class Server(ABC):\n         self._https_port = config.getint(component, \"tls_port\", fallback=0)\n         self._max_upload_size = config.getint(component, \"max_upload_size\", fallback=104857600)\n         self._ssl_ctx = web_util.init_mtls(component)\n-        self._ssl_ctx.verify_mode = CERT_OPTIONAL\n\n     def _get(self, pattern: str, controller: type[\"Controller\"], action: str, allow_insecure: bool = False) -> None:\n         \"\"\"Creates a new route to handle incoming GET requests issued for paths which match the given\n```\n\nUsers should upgrade to the patched version once it is released.\n\n### Workarounds\n\nIf upgrading is not immediately possible, apply one of the following mitigations:\n\n#### 1. Network isolation (Recommended)\n\nRestrict access to the registrar HTTPS port (default 8891) using firewall rules\nto allow only trusted hosts (verifier, tenant):\n\n##### Example using iptables\n```\niptables -A INPUT -p tcp --dport 8891 -s <verifier_ip> -j ACCEPT\niptables -A INPUT -p tcp --dport 8891 -s <tenant_ip> -j ACCEPT\niptables -A INPUT -p tcp --dport 8891 -j DROP\n```\n\n#### 2. Reverse proxy with mTLS enforcement\n\nDeploy a reverse proxy (nginx, HAProxy) in front of the registrar that enforces client certificate authentication:\n\n##### Example nginx configuration\n```\nserver {\n    listen 8891 ssl;\n    ssl_certificate /path/to/server.crt;\n    ssl_certificate_key /path/to/server.key;\n    ssl_client_certificate /path/to/ca.crt;\n    ssl_verify_client on;  # Enforce client certificates\n\n    location / {\n        proxy_pass https://localhost:8892;  # Internal registrar port\n    }\n}\n```",
+   "summary": "Keylime Missing Authentication for Critical Function and Improper Authentication"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-4jqp-9qjv-57m2.",
+ "seed": "GHSA-4jqp-9qjv-57m2",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "text"
+}

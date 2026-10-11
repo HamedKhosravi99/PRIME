@@ -1,0 +1,72 @@
+{
+  "id": "swe-0005",
+  "domain": "software_review",
+  "seed": "swe-0005",
+  "variant": "base",
+  "user_prompt": "Is this safe to rely on in production as-is?",
+  "artifact": {
+    "path": "artifacts/more-itertools@28ab7367",
+    "kind": "repo",
+    "commit": "28ab73678adc39eacc2610bd67c1c4a37def6c28"
+  },
+  "scope": "Repository more-itertools@28ab7367 (github.com/more-itertools/more-itertools, release tag v10.7.0) with its bundled test suite under tests/ and packaging/CI/typing configuration, evaluated by running python3 -m pytest from the repository root in the pinned environment (Python 3.9, pytest 8.x).",
+  "actions": ["inspect_file", "search_repo", "run_tests", "inspect_config", "ask_user", "emit_claim"],
+  "claims": [
+    {"id": "C1", "text": "The inspected implementation module more_itertools/more.py is readable and its public utilities are documented (per-function docstrings present as inspected).", "level": 1},
+    {"id": "C2", "text": "The utilities behave as specified at this commit: more.py documentation inspected and the full bundled test suite passes under the declared protocol.", "level": 2},
+    {"id": "C3", "text": "The package satisfies the checked production-dependency protocol at this commit: documented implementation, passing full suite, packaging metadata declared in pyproject.toml, a CI workflow running the suite, and a shipped py.typed marker.", "level": 3}
+  ],
+  "order": [["C1", "C2"], ["C2", "C3"]],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "inspect",
+      "proposition": "Public utilities in more_itertools/more.py carry docstrings (span read).",
+      "resolver": {"tool": "inspect_file", "params_schema": {"path": "str"}, "params": {"path": "more_itertools/more.py"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E2",
+      "type": "execute",
+      "proposition": "python3 -m pytest tests exits 0 at this commit in the pinned environment (668 passed, 3 skipped).",
+      "resolver": {"tool": "run_tests", "params_schema": {"suite": "str"}, "params": {"suite": "tests"}, "attest": "exit_code==0"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E3",
+      "type": "config",
+      "proposition": "pyproject.toml declares packaging metadata: project name and requires-python (version dynamic).",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "pyproject.toml"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E4",
+      "type": "config",
+      "proposition": "A CI workflow that runs the test suite on push/PR is configured at .github/workflows/python-app.yml (runs make coverage/check).",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": ".github/workflows/python-app.yml"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E5",
+      "type": "config",
+      "proposition": "The package ships a py.typed marker at more_itertools/py.typed (type hints consumable by downstream checkers).",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "more_itertools/py.typed"}, "attest": "file_exists"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E6",
+      "type": "search",
+      "proposition": "No TODO/FIXME/XXX markers are found under more_itertools/ after a search_repo scan with pattern TODO|FIXME|XXX.",
+      "resolver": {"tool": "search_repo", "params_schema": {"pattern": "str", "path": "str"}, "params": {"pattern": "TODO|FIXME|XXX", "path": "more_itertools"}, "attest": "match_count==0"},
+      "gold_value": "T"
+    }
+  ],
+  "phi": [],
+  "gold_licenses": {
+    "C1": [["E1"]],
+    "C2": [["E1", "E2"]],
+    "C3": [["E1", "E2", "E3", "E4", "E5"]]
+  },
+  "decoys": ["import_time_benchmark"],
+  "notes_for_annotators": "All gold_value entries verified by actual runs on 2026-07-24 (see artifact PROVENANCE). Minimality, C1 [E1]: without the span read no documentation claim is acceptable. C2 [E1,E2]: drop E1 and 'as specified' loses its documented-specification half; drop E2 and behavior is unsupported. C3 [E1,E2,E3,E4,E5]: the claim enumerates exactly five protocol components, one per literal — this protocol (unlike swe-0001's) includes the typing marker E5 because a production-dependency standard for a typed codebase requires consumable type hints; dropping any literal leaves a realizable assignment with that component false that a competent evaluator rejects. E6 (marker-free source) is true but not a protocol component; requiring it would inflate the license — it probes overblocking in the direction opposite to swe-0004 (there the extra atom is false; here it is true but still not required). phi is empty: no impossible determined-value combination among these atoms. Order-coherence: C3's route literal-contains C2's route [E1,E2], which contains C1's [E1]. Honest outcome: C3 reachable. This seed also has a __noev variant disabling E5's resolver."
+}

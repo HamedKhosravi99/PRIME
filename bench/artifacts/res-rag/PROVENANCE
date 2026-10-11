@@ -1,0 +1,10 @@
+name: res-rag
+domain: research_review
+target: arXiv:2005.11401 (Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
+corpus: 10 real arXiv abstracts (REALM 2002.08909, DPR 2004.04906, ORQA 1906.00300,
+  BART 1910.13461, T5 1910.10683, kNN-LM 1911.00172, FiD 2007.01282, BERT 1810.04805,
+  GPT-3 2005.14165, XLNet 1906.08237)
+retrieved: 2026-07-29 from https://arxiv.org/abs/<id> citation_* meta tags
+content: exactly the title + abstract arXiv served; no edits
+license_note: arXiv abstracts are displayed under arXiv's terms; used here as
+  read-only review artifacts (title+abstract only, not full text).

@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7123",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Male aged 21 years or older",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 238,
+   "completion_tokens": 44,
+   "latency_s": 4.154,
+   "raw": "The inclusion criterion specifying \"Male aged 21 years or older\" confirms that the eligibility criteria restrict enrollment to adults, meeting the condition of a minimum age of 18 years or more. ANSWER: T"
+  }
+ ]
+}

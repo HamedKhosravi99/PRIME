@@ -1,0 +1,11 @@
+name: res-cot
+domain: research_review
+target: arXiv:2201.11903 (Chain-of-Thought Prompting Elicits Reasoning in Large Language Models)
+corpus: 10 real arXiv abstracts (Scratchpad 2112.00114, Prompt Programming 2102.07350,
+  Calibrate Before Use 2102.09690, LM-BFF 2012.15723, Prompt Tuning 2104.08691,
+  Prefix-Tuning 2101.00190, Self-Consistency 2203.11171, Least-to-Most 2205.10625,
+  FLAN 2109.01652, GPT-3 2005.14165)
+retrieved: 2026-07-29 from https://arxiv.org/abs/<id> citation_* meta tags
+content: exactly the title + abstract arXiv served; no edits
+license_note: arXiv abstracts are displayed under arXiv's terms; used here as
+  read-only review artifacts (title+abstract only, not full text).

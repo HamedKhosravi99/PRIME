@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7009",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Apache IoTDB",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 251,
+   "completion_tokens": 22,
+   "latency_s": 1.222,
+   "raw": "The document specifies \"Apache IoTDB\" as the affected package, establishing the condition. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "Users are recommended to upgrade to version 1.3.4 and 2.0.2, which fix the issue.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 233,
+   "completion_tokens": 31,
+   "latency_s": 2.454,
+   "raw": "The document does state versions (1.3.4 and 2.0.2) in which the issue is fixed. ANSWER: T"
+  }
+ ]
+}

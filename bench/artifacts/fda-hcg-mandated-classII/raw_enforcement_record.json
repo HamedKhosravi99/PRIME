@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "last_updated": "2026-07-22",
+    "license": "https://open.fda.gov/license/",
+    "results": {
+      "limit": 1,
+      "skip": 0,
+      "total": 1
+    },
+    "terms": "https://open.fda.gov/terms/"
+  },
+  "results": [
+    {
+      "address_1": "1304 S Loop W",
+      "address_2": "N/A",
+      "center_classification_date": "20190607",
+      "city": "Houston",
+      "classification": "Class II",
+      "code_info": "Lot #: 01082019:88 Exp. 07/06/2019; 03182019:58 Exp. 09/14/2019",
+      "country": "United States",
+      "distribution_pattern": "Nationwide within the United States",
+      "event_id": "82941",
+      "initial_firm_notification": "Press Release",
+      "openfda": {},
+      "postal_code": "77054-4010",
+      "product_description": "Human Chorionic Gonadotropin 5,000 IU vials, Rx only, Pharm D. Solutions 1304 South Loop West, Houston, TX 77054, 1-844-263-6846",
+      "product_quantity": "279 vials",
+      "product_type": "Drugs",
+      "reason_for_recall": "Lack of Sterility Assurance.",
+      "recall_initiation_date": "20190523",
+      "recall_number": "D-1325-2019",
+      "recalling_firm": "Pharm D Solutions, LLC",
+      "report_date": "20190619",
+      "state": "TX",
+      "status": "Terminated",
+      "termination_date": "20210205",
+      "voluntary_mandated": "FDA Mandated"
+    }
+  ]
+}

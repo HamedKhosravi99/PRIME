@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7086",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "* Aged between 18 and 75 years.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 369,
+   "completion_tokens": 24,
+   "latency_s": 1.349,
+   "raw": "The inclusion criteria explicitly state an age range starting from 18 years, establishing the condition. ANSWER: T"
+  }
+ ]
+}

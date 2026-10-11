@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7319",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E3",
+   "attested": "F",
+   "quote": "There is an attached PR that applies this restriction on the back-end.",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 986,
+   "completion_tokens": 19,
+   "latency_s": 1.725,
+   "raw": "The document does not specify a version in which the issue is fixed. ANSWER: F"
+  }
+ ]
+}

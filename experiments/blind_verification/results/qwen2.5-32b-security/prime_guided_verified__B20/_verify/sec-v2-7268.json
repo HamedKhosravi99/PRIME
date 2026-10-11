@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7268",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "The implementation of [`tf.raw_ops.Conv3DBackpropFilterV2`](https://github.com/tensorflow/tensorflow/blob/f3b9bf4c3c0597563b289c0512e98d4ce81f886e/tensorflow/core/kernels/conv_grad_ops_3d.cc) does not fully validate the input arguments.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 666,
+   "completion_tokens": 25,
+   "latency_s": 1.509,
+   "raw": "The document mentions TensorFlow by its registered name and discusses a specific package within it, establishing the condition. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "The fix will be included in TensorFlow 2.9.0. We will also cherrypick this commit on TensorFlow 2.8.1, TensorFlow 2.7.2, and TensorFlow 2.6.4, as these are also affected and still in supported range.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 648,
+   "completion_tokens": 40,
+   "latency_s": 3.013,
+   "raw": "The document indicates the fix will be included in TensorFlow 2.9.0 and mentions cherrypicking for other versions, establishing that a version with the fix exists. ANSWER: T"
+  }
+ ]
+}

@@ -1,0 +1,307 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "details",
+     "record_id": "GHSA-5j53-63w8-8625"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"PyPI\"",
+    "params": {
+     "field_path": "affected.0.package.ecosystem",
+     "record_id": "GHSA-5j53-63w8-8625"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2027-01-01\"",
+    "params": {
+     "field_path": "published",
+     "record_id": "GHSA-5j53-63w8-8625"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.severity",
+     "record_id": "GHSA-5j53-63w8-8625"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.type",
+     "record_id": "GHSA-5j53-63w8-8625"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E6",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "affected.0.package.ecosystem",
+     "record_id": "GHSA-5j53-63w8-8625"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "references.0.url",
+     "record_id": "GHSA-5j53-63w8-8625"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ],
+     [
+      "published",
+      "date_before",
+      "2027-01-01"
+     ]
+    ],
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "database_specific.severity",
+      "exists",
+      null
+     ],
+     [
+      "references.0.type",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "details",
+      "exists",
+      null
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ],
+     [
+      "published",
+      "date_before",
+      "2027-01-01"
+     ],
+     [
+      "severity.0.score",
+      "exists",
+      null
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "sec-v2-0164",
+ "notes_for_annotators": "{\"family\": \"security-branching-het-10\", \"topology\": \"branching\", \"cost\": \"het\", \"target_level\": 2, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-5j53-63w8-8625": {
+   "affected": [
+    {
+     "package": {
+      "ecosystem": "PyPI"
+     }
+    }
+   ],
+   "database_specific": {
+    "severity": "MODERATE"
+   },
+   "details": "**Description**\n\nThe OAuth login state tokens are completely stateless and carry no per-request entropy or any data that could link them to the session that initiated the OAuth flow. `generate_state_token()` is always called with an empty `state_data` dict, so the resulting JWT only contains the fixed audience claim plus an expiration timestamp. \\[1\\]\n\n```py\n        state_data: dict[str, str] = {}\n        state = generate_state_token(state_data, state_secret)\n        authorization_url = await oauth_client.get_authorization_url(\n            authorize_redirect_url,\n            state,\n            scopes,\n        )\n```\n\n*fastapi\\_users/router/oauth.py:65-71*\n\nOn callback, the library merely checks that the JWT verifies under `state_secret` and is unexpired; there is no attempt to match the state value to the browser that initiated the OAuth request, no correlation cookie, and no server-side cache. \\[2\\]\n\n```py\n        try:\n            decode_jwt(state, state_secret, [STATE_TOKEN_AUDIENCE])\n        except jwt.DecodeError:\n            raise HTTPException(\n                status_code=status.HTTP_400_BAD_REQUEST,\n                detail=ErrorCode.ACCESS_TOKEN_DECODE_ERROR,\n            )\n        except jwt.ExpiredSignatureError:\n            raise HTTPException(\n                status_code=status.HTTP_400_BAD_REQUEST,\n                detail=ErrorCode.ACCESS_TOKEN_ALREADY_EXPIRED,\n            )\n```\n\n*fastapi\\_users/router/oauth.py:130-141*\n\nAny attacker can hit `/authorize`, capture the server-generated state, finish the upstream OAuth flow with their own provider account, and then trick a victim into loading `.../callback?code=<attacker_code>&state=<attacker_state>`. Because the state JWT is valid for any client for \\~1 hour, the victim\u2019s browser will complete the flow. This leads to login CSRF. Depending on the app\u2019s logic, the login CSRF can lead to an account takeover of the victim account or to the victim user getting logged in to the attacker's account.\n\n\\[1\\] [https://github.com/fastapi-users/fastapi-users/blob/bcee8c9b884de31decb5d799aead3974a0b5b158/fastapi\\_users/router/oauth.py\\#L57](https://github.com/fastapi-users/fastapi-users/blob/bcee8c9b884de31decb5d799aead3974a0b5b158/fastapi_users/router/oauth.py#L57)\n\n\\[2\\]  \n[https://github.com/fastapi-users/fastapi-users/blob/bcee8c9b884de31decb5d799aead3974a0b5b158/fastapi\\_users/router/oauth.py\\#L111](https://github.com/fastapi-users/fastapi-users/blob/bcee8c9b884de31decb5d799aead3974a0b5b158/fastapi_users/router/oauth.py#L111)\n\n**Proof of Concept**\n\nLet\u2019s think of an app \\- AwesomeFastAPIApp. Let\u2019s assume that the AwesomeFastAPIApp has internal logic that uses a `UserManager` different from the default `BaseUserManager.` With this `manager,` when an already logged-in user performs a callback request,  the newly provided SSO identity gets linked to the already existing user that made the request.\n\nThen, an attacker can get account takeover inside the app by performing the following actions:\n\n1\\. They start an SSO OAuth flow, but stop it right before making the callback call to AwesomeFastAPIApp;  \n2\\. The attacker tricks a logged-in user (via phishing, a drive-by attack, etc.) to perform a GET request with the attacker's state value and grant code to the AwesomeFastAPIApp callback. Because the library doesn\u2019t check whether the state token is linked to the session performing the callback, the callback is processed, the grant code is sent to the provider, and the account linking takes place.\n\nAfter the GET request is performed, the attacker's SSO account is linked with the victim's AwesomeFastAPIApp account permanently.\n\n**Suggested Fix**\n\nMake the state a value tied to the session of the user that initiated the OAuth flow, as recommended by the official RFC. \\[3\\]\n\n\n\\[3\\] [https://www.rfc-editor.org/rfc/rfc6749\\#section-10.12](https://www.rfc-editor.org/rfc/rfc6749#section-10.12)",
+   "published": "2025-12-19T21:10:40Z",
+   "references": [
+    {
+     "type": "WEB",
+     "url": "https://github.com/fastapi-users/fastapi-users/security/advisories/GHSA-5j53-63w8-8625"
+    }
+   ]
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-5j53-63w8-8625.",
+ "seed": "GHSA-5j53-63w8-8625",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

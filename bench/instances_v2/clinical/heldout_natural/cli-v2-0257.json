@@ -1,0 +1,283 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT05497453"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT05497453"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2027-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT05497453"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT05497453"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT05497453"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT05497453"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT05497453"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2027-01-01"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2027-01-01"
+     ],
+     [
+      "protocolSection.descriptionModule.briefSummary",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-0257",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-07\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": null, \"false_mech\": false}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT05497453": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "This is a Phase 1/2 open-label study to evaluate the safety, tolerability, pharmacokinetics, pharmacodynamics, and preliminary antitumor activity of OTX-2002 as a single agent and in combination with standard of care in patients with hepatocellular carcinoma (HCC) and other solid tumor types known for association with the MYC oncogene.\n\nThe study consists of Part 1 (OTX-2002 monotherapy) and Part 2 (OTX-2002 combined with standard of care in hepatocellular carcinoma). Part 1 consists of escalation and expansion, and Part 2 consists of safety run-in and expansion. The objective of Part 1 escalation and Part 2 safety run-in will be safety and tolerability, while anti-tumor activity will be evaluated as the primary endpoint in Part 1 and Part 2 expansion."
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Key inclusion\n\n* Participants with metastatic, advanced (non-resectable), or recurrent solid tumor who progressed on, relapsed after, are refractory to, or intolerant of standard of care (only applicable to Part 1 escalation)\n* Participants with BCLC Stage B (intermediate stage) or C (advanced stage), Child-Pugh A hepatocellular carcinoma who is not amenable to locoregional therapy, refractory to locoregional therapy or not amenable to curative treatment approach\n* Adult participants age \u2265 18 years at the time of signing informed consent\n* Participant must have progressed on, have relapsed after, be refractory to, or be intolerant of at least 1 prior systemic therapy, and without available subsequent standard of care\n* Participants with chronic hepatitis B must have received antiviral therapy for hepatitis B virus (HBV) for at least 12 weeks and HBV viral load must be \\< 500 IU/mL prior to first dose of study drug.\n* Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1\n\nKey exclusion\n\n* Mixed histology cholangiocarcinoma and HCC, or fibrolamellar variant HCC\n* Hepatocellular carcinoma with \u2265 50% liver occupation\n* Clear invasion into the bile duct\n* Portal vein invasion with Vp4\n* Active/untreated CNS metastases or carcinomatous meningitis\n* History of ascites requiring paracentesis within the past 3 months\n* Esophageal or gastric variceal bleeding in the past 3 months\n* History of hepatic encephalopathy in the past 3 months.",
+     "minimumAge": "18 Years"
+    },
+    "identificationModule": {
+     "nctId": "NCT05497453",
+     "officialTitle": "Phase 1/2 Open-label Study to Evaluate the Safety, Tolerability, Pharmacokinetics, Pharmacodynamics, and Preliminary Antitumor Activity of OTX-2002 As a Single Agent and in Combination with Standard of Care in Patients with Hepatocellular Carcinoma and Other Solid Tumor Types Known for Association with the MYC Oncogene"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2025-01-30",
+     "overallStatus": "TERMINATED"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT05497453.",
+ "seed": "NCT05497453",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

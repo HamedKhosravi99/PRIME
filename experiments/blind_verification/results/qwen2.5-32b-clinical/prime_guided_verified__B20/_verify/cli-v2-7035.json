@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7035",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Adolescents and young adults aged 14-29 years experiencing moderate to severe AR symptoms",
+   "verdict": "F",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 326,
+   "completion_tokens": 39,
+   "latency_s": 2.148,
+   "raw": "The inclusion criteria specify an age range of 14-29 years, which includes individuals under 18 years old, thus not restricting enrollment solely to adults. ANSWER: F"
+  }
+ ]
+}

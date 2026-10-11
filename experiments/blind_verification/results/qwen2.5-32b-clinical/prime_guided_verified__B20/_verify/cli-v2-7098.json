@@ -1,0 +1,31 @@
+{
+ "instance": "cli-v2-7098",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "* At least 18 years of age",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 211,
+   "completion_tokens": 27,
+   "latency_s": 1.562,
+   "raw": "The inclusion criteria explicitly state \"At least 18 years of age,\" which confirms the restriction to adults. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "F",
+   "quote": "Receiving mechanical ventilation",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 206,
+   "completion_tokens": 25,
+   "latency_s": 1.466,
+   "raw": "The document does not specify any restriction based on sex; therefore, it does not establish the condition. ANSWER: F"
+  }
+ ]
+}

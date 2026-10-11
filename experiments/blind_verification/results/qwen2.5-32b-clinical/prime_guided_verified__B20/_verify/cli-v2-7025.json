@@ -1,0 +1,31 @@
+{
+ "instance": "cli-v2-7025",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "* For all females of childbearing potential, a negative pregnancy test must be obtained within 3 days before starting study treatment",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 464,
+   "completion_tokens": 32,
+   "latency_s": 2.769,
+   "raw": "The document does not specify a minimum age requirement for participants, thus it is unclear if the eligibility criteria restrict enrollment to adults only. ANSWER: UNCLEAR"
+  },
+  {
+   "attempt": 2,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Measurable disease by RECIST Version 1.1 prior to the administration of study treatment",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": false,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "raw": "The document does not specify a minimum age requirement for participants, thus it is unclear if the eligibility criteria restrict enrollment to adults only. ANSWER: UNCLEAR"
+  }
+ ]
+}

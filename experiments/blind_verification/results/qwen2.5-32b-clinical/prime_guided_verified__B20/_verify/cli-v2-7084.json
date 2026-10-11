@@ -1,0 +1,31 @@
+{
+ "instance": "cli-v2-7084",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "2. Aged 18 to 70 years",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 704,
+   "completion_tokens": 30,
+   "latency_s": 2.486,
+   "raw": "The inclusion criteria explicitly state \"Aged 18 to 70 years,\" establishing the minimum age requirement for enrollment. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "F",
+   "quote": "For women of childbearing potential: positive serum pregnancy test, lactation, or unwillingness to use a satisfactory method of birth control",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 699,
+   "completion_tokens": 24,
+   "latency_s": 1.477,
+   "raw": "The document does not specify any restrictions based on sex, thus it does not establish the condition. ANSWER: F"
+  }
+ ]
+}

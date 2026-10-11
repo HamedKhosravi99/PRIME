@@ -1,0 +1,309 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-33pv-vcgh-jfg9"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"### Impact\\nThe fallback authentication endpoint served via Synapse was vulnerable to cross-site scripting (XSS) attacks. The impact depends on the configuration of the domain that Synapse is deployed on, but may allow access to cookies and other browser data, CSRF vulnerabilities, and access to other resources served on the same domain or parent domains.\\n\\n### Patches\\nThis is fixed by #8444, which is included in Synapse v1.21.0.\\n\\n### Workarounds\\nIf the homeserver is not configured to use reCAPTCHA, consent (terms of service), or single sign-on then the affected endpoint can be blocked at a reverse proxy:\\n\\n* `/_matrix/client/r0/auth/.*/fallback/web`\\n* `/_matrix/client/unstable/auth/.*/fallback/web`\"",
+    "params": {
+     "field_path": "details",
+     "record_id": "GHSA-33pv-vcgh-jfg9"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"PyPI\"",
+    "params": {
+     "field_path": "affected.0.package.ecosystem",
+     "record_id": "GHSA-33pv-vcgh-jfg9"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:true",
+    "params": {
+     "field_path": "database_specific.github_reviewed",
+     "record_id": "GHSA-33pv-vcgh-jfg9"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "database_specific.cwe_ids.0",
+     "record_id": "GHSA-33pv-vcgh-jfg9"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "aliases.0",
+     "record_id": "GHSA-33pv-vcgh-jfg9"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "details",
+     "record_id": "GHSA-33pv-vcgh-jfg9"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2026-01-01\"",
+    "params": {
+     "field_path": "modified",
+     "record_id": "GHSA-33pv-vcgh-jfg9"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "summary",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory identifies an affected package with a readable summary (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "summary",
+      "exists",
+      null
+     ],
+     [
+      "details",
+      "equals",
+      "### Impact\nThe fallback authentication endpoint served via Synapse was vulnerable to cross-site scripting (XSS) attacks. The impact depends on the configuration of the domain that Synapse is deployed on, but may allow access to cookies and other browser data, CSRF vulnerabilities, and access to other resources served on the same domain or parent domains.\n\n### Patches\nThis is fixed by #8444, which is included in Synapse v1.21.0.\n\n### Workarounds\nIf the homeserver is not configured to use reCAPTCHA, consent (terms of service), or single sign-on then the affected endpoint can be blocked at a reverse proxy:\n\n* `/_matrix/client/r0/auth/.*/fallback/web`\n* `/_matrix/client/unstable/auth/.*/fallback/web`"
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: affected package identified, summary present, and its review/severity metadata are populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "summary",
+      "exists",
+      null
+     ],
+     [
+      "details",
+      "equals",
+      "### Impact\nThe fallback authentication endpoint served via Synapse was vulnerable to cross-site scripting (XSS) attacks. The impact depends on the configuration of the domain that Synapse is deployed on, but may allow access to cookies and other browser data, CSRF vulnerabilities, and access to other resources served on the same domain or parent domains.\n\n### Patches\nThis is fixed by #8444, which is included in Synapse v1.21.0.\n\n### Workarounds\nIf the homeserver is not configured to use reCAPTCHA, consent (terms of service), or single sign-on then the affected endpoint can be blocked at a reverse proxy:\n\n* `/_matrix/client/r0/auth/.*/fallback/web`\n* `/_matrix/client/unstable/auth/.*/fallback/web`"
+     ],
+     [
+      "affected.0.package.ecosystem",
+      "equals",
+      "PyPI"
+     ],
+     [
+      "database_specific.github_reviewed",
+      "equals",
+      true
+     ],
+     [
+      "database_specific.cwe_ids.0",
+      "exists",
+      null
+     ],
+     [
+      "aliases.0",
+      "exists",
+      null
+     ],
+     [
+      "details",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked currency-and-completeness protocol: triage-ready per the inspected fields, with consistent publication metadata and populated reference and classification fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "sec-v2-0138",
+ "notes_for_annotators": "{\"family\": \"security-nested-het-02\", \"topology\": \"nested\", \"cost\": \"het\", \"target_level\": 1, \"false_mech\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-33pv-vcgh-jfg9": {
+   "affected": [
+    {
+     "package": {
+      "ecosystem": "PyPI"
+     }
+    }
+   ],
+   "aliases": [
+    "CVE-2023-28837"
+   ],
+   "database_specific": {
+    "cwe_ids": [
+     "CWE-400"
+    ],
+    "github_reviewed": true
+   },
+   "details": "### Impact\n\nA memory exhaustion bug exists in Wagtail's handling of uploaded images and documents. For both images and documents, files are loaded into memory during upload for additional processing. A user with access to upload images or documents through the Wagtail admin interface could upload a file so large that it results in a crash or denial of service.\n\nThe vulnerability is not exploitable by an ordinary site visitor without access to the Wagtail admin. It can only be exploited by admin users with permission to upload images or documents.\n\nImage uploads are [restricted to 10MB by default](https://docs.wagtail.org/en/stable/reference/settings.html#wagtailimages-max-upload-size), however this validation only happens on the frontend and on the backend after the vulnerable code. \n\n### Patches\n\nPatched versions have been released as Wagtail 4.1.4 (for the LTS 4.1 branch) and Wagtail 4.2.2 (for the current 4.2 branch).\n\n### Workarounds\n\nSite owners who are unable to upgrade to the new versions are encouraged to add extra protections outside of Wagtail to limit the size of uploaded files. Exactly how this is done will vary based on your hosting environment, but here are a few references for common setups:\n\n- Nginx: [`client_max_body_size`](https://nginx.org/en/docs/http/ngx_http_core_module.html#client_max_body_size)\n- Apache: [`LimitRequestBody`](https://httpd.apache.org/docs/2.4/mod/core.html#limitrequestbody)\n- Cloudflare: Already [imposes a limit of 100MB - 500MB](https://developers.cloudflare.com/cache/about/default-cache-behavior#customization-options-and-limitations) depending on plan\n- CloudFront: [`SizeConstraint`](https://docs.aws.amazon.com/waf/latest/APIReference/API_SizeConstraintStatement.html)\n- Traefik: [`traefik.http.middlewares.limit.buffering.maxRequestBodyBytes`](https://doc.traefik.io/traefik/middlewares/http/buffering/#maxrequestbodybytes)\n\nThe changes themselves are deep inside Wagtail, making patching incredibly difficult.",
+   "modified": "2024-11-19T16:33:19.660987Z",
+   "summary": "Wagtail vulnerable to denial-of-service via memory exhaustion when uploading large files"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-33pv-vcgh-jfg9.",
+ "seed": "GHSA-33pv-vcgh-jfg9",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "base"
+}

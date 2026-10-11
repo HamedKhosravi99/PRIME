@@ -1,0 +1,62 @@
+{
+  "arm": "prime_guided",
+  "claim_confidences": {},
+  "discharged_calls": 0,
+  "drift_events": 0,
+  "emitted": [
+    {
+      "claim": "C2",
+      "complete_auth_gold": 1,
+      "ledger_version": 2,
+      "level": 2,
+      "step": 5
+    }
+  ],
+  "error": "",
+  "final_ledger": {
+    "E1": "T",
+    "E2": "T",
+    "E3": "U",
+    "E4": "U"
+  },
+  "guided_holds": 1,
+  "guided_stalls": 3,
+  "induced_program_valid": null,
+  "induction_eligibility": null,
+  "induction_method": "oneshot",
+  "induction_view": "ids",
+  "instance": "sec-v2-7263",
+  "instance_path": "/home/anonymous/prime_pilot/bench/instances_v2/security/heldout_text/sec-v2-7263.json",
+  "license_source": "gold",
+  "max_completion": 1.0,
+  "max_level": 3,
+  "max_tool_calls": 20,
+  "refused_emissions": 0,
+  "revision_log": [],
+  "revision_mode": "fixed",
+  "revisions_accepted": 0,
+  "revisions_proposed": 0,
+  "seed": "GHSA-3926-2jvf-fg29",
+  "tokens": {
+    "completion_tokens": 542,
+    "prompt_tokens": 16186
+  },
+  "tool_calls": 4,
+  "trace": "/home/anonymous/prime_pilot/experiments/blind_verification/results/qwen2.5-32b-security/prime_guided_verified__B20/sec-v2-7263.jsonl",
+  "verification": {
+    "agreed": 1,
+    "completion_tokens": 22,
+    "consultations": 1,
+    "invocations": 1,
+    "latency_s": 2.263,
+    "prompt_tokens": 229,
+    "rejected": 0,
+    "verdicts": {
+      "F": 0,
+      "PARSE_FAIL": 0,
+      "T": 1,
+      "UNCLEAR": 0
+    },
+    "wall_s": 42.9
+  }
+}

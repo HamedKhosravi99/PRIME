@@ -1,0 +1,107 @@
+[build-system]
+requires = ["flit_scm"]
+build-backend = "flit_scm:buildapi"
+
+[project]
+name = "exceptiongroup"
+description = "Backport of PEP 654 (exception groups)"
+readme = "README.rst"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3 :: Only",
+    "Typing :: Typed"
+]
+authors = [{name = "Alex Grönholm", email = "alex.gronholm@nextday.fi"}]
+license = {file = "LICENSE"}
+requires-python = ">=3.7"
+dynamic = ["version"]
+dependencies = [
+    "typing-extensions >= 4.6.0; python_version < '3.13'",  # Needed for default (Base)ExceptionGroup generics
+]
+
+[project.urls]
+Changelog = "https://github.com/agronholm/exceptiongroup/blob/main/CHANGES.rst"
+"Source code" = "https://github.com/agronholm/exceptiongroup"
+"Issue Tracker" = "https://github.com/agronholm/exceptiongroup/issues"
+
+[project.optional-dependencies]
+test = [
+    "pytest >= 6"
+]
+
+[tool.flit.sdist]
+include = [
+    "CHANGES.rst",
+    "tests",
+]
+exclude = [
+    ".github/*",
+    ".gitignore",
+    ".pre-commit-config.yaml"
+]
+
+[tool.setuptools_scm]
+version_scheme = "post-release"
+local_scheme = "dirty-tag"
+write_to = "src/exceptiongroup/_version.py"
+
+[tool.ruff.lint]
+extend-select = [
+    "I",            # isort
+    "ISC",          # flake8-implicit-str-concat
+    "PGH",          # pygrep-hooks
+    "RUF100",       # unused noqa (yesqa)
+    "UP",           # pyupgrade
+    "W",            # pycodestyle warnings
+]
+
+[tool.ruff.lint.pyupgrade]
+# Preserve types, even if a file imports `from __future__ import annotations`.
+keep-runtime-typing = true
+
+[tool.ruff.lint.isort]
+known-first-party = ["exceptiongroup"]
+
+[tool.pytest.ini_options]
+addopts = "-rsfE --tb=short --strict-config --strict-markers"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["exceptiongroup"]
+relative_files = true
+
+[tool.coverage.report]
+exclude_also = [
+    "if TYPE_CHECKING:",
+    "@overload",
+]
+
+[tool.pyright]
+# for type tests, the code itself isn't type checked in CI
+reportUnnecessaryTypeIgnoreComment = true
+
+[tool.mypy]
+# for type tests, the code itself isn't type checked in CI
+warn_unused_ignores = true
+
+[tool.tox]
+env_list = ["3.7", "3.8", "3.9", "3.10", "3.11", "3.12", "3.13", "3.14", "pypy3"]
+skip_missing_interpreters = true
+labels = {typing = ["3.7", "3.8", "3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]}
+requires = ["tox >= 4.22"]
+
+[tool.tox.env_run_base]
+commands = [["python", "-m", "pytest", { replace = "posargs", extend = true }]]
+package = "editable"
+extras = ["test"]
+
+[tool.tox.env.typing]
+commands = [
+    ["pyright", "--verifytypes", "exceptiongroup"],
+    ["pyright", "tests/check_types.py"],
+    ["mypy", "tests/check_types.py"],
+]
+deps = ["pyright == 1.1.400", "mypy"]

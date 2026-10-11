@@ -1,0 +1,13 @@
+name: Apple Inc.
+cik: 0000320193
+source_url: https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json
+retrieved_utc: 2026-07-29T16:32:34Z
+raw_response_sha256: 31f9ab4398402faabc733178497af89dbf94dd5038c6e36d4c894317de8a4647
+user_agent_sent: PRIME-research <contact-email>
+concepts_fetched: Revenues, RevenueFromContractWithCustomerExcludingAssessedTax, NetIncomeLoss, Assets, Liabilities
+  Revenues: 11 annual (10-K, fp=FY) entries
+  RevenueFromContractWithCustomerExcludingAssessedTax: 37 annual (10-K, fp=FY) entries
+  NetIncomeLoss: 139 annual (10-K, fp=FY) entries
+  Assets: 36 annual (10-K, fp=FY) entries
+  Liabilities: 34 annual (10-K, fp=FY) entries
+integrity: every val/start/end/fy/fp/form/accn/frame field in companyfacts_trimmed.json is copied verbatim from SEC's own API response (see raw_response_sha256); nothing computed, edited, or invented. Values embedded in any bench/instances/fin/*.json record are a further subset of these SAME entries, unedited.

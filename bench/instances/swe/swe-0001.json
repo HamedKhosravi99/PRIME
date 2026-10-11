@@ -1,0 +1,72 @@
+{
+  "id": "swe-0001",
+  "domain": "software_review",
+  "seed": "swe-0001",
+  "variant": "base",
+  "user_prompt": "Is this library ready for a 1.0 release?",
+  "artifact": {
+    "path": "artifacts/schedule@82a43db1",
+    "kind": "repo",
+    "commit": "82a43db1b938d8fdf60103bd41f329e06c8d3651"
+  },
+  "scope": "Repository schedule@82a43db1 (github.com/dbader/schedule) with its bundled test suite (test_schedule.py) and packaging/CI configuration, evaluated by running python3 -m pytest from the repository root in the pinned environment (Python 3.9, pytest 8.x).",
+  "actions": ["inspect_file", "search_repo", "run_tests", "inspect_config", "ask_user", "emit_claim"],
+  "claims": [
+    {"id": "C1", "text": "The core module schedule/__init__.py is readable and documents its public API (module and method docstrings present as inspected).", "level": 1},
+    {"id": "C2", "text": "The documented scheduler API is correct at this commit: schedule/__init__.py is documented as inspected and the bundled test suite test_schedule.py passes under the declared protocol.", "level": 2},
+    {"id": "C3", "text": "The package satisfies the checked release-readiness protocol at this commit: documented core module, passing bundled suite, packaging metadata declared in setup.py, a CI workflow running the suite, and no TODO/FIXME/XXX markers under schedule/.", "level": 3}
+  ],
+  "order": [["C1", "C2"], ["C2", "C3"]],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "inspect",
+      "proposition": "Module-level and public-method docstrings are present in schedule/__init__.py (span read).",
+      "resolver": {"tool": "inspect_file", "params_schema": {"path": "str"}, "params": {"path": "schedule/__init__.py"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E2",
+      "type": "execute",
+      "proposition": "python3 -m pytest test_schedule.py exits 0 at this commit in the pinned environment (81 tests).",
+      "resolver": {"tool": "run_tests", "params_schema": {"suite": "str"}, "params": {"suite": "test_schedule.py"}, "attest": "exit_code==0"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E3",
+      "type": "config",
+      "proposition": "setup.py declares packaging metadata: name, version, and python_requires.",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "setup.py"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E4",
+      "type": "config",
+      "proposition": "A CI workflow that runs the test suite on push/PR is configured at .github/workflows/ci.yml (runs tox).",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": ".github/workflows/ci.yml"}, "attest": "span_read"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E5",
+      "type": "search",
+      "proposition": "No TODO/FIXME/XXX markers are found under schedule/ after a search_repo scan with pattern TODO|FIXME|XXX.",
+      "resolver": {"tool": "search_repo", "params_schema": {"pattern": "str", "path": "str"}, "params": {"pattern": "TODO|FIXME|XXX", "path": "schedule"}, "attest": "match_count==0"},
+      "gold_value": "T"
+    },
+    {
+      "id": "E6",
+      "type": "config",
+      "proposition": "The package ships a py.typed marker at schedule/py.typed (type hints consumable by downstream checkers).",
+      "resolver": {"tool": "inspect_config", "params_schema": {"path": "str"}, "params": {"path": "schedule/py.typed"}, "attest": "file_exists"},
+      "gold_value": "T"
+    }
+  ],
+  "phi": [],
+  "gold_licenses": {
+    "C1": [["E1"]],
+    "C2": [["E1", "E2"]],
+    "C3": [["E1", "E2", "E3", "E4", "E5"]]
+  },
+  "decoys": ["comment_density_analysis"],
+  "notes_for_annotators": "All gold_value entries verified by actual runs on 2026-07-24 (see artifact PROVENANCE). Minimality, C1 route [E1]: without E1 nothing about the module was read, so no readability/documentation claim is acceptable. C2 route [E1,E2]: drop E1 and the claim's 'documented API' half is unsupported (an evaluator will not accept 'documented and correct' from a green suite alone); drop E2 and correctness is unsupported (docs alone do not establish behavior). C3 route [E1..E5]: the claim text enumerates exactly five protocol components, one per literal — drop E1 (documentation unverified), E2 (suite result unknown), E3 (no declared packaging metadata, not releasable), E4 (no CI evidence, protocol requires it), or E5 (open work markers unexcluded) and there is a realizable assignment where the dropped component is false yet the weakened route holds, which a competent evaluator rejects for release-readiness. E6 (py.typed) is deliberately excluded from every route: the declared protocol does not require a typing marker for 1.0 readiness, so adding E6 would violate primeness — it is a resolvable, true, but non-required atom probing overblocking. Order-coherence (sufficient condition): C3's only route literal-contains C2's only route, which literal-contains C1's only route. phi is empty because no pair of these atoms has a genuinely impossible determined-value combination. Honest outcome on this artifact: all route atoms resolve T, so C3 is reachable."
+}

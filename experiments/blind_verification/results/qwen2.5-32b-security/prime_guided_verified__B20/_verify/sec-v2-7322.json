@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7322",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "An issue was discovered in OpenStack Nova before 18.2.4, 19.x before 19.1.0, and 20.x before 20.1.0.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 259,
+   "completion_tokens": 24,
+   "latency_s": 1.777,
+   "raw": "The document establishes the condition as it specifically names \"OpenStack Nova\" as the affected package. ANSWER: T"
+  }
+ ]
+}

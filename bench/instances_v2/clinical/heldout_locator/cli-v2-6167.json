@@ -1,0 +1,378 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT03427424"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.descriptionModule.briefSummary"
+    ],
+    "what": "the NCT identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.statusVerifiedDate",
+     "record_id": "NCT03427424"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.statusModule.statusVerifiedDate"
+    ],
+    "what": "the date the status was last verified"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"OBSERVATIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT03427424"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.designModule.studyType",
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.statusModule.studyFirstSubmitDate"
+    ],
+    "what": "the study type"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT03427424"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.statusModule.overallStatus"
+    ],
+    "what": "the sex eligibility field"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT03427424"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.identificationModule.briefTitle"
+    ],
+    "what": "the official title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT03427424"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.descriptionModule.briefSummary"
+    ],
+    "what": "the minimum age for eligibility"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.statusVerifiedDate",
+     "record_id": "NCT03427424"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.statusModule.statusVerifiedDate"
+    ],
+    "what": "the date the status was last verified"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E8",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:true",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.healthyVolunteers",
+     "record_id": "NCT03427424"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.studyFirstSubmitDate",
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.eligibilityModule.healthyVolunteers"
+    ],
+    "what": "whether healthy volunteers are accepted"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "OBSERVATIONAL"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "OBSERVATIONAL"
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7"
+   ]
+  ]
+ },
+ "id": "cli-v2-6167",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-het-08\", \"topology\": \"nested\", \"cost\": \"het\", \"target_level\": 3, \"false_mech\": false, \"locator\": true, \"source_instance\": \"cli-v2-0167\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT03427424": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "Background:\n\nMany people suffer from drug addiction. But currently, treatments are not very effective. One group of patients in this study are enrolled in addiction treatment through physician health programs (PHPs). About 70% of these patients are able to stop using drugs for extended periods of time. By studying this specific group of patients, researchers want to understand the difference between those who may or may not respond to treatment. They want to study the brain while people do thinking and feeling tasks and when they relax. They will study brain chemicals, a stress hormone, and certain genes. The results may help them understand the brain basis for addiction and recovery.\n\nObjectives:\n\nTo use brain imaging to find differences between people with and without drug addiction. To see if these differences help predict addiction.\n\nEligibility:\n\nHealthy, right-handed adults ages 21-65, enrolled in a physician health program or those with no history of addiction and with at least 16 years of education\n\nDesign:\n\nParticipants enrolled in a PHP will be screened under this study and participants with no history of addiction will be screened under another study.\n\nAt the study visit, participants will:\n\nHave a routine check-up, including tests for pregnancy, drugs, and alcohol.\n\nGive 11 blood samples.\n\nRate their cravings.\n\nTest their frustration with stressful situations by responding to questions on a screen.\n\nPractice the magnetic resonance imaging (MRI) tasks:\n\nShock task. Two electrodes placed on a foot will deliver brief, low-strength electrical shocks that get gradually stronger, but not painful. Participants will see drug or neutral images. They will rate their discomfort.\n\nThinking tasks. Participants will answer questions about pictures, numbers, and money. They will press buttons in response to things they see.\n\nDo the MRI tasks in 2 sessions (morning and afternoon) in the scanner. Participants will lie in an MRI machine which will take pictures of the brain while doing these tasks.\n\nSome participants will repeat the visit twice over a year at set intervals.\n\nMeals will be provided, and visits will include meal breaks and smoking breaks for those who smoke."
+    },
+    "designModule": {
+     "studyType": "OBSERVATIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "* I. MAIN STUDY\n\nA. INCLUSION CRITERIA:\n\nAll participants: (CON), (POUD-E), (POUD-L), (AUD-E), (AUD-L), (POAUD-E), (POAUD-L):\n\n* Males and females between 21-65 years of age will be enrolled in the study.\n* Able and willing to provide written informed consent.\n* Must be right-handed.\n* Participants must be in good health.\n\nHealthy control participants (CON) in addition to all participants inclusion criteria:\n\n* Free of lifetime DSM-5 substance use disorders except for tobacco use disorder.\n* 16 years of education or more\n\nEarly-in-treatment, prescription opioid use disorder (POUD-E) participants- in addition to all participants inclusion criteria:\n\n* Recently (within about 3 months) enrolled in a physician health program (PHP) or equivalent at time of enrollment in the study.\n* Meet a minimum of 6/11 DSM-5 criteria for severe opioid use disorder (OUD) for about 2 years prior to enrollment and abstinent for about 1-3 months at time of imaging.\n\nEarly-in-treatment, alcohol use disorder (AUD-E) participants- in addition to all participants inclusion criteria\n\n* Recently (within about 3 months) enrolled in a physician health program (PHP) or equivalent at time of enrollment in the study.\n* Meet a minimum of 6/11 DSM-5 criteria for severe alcohol use disorder (AUD) for about 2 years prior to enrollment and abstinent for about 1-3 months at time of imaging.\n\nEarly-in-treatment, dual prescription opioid and alcohol use disorder (POAUD-E) participants- in addition to all participants inclusion criteria:\n\n* Recently (within about 3 months) enrolled in a physician health program (PHP) or equivalent at time of enrollment in the study.\n* Meet a minimum of 6/11 DSM-5 criteria for either severe opioid or severe alcohol use disorders and a minimum of 4/11 DSM-5 for either moderate opioid or moderate alcohol use disorder for about 2 years for each substance prior to enrollment and abstinent for about 1-3 months at time of imaging.\n\nLong-term-in-treatment, prescription opioid use disorder (POUD-L) participants- in addition to all participants inclusion criteria:\n\n* Enrolled in or affiliated with a physician health program (PHP) or equivalent for more than 2 months at time of enrollment in the study.\n* Meet a minimum of 6/11 DSM-5 criteria for severe opioid use disorder for about 2 years prior to starting treatment and abstinent for at least 3 months at time of imaging.\n\nLong-term-in-treatment, alcohol use disorder (AUD-L) participants- in addition to all participants inclusion criteria:\n\n* Enrolled in or affiliated with a physician health program (PHP) or equivalent for more than 2 months at time of enrollment in the study and in full remission for at least 2 months at time of imaging.\n* Meet a minimum of 6/11 DSM-5 criteria for severe alcohol use disorder for about 2 years prior to starting treatment and abstinent for at least 3 months at time of imaging.\n\nLong-term-in-treatment, dual prescription opioid and alcohol use disorder (POAUD-L) participants - in addition to all participants inclusion criteria:\n\n* Enrolled in or affiliated with a physician health program (PHP) or equivalent for more than 2 months at time of enrollment in the study.\n* Meet a minimum of 6/11 DSM-5 criteria for either severe opioid or severe alcohol use disorder and a minimum of 4/11 DSM-5 for either moderate opioid or moderate alcohol use disorder about 2 years for each substance prior to enrollment and abstinent for at least 3 months at time of imaging.\n\nEXCLUSION CRITERIA:\n\nAll participants: (CON), (POUD-E), (POUD-L), (AUD-E), (AUD-L), (POAUD-E), (POAUD-L):\n\n* Females must not be pregnant or lactating.\n* Presence of ferromagnetic objects in the body that are contraindicated for MRI of the head (e.g. pacemakers or other implanted electrical devices, brain stimulators, some types of dental implants, aneurysm clips, metallic prostheses, permanent eyeliner, implanted delivery pump, or shrapnel fragments) or fear of enclosed spaces.\n* Noise-induced hearing loss or tinnitus.\n* Head trauma with loss of consciousness for more than 30 minutes or significant sequelae for more than one month.\n* Current or past DSM-5 diagnosis of any psychiatric disorder that required hospitalization other than detoxification (any length), or chronic medication management for more than three months, (except for stable doses of antidepressants, or low dose (up to 100mg/day of Quetiapine or equivalent) of antipsychotics (experimental groups only) for at least one month prior to the time of a scanning visit) and that could impact brain function at the time of the study based on study MAI s discretion. Current or past tobacco use disorder or nicotine use, opioid use disorder in opioid use disorder participants, alcohol use disorder in alcohol use disorder participants, and both opioid and alcohol use disorders in the dual opioid and alcohol use disorder group is not exclusionary.\n* Currently (at time of imaging sessions) using any medications that are known to alter BOLD signal such as stimulant or stimulant-like medications (amphetamine, methylphenidate, modafinil); anorexics (sibuteramine); antianginal agents; antiarrhythmics; antiasthma agents that are systemic corticosteroids; anticholinergics; anticonvulsants; antineoplastics; antiobesity; hormones (exceptions: thyroid hormone replacement, oral contraceptives, and estrogen replacement therapy); insulin; lithium; herbal products with known psychotropic effects (e.g. Gingko biloba, or St. John s Wort) and other medications based on study MAI s discretion.\n* Currently (at time of imaging sessions) taking methadone opioid replacement therapy. Please note that experimental group participants taking disulfiram, acamprosate, naltrexone, or long acting naltrexone treatment or those at a stable dose (for at least 2 weeks) of buprenorphine containing medications will be allowed to participate in the study.\n* Medical conditions that can impact brain function such as seizure disorder, diabetes mellitus, renal insufficiency (e.g. Creatinine \\> 2.5), uncontrolled hypertension (BP\\> 160/100 on screening), clinically significant heart disease, HIV, syphilis, or autoimmune disorders.\n* Clinically significant laboratory results (e.g. random glucose \\> 200 mg/dL, LFT (ALT, AST and GGT) \\> 3-fold upper limit of normal, or Hemoglobin \\< 10 gm/dL) or other clinically significant lab abnormalities based on study MAI s discretion.\n* Have any current neurological illnesses including, but not limited to, seizure disorders, frequent migraines or on prophylaxis, multiple sclerosis, movement disorders, or CNS tumor.\n* Are non-English speaking.\n* Suspected or confirmed acute SARS-CoV-2 infection.\n\nII. ADDICTION PHENOTYPE CHARACTERIZATION\n\nNote: Health professionals with prescription opioid, alcohol or dual prescription opioid and alcohol use disorder or other substances who are enrolled in or affiliated with a PHP and are not eligible for the main study (including for having an SUD that does not qualify for the main study) may be invited to participate in the Addiction Phenotype Characterization arm.\n\nA. INCLUSION CRITERIA:\n\n* Males and females 21 years of age and older will be enrolled in the study.\n* Able and willing to provide informed consent.\n* Enrolled in or affiliated with a physician health program (PHP) or equivalent at the time of enrollment in the study.\n* Meet a minimum of 6/11 DSM-5 criteria for severe opiate, alcohol or both alcohol and opiate or other substance use disorder for at least 2 years prior to enrollment.\n\nB. EXCLUSION CRITERION:\n\n-Are non-English speaking.",
+     "healthyVolunteers": true,
+     "minimumAge": "21 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "Imaging Biomarker for Addiction Treatment Outcome",
+     "nctId": "NCT03427424",
+     "officialTitle": "Imaging Biomarker for Addiction Treatment Outcome"
+    },
+    "statusModule": {
+     "overallStatus": "TERMINATED",
+     "statusVerifiedDate": "2024-04",
+     "studyFirstSubmitDate": "2018-02-08"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT03427424.",
+ "seed": "NCT03427424",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

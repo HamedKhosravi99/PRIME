@@ -1,0 +1,62 @@
+{
+  "arm": "prime_guided",
+  "claim_confidences": {},
+  "discharged_calls": 0,
+  "drift_events": 0,
+  "emitted": [
+    {
+      "claim": "C1",
+      "complete_auth_gold": 1,
+      "ledger_version": 3,
+      "level": 1,
+      "step": 6
+    }
+  ],
+  "error": "",
+  "final_ledger": {
+    "E1": "T",
+    "E2": "U",
+    "E3": "F",
+    "E4": "F"
+  },
+  "guided_holds": 0,
+  "guided_stalls": 3,
+  "induced_program_valid": null,
+  "induction_eligibility": null,
+  "induction_method": "oneshot",
+  "induction_view": "ids",
+  "instance": "cli-v2-7120",
+  "instance_path": "/home/anonymous/prime_pilot/bench/instances_v2/clinical/heldout_text/cli-v2-7120.json",
+  "license_source": "gold",
+  "max_completion": 1.0,
+  "max_level": 3,
+  "max_tool_calls": 20,
+  "refused_emissions": 0,
+  "revision_log": [],
+  "revision_mode": "fixed",
+  "revisions_accepted": 0,
+  "revisions_proposed": 0,
+  "seed": "NCT03679676",
+  "tokens": {
+    "completion_tokens": 523,
+    "prompt_tokens": 21059
+  },
+  "tool_calls": 5,
+  "trace": "/home/anonymous/prime_pilot/experiments/blind_verification/results/qwen2.5-32b-clinical/prime_guided_verified__B20/cli-v2-7120.jsonl",
+  "verification": {
+    "agreed": 2,
+    "completion_tokens": 93,
+    "consultations": 3,
+    "invocations": 3,
+    "latency_s": 7.287,
+    "prompt_tokens": 2722,
+    "rejected": 1,
+    "verdicts": {
+      "F": 3,
+      "PARSE_FAIL": 0,
+      "T": 0,
+      "UNCLEAR": 0
+    },
+    "wall_s": 45.7
+  }
+}

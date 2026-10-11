@@ -1,0 +1,11 @@
+name: res-ddpm
+domain: research_review
+target: arXiv:2006.11239 (Denoising Diffusion Probabilistic Models)
+corpus: 10 real arXiv abstracts (Sohl-Dickstein 1503.03585, Song&Ermon score matching
+  1907.05600, NCSN improved techniques 2006.09011, GAN 1406.2661, VAE 1312.6114,
+  RealNVP 1605.08803, PixelRNN 1601.06759, BigGAN 1809.11096, Glow 1807.03039,
+  WaveNet 1609.03499)
+retrieved: 2026-07-29 from https://arxiv.org/abs/<id> citation_* meta tags
+content: exactly the title + abstract arXiv served; no edits
+license_note: arXiv abstracts are displayed under arXiv's terms; used here as
+  read-only review artifacts (title+abstract only, not full text).

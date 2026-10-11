@@ -1,0 +1,336 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT07390968"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.eligibilityModule.eligibilityCriteria"
+    ],
+    "what": "the NCT identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.statusVerifiedDate",
+     "record_id": "NCT07390968"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.identificationModule.briefTitle"
+    ],
+    "what": "the date the status was last verified"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2028-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT07390968"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.studyFirstSubmitDate",
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.statusModule.lastUpdateSubmitDate"
+    ],
+    "what": "the date the registration was first submitted"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"INTERVENTIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT07390968"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.designModule.studyType"
+    ],
+    "what": "the study type"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT07390968"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.statusModule.overallStatus"
+    ],
+    "what": "the sex eligibility field"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E6",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT07390968"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.identificationModule.officialTitle"
+    ],
+    "what": "the official title"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2028-01-01"
+     ]
+    ],
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2028-01-01"
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-6124",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-hom-11\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": 2, \"false_mech\": false, \"locator\": true, \"source_instance\": \"cli-v2-0124\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT07390968": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "This phase IIb trial compares the effect of LUNAR-COV19 vaccine to Comirnaty vaccine in treating adult patients who have received a hematopoietic cell transplant (HCT). Guidelines recommend repeating severe acute respiratory syndrome coronavirus-2 (SARS-CoV-2) vaccination of 3 messenger ribonucleic acid (mRNA) vaccines followed by a fourth booster 3-6 months after treatment. However, vaccination is less effective in HCT patients compared to healthy people due to impaired immune responses. LUNAR-COV19, a self-amplifying mRNA vaccine, may help the body's own immune system recognize the SARS-CoV-2 spike protein and fight the virus by using a special mRNA that copies itself for a stronger response. Vaccines made from mRNA with SARS-CoV-2, such as Comirnaty, may help the body build an effective immune response. This may provide active protection against SARS-CoV-2 infection. LUNAR-COV19 may be safe and tolerable and may generate a better and more durable immune response than the Comirnaty vaccine in adult patients who have received a HCT."
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Aged \u2265 18 years\n* Willing and able to provide written informed consent, or with a legal representative who can provide informed consent (where locally approved)\n* Have received an allogeneic HCT within the prior 365 days\n* Have no relapse or progression of underlying malignancy\n* Have platelets \u2265 30,000/mm\\^3\n* Not pregnant (confirmed with negative urine or serum pregnancy test, if applicable)\n* Willingness to take study vaccine and complete necessary study procedures\n* If of childbearing potential, must agree to use a highly effective method of birth control or abstain from heterosexual activity for the course of the study through at least 60 days after the last dose of the study vaccine\n\nExclusion Criteria:\n\n* Current infection with SARS-CoV-2 or infection within the prior 28 day period\n* Positive for SARS-CoV-2 by nasal swab polymerase chain reaction (PCR) at screening\n* Currently receiving any approved, authorized, or investigational direct-acting antiviral drug against SARS-CoV-2\n* Received any approved, authorized, or investigational monoclonal anti-SARS-CoV-2 antibody therapy within the prior 180 days before screening\n* Received a SARS-CoV-2 vaccine after HCT or within 28 days prior to HCT\n* Participation in any other concurrent clinical trial of an experimental treatment or prevention for SARS-CoV-2\n* Receiving \\> 1 mg/kg/day corticosteroids within the prior 7 days\n* Active infection that is not adequately controlled, as determined by the investigator\n* Have received therapies that cause profound T-cell or B-cell depletion within 30 days of enrollment, or anticipated to receive such therapies within 3 months of enrollment\n* Have received immunoglobulin replacement therapy (IGRT) within 30 days of enrollment, or anticipated to receive IGRT within 3 months of enrollment\n* Have a history of suspected or documented myocarditis or pericarditis\n* Any inability to take study vaccine or comply with study procedures that, in the opinion of the investigator, would make the participant unsuitable for the study\n* Individuals with a known history of severe hypersensitivity reactions, including anaphylaxis, or other significant adverse reactions to any vaccine or any vaccine excipient. Have any other condition that would, in the investigator's judgment, contraindicate participation in the clinical study due to safety concerns with clinical study procedures",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "Self-Amplifying mRNA COVID-19 Vaccine (LUNAR-COV19) Versus Comirnaty Vaccine in Adult Hematopoietic Cell Transplant Patients",
+     "nctId": "NCT07390968",
+     "officialTitle": "A Phase 2, Multicenter, Double-Blind, Randomized, Controlled Trial of the Safety and Immunogenicity of a Self-Amplifying mRNA COVID-19 Vaccine in Adult Hematopoietic Cell Transplant Recipients"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2026-02-06",
+     "overallStatus": "NOT_YET_RECRUITING",
+     "statusVerifiedDate": "2026-01",
+     "studyFirstSubmitDate": "2026-01-29"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT07390968.",
+ "seed": "NCT07390968",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

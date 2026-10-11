@@ -1,0 +1,181 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT03381183"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT03381183"
+    },
+    "what": "the eligibility criteria restrict enrollment to adults, that is, a minimum age of 18 years or more"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT03381183"
+    },
+    "what": "the eligibility criteria restrict enrollment to one sex only (only male or only female participants)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT03381183"
+    },
+    "what": "the eligibility criteria accept healthy volunteers"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready for an adult cohort: identified, and the eligibility text restricts enrollment to adults."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked adult-cohort protocol: identified, adults only, open to both sexes, and not a healthy-volunteer study, as established from the eligibility text."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "!E3",
+    "!E4"
+   ]
+  ]
+ },
+ "id": "cli-v2-7066",
+ "notes_for_annotators": "{\"family\": \"clinical-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, false, false], \"twins\": [\"protocolSection.eligibilityModule.minimumAge\", \"protocolSection.eligibilityModule.sex\", \"protocolSection.eligibilityModule.healthyVolunteers\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT03381183": {
+   "protocolSection": {
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* Participants must have histologically or cytologically confirmed squamous cell carcinoma of oral cavity, oropharynx, paranasal sinuses, nasal cavity, hypopharynx, or larynx. Squamous cell carcinoma of unknown primary in cervical lymph node can be included only if p16 status is positive.\n* Must have recurrent or metastatic HNSCC that is not amenable to local therapy with curative intent (surgery or radiation therapy with or without chemotherapy). Participants with persistent disease following radiation therapy administered with or without a chemotherapy sensitizer may also be included.\n* Willing and able to give informed consent and adhere to protocol therapy; written informed consent and any locally required authorization must be obtained from the patient prior to performing any protocol-related procedures, including screening evaluations\n* At least 18 years of age\n* Eastern Cooperative Oncology Group (ECOG) 0-2\n* Adequate normal organ and marrow function as outlined in protocol documentation\n* Must have measurable disease, defined as at least one lesion that can be accurately measured in at least one dimension (longest diameter to be recorded) as outlined in Response Evaluation Criteria in Solid Tumors (RECIST) version 1.1.\n* Life expectancy of greater than 3 months.\n* Female participants of childbearing potential must have a negative serum pregnancy test within 7 days prior to enrollment.\n* Body weight must be \\> 30 Kg.\n* Participants must have a mass that is accessible and safe for repeat biopsy Note: if a participant is considered to be amendable to biopsy at the time of enrollment but is then unable to undergo a post-treatment biopsy this will not be considered an ineligible subject, although the missed biopsy will still constitute a protocol deviation.\n\nExclusion Criteria:\n\n* Prior exposure to a combination of IRX-2 regimen, and PD-1/PD-L1 inhibitors\n* Radiation therapy with a curable intent within 30 days of first dose of study treatment is excluded. However, radiation therapy with a palliative intent is allowed to treat after 14 days from the last dose of radiation.\n* Any medical contraindications or previous therapy that would preclude treatment with the IRX-2 Regimen and durvalumab\n* Any unresolved toxicity NCI Common Terminology Criteria for Adverse Events (CTCAE) Grade \u2265 2 from previous anticancer therapy with the exception of alopecia, vitiligo, and the laboratory values defined in the inclusion criteria, and except toxicities the investigator deems irreversible.\n* Grade \u2265 2 neuropathy will be evaluated on a case-by-case basis after consultation with the study physician\n* Patients with irreversible toxicity not reasonably expected to be exacerbated by treatment with the IRX- regiemtn or durvalumab may be included only after consultation with the study physician.\n* Active or prior documented autoimmune or inflammatory disorders (including inflammatory bowel disease \\[e.g., colitis or Crohn's disease\\], diverticulitis \\[with the exception of diverticulosis\\], systemic lupus erythematosus, Sarcoidosis syndrome, or Wegener syndrome \\[granulomatosis with polyangiitis, Graves' disease, rheumatoid arthritis, hypophysitis, uveitis, etc\\]). The following are exceptions to this criterion: Patients with vitiligo or alopecia; Patients with hypothyroidism (e.g., following Hashimoto syndrome) stable on hormone replacement. Any chronic skin condition that does not require systemic therapy; Patients without active disease in the last 2 years may be included but only after consultation with the study physician; Patients with celiac disease controlled by diet alone.\n* Current or prior use of immunosuppressive medication within 14 days before the first dose of durvalumab. The following are exceptions to this criterion: Intranasal, inhaled, topical steroid, or local steroid injections (e.g., intra articular injection); Systemic corticosteroids at physiologic doses not to exceed 10 mg/day of prednisone or its equivalent; Steroids as premedication for hypersensitivity reactions (e.g., CT scan premedication).\n* Concomitant anticoagulation with oral anticoagulants (such as warfarin, direct thrombin and Factor Xa inhibitors) or platelet inhibitors (such as clopidogrel) that cannot be safely stopped.\n* Major surgical procedure (as defined by the Investigator) within 28 days prior to the first dose of durvalumab. Note: Local surgery of isolated lesions for palliative intent is acceptable.\n* History of allogenic organ transplantation.\n* Symptomatic cardiopulmonary disease (including congestive heart failure and hypertension), coronary artery disease, serious arrhythmia or chronic lung disease. Patients with these conditions who are stable with relatively minor symptoms and who are appropriate candidates for systemic treatments need not be excluded.\n* Myocardial infarction within the last 3 months.\n* Known infection with hepatitis B, hepatitis C, or HIV.\n* Signs or symptoms of systemic bacterial infection (use of antibiotics to treat superficial infection or contamination of tumor shall not, by itself, be considered evidence of infection).\n* Clinically significant gastritis or peptic ulcer disease.\n* Stroke or other symptoms of cerebral vascular insufficiency within the last 3 months.\n* Allergy to ciprofloxacin (or other quinolones).\n* Previous diagnosis of invasive cancer from which the individual is not disease-free AND that has required treatment within the past 3 years, except for superficial skin, cervical cancer in-situ, or early stage prostate or bladder cancer (i.e. treatment with curative intent and long term disease-free expectations).\n* History of leptomeningeal carcinomatosis or known untreated or symptomatic brain metastases. Treated, asymptomatic brain metastasis can be included.\n* Known allergy or hypersensitivity to any of the study drugs or any of the study drug excipients.\n* Females who are pregnant or breastfeeding; males or females of reproductive potential who are not willing to employ effective birth control from screening to 90 days after the last dose of durvalumab or 1 year after last dose of cyclophosphamide, whichever is the longer time period.\n* Uncontrolled intercurrent illness, including but not limited to, ongoing or active infection, symptomatic congestive heart failure, uncontrolled hypertension, unstable angina pectoris, cardiac arrhythmia, interstitial lung disease, serious chronic gastrointestinal conditions associated with diarrhea, or psychiatric illness/social situations that would limit compliance with study requirement, substantially increase risk of incurring AEs or compromise the ability of the patient to give written informed consent.\n* Mean QT interval corrected for heart rate using Fridericia's formula (QTcF) \u2265470 ms calculated from 3 ECGs (within 15 minutes at 5 minutes apart).\n* History of active primary immunodeficiency\n* Active infection including tuberculosis (clinical evaluation that includes clinical history, physical examination and radiographic findings, and tuberculosis (TB) testing in line with local practice), hepatitis B (known positive HBV surface antigen (HBsAg) result), hepatitis C, or human immunodeficiency virus (positive HIV 1/2 antibodies). Patients with a past or resolved HBV infection (defined as the presence of hepatitis B core antibody \\[anti-HBc\\] and absence of HBsAg) are eligible. Patients positive for hepatitis C (HCV) antibody are eligible only if polymerase chain reaction is negative for HCV RNA.\n* Receipt of live attenuated vaccine within 30 days prior to the first dose of investigational produce (IP). Note: Patients, if enrolled, should not receive live vaccine whilst receiving IP and up to 30 days after the last dose of IP."
+    },
+    "identificationModule": {
+     "briefTitle": "IRX-2 Regimen and Durvalumab, for Incurable H&N Squamous Cell Carcinoma"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT03381183.",
+ "seed": "NCT03381183",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "text"
+}

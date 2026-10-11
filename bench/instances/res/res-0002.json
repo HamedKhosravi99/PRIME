@@ -1,0 +1,161 @@
+{
+  "id": "res-0002",
+  "domain": "research_review",
+  "seed": "res-0002",
+  "variant": "base",
+  "user_prompt": "Is the core idea of this paper novel relative to the related work I gave you?",
+  "artifact": {
+    "path": "artifacts/res-cot",
+    "kind": "paper_with_corpus",
+    "commit": "arxiv:2201.11903"
+  },
+  "scope": "The target paper target/paper.txt (arXiv:2201.11903, Chain-of-Thought Prompting) and the supplied corpus of 10 real related-paper abstracts under corpus/, searched by search_repo and read by inspect_file; the novelty question is scoped to the target's STATED contribution and to subsumption BY THE SUPPLIED CORPUS ONLY (not the open literature).",
+  "actions": [
+    "inspect_file",
+    "search_repo",
+    "ask_user",
+    "emit_claim"
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "The target paper's stated contribution is identifiable from the supplied text (eliciting multi-step reasoning in a large language model via a few chain-of-thought exemplars supplied in the prompt, with no gradient update to the model).",
+      "level": 1
+    },
+    {
+      "id": "C2",
+      "text": "The contribution is identified (C1) and the closest work in the supplied corpus has been located by search and inspected.",
+      "level": 2
+    },
+    {
+      "id": "C3",
+      "text": "Under the supplied corpus and the declared search protocol, no inspected corpus item subsumes the target's stated contribution (eliciting reasoning purely via few-shot exemplar demonstrations in the prompt, with zero training/fine-tuning of the model): the contribution stands as novel relative to this corpus.",
+      "level": 3
+    }
+  ],
+  "order": [
+    [
+      "C1",
+      "C2"
+    ],
+    [
+      "C2",
+      "C3"
+    ]
+  ],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "inspect",
+      "proposition": "The target's contribution paragraph is read via inspect_file over target/paper.txt.",
+      "resolver": {
+        "tool": "inspect_file",
+        "params_schema": {
+          "path": "str",
+          "start": "int",
+          "end": "int"
+        },
+        "params": {
+          "path": "target/paper.txt"
+        },
+        "attest": "span_read"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E2",
+      "type": "search",
+      "proposition": "The corpus is searched for the mechanism family with search_repo (pattern step.by.step|scratchpad|intermediate reasoning|chain.of.thought over corpus/), returning at least one match.",
+      "resolver": {
+        "tool": "search_repo",
+        "params_schema": {
+          "pattern": "str",
+          "path": "str"
+        },
+        "params": {
+          "path": "corpus"
+        },
+        "attest": "match_count>0"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E3",
+      "type": "inspect",
+      "proposition": "The closest-by-mechanism corpus candidate (Scratchpad, arXiv:2112.00114) is read via inspect_file.",
+      "resolver": {
+        "tool": "inspect_file",
+        "params_schema": {
+          "path": "str",
+          "start": "int",
+          "end": "int"
+        },
+        "params": {
+          "path": "corpus/01_scratchpad_2112.00114.txt"
+        },
+        "attest": "span_read"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E4",
+      "type": "inspect",
+      "proposition": "The closest prompting-technique corpus candidate (Prompt Programming, arXiv:2102.07350) is read via inspect_file.",
+      "resolver": {
+        "tool": "inspect_file",
+        "params_schema": {
+          "path": "str",
+          "start": "int",
+          "end": "int"
+        },
+        "params": {
+          "path": "corpus/02_prompt_programming_2102.07350.txt"
+        },
+        "attest": "span_read"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E5",
+      "type": "user_fact",
+      "proposition": "Expert adjudication is obtained (ask_user) on whether any inspected corpus abstract claims the target's specific mechanism; the adjudication is that none does.",
+      "resolver": {
+        "tool": "ask_user",
+        "params_schema": {
+          "question": "str"
+        },
+        "params": {},
+        "attest": "answer_given"
+      },
+      "gold_value": "T"
+    }
+  ],
+  "phi": [],
+  "gold_licenses": {
+    "C1": [
+      [
+        "E1"
+      ]
+    ],
+    "C2": [
+      [
+        "E1",
+        "E2",
+        "E3"
+      ]
+    ],
+    "C3": [
+      [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5"
+      ]
+    ]
+  },
+  "decoys": [
+    "citation_count_lookup"
+  ],
+  "notes_for_annotators": "Target arXiv:2201.11903 (Chain-of-Thought Prompting, Wei et al. 2022), corpus of 10 real abstracts, all fetched 2026-07-29 from arxiv.org abs pages (provenance in artifacts/res-cot/PROVENANCE). ADJUDICATION (E5 answer, verified by reading the abstracts): No corpus item subsumes the target's stated contribution. The target's contribution is a PURE INFERENCE-TIME PROMPTING method -- a few chain-of-thought demonstrations as exemplars in the prompt, no gradient update -- that elicits multi-step reasoning in a sufficiently large off-the-shelf LM. The closest corpus items differ in mechanism: Scratchpad (2112.00114) achieves step-by-step multi-step computation but explicitly by TRAINING transformers to emit intermediate steps ('we train transformers to perform multi-step computations'), i.e. requires fine-tuning, not a frozen-model prompting technique; Prompt Programming (2102.07350) is about general prompt-design techniques (0-shot framing, narrative/cultural anchors, metaprompts) and does not propose exemplar-based step-by-step reasoning demonstrations for arithmetic/commonsense/symbolic reasoning tasks. Self-consistency (2203.11171) and Least-to-most prompting (2205.10625) both postdate the target (March/May 2022 vs January 2022) and are themselves extensions OF chain-of-thought prompting, not prior candidates that could subsume it. Route minimality: E1 necessary (cannot judge novelty without reading the contribution); E2 necessary (the corpus must actually be searched, not assumed); E3, E4 necessary (the two nearest candidates must be read, not inferred from titles); E5 necessary (the subsumption call is the adjudicated conclusion). Order-coherence by containment. Decoy citation_count_lookup is not a listed action. The answer the ask_user tool returns is this note; E5 attests that the adjudication was obtained."
+}

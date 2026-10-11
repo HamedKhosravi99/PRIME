@@ -1,0 +1,31 @@
+{
+ "instance": "cli-v2-7090",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "* Adult patients",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 318,
+   "completion_tokens": 40,
+   "latency_s": 2.441,
+   "raw": "The document specifies \"Adult patients\" in the inclusion criteria and excludes \"Patients minors\" in the exclusion criteria, which implies a minimum age of 18 years or more. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E4",
+   "attested": "F",
+   "quote": "Patients with anti-PLA2R1 antibodies",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 303,
+   "completion_tokens": 35,
+   "latency_s": 1.967,
+   "raw": "The document does not establish the condition as it specifically includes patients with a particular medical condition (MN stade I-II) rather than accepting healthy volunteers. ANSWER: F"
+  }
+ ]
+}

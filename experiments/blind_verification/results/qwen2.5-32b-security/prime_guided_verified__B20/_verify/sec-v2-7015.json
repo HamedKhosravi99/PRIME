@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7015",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "An issue was discovered in OpenStack Keystone before 29.0.2.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 302,
+   "completion_tokens": 24,
+   "latency_s": 2.915,
+   "raw": "The document establishes the condition as it specifically names \"OpenStack Keystone\" as the affected package. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "before 29.0.2.",
+   "verdict": "F",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 284,
+   "completion_tokens": 19,
+   "latency_s": 1.48,
+   "raw": "The document does not specify a version in which the issue is fixed. ANSWER: F"
+  }
+ ]
+}

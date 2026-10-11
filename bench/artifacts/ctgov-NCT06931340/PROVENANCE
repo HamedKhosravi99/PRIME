@@ -1,0 +1,38 @@
+name: ctgov-NCT06931340
+domain: clinical_trial (ClinicalTrials.gov structured-record domain, Tier-M predicate grammar)
+role: ctgov-0007: downgrade instance -- Phase 3, RECRUITING (not Completed), n=1260 (ESTIMATED); C1/C2 reachable, C3 correctly unreachable (real gold-F on the status atom, not evidence-unavailable)
+source: ClinicalTrials.gov public API v2, GET https://clinicaltrials.gov/api/v2/studies/NCT06931340
+        (no authentication, no API key required)
+nct_id: NCT06931340
+title: Testing the Addition of Docetaxel (Chemotherapy) to the Usual Treatment (Hormonal Therapy and Radiation Therapy) for Prostate Cancer
+lead_sponsor: Alliance for Clinical Trials in Oncology
+retrieved: 2026-07-29 via curl against clinicaltrials.gov/api/v2 (see bench/fetch_ctgov.py)
+fetch_tool: bench/fetch_ctgov.py fetch NCT06931340 bench/artifacts/ctgov-NCT06931340/record.json
+files:
+  record.json      - pruned, embeddable subset of the real API response (exactly
+                      the protocolSection.{identificationModule,statusModule,
+                      designModule,sponsorCollaboratorsModule,outcomesModule,
+                      conditionsModule} sub-objects this domain's atoms read;
+                      every field value copied byte-for-byte from the API
+                      response via bench/fetch_ctgov.py, none edited, none
+                      paraphrased, none invented) -- this exact JSON is embedded
+                      verbatim under the instance's top-level "records" field.
+  record.json.raw  - the FULL untouched API response, kept for audit (confirms
+                      record.json is a strict subset, not an edited copy).
+observed_key_fields (copied from record.json, reproduced here for a quick human
+  check against the instance's atoms and gold_value table):
+  protocolSection.designModule.studyType = 'INTERVENTIONAL'
+  protocolSection.designModule.phases = ['PHASE3']
+  protocolSection.statusModule.overallStatus = 'RECRUITING'
+  protocolSection.sponsorCollaboratorsModule.leadSponsor.name = 'Alliance for Clinical Trials in Oncology'
+  protocolSection.designModule.enrollmentInfo = {'count': 1260, 'type': 'ESTIMATED'}
+  protocolSection.outcomesModule.primaryOutcomes[0].measure = 'Overall survival (OS)'
+license_note: ClinicalTrials.gov study records are public U.S. government /
+  NLM data made freely available via the public API for reuse; used here
+  read-only as a review artifact, exactly like the grant/NSF and research/
+  arXiv domains' public-API artifacts.
+integrity: no field in record.json was invented, edited, or paraphrased --
+  every value is a direct copy from the API JSON response captured in
+  record.json.raw at the retrieval timestamp above. bench/scaffold_repo.py
+  verify independently re-derives every atom's gold_value from this SAME
+  embedded record.json content via the real inspect_record resolver path.

@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7092",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "* Patients aged between 18 and 50 at the time of diagnosis of breast cancer",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 320,
+   "completion_tokens": 34,
+   "latency_s": 3.032,
+   "raw": "The inclusion criteria specify patients aged between 18 and 50, which meets the requirement for a minimum age of 18 years. ANSWER: T"
+  }
+ ]
+}

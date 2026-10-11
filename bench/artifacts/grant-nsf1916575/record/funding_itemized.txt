@@ -1,0 +1,23 @@
+NSF AWARD RECORD (public, structured) -- award id 1916575
+role: itemized funding history (raw fields, verbatim from the API)
+
+ITEMIZED_FUNDS_OBLIGATED (verbatim from the public API's fundsObligated list,
+one amendment/increment per fiscal year the award received funds in):
+  FY 2019 = $1,237,134.00
+  FY 2021 = $54,022.00
+  FY 2023 = $125,122.00
+
+REPORTED_CURRENT_TOTAL (the API's fundsObligatedAmt field, i.e. the award's
+current total obligated amount as of the retrieval date): $1,416,278.00
+
+ORIGINAL_ESTIMATED_TOTAL (the API's estimatedTotalAmt field, i.e. the total
+estimated at the award's INITIAL amendment, before later amendments/
+increments were added): $1,237,134.00
+
+SOURCE: https://api.nsf.gov/services/v1/awards.json?id=1916575 (NSF public Award Search API)
+RETRIEVED: 2026-07-29
+CONTENT NOTE: all figures above are copied verbatim from the public API
+response (fundsObligated, fundsObligatedAmt, estimatedTotalAmt fields
+respectively). No value has been altered. No arithmetic is performed in
+this file -- see record/reconciliation.txt for the reconciliation computed
+from these figures.

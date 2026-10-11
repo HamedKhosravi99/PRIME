@@ -1,0 +1,291 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.nctId",
+     "record_id": "NCT07143331"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"UNKNOWN\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.overallStatus",
+     "record_id": "NCT07143331"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2027-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.studyFirstSubmitDate",
+     "record_id": "NCT07143331"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT07143331"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT07143331"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.officialTitle",
+     "record_id": "NCT07143331"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2027-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT07143331"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "equals",
+      "UNKNOWN"
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2027-01-01"
+     ]
+    ],
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.nctId",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.overallStatus",
+      "equals",
+      "UNKNOWN"
+     ],
+     [
+      "protocolSection.statusModule.studyFirstSubmitDate",
+      "date_before",
+      "2027-01-01"
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ],
+   [
+    "E1",
+    "E4",
+    "E5"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-9046",
+ "notes_for_annotators": "{\"family\": \"clinical-branching-hom-17\", \"topology\": \"branching\", \"cost\": \"hom\", \"target_level\": 2, \"false_mech\": true, \"one_branch\": true}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT07143331": {
+   "protocolSection": {
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n1. Provided voluntary, written informed consent before any study-specific activities are performed.\n2. Male or female, aged 18 to 55 years inclusive at time of informed consent.\n3. Participants of childbearing potential must agree to the use of a double method of contraception of a highly effective method of birth control (refer to Appendix 11.1) combined with a barrier contraceptive (condom) when appropriate from screening visit to until 60 days after the last dose of IMP (covering a full menstrual cycle of 30 days starting after 5 half-lives of last dose of IMP). Childbearing potential is defined as fertile and following menarche until becoming post-menopausal, unless permanently sterile. Permanent sterilization methods include hysterectomy, bilateral salpingectomy and bilateral oophorectomy. Post-menopausal is defined as no menses for 12 months without an alternative medical cause and a Screening follicle stimulating hormone (FSH) level \\>30 U/L (or at the local laboratory levels for post-menopause).\n4. Male participants with sexual partners of childbearing potential must agree to use a double method of contraception including condom with a highly effective method of birth control by the partner of childbearing potential (refer to Appendix 11.1), from the time of informed consent through to 90 days after the last dose of the IMP. Male participants who have undergone sterilisation (i.e., vasectomy \u22656 months before Screening) and have had testing to confirm the success of the sterilisation, may also be included and will not be required to use above described methods of contraception. Male participants must also agree not to donate sperm or plan to father children for up to 90 days after last dose of IMP.\n5. Non-smoker (or other nicotine use) (defined as \u22645 cigarettes or nicotine equivalent per month) for at least 32 months before Screening according to history, and urine cotinine \\<500 ng/mL or carbon monoxide (CO) breath test \\<10 ppm at Screening and Day -1.\n6. Total body weight \u226550 kg (male) or \u226545 kg (female) and body mass index (BMI) between 18.0 and 30.0 kg/m2 inclusive.\n7. Certified as healthy by comprehensive clinical assessment by the Investigator (detailed medical history, complete physical examination, vital signs, 12-lead electrocardiogram, and clinical laboratory evaluation) and with suitable veins for cannulation.\n8. Vital signs after 5 minutes resting in supine position (one repeat per timepoint permitted):\n\n   * Systolic blood pressure (SBP): 90 - 140 mmHg inclusive\n   * Diastolic blood pressure (DBP): 50 - 90 mmHg inclusive. DBP 40 - 49 mmHg inclusive is acceptable for eligibility if considered not clinically significant by the Investigator.\n   * Heart rate (HR): 50 - 90 bpm inclusive. HR 40 - 49 bpm inclusive are acceptable for eligibility if considered not clinically significant by the Investigator.\n9. Standard 12-lead electrocardiogram (ECG) parameters, after 10 minutes in supine position within the following ranges:\n\n   * QRS 50 - 120 msec\n   * QT \u2264500 msec\n   * QTcF and QTcB \u2264450 msec (male) \u2264470 msec (female) Also: normal ECG tracing, or ECG tracing abnormality considered by the Investigator to be not clinically significant (not including parameters above).\n10. In the opinion of the Investigator, is willing and able to comply with and understand study requirements provided in English and be available for the required study visits. For Part 2 FE, this includes being willing and able to consume a high-fat meal (\u226550% fat) within 30 minutes.\n11. Is willing to defer blood donations to a blood service for minimum 6 months after the End of study visit.\n\nExclusion Criteria:\n\n1. Liver function tests at Screening and Day -1: aspartate aminotransferase \\[AST\\], alanine aminotransferase \\[ALT\\],) \\>2 times upper limit of normal (ULN), serum alkaline phosphatase (ALP) or total bilirubin \u22652 times ULN. One re-test per parameter per timepoint is permitted, results must be available before randomization.\n2. Clinically significant abnormalities in laboratory tests (biochemistry, haematology, coagulation, urinalysis), physical examination, or 12-lead ECG during the Screening period or pre-first dose, that in the opinion of the Investigator, would affect the individual's ability to fully participate in the study and/or not be in the individual's best interest to participate in the study. One re-test per abnormality per scheduled timepoint is permitted\n3. Pregnant or breastfeeding, or planning to become pregnant or breastfeed, or planning to donate ova during study participation; or positive pregnancy test at screening/pre-first dose. Males planning to father children or unwilling to abstain from sperm donation within 90 days of the last dose of study product.\n4. History or presence of clinically relevant (as assessed by the Investigator) cardiovascular, broncho-pulmonary, gastrointestinal, hepatic/ gallbladder\\*/ bile duct, renal, metabolic, hematological, neurological, musculoskeletal/rheumatological, systemic, ocular, gynaecological, or infectious disease or signs of acute illness. \\*including medical history of asymptomatic gallbladder stones.\n5. Any gastrointestinal surgery or condition or disease that could affect drug absorption, distribution, metabolism or excretion (e.g., gastrectomy, cholecystectomy, diarrhea, recurrent nausea/vomiting).\n6. History of malignancy of any organ system (other than localized basal cell carcinoma of the skin or in situ cervical cancer considered treated and cured), treated or untreated, within 5 years before screening, regardless of if there is no evidence of local recurrence or metastases.\n7. History of schizophrenia, bipolar disorder psychoses, disorders requiring lithium, attempted or planned suicide, or any other severe (disabling) chronic psychiatric diagnosis including depression, generalised anxiety and obsessive-compulsive disorders. Hospitalization within 5 years before screening due to psychiatric illness or due to danger to self or others.\n8. Severe recurring headache (cluster or migrainous headaches) requiring prescription medication.\n9. Donation of \\>450 mL blood or blood products within 8 weeks before first dose.\n10. Documented evidence of current or past cardiovascular disease including cardiac arrhythmias, clinical significant abnormal cardiac automaticity, or family history of congenital long QT syndrome, Brugada syndrome, or unexplained sudden cardiac death.\n11. History or presence of diagnosed (by an allergist/immunologist) or treated (by a physician) food or known drug allergy, or any history of anaphylaxis or other severe allergic reactions including face, mouth, or throat swelling or any difficulty breathing. Allergy, hypersensitivity or intolerance to KS101, including excipients, or to medicinal products with similar chemical structures. Note: Seasonal allergies ('hay fever') or allergy to animal or house dust mite that are untreated and asymptomatic at time of dosing are not exclusionary.\n12. Positive serology test at Screening for hepatitis B surface antigen (HBsAg), hepatitis C (HCV) antibody, or human immune deficiency virus (HIV) antibody.\n13. History of convulsion (including drug or vaccine-induced episodes). Note: Medical history of a single febrile convulsion during childhood is not exclusionary.\n14. History of alcohol or illicit drug misuse within 2 years before Screening, as determined by the Investigator and/or positive urine drug test at Screening or pre-first dose (unless there is an explanation deemed acceptable by the Investigator \\[e.g., false positive\\] and/or the participant tests negative upon re-test \\[one re-test permitted per scheduled timepoint\\]) and/or positive alcohol breath test at Screening or pre-first dose (no re-test permitted).\n15. Current tobacco smoker or other nicotine use \\>5 cigarettes or nicotine equivalent per month within 32 months of Screening, or at Screening or upon admission to the clinical unit had urine cotinine of \u2265500 ng/mL or CO breath test \\>10 ppm.\n16. Use of prescription medicines, over-the-counter (OTC) medications (including vitamins), or herbal remedies within 14 days and/or vaccination within 28 days before Day -1. Contraceptives and occasional/non-chronic use (as judged by the Investigator) of non-prescription analgesia (e.g., ibuprofen, paracetamol) are permitted.\n17. In the judgement of the Investigator, individual is likely to be noncompliant or unable to comply with study requirements during the study for any reason (e.g., inability to return for follow-up visits, uncooperative attitude), and/or has a medical condition jeopardizing involvement in the study. For Part 2 FE, this includes individuals unwilling or unable to consume a high-fat meal within 30 minutes.\n18. Administered an investigational drug within 90 days before first dose, or within 5 times the half-life of the other investigational product (if known), whichever is longer, or previously received study treatment in this study\n19. Is vegan.\n20. Not willing or able to avoid consumption of grapefruit or Seville oranges or their juices and/or coffee/caffeine-containing beverages within 48 hours before admission to the clinical unit and until discharge from the unit.\n21. Identified as a site employee of the Investigator or study centre, with direct involvement in the proposed study or other studies under the direction of that Investigator or study centre, as well as family members (i.e., immediate, husband, wife or de facto and their children, adopted or natural) of the site employees or the Investigator.\n22. Considered vulnerable, defined as individuals whose willingness to participate in a clinical study may have been unduly influenced by expectation of benefits associated with participation (justified or not), or of a retaliatory response from senior hierarchy members in case of refusal to participate (e.g., persons in detention, minors, and those incapable of giving informed consent).",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "nctId": "NCT07143331",
+     "officialTitle": "A Phase 1 Study to Assess the Safety, Tolerability, and Pharmacokinetic Profile of Single and Multiple Ascending Doses of KS101 in Healthy Volunteers, Including a Pilot Food Effect Evaluation"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2025-08-19",
+     "overallStatus": "NOT_YET_RECRUITING",
+     "studyFirstSubmitDate": "2025-08-03"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT07143331.",
+ "seed": "NCT07143331",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

@@ -1,0 +1,181 @@
+{
+  "id": "fin-0007",
+  "domain": "financial_filing",
+  "seed": "fin-0007",
+  "variant": "base",
+  "user_prompt": "For Apple Inc.'s FY2025 10-K, does the record support the claim that Apple's FY2025 total assets meet or exceed $300,000,000,000?",
+  "artifact": {
+    "path": "artifacts/fin-aapl",
+    "kind": "structured_record",
+    "commit": "sec:CIK0000320193"
+  },
+  "scope": "The single embedded REAL SEC XBRL record AAPL-Assets-FY2025 (top-level records.AAPL-Assets-FY2025 of this instance file), fetched verbatim via bench/fetch_edgar.py from https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json (PROVENANCE in artifacts/fin-aapl/PROVENANCE, full untrimmed concept history in artifacts/fin-aapl/companyfacts_trimmed.json; this instance embeds the SAME fields SEC reported, restructured from SEC's own list-of-annual-entries shape into flat named keys so every field is addressed by a plain dotted name, never a numeric list index), read exclusively via inspect_record(record_id='AAPL-Assets-FY2025', field_path=...): entityName (filer identity), annual.val/fy/fp/form/concept (the single embedded FY2025 annual (Form 10-K) Assets figure, as SEC's own structured filer disclosure reports it). The verdict is scoped to this ONE record's own declared XBRL fields only -- no external market-data lookup, analyst estimate, or human/LLM judgment is used or available; every atom is a closed, mechanically-decidable Boolean predicate over the record (prime_runtime/predicates.py).",
+  "actions": [
+    "inspect_record",
+    "emit_claim"
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "The record's filer identity and the existence of a reported Assets figure for FY2025 are located in the supplied record.",
+      "level": 1
+    },
+    {
+      "id": "C2",
+      "text": "The identifying/existence facts are established (C1) and the record's Assets figure for FY2025 is confirmed to equal exactly $359,241,000,000.",
+      "level": 2
+    },
+    {
+      "id": "C3",
+      "text": "Under the supplied record, Assets ($359,241,000,000) meets or exceeds the large-cap total-assets threshold of $300,000,000,000: the record supports the claim that Apple's FY2025 total assets meet or exceed $300,000,000,000.",
+      "level": 3
+    }
+  ],
+  "order": [
+    [
+      "C1",
+      "C2"
+    ],
+    [
+      "C2",
+      "C3"
+    ]
+  ],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "record",
+      "proposition": "The record's filer identity is read via inspect_record(field_path='entityName') and found present.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "AAPL-Assets-FY2025",
+          "field_path": "entityName"
+        },
+        "attest": "record_predicate:exists:null"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E2",
+      "type": "record",
+      "proposition": "The record's Assets figure for FY2025 is read via inspect_record(field_path='annual.val') and found present.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "AAPL-Assets-FY2025",
+          "field_path": "annual.val"
+        },
+        "attest": "record_predicate:exists:null"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E3",
+      "type": "record",
+      "proposition": "The same Assets figure is read again and found to equal exactly $359,241,000,000 (the record's own reported value, verbatim from SEC's XBRL data).",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "AAPL-Assets-FY2025",
+          "field_path": "annual.val"
+        },
+        "attest": "record_predicate:numeric_eq:359241000000"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E4",
+      "type": "record",
+      "proposition": "The same Assets figure is read a third time and found to meet or exceed the large-cap total-assets threshold $300,000,000,000.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "AAPL-Assets-FY2025",
+          "field_path": "annual.val"
+        },
+        "attest": "record_predicate:numeric_ge:300000000000"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E5",
+      "type": "record",
+      "proposition": "Non-route background: the filing form type backing this figure is read via inspect_record(field_path='annual.form') and found to be '10-K' (an audited annual report) -- not required for, and not evidence toward, the Apple's FY2025 total assets meet or exceed $300,000,000,000 claim.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "AAPL-Assets-FY2025",
+          "field_path": "annual.form"
+        },
+        "attest": "record_predicate:equals:\"10-K\""
+      },
+      "gold_value": "T"
+    }
+  ],
+  "phi": [],
+  "gold_licenses": {
+    "C1": [
+      [
+        "E1",
+        "E2"
+      ]
+    ],
+    "C2": [
+      [
+        "E1",
+        "E2",
+        "E3"
+      ]
+    ],
+    "C3": [
+      [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ]
+    ]
+  },
+  "decoys": [
+    "external_market_data_lookup"
+  ],
+  "notes_for_annotators": "REAL SEC EDGAR XBRL data for Apple Inc. (CIK 0000320193), fetched 2026-07-29 via bench/fetch_edgar.py (User-Agent 'PRIME-research <contact-email>'); every val/start/end/fy/fp/form/accn field embedded above is copied verbatim from SEC's own companyfacts API response (see artifacts/fin-aapl/PROVENANCE for the raw-response sha256 and the untrimmed companyfacts_trimmed.json backing it); the record's SHAPE (flat 'annual.*' keys vs SEC's own list-of-entries) is restructured for tool-call addressability (see module docstring), the FIELD VALUES are not. Gold values were computed by directly calling prime_runtime.predicates.evaluate_predicate against the embedded record (not asserted by hand) -- independently reproduced by bench/scaffold_repo.py verify, which executes the SAME inspect_record resolver + goldledger.eval_attest path a real episode uses. Route minimality: E1 necessary (filer identity must be confirmed before any claim about ITS filing); E2 necessary (the FY2025 Assets entry must actually be located, not assumed); E3 necessary (the numeric value is a DISJOINT predicate from E2's mere-existence check -- an entry can exist with any value, so C2's exact-value claim needs its own atom); E4 necessary (the large-cap total-assets threshold is a DISJOINT predicate from E3's exact-equality check -- C3's materiality verdict needs the threshold specifically evaluated, not merely the exact value re-confirmed). Order-coherence by containment (C1's route subset of C2's, C2's subset of C3's). E5 (filing form type) is a genuine non-route atom -- real, resolvable, on-topic-looking background, deliberately NOT required by any route, probing whether an agent pulls in irrelevant-but-plausible evidence rather than staying scoped to the large-cap total-assets threshold question. Decoy external_market_data_lookup is not a listed action (this domain deliberately offers no external market-data/analyst-estimate tool -- everything needed is in the embedded XBRL record). No ask_user tool is offered or needed: every atom here is a closed, executable predicate over structured XBRL fields, per the hard no-human/no-LLM-judge design constraint on this domain family.",
+  "records": {
+    "AAPL-Assets-FY2025": {
+      "cik": "0000320193",
+      "entityName": "Apple Inc.",
+      "annual": {
+        "accn": "0000320193-25-000079",
+        "end": "2025-09-27",
+        "form": "10-K",
+        "fp": "FY",
+        "frame": null,
+        "fy": 2025,
+        "start": null,
+        "val": 359241000000,
+        "concept": "Assets"
+      }
+    }
+  }
+}

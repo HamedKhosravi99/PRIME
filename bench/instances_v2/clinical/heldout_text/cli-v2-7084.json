@@ -1,0 +1,181 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT03345173"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT03345173"
+    },
+    "what": "the eligibility criteria restrict enrollment to adults, that is, a minimum age of 18 years or more"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT03345173"
+    },
+    "what": "the eligibility criteria restrict enrollment to one sex only (only male or only female participants)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT03345173"
+    },
+    "what": "the eligibility criteria accept healthy volunteers"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready for an adult cohort: identified, and the eligibility text restricts enrollment to adults."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked adult-cohort protocol: identified, adults only, open to both sexes, and not a healthy-volunteer study, as established from the eligibility text."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "!E3",
+    "!E4"
+   ]
+  ]
+ },
+ "id": "cli-v2-7084",
+ "notes_for_annotators": "{\"family\": \"clinical-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, false, true], \"twins\": [\"protocolSection.eligibilityModule.minimumAge\", \"protocolSection.eligibilityModule.sex\", \"protocolSection.eligibilityModule.healthyVolunteers\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT03345173": {
+   "protocolSection": {
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n1. DSM-5 criteria of current opioid use disorder present for at least six months, supported by a positive urine for opioids or a positive naloxone challenge test\n2. Aged 18 to 70 years\n3. In otherwise good health based on complete medical history, physical examination, vital signs measurement, ECG, and laboratory tests (hematology, blood chemistry, urinalysis) within normal ranges\n4. Able to give written informed consent to participate in the study\n5. Interested in maintenance treatment with extended-release naltrexone\n\nExclusion Criteria:\n\n1. Physiologically dependent on alcohol or sedative-hypnotics with impending withdrawal requiring medical management\n2. Methadone maintenance treatment or regular use of illicit methadone (\\>30 mg per week); urine toxicology positive for methadone at admission\n3. Buprenorphine maintenance treatment or regular use of buprenorphine (\\>16 mg per week); urine toxicology positive for buprenorphine at admission\n4. Active, or past, psychiatric disorder(s) which might interfere with participation or make participation hazardous, including DSM-V mental disorder due to another medical condition, major depressive disorder, psychotic disorder, or bipolar disorder with psychotic features\n5. Significant current suicidal risk or a suicide attempt within the past year\n6. On psychotropic or other medications that may interact adversely with study medications, or whose effect might be disrupted by study medications\n7. For women of childbearing potential: positive serum pregnancy test, lactation, or unwillingness to use a satisfactory method of birth control\n8. Unstable physical disorders which might make participation hazardous such as hypertension (\\>160/90), anemia, active hepatitis or other liver disease (transaminase levels \\< 2-3 X the upper limit of normal will be considered acceptable), or untreated diabetes. Participants reporting HIV+ status will be asked to provide information about their current treatment, including all medications. Participants who are on the antiretroviral ritonavir (Norvir) will be excluded due to the possibility that the study medications in combination with this medication may increase the risk of drug-induced hepatitis\n9. Acute hepatitis with SGOT or SGPT \\> 3 times the upper end of the laboratory normal range\n10. Concurrent participation in another treatment study or another substance abuse program with the exception of a self-help group\n11. History of allergy or sensitivity to any study medication\n12. Ongoing chronic pain that may require opioid management, or for which surgery is indicated\n13. History of inability to tolerate study medications\n14. History of a use disorder with the study medications"
+    },
+    "identificationModule": {
+     "briefTitle": "Facilitating Rapid Naltrexone Initiation"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT03345173.",
+ "seed": "NCT03345173",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "text"
+}

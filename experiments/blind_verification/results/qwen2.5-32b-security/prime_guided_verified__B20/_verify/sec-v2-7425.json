@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7425",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "A `.vy` contract compiled with either of the following `vyper` versions: `0.2.15`, `0.2.16`, `0.3.0`",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 438,
+   "completion_tokens": 20,
+   "latency_s": 1.203,
+   "raw": "The document specifies the affected package as \"vyper\" in multiple sections. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E4",
+   "attested": "T",
+   "quote": "In versions 0.2.15, 0.2.16 and 0.3.0",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 425,
+   "completion_tokens": 31,
+   "latency_s": 2.6,
+   "raw": "The document specifies affected versions but does not explicitly state which is the first affected version or the version where the issue was introduced. ANSWER: UNCLEAR"
+  }
+ ]
+}

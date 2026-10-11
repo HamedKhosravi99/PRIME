@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7275",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "A vulnerability in langchain-core versions >=0.1.17,<0.1.53, >=0.2.0,<0.2.43, and >=0.3.0,<0.3.15 allows unauthorized users to read arbitrary files from the host file system.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 296,
+   "completion_tokens": 24,
+   "latency_s": 1.97,
+   "raw": "The document establishes the condition as it specifically names \"langchain-core\" as the affected package. ANSWER: T"
+  }
+ ]
+}

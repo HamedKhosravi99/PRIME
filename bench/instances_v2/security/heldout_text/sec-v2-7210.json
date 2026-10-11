@@ -1,0 +1,175 @@
+{
+ "actions": [
+  "inspect_record",
+  "read_text",
+  "attest_atom",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "summary",
+     "record_id": "GHSA-5xh2-23cc-5jc6"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E2"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-5xh2-23cc-5jc6"
+    },
+    "what": "the details text names the affected package (the package itself, by its registered name or a distinctive part of it, not only the vendor or the ecosystem)"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E3"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-5xh2-23cc-5jc6"
+    },
+    "what": "the details text states a version in which the issue is fixed"
+   },
+   "type": "text"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "attested",
+    "params": {
+     "atom_id": "E4"
+    },
+    "params_schema": {
+     "atom_id": "str",
+     "quote": "str",
+     "value": "str"
+    },
+    "tool": "attest_atom"
+   },
+   "spec_hint": {
+    "source": {
+     "field_path": "details",
+     "record_id": "GHSA-5xh2-23cc-5jc6"
+    },
+    "what": "the details text states the first affected version, the version in which the issue was introduced"
+   },
+   "type": "text"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [],
+   "id": "C1",
+   "level": 1,
+   "text": "The advisory has a readable summary (as inspected)."
+  },
+  {
+   "denotation": [],
+   "id": "C2",
+   "level": 2,
+   "text": "The advisory is triage-ready: it has a summary and its text names the affected package."
+  },
+  {
+   "denotation": [],
+   "id": "C3",
+   "level": 3,
+   "text": "The advisory satisfies the checked completeness protocol: summary present, and the text names the package, a fixed version, and the first affected version."
+  }
+ ],
+ "decoys": [],
+ "domain": "security_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4"
+   ]
+  ]
+ },
+ "id": "sec-v2-7210",
+ "notes_for_annotators": "{\"family\": \"security-text\", \"topology\": \"ladder\", \"cost\": \"text\", \"target_level\": null, \"false_mech\": false, \"text\": true, \"truths\": [true, true, false], \"twins\": [\"affected.0.package.name\", \"affected.*.ranges.*.events.*.fixed\", \"affected.*.ranges.*.events.*.introduced\"]}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "GHSA-5xh2-23cc-5jc6": {
+   "details": "**Vulnerability Summary**\nA type confusion vulnerability exists in Strawberry GraphQL's relay integration that affects multiple ORM integrations (Django, SQLAlchemy, Pydantic). The vulnerability occurs when multiple GraphQL types are mapped to the same underlying model while using the relay `node` interface.\n\n**Affected Components**\n- Strawberry GraphQL relay integration\n- Specifically impacts implementations using:\n  - Django integration\n  - SQLAlchemy integration\n  - Pydantic integration\n\n**Technical Details**\n\nThe vulnerability manifests when:\n1. Multiple GraphQL types inherit from `relay.Node`\n2. These types are mapped to the same database model\n3. The global `node` field is used for type resolution\n\nExample of vulnerable code:\n\n```python\nfrom fruits.models import Fruit\nimport strawberry_django\nimport strawberry\n\n@strawberry_django.type(Fruit)\nclass FruitType(relay.Node):\n    name: strawberry.auto\n\n@strawberry_django.type(Fruit)\nclass SpecialFruitType(relay.Node):\n    secret_name: strawberry.auto\n\n@strawberry.type\nclass Query:\n    node: relay.Node = strawberry_django.node()\n```\n\n**Security Impact**\n\nWhen querying for a specific type using the global `node` field (e.g., `FruitType:some-id`), the resolver may incorrectly return an instance of a different type mapped to the same model (e.g., `SpecialFruitType`). This can lead to:\n\n1. Information disclosure if the alternate type exposes sensitive fields\n2. Potential privilege escalation if the alternate type contains data intended for restricted access\n\n**Note**\nEven with knowledge of the correct type name (e.g., `SpecialFruitType`), attackers may still be able to access unauthorized data through direct type queries.\n\nWe recommend to use permission on fields instead of creating a dedicate type.\n\n**Recommendations**\n1. Avoid mapping multiple relay Node types to the same model\n2. Implement strict access controls at the field resolution level (using permissions)\n3. Consider using separate models for different access levels of the same data\n4. Update to `strawberry-graphql>=0.257.0`\n5. If using `strawberry-graphql-django`, update to `strawberry-graphql-django>=0.54.0`",
+   "summary": "Strawberry GraphQL has type resolution vulnerability in node interface that allows potential data leakage through incorrect type resolution"
+  }
+ },
+ "scope": "The single named OSV advisory record, as retrieved and embedded; no external lookups. Record identifier: GHSA-5xh2-23cc-5jc6.",
+ "seed": "GHSA-5xh2-23cc-5jc6",
+ "user_prompt": "Is this security advisory complete and current enough to act on for the affected package?",
+ "variant": "text"
+}

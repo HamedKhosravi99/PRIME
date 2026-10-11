@@ -1,0 +1,17 @@
+NSF AWARD RECORD (public, structured) -- award id 1916575
+role: reconciliation of the itemized funding history against the reported total
+(derived from record/funding_itemized.txt; not an API field itself)
+
+RECONCILIATION (computed by the artifact author from the three itemized
+figures in record/funding_itemized.txt):
+  COMPUTED_SUM_OF_FY_ENTRIES = 1,237,134.00 + 54,022.00 + 125,122.00 = $1,416,278.00
+  COMPUTED_SUM_OF_FY_ENTRIES vs REPORTED_CURRENT_TOTAL: MATCH ($1,416,278.00 = $1,416,278.00)
+  REPORTED_CURRENT_TOTAL vs ORIGINAL_ESTIMATED_TOTAL: DIFFER ($1,416,278.00 != $1,237,134.00 --
+    expected, since two later increments (FY2021, FY2023) were added after the
+    initial estimate; this is the normal effect of amendments, not a data error)
+
+RETRIEVED: 2026-07-29
+CONTENT NOTE: this file is elementary arithmetic performed by the artifact
+author over the three real, unedited figures printed in
+record/funding_itemized.txt -- not a new data source, and independently
+reproducible by any reader from that file alone.

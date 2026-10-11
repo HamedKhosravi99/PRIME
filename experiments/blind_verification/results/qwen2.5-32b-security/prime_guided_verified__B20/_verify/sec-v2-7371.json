@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7371",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E4",
+   "attested": "F",
+   "quote": "In order to exploit this weakness, a user would already need elevated permissions (Op or Admin) to change the connection object in this manner.",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 223,
+   "completion_tokens": 31,
+   "latency_s": 2.238,
+   "raw": "The document does not specify the first affected version where the issue was introduced, only the vulnerable version and the version that fixed it. ANSWER: F"
+  },
+  {
+   "attempt": 2,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Apache Airflow CNCF Kubernetes provider",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 236,
+   "completion_tokens": 23,
+   "latency_s": 1.571,
+   "raw": "The document mentions \"CNCF Kubernetes provider\" as the affected package by its distinctive name. ANSWER: T"
+  }
+ ]
+}

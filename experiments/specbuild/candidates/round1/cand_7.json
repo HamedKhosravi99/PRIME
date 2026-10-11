@@ -1,0 +1,75 @@
+{
+ "k": 7,
+ "temperature": 0.7,
+ "seed": 7,
+ "reply": "```python\nimport datetime\n\ndef derive(record):\n    derived = {}\n\n    # Determine if the study is an applicable clinical trial based on the definitions\n    derived['is_applicable_trial'] = False\n    design_module = record.get('protocolSection', {}).get('designModule', {})\n    oversight_module = record.get('protocolSection', {}).get('oversightModule', {})\n    if design_module.get('studyType') == 'INTERVENTIONAL':\n        if oversight_module.get('isFdaRegulatedDevice'):\n            derived['is_applicable_trial'] = True\n        elif oversight_module.get('isFdaRegulatedDrug'):\n            derived['is_applicable_trial'] = True\n    \n    # Calculate the submission deadline\n    primary_completion_date_str = record.get('protocolSection', {}).get('statusModule', {}).get('primaryCompletionDateStruct', {}).get('date')\n    if primary_completion_date_str:\n        try:\n            primary_completion_date = datetime.datetime.strptime(primary_completion_date_str, \"%Y-%m-%d\")\n            derived['submission_deadline'] = (primary_completion_date + datetime.timedelta(days=365)).strftime(\"%Y-%m-%d\")\n        except ValueError:\n            derived['submission_deadline'] = None\n    \n    return derived\n```\n```json\n{\n\"atoms\": [\n{\n\"id\": \"A1\",\n\"field\": \"protocolSection.designModule.studyType\",\n\"predicate\": \"equals\",\n\"argument\": \"INTERVENTIONAL\",\n\"meaning\": \"Study is interventional\"\n},\n{\n\"id\": \"A2\",\n\"field\": \"derived.is_applicable_trial\",\n\"predicate\": \"equals\",\n\"argument\": true,\n\"meaning\": \"Study is an applicable clinical trial\"\n},\n{\n\"id\": \"A3\",\n\"field\": \"protocolSection.statusModule.primaryCompletionDateStruct.date\",\n\"predicate\": \"date_after\",\n\"argument\": \"2017-01-17\",\n\"meaning\": \"Primary completion date is on or after 2017-01-18\"\n},\n{\n\"id\": \"A4\",\n\"field\": \"derived.submission_deadline\",\n\"predicate\": \"date_before\",\n\"argument\": \"2026-08-03\",\n\"meaning\": \"Submission deadline is before 2026-08-03\"\n},\n{\n\"id\": \"A5\",\n\"field\": \"hasResults\",\n\"predicate\": \"equals\",\n\"argument\": true,\n\"meaning\": \"Results information has been submitted\"\n}\n],\n\"routes\": {\n\"C1\": [\n[\n\"A1\",\n\"A2\"\n]\n],\n\"C2\": [\n[\n\"A1\",\n\"A2\",\n\"A3\",\n\"A4\"\n]\n],\n\"C3\": [\n[\n\"A1\",\n\"A2\",\n\"A3\",\n\"A4\",\n\"A5\"\n]\n]\n}\n}\n```",
+ "usage": {
+  "prompt_tokens": 14641,
+  "completion_tokens": 574
+ },
+ "program": {
+  "atoms": [
+   {
+    "id": "A1",
+    "field": "protocolSection.designModule.studyType",
+    "predicate": "equals",
+    "argument": "INTERVENTIONAL",
+    "meaning": "Study is interventional"
+   },
+   {
+    "id": "A2",
+    "field": "derived.is_applicable_trial",
+    "predicate": "equals",
+    "argument": true,
+    "meaning": "Study is an applicable clinical trial"
+   },
+   {
+    "id": "A3",
+    "field": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+    "predicate": "date_after",
+    "argument": "2017-01-17",
+    "meaning": "Primary completion date is on or after 2017-01-18"
+   },
+   {
+    "id": "A4",
+    "field": "derived.submission_deadline",
+    "predicate": "date_before",
+    "argument": "2026-08-03",
+    "meaning": "Submission deadline is before 2026-08-03"
+   },
+   {
+    "id": "A5",
+    "field": "hasResults",
+    "predicate": "equals",
+    "argument": true,
+    "meaning": "Results information has been submitted"
+   }
+  ],
+  "routes": {
+   "C1": [
+    [
+     "A1",
+     "A2"
+    ]
+   ],
+   "C2": [
+    [
+     "A1",
+     "A2",
+     "A3",
+     "A4"
+    ]
+   ],
+   "C3": [
+    [
+     "A1",
+     "A2",
+     "A3",
+     "A4",
+     "A5"
+    ]
+   ]
+  },
+  "derive": "import datetime\n\ndef derive(record):\n    derived = {}\n\n    # Determine if the study is an applicable clinical trial based on the definitions\n    derived['is_applicable_trial'] = False\n    design_module = record.get('protocolSection', {}).get('designModule', {})\n    oversight_module = record.get('protocolSection', {}).get('oversightModule', {})\n    if design_module.get('studyType') == 'INTERVENTIONAL':\n        if oversight_module.get('isFdaRegulatedDevice'):\n            derived['is_applicable_trial'] = True\n        elif oversight_module.get('isFdaRegulatedDrug'):\n            derived['is_applicable_trial'] = True\n    \n    # Calculate the submission deadline\n    primary_completion_date_str = record.get('protocolSection', {}).get('statusModule', {}).get('primaryCompletionDateStruct', {}).get('date')\n    if primary_completion_date_str:\n        try:\n            primary_completion_date = datetime.datetime.strptime(primary_completion_date_str, \"%Y-%m-%d\")\n            derived['submission_deadline'] = (primary_completion_date + datetime.timedelta(days=365)).strftime(\"%Y-%m-%d\")\n        except ValueError:\n            derived['submission_deadline'] = None\n    \n    return derived"
+ }
+}

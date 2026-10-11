@@ -1,0 +1,31 @@
+{
+ "instance": "sec-v2-7145",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Zope before 2.13.19, as used in Plone before 4.2.3 and 4.3 before beta 1",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 209,
+   "completion_tokens": 26,
+   "latency_s": 2.487,
+   "raw": "The document mentions \"Zope\" and \"Plone\" as the affected packages by their registered names. ANSWER: T"
+  },
+  {
+   "attempt": 2,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "Zope before 2.13.19",
+   "verdict": "UNCLEAR",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 191,
+   "completion_tokens": 61,
+   "latency_s": 4.225,
+   "raw": "The document mentions specific versions (Zope before 2.13.19, Plone before 4.2.3 and 4.3 before beta 1) where the issue exists but does not explicitly state a version in which the issue is fixed. ANSWER: UNCLEAR"
+  }
+ ]
+}

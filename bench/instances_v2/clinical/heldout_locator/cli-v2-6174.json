@@ -1,0 +1,323 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.identificationModule.briefTitle",
+     "record_id": "NCT01761266"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.briefTitle",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.statusModule.statusVerifiedDate"
+    ],
+    "what": "the brief title"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT01761266"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.statusModule.overallStatus"
+    ],
+    "what": "the eligibility criteria text"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT01761266"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.statusModule.statusVerifiedDate"
+    ],
+    "what": "the sex eligibility field"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E4",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.minimumAge",
+     "record_id": "NCT01761266"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.statusModule.overallStatus"
+    ],
+    "what": "the minimum age for eligibility"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:false",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.healthyVolunteers",
+     "record_id": "NCT01761266"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.healthyVolunteers",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.statusModule.studyFirstSubmitDate"
+    ],
+    "what": "whether healthy volunteers are accepted"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT01761266"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.statusVerifiedDate",
+     "protocolSection.descriptionModule.briefSummary",
+     "protocolSection.identificationModule.nctId"
+    ],
+    "what": "the brief summary"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.identificationModule.officialTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.minimumAge",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.healthyVolunteers",
+      "equals",
+      false
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-6174",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-05\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 2, \"false_mech\": false, \"locator\": true, \"source_instance\": \"cli-v2-0174\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT01761266": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "E7080-G000-304 is a multicenter, randomized, open-label, noninferiority Phase 3 study to compare the efficacy and safety of lenvatinib versus sorafenib as a first-line systemic treatment in participants with unresectable Hepatocellular Carcinoma (HCC)."
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "1. Participants must have confirmed diagnosis of unresectable HCC with any of the following criteria:\n\n   * Histologically or cytologically confirmed diagnosis of HCC.\n   * Clinically confirmed diagnosis of HCC according to American Association for the Study of Liver Diseases (AASLD) criteria, including cirrhosis of any etiology or with chronic hepatitis B or C infection criteria\n2. At least one measurable target lesion according to modified Response Evaluation Criteria in Solid Tumors (mRECIST) meeting the following criteria:\n\n   \u2022 Hepatic lesion\n   1. The lesion can be accurately measured in at least one dimension as \\>=1.0 centimeter (cm) (viable tumor for typical; and longest diameter for atypical), and\n   2. The lesion is suitable for repeat measurement.\n\n      \u2022 Nonhepatic lesion\n   3. Lymph node (LN) lesion that measures at least one dimension as \\>=1.5 cm in the short axis, except for porta hepatis LN that measures \\>=2.0 cm in the short axis.\n   4. Non-nodal lesion that measures \\>=1.0 cm in the longest diameter Lesions previously treated with radiotherapy or locoregional therapy must show radiographic evidence of disease progression to be deemed a target lesion.\n3. Participants categorized to stage B (not applicable for transarterial chemoembolization \\[TACE\\]) or stage C based on Barcelona Clinic Liver Cancer (BCLC) staging system.\n4. Adequate bone marrow function, defined as:\n\n   * Absolute neutrophil count (ANC) \\>=1.5 X 10\\^9 per liter (/L)\n   * Hemoglobin (Hb) \\>=8.5 gram per deciliter (g/dL)\n   * Platelet count \\>=75 X 10\\^9/L.\n5. Adequate liver function, defined as:\n\n   * Albumin \\>=2.8 g/dL\n   * Bilirubin less than or equal to (\\<=) 3.0 mg/dL\n   * Aspartate aminotransferase (AST), alkaline phosphatase (ALP), and alanine aminotransferase (ALT) \\<=5 X the upper limit of normal (ULN).\n6. Adequate blood coagulation function, defined as international normalized ratio (INR) \\<=2.3.\n7. Adequate renal function defined as creatinine clearance greater than (\\>) 40 milliliter per minute (mL/min) calculated per the Cockcroft and Gault formula.\n8. Adequate pancreatic function, defined as amylase and lipase \\<=1.5 X ULN.\n9. Adequately controlled blood pressure (BP) with up to 3 antihypertensive agents, defined as BP \\<=150/90 millimeters of mercury (mmHg) at Screening and no change in antihypertensive therapy within 1 week prior to the Cycle1/Day1.\n10. Child-Pugh score A.\n11. Eastern Cooperative Oncology Group (ECOG)- performance status (PS) 0 or 1.\n12. Males or females aged at least 18 years (or any age \\>18 years as determined by country legislation) at the time of informed consent.\n13. Females must not be lactating or pregnant at Screening or Baseline (as documented by a negative beta-human chorionic gonadotropin \\[B-hCG\\] test with a minimum sensitivity of 25 International Units Per Liter (IU/L) or equivalent units of BhCG).\n\n    A separate baseline assessment is required if a negative screening pregnancy test was obtained more than 72 hours before the first dose of study drug.\n14. All females will be considered to be of childbearing potential unless they are postmenopausal (amenorrheic for at least 12 consecutive months, in the appropriate age group and without other known or suspected cause) or have been sterilized surgically (ie, bilateral tubal ligation, total hysterectomy or bilateral oophorectomy, all with surgery at least 1 month before dosing).\n15. Females of childbearing potential must not have had unprotected sexual intercourse within 30 days before study entry and must agree to use a highly effective method of contraception (e.g., total abstinence, an intrauterine device, a double barrier method \\[such as condom plus diaphragm with spermicide\\], a contraceptive implant, an oral contraceptive, or have a vasectomized partner with confirmed azoospermia) throughout the entire study period and for 30 days after study drug discontinuation. If currently abstinent, the participant must agree to use a double barrier method as described above if she becomes sexually active during the study period or for 30 days after study drug discontinuation. Females who are using hormonal contraceptives must have been on a stable dose of the same hormonal contraceptive product for at least 4 weeks before dosing and must continue to use the same contraceptive during the study and for 30 days after study drug discontinuation.\n16. Male participants must have had a successful vasectomy (confirmed azoospermia) or they and their female partners must meet the criteria above (i.e., not of childbearing potential or practicing highly effective contraception throughout the study period and for 30 days after study drug discontinuation). No sperm donation is allowed during the study period and for 30 days after study drug discontinuation.\n17. Provide written informed consent.\n18. Willing and able to comply with all aspects of the protocol.\n\nExclusion Criteria\n\n1. Imaging findings for HCC corresponding to any of the following:\n\n   * HCC with \\>=50 percent liver occupation\n   * Clear invasion into the bile duct\n   * Portal vein invasion at the main portal branch (Vp4).\n2. Participants who have received any systemic chemotherapy, including anti-vascular endothelial growth factor (VEGF) therapy, or any systemic investigational anticancer agents, including lenvatinib, for advanced/unresectable HCC. Note: Participants who have received local hepatic injection chemotherapy are eligible.\n3. Participants who have received any anticancer therapy (including surgery, percutaneous ethanol injection, radio frequency ablation, transarterial \\[chemo\\] embolization, hepatic intra-arterial chemotherapy, biological, immunotherapy, hormonal, or radiotherapy) or any blood enhancing treatment (including blood transfusion, blood products, or agents that stimulate blood cell production, eg, granulocyte colony-stimulating factor \\[G-CSF\\]) within 28 days prior to randomization.\n4. Participants who have not recovered from toxicities as a result of prior anticancer therapy, except alopecia and infertility. Recovery is defined as \\< Grade 2 severity per Common Terminology Criteria for Adverse Events Version 4.0 (CTCAE v4.0).\n5. Significant cardiovascular impairment: history of congestive heart failure \\> New York Heart Association (NYHA) Class II, unstable angina, myocardial infarction or stroke within 6 months of the first dose of study drug, or cardiac arrhythmia requiring medical treatment at Screening.\n6. Prolongation of corrected QT interval (QTc) interval to \\>480 millisecond (ms)\n7. Gastrointestinal malabsorption or any other condition that might affect the absorption of lenvatinib in the opinion of the investigator.\n8. Bleeding or thrombotic disorders or use of anticoagulants requiring therapeutic INR monitoring, eg, warfarin or similar agents. Treatment with low molecular weight heparin and factor X inhibitors which do not require INR monitoring is permitted. Antiplatelet agents are prohibited throughout the study.\n9. Gastrointestinal bleeding event or active hemoptysis (bright red blood of at least 0.5 teaspoon) within 28 days prior to randomization.\n10. Gastric or esophageal varices that require interventional treatment within 28 days prior to randomization. Prophylaxis with pharmacologic therapy (eg, nonselective beta-blocker) is permitted.\n11. Active malignancy (except for HCC or definitively treated melanoma in-situ, basal or squamous cell carcinoma of the skin, or carcinoma in-situ of the cervix) within the past 36 months.\n12. Participants whose only target lesion(s) is in bone will be excluded.\n13. Meningeal carcinomatosis.\n14. Any history of or current brain or subdural metastases.\n15. Participants having \\>1+ proteinuria on urine dipstick testing will undergo a 24-hour urine collection for quantitative assessment of proteinuria. Participants with a urine protein \\>=1g/24 hours will be ineligible.\n16. Surgical arterial-portal venous shunt or arterial-venous shunt.\n17. Any medical or other condition that in the opinion of the investigator would preclude the participant's participation in a clinical study.\n18. Known intolerance to lenvatinib or sorafenib (or any of the excipients).\n19. Human immunodeficiency virus (HIV) positive or active infection requiring treatment (except for hepatitis virus).\n20. Any history of drug or alcohol dependency or abuse within the prior 6 months.\n21. Any participant who cannot be evaluated by either triphasic liver computed tomography (CT) or triphasic liver Magnetic resonance imaging (MRI) because of allergy or other contraindication to both CT and MRI contrast agents.\n22. Major surgery within 3 weeks prior to randomization or scheduled for surgery during the study.\n23. Participants has had a liver transplant.",
+     "healthyVolunteers": false,
+     "minimumAge": "18 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "briefTitle": "A Multicenter, Open-Label, Phase 3 Trial to Compare the Efficacy and Safety of Lenvatinib (E7080) Versus Sorafenib in First-line Treatment of Participants With Unresectable Hepatocellular Carcinoma",
+     "nctId": "NCT01761266"
+    },
+    "statusModule": {
+     "overallStatus": "COMPLETED",
+     "statusVerifiedDate": "2022-03",
+     "studyFirstSubmitDate": "2013-01-02"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT01761266.",
+ "seed": "NCT01761266",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

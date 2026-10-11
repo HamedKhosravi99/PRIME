@@ -1,0 +1,38 @@
+name: ctgov-NCT03898180
+domain: clinical_trial (ClinicalTrials.gov structured-record domain, Tier-M predicate grammar)
+role: ctgov-0005: full C3-reachable (Phase 3, Completed, Merck, n=505); base of ctgov-0005__noev
+source: ClinicalTrials.gov public API v2, GET https://clinicaltrials.gov/api/v2/studies/NCT03898180
+        (no authentication, no API key required)
+nct_id: NCT03898180
+title: Study of First-line Pembrolizumab (MK-3475) With Lenvatinib (MK-7902/E7080) in Urothelial Carcinoma (LEAP-011)
+lead_sponsor: Merck Sharp & Dohme LLC
+retrieved: 2026-07-29 via curl against clinicaltrials.gov/api/v2 (see bench/fetch_ctgov.py)
+fetch_tool: bench/fetch_ctgov.py fetch NCT03898180 bench/artifacts/ctgov-NCT03898180/record.json
+files:
+  record.json      - pruned, embeddable subset of the real API response (exactly
+                      the protocolSection.{identificationModule,statusModule,
+                      designModule,sponsorCollaboratorsModule,outcomesModule,
+                      conditionsModule} sub-objects this domain's atoms read;
+                      every field value copied byte-for-byte from the API
+                      response via bench/fetch_ctgov.py, none edited, none
+                      paraphrased, none invented) -- this exact JSON is embedded
+                      verbatim under the instance's top-level "records" field.
+  record.json.raw  - the FULL untouched API response, kept for audit (confirms
+                      record.json is a strict subset, not an edited copy).
+observed_key_fields (copied from record.json, reproduced here for a quick human
+  check against the instance's atoms and gold_value table):
+  protocolSection.designModule.studyType = 'INTERVENTIONAL'
+  protocolSection.designModule.phases = ['PHASE3']
+  protocolSection.statusModule.overallStatus = 'COMPLETED'
+  protocolSection.sponsorCollaboratorsModule.leadSponsor.name = 'Merck Sharp & Dohme LLC'
+  protocolSection.designModule.enrollmentInfo = {'count': 505, 'type': 'ACTUAL'}
+  protocolSection.outcomesModule.primaryOutcomes[0].measure = 'Progression-free Survival (PFS)'
+license_note: ClinicalTrials.gov study records are public U.S. government /
+  NLM data made freely available via the public API for reuse; used here
+  read-only as a review artifact, exactly like the grant/NSF and research/
+  arXiv domains' public-API artifacts.
+integrity: no field in record.json was invented, edited, or paraphrased --
+  every value is a direct copy from the API JSON response captured in
+  record.json.raw at the retrieval timestamp above. bench/scaffold_repo.py
+  verify independently re-derives every atom's gold_value from this SAME
+  embedded record.json content via the real inspect_record resolver path.

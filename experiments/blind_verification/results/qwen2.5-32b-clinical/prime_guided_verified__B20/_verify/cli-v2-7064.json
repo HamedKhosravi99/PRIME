@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7064",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "Patient \\> 18 years of age",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 411,
+   "completion_tokens": 27,
+   "latency_s": 2.288,
+   "raw": "The inclusion criterion explicitly states \"Patient > 18 years of age,\" which restricts enrollment to adults. ANSWER: T"
+  }
+ ]
+}

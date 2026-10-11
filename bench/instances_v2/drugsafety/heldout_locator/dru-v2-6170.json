@@ -1,0 +1,335 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "T",
+   "id": "E1",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"Terminated\"",
+    "params": {
+     "field_path": "status",
+     "record_id": "D-827-2014"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "recalling_firm",
+     "classification",
+     "status"
+    ],
+    "what": "the recall status"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "F",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"NET Remedies #4 (Green Label) Homeopathic Preparation, Oral Liquid, 57 mL, Manufacturer: King Bio Inc. U.S.A., Supplier: NET (Australia) Pty LTD 428 Hume Street, Toowoomba QLD 4350, Australia\"",
+    "params": {
+     "field_path": "product_description",
+     "record_id": "D-827-2014"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "recall_number",
+     "product_description",
+     "voluntary_mandated"
+    ],
+    "what": "the description of the recalled product"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:20150702",
+    "params": {
+     "field_path": "recall_initiation_date",
+     "record_id": "D-827-2014"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "product_quantity",
+     "recall_initiation_date",
+     "voluntary_mandated"
+    ],
+    "what": "the date the recall was initiated"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:numeric_le:20160129",
+    "params": {
+     "field_path": "report_date",
+     "record_id": "D-827-2014"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "report_date",
+     "classification",
+     "code_info"
+    ],
+    "what": "the date the recall was reported"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"United States\"",
+    "params": {
+     "field_path": "country",
+     "record_id": "D-827-2014"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "country",
+     "code_info",
+     "classification"
+    ],
+    "what": "the country"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "event_id",
+     "record_id": "D-827-2014"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "recalling_firm",
+     "event_id",
+     "voluntary_mandated"
+    ],
+    "what": "the event identifier"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "reason_for_recall",
+     "record_id": "D-827-2014"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "code_info",
+     "recalling_firm",
+     "reason_for_recall"
+    ],
+    "what": "the stated reason for the recall"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "status",
+      "equals",
+      "Terminated"
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The recall is identified with a stated classification (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "status",
+      "equals",
+      "Terminated"
+     ],
+     [
+      "product_description",
+      "equals",
+      "NET Remedies #4 (Green Label) Homeopathic Preparation, Oral Liquid, 57 mL, Manufacturer: King Bio Inc. U.S.A., Supplier: NET (Australia) Pty LTD 428 Hume Street, Toowoomba QLD 4350, Australia"
+     ],
+     [
+      "recall_initiation_date",
+      "numeric_le",
+      20150702
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The recall is action-ready: identified, classified, with product description, reason, and status populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "status",
+      "equals",
+      "Terminated"
+     ],
+     [
+      "product_description",
+      "equals",
+      "NET Remedies #4 (Green Label) Homeopathic Preparation, Oral Liquid, 57 mL, Manufacturer: King Bio Inc. U.S.A., Supplier: NET (Australia) Pty LTD 428 Hume Street, Toowoomba QLD 4350, Australia"
+     ],
+     [
+      "recall_initiation_date",
+      "numeric_le",
+      20150702
+     ],
+     [
+      "report_date",
+      "numeric_le",
+      20160129
+     ],
+     [
+      "country",
+      "equals",
+      "United States"
+     ],
+     [
+      "event_id",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The recall satisfies the checked completeness protocol: action-ready per the inspected fields, with consistent dates and populated distribution and firm fields."
+  }
+ ],
+ "decoys": [],
+ "domain": "drugsafety_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "dru-v2-6170",
+ "notes_for_annotators": "{\"family\": \"drugsafety-nested-hom-09\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 1, \"false_mech\": true, \"locator\": true, \"source_instance\": \"dru-v2-0170\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "D-827-2014": {
+   "classification": "Class II",
+   "code_info": "NORTRIPTYLINE HCL, Capsule, 10 mg  has the following codes:  Pedigree: AD70585_4, EXP: 5/29/2014.",
+   "country": "United States",
+   "event_id": "65690",
+   "product_description": "NORTRIPTYLINE HCL, Capsule, 10 mg, Rx only, Distributed by: AidaPak Service, LLC, NDC 00093081001.",
+   "product_quantity": "100 Capsules",
+   "reason_for_recall": "Labeling: Label Mixup: NORTRIPTYLINE HCL, Capsule, 10 mg  may have potentially been mislabeled as the following drug:  VALSARTAN, Tablet, 80 mg, NDC 00078035834, Pedigree: AD70585_1, EXP: 5/29/2014.",
+   "recall_initiation_date": "20130702",
+   "recall_number": "D-827-2014",
+   "recalling_firm": "Aidapak Services, LLC",
+   "report_date": "20140129",
+   "status": "Terminated",
+   "voluntary_mandated": "Voluntary: Firm initiated"
+  }
+ },
+ "scope": "The single named openFDA enforcement record, as retrieved and embedded; no external lookups. Record identifier: D-827-2014.",
+ "seed": "D-827-2014",
+ "user_prompt": "Is this recall record complete and correctly classified for downstream pharmacy action?",
+ "variant": "base"
+}

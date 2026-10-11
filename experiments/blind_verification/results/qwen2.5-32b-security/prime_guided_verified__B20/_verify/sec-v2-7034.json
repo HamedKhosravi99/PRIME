@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7034",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "tf.raw_ops.QuantizedBatchNormWithGlobalNormalization",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 1093,
+   "completion_tokens": 21,
+   "latency_s": 2.277,
+   "raw": "The document mentions \"tensorflow\" which is the registered name of the affected package. ANSWER: T"
+  }
+ ]
+}

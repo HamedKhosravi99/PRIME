@@ -1,0 +1,23 @@
+name: grant-nsf1916575
+domain: funding_review (scouting proof-of-concept, third evaluation domain)
+source: NSF public Award Search API, https://api.nsf.gov/services/v1/awards.json?id=1916575
+award_id: 1916575
+title: An integrated geophysics cruise to map the northern edge in the Chukchi
+  Borderland and the adjacent Canada Basin - constraints on basin history and
+  crustal structure
+pi: Bernard J Coakley (University of Alaska Fairbanks Campus)
+retrieved: 2026-07-29 via curl against api.nsf.gov (public, unauthenticated,
+  no API key required)
+full_raw_response: saved at fetch time; fields reproduced in record/summary.txt
+  and record/funding.txt are copied verbatim from the JSON response (no field
+  value edited); the RECONCILIATION block in record/funding.txt is the
+  author's own arithmetic over three verbatim numeric fields
+  (fundsObligated, fundsObligatedAmt, estimatedTotalAmt), independently
+  reproducible from the lines printed directly above it.
+license_note: NSF award records are public government data (17 U.S.C. 105,
+  works of the U.S. Government are not subject to domestic copyright);
+  used here as read-only review artifacts.
+integrity_check: COMPUTED_SUM_OF_FY_ENTRIES (1,237,134.00 + 54,022.00 +
+  125,122.00 = 1,416,278.00) verified by the author to equal
+  fundsObligatedAmt (1,416,278.00) exactly, via direct python arithmetic on
+  2026-07-29; see record/funding.txt for the reproducible computation.

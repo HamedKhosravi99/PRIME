@@ -1,0 +1,13 @@
+name: MICROSOFT CORPORATION
+cik: 0000789019
+source_url: https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json
+retrieved_utc: 2026-07-29T16:32:36Z
+raw_response_sha256: 352bbb036cbf65b74e126bb7ac040d2a8f9538dc0a85a0363a9a28a22039c4c3
+user_agent_sent: PRIME-research <contact-email>
+concepts_fetched: Revenues, RevenueFromContractWithCustomerExcludingAssessedTax, NetIncomeLoss, Assets, Liabilities
+  Revenues: 15 annual (10-K, fp=FY) entries
+  RevenueFromContractWithCustomerExcludingAssessedTax: 48 annual (10-K, fp=FY) entries
+  NetIncomeLoss: 140 annual (10-K, fp=FY) entries
+  Assets: 32 annual (10-K, fp=FY) entries
+  Liabilities: 30 annual (10-K, fp=FY) entries
+integrity: every val/start/end/fy/fp/form/accn/frame field in companyfacts_trimmed.json is copied verbatim from SEC's own API response (see raw_response_sha256); nothing computed, edited, or invented. Values embedded in any bench/instances/fin/*.json record are a further subset of these SAME entries, unedited.

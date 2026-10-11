@@ -1,0 +1,211 @@
+{
+  "id": "fin-0005",
+  "domain": "financial_filing",
+  "seed": "fin-0005",
+  "variant": "base",
+  "user_prompt": "As of Alphabet Inc.'s FY2025 balance sheet, do total liabilities stay within total assets according to the record's own reported figures (i.e., positive reported net worth)?",
+  "artifact": {
+    "path": "artifacts/fin-googl",
+    "kind": "structured_record",
+    "commit": "sec:CIK0001652044"
+  },
+  "scope": "The single embedded REAL SEC XBRL record GOOGL-BS-FY2025 (top-level records.GOOGL-BS-FY2025 of this instance file), fetched verbatim via bench/fetch_edgar.py from https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json (PROVENANCE in artifacts/fin-googl/PROVENANCE; restructured from SEC's own list-of-entries shape into flat named keys, see module docstring), read exclusively via inspect_record(record_id='GOOGL-BS-FY2025', field_path=...): entityName (filer identity), assets.val/fy/fp/form/concept and liabilities.val/fy/fp/form/concept (the SAME period-end, 2025-12-31, both Form 10-K; 'val' is the literal leaf field name in BOTH -- field_path='assets.val' reads total Assets, field_path='liabilities.val' reads total Liabilities). The verdict is scoped to whether the record's OWN two balance-sheet figures show Liabilities at or below Assets as of that ONE period-end -- not to any market-value or off-balance-sheet consideration; no external market-data lookup or human/LLM judgment is used or available. GROWTH/ARITHMETIC-CLAIM DESIGN NOTE (mirrors the YoY-growth instances in this domain): the closed predicate grammar only compares one field against a fixed constant, so the field-vs-field 'Liabilities <= Assets' comparison is kept decidable by setting atom E5's numeric_le threshold to Assets' own real value (established exactly by atom E3); E5 then mechanically evaluates the solvency comparison via the ordinary numeric_le predicate over the actual field the tool reads.",
+  "actions": [
+    "inspect_record",
+    "emit_claim"
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "The record's filer identity and the existence of a reported total-Assets figure as of FY2025 period-end are located in the supplied record.",
+      "level": 1
+    },
+    {
+      "id": "C2",
+      "text": "The identifying/existence facts are established (C1) and the record's total Assets figure is confirmed to equal exactly $595,281,000,000.",
+      "level": 2
+    },
+    {
+      "id": "C3",
+      "text": "Under the supplied record, total Assets ($595,281,000,000) and total Liabilities ($180,016,000,000) as of the SAME FY2025 period-end are both established from the record's own balance-sheet entries, and Liabilities do not exceed Assets: the record supports a positive-reported-net-worth verdict as of that period-end.",
+      "level": 3
+    }
+  ],
+  "order": [
+    [
+      "C1",
+      "C2"
+    ],
+    [
+      "C2",
+      "C3"
+    ]
+  ],
+  "atoms": [
+    {
+      "id": "E1",
+      "type": "record",
+      "proposition": "The record's filer identity is read via inspect_record(field_path='entityName') and found present.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "GOOGL-BS-FY2025",
+          "field_path": "entityName"
+        },
+        "attest": "record_predicate:exists:null"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E2",
+      "type": "record",
+      "proposition": "The record's total Assets figure as of FY2025 period-end is read via inspect_record(field_path='assets.val') and found present.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "GOOGL-BS-FY2025",
+          "field_path": "assets.val"
+        },
+        "attest": "record_predicate:exists:null"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E3",
+      "type": "record",
+      "proposition": "The same Assets figure is read again and found to equal exactly $595,281,000,000.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "GOOGL-BS-FY2025",
+          "field_path": "assets.val"
+        },
+        "attest": "record_predicate:numeric_eq:595281000000"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E4",
+      "type": "record",
+      "proposition": "The record's total Liabilities figure as of the SAME period-end (a DISJOINT top-level field from E2/E3's Assets entry) is read via inspect_record(field_path='liabilities.val') and found to equal exactly $180,016,000,000.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "GOOGL-BS-FY2025",
+          "field_path": "liabilities.val"
+        },
+        "attest": "record_predicate:numeric_eq:180016000000"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E5",
+      "type": "record",
+      "proposition": "The Liabilities figure is read a second time and evaluated against the Assets figure's own reported value ($595,281,000,000, established by E3) as the ceiling: found Liabilities does NOT exceed Assets -- the record's own balance-sheet solvency check, decided mechanically by the closed grammar's numeric_le predicate over the actual field the tool reads at run time.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "GOOGL-BS-FY2025",
+          "field_path": "liabilities.val"
+        },
+        "attest": "record_predicate:numeric_le:595281000000"
+      },
+      "gold_value": "T"
+    },
+    {
+      "id": "E6",
+      "type": "record",
+      "proposition": "Non-route background: the filing form type backing the Assets figure is read and found to be '10-K' -- not required for, and not evidence toward, the solvency claim.",
+      "resolver": {
+        "tool": "inspect_record",
+        "params_schema": {
+          "record_id": "str",
+          "field_path": "str"
+        },
+        "params": {
+          "record_id": "GOOGL-BS-FY2025",
+          "field_path": "assets.form"
+        },
+        "attest": "record_predicate:equals:\"10-K\""
+      },
+      "gold_value": "T"
+    }
+  ],
+  "phi": [],
+  "gold_licenses": {
+    "C1": [
+      [
+        "E1",
+        "E2"
+      ]
+    ],
+    "C2": [
+      [
+        "E1",
+        "E2",
+        "E3"
+      ]
+    ],
+    "C3": [
+      [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5"
+      ]
+    ]
+  },
+  "decoys": [
+    "external_market_data_lookup"
+  ],
+  "notes_for_annotators": "REAL SEC EDGAR XBRL data for Alphabet Inc. (CIK 0001652044), fetched 2026-07-29 via bench/fetch_edgar.py; every field embedded above is copied verbatim from SEC's own companyfacts API response (see artifacts/fin-googl/PROVENANCE for the raw-response sha256); only the SHAPE (flat assets/liabilities keys vs SEC's own list) is restructured, not the values. Gold values were computed by directly calling prime_runtime.predicates.evaluate_predicate against the embedded record; independently reproduced by bench/scaffold_repo.py verify. This instance's solvency verdict is genuinely TRUE at the authored gold level (E5 gold_value='T'): Alphabet Inc. reported Liabilities of $180,016,000,000 against Assets of $595,281,000,000 as of the same period-end -- Liabilities well within Assets (positive reported net worth), a real (not coincidental) fact about this filer's balance sheet. Route minimality: E1 necessary (filer identity); E2 necessary (the Assets entry must actually be located); E3 necessary (exact Assets value is a DISJOINT predicate from E2's mere-existence check); E4 necessary (Liabilities is a DISJOINT top-level field from E2/E3's Assets entry -- the solvency comparison needs Liabilities independently established); E5 necessary (the Liabilities-vs-Assets THRESHOLD comparison is a DISJOINT predicate from E4's exact-equality check on the SAME field). Order-coherence by containment. E6 (filing form type) is a genuine non-route background atom. Decoy external_market_data_lookup is not a listed action. No ask_user tool: every atom is a closed, executable predicate over structured XBRL fields.",
+  "records": {
+    "GOOGL-BS-FY2025": {
+      "cik": "0001652044",
+      "entityName": "Alphabet Inc.",
+      "assets": {
+        "accn": "0001652044-26-000018",
+        "end": "2025-12-31",
+        "form": "10-K",
+        "fp": "FY",
+        "frame": null,
+        "fy": 2025,
+        "start": null,
+        "val": 595281000000,
+        "concept": "Assets"
+      },
+      "liabilities": {
+        "accn": "0001652044-26-000018",
+        "end": "2025-12-31",
+        "form": "10-K",
+        "fp": "FY",
+        "frame": null,
+        "fy": 2025,
+        "start": null,
+        "val": 180016000000,
+        "concept": "Liabilities"
+      }
+    }
+  }
+}

@@ -1,0 +1,327 @@
+{
+ "actions": [
+  "inspect_record",
+  "ask_user",
+  "emit_claim"
+ ],
+ "artifact": {
+  "commit": "",
+  "kind": "record",
+  "path": ""
+ },
+ "atoms": [
+  {
+   "gold_value": "F",
+   "id": "E1",
+   "proposition": "",
+   "resolver": null,
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E2",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.statusModule.statusVerifiedDate",
+     "record_id": "NCT05745259"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.statusModule.overallStatus",
+     "protocolSection.statusModule.statusVerifiedDate"
+    ],
+    "what": "the date the status was last verified"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E3",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:date_before:\"2025-01-01\"",
+    "params": {
+     "field_path": "protocolSection.statusModule.lastUpdateSubmitDate",
+     "record_id": "NCT05745259"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.statusModule.studyFirstSubmitDate",
+     "protocolSection.eligibilityModule.healthyVolunteers",
+     "protocolSection.statusModule.lastUpdateSubmitDate"
+    ],
+    "what": "the date of the most recent update submission"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E4",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:equals:\"INTERVENTIONAL\"",
+    "params": {
+     "field_path": "protocolSection.designModule.studyType",
+     "record_id": "NCT05745259"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.designModule.studyType"
+    ],
+    "what": "the study type"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E5",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.eligibilityCriteria",
+     "record_id": "NCT05745259"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.eligibilityCriteria",
+     "protocolSection.identificationModule.officialTitle",
+     "protocolSection.statusModule.overallStatus"
+    ],
+    "what": "the eligibility criteria text"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E6",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.eligibilityModule.sex",
+     "record_id": "NCT05745259"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.eligibilityModule.sex",
+     "protocolSection.identificationModule.officialTitle"
+    ],
+    "what": "the sex eligibility field"
+   },
+   "type": "record"
+  },
+  {
+   "gold_value": "T",
+   "id": "E7",
+   "proposition": "",
+   "resolver": {
+    "attest": "record_predicate:exists:null",
+    "params": {
+     "field_path": "protocolSection.descriptionModule.briefSummary",
+     "record_id": "NCT05745259"
+    },
+    "params_schema": {
+     "field_path": "str",
+     "record_id": "str"
+    },
+    "tool": "inspect_record"
+   },
+   "spec_hint": {
+    "candidates": [
+     "protocolSection.identificationModule.nctId",
+     "protocolSection.eligibilityModule.minimumAge",
+     "protocolSection.descriptionModule.briefSummary"
+    ],
+    "what": "the brief summary"
+   },
+   "type": "record"
+  }
+ ],
+ "claims": [
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C1",
+   "level": 1,
+   "text": "The registration identifies the study with a readable title and declared status (as inspected)."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2025-01-01"
+     ]
+    ]
+   ],
+   "id": "C2",
+   "level": 2,
+   "text": "The registration is screening-ready: identified, status declared, study type and eligibility fields populated as inspected."
+  },
+  {
+   "denotation": [
+    [
+     [
+      "protocolSection.identificationModule.briefTitle",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.statusVerifiedDate",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.statusModule.lastUpdateSubmitDate",
+      "date_before",
+      "2025-01-01"
+     ],
+     [
+      "protocolSection.designModule.studyType",
+      "equals",
+      "INTERVENTIONAL"
+     ],
+     [
+      "protocolSection.eligibilityModule.eligibilityCriteria",
+      "exists",
+      null
+     ],
+     [
+      "protocolSection.eligibilityModule.sex",
+      "exists",
+      null
+     ]
+    ]
+   ],
+   "id": "C3",
+   "level": 3,
+   "text": "The registration satisfies the checked currency-and-completeness protocol: screening-ready per the inspected fields, with consistent submission dates and populated eligibility metadata."
+  }
+ ],
+ "decoys": [],
+ "domain": "clinical_v2",
+ "gold_licenses": {
+  "C1": [
+   [
+    "E1"
+   ]
+  ],
+  "C2": [
+   [
+    "E1",
+    "E2",
+    "E3"
+   ]
+  ],
+  "C3": [
+   [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  ]
+ },
+ "id": "cli-v2-6122",
+ "notes_for_annotators": "{\"family\": \"clinical-nested-hom-09\", \"topology\": \"nested\", \"cost\": \"hom\", \"target_level\": 0, \"false_mech\": false, \"locator\": true, \"source_instance\": \"cli-v2-0122\"}",
+ "order": [
+  [
+   "C1",
+   "C2"
+  ],
+  [
+   "C2",
+   "C3"
+  ]
+ ],
+ "phi": [],
+ "records": {
+  "NCT05745259": {
+   "protocolSection": {
+    "descriptionModule": {
+     "briefSummary": "The trial is prospective, randomized, open-label, blinded endpoint (PROBE) design. Patients with acute ischemic stroke, who are eligible for standard intravenous thrombolysis within 4.5 hours of stroke onset will be randomized 1:1 to 0.25mg/kg or 0.9 mg/kg alteplase before all participants undergo endovascular thrombectomy."
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\n* 18\u2264Age\u226480 years old;\n* The clinical diagnosis was Acute ischemic stroke The time from onset to treatment was \\< 4.5h; The time at which symptoms begin is defined as \"the time at which they finally appear normal\";\n* MRS before onset was \u22641 points;\n* Baseline NIHSS (at the time of randomization) should be \u22655 and \u226425 points;\n* Informed consent from the patient or surrogate.\n\nExclusion Criteria:\n\n* Intracranial hemorrhage identified by CT or MRI (CMBs detected by SWI is not counted);\n* Massive anterior cerebral infarction identified by CT or MRI (ASPECT \\< 6 or lesions larger than one third of the territory of the middle cerebral artery or with a volume larger than 70mL)\n* Patients planning to receive endovascular therapy\n* A history of severe CNS damage (such as aneurysm or arteriovenous malformation, craniocerebral trauma, intracranial or spinal cord surgery)\n* Onset with seizures, and the paralysis was suspected to be related to Todd paralysis.\n* Administration of heparin within 48 hours preceding the onset of stroke with a baseline APTT exceeding the upper limit of the normal range.\n* Oral anticoagulant (such as warfarin) treatment with baseline INR\\>1.7 or PT\\>15 s;\n* Administration of thrombin inhibitors or factor Xa inhibitors within 48 hours preceding the onset of stroke with abnormal coagulation parameters or platelet count;\n* BP couldn't be controlled with aggressive treatment. Uncontrolled hypertension was defined as systolic blood pressure \\>185 mmHg or diastolic blood pressure \\>110 mmHg, measured for three times every 10 minutes.\n* Platelet count of less than 100\u00d7109/ L;\n* Blood glucose \\<50 mg/dl (\\<2.8 mmol/L) or \\>400 mg/dl (22.22 mmol/L);\n* History of intracranial hemorrhage or active hemorrhagic disease. (Such as gastrointestinal, urinary tract or retinal bleeding)\n* Tumors with an increased risk of bleeding.\n* Prolonged or traumatic cardiopulmonary resuscitation (\\>2 min), delivery within the last 10 days or recent puncture of non-compression vessels such as subclavian vein or jugular vein\n* Acute pancreatitis or severe liver disease, including liver failure, cirrhosis, portal hypertension, esophageal varicose veins, and active hepatitis;\n* Aortic arch dissection;\n* Major surgery or severe trauma in the past 2 weeks;\n* Subjects had serious, fatal, or disabling disease with an expected survival of less than 3 months;\n* Unable to complete neurological assessment and follow-up visits because of dementia or mental illness;\n* Pregnant women, lactating women, or have positive pregnancy test;\n* Allergy to tenecteplase or alteplase or their components;\n* Participation in other clinical trials within 3 months prior to screening;\n* Unsuitable to involve in this study or would result in increased risk, as judged by the investigators.",
+     "healthyVolunteers": false,
+     "minimumAge": "18 Years",
+     "sex": "ALL"
+    },
+    "identificationModule": {
+     "nctId": "NCT05745259",
+     "officialTitle": "Thrombolysis Treated by TNK-tPA in Acute Ischemic Stroke Patients: a Multi-center, Block Randomized, Positive Drug Parallel Control and Non-inferior Phase \u2162 Trial, 3T Stroke-\u2162"
+    },
+    "statusModule": {
+     "lastUpdateSubmitDate": "2023-02-16",
+     "overallStatus": "UNKNOWN",
+     "statusVerifiedDate": "2023-02",
+     "studyFirstSubmitDate": "2023-02-16"
+    }
+   }
+  }
+ },
+ "scope": "The single named ClinicalTrials.gov study record, as retrieved and embedded; no external lookups. Record identifier: NCT05745259.",
+ "seed": "NCT05745259",
+ "user_prompt": "Is this trial registration current and complete enough for eligibility screening?",
+ "variant": "base"
+}

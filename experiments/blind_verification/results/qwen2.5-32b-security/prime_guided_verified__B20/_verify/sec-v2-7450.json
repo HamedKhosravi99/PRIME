@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7450",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "An attacker can cause a heap buffer overflow in `QuantizedReshape` by passing in invalid thresholds for the quantization:",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 696,
+   "completion_tokens": 16,
+   "latency_s": 1.037,
+   "raw": "The document mentions \"tensorflow\" by its registered name. ANSWER: T"
+  }
+ ]
+}

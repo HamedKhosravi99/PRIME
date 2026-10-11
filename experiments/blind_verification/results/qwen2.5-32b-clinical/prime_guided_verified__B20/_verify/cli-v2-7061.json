@@ -1,0 +1,18 @@
+{
+ "instance": "cli-v2-7061",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "F",
+   "quote": "aged 6 and above and up to age 18 years",
+   "verdict": "F",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 309,
+   "completion_tokens": 30,
+   "latency_s": 2.624,
+   "raw": "The document specifies inclusion for ages 6 and above, which contradicts the requirement for adults aged 18 and above. ANSWER: F"
+  }
+ ]
+}

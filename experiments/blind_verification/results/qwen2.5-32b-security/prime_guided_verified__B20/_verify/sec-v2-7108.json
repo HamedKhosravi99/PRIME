@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7108",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "pyca/cryptography's wheels include a statically linked copy of OpenSSL.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 276,
+   "completion_tokens": 23,
+   "latency_s": 2.051,
+   "raw": "The document mentions \"pyca/cryptography\" by its registered name, establishing the condition. ANSWER: T"
+  }
+ ]
+}

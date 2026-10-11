@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7446",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E2",
+   "attested": "T",
+   "quote": "If `QuantizedAvgPool` is given `min_input` or `max_input` tensors of a nonzero rank, it results in a segfault that can be used to trigger a denial of service attack.",
+   "verdict": "T",
+   "agree": true,
+   "invoked": true,
+   "prompt_tokens": 561,
+   "completion_tokens": 18,
+   "latency_s": 1.105,
+   "raw": "The document mentions TensorFlow by its registered name, establishing the condition. ANSWER: T"
+  }
+ ]
+}

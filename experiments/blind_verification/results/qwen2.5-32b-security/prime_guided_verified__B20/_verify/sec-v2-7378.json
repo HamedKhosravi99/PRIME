@@ -1,0 +1,18 @@
+{
+ "instance": "sec-v2-7378",
+ "events": [
+  {
+   "attempt": 1,
+   "atom": "E3",
+   "attested": "T",
+   "quote": "Proposed affected range: `>= 4.5.2, <= 4.6.57`.",
+   "verdict": "F",
+   "agree": false,
+   "invoked": true,
+   "prompt_tokens": 2155,
+   "completion_tokens": 20,
+   "latency_s": 1.75,
+   "raw": "The document does not state a specific version in which the issue is fixed. ANSWER: F"
+  }
+ ]
+}
