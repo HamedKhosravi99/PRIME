@@ -18,11 +18,16 @@ schema = ["jsonschema>=4"]
 dev = ["pytest>=7", "ruff>=0.4"]
 
 [tool.setuptools]
-packages = ["prime_runtime"]
+package-dir = {"" = "src"}
+packages = ["prime_runtime", "prime_agents", "obligationbench"]
+
+[tool.setuptools.package-data]
+obligationbench = ["schema.json"]
 
 [tool.pytest.ini_options]
-testpaths = ["prime_runtime/tests"]
+testpaths = ["tests"]
+pythonpath = ["src"]
 
 [tool.ruff]
 target-version = "py39"
-extend-exclude = ["bench/artifacts", "results"]
+extend-exclude = ["data/pilot/artifacts", "results"]

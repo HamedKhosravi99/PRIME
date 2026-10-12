@@ -2,9 +2,9 @@
 
 Five systems from Appendix H are instantiated on the 480 balanced held-out tasks
 with the same model (Qwen2.5-32B-Instruct, greedy), tools, resolvers, budget
-accounting, trace format, and scorer as PRIME. Code: `runner/extsys.py`
-(agentic arms), `runner/glean.py` (offline verifier). Jobs: a cluster
-launcher that is not included (`cluster/serve_and_run_guided.sbatch` is the recipe). Table: `analysis/build_extsys_table.py` ->
+accounting, trace format, and scorer as PRIME. Code: `src/prime_agents/extsys.py`
+(agentic arms), `src/prime_agents/glean.py` (offline verifier). Jobs: a cluster
+launcher that is not included (`experiments/slurm/serve_and_run_guided.sbatch` is the recipe). Table: `experiments/analysis/build_extsys_table.py` ->
 `results/tableEXTSYS.json` (20 calls) and `results/tableEXTSYS_bmin.json`.
 
 ## What is matched, and what is not
@@ -155,19 +155,19 @@ development runs at b_min).
 
 ## Analyses beyond the main table
 
-- `analysis/hesp_controller_runs.py`: HESP's controller as a scripted policy
+- `experiments/analysis/hesp_controller_runs.py`: HESP's controller as a scripted policy
   (a planner that always asks for a probe) at the four budget anchors, on the
   balanced split and (`--split heldout_locator`) its locator-uncertain copy;
   `--prior counted_lodo|uniform|bernoulli` for the prior sensitivity. In the
   full configuration the model can only abstain, and at 20 calls the live
   runs equal the controller's on every task.
-- `analysis/build_controller_table.py`: PRIME's schedule (the ceiling-
+- `experiments/analysis/build_controller_table.py`: PRIME's schedule (the ceiling-
   targeting policy) against HESP's controller, paired by task, utility,
   premature conclusions, reads, abstention -> `results/tableCONTROLLER.json`.
-- `analysis/build_locator_hesp_table.py`: the same on the locator-uncertain
+- `experiments/analysis/build_locator_hesp_table.py`: the same on the locator-uncertain
   copy, with PRIME's live runs -> `results/tableLOC_HESP.json`.
-- `analysis/stall_cap_replay.py`: Proof-or-Stop and ResearchLoop truncated at
+- `experiments/analysis/stall_cap_replay.py`: Proof-or-Stop and ResearchLoop truncated at
   their fourth turn without an action (PRIME's cap), from the logged traces ->
   `results/stall_cap_replay.json`.
-- `analysis/hesp_prior_sensitivity.py`: the HESP controller under three priors
+- `experiments/analysis/hesp_prior_sensitivity.py`: the HESP controller under three priors
   -> `results/hesp_prior_sensitivity.json`.

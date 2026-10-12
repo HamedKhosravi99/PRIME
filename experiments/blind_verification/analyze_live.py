@@ -4,7 +4,7 @@ PRIME logs (results/w2text, historical baseline) and the offline replay
 (experiments/risk_aware_prime/results/stage_c_replay.json, from the
 risk-aware study, which is not part of this package).
 
-Scoring is the paper's (analysis/build_w2a_tables.score, restated in the
+Scoring is the paper's (experiments/analysis/build_w2a_tables.score, restated in the
 risk-aware study's common.score): false authorization if any emitted
 conclusion is unsupported; utility 100 x level of the strongest supported
 emitted conclusion / 3; abstention when nothing is emitted. Gold values
@@ -25,7 +25,7 @@ from typing import Any, Dict, List
 HERE = os.path.dirname(os.path.abspath(__file__))
 PILOT = os.path.dirname(os.path.dirname(HERE))
 RAP = os.path.join(PILOT, "experiments", "risk_aware_prime")
-for _p in (PILOT, os.path.join(PILOT, "runner"), RAP, HERE):
+for _p in (PILOT, os.path.join(PILOT, "src"), os.path.join(PILOT, "src", "prime_agents"), RAP, HERE):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 

@@ -30,11 +30,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 PILOT = os.environ.get("SPECBUILD_PILOT") or os.path.dirname(os.path.dirname(HERE))
 if PILOT not in sys.path:
     sys.path.insert(0, PILOT)
+    sys.path.insert(0, os.path.join(PILOT, "src"))
 from prime_runtime import goldledger  # noqa: E402
 from prime_runtime.predicates import PREDICATE_TYPES  # noqa: E402
 from prime_runtime.schema import load_instance  # noqa: E402
 
-EXT = os.path.join(PILOT, "bench", "fdaaa", "external")
+EXT = os.path.join(PILOT, "data", "fdaaa", "external")
 SNAPSHOT = "2026-08-03"
 LEVEL = {"C1": 1, "C2": 2, "C3": 3}
 CLAIMS = [
@@ -286,7 +287,7 @@ def attest_rule(a):
 
 def truth(rec, path, rule):
     """Gold value through the runtime's own path resolver and predicate grammar (never a reimplementation)."""
-    sys.path.insert(0, os.path.join(PILOT, "runner")) if os.path.join(PILOT, "runner") not in sys.path else None
+    sys.path.insert(0, os.path.join(PILOT, "src", "prime_agents")) if os.path.join(PILOT, "src", "prime_agents") not in sys.path else None
     from arms import _resolve_field_path  # noqa: E402
     value, found = _resolve_field_path(rec, path)
     obs = {"value": value} if found else {"error": "field not found"}

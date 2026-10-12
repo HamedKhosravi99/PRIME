@@ -3,7 +3,7 @@
 
 PROTOCOL, frozen before any label is read (2026-10-10):
   population   trials listed in the FDAAA TrialsTracker export of 3 August
-               2026 (bench/fdaaa/external/trialstracker_2026-08-03.csv) that
+               2026 (data/fdaaa/external/trialstracker_2026-08-03.csv) that
                are NOT in the 6,000-registration development pool and whose
                sponsor_slug does not occur in that pool
   sample       2,000 of them, drawn uniformly at random with seed 20261010
@@ -13,7 +13,7 @@ PROTOCOL, frozen before any label is read (2026-10-10):
                trial whose fetch fails is reported as such, never backfilled
   program      the FDAAA program exactly as committed: compile_contract and
                build_instance imported, unmodified, from
-               bench/fdaaa/build_fdaaa_instances.py (reading D: calendar
+               src/obligationbench/construction/fdaaa/build_fdaaa_instances.py (reading D: calendar
                year, certification timeliness, no administrative grace; the
                runtime's predicate grammar decides every atom)
   selection    the builder's own: drop withheld, not applicable (not an ACT),
@@ -51,11 +51,12 @@ import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PILOT = os.path.dirname(os.path.dirname(HERE))
-sys.path.insert(0, os.path.join(PILOT, "bench", "fdaaa"))
+sys.path.insert(0, os.path.join(PILOT, "src", "obligationbench", "construction", "fdaaa"))
 sys.path.insert(0, PILOT)
+sys.path.insert(0, os.path.join(PILOT, "src"))
 import build_fdaaa_instances as B  # noqa: E402  (read-only import of the frozen builder)
 
-EXT = os.path.join(PILOT, "bench", "fdaaa", "external")
+EXT = os.path.join(PILOT, "data", "fdaaa", "external")
 RES = os.path.join(HERE, "results"); REC = os.path.join(RES, "records")
 SEED = 20261010; N_SAMPLE = 2000
 API = "https://clinicaltrials.gov/api/v2/studies/%s"

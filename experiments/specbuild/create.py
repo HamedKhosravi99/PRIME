@@ -21,7 +21,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PILOT = os.environ.get("SPECBUILD_PILOT") or os.path.dirname(os.path.dirname(HERE))
-for p in (PILOT, os.path.join(PILOT, "runner"), HERE):
+for p in (PILOT, os.path.join(PILOT, "src"), os.path.join(PILOT, "src", "prime_agents"), HERE):
     if p not in sys.path:
         sys.path.insert(0, p)
 import common  # noqa: E402

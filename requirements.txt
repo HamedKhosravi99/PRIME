@@ -2,5 +2,5 @@ numpy>=1.24        # figures
 matplotlib>=3.7    # figures
 pytest>=7          # tests
 openai>=1.0        # running agents against an OpenAI-compatible endpoint
-jsonschema>=4      # optional: bench/validate.py --schema
-# exact versions of the release checks: requirements-lock.txt; of the runs: docs/ENVIRONMENT.md
+jsonschema>=4      # optional: src/obligationbench/validate.py --schema
+# exact versions of the release checks and of the runs: docs/ENVIRONMENT.md

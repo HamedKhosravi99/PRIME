@@ -56,7 +56,7 @@ The code was written before the paper's wording settled, so it often uses older 
 | `prime_guided` | PRIME |
 | `prime_complete` | PRIME with completion |
 | `prime_flat` | the flat gate of Appendix E.2: one conclusion, no grading |
-| `ext_agentspec`, `ext_agentspec_examine`, `ext_researchloop`, `ext_prooforstop`, `ext_hesp` | the closest control systems of Section 6.4 (AgentSpec with stop and with self-examination, ResearchLoop, Proof-or-Stop, HESP); GLEAN is `runner/glean.py` |
+| `ext_agentspec`, `ext_agentspec_examine`, `ext_researchloop`, `ext_prooforstop`, `ext_hesp` | the closest control systems of Section 6.4 (AgentSpec with stop and with self-examination, ResearchLoop, Proof-or-Stop, HESP); GLEAN is `src/prime_agents/glean.py` |
 | `direct`, `rubric`, `cove`, `reflexion`, `conformal`, `static_contract` | Direct, Rubric, CoVe, Reflexion, Conformal, Static checklist |
 | `prime`, `masked_reactive` | the unguided PRIME agents of the hand-built pilot |
 | `prime_guided_gated` | guided PRIME restricted to conclusions whose learned routes passed validation |
@@ -81,7 +81,7 @@ The code was written before the paper's wording settled, so it often uses older 
 | `w2text/` | judging textual evidence (Section 6.3), the text-evidence split; the verified condition is in `experiments/blind_verification/results/` |
 | `w2seed/` | sampled decoding at temperature 0.7, three seeds (Appendix E.1) |
 | `glean/` | the GLEAN verifier's diagnostics (Section 6.4) |
-| `w2ext/` | six further baselines (Direct, Rubric, CoVe, Reflexion, Conformal, Static checklist), checked by `reproduce_tables.py`; not reported in the paper |
+| `w2ext/` | six further baselines (Direct, Rubric, CoVe, Reflexion, Conformal, Static checklist), checked by `experiments/reproduce_tables.py`; not reported in the paper |
 | `fdaaa/`, `specbuild_e2e/` | the regulation study (Appendix F) |
 | `v2dev/` | development-split runs that set the minimum effect for guidance (Appendix D) |
 | `w2ob/` | the one-branch variant (not reported in the paper) |
@@ -106,4 +106,4 @@ Earlier drafts lettered the experiments, and some reports and comments still do:
 
 ## Scripts kept from an earlier draft
 
-`analysis/fill_v2_tables.py` and `analysis/aggregate.py` were written for an earlier draft of the paper and read or write its LaTeX source, which is not included. They are kept because `figures/make_figures.py`, `analysis/end_to_end_tables.py`, `analysis/drift_table.py`, and one test import functions from them. Scripts that only filled that draft are not included.
+`experiments/analysis/fill_v2_tables.py` and `experiments/analysis/aggregate.py` were written for an earlier draft of the paper and read or write its LaTeX source, which is not included. They are kept because `experiments/paper/make_figures.py`, `experiments/analysis/pilot/end_to_end_tables.py`, `experiments/analysis/pilot/drift_table.py`, and one test import functions from them. Scripts that only filled that draft are not included.

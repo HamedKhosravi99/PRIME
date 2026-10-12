@@ -2,10 +2,10 @@
 """Live PRIME (prime_guided, gold program, 20 calls) with blind same-model
 verification of text attestations, on the text-evidence split.
 
-Mirrors runner/run_batch.py (same LLM client construction, same per-episode
+Mirrors src/prime_agents/run_batch.py (same LLM client construction, same per-episode
 sidecars and --resume, same summary.json shape) and installs
 VerifiedToolExecutor in place of the runtime's ToolExecutor for the
-duration of the process. Nothing under runner/ or prime_runtime/ is
+duration of the process. Nothing under src/prime_agents/ or src/prime_runtime/ is
 edited. Each episode's verification events are written to
 <out>/_verify/<instance>.json and summarized into the episode record under
 "verification".
@@ -26,7 +26,7 @@ from typing import Any, Dict, List
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PILOT = os.path.dirname(os.path.dirname(HERE))
-for _p in (PILOT, os.path.join(PILOT, "runner"), HERE):
+for _p in (PILOT, os.path.join(PILOT, "src"), os.path.join(PILOT, "src", "prime_agents"), HERE):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
@@ -56,7 +56,7 @@ def main(argv=None) -> int:
     if not model:
         print("PRIME_LLM_MODEL is not set", file=sys.stderr)
         return 2
-    paths = sorted(glob.glob(os.path.join(PILOT, "bench", "instances_v2", a.domain, "heldout_text", "*.json")))
+    paths = sorted(glob.glob(os.path.join(PILOT, "data", "obligationbench", a.domain, "heldout_text", "*.json")))
     if a.instances:
         keep = set(a.instances)
         paths = [p for p in paths if os.path.splitext(os.path.basename(p))[0] in keep]

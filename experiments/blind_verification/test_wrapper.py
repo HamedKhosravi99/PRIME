@@ -15,7 +15,7 @@ import tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PILOT = os.path.dirname(os.path.dirname(HERE))
-for _p in (PILOT, os.path.join(PILOT, "runner"), HERE):
+for _p in (PILOT, os.path.join(PILOT, "src"), os.path.join(PILOT, "src", "prime_agents"), HERE):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
@@ -45,7 +45,7 @@ class FakeVerifier:
 
 def main() -> int:
     blind_verifier.check_frozen()
-    path = sorted(glob.glob(os.path.join(PILOT, "bench", "instances_v2", "security", "heldout_text", "*.json")))[0]
+    path = sorted(glob.glob(os.path.join(PILOT, "data", "obligationbench", "security", "heldout_text", "*.json")))[0]
     inst = load_instance(path)
     atom = next(a for a in inst.atoms if a.resolver.tool == "attest_atom")
     src = atom.hint["source"]

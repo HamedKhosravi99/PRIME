@@ -5,7 +5,7 @@ Sampling uses only registry ids: development-pool ids that the tracker lists,
 sorted, then drawn with seed 20261011. No tracker status is read here."""
 import csv, json, os, random, subprocess, sys, time
 HERE = os.path.dirname(os.path.abspath(__file__)); PILOT = os.path.dirname(os.path.dirname(HERE))
-EXT = os.path.join(PILOT, "bench", "fdaaa", "external")
+EXT = os.path.join(PILOT, "data", "fdaaa", "external")
 API = "https://clinicaltrials.gov/api/v2/studies/%s?format=json"
 OUT = os.path.join(HERE, "data", "validation_records")
 pool = set(json.load(open(os.path.join(EXT, "ctgov_v2_6000.json"))))

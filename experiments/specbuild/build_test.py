@@ -21,7 +21,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PILOT = os.environ.get("SPECBUILD_PILOT") or os.path.dirname(os.path.dirname(HERE))
-sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(PILOT, "bench", "fdaaa"))
+sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(PILOT, "src", "obligationbench", "construction", "fdaaa"))
 import common  # noqa: E402
 import build_fdaaa_instances as BA  # noqa: E402  (read-only import of the paper's builder)
 

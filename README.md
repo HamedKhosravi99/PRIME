@@ -6,21 +6,30 @@ PRIME fixes, before an LLM agent examines a case, which checks suffice for each 
 
 ## Contents
 
-| Path | What it is |
-|---|---|
-| `prime_runtime/` | the runtime: commitment, ledger, authorization, guidance, and the renderer; its tests are in `prime_runtime/tests/` |
-| `runner/` | the agents (the ReAct ladder, the comparators, the closest external systems, and PRIME) and the batch driver |
-| `bench/` | record fetchers, the task generators, the validator, and the tasks: `instances_v2/` (ObligationBench), `instances_fdaaa/` (the regulation set), and `instances/` (the hand-built tasks of the exploratory pilot) |
-| `bench/harvest/` | the harvested records of 2026-08-01 that the generators read, reduced to the fields they use (10 MB) |
-| `bench/artifacts/` | the sources the hand-built tasks read: open-source Python projects at pinned commits, arXiv titles and abstracts, and public records |
-| `analysis/` | the scripts that compute every table and quoted number, and the statistics (`stats_v5.py`) |
-| `figures/`, `paper/` | the scripts that draw the figures and write the LaTeX tables from `results/` |
-| `experiments/` | the regulation study (`specbuild/`, `fdaaa_heldout/`) and the verified-attestation runs (`blind_verification/`) |
-| `obligationbench.py` | a standard-library scorer: loads tasks, lets an agent read a record, scores its conclusions |
-| `reproduce_tables.py` | rebuilds the per-agent endpoints of the information-versus-enforcement comparison (Section 6.1, Table 1, Figure 3) from the logs and checks them against the paper |
-| `logs/prime-episode-logs.tar.gz` | every episode log behind the paper, and the JSON each analysis script writes (`results/`) |
-| `cluster/` | the SLURM scripts that served each model with vLLM and ran the agents |
-| `docs/` | `ANALYSIS_PLAN.md` (frozen before any confirmatory episode was scored), `EXECUTION_PLAN.md` (with the dated log of deviations, Part 6b), `GLOSSARY.md` (the code's names, run folders, and the paper's terms), `EXTSYS.md` (how the closest external systems were instantiated), `ENVIRONMENT.md` (the software and hardware of the runs), `KNOWN_ISSUES.md` |
+```
+src/                    code you import
+  prime_runtime/        the runtime: commitment, ledger, authorization, guidance, and the renderer
+  prime_agents/         the agents (the ReAct ladder, the comparators, the closest external systems, and PRIME) and the batch driver
+  obligationbench/      the standard-library scorer: loads tasks, lets an agent read a record, scores its conclusions; the task schema and validator
+    construction/       record fetchers, the harvest, the task generators, the corpus check, and the regulation-set builder (fdaaa/)
+data/                   everything shipped as data (see data/README.md and data/NOTICE.md)
+  obligationbench/      ObligationBench: 1,898 tasks in four domains and seven splits
+  fdaaa/                the regulation set (instances/) and its ClinicalTrials.gov snapshot (external/)
+  harvest/              the harvested records of 2026-08-01 that the generators read, reduced to the fields they use (10 MB)
+  pilot/                the hand-built tasks of the exploratory pilot (instances/) and the sources they read (artifacts/)
+  episode_logs/         every episode log behind the paper, and the JSON each analysis script writes
+experiments/            everything that turns the data into the paper's numbers
+  reproduce_tables.py   rebuilds the per-agent endpoints of Section 6.1 (Table 1, Figure 3) from the logs and checks them
+  analysis/             the scripts that compute every table and quoted number, and the statistics (stats_v5.py); pilot/ holds the Appendix G scripts
+  paper/                the scripts that draw the figures (into figures/) and write the LaTeX tables
+  specbuild/, fdaaa_heldout/   the regulation study
+  blind_verification/   the verified-attestation runs
+  slurm/                the SLURM scripts that served each model with vLLM and ran the agents
+tests/                  the conformance and regression tests (Table 4)
+docs/                   the frozen analysis and execution plans, the glossary, and the notes below
+```
+
+`docs/` holds `ANALYSIS_PLAN.md` (frozen before any confirmatory episode was scored), `EXECUTION_PLAN.md` (with the dated log of deviations, Part 6b), `GLOSSARY.md` (the code's names, run folders, and the paper's terms), `EXTSYS.md` (how the closest external systems were instantiated), `ENVIRONMENT.md` (the software and hardware of the runs), `KNOWN_ISSUES.md`, and `PATH_MAP.md`. The frozen plans, the episode logs, and the pilot tasks name files by the paths they had when they were written; `PATH_MAP.md` maps those to the current layout.
 
 ## Setup
 
@@ -28,8 +37,10 @@ Python 3.9 or later. The runtime, the scorer, the generators, and most analysis 
 
 ```bash
 pip install -r requirements.txt        # or: pip install -e ".[figures,dev]"
-make test                              # the runtime's tests
+make test                              # the tests
 ```
+
+Every script runs from a fresh checkout without installing anything: it puts `src/` on its own path. `pip install -e .` also makes `prime_runtime`, `prime_agents`, and `obligationbench` importable from anywhere; with it (or with `PYTHONPATH=src`), `python -m obligationbench score --tasks ... --predictions ...` runs the scorer.
 
 ## Reproducing the paper
 
@@ -38,21 +49,21 @@ Three levels, with different needs. `make` runs the first two.
 **1. Tables and figures from the logs (CPU, minutes; no model).** Extract the logs, then rebuild and check:
 
 ```bash
-make logs                              # extracts logs/prime-episode-logs.tar.gz into results/
-make tables                            # reproduce_tables.py, then every table regenerated and compared
+make logs                              # extracts data/episode_logs/prime-episode-logs.tar.gz into results/
+make tables                            # experiments/reproduce_tables.py, then every table regenerated and compared
 make figures                           # recomputes every plotted value and checks it against the paper
 make conformance                       # the standalone scorer against the runtime, on every task and episode
 ```
 
-`reproduce_tables.py` rebuilds each agent's predictions from its trace, using the stated conclusions and the record reads only. It scores them with `obligationbench.py` and checks false authorization, premature conclusions, supported utility, emission, and evidence value against the paper for 15 agents. It also accounts for every episode: an episode whose model calls still timed out after the client's retries carries no measurement and is left out of the rates. There are 24 such episodes, declared in the script, and the script fails if any other episode is missing. `analysis/episode_accounting.py` lists the failed episodes of every run.
+`experiments/reproduce_tables.py` rebuilds each agent's predictions from its trace, using the stated conclusions and the record reads only. It scores them with `src/obligationbench/` and checks false authorization, premature conclusions, supported utility, emission, and evidence value against the paper for 15 agents. It also accounts for every episode: an episode whose model calls still timed out after the client's retries carries no measurement and is left out of the rates. There are 24 such episodes, declared in the script, and the script fails if any other episode is missing. `experiments/analysis/episode_accounting.py` lists the failed episodes of every run.
 
 **2. The benchmark from its sources (CPU, seconds).**
 
 ```bash
-make corpus                            # python3 bench/reproduce_corpus.py
+make corpus                            # python3 src/obligationbench/construction/reproduce_corpus.py
 ```
 
-This regenerates all 1,898 tasks from `bench/harvest/` and compares each with the published file byte for byte: 938 primary, 240 one-branch, 480 locator-uncertain, and 240 text-evidence tasks. The generators are deterministic: their family enumeration uses pinned seed offsets (`bench/generate_record_instances.py`). `bench/reduce_harvest.py` documents how the shipped harvest was reduced from the full one, and `docs/KNOWN_ISSUES.md` gives the history. The regulation set is built by `bench/fdaaa/build_fdaaa_instances.py`; one of its inputs is a third-party table that is not included (see Data provenance).
+This regenerates all 1,898 tasks from `data/harvest/` and compares each with the published file byte for byte: 938 primary, 240 one-branch, 480 locator-uncertain, and 240 text-evidence tasks. The generators are deterministic: their family enumeration uses pinned seed offsets (`src/obligationbench/construction/generate_record_instances.py`). `src/obligationbench/construction/reduce_harvest.py` documents how the shipped harvest was reduced from the full one, and `docs/KNOWN_ISSUES.md` gives the history. The regulation set is built by `src/obligationbench/construction/fdaaa/build_fdaaa_instances.py`; one of its inputs is a third-party table that is not included (see Data provenance).
 
 **3. Rerunning the agents (GPU).** See Running an agent. Greedy decoding on a served model is close to deterministic but not exactly so, and `docs/KNOWN_ISSUES.md` lists the episodes in which the released runner's budget accounting differs from the logged runs; the 139 episodes it affected were rerun. Four cells were run afterwards with the corrected runner, as new cells rather than reruns: the fully informed agent on the locator-uncertain split at $b_{\min}$ for the three models (Table 9) and PRIME at $b_{\min}{+}1$ on that split with Qwen (Table 11); `results/new_cells.md` lists them.
 
@@ -62,30 +73,30 @@ Numbers in the paper are computed by the scripts below from the episode logs; ea
 
 | Paper item | Code | Output in `results/` |
 |---|---|---|
-| Table 1, information versus enforcement (Section 6.1) | `analysis/build_w2a_tables.py`; `reproduce_tables.py` checks every row | `tableT1.json`, `tableT2.json` |
-| Figure 2, utility by budget with named and with uncertain evidence fields (Section 6.2) | `paper/make_fig_budget.py`, which recomputes the curves with `analysis/build_w2a_tables.py` and `analysis/policy_frontier.py` | `tableLOC.json`, `tableLOC_extra.json`, `tableCOMPLETE.json`, `frontier_policies.json` |
-| Section 6.2: share of utility from the runtime's statement; live completion | `analysis/build_w2a_tables.py`, `analysis/build_complete_table.py` | `utility_attribution.json`, `tableCOMPLETE.json` |
-| Section 6.2: first-read accuracy per model | `analysis/locator_first_reads.py` | `locator_first_reads.json` |
-| Table 2, judging textual evidence (Section 6.3) | `analysis/build_text_table.py`; the verified condition: `experiments/blind_verification/` | `tableTEXT.json` |
-| Table 3, the closest control systems (Section 6.4) | `runner/extsys.py` and `runner/glean.py` (instantiations: `docs/EXTSYS.md`); `analysis/build_extsys_table.py`; `paper/make_tab_extsys.py` | `tableEXTSYS.json`, `glean/diagnostics_qwen2.5-32b_B20.json` |
-| Table 4, conformance tests (Appendix B) | `prime_runtime/tests/` | |
-| Table 6, atoms of the running example `sec-v2-0114` (Appendix C) | `bench/generate_record_instances.py` | |
-| Figure 3, the full information ladder (Appendix E.1) | `paper/make_appendix_figures.py`, through `figures/make_figures.py` | `tableT1.json`, `tableT2.json` |
-| Table 8, information versus enforcement with other models; sampled decoding (Appendix E.1) | `analysis/build_w2a_tables.py --models <tags>`; sampled decoding: `fill_SeedNote` in `analysis/fill_v2_tables.py` (reads the `w2seed` logs) | `tableT1.json`, `tableT2.json` |
-| Figure 4, guidance gain in each registered cell (Appendix E.2) | `figures/make_figures.py` | `tableT2.json` (`control_law`) |
-| Figure 5, after-the-fact filter (Appendix E.2) | `paper/make_appendix_figures.py` | `rejection_bound.json`, `frontier_policies.json`, `tableEXT.json` |
-| Appendix E.2, flat gate | `analysis/build_flat_table.py` | `tableFLAT.json` |
-| Table 9, information versus enforcement, guidance, and evidence location on three models (Appendix E.3) | `analysis/build_multimodel_table.py`; `paper/make_tab_multimodel.py` | `tableMULTI.json` (the fully informed agent's locator-split cell is a new cell, `results/new_cells.md`) |
-| Appendix E.3, live completion on the locator-uncertain split | `analysis/build_locator_table.py`, `analysis/build_locator_extra.py` | `tableLOC.json`, `tableLOC_extra.json` |
-| Table 10, the closest systems in full (Appendix E.5) | `analysis/build_extsys_table.py`; `paper/make_tab_extsys.py`; model calls of the PRIME runs and the fully informed agent: `analysis/model_calls.py`, which counts them from the traces (checked by `prime_runtime/tests/test_model_calls.py`) | `tableEXTSYS.json` |
-| Table 11, PRIME against HESP's controller (Appendix E.5) | `analysis/hesp_controller_runs.py` (`--split heldout_locator` for the right half), `analysis/build_controller_table.py`, `analysis/build_locator_hesp_table.py`, `analysis/discharge_replay.py --split locator` (completion replayed on the locator split); `paper/make_tab_extsys.py` | `tableCONTROLLER.json`, `tableLOC_HESP.json`, `discharge_replay_locator.json` |
-| Appendix E.5, utility crediting only established conclusions | `analysis/established_utility.py` | `established_utility_hesp.json` |
-| Appendix E.5, sensitivity of HESP's prior and threshold; stall cap | `analysis/hesp_prior_sensitivity.py`, `analysis/hesp_controller_runs.py --prior counted_lodo`, `analysis/stall_cap_replay.py` | `hesp_prior_sensitivity.json`, `hesp_tau_sensitivity.json`, `stall_cap_replay.json` |
+| Table 1, information versus enforcement (Section 6.1) | `experiments/analysis/build_w2a_tables.py`; `experiments/reproduce_tables.py` checks every row | `tableT1.json`, `tableT2.json` |
+| Figure 2, utility by budget with named and with uncertain evidence fields (Section 6.2) | `experiments/paper/make_fig_budget.py`, which recomputes the curves with `experiments/analysis/build_w2a_tables.py` and `experiments/analysis/policy_frontier.py` | `tableLOC.json`, `tableLOC_extra.json`, `tableCOMPLETE.json`, `frontier_policies.json` |
+| Section 6.2: share of utility from the runtime's statement; live completion | `experiments/analysis/build_w2a_tables.py`, `experiments/analysis/build_complete_table.py` | `utility_attribution.json`, `tableCOMPLETE.json` |
+| Section 6.2: first-read accuracy per model | `experiments/analysis/locator_first_reads.py` | `locator_first_reads.json` |
+| Table 2, judging textual evidence (Section 6.3) | `experiments/analysis/build_text_table.py`; the verified condition: `experiments/blind_verification/` | `tableTEXT.json` |
+| Table 3, the closest control systems (Section 6.4) | `src/prime_agents/extsys.py` and `src/prime_agents/glean.py` (instantiations: `docs/EXTSYS.md`); `experiments/analysis/build_extsys_table.py`; `experiments/paper/make_tab_extsys.py` | `tableEXTSYS.json`, `glean/diagnostics_qwen2.5-32b_B20.json` |
+| Table 4, conformance tests (Appendix B) | `tests/` | |
+| Table 6, atoms of the running example `sec-v2-0114` (Appendix C) | `src/obligationbench/construction/generate_record_instances.py` | |
+| Figure 3, the full information ladder (Appendix E.1) | `experiments/paper/make_appendix_figures.py`, through `experiments/paper/make_figures.py` | `tableT1.json`, `tableT2.json` |
+| Table 8, information versus enforcement with other models; sampled decoding (Appendix E.1) | `experiments/analysis/build_w2a_tables.py --models <tags>`; sampled decoding: `fill_SeedNote` in `experiments/analysis/fill_v2_tables.py` (reads the `w2seed` logs) | `tableT1.json`, `tableT2.json` |
+| Figure 4, guidance gain in each registered cell (Appendix E.2) | `experiments/paper/make_figures.py` | `tableT2.json` (`control_law`) |
+| Figure 5, after-the-fact filter (Appendix E.2) | `experiments/paper/make_appendix_figures.py` | `rejection_bound.json`, `frontier_policies.json`, `tableEXT.json` |
+| Appendix E.2, flat gate | `experiments/analysis/build_flat_table.py` | `tableFLAT.json` |
+| Table 9, information versus enforcement, guidance, and evidence location on three models (Appendix E.3) | `experiments/analysis/build_multimodel_table.py`; `experiments/paper/make_tab_multimodel.py` | `tableMULTI.json` (the fully informed agent's locator-split cell is a new cell, `results/new_cells.md`) |
+| Appendix E.3, live completion on the locator-uncertain split | `experiments/analysis/build_locator_table.py`, `experiments/analysis/build_locator_extra.py` | `tableLOC.json`, `tableLOC_extra.json` |
+| Table 10, the closest systems in full (Appendix E.5) | `experiments/analysis/build_extsys_table.py`; `experiments/paper/make_tab_extsys.py`; model calls of the PRIME runs and the fully informed agent: `experiments/analysis/model_calls.py`, which counts them from the traces (checked by `tests/test_model_calls.py`) | `tableEXTSYS.json` |
+| Table 11, PRIME against HESP's controller (Appendix E.5) | `experiments/analysis/hesp_controller_runs.py` (`--split heldout_locator` for the right half), `experiments/analysis/build_controller_table.py`, `experiments/analysis/build_locator_hesp_table.py`, `experiments/analysis/discharge_replay.py --split locator` (completion replayed on the locator split); `experiments/paper/make_tab_extsys.py` | `tableCONTROLLER.json`, `tableLOC_HESP.json`, `discharge_replay_locator.json` |
+| Appendix E.5, utility crediting only established conclusions | `experiments/analysis/established_utility.py` | `established_utility_hesp.json` |
+| Appendix E.5, sensitivity of HESP's prior and threshold; stall cap | `experiments/analysis/hesp_prior_sensitivity.py`, `experiments/analysis/hesp_controller_runs.py --prior counted_lodo`, `experiments/analysis/stall_cap_replay.py` | `hesp_prior_sensitivity.json`, `hesp_tau_sensitivity.json`, `stall_cap_replay.json` |
 | Tables 12 and 14, the regulation and the two construction workflows (Appendix F) | `experiments/specbuild/` (`create.py`, `validate.py`, `build_test.py`, `score_e2e.py`, `analyze_e2e.py`) | `experiments/specbuild/reported/e2e.json`, `analysis.json`; agent episodes in `results/specbuild_e2e/` |
-| Tables 13, 15, and 16, held-out attrition, the assistant-built program, and its confusion table (Appendix F) | `analysis/build_fdaaa_table.py`; `bench/fdaaa/` | `tableFDAAA.json`, `fdaaa_confusion.json` |
-| Table 17, the exploratory pilot on hand-built tasks (Appendix G) | `analysis/end_to_end_tables.py` | |
-| Family-level intervals and tests, everywhere | `analysis/stats_v5.py` | |
-| Episodes left out of the rates | `analysis/episode_accounting.py` | `excluded_episodes.json` |
+| Tables 13, 15, and 16, held-out attrition, the assistant-built program, and its confusion table (Appendix F) | `experiments/analysis/build_fdaaa_table.py`; `src/obligationbench/construction/fdaaa/` | `tableFDAAA.json`, `fdaaa_confusion.json` |
+| Table 17, the exploratory pilot on hand-built tasks (Appendix G) | `experiments/analysis/pilot/end_to_end_tables.py` | |
+| Family-level intervals and tests, everywhere | `experiments/analysis/stats_v5.py` | |
+| Episodes left out of the rates | `experiments/analysis/episode_accounting.py` | `excluded_episodes.json` |
 
 ## Running an agent
 
@@ -99,7 +110,7 @@ Then point the runner at it:
 
 ```bash
 export PRIME_LLM_BASE=http://127.0.0.1:8000/v1 PRIME_LLM_KEY=local
-python3 runner/run_batch.py --instances "bench/instances_v2/security/heldout_balanced/*.json" \
+python3 src/prime_agents/run_batch.py --instances "data/obligationbench/security/heldout_balanced/*.json" \
   --arm prime_guided --license-source gold --model Qwen/Qwen2.5-32B-Instruct \
   --max-tool-calls 20 --out results/mine/prime_guided__B20
 ```
@@ -109,26 +120,26 @@ python3 runner/run_batch.py --instances "bench/instances_v2/security/heldout_bal
 The arms of the paper are:
 - the information ladder of Section 6.1: `react`, `react_verify`, `react_spec`, `react_spec_verify`, `react_program`, `react_program_verify`, and `react_program_attested` (the fully informed agent);
 - PRIME: `masked_reactive_v` (PRIME without guidance), `prime_guided` (PRIME), and `prime_complete` (PRIME with completion);
-- the closest control systems of Section 6.4: `ext_agentspec`, `ext_agentspec_examine`, `ext_researchloop`, `ext_prooforstop`, `ext_hesp`, and GLEAN as an offline verifier (`runner/glean.py`).
+- the closest control systems of Section 6.4: `ext_agentspec`, `ext_agentspec_examine`, `ext_researchloop`, `ext_prooforstop`, `ext_hesp`, and GLEAN as an offline verifier (`src/prime_agents/glean.py`).
 
-The scripted policies run without a model through `runner/policies.py`.
+The scripted policies run without a model through `src/prime_agents/policies.py`.
 
 ## Data provenance
 
 The records come from public APIs and are turned into tasks as follows:
-- `bench/fetch_osv.py`, `bench/fetch_ctgov.py`, `bench/fetch_openfda.py`, and `bench/fetch_edgar.py` retrieve the records;
-- `bench/harvest_records.py` gathers them into the harvest;
-- `bench/generate_record_instances.py` and `bench/generate_text_instances.py` turn them into tasks.
+- `src/obligationbench/construction/fetch_osv.py`, `src/obligationbench/construction/fetch_ctgov.py`, `src/obligationbench/construction/fetch_openfda.py`, and `src/obligationbench/construction/fetch_edgar.py` retrieve the records;
+- `src/obligationbench/construction/harvest_records.py` gathers them into the harvest;
+- `src/obligationbench/construction/generate_record_instances.py` and `src/obligationbench/construction/generate_text_instances.py` turn them into tasks.
 
-Records change, so a new harvest yields a different corpus. The published tasks embed the snapshots retrieved on 1 August 2026, 3 August 2026 for the regulation set, and `bench/harvest/` holds the harvest they were generated from. The SEC requires a contact address in the User-Agent of every request; set `SEC_USER_AGENT` before running `fetch_edgar.py`.
+Records change, so a new harvest yields a different corpus. The published tasks embed the snapshots retrieved on 1 August 2026, 3 August 2026 for the regulation set, and `data/harvest/` holds the harvest they were generated from. The SEC requires a contact address in the User-Agent of every request; set `SEC_USER_AGENT` before running `fetch_edgar.py`.
 
-`bench/fdaaa/build_fdaaa_instances.py` reads two inputs:
+`src/obligationbench/construction/fdaaa/build_fdaaa_instances.py` reads two inputs:
 - a ClinicalTrials.gov snapshot, which is included;
 - the FDAAA TrialsTracker's trial table of 3 August 2026, which belongs to the Bennett Institute for Applied Data Science and is not included. The tracker publishes its current table at https://fdaaa.trialstracker.net.
 
-`bench/fdaaa/external/SHA256SUMS.txt` pins both.
+`data/fdaaa/external/SHA256SUMS.txt` pins both.
 
-The hand-built tasks read `bench/artifacts/`:
+The hand-built tasks read `data/pilot/artifacts/`:
 - open-source Python projects at pinned commits, redistributed under their own licenses (each project directory keeps its license file);
 - arXiv titles and abstracts, which arXiv releases under CC0;
 - public records from the same sources as the benchmark.
@@ -138,14 +149,14 @@ Each artifact's `PROVENANCE` file records where and when it was retrieved.
 ## Known issues
 
 `docs/KNOWN_ISSUES.md` lists where the released code differs from the code that produced the logs:
-- budget accounting after a repeated call: `analysis/budget_accounting_audit.py` found the 139 episodes whose outcome it could change, and all were rerun with the corrected runner (the originals ship in `results/superseded_by_rerun/`); the paper's numbers include the reruns; the four cells run afterwards used the corrected runner, and the audit checks them under its rule;
+- budget accounting after a repeated call: `experiments/analysis/budget_accounting_audit.py` found the 139 episodes whose outcome it could change, and all were rerun with the corrected runner (the originals ship in `results/superseded_by_rerun/`); the paper's numbers include the reruns; the four cells run afterwards used the corrected runner, and the audit checks them under its rule;
 - attestations refused before a read, which affects no logged episode.
 
 It also explains the excluded episodes, and says what the one-branch variant's family ids mean.
 
 ## License
 
-The code is released under the MIT License (`LICENSE`). The benchmark data are released under CC BY 4.0, and the records remain subject to their sources' terms (`NOTICE.md`).
+The code is released under the MIT License (`LICENSE`). The benchmark data are released under CC BY 4.0, and the records remain subject to their sources' terms (`data/NOTICE.md`).
 
 ## Citation
 

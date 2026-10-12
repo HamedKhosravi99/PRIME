@@ -20,20 +20,20 @@ jobs:
       - name: Lint (syntax errors and undefined names)
         run: ruff check --select E9,F63,F7,F82 .
       - name: Runtime tests
-        run: python -m pytest -q prime_runtime/tests
+        run: python -m pytest -q tests
       - name: Benchmark regenerates byte for byte
-        run: python bench/reproduce_corpus.py
+        run: python src/obligationbench/construction/reproduce_corpus.py
       - name: Tables from the logs
         run: |
-          tar -xzf logs/prime-episode-logs.tar.gz
-          python reproduce_tables.py
-          python analysis/regenerate_tables.py
+          tar -xzf data/episode_logs/prime-episode-logs.tar.gz
+          python experiments/reproduce_tables.py
+          python experiments/analysis/regenerate_tables.py
       - name: Conformance on the logged episodes
-        run: python -m pytest -q prime_runtime/tests/test_obligationbench_conformance.py
+        run: python -m pytest -q tests/test_obligationbench_conformance.py
       - name: Figures
         env:
           MPLBACKEND: Agg
         run: |
-          python figures/make_figures.py
-          python paper/make_fig_budget.py
-          python paper/make_appendix_figures.py
+          python experiments/paper/make_figures.py
+          python experiments/paper/make_fig_budget.py
+          python experiments/paper/make_appendix_figures.py

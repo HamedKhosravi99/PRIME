@@ -1,0 +1,62 @@
+#!/usr/bin/env python3
+"""Financial/SEC-XBRL domain (data/pilot/instances/fin/): guided-completion
+ablation Table C -- unguided-PRIME vs guided-PRIME (prime_guided arm,
+src/prime_runtime/guidance.py) at gold and induced license source, plus
+static_contract, oracle-scored, exactly the same scoring machinery as
+experiments/analysis/pilot/build_financial_table.py (this is an additive companion script,
+not a replacement -- results/tableC_financial.json is untouched).
+
+Writes:
+  results/tableC_guided_financial.json   ({"table": ..., "comparisons": ...})
+
+Usage: python3 experiments/analysis/pilot/build_tableC_guided_financial.py
+"""
+from __future__ import annotations
+
+import glob
+import json
+import os
+import sys
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+PILOT = os.path.dirname(os.path.dirname(os.path.dirname(HERE)))
+for _p in (PILOT, os.path.join(PILOT, "src"), HERE, os.path.dirname(HERE)):
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
+
+import end_to_end_tables as e2e  # noqa: E402
+import tableC_guided_common as g  # noqa: E402
+
+RESULTS = e2e.RESULTS
+BENCH_GLOB = os.path.join(PILOT, "data", "pilot", "instances", "fin", "*.json")
+MODELS = ["gpt-4.1", "gpt-4o-mini"]
+
+
+def main() -> int:
+    instance_paths = sorted(glob.glob(BENCH_GLOB))
+    print("Computing per-instance oracle ceilings for %d financial instances..." % len(instance_paths),
+          file=sys.stderr)
+    ceilings = e2e.compute_oracle_ceilings(instance_paths)
+
+    table, missing = g.build_guided_table_c(ceilings, MODELS, "financial")
+    comparisons = g.build_guided_comparisons(table, MODELS)
+
+    out = {"table": table, "comparisons": comparisons}
+    out_path = os.path.join(RESULTS, "tableC_guided_financial.json")
+    with open(out_path, "w", encoding="utf-8") as fh:
+        json.dump(out, fh, indent=2, sort_keys=True)
+
+    print("\n" + g.render_guided_markdown(table, MODELS, "Financial (SEC-XBRL)"))
+    print("\n## Financial domain: guided-completion pairwise comparisons\n")
+    print(g.render_comparisons_markdown(comparisons))
+
+    if missing:
+        print("\n# NOT RUN / missing (reported honestly, never fabricated):\n", file=sys.stderr)
+        for m in missing:
+            print("  - %s" % m, file=sys.stderr)
+    print("\nWrote %s" % out_path, file=sys.stderr)
+    return 1 if missing else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
