@@ -130,6 +130,7 @@ def main() -> int:
     for top in REPORTED:
         base = SOURCES[top]
         for dp, dn, fn in os.walk(base):
+            dn.sort()   # walk order differs between filesystems; the output must not
             if "summary.json" not in fn:
                 continue
             rel = os.path.join(top, os.path.relpath(dp, base))
@@ -178,8 +179,8 @@ def main() -> int:
                      "bound_points": round(100.0 * affected / denominator, 2),
                      "replay_count_mismatch": c["count_mismatch"],
                      "rerun": c["rerun"], "rerun_mismatch": c["rerun_mismatch"],
-                     "episodes_differ": c["episodes_differ"], "episodes_cap": c["episodes_cap"],
-                     "episodes_mismatch": c["episodes_mismatch"]})
+                     "episodes_differ": sorted(c["episodes_differ"]), "episodes_cap": sorted(c["episodes_cap"]),
+                     "episodes_mismatch": sorted(c["episodes_mismatch"])})
     out = {"rule": __doc__.split("\n\n")[1], "cells": rows,
            "totals": {k: sum(r[k] for r in rows) for k in ("n", "repeat", "differ", "cap", "affected",
                                                             "replay_count_mismatch", "rerun", "rerun_mismatch")}}
