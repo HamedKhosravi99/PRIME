@@ -4,8 +4,8 @@ Table C, mirroring the research-review domain's Table C in
 analysis/end_to_end_tables.py (build_research_table_c) -- SAME 9-config
 method list, SAME matched budget=20, SAME oracle-scoring machinery
 (prime_runtime/oracle.py oracle_authorization on emission-time evidence
-reconstructed from the trace, per Weakness 7: benchmark truth is F*, never
-PRIME's own routes) -- only the instance glob and the results-dir naming
+reconstructed from the trace: benchmark truth is F*, never PRIME's own
+routes) -- only the instance glob and the results-dir naming
 convention differ:
   results/<model>-financial/<arm>__<lsrc>/summary.json
 

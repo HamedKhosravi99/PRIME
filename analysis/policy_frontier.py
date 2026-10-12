@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Policy frontier and the R4 Q4 attribution, all LLM-free.
+"""Policy frontier and the ordering-vs-direction attribution
+(docs/EXECUTION_PLAN.md, Part R4, Q4), all LLM-free.
 
 Two things the confirmatory LLM runs cannot answer on their own:
 
@@ -10,11 +11,11 @@ Two things the confirmatory LLM runs cannot answer on their own:
      on this benchmark and the E2 null is a property of the instances rather
      than a failure to measure.
 
-  2. ORDERING vs DIRECTION (EXECUTION_PLAN R4 Q4, pre-committed to run
-     UPFRONT on all branching confirmatory instances). `masked_reactive_prefix`
-     is reactive with prefix-first ordering and no ceiling targeting;
-     `shortest_route` adds ceiling targeting. Their difference isolates
-     direction from ordering with no model in the loop.
+  2. ORDERING vs DIRECTION (docs/EXECUTION_PLAN.md, Part R4, Q4, pre-committed
+     to run UPFRONT on all branching confirmatory instances).
+     `masked_reactive_prefix` is reactive with prefix-first ordering and no
+     ceiling targeting; `shortest_route` adds ceiling targeting. Their
+     difference isolates direction from ordering with no model in the loop.
 
 Both are scripted or computed arms: real ToolExecutor calls and the real
 attested ledger, but action selection is deterministic code, so these numbers
@@ -117,7 +118,7 @@ def main(argv=None) -> int:
                       for k in ANCHORS)
         print("%-26s %s" % (LABEL[arm], row))
     print()
-    print("R4 Q4 attribution -- ordering vs direction")
+    print("attribution -- ordering vs direction")
     for k in ANCHORS:
         v = out["attribution"].get(k)
         if v:

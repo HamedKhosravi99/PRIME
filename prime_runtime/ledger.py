@@ -1,7 +1,7 @@
 """Attested four-valued evidence ledger.
 
-Implements PRIME-master.md SS5.4 (evidence ledger, ledger integrity T4) and
-SS9.3 (trusted base): the policy cannot write the ledger; ``Ledger.apply`` is
+Implements the evidence ledger and its integrity rule (the ledger is part of
+the trusted base): the policy cannot write the ledger; ``Ledger.apply`` is
 the ONLY mutation path and consumes attestations carrying tool provenance.
 
 State semantics
@@ -16,7 +16,7 @@ Each atom's state is derived from its *active* attestation records:
 
 A retraction is itself an attestation (``kind="retract"``, ``references`` =
 record id): repair operates on provenance-bearing attestations, never on the
-frozen constraints (master SS6.4, unsat cores over labeled assumptions).
+frozen constraints (unsat cores over labeled assumptions).
 """
 
 import copy
@@ -40,7 +40,7 @@ class Ledger:
             operate on a ledger alone.
 
     The only mutator is :meth:`apply`; there is no setter for atom states
-    (ledger-integrity condition T4).
+    (ledger-integrity condition).
     """
 
     def __init__(
@@ -92,7 +92,7 @@ class Ledger:
         return out
 
     def state(self, atom: str) -> str:
-        """Current four-valued state of ``atom`` (master SS5.4)."""
+        """Current four-valued state of ``atom``."""
         if atom not in self._atoms:
             raise LedgerError("unknown atom %r" % atom)
         values = {
@@ -113,12 +113,12 @@ class Ledger:
     def states(self) -> Dict[str, str]:
         return {a: self.state(a) for a in self._atoms}
 
-    # -- the single mutation path (T4) --------------------------------------
+    # -- the single mutation path (ledger integrity) -------------------------
 
     def apply(self, attestation: Mapping[str, Any]) -> int:
         """Apply one attestation; returns the new record id.
 
-        Regular attestation keys (SPEC.md): ``atom``, ``value`` ("T"|"F"),
+        Regular attestation keys: ``atom``, ``value`` ("T"|"F"),
         ``tool``, ``params``, ``output_digest``, ``step``.
 
         Retraction: ``kind="retract"``, ``references`` (record id to

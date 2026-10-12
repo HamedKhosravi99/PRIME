@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""W3 conservative induction stack (EXECUTION_PLAN v5, D8 / Plan-B
-Workstream B). Five components, all judge-free:
+"""W3 conservative induction stack. Five components, all judge-free:
 
   (a) STATE-LABEL-FIRST induction. For |E| small (record domains: 6-9
       atoms), enumerate the realizable evidence states, ask the model
@@ -313,7 +312,7 @@ def counterfactual_validate(instance: Instance, licenses: Dict[str, List[List[st
 def safe_merge(candidates: Sequence[Dict[str, List[List[str]]]]) -> Dict[str, List[List[str]]]:
     """Route-union merge: for each claim, take the UNION of literals of
     semantically corresponding routes (favoring over-specification over
-    dangerous missing conjuncts, Plan-B S13). Correspondence = route rank
+    dangerous missing conjuncts). Correspondence = route rank
     after sorting by (width, atoms)."""
     out: Dict[str, List[List[str]]] = {}
     claims = sorted({c for cand in candidates for c in cand})
@@ -343,8 +342,8 @@ def safe_merge(candidates: Sequence[Dict[str, List[List[str]]]]) -> Dict[str, Li
 def eligibility(instance: Instance, licenses: Dict[str, List[List[str]]],
                 lint: List[Dict[str, str]], cf: Dict[str, Any]) -> Dict[str, bool]:
     """A claim is guidance-eligible iff no lint finding and no counterfactual
-    failure names it (EXECUTION_PLAN D10: prime_guided_gated guides only
-    toward eligible claims)."""
+    failure names it (prime_guided_gated guides only toward eligible
+    claims)."""
     bad = {f.get("claim") for f in lint if f.get("claim")}
     bad |= {f.get("strong") for f in lint if f.get("lint") == "order_incoherent"}
     bad |= {f["claim"] for f in cf.get("necessity_failures", [])}

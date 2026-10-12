@@ -7,8 +7,8 @@ scaffold, pinned by test_conformal_and_scaffold.py) and reports, per
 (model, domain, arm), the across-variant range of episode OFAR and supported
 utility -- scored exactly like every other arm, against verified gold values.
 
-The point: review held that adapter/prompt choices of ours would confound a
-mechanism comparison. This measures how much those choices move the numbers.
+The point: adapter/prompt choices of ours could confound a mechanism
+comparison. This measures how much those choices move the numbers.
 
 Writes results/scaffold_sensitivity.json.
 Usage: python3 analysis/build_scaffold_sensitivity.py --models qwen2.5-32b

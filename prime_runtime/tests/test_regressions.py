@@ -1,7 +1,7 @@
-"""The five regression tests pinned by SPEC.md SSRuntime API.
+"""The five pinned runtime regression tests.
 
-R1-R3 are the recorded counterexamples to the failed absorption shortcuts
-(PRIME-master.md SS9.3); plus the fail-closed explosion test and the
+R1-R3 are the recorded counterexamples to the failed absorption shortcuts;
+plus the fail-closed explosion test and the
 completion-metric-scores-1-on-complete test.
 """
 
@@ -75,7 +75,7 @@ def test_fail_closed_explosion_authorizes_nothing():
 
 
 def test_completion_scores_one_on_complete_route():
-    """Completion-metric test (master SS11.5): a completed route scores
+    """Completion-metric test: a completed route scores
     exactly 1 — frontier eligibility is only for action selection, and the
     empty route is trivially complete (no division by zero)."""
     p = _program({"C": [["a", "b"]]}, atoms=("a", "b", "c"))

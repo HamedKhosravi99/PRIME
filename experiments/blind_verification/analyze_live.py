@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Score and analyze the live blind-verification run against the original
 PRIME logs (results/w2text, historical baseline) and the offline replay
-(pilot/experiments/risk_aware_prime/results/stage_c_replay.json).
+(experiments/risk_aware_prime/results/stage_c_replay.json, from the
+risk-aware study, which is not part of this package).
 
 Scoring is the paper's (analysis/build_w2a_tables.score, restated in the
 risk-aware study's common.score): false authorization if any emitted

@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 """Generate ObligationBench instances whose contract we did not author.
 
-Every other family in this benchmark has the same weakness, and three
-independent reviewers named it in three different ways: we wrote the claim
-schema, we wrote the gold licences, we wrote the oracle, and we broke the
-records so that the false-authorization endpoint would be identifiable at
-all. Nothing in the paper touches anything external.
+Every other family in this benchmark has the same weakness: we wrote the
+claim schema, we wrote the gold licences, we wrote the oracle, and we broke
+the records so that the false-authorization endpoint would be identifiable
+at all. Nothing in the paper touches anything external.
 
 This family fixes that at the only place it can be fixed -- the contract.
 

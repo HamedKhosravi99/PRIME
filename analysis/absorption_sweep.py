@@ -57,7 +57,7 @@ def program_of(inst):
 
 
 def candidate_revisions(prog, cid, routes):
-    """The revision kinds the runtime must decide, per master SS9.3."""
+    """The revision kinds the runtime must decide."""
     out = []
     all_atoms = list(prog.atoms)
     for r in routes:

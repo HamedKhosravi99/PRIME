@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Measure the DEPLOYMENT-AVAILABLE refinement signal space -- the review
-question behind the oracle-supervised refinement upper bound.
+"""Measure the DEPLOYMENT-AVAILABLE refinement signal space -- the question
+behind the oracle-supervised refinement upper bound.
 
 The oracle-supervised CEGIS loop consumes exact ground-truth counterexamples
 from the authored support oracle F* -- an object a genuinely unseen task

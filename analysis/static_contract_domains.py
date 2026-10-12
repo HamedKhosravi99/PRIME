@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """Where an authored static contract beats the full apparatus.
 
-A reviewer asked for this in the main text, and was right to: "if a
-hand-written contract matches the learned-and-committed program at equal
-safety in half the domains, the case for the machinery is much weaker than
-Section 6 implies, and this belongs in the main text, not Appendix J."
+If a hand-written contract matches the learned-and-committed program at
+equal safety in half the domains, the case for the machinery is weaker, and
+that conclusion belongs in the main text, not only in an appendix table.
 
 The paper already prints the per-domain table in the appendix. What it did not
 do is state the conclusion in the body. This computes it from the episode

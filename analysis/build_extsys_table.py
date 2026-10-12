@@ -4,13 +4,13 @@
 The five arms in runner/extsys.py reimplement the decision procedures of
 AgentSpec, ResearchLoop, Proof-or-Stop, HESP, and GLEAN and run them on the
 480 balanced held-out tasks with the same model, tools, resolvers, budget
-accounting and scorer as PRIME (runner/EXTSYS.md documents each
+accounting and scorer as PRIME (runner/extsys.py documents each
 instantiation). This script scores every arm with the paper's endpoints and
 compares each system with PRIME on paired tasks:
 
   false authorization  a stated conclusion the record does not support
   premature            a stated conclusion the system's own reads did not
-                       establish (release/obligationbench.py)
+                       establish (obligationbench.py)
   utility              supported utility (level of the strongest supported
                        stated conclusion / 3 x 100)
   emit                 share of answerable tasks with a stated conclusion

@@ -2,15 +2,15 @@
 """How much of the evaluation standard is actually LEARNED? -- the
 vocabulary-condition experiment.
 
-Review raised the central objection that PRIME's "learned standard" is
-closer to *learned Boolean support logic over an authored vocabulary* than
-to learning an evaluation standard from an open-ended request, because the
+PRIME's "learned standard" may be closer to *learned Boolean support logic
+over an authored vocabulary* than to learning an evaluation standard from an
+open-ended request, because the
 induction policy is handed the claim-ID set, the claim order, the
 evidence-atom vocabulary, the resolver types, and the action schema -- and
 those supplied objects encode much of the hard domain knowledge (what to
 evaluate, what may be claimed, what counts as evidence, what is in scope).
 
-This script measures that objection instead of arguing with it, by running
+This script measures that concern instead of arguing with it, by running
 license induction under three nested conditions and scoring all of them with
 the same executable oracle (no human or LLM judge anywhere):
 
@@ -30,7 +30,7 @@ the same executable oracle (no human or LLM judge anywhere):
               (including each atom's resolver tool and params), AND the
               routes. Nothing about what to evaluate is supplied.
 
-V2 is the condition the objection actually asks about. Its headline metric
+V2 is the condition the concern actually asks about. Its headline metric
 is deliberately the harshest available judge-free one:
 
   gold_atom_coverage -- of the evidence atoms the benchmark authors deemed

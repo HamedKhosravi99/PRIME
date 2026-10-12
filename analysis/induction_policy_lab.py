@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """Score an induced claim--evidence program without spending a GPU.
 
-WHY THIS EXISTS. Three review panels said the same thing takes this paper to
-a 7: an induction procedure whose committed programs keep meaningful utility
-at near-zero false authorization. Today induction gives OFAR-A 5.5 at utility
-16.0 against the authored program's 0.0 at 45.5. Searching for a better
-induction procedure by re-running episodes costs GPU-hours per candidate,
-which is why only one procedure was ever tried.
+WHY THIS EXISTS. The missing piece is an induction procedure whose committed
+programs keep meaningful utility at near-zero false authorization. Today
+induction gives OFAR-A 5.5 at utility 16.0 against the authored program's 0.0
+at 45.5. Searching for a better induction procedure by re-running episodes
+costs GPU-hours per candidate, which is why only one procedure was ever tried.
 
 The search does not need episodes. A committed program is enforced by a
 deterministic mask over an attested ledger, so given the program and the

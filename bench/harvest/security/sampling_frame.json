@@ -1,0 +1,10 @@
+{
+  "inclusion_rule": "has affected[] and summary/details",
+  "n_available": 24635,
+  "n_retained": 1200,
+  "retrieved_at": "2026-08-01T04:47:36.079301+00:00",
+  "sampling": "lexicographic prefix (deterministic)",
+  "source_population": "OSV PyPI ecosystem bulk zip (all advisories)",
+  "url": "https://osv-vulnerabilities.storage.googleapis.com/PyPI/all.zip",
+  "zip_sha256": "f9f53e194e34693823af87fbdb959ebfd3eb3565828813997e8cbffa20e5aaa5"
+}

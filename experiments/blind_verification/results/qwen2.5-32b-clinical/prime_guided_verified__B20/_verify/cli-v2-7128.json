@@ -6,13 +6,13 @@
    "atom": "E2",
    "attested": "T",
    "quote": "50 through 80 years of age",
-   "verdict": "F",
+   "verdict": "UNCLEAR",
    "agree": false,
    "invoked": true,
    "prompt_tokens": 806,
-   "completion_tokens": 44,
-   "latency_s": 3.304,
-   "raw": "The document specifies inclusion criteria for ages starting at 40 years old, which means it does not restrict enrollment exclusively to adults aged 18 or more but rather sets a higher minimum age. ANSWER: F"
+   "completion_tokens": 45,
+   "latency_s": 2.616,
+   "raw": "The document specifies inclusion criteria for ages starting at 40 years old, which means it does not restrict enrollment exclusively to adults aged 18 or more but rather sets a higher minimum age. ANSWER: UNCLEAR"
   }
  ]
 }

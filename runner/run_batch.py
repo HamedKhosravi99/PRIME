@@ -1,17 +1,23 @@
-"""Batch experiment runner for the PRIME pilot (SPEC.md SSRunner).
+"""Batch driver: run one arm over a set of benchmark instances.
 
-Usage:
-    python3 pilot/runner/run_batch.py --instances 'pilot/bench/instances/swe/*.json' \
+For every instance matched by ``--instances``, runs one episode of ``--arm``
+(runner/run_episode.py) and scores its emissions against the reconstructed
+gold ledger. Writes to ``--out`` (default
+``results/<arm>__<license-source>__<model>/``) one ``<instance>.jsonl`` trace
+per episode plus a ``summary.json`` with per-episode emitted claims and
+emission steps, CompleteAuth_gold per emission, tool calls, and tokens.
+
+Usage (from the package root):
+    python3 runner/run_batch.py --instances 'bench/instances/swe/*.json' \
         --arm prime --license-source gold --model gpt-4o-mini --parallel 4
 
-    python3 pilot/runner/run_batch.py --dry-run --arm prime --license-source gold
-
-Writes ``results/<arm>__<license-source>__<model>/<instance>.jsonl`` traces
-plus a ``summary.json`` with per-episode emitted claims and emission steps,
-CompleteAuth_gold per emission, tool calls, and tokens.
+    python3 runner/run_batch.py --dry-run --arm prime --license-source gold
 
 ``--dry-run`` runs the full loop with a scripted deterministic fake LLM
-(no API calls) on the fixture instance by default.
+(no API calls) on the fixture instance unless ``--instances`` is given.
+``--budget-anchor`` derives per-instance budgets from the committed program
+(see ``instance_budget``); ``--resume`` skips episodes whose sidecar in
+``<out>/_episodes/`` recorded no error.
 """
 
 import argparse
@@ -56,7 +62,7 @@ def _make_llm(instance_path: str, args: argparse.Namespace):
 
 
 def instance_budget(path: str, anchor: str, fixed: int) -> int:
-    """Spec-only per-instance budget anchors (FREEZE.md F4).
+    """Spec-only per-instance budget anchors (docs/ANALYSIS_PLAN.md, F4).
 
     Shared by run_batch and runner/policies.py so the LLM arms and the
     scripted/computed policy arms are budgeted by IDENTICAL code. They were
@@ -115,7 +121,7 @@ def main(argv: List[str] = None) -> int:
         default="fixed",
         choices=("fixed", "strengthen_only", "unfrozen_lattice", "arbitrary", "posthoc"),
         help="revision-freedom ablation mode (prime arm only; 'fixed' is the "
-        "deployed full-freeze default — master SS12.3 mechanism curve 4)",
+        "deployed full-freeze default)",
     )
     parser.add_argument("--model", default=os.environ.get("PRIME_LLM_MODEL", "gpt-4o-mini"))
     parser.add_argument("--parallel", type=int, default=1)
@@ -132,7 +138,7 @@ def main(argv: List[str] = None) -> int:
     parser.add_argument(
         "--budget-anchor", default="fixed",
         choices=("fixed", "bmin", "bmin1", "2bmin"),
-        help="v5 spec-only per-instance budgets (FREEZE.md F4): bmin = min "
+        help="v5 spec-only per-instance budgets (docs/ANALYSIS_PLAN.md, F4): bmin = min "
         "call-class cost over the committed gold program's routes to the "
         "strongest schema claim, computed from the program alone (never "
         "gold-aware); bmin1 = bmin+1; 2bmin = 2*bmin. 'fixed' uses "
@@ -186,8 +192,8 @@ def main(argv: List[str] = None) -> int:
     out_dir = args.out or os.path.join(_PILOT, "results", run_id)
     os.makedirs(out_dir, exist_ok=True)
 
-    # Per-episode sidecars: written as each episode finishes so a preempted
-    # job (<qos> QOS) can be resubmitted with --resume and only re-run what
+    # Per-episode sidecars: written as each episode finishes so a preempted job
+    # (preemptible queue) can be resubmitted with --resume and only re-run what
     # is actually missing. summary.json is still written whole at the end and
     # remains the single artifact analysis/ reads.
     ep_dir = os.path.join(out_dir, "_episodes")

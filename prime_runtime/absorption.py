@@ -1,7 +1,7 @@
-"""Exact robust route absorption checker (PRIME-master.md SS9.3).
+"""Exact robust route absorption checker.
 
 Certifies trusted between-episode patches and grounds the revision-freedom
-ablation arms — it is NOT a policy action (full in-episode freeze, SS7.2).
+ablation arms — it is NOT a policy action (full in-episode freeze).
 
 Contract: a revised route p' attached to claim c preserves robust committed
 refinement (P' ⊑_rob P_0) iff some route q in the absorption family
@@ -22,7 +22,7 @@ by the recorded counterexamples (kept as regression tests R1/R2/R3):
         under some Deltas, rejected by the robust (all conflict masks)
         contract.
 
-Runtime enforcement rules (master SS9.3): new claims / order extensions are
+Runtime enforcement rules: new claims / order extensions are
 freeze violations; unrealizable revised routes are rejected as ill-formed;
 route deletion is always accepted; literal addition is auto-accepted (the
 original route witnesses absorption); literal removal or route addition must
@@ -69,7 +69,7 @@ def check_patch(
 
     ``phi`` (optional): forbidden determined-value patterns over P_0's atom
     vocabulary; when supplied, unrealizable revised routes are rejected as
-    ill-formed (master SS9.3).
+    ill-formed.
     """
     P0 = _as_program(p0)
     Pn = _as_program(p_new)

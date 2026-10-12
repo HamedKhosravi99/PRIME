@@ -1,0 +1,9 @@
+{
+  "inclusion_rule": "has nctId and overallStatus",
+  "n_retained": 1200,
+  "n_seen": 1200,
+  "retrieved_at": "2026-08-01T04:47:40.975255+00:00",
+  "sampling": "API default order, first pages (deterministic at retrieval time)",
+  "source_population": "ClinicalTrials.gov API v2 default ordering",
+  "url": "https://clinicaltrials.gov/api/v2/studies?pageSize=1000&format=json"
+}

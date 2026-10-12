@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Table B IMPROVEMENT experiment (Task B): two judge-free methods that try
+"""Table B IMPROVEMENT experiment: two judge-free methods that try
 to raise route precision / lower AuthFP beyond the de-confounded ceiling
 measured by ``analysis/induction_table_b.py``.
 
@@ -9,10 +9,10 @@ Boolean support predicate F* -- see that module's docstring). Every number
 here comes from a completed run against real instances; nothing is
 fabricated.
 
-Method 1 -- oracle-guided iterative refinement (Task B #3)
-------------------------------------------------------------
+Method 1 -- oracle-guided iterative refinement
+----------------------------------------------
 Induce once (``runner.arms.induce_program``, unmodified); canonicalize the
-result (memo §3.2, reusing ``induction_table_b.canonicalize_program``);
+result (reusing ``induction_table_b.canonicalize_program``);
 evaluate it against F* with ``prime_runtime.oracle.auth_fp``/``auth_fn``
 (exact enumeration over Omega_Phi -- the SAME oracle Table B scores every
 program against); turn every flagged evidence state into one concrete,
@@ -29,8 +29,8 @@ oracle disagreements at specific evidence states (the same kind of
 "compiler-error-style feedback" ``induce_program`` already uses for schema
 validity -- this generalizes that idea to *semantic* validity against F*).
 
-Method 2 -- self-consistency majority vote (Task B #4)
-----------------------------------------------------------
+Method 2 -- self-consistency majority vote
+------------------------------------------
 Reuses the N (>=5) independent temp=0 draws already collected by
 ``induction_table_b.py --draws N`` (pass that run's JSON via
 ``--self-consistency-from``) -- no extra API calls, no extra assumptions.
@@ -85,7 +85,7 @@ def _facts_str(facts: Mapping[str, str], atom_order: Sequence[str]) -> str:
 def build_oracle_critique(
     inst, oracle, ind_canonical: CanonicalFamily, max_examples: int = MAX_EXAMPLES_PER_CLAIM
 ) -> Tuple[str, int, int]:
-    """Deterministic, judge-free critique (Task B #3): every line is derived
+    """Deterministic, judge-free critique (Method 1): every line is derived
     directly from ``prime_runtime.oracle.auth_fp``/``auth_fn``'s
     ``flagged_states`` -- no LLM and no human ever reads the induced program
     to produce this text. Returns ``(critique_text, n_over, n_under)``;
@@ -188,7 +188,7 @@ def _propose_revision(
 
 
 def refine_instance(inst, llm, oracle, K: int = 3, max_examples: int = MAX_EXAMPLES_PER_CLAIM) -> Dict[str, Any]:
-    """One (model, instance) oracle-guided refinement run (Task B #3):
+    """One (model, instance) oracle-guided refinement run (Method 1):
     induce -> {evaluate against F*, critique, re-induce} x up to K rounds.
     Returns before/after ``induction_table_b.score_instance``-shaped
     records plus round bookkeeping."""
@@ -246,7 +246,7 @@ def run_refinement(model: str, paths: Sequence[str], args) -> Dict[str, Any]:
             b["error"] = a["error"] = ""
         else:
             # Induction never produced a schema-valid starting program: score
-            # as abstention (§3.9), identically for "before" and "after" --
+            # as abstention, identically for "before" and "after" --
             # there is nothing to refine. Mirrors Table B's own invalid-draw path.
             empty = itb.score_instance(inst, oracle, None, False)
             b, a = dict(empty), dict(empty)
@@ -287,7 +287,7 @@ def majority_vote_canonical(
     per_draw_licenses: Sequence[Optional[Mapping[str, Sequence[Sequence[str]]]]],
     claim_ids: Sequence[str],
 ) -> Tuple[Dict[str, Tuple[FrozenSet[str], ...]], int]:
-    """Task B #4: keep a claim's route iff it appears, as an EXACT canonical
+    """Method 2: keep a claim's route iff it appears, as an EXACT canonical
     route, in >= ceil(N/2) of the N draws. ``per_draw_licenses[i]`` is None
     (or falsy) for an invalid draw -- contributes zero votes for any route,
     the same abstention convention used throughout Table B."""
@@ -375,7 +375,7 @@ def main() -> int:
     ap.add_argument(
         "--self-consistency-from", default=None,
         help="path to a Table B --draws N (N>=2) temp=0 JSON to run self-consistency "
-        "majority voting against (Task B #4); omit to skip that method",
+        "majority voting against; omit to skip that method",
     )
     ap.add_argument("--openai-base", default=os.environ.get("PRIME_OPENAI_BASE", itb.OPENAI_BASE))
     ap.add_argument("--openai-key", default=os.environ.get("OPENAI_API_KEY", ""))

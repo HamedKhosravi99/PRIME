@@ -1,8 +1,7 @@
-"""Specification/evidence split and hash-gated commitment (Weakness 4, paper
-§4.2-§4.7: "Before evidence" is not formally defined strongly enough).
+"""Specification/evidence split and hash-gated commitment.
 
-Reviewer objection addressed
------------------------------
+Why this exists
+---------------
 An agent that sees outcome-bearing artifact content (test results, CI logs,
 paper tables, funding-eligibility values, ...) before it freezes its
 license program could tailor the "standard" to the observed result -- the
@@ -24,7 +23,7 @@ a prose claim, by:
 4. providing an **audit** helper that checks a logged episode trace never
    invoked an evidence action before the commit record appears in it.
 
-Formal statement (§4.5, Commitment-View Noninterference)
+Formal statement (Commitment-View Noninterference)
 ----------------------------------------------------------
 Let two task instances ``x`` and ``x'`` share the same specification view
 (``spec_manifest(x) == spec_manifest(x')``) but differ in hidden evidence.
@@ -38,11 +37,10 @@ The proof is by the capability/input boundary, not by any semantic argument
 about what the policy "would" do: hidden evidence is simply not an argument
 to ``P0``, and no evidence tool is invocable before commitment
 (:class:`CommitmentGate` makes this executable). See
-``pilot/prime_runtime/COMMITMENT_REPORT.md`` for the full statement/proof
-and ``pilot/analysis/noninterference_audit.py`` (Experiment I1) for the
-empirical audit that exercises exactly this boundary.
+``analysis/noninterference_audit.py`` (Experiment I1) for the empirical
+audit that exercises exactly this boundary.
 
-Strict vs artifact-aware modes (§4.7)
+Strict vs artifact-aware modes
 --------------------------------------
 Two modes are distinguished explicitly (never conflated):
 
@@ -98,10 +96,10 @@ __all__ = [
 
 SPEC_MANIFEST_VERSION = 1
 
-# Documentation-grade manifests of what IS / IS NOT permitted pre-commit
-# (paper §4.3). These constants are not consulted programmatically by
+# Documentation-grade manifests of what IS / IS NOT permitted pre-commit.
+# These constants are not consulted programmatically by
 # spec_manifest() (its field selection below is authoritative and hand
-# audited against this list) -- they exist so a reviewer or test can check
+# audited against this list) -- they exist so a reader or test can check
 # the implementation against the prose contract line by line.
 PERMITTED_MANIFEST_FIELDS = (
     "repository identifier (artifact.path)",
@@ -124,7 +122,7 @@ EXCLUDED_EVIDENCE_FIELDS = (
     "atom.proposition (in this benchmark's authoring convention this field "
     "is frequently written in outcome-revealing prose, e.g. '... exits 0 "
     "(668 passed, 3 skipped)' or '... the adjudication is that none does'; "
-    "excluding it is load-bearing, not incidental -- see COMMITMENT_REPORT.md)",
+    "excluding it is load-bearing, not incidental)",
     "instance.gold_licenses (the answer key)",
     "instance.decoys (knowing an action is a decoy already reveals which "
     "atoms matter)",
@@ -148,7 +146,7 @@ DEFAULT_EVIDENCE_ACTIONS: Tuple[str, ...] = (
 
 
 class CommitmentMode:
-    """Strict vs artifact-aware commitment modes (§4.7) -- flagged, never
+    """Strict vs artifact-aware commitment modes -- flagged, never
     conflated. Every :class:`CommitmentGate` instance is constructed with
     exactly one of these; the mode is carried into every commit record so
     downstream analysis can never silently mix the two guarantees."""
@@ -160,7 +158,7 @@ class CommitmentMode:
 
 class PreCommitEvidenceError(RuntimeError):
     """Raised when an evidence-producing resolver/tool is invoked before the
-    commitment hash ``h0`` has been recorded (§4.4 capability boundary).
+    commitment hash ``h0`` has been recorded (capability boundary).
 
     This is a CAPABILITY failure, not a policy-compliance check: under
     strict mode, :class:`CommitmentGate` makes the call itself
@@ -170,7 +168,7 @@ class PreCommitEvidenceError(RuntimeError):
 
 
 # ---------------------------------------------------------------------------
-# Specification view S_x (§4.2, §4.3)
+# Specification view S_x
 # ---------------------------------------------------------------------------
 
 
@@ -198,7 +196,7 @@ def _resolver_manifest(atom: Atom) -> Dict[str, Any]:
 
 
 def spec_manifest(instance: Instance) -> Dict[str, Any]:
-    """Build the STRICT specification view ``S_x`` (§4.2/§4.3).
+    """Build the STRICT specification view ``S_x``.
 
     Includes ONLY fields declared permissible before program commitment:
     repository identity, pinned commit hash, domain/ecosystem labels, the
@@ -279,7 +277,7 @@ def _dedup_routes(routes: Sequence[Sequence[str]]) -> List[List[str]]:
 
 def canonicalize_program(program: Program) -> Dict[str, Any]:
     """Canonical, JSON-serializable form of a committed :class:`Program`
-    (Weakness 3 §3.2 canonicalization, lexical variant): claims sorted by
+    (lexical canonicalization): claims sorted by
     id; order edges sorted; per claim, routes de-duplicated (as literal
     sets) and sorted lexically. This is enough for byte-stable hashing and
     exact-match testing; it is deliberately NOT a semantic (Phi-modulo)
@@ -313,7 +311,7 @@ def commit_program(
     manifest_hash: str = "",
     step: int = 0,
 ) -> Dict[str, Any]:
-    """Freeze ``program`` and produce its commitment record (§4.4 steps 1-3).
+    """Freeze ``program`` and produce its commitment record.
 
     Parameters
     ----------
@@ -355,13 +353,13 @@ def verify_commitment(record: Mapping[str, Any], program: Program) -> bool:
 
 
 # ---------------------------------------------------------------------------
-# Enforceable capability boundary (§4.4)
+# Enforceable capability boundary
 # ---------------------------------------------------------------------------
 
 
 class CommitmentGate:
     """Runtime enforcement of the ``A_commit`` / ``A_episode`` capability
-    split (§4.4).
+    split.
 
     Before :meth:`commit` (equivalently :meth:`record_commitment`) is
     called, :meth:`evidence_resolver` raises :class:`PreCommitEvidenceError`
@@ -373,7 +371,7 @@ class CommitmentGate:
 
     In :data:`CommitmentMode.ARTIFACT_AWARE` mode, evidence access is
     permitted before commitment (the weaker freeze-after-inspection
-    guarantee, §4.7) -- but re-commitment is still forbidden after the
+    guarantee) -- but re-commitment is still forbidden after the
     first :meth:`commit` call, and the mode is stamped into every event so
     strict- and artifact-aware-mode runs are never silently pooled.
     """
@@ -452,7 +450,7 @@ class CommitmentGate:
             self._log({"type": "violation", "resolver": name, "step": step})
             raise PreCommitEvidenceError(
                 "evidence resolver %r invoked before the commitment hash h0 "
-                "was recorded (strict-mode capability boundary, paper §4.4)"
+                "was recorded (strict-mode capability boundary)"
                 % (name,)
             )
         self._log({"type": "evidence_access", "resolver": name, "step": step,

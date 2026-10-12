@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Protocol pair F*_A / F*_B for the v2 benchmark (EXECUTION_PLAN v5,
-Part R4 GPT-Q1 resolution).
+"""Protocol pair F*_A / F*_B for the v2 benchmark (docs/EXECUTION_PLAN.md,
+Part R4, Q1).
 
 F*_A  = the generated gold licenses (the authored protocol).
 F*_B  = the MECHANICAL conjunctive collapse of A: per claim, one route =
@@ -13,7 +13,7 @@ retired -- it reduces to OFAR-A):
   OFAR-A, OFAR-B, protocol disagreement rate, protocol sensitivity
   (OFAR_B - OFAR_A), content-false (from claim denotations).
 
-Realizability gate (GPT Q1): Phi AND p_B must be satisfiable. For the v2
+Realizability gate (Part R4, Q1): Phi AND p_B must be satisfiable. For the v2
 instance class (positive literals, phi = ()), unsatisfiability can only
 arise from complementary literals or a phi forbid-pattern matched by the
 forced assignment; both are checked mechanically. An unrealizable collapsed
@@ -22,8 +22,8 @@ claim-rejecting).
 
 Freezing: this script canonicalizes and hashes both protocols over a split
 and writes results/protocols_v2.json. The held-out hashes are recorded in
-paper/FREEZE.md BEFORE any model output on held-out v2 instances is
-inspected (the honest scope per G10).
+docs/ANALYSIS_PLAN.md BEFORE any model output on held-out v2 instances is
+inspected.
 
 Usage: python3 analysis/protocols_v2.py [--splits heldout_balanced heldout_natural dev val]
 """

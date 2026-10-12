@@ -1,6 +1,5 @@
-"""Task #5 (the design notes,
-Weakness 1 SS1.3 E1 methods list): the four new arms added to runner/arms.py
--- reflexion, cove, static_contract, prime_nonminimal -- share the same tool
+"""The four additional baseline arms in runner/arms.py -- reflexion, cove,
+static_contract, prime_nonminimal -- share the same tool
 loop and 20-tool-call budget as the original four; these tests pin their
 mechanics deterministically (scripted LLM, no API calls)."""
 

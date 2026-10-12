@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fetch REAL vulnerability advisory records from the OSV API (security/OSV
-domain; see prime_runtime/RECORD_ORACLE_REPORT.md SS6 for the field-mapping
-blueprint this fetcher's output is authored against). No auth needed.
+domain; the predicate grammar the records are read with is in
+prime_runtime/predicates.py). No auth needed.
 
     python3 bench/fetch_osv.py <vuln_id> [<vuln_id> ...] [--nvd]
 
@@ -25,8 +25,8 @@ other id the OSV API recognizes -- PYSEC-..., RUSTSEC-..., etc.):
   3. Appends one line to bench/artifacts/osv/PROVENANCE recording the id,
      source URL, HTTP status, and UTC retrieval timestamp for every fetch
      (OSV and, when requested, NVD) -- so every embedded record's origin is
-     independently auditable, per AUTHORING.md's "never assert a fact you
-     did not observe" rule.
+     independently auditable, per the authoring rule "never assert a fact
+     you did not observe".
 
 Never fabricates: a 404/network failure is printed and skipped (exit code
 reflects any failures), never silently replaced with invented content.

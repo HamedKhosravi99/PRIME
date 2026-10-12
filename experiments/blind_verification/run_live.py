@@ -48,6 +48,8 @@ def main(argv=None) -> int:
     ap.add_argument("--max-tool-calls", type=int, default=20)
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--out", default="")
+    ap.add_argument("--instances", nargs="*", default=None,
+                    help="run only these instance ids (for reruns of single episodes)")
     a = ap.parse_args(argv)
     blind_verifier.check_frozen()
     model = os.environ.get("PRIME_LLM_MODEL", "")
@@ -55,6 +57,9 @@ def main(argv=None) -> int:
         print("PRIME_LLM_MODEL is not set", file=sys.stderr)
         return 2
     paths = sorted(glob.glob(os.path.join(PILOT, "bench", "instances_v2", a.domain, "heldout_text", "*.json")))
+    if a.instances:
+        keep = set(a.instances)
+        paths = [p for p in paths if os.path.splitext(os.path.basename(p))[0] in keep]
     if a.limit:
         paths = paths[: a.limit]
     out_dir = a.out or os.path.join(HERE, "results", "%s-%s" % (MODELTAG, a.domain), "%s_verified__B20" % ARM)

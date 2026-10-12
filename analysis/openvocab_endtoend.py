@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
-"""STANDARD CONSTRUCTION (S1) run END-TO-END, judge-free -- the root answer
-to review's central objection.
+"""STANDARD CONSTRUCTION (S1) run END-TO-END, judge-free.
 
-The objection: in every completed experiment the policy is HANDED the claim
-set, claim order, evidence-atom vocabulary, resolver types and action
-schema, so "learned standard" really meant learned Boolean support logic
-over an authored vocabulary (S2 in the paper's decomposition), not learning
-an evaluation standard from an open-ended request (S1).
+The gap it closes: in every other completed experiment the policy is HANDED the
+claim set, claim order, evidence-atom vocabulary, resolver types and action
+schema, so "learned standard" really meant learned Boolean support logic over
+an authored vocabulary (S2 in the paper's decomposition), not learning an
+evaluation standard from an open-ended request (S1).
 
 This script runs S1 for real, in the structured-record family, with no new
 runtime and no judge anywhere:

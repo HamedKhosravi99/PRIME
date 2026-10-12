@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Frozen statistical machinery for E1/E2/E3 (EXECUTION_PLAN v5 Part 3 /
-FREEZE.md F6). Pure computation; no data-dependent choices.
+"""Frozen statistical machinery for E1/E2/E3 (docs/EXECUTION_PLAN.md, Part 3;
+docs/ANALYSIS_PLAN.md, F6). Pure computation; no data-dependent choices.
 
 Design note that makes these tests valid: the generator assigns each
-held-out record to EXACTLY ONE template family (GPT Q3 constraint,
-enforced mechanically at generation). The dependence structure is
+held-out record to EXACTLY ONE template family (docs/EXECUTION_PLAN.md,
+Part R4, Q3; enforced mechanically at generation). The dependence structure is
 therefore NESTED (records within families), not crossed -- so
 family-level sign-flip randomization is exact under the sharp null, and a
 hierarchical (family, then record-within-family) bootstrap is the matching

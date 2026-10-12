@@ -1,9 +1,8 @@
 """Deterministic controlled natural-language renderer (additive stronger path).
 
-Implements the fix proposed in
-`the design notes` Weakness 5
-(SS5.2 controlled NL renderer, SS5.3 renderer-soundness definition/theorem,
-SS5.4 grammar-level enforcement, SS5.5 mutation/property tests R1-R4).
+Implements a controlled natural-language renderer, the renderer-soundness
+definition, grammar-level enforcement, and the hooks used by the
+mutation/property tests R1-R4 (prime_runtime/tests/test_controlled_renderer.py).
 
 Problem this module removes
 ----------------------------
@@ -11,8 +10,8 @@ The old ``renderer.py`` is already deterministic and template-based, but its
 "claim content" is an opaque, benchmark-authored free-text string
 (``claim_texts[cid]``).  Nothing in that module checks that the free text
 itself cannot say more than the typed object licenses; fidelity there would
-have to be checked by a learned entailment verifier -- exactly the caveat
-Weakness 5 flags as not reaching the exact-guarantee bar.
+have to be checked by a learned entailment verifier, which does not reach
+the exact-guarantee bar.
 
 This module instead makes the *sentence itself* a typed, finite object:
 
@@ -28,7 +27,7 @@ generation), so:
     renderer_sound(O)  <=>  denote(render(O)) subseteq AuthContents(O)
 
 is a property that can be checked exactly, with no learned component and no
-human/LLM judge (revision analysis SS5.3, "Definition: Renderer soundness").
+human/LLM judge (see :func:`renderer_sound`).
 
 This is an ADDITIVE stronger path.  ``renderer.py`` is untouched; other code
 that imports it keeps working unchanged.  This module does not depend on, or
@@ -36,7 +35,7 @@ modify, ``interpreter.py`` -- it composes with the interpreter's Auth mask
 (``auth.py``) rather than re-deriving it: what counts as "authorized" for a
 given typed object is supplied by the caller (typically: the interpreter's
 ``Auth_P(z)`` output, converted to :class:`Claim` objects), matching the
-three-term risk decomposition of Weakness 2 SS2.4:
+three-term risk decomposition:
 
     Pr(E_user_false) <= Pr(E_prog) + Pr(E_mask) + Pr(E_render)
 
@@ -166,7 +165,7 @@ POLARITY_NEG = "NEG"
 @dataclass(frozen=True)
 class Qualifier:
     """A registered qualifier clause, e.g. ``Qualifier("OBSERVED_AT",
-    "2026-07-01")`` (revision analysis SS5.2's ``OBSERVED_AT(timestamp)``)."""
+    "2026-07-01")``."""
 
     kind: str
     value: str
@@ -174,12 +173,12 @@ class Qualifier:
 
 @dataclass(frozen=True)
 class Claim:
-    """Typed claim AST (revision analysis SS5.2):
+    """Typed claim AST:
 
         Claim(dimension, strength_level, scope, qualifiers)
 
     ``claim_id`` and ``polarity`` are additional required/optional fields
-    (default-valued so the 4-positional-argument call shape from the memo
+    (default-valued so the 4-positional-argument call shape above
     still works); ``claim_id`` is enforced non-empty in ``__post_init__``
     because every rendered finding is addressed by id (for retraction
     cross-referencing, R4)."""
@@ -791,7 +790,7 @@ def is_authorized_rendering(candidate: str, obj: RenderObject) -> bool:
 
 
 def renderer_sound(obj: RenderObject) -> bool:
-    """Definition: Renderer soundness (revision analysis SS5.3) --
+    """Definition: Renderer soundness --
 
         denote(render(O)) subseteq AuthContents(O)
 

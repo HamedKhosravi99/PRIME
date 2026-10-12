@@ -15,10 +15,10 @@ Checks, per instance JSON under instances/swe/:
       stripped);
   5.  realizability: every gold route admits a full assignment (route atoms
       True) violating no phi forbid-pattern;
-  6.  order-coherence (sufficient condition, per SPEC): every route of the
+  6.  order-coherence (sufficient condition): every route of the
       stronger claim literal-contains some route of each weaker claim in the
       transitive closure of `order`; levels must agree with `order`;
-  7.  minimality modulo phi against f_bench (PRIME-master 10.6): removing
+  7.  minimality modulo phi against f_bench: removing
       any literal from any route must break sufficiency (brute force over
       realizable assignments; atom count <= 8); plus semantic-dominance:
       no route of a claim may be dominated by a strictly weaker sufficient
@@ -169,7 +169,7 @@ def validate(path, schema_check):
             errs.append(f"decoy {d} duplicates a listed action")
 
     # --- structured-record atoms (Tier-M predicate grammar: inspect_record /
-    # record_predicate:*; prime_runtime/RECORD_ORACLE_REPORT.md)
+    # record_predicate:*; prime_runtime/predicates.py)
     records = inst.get("records", {})
     for a in inst["atoms"]:
         res = a["resolver"]

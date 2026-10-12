@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""The fair-baseline comparison requested in review: does PRIME's
+"""The fair-baseline comparison: does PRIME's
 evidence-SEEKING control law improve over straightforward execution under an
 EQUALLY EXPRESSIVE evidence gate?
 
-Review's objection to `static_contract` is correct: it takes the union of
+`static_contract` alone is not a fair baseline: it takes the union of
 literals across all gold routes and requires all of them, which destroys the
 disjunctive alternatives and predictably causes abstention. It is an
 over-conservative reference, not a strong formal-contract baseline.

@@ -2,10 +2,10 @@
 """Aggregate pilot results into the paper's tables.
 
 Reads results/<model>/<arm>__<license-source>/summary.json files produced by
-runner/run_batch.py (see pilot/SPEC.md), computes the preregistered endpoints,
-and emits (a) a markdown report and (b) LaTeX table rows for paper/prime.tex.
+runner/run_batch.py, computes the preregistered endpoints, and emits (a) a
+markdown report and (b) LaTeX table rows for the paper.
 
-Statistical plan (PRIME-master.md v15 §12.7, §9.6):
+Statistical plan:
   - The SEED TASK is the primary resampling unit: episodes sharing a seed are
     dependent (controlled variants), so all CIs are cluster bootstrap over seeds.
   - Metrics are computed exclusively from gold-ledger CompleteAuth values that
@@ -41,8 +41,7 @@ from typing import Dict, List
 
 # Any results/<model>-<domain>/ directory for the four record-oracle domains
 # added 2026-07-29 (security/OSV, financial/SEC-XBRL, drug-safety/openFDA,
-# clinical-trials/CTgov -- see prime_runtime/RECORD_ORACLE_REPORT.md and
-# analysis/{SECURITY,FINANCIAL,DRUGSAFETY,CLINICAL}_DOMAIN_REPORT.md). These
+# clinical-trials/CTgov -- see prime_runtime/predicates.py). These
 # share model names (e.g. "gpt-4.1") with the software-review directory, so
 # without a path exclusion they would silently pool into the same
 # (model, arm, license_source) group as the software-review runs -- exactly
@@ -59,11 +58,9 @@ def load_summaries(results_root: str) -> List[dict]:
     for path in glob.glob(os.path.join(results_root, "**", "summary.json"), recursive=True):
         if "_smoke_record" in path:
             # Synthetic structured-record infra smoke-test proof run (see
-            # bench/instances/_smoke_record/rec-0001.json and
-            # prime_runtime/RECORD_ORACLE_REPORT.md) -- never a real
+            # bench/instances/_smoke_record/rec-0001.json) -- never a real
             # experimental condition; excluded by path so it can never reach
-            # any aggregate table, mirroring the drift/adversarial/frontier
-            # exclusions fill_paper.py applies to its own loader.
+            # any aggregate table.
             continue
         if _DOMAIN_DIR_RE.search(path):
             # New-domain result dir (see comment above) -- these get their

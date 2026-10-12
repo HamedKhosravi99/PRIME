@@ -1,43 +1,41 @@
 #!/usr/bin/env python3
 """Table B: license-INDUCTION QUALITY against the executable oracle.
 
-Answers the reviewer's central Weakness-3 objection ("induction is
-under-specified/under-measured") by scoring the induced program against an
-executable support oracle F*, not merely against schema-validity.  See
-`the design notes`:
-  - Weakness 3 §3.2 (program AST + canonicalization)
-  - Weakness 3 §3.3 (the metric families: claim/order/atom/route/minimality)
-  - Weakness 3 §3.5 (the direct induction metrics table)
-  - Weakness 3 §3.8 (UsableEpisodeRate)
-  - Weakness 3 §3.9 (invalid programs must count in the denominator)
-  - Weakness 2 §2.3 C1 (AuthFP / AuthFN against F*)
+Measures induction quality (rather than leaving it under-specified) by
+scoring the induced program against an executable support oracle F*, not
+merely against schema-validity. Covered here:
+  - program AST + canonicalization
+  - the metric families: claim/order/atom/route/minimality
+  - the direct induction metrics table
+  - UsableEpisodeRate
+  - invalid programs counted in the denominator
+  - AuthFP / AuthFN against F*
 
 Oracle
 ------
-This script imports ``prime_runtime.oracle`` (built independently by another
-task against the same memo) and uses it as F* wherever it defines the
-relevant function: ``enumerate_complete_states`` for Q, ``oracle_authorization``
-for F*(c, omega), ``derive_prime_routes`` for the canonical gold family
-(memo §7.2: "prime routes are one derived representation" of F*, never the
-benchmark truth itself), and ``auth_fp``/``auth_fn`` for the Weakness-2 §2.3
-C1 metrics. ``prime_runtime.oracle`` performs its own independent Boolean
-evaluation of the gold-route DNF (it does not call into ``auth.py``/
-``closure.py`` to decide what F* says -- see its module docstring), which is
-exactly the Weakness-7 "do not let PRIME's own route-matching machinery
-define benchmark truth" fix. If ``prime_runtime.oracle`` is ever unavailable
-(e.g. this script is re-run in an older checkout), we fall back to the
-memo-authorized substitute: the instance's gold route family evaluated
-under the runtime's own Auth/downward-closure semantics (``prime_runtime.auth``)
--- semantically identical for these SWE instances (the oracle's own build
-report, ``prime_runtime/ORACLE_REPORT.md``, confirms zero derived-route-vs-
-authored-gold-route mismatches for all 9 SWE instances used here), but NOT
-independent of PRIME's own code the way ``prime_runtime.oracle`` is, so a
-run in fallback mode is flagged as such (``F_STAR_SOURCE`` in the JSON
-output) and should be re-run once the oracle module is available.
+This script imports ``prime_runtime.oracle`` (built independently of this
+script) and uses it as F* wherever it defines the relevant function:
+``enumerate_complete_states`` for Q, ``oracle_authorization`` for F*(c, omega),
+``derive_prime_routes`` for the canonical gold family (prime routes are one
+derived representation of F*, never the benchmark truth itself), and
+``auth_fp``/``auth_fn`` for the AuthFP/AuthFN metrics. ``prime_runtime.oracle``
+performs its own independent Boolean evaluation of the gold-route DNF (it does
+not call into ``auth.py``/``closure.py`` to decide what F* says -- see its
+module docstring), so PRIME's own route-matching machinery never defines
+benchmark truth. If ``prime_runtime.oracle`` is ever unavailable (e.g. this
+script is re-run in an older checkout), we fall back to a substitute: the
+instance's gold route family evaluated under the runtime's own
+Auth/downward-closure semantics (``prime_runtime.auth``) -- semantically
+identical for these SWE instances (prime_runtime/tests/test_oracle.py checks
+that derived and authored gold routes coincide on every instance under
+bench/instances/), but NOT independent of PRIME's own code the way
+``prime_runtime.oracle`` is, so a run in fallback mode is flagged as such
+(``F_STAR_SOURCE`` in the JSON output) and should be re-run once the oracle
+module is available.
 
 What is and is not elicited from the model
 -------------------------------------------
-``runner.arms.induce_program`` (used here UNCHANGED, per instructions) only
+``runner.arms.induce_program`` (used here UNCHANGED) only
 elicits the ROUTE component of the program: claim ids, the claim order, and
 the atom vocabulary are all supplied to the model as fixed context and are
 hard-coded into the built ``Program`` by ``arms._build_validated_program``.
@@ -56,8 +54,8 @@ Consequently:
     ``claim_license_recall/precision/f1`` and ``atom_use_recall/precision/f1``.
     These are clearly named distinctly from the "official" (trivial) fields.
 
-Canonicalization (memo §3.2) -- applies to the INDUCED program only
----------------------------------------------------------------------
+Canonicalization -- applies to the INDUCED program only
+-------------------------------------------------------
 Before comparison, the induced route family is canonicalized: (1) drop
 self-contradictory routes (both a literal and its negation), (2) Phi-reduce
 -- iteratively drop a literal if every Phi-realizable completion of the
@@ -71,21 +69,21 @@ never changes which realizable states the family accepts), so the SAME
 canonical induced program is used for every downstream metric (route
 precision/coverage/prime-rate, AuthFP/AuthFN, exact-match). The gold side
 uses ``oracle.derive_prime_routes`` directly (already the Phi-aware prime-
-implicant family of F*, per the oracle build report) rather than a second,
+implicant family of F*) rather than a second,
 redundant canonicalization pass.
 
 Metrics (per model, over all SWE instances; single draw per (model,
 instance) unless --draws > 1 -- see ``draws_per_cell`` in the output)
 -----------------------------------------------------------------------
-  valid_rate               schema-valid / attempted  (§3.9 denominator = ALL attempts)
+  valid_rate               schema-valid / attempted  (denominator = ALL attempts)
   route_recall              gold canonical routes recovered exactly, macro over claims
-  route_precision (semantic) forall realizable omega: p(omega)=1 => F*(c,omega)=1 (§3.5)
+  route_precision (semantic) forall realizable omega: p(omega)=1 => F*(c,omega)=1
   route_coverage (semantic)  fraction of F*-supported states covered by >=1 induced route
   prime_rate                 induced routes that are F*-sufficient AND F*-irredundant
   exact_match                canonical induced family == canonical gold family, ALL claims
-  AuthFP / AuthFN             Weakness-2 §2.3 C1, exact enumeration over Omega_Phi
+  AuthFP / AuthFN             exact enumeration over Omega_Phi
   AuthFP_real / AuthFN_real   the same, at the instance's actual (honest) evidence state
-  UsableEpisodeRate           §3.8: valid program AND nontrivial AND oracle-sound output
+  UsableEpisodeRate           valid program AND nontrivial AND oracle-sound output
                                at the real evidence state; ALL attempts in the denominator
                                (an invalid program is scored as "abstains" -- it can never
                                AuthFP, but it always AuthFNs whenever F* is nonempty)
@@ -173,7 +171,7 @@ def _real_facts(inst) -> Facts:
 
 
 # ---------------------------------------------------------------------------
-# Canonicalization (memo §3.2) -- applies to the INDUCED program
+# Canonicalization -- applies to the INDUCED program
 # ---------------------------------------------------------------------------
 
 
@@ -252,7 +250,7 @@ def _full_auth_matrix(program: Program, omega_list: OmegaList) -> Dict[str, List
 
 class _OracleBackedInstanceOracle:
     """F* via ``prime_runtime.oracle`` -- the genuinely independent
-    executable oracle (memo Weakness 7)."""
+    executable oracle."""
 
     def __init__(self, inst) -> None:
         self.inst = inst
@@ -311,7 +309,7 @@ class _FallbackInstanceOracle:
     imported): the instance's gold route family, evaluated under the SAME
     Auth/downward-closure semantics the runtime itself uses. NOT independent
     of ``auth.py``/``closure.py`` the way ``prime_runtime.oracle`` is
-    (Weakness 7) -- re-run against the oracle module once available."""
+    -- re-run against the oracle module once available."""
 
     def __init__(self, inst) -> None:
         self.inst = inst
@@ -412,8 +410,9 @@ def classify_claim(cid, ind_fam, gold_fam, oracle) -> str:
 
 def score_instance(inst, oracle, induced_program: Optional[Program], valid: bool) -> Dict[str, Any]:
     """Score one (model, instance) draw. ``induced_program`` is None when
-    induction was invalid; per §3.9 we still score it, as the runtime's
-    documented abstention behavior (an empty license family everywhere)."""
+    induction was invalid; we still score it (invalid programs count in the
+    denominator), as the runtime's documented abstention behavior (an empty
+    license family everywhere)."""
     if induced_program is None:
         ind_canonical: Dict[str, Tuple[FrozenSet[str], ...]] = {cid: () for cid in inst.claim_ids}
     else:
@@ -481,10 +480,10 @@ def score_instance(inst, oracle, induced_program: Optional[Program], valid: bool
     return {
         "route_recall_num": rec_num, "route_recall_den": rec_den,
         "route_records": route_records,
-        # Canonical induced route family (Task B reuse: self-consistency
-        # voting and oracle-guided refinement both need the actual induced
-        # routes, not just precise/prime booleans, so every draw carries its
-        # own canonicalized program here -- an empty family per claim for an
+        # Canonical induced route family (self-consistency voting and
+        # oracle-guided refinement both need the actual induced routes, not
+        # just precise/prime booleans, so every draw carries its own
+        # canonicalized program here -- an empty family per claim for an
         # invalid draw, which correctly contributes zero votes downstream).
         "induced_licenses": {cid: [sorted(r) for r in fam] for cid, fam in ind_canonical.items()},
         "coverages": coverages,
@@ -596,7 +595,7 @@ def aggregate(model_result: Dict[str, Any]) -> Dict[str, Any]:
     atom_use_recall = macro("atom_use_hit", "gold_atoms_used")
     atom_use_precision = macro("atom_use_hit", "ind_atoms_used")
 
-    # §3.9: ALL attempts (valid + invalid) in the denominator. score_instance
+    # ALL attempts (valid + invalid) in the denominator. score_instance
     # scores an invalid draw as abstention: it can never AuthFP but AuthFNs
     # whenever F* authorizes anything at the real state; usable is always
     # False for an invalid draw.
@@ -655,13 +654,13 @@ CI_METRICS = (
 
 
 def bootstrap_table_b_cis(model_result: Dict[str, Any], iters: int = 5000, seed: int = 7) -> Dict[str, Any]:
-    """Task A #1 (de-confound the N=9-single-draw concern): a proper 95% CI
-    for the headline metrics, via an INSTANCE-level cluster bootstrap (see
-    ``analysis/bootstrap_utils.py`` -- the same resampling convention
-    ``analysis/aggregate.py`` already uses for its seed-clustered CIs, here
-    generalized to draws x instances: a bootstrap replicate resamples
-    instances with replacement and pools ALL of a resampled instance's draws
-    together, never resampling within an instance).
+    """A proper 95% CI for the headline metrics (N=9 instances with a single
+    draw each is too few for point estimates alone), via an INSTANCE-level
+    cluster bootstrap (see ``analysis/bootstrap_utils.py`` -- the same
+    resampling convention ``analysis/aggregate.py`` already uses for its
+    seed-clustered CIs, here generalized to draws x instances: a bootstrap
+    replicate resamples instances with replacement and pools ALL of a resampled
+    instance's draws together, never resampling within an instance).
 
     Returns ``{metric: {"point", "lo", "hi", "n_clusters"}}``. The point
     estimate here is recomputed from the same pooled data ``aggregate()``
@@ -704,7 +703,7 @@ def bootstrap_table_b_cis(model_result: Dict[str, Any], iters: int = 5000, seed:
             authfp_ep_vals.setdefault(inst, []).append(1.0 if r["authfp_episode"] else 0.0)
 
     authfp_real_vals: Dict[str, List[float]] = {}
-    for r in recs:  # §3.9: all attempts, matching AuthFP_real's own denominator
+    for r in recs:  # all attempts, matching AuthFP_real's own denominator
         if r["real_authfp"] is not None:
             authfp_real_vals.setdefault(r["instance"], []).append(1.0 if r["real_authfp"] else 0.0)
 
@@ -773,7 +772,7 @@ def main() -> int:
         "--temperature", type=float, default=0.0,
         help="sampling temperature requested for every temp-0-capable model "
         "(gpt-5/o-series always ignore this -- see LLMClient._restricted_temp). "
-        "Use e.g. 1.0 to run the matched-temperature panel (Task A #2).",
+        "Use e.g. 1.0 to run the matched-temperature panel.",
     )
     ap.add_argument("--bootstrap-iters", type=int, default=5000, help="cluster-bootstrap resamples per CI")
     ap.add_argument("--openai-base", default=os.environ.get("PRIME_OPENAI_BASE", OPENAI_BASE))

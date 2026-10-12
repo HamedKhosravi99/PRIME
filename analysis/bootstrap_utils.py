@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Cluster-bootstrap helpers shared by the induction-quality (Table B) and
-induction-refinement scripts (Task #4 de-confound: N=9 instances, single
-draw -> N draws x instances with a proper CI).
+induction-refinement scripts (N=9 instances, single draw -> N draws x
+instances with a proper CI).
 
 Resampling unit: the INSTANCE. This mirrors ``analysis/aggregate.py``'s
 existing seed-level cluster bootstrap (that script's docstring: "episodes

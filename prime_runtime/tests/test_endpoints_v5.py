@@ -5,7 +5,7 @@ each other on the generated benchmark, independently of any model run:
 
   * F*_B (conjunctive collapse) is STRICTLY STRONGER than F*_A, so every
     B-supported claim is A-supported (this is why "unsupported under both"
-    was retired -- GPT round-4 Q1).
+    was retired; docs/EXECUTION_PLAN.md, Part R4, Q1).
   * content-false (protocol-independent denotation evaluation) must never
     contradict A-support: a claim the authored protocol supports must not
     be false about the record.
@@ -63,7 +63,7 @@ def test_ceiling_matches_supported_levels():
 
 
 # ---------------------------------------------------------------------------
-# silence degeneracy (EXECUTION_PLAN Part 6b, FB-02)
+# silence degeneracy (docs/EXECUTION_PLAN.md, Part 6b, FB-02)
 # ---------------------------------------------------------------------------
 
 def _rows_for(monkeypatch, tmp_path, emit_when_available):
@@ -119,10 +119,10 @@ def test_degenerate_threshold_is_registered_and_not_a_boundary_fit():
 
 
 def test_equivalence_margin_comes_from_the_frozen_primary_panel(tmp_path, monkeypatch):
-    """FREEZE F3: ONE margin for the study, from the PRIMARY panel's dev
-    split. The builder defaulted to the F2 floor of 5.0, so once the pilot
-    landed the table would have tested equivalence against 5.0 while the
-    prose quoted 6.16."""
+    """docs/ANALYSIS_PLAN.md, F3: ONE margin for the study, from the PRIMARY
+    panel's dev split. The builder defaulted to the F2 floor of 5.0, so once
+    the pilot landed the table would have tested equivalence against 5.0 while
+    the prose quoted 6.16."""
     import json
     monkeypatch.setattr(bw, "RESULTS", str(tmp_path))
     assert bw.frozen_margin() == 5.0, "floor applies only before the pilot"

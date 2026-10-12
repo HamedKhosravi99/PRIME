@@ -4,12 +4,11 @@ Implements the finite, mechanically-decidable predicate-atom grammar shared
 by every structured-record evaluation domain this module is infrastructure
 for (security/OSV, financial/SEC-XBRL, drug-safety/openFDA, clinical-trials/
 CTgov -- authored separately, on top of this module -- and the synthetic
-smoke instance under bench/instances/_smoke_record/). See
-prime_runtime/RECORD_ORACLE_REPORT.md for the design rationale and the
-per-domain field mapping.
+smoke instance under bench/instances/_smoke_record/). The design rationale
+is in the design note below.
 
 A predicate atom resolves an executable Boolean over ONE field of ONE named
-JSON record embedded in the instance (``instance.records[record_id]``, SPEC
+JSON record embedded in the instance (``instance.records[record_id]``, the
 "records" top-level key): given the raw field value the ``inspect_record``
 tool reads (runner/arms.py ``ToolExecutor._tool_inspect_record``), the
 atom's ``resolver.attest`` rule string
@@ -47,7 +46,7 @@ elsewhere):
 
 Design note -- WHY the predicate type and expected argument live in the
 ATOM's ``attest`` string rather than being supplied by the model's tool
-call. The trap this design avoids (see RECORD_ORACLE_REPORT.md): if an atom
+call. The trap this design avoids: if an atom
 declared exact evidence content (a predicate/expected/threshold) as part of
 ``resolver.params``, it would never fire, because ``goldledger.delta``
 matches ``resolver.params`` against the model's OWN tool-call arguments by

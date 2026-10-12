@@ -9,9 +9,9 @@ confirmatory LLM runs cannot make on their own:
     ceiling-targeting already matches the nondeployable clairvoyant ceiling.
     So an E2 null is a property of the benchmark's route structure, not a
     failure to measure -- and no control law can beat that bound.
-  * Ordering and direction separate (EXECUTION_PLAN R4 Q4): prefix-first
-    ordering alone leaves a gap that ceiling-targeting closes, and the gap
-    exists ONLY under budget pressure.
+  * Ordering and direction separate (docs/EXECUTION_PLAN.md, Part R4, Q4):
+    prefix-first ordering alone leaves a gap that ceiling-targeting closes,
+    and the gap exists ONLY under budget pressure.
 """
 from __future__ import annotations
 
@@ -60,7 +60,8 @@ def test_frontier_is_monotone_in_policy_strength():
 
 @needs_runs
 def test_direction_beats_ordering_only_under_budget_pressure():
-    """R4 Q4, answered with no model in the loop."""
+    """Ordering vs direction (docs/EXECUTION_PLAN.md, Part R4, Q4), answered
+    with no model in the loop."""
     for k in ("bmin", "bmin1"):
         gap = _M[("shortest_route", k)][0] - _M[("masked_reactive_prefix", k)][0]
         assert gap > 4.0, (k, gap)

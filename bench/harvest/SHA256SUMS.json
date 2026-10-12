@@ -1,0 +1,26 @@
+{
+ "clinical": {
+  "full_bytes": 21036594,
+  "full_records_jsonl_sha256": "9cfdc670dfbc54bcaa665469b94f8d8163b2bbb45719dfb212bcca5d8e469ce4",
+  "reduced_bytes": 3737092,
+  "reduced_records_jsonl_sha256": "3d6ff343f5bd91b43ae1792906acf0e9934eccc2856e50e2a75b1ec902558e37"
+ },
+ "drugsafety": {
+  "full_bytes": 1920589,
+  "full_records_jsonl_sha256": "4a772190424005e86f4748ba73df3fa4acc590326ae4b5bcb1d767e6273ad3a7",
+  "reduced_bytes": 1406188,
+  "reduced_records_jsonl_sha256": "ec5c91c871c17f772afd8e19bc5d5f45116864cea61b5dd58270395dffdcec00"
+ },
+ "financial": {
+  "full_bytes": 2228420421,
+  "full_records_jsonl_sha256": "62d36abe49d83517190c2d8f105a1a81d13d6264ca90e19c5c781b2f7caa5c16",
+  "reduced_bytes": 666310,
+  "reduced_records_jsonl_sha256": "327d5b947709874ab5c79fe19fbbce6d75b0c72ad1739a1a04aac6a712f69932"
+ },
+ "security": {
+  "full_bytes": 5970803,
+  "full_records_jsonl_sha256": "ed880435bea71a7ee310bb037fcfb0f2bad7ec4d2fffbe1e58e4af4f6a5f654c",
+  "reduced_bytes": 5112010,
+  "reduced_records_jsonl_sha256": "caaae5273a6d8f2f60ef78bfc4c648f76187747d126277d0381a8a5051f00f17"
+ }
+}

@@ -17,9 +17,9 @@ across every arm here and PRIME:
     call-class cache are free.
 
 Only the control mechanism differs: what decides the next check, when to
-stop, and which conclusion is reported. Per-system fidelity notes (what is
-taken from the paper or released code, and what had to be chosen) are in
-``EXTSYS.md`` next to this file.
+stop, and which conclusion is reported. Per-system notes (what is taken
+from the paper or released code, and what had to be chosen) are in the
+comment block above each system's arm below.
 """
 
 import json
@@ -71,10 +71,10 @@ class Episode:
 
     def count_action(self, name: str, args: Mapping[str, Any]) -> None:
         """Count and log one agent action the way ``run_arm`` does: the
-        counter advances unless the previous executed call was served from
-        the call-class cache (``ToolExecutor.last_was_cached``)."""
+        counter advances unless the call repeats an executed call class,
+        which the call-class cache serves (``ToolExecutor.charges``)."""
         self.step += 1
-        if not self.executor.last_was_cached:
+        if self.executor.charges(name, args):
             self.result.tool_calls += 1
         self.trace.log_action(self.step, name, dict(args))
 

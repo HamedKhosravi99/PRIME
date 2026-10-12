@@ -1,4 +1,5 @@
-"""Absorption checker unit tests beyond the pinned R1-R3 regressions (SS9.3)."""
+"""Absorption checker unit tests beyond the pinned R1-R3 regressions
+(test_regressions.py)."""
 
 import pytest
 

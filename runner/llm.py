@@ -1,9 +1,9 @@
-"""LLM clients for the PRIME pilot runner (SPEC.md SSRunner).
+"""LLM clients for the PRIME runner.
 
 ``LLMClient`` speaks the OpenAI-compatible chat-completions protocol.  It
 uses the ``openai`` python package when installed, otherwise raw HTTPS via
 urllib against an OpenAI-compatible endpoint — the same code hits the OpenAI
-API locally or vLLM on the cluster.
+API locally or a vLLM server on a cluster.
 
 Environment variables:
     PRIME_LLM_BASE   base URL (default https://api.openai.com/v1)

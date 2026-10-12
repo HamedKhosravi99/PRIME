@@ -1,0 +1,12 @@
+{
+  "extension_2026_08_01": {
+    "n_added": 340,
+    "source": "SEC company_tickers.json first 420 unique CIKs (file order)"
+  },
+  "inclusion_rule": "companyfacts JSON has 'facts'",
+  "n_ciks_attempted": 60,
+  "n_retained": 60,
+  "retrieved_at": "2026-08-01T04:49:52.675445+00:00",
+  "sampling": "frozen deterministic list",
+  "source_population": "SEC EDGAR companyfacts for a frozen alphabetical large-cap CIK list (in-script)"
+}

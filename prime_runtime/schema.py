@@ -1,24 +1,20 @@
 """Instance schema, validation, and gold-program construction.
 
-Implements the SPEC.md "Instance JSON" contract and the constraint checks the
-runtime enforces on benchmark instances (SPEC.md SS"Instance JSON"): order
-coherence, route realizability under Phi, min-cardinality route
-representatives, and tool-resolvability of every atom.
-
-Semantics source: PRIME-master.md SS5 (task model), SS6 (licenses), SS10.4
-(benchmark instance shape).
+Implements the instance JSON contract (formalized structurally in
+bench/schema.json) and the constraint checks the runtime enforces on
+benchmark instances: order coherence, route realizability under Phi,
+min-cardinality route representatives, and tool-resolvability of every atom.
 
 Literals
 --------
 A literal is an atom id, optionally negated with a leading "!": "E1" means
-z(E1) must close to T, "!E1" means it must close to F (signed literals,
-master SS5.4).  Gold routes in the pilot are typically positive.
+z(E1) must close to T, "!E1" means it must close to F (signed
+literals).  Gold routes in the pilot are typically positive.
 
 Order
 -----
 ``order`` is a list of pairs ``[weaker, stronger]``: ``["C1", "C2"]`` states
-C1 <= C2 (C2 dominates C1), matching master SS5.2 where higher levels are
-stronger claims.
+C1 <= C2 (C2 dominates C1): higher levels are stronger claims.
 """
 
 import json
@@ -32,7 +28,7 @@ class SchemaError(ValueError):
     """Raised on any instance/program constraint violation (hard error)."""
 
 
-MAX_ATOMS = 20  # closure enumerates 2^m complete assignments; m <= 20 (SPEC).
+MAX_ATOMS = 20  # closure enumerates 2^m complete assignments; m <= 20.
 
 
 def parse_literal(literal: str) -> Tuple[str, bool]:
@@ -54,7 +50,7 @@ def atom_of(literal: str) -> str:
 
 @dataclass(frozen=True)
 class Resolver:
-    """Registered resolver of a typed evidence atom (master SS5.3).
+    """Registered resolver of a typed evidence atom.
 
     ``tool``          evidence action able to establish the atom;
     ``params_schema`` declared parameter names/types (documentation);
@@ -76,7 +72,7 @@ class Atom:
     type: str
     proposition: str
     resolver: Resolver
-    # Locator-uncertain split (NAACL review response): the specification
+    # Locator-uncertain split: the specification
     # view says WHAT the atom must read (``what``) and lists the candidate
     # field paths (``candidates``, the true one among them) but not which;
     # the resolver keeps the true locator, so attestation is unchanged and
@@ -93,12 +89,12 @@ class Claim:
 
 @dataclass(frozen=True)
 class Program:
-    """A committed claim-license program P_0 (master SS7.2).
+    """A committed claim-license program P_0.
 
     Immutable by construction: tuples plus a read-only licenses mapping.
     Any attempted mutation raises (dataclasses.FrozenInstanceError for
     attribute assignment, TypeError for item assignment on ``licenses``) —
-    the runtime half of the full in-episode freeze (master SS7.2).
+    the runtime half of the full in-episode freeze.
     """
 
     claims: Tuple[str, ...]
@@ -168,14 +164,14 @@ class Instance:
 
     @property
     def phi_patterns(self) -> Tuple[Mapping[str, str], ...]:
-        """Forbidden determined-value patterns (master SS10.6 stage 2)."""
+        """Forbidden determined-value patterns."""
         return tuple(MappingProxyType(dict(p.get("forbid", {}))) for p in self.phi)
 
     @property
     def artifact_dir(self) -> str:
         """Absolute artifact path.
 
-        Per SPEC.md, ``artifact.path`` (e.g. ``artifacts/<name>@<sha>``) is
+        ``artifact.path`` (e.g. ``artifacts/<name>@<sha>``) is
         relative to the BENCH ROOT — the directory containing ``instances/``
         — not to the instance file's own directory.  Walk up from the
         instance file until a parent named ``instances`` is found; its parent
@@ -214,7 +210,7 @@ class Instance:
         raise KeyError(atom_id)
 
     def gold_program(self) -> Program:
-        """The expert-authored gold program f_bench (master SS10.6)."""
+        """The expert-authored gold program f_bench."""
         return make_program(
             claims=self.claim_ids,
             order=self.order,
@@ -225,7 +221,7 @@ class Instance:
 
 
 def load_instance(path: str, validate: bool = True) -> Instance:
-    """Load an instance JSON file (SPEC.md SS"Instance JSON")."""
+    """Load an instance JSON file (see bench/schema.json)."""
     with open(path, "r", encoding="utf-8") as fh:
         raw = json.load(fh)
     try:
@@ -235,7 +231,7 @@ def load_instance(path: str, validate: bool = True) -> Instance:
                 type=str(a.get("type", "inspect")),
                 proposition=str(a.get("proposition", "")),
                 # resolver: null is an authoring-time terminal-unavailability
-                # declaration (evidence-unavailable split, master SS10.5) —
+                # declaration (evidence-unavailable split) —
                 # the atom is 'impossible' for this artifact/scope version.
                 resolver=(
                     None
@@ -291,7 +287,7 @@ def load_instance(path: str, validate: bool = True) -> Instance:
 
 
 # ---------------------------------------------------------------------------
-# Validation (SPEC.md constraints; hard errors on violation)
+# Validation (instance constraints; hard errors on violation)
 # ---------------------------------------------------------------------------
 
 
@@ -314,11 +310,11 @@ def _preceq_pairs(order: Sequence[Tuple[str, str]], claims: Sequence[str]) -> Fr
 
 
 def validate_instance(inst: Instance) -> None:
-    """Run the runtime-side constraint checks (SPEC.md).
+    """Run the runtime-side constraint checks.
 
     Raises SchemaError on: duplicate ids; unknown atoms/claims; > MAX_ATOMS
     atoms; atom resolvable only via an unlisted tool; Phi unsatisfiable
-    (rejected pre-commitment, master SS6.4); unrealizable gold routes;
+    (rejected pre-commitment); unrealizable gold routes;
     dominated (non-min-cardinality) route representatives; order-incoherence.
     """
     # Local import to avoid a module cycle (closure imports schema helpers).
@@ -357,8 +353,8 @@ def validate_instance(inst: Instance) -> None:
         for atom, val in pat.items():
             if atom not in atom_ids or val not in ("T", "F"):
                 raise SchemaError("malformed phi pattern %r" % (dict(pat),))
-    # Phi itself must be satisfiable (master SS6.4: Phi-unsat is rejected
-    # before commitment; constraints are never repair targets).
+    # Phi itself must be satisfiable (Phi-unsat is rejected before
+    # commitment; constraints are never repair targets).
     if not closure.realizable_assignments(tuple(atom_ids), inst.phi_patterns):
         raise SchemaError("Phi is unsatisfiable for instance %s" % inst.id)
     validate_program(inst.gold_program(), inst)
@@ -367,10 +363,10 @@ def validate_instance(inst: Instance) -> None:
 def validate_program(program: Program, inst: Instance) -> None:
     """Validate a (gold or induced) program against an instance.
 
-    Checks (SPEC.md): claims/atoms known; every route realizable under Phi;
+    Checks: claims/atoms known; every route realizable under Phi;
     min-cardinality representatives (no route in a family is a superset of a
-    sibling route — a dominated representative creates phantom obligations,
-    master SS9.1); order-coherence (every route of a stronger claim
+    sibling route — a dominated representative creates phantom
+    obligations); order-coherence (every route of a stronger claim
     literal-contains some route of each weaker comparable claim — the
     documented sufficient condition).
     """
@@ -405,7 +401,7 @@ def validate_program(program: Program, inst: Instance) -> None:
                         "claim %s route %r strictly contains sibling %r "
                         "(dominated representative)" % (cid, sorted(r1), sorted(r2))
                     )
-    # Order coherence (sufficient syntactic condition, SPEC.md).
+    # Order coherence (sufficient syntactic condition).
     pre = _preceq_pairs(program.order, program.claims)
     for w, s in pre:
         if w == s:

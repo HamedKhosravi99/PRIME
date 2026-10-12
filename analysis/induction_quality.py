@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Measure license-INDUCTION QUALITY, not just schema-validity.
 
-The reviewer's deeper point on the learned component: a schema-valid induced
-program is necessary but not sufficient -- it must recover the CORRECT support
-structure (master §11.2-11.4). For each instance we induce a program and, per
-claim, compare its route family to the expert gold family:
+On the learned component: a schema-valid induced program is necessary but not
+sufficient -- it must recover the CORRECT support structure. For each instance
+we induce a program and, per claim, compare its route family to the expert gold
+family:
 
   validity      the induced program parses + passes structural validation
   route recall  fraction of gold routes recovered (a gold route g is recovered
@@ -19,11 +19,11 @@ Reported per model over all instances, with induction attempted N times per
 instance (default 1) so validity is not a lucky single draw. Uses the real
 induce_program path with the deployed prompt.
 
-EXTENDED (Task #4 / paper Table B, Weakness 3): this module's recall/
+EXTENDED (paper Table B): this module's recall/
 precision/exact numbers are SYNTACTIC (set-containment against the raw gold
 routes) and do not canonicalize modulo Phi, do not check semantic route
 soundness/coverage against an executable oracle, and do not report
-AuthFP/AuthFN (Weakness 2 §2.3 C1) or UsableEpisodeRate (§3.8). For the full
+AuthFP/AuthFN or UsableEpisodeRate. For the full
 oracle-scored Table B -- Phi-canonicalization, semantic route precision/
 coverage, prime-rate, AuthFP/AuthFN, valid-program-rate-in-the-denominator,
 and the over-/under-/unsound failure-mode breakdown -- see

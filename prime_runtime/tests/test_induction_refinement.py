@@ -1,6 +1,6 @@
-"""Tests for analysis/induction_refinement.py (Task B: oracle-guided
-iterative refinement + self-consistency majority voting -- the judge-free
-"genuinely try to improve" experiment).
+"""Tests for analysis/induction_refinement.py (oracle-guided iterative
+refinement + self-consistency majority voting -- the judge-free attempt to
+improve induction).
 
 No network / no ollama: ``build_oracle_critique`` and ``majority_vote_canonical``
 are pure functions of the executable oracle / of plain data, and
@@ -68,7 +68,7 @@ def test_critique_is_empty_for_the_exact_gold_route(tiny_inst, tiny_oracle):
 
 
 # ---------------------------------------------------------------------------
-# majority_vote_canonical: deterministic majority vote (Task B #4)
+# majority_vote_canonical: deterministic majority vote
 # ---------------------------------------------------------------------------
 
 

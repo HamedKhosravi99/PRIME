@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """Score the FDAAA family: the enforcement machinery on a contract we did not author.
 
-Three reviewers of an earlier draft, reading only the PDF, each named the same
-gap in different words -- there is no point anywhere in the paper where the
+Without this family there is no point anywhere in the paper where the
 system meets an artifact the authors did not design. This scores the family
-that fixes it.
+that closes that gap.
 
 What is external here, precisely, so the claim can be checked rather than
 believed:
@@ -95,7 +94,7 @@ def main(argv=None) -> int:
                     "undegraded; violations naturally occurring"}
 
     run_dirs = sorted(glob.glob(os.path.join(RUNS, "policy-*")))
-    # LLM arms on the same 319 registrations (NAACL round 2): results/fdaaa/<model>/<arm>__B20
+    # LLM arms on the same 319 registrations: results/fdaaa/<model>/<arm>__B20
     run_dirs += sorted(glob.glob(os.path.join(RUNS, "qwen2.5-32b", "*__B20")))
     for d in run_dirs:
         arm = os.path.basename(d).replace("policy-", "")

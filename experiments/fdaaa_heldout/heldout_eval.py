@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FDAAA: the frozen program on untouched registrations (review W5).
+"""FDAAA: the frozen program on untouched registrations.
 
 PROTOCOL, frozen before any label is read (2026-10-10):
   population   trials listed in the FDAAA TrialsTracker export of 3 August

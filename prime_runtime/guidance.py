@@ -1,19 +1,19 @@
 """Obligation-guided completion: reachable-ceiling and minimal-route
-computation for the ``prime_guided`` arm (see
-prime_runtime/GUIDED_COMPLETION_REPORT.md for the mechanism writeup and the
-utility-optimality theorem statement).
+computation for the ``prime_guided`` arm (the paper states the
+utility-optimality theorem for this mechanism;
+prime_runtime/tests/test_guided_optimality.py checks it).
 
 This module computes GUIDANCE ONLY: which atoms to gather next, and whether
 termination is currently permitted. It never authorizes anything -- emission
 is, and remains, gated exclusively by ``auth.auth_ids`` / ``interpreter.emit``
-against the COMMITTED program (master SS7.4, Prop. 2). Nothing here mutates
+against the COMMITTED program. Nothing here mutates
 the ledger, the program, or bypasses the mask; it is a pure read of the
 program + ledger + resolver table already used by status.py/auth.py.
 
 Design
 ------
-At a ledger state z with remaining tool-call budget B (SS6.4's typed
-availability + SS7.5's MaxAuth, reused, not re-derived):
+At a ledger state z with remaining tool-call budget B (status.py's typed
+availability + auth.py's MaxAuth, reused, not re-derived):
 
 1. For every claim c in the committed program, its OWN-ROUTE cost is the
    size of the smallest set of still-OPEN atoms among c's non-DEAD routes
@@ -28,10 +28,10 @@ availability + SS7.5's MaxAuth, reused, not re-derived):
    weaker comparable claim. Consequently if a stronger claim's route is
    reachable (no atom in it is dead), the weaker claim's contained route is
    automatically reachable too -- so scanning claims independently already
-   finds the true ceiling; see GUIDED_COMPLETION_REPORT.md SS"Assumptions".
+   finds the true ceiling.
 
 2. The REACHABLE CEILING is the claim with the highest ``level`` whose cost
-   is 0 (already authorized) or <= B (SS6.4 R_t(c) reused as the per-route
+   is 0 (already authorized) or <= B (status.py's R_t(c) reused as the per-route
    residual; this module only adds the budget comparison and the argmax).
 
 3. The ACTIVE OBLIGATION is the still-open literals of the ceiling's own
@@ -45,8 +45,8 @@ availability + SS7.5's MaxAuth, reused, not re-derived):
 Only OPEN atoms are surfaced as obligations (never REPAIRABLE): the current
 benchmark family exposes no repair/retraction tool to the agent, so a
 repair-blocked route is not actionable by ordinary tool calls and is treated
-as unreachable by this mechanism (documented limitation, not silently
-ignored -- see GUIDED_COMPLETION_REPORT.md).
+as unreachable by this mechanism (a documented limitation, not silently
+ignored).
 """
 
 from typing import Any, Dict, List, Mapping, Optional, Sequence, Tuple
@@ -71,10 +71,10 @@ def _route_open_atoms(
 
 
 def _call_class(atom_id: str, resolvers: Mapping[str, Mapping[str, Any]]):
-    """Call-class identity of an atom (v5 D3/G8): (tool, canonical params)
-    when the resolver table carries it, else the atom id itself (each atom
-    its own class -- the pre-v5 atom-count semantics, preserved for tables
-    that do not declare call classes)."""
+    """Call-class identity of an atom: (tool, canonical params) when the
+    resolver table carries it, else the atom id itself (each atom its own
+    class -- the older atom-count semantics, preserved for tables that do
+    not declare call classes)."""
     spec = resolvers.get(atom_id, {}) or {}
     return spec.get("call_class", atom_id)
 
@@ -86,10 +86,11 @@ def _open_cost(open_atoms, resolvers) -> int:
 
 
 def classify_topology(program: Program) -> str:
-    """Deterministic topology classifier (v5 P5/G-Q1): "ladder" iff every
-    claim has exactly one route AND all routes are totally ordered by
-    inclusion (a single inclusion chain); else "branching". Tested in
-    test_guidance_v5.py; prefix-first ordering activates only on ladders."""
+    """Deterministic topology classifier (docs/EXECUTION_PLAN.md, Part R,
+    P5): "ladder" iff every claim has exactly one route AND all routes are
+    totally ordered by inclusion (a single inclusion chain); else
+    "branching". Tested in test_guidance_v5.py; prefix-first ordering
+    activates only on ladders."""
     routes = []
     for cid in program.claims:
         rs = list(program.routes(cid))
@@ -170,12 +171,12 @@ def reachable_ceiling(
 
     blocking_atoms = list(ceiling_open) if ceiling_claim not in authorized else []
     if blocking_atoms and classify_topology(program) == "ladder":
-        # Prefix-first tie-break WITHIN the ceiling's minimal route (v5
-        # P5/L-Q1): resolve shared lower-prefix literals before
-        # claim-specific extensions. Depth of a literal = number of program
-        # routes containing it (on a ladder, prefix atoms appear in more
-        # routes). Deterministic: depth desc, then atom id. Never changes
-        # WHICH claim is the ceiling -- ordering only.
+        # Prefix-first tie-break WITHIN the ceiling's minimal route
+        # (docs/EXECUTION_PLAN.md, Part R, P5): resolve shared lower-prefix
+        # literals before claim-specific extensions. Depth of a literal =
+        # number of program routes containing it (on a ladder, prefix atoms
+        # appear in more routes). Deterministic: depth desc, then atom id.
+        # Never changes WHICH claim is the ceiling -- ordering only.
         def _depth(lit):
             a = atom_of(lit)
             return sum(1 for cid in program.claims
@@ -217,5 +218,5 @@ def reachable_ceiling(
 def claim_levels(instance) -> Dict[str, int]:
     """{claim_id: level} lookup for one Instance -- the small piece of
     context ``reachable_ceiling`` needs beyond the Program (Program.claims
-    is just ids; level is an Instance-level annotation, master SS5.2)."""
+    is just ids; level is an Instance-level annotation)."""
     return {c.id: c.level for c in instance.claims}

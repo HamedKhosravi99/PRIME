@@ -1,4 +1,4 @@
-"""Constrained renderer for typed claim objects (PRIME-master.md SS7.8).
+"""Constrained renderer for typed claim objects.
 
 Every evaluative sentence must reference an authorized claim ID; the
 renderer cannot introduce evaluative propositions without one.  The pilot

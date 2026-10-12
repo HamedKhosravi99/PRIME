@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Bulk record harvest for the v5 benchmark generator (EXECUTION_PLAN v5,
-Part 4 / W0.4). Key-free public sources only; every record stored with
+"""Bulk record harvest for the v5 benchmark generator (docs/EXECUTION_PLAN.md,
+Part 4). Key-free public sources only; every record stored with
 provenance = source URL + retrieval timestamp + sha256 of the raw response.
 
 Writes bench/harvest/<domain>/records.jsonl (one record per line:
 {"record_id", "record", "provenance"}) plus a per-domain manifest with the
-sampling frame fields GPT R14 requires (source population, date window,
-inclusion rule, counts harvested).
+sampling frame fields (source population, date window, inclusion rule,
+counts harvested).
 
 Domains:
   security   OSV per-ecosystem zip (PyPI) -- one bulk download

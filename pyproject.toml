@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prime-runtime"
+version = "1.0.0"
+description = "PRIME: a precommitted evidence program, an attested ledger, guidance, and an authorization mask for LLM agents; with the ObligationBench generator and the paper's analysis"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+dependencies = []
+
+[project.optional-dependencies]
+figures = ["numpy>=1.24", "matplotlib>=3.7"]
+agents = ["openai>=1.0"]
+schema = ["jsonschema>=4"]
+dev = ["pytest>=7", "ruff>=0.4"]
+
+[tool.setuptools]
+packages = ["prime_runtime"]
+
+[tool.pytest.ini_options]
+testpaths = ["prime_runtime/tests"]
+
+[tool.ruff]
+target-version = "py39"
+extend-exclude = ["bench/artifacts", "results"]

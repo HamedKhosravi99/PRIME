@@ -16,7 +16,7 @@ Mechanism (faithful to the family, judge-free):
                the unsupported fraction is <= alpha (risk-controlling
                selection, RCPS-style);
   emission     the strongest claim of instance i with s >= tau_i, else
-               abstain (the family's graded back-off, D2).
+               abstain (the family's graded back-off).
 
 Honest small-n statement, printed and stored with every cell: with n_cal
 calibration pairs the empirical-risk guarantee is only meaningful down to

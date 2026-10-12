@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""W0-exit pilot analysis (EXECUTION_PLAN v5 / FREEZE.md F3+F6 pending
-slots): computed from the v2dev LLM runs + the computed planners.
+"""W0-exit pilot analysis (docs/ANALYSIS_PLAN.md, F3 and F6 slots):
+computed from the v2dev LLM runs + the computed planners.
 
 Outputs (per model tag):
   1. G_dev      mean utility-regret gap masked_reactive_v ->

@@ -1,8 +1,8 @@
 """Structured-record capability tests (Tier-M infra): the generic
 ``inspect_record`` resolver, the ``records`` schema field, and the
 end-to-end pipeline on the synthetic smoke instance
-``bench/instances/_smoke_record/rec-0001.json`` -- see
-prime_runtime/RECORD_ORACLE_REPORT.md for the design writeup.
+``bench/instances/_smoke_record/rec-0001.json`` (design rationale in
+prime_runtime/predicates.py).
 
 Covers: nested field-path resolution (dict + list mixed paths, not-found
 cases); goldledger firing record_predicate atoms through the real

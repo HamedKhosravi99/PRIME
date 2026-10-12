@@ -89,7 +89,8 @@ def test_episode_records_the_method_and_eligibility(tmp_path):
 
 
 # ---------------------------------------------------------------------------
-# prime_guided_gated: the induced-condition primary (EXECUTION_PLAN v4)
+# prime_guided_gated: the induced-condition primary (docs/EXECUTION_PLAN.md,
+# Part R, P8)
 # ---------------------------------------------------------------------------
 
 def _run(tmp_path, arm, method="state_first"):
@@ -173,7 +174,7 @@ def test_gating_only_applies_under_state_first_induction(tmp_path):
 
 
 # ---------------------------------------------------------------------------
-# FB-05: induce once per template family
+# Induce once per template family (docs/EXECUTION_PLAN.md, Part 6b, FB-05)
 # ---------------------------------------------------------------------------
 
 def test_induction_is_cached_per_family_not_per_instance(tmp_path, monkeypatch):

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Scaffold a real-repo artifact and verify atom gold-values by construction.
 
-Two responsibilities, both about INTEGRITY (AUTHORING.md rule: never assert a
+Two responsibilities, both about INTEGRITY (authoring rule: never assert a
 fact about the artifact you did not observe):
 
   scaffold  <url> <name> [--branch tag]

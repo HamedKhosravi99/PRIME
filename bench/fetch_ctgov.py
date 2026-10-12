@@ -9,13 +9,13 @@ Two jobs:
 1. ``check <NCT_ID>``  -- fetch the full record and report, field by field,
    whether the atoms this domain's claim ladder needs are actually PRESENT
    (enrollment count and primary outcomes are genuinely sparse in older
-   trials -- this is the screening step the task brief requires before an
-   NCT id is accepted as an instance's embedded record).
+   trials -- this is the screening step required before an NCT id is
+   accepted as an instance's embedded record).
 2. ``fetch <NCT_ID> <out.json>``  -- fetch the full record, extract exactly
    the relevant protocolSection sub-modules (verbatim, not paraphrased) into
    a small embeddable JSON at the SAME key nesting the real API uses
    (protocolSection.designModule.studyType, etc. -- matching the field paths
-   documented in prime_runtime/RECORD_ORACLE_REPORT.md SS6), and writes it to
+   listed in REQUIRED_FIELDS below), and writes it to
    ``out.json`` for hand-splicing into an instance's top-level "records"
    field. Also writes ``out.json.raw`` with the full untouched API response,
    for audit.
@@ -37,8 +37,7 @@ import sys
 
 API = "https://clinicaltrials.gov/api/v2/studies/%s"
 
-# The exact protocolSection sub-modules this domain's atoms read (SS6 of
-# prime_runtime/RECORD_ORACLE_REPORT.md's per-domain mapping).
+# The exact protocolSection sub-modules this domain's atoms read.
 REQUIRED_FIELDS = (
     ("protocolSection.designModule.studyType", "study type (interventional/observational)"),
     ("protocolSection.designModule.phases", "trial phase(s)"),

@@ -63,7 +63,7 @@ import policy_frontier as pf  # noqa: E402
 import rejection_bound as rb  # noqa: E402
 import stats_v5 as st  # noqa: E402
 
-MODEL = "qwen2.5-32b"     # confirmatory model (FREEZE F7)
+MODEL = "qwen2.5-32b"     # confirmatory model (docs/ANALYSIS_PLAN.md, F7)
 BUDGET = "B20"            # confirmatory budget for every pooled rate
 
 # ---------------------------------------------------------------------------
@@ -75,7 +75,7 @@ BUDGET = "B20"            # confirmatory budget for every pooled rate
 HARDCODED: dict = {}
 
 # ---------------------------------------------------------------------------
-# Expected values (from the brief / the paper's source). Every plotted
+# Expected values (from the paper's source). Every plotted
 # number must appear here and every entry here must be plotted. Default
 # comparison is at 1 decimal; DECIMALS overrides it per key.
 # ---------------------------------------------------------------------------
@@ -85,8 +85,8 @@ LADDER_ARMS = ["react", "react_verify", "react_spec", "react_spec_verify",
 LADDER_LABELS = ["ReAct", "+verify", "+spec", "+spec+verify", "+program",
                  "+program+verify", "+attested ledger",
                  "PRIME without\nguidance", "PRIME"]
-# Wording that paper/naacl/make_naacl_appendix_figures.py overrides; the
-# defaults keep the figures the other drafts include unchanged.
+# Wording that a script importing this module may override; the defaults
+# are the wording these figures use.
 LEDGER_NOTE = "adding the attested ledger raised it"
 REJECTION_FLOOR_LABEL = "Answer without evidence (Direct)"
 _LADDER_EXPECTED = {  # arm: (OFAR-A %, supported utility)   [Table T2(a)]
@@ -118,8 +118,8 @@ EXPECTED.update({
     "ladder/mask_rung/ci_hi": 33.5,
     # attested-ledger rung, Table T2(b) row program_verify->program_attested
     # (printed there as -4.8 [-8.6, -1.2] on the "reduction" scale; plotted
-    # here as the increase it is). Not in the brief -- added because the brief
-    # asks the figure to note that this rung raised false authorization.
+    # here as the increase it is). Added because the figure notes that this
+    # rung raised false authorization.
     "ladder/ledger_rung/increase": 4.8,
     "ladder/ledger_rung/ci_lo": 1.2,
     "ladder/ledger_rung/ci_hi": 8.6,
@@ -135,7 +135,8 @@ EXPECTED.update({
     "rejection/direct": 30.3, "rejection/mask_only": 30.1,
     "rejection/reject_regenerate": 43.5, "rejection/prime": 45.5,
     "rejection/ceiling": 59.2,
-    # Fig 3 margin: FREEZE F3 frozen equivalence margin, printed to 2 dp
+    # Fig 3 margin: docs/ANALYSIS_PLAN.md, F3 frozen equivalence margin,
+    # printed to 2 dp
     "controllaw/margin": 6.16,
 })
 for (_a, _t), (_d, _lo, _hi) in _CONTROL_EXPECTED.items():

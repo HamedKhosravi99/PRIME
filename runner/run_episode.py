@@ -1,6 +1,5 @@
 """Single-episode driver: run an arm on an instance, write the trace, and
-score emissions against the reconstructed method-independent gold ledger
-(SPEC.md SSRunner; PRIME-master.md SS2.3)."""
+score emissions against the reconstructed method-independent gold ledger."""
 
 import os
 import sys
@@ -103,14 +102,14 @@ def run_episode(
     summary["tool_calls"] = result.tool_calls
     summary["tokens"] = result.tokens
     summary["final_ledger"] = result.ledger_states
-    # Revision-freedom ablation metrics (master SS12.3 curve 4; SS11.12):
+    # Revision-freedom ablation metrics:
     # all zero on the deployed fixed path.
     summary["revisions_proposed"] = getattr(result, "revisions_proposed", 0)
     summary["revisions_accepted"] = getattr(result, "revisions_accepted", 0)
     summary["drift_events"] = getattr(result, "drift_events", 0)
     summary["revision_log"] = getattr(result, "revision_log", [])
     # prime_guided only (obligation-guided completion): zero for every other
-    # arm. See prime_runtime/GUIDED_COMPLETION_REPORT.md.
+    # arm. See prime_runtime/guidance.py.
     summary["guided_holds"] = getattr(result, "guided_holds", 0)
     summary["guided_stalls"] = getattr(result, "guided_stalls", 0)
     summary["discharged_calls"] = getattr(result, "discharged_calls", 0)

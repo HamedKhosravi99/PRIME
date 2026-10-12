@@ -3,8 +3,9 @@ FDAAA TrialsTracker on the pinned 6,000-registration snapshot.
 
 Each reading adds one clause of 42 CFR 11.44 to the previous one; the last is
 the faithful reading the instance builder uses. Inputs are the pinned files in
-../external/ (SHA256SUMS.txt); no network access. The tracker table is third-party:
-the review package carries it in third_party/; copy it into ../external/ to run.
+../external/ (SHA256SUMS.txt); no network access. The tracker table
+(trialstracker_2026-08-03.csv) is third-party and is not part of the public
+release; place a copy in ../external/ to run.
 
 Usage: python3 bench/fdaaa/contract/agreement_pilot.py
 """

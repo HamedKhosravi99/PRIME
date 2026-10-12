@@ -2,7 +2,7 @@
 """Shared building blocks for the three `analysis/build_tableC_guided_*.py`
 domain scripts (security/osv, drug-safety/fda, financial/fin) -- the
 guided-vs-unguided PRIME ablation on the three domains where PRIME under-
-claims (see prime_runtime/GUIDED_COMPLETION_REPORT.md).
+claims (see prime_runtime/guidance.py).
 
 IMPORTS, never edits, `analysis/end_to_end_tables.py` (scoring/table/render
 building blocks already shared by the software-, research-, security-,

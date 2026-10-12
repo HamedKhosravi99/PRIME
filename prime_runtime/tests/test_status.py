@@ -1,4 +1,4 @@
-"""Unit tests for availability precedence, route status, frontier (SS6.4)."""
+"""Unit tests for availability precedence, route status, frontier."""
 
 import pytest
 
@@ -113,7 +113,7 @@ def test_frontier_eligibility_and_dead_exclusion():
 def test_global_repair_frontier_on_inconsistency():
     """Inconsistent ledger: the frontier is the unsat-core repair frontier —
     review_or_retract obligations over provenance-bearing attestations,
-    never the frozen constraints (master SS6.4)."""
+    never the frozen constraints."""
     phi = [{"a": "T", "b": "F"}]
     atoms = ("a", "b")
     prog = make_program(("C",), (), {"C": [["a"]]}, "s", atoms)

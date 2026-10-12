@@ -4,8 +4,8 @@
 WHY. The paper closes on "producing the contract is the measurable open
 problem", and the evidence for that is one induction procedure -- spec-view
 prompting, three draws, UNANIMOUS aggregation -- reaching 25.8 utility against
-the authored program's 59.2. A reviewer asked the right question: is that a
-property of S2, or of this aggregator? If the latter, the closing claim is
+the authored program's 59.2. The question is whether that is a property of
+S2, or of this aggregator. If the latter, the closing claim is
 partly an indictment of our own procedure.
 
 It cannot be settled without inference, because only the AGGREGATED licence

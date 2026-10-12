@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Adversarial-reviser drift ablation (mechanism experiment 4, freedom-permits row).
+"""Adversarial-reviser drift ablation (revision freedom, freedom-permits row).
 
 This is a DETERMINISTIC policy, not a language model. It measures what each
-revision language *permits*, isolating Proposition 4's claim from the
-temperament of any particular model: instruction-tuned models rarely weaken
+revision language *permits*, isolating the claim about revision freedom from
+the temperament of any particular model: instruction-tuned models rarely weaken
 their own standard spontaneously (the behavioral drift runs show ~0), but the
 theorem is about what the freedom allows. The adversarial reviser exercises
 exactly that freedom.
@@ -169,7 +169,7 @@ def _adv_weaken_route(interp, top, ledger, step):
 
 def _adv_supply_program(interp, top, ledger, step):
     """Supply a post-hoc program licensing C_top with exactly the atoms the
-    cheap evidence has established (Prop. 4's selector)."""
+    cheap evidence has established (the post-hoc selector)."""
     from prime_runtime.closure import cl
     closed = cl(ledger)
     established = [a for a in interp.instance.atom_ids if closed.get(a) == "T"]

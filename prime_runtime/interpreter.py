@@ -1,10 +1,10 @@
 """Frozen-program license interpreter and typed claim objects.
 
-Implements PRIME-master.md SS7.2 (full in-episode freeze: at commitment the
-complete program P_0 is frozen; during the episode the policy's only state
-change is the ledger via attestations — no license/claim/order/scope edits of
-any kind), SS7.4 (claim-action masking via Auth), and SS7.8 (typed claim
-object; refusal of unauthorized emission).
+Implements the full in-episode freeze (at commitment the complete program
+P_0 is frozen; during the episode the policy's only state change is the
+ledger via attestations — no license/claim/order/scope edits of any kind),
+claim-action masking via Auth, and the typed claim object (refusal of
+unauthorized emission).
 
 Freeze enforcement is structural: the committed :class:`~prime_runtime.schema.Program`
 is a frozen dataclass whose containers are immutable, and the interpreter
@@ -23,8 +23,8 @@ from . import status as _status
 from .closure import cl, is_inconsistent, satisfies
 from .schema import Instance, Program, atom_of, make_program
 
-# Revision-freedom ablation modes (master SS12.3 mechanism curve 4).
-# "fixed" is the DEPLOYED system (full in-episode freeze, SS7.2); every other
+# Revision-freedom ablation modes.
+# "fixed" is the DEPLOYED system (full in-episode freeze); every other
 # mode is an ABLATION-ONLY relaxation, explicitly flagged at construction.
 REVISION_MODES = (
     "fixed",            # deployed default: no revision language at all
@@ -62,7 +62,7 @@ def allowed_revision_kinds(revision_mode: str) -> List[str]:
 
 
 class FrozenProgramError(AttributeError):
-    """Attempted in-episode mutation of the committed program (master SS7.2)."""
+    """Attempted in-episode mutation of the committed program."""
 
 
 class IllFormedRevisionError(ValueError):
@@ -70,7 +70,7 @@ class IllFormedRevisionError(ValueError):
 
 
 class UnauthorizedClaimError(RuntimeError):
-    """Emission refused: claim not in Auth_P(z_t) (master SS7.4, Prop. 2)."""
+    """Emission refused: claim not in Auth_P(z_t)."""
 
 
 class StaleLedgerError(RuntimeError):
@@ -84,23 +84,23 @@ class Interpreter:
     ----------
     instance : the benchmark instance (supplies scope, atoms, resolvers).
     program  : the committed program; defaults to the instance gold program
-               (gold-license condition, SPEC.md arms).
+               (gold-license condition).
     revision_mode : "fixed" (default, deployed full-freeze behavior) or one of
                the ABLATION-ONLY relaxations in :data:`REVISION_MODES`
-               (master SS12.3 mechanism curve 4).  In non-fixed modes,
+               (the revision-freedom ablation).  In non-fixed modes,
                :meth:`propose_revision` accepts revision requests per the
                mode's acceptance rule; EVERY accepted revision is logged with
                an ``auth_expanding`` flag computed by the exact robust route
                absorption check against the ORIGINAL committed program B_0
                (:func:`prime_runtime.absorption.check_patch`) — an accepted
                revision that fails it is authorization-expanding: a DRIFT
-               EVENT (the empirical face of Props. 3-4).
+               EVENT.
 
                In ``posthoc`` mode there is NO upfront commitment: the working
                program starts with empty licenses (nothing authorized) and the
                policy supplies the program that licenses its claim at emission
                time via ``propose_revision("replace_program", ...)``,
-               validated for well-formedness only (Prop. 4's selector).  The
+               validated for well-formedness only (a post-hoc selector).  The
                drift reference B_0 remains the program that the deployed
                full-freeze system would have committed (``program`` /
                gold), so drift is comparable across arms.
@@ -144,7 +144,7 @@ class Interpreter:
         if getattr(self, "_frozen", False):
             raise FrozenProgramError(
                 "in-episode freeze: interpreter attribute %r is immutable "
-                "(master SS7.2 — only the ledger changes, via attestations)" % name
+                "(only the ledger changes during an episode, via attestations)" % name
             )
         object.__setattr__(self, name, value)
 
@@ -154,19 +154,19 @@ class Interpreter:
     # -- masking -------------------------------------------------------------
 
     def legal_claim_actions(self, ledger) -> List[str]:
-        """Claim actions available to the decoder: exactly Auth_P(z_t)
-        (master SS7.4).  Empty on an inconsistent ledger."""
+        """Claim actions available to the decoder: exactly Auth_P(z_t).
+        Empty on an inconsistent ledger."""
         return _auth.auth_ids(self.program, ledger)
 
     def frontier(self, ledger) -> Dict[str, List[List[str]]]:
-        """Obligation frontier per claim (master SS6.4), for prompt
+        """Obligation frontier per claim, for prompt
         injection by the prime arm."""
         return {
             cid: _status.frontier(cid, self.program, ledger, self.resolvers)
             for cid in self.program.claims
         }
 
-    # -- revision-freedom ablation (master SS12.3 curve 4; ABLATION ONLY) -----
+    # -- revision-freedom ablation (ABLATION ONLY) ----------------------------
 
     @property
     def revisions_proposed(self) -> int:
@@ -187,29 +187,28 @@ class Interpreter:
         self, kind: str, payload: Mapping[str, Any], step: Optional[int] = None
     ) -> Dict[str, Any]:
         """Ablation-only revision request (NOT available in the deployed
-        ``fixed`` mode, which raises FrozenProgramError — master SS7.2).
+        ``fixed`` mode, which raises FrozenProgramError).
 
         Acceptance rule = (kind permitted by the mode) AND (the edit is a
         well-formed program edit: known claims/atoms per kind, routes over the
         instance vocabulary, realizable under Phi — unrealizable routes are
-        ill-formed, master SS9.3).  No safety check gates acceptance: safety
+        ill-formed).  No safety check gates acceptance: safety
         is MEASURED, not enforced — every accepted revision is logged with
 
             auth_expanding = not check_patch(B_0, delta(P_old, P_new), Phi)
 
-        the exact robust route absorption decision (master SS9.3) applied to
+        the exact robust route absorption decision applied to
         everything THIS revision introduces — added claims, added dominance
         pairs, added/modified routes — with per-route containment checked
         against the ORIGINAL committed program's absorption families B_0,
         never against the current (possibly already weakened) program, so
         strengthen-then-weaken chains cannot leak; deletions never expand.
-        An accepted revision with auth_expanding=True is a DRIFT EVENT
-        (mechanism curve 4).
+        An accepted revision with auth_expanding=True is a DRIFT EVENT.
         """
         if self.revision_mode == "fixed":
             raise FrozenProgramError(
                 "in-episode freeze: program revision is not a policy action "
-                "(master SS7.2); revision_mode='fixed'"
+                "(revision_mode='fixed')"
             )
         entry: Dict[str, Any] = {
             "kind": str(kind),
@@ -235,7 +234,7 @@ class Interpreter:
             return entry
         # Exact drift flag: per-route containment of THIS revision's
         # additions against the ORIGINAL committed program B_0 over all
-        # four-valued ledgers (absorption.check_patch, master SS9.3).
+        # four-valued ledgers (absorption.check_patch).
         delta = _revision_delta(self.program, candidate, self.program0)
         expanding = not _absorption.check_patch(
             self.program0, delta, self.instance.phi_patterns
@@ -257,11 +256,11 @@ class Interpreter:
         ledger,
         ledger_version: Optional[int] = None,
     ) -> Dict[str, Any]:
-        """Emit a typed claim object (master SS7.8); raises if unauthorized.
+        """Emit a typed claim object; raises if unauthorized.
 
         ``ledger_version`` is a stale-emission guard: when supplied it must
         equal ``ledger.version`` (claims carry the ledger version under which
-        they were licensed, master SS7.8).
+        they were licensed).
         """
         if claim_id not in self.program.claims:
             raise UnauthorizedClaimError("unknown claim %r" % claim_id)
@@ -279,7 +278,7 @@ class Interpreter:
         return self._claim_object([claim_id], ledger, authorized)
 
     def emit_max_auth(self, ledger) -> Dict[str, Any]:
-        """Emit the maximal authorized antichain MaxAuth_P(z) (master SS7.5).
+        """Emit the maximal authorized antichain MaxAuth_P(z).
         Raises when nothing is authorized (abstention is not an emission)."""
         maximal = _auth.max_auth(self.program, ledger)
         if not maximal:
@@ -294,7 +293,7 @@ class Interpreter:
         c = cl(ledger)
         assert not is_inconsistent(c)  # authorized non-empty implies consistent
         # Evidence: literals of complete routes of licensing claims that
-        # dominate an emitted claim (downward closure, master SS9.2).
+        # dominate an emitted claim (downward closure).
         evidence = set()
         for e in emitted:
             for d in self.program.claims:
@@ -340,7 +339,7 @@ def _revision_delta(old: Program, new: Program, p0: Program) -> Program:
     P_0's transitive order by check_patch); and, per claim, exactly the
     routes not present pre-revision (each checked for containment of some
     ORIGINAL B_0 route).  Deletions contribute nothing — contractions never
-    expand authorization (Prop. 3)."""
+    expand authorization."""
     old_claims = set(old.claims)
     p0_claims = set(p0.claims)
     added_claims = [c for c in new.claims if c not in old_claims and c not in p0_claims]
@@ -372,8 +371,8 @@ def _jsonable(payload: Mapping[str, Any]) -> Dict[str, Any]:
 
 def _check_route(route: Any, instance: Instance) -> List[str]:
     """Well-formedness of one route: a list of literal strings over the
-    instance atom vocabulary, realizable under Phi (master SS9.3:
-    unrealizable revised routes are ill-formed)."""
+    instance atom vocabulary, realizable under Phi (unrealizable revised
+    routes are ill-formed)."""
     if not isinstance(route, (list, tuple)):
         raise IllFormedRevisionError("route must be a list of literals, got %r" % (route,))
     atom_ids = set(instance.atom_ids)

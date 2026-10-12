@@ -1,5 +1,5 @@
 """Revision-freedom ablation: acceptance rules and exact drift detection
-(master SS7.2 freeze, SS9.3 robust absorption, SS12.3 mechanism curve 4).
+(in-episode freeze, robust route absorption).
 
 Toy program: C1={E1}, C2={E1,E2}, C3={E1,E2,E3,E4}, order C1<C2<C3.
 Absorption family B_0(c) = routes of c and every STRONGER claim, so

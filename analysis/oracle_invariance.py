@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """Oracle representation-invariance audit (Experiments B1 / B5).
 
-the design notes Weakness 7 §7.7:
-
     Experiment B1 (logical-representation invariance): transform the same
     support function among DNF / CNF / BDD / executable code; verify
     identical scores for all logged traces.
@@ -11,11 +9,11 @@ the design notes Weakness 7 §7.7:
     transformations to the oracle implementation; all result tables must
     remain byte-identical; publish a hash of the generated scores.
 
-For every logged trace under ``pilot/results/**/*.jsonl`` belonging to a
+For every logged trace under ``results/**/*.jsonl`` belonging to a
 DEPLOYED arm (i.e. excluding the ``drift__*``/``advdrift__*`` standard-drift
 ablation arms under ``adversarial/`` and the model dirs, which are
 deliberately adversarial and not deployment candidates — see the
-integrated-plan "deployed fixed arm" convention already used by
+"deployed fixed arm" convention already used by
 ``analysis/drift_table.py``):
 
   1. reconstruct the method-independent gold ledger from the trace via
@@ -34,7 +32,7 @@ integrated-plan "deployed fixed arm" convention already used by
 
 Never reads an emitting arm's own attestation/emission claims of support —
 only the reconstructed gold ledger, exactly like ``goldledger``/``aggregate``
-already do (SPEC.md: "no fabricated results anywhere").
+already do (no fabricated results anywhere).
 """
 from __future__ import annotations
 
@@ -58,7 +56,7 @@ DEFAULT_BENCH = os.path.join(PILOT, "bench", "instances")
 DEFAULT_FIXTURE = os.path.join(PILOT, "prime_runtime", "tests", "fixtures", "instance_toy.json")
 
 # Standard-drift / adversarial-reviser ablation arms are deliberately
-# non-deployed exploit-pressure conditions (memo Weakness 2 §2.3, C5) --
+# non-deployed exploit-pressure conditions --
 # excluded here, matching how analysis/drift_table.py treats them as a
 # separate mechanism experiment, not a deployment candidate.
 _NON_DEPLOYED_ARM_PREFIXES = ("drift__", "advdrift__")
@@ -295,7 +293,7 @@ def main():
     if trace_audit["disagreements"] or route_audit["n_mismatches"]:
         # Non-fatal: mismatches are reported findings, not a failed run --
         # but signal via exit code for CI/automation that something needs
-        # human review (memo §7.2: "do not silently fix").
+        # human review (mismatches are never silently fixed).
         sys.exit(1)
 
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate normalized blind-judge evaluation packets from logged traces.
 
-Master §11.7: packets are produced from the logged environment trace by a
+Packets are produced from the logged environment trace by a
 METHOD-INDEPENDENT procedure — never assembled by the evaluated agent — with
 identical format across methods: artifact + declared scope, emitted claim,
 every logged tool observation bearing on that claim, explicit conflicts, and

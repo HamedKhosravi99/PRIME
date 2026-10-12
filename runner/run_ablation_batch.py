@@ -1,18 +1,18 @@
-"""Batch runner for the 2^4 mechanism-interaction ablation (Task #5, Table E;
-memo Weakness 8 SS8.6): one process per fractional-factorial cell
-(runner/arms.py's ``ABLATION_CELLS`` / ``run_prime_ablation``).
+"""Batch runner for the 2^4 mechanism-interaction ablation (Table E): one
+process per fractional-factorial cell (runner/arms.py's ``ABLATION_CELLS`` /
+``run_prime_ablation``).
 
-Usage:
-    python3 pilot/runner/run_ablation_batch.py \
-        --instances 'pilot/bench/instances/swe/*.json' \
+Usage (from the package root):
+    python3 runner/run_ablation_batch.py \
+        --instances 'bench/instances/swe/*.json' \
         --model gpt-4.1 --parallel 4
 
-    python3 pilot/runner/run_ablation_batch.py --dry-run
+    python3 runner/run_ablation_batch.py --dry-run
 
 Writes ``results/<model>/ablation__cell<i>__m<minimal><f><frozen>...
 /summary.json`` per cell, in the SAME run-summary schema run_batch.py uses
-(a ``run`` block + an ``episodes`` list), so aggregate.py / fill_paper.py's
-loaders and analysis/end_to_end_tables.py all read it uninterpreted.
+(a ``run`` block + an ``episodes`` list), so aggregate.py's loaders and
+analysis/end_to_end_tables.py read it uninterpreted.
 """
 
 import argparse

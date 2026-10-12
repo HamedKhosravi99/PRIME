@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Fill the manuscript's marked slots from generated results, and nothing else.
 
-paper/build_v2.py assembles prime_v2.tex with every experimental number left
-as a visible \\slot{Name} marker. This script is the ONLY sanctioned way to
-replace one: each slot maps to a filler that reads a generator's JSON output
-(results/tableT1.json, results/tableT2.json) or a generator module
+The paper source (prime_v2.tex, read from ../paper/ relative to the package
+root) carries every experimental number as a visible \\slot{Name} marker.
+This script is the ONLY sanctioned way to replace one: each slot maps to a
+filler that reads a generator's JSON output (results/tableT1.json,
+results/tableT2.json) or a generator module
 (analysis/bench_stats.py) and returns LaTeX, or returns None if the
 underlying cells have not been run yet.
 
@@ -12,7 +13,8 @@ A slot with no data is LEFT AS THE MARKER on purpose -- the PDF then prints
 "[SLOT: Ladder]" in bold, so an unfilled number can never be mistaken for a
 filled one, and `--check` exits nonzero while any remain.
 
-Writes paper/prime_v2_filled.tex.
+Writes prime_v2_filled.tex in the same directory. The paper source is not
+part of this package.
 Usage:
   python3 analysis/fill_v2_tables.py            # fill what is available
   python3 analysis/fill_v2_tables.py --check    # nonzero exit if any pending
@@ -37,7 +39,7 @@ for _p in (PILOT, os.path.join(PILOT, "runner"), HERE):
 SRC = os.path.join(PAPER, "prime_v2.tex")
 DST = os.path.join(PAPER, "prime_v2_filled.tex")
 
-PRIMARY = "qwen2.5-32b"          # confirmatory model per FREEZE F7
+PRIMARY = "qwen2.5-32b"  # confirmatory model per docs/ANALYSIS_PLAN.md, F7
 TOP_CONTRAST = "masked_reactive_v->prime_guided"
 
 
@@ -123,12 +125,12 @@ def fill_LadderFig(ctx):
     # same numbers, so the figure only has to carry the shape
     # compact: panel (a) of Table~\ref{tab:T2} carries the numbers, so the
     # figure only has to carry the shape
-    # Two reviewers called this figure unreadable and they were right: at
-    # 6.0 x 1.5 cm a 0--50 utility range was crushed into a 1.5 cm band, so
-    # the low-utility arms (static_contract, react, both induced points)
-    # piled into the bottom-left corner and their labels overprinted each
-    # other. Widening costs no page height and does most of the work, since
-    # the crowding is along x; the extra height separates what is left.
+    # At 6.0 x 1.5 cm this figure was unreadable: a 0--50 utility range was
+    # crushed into a 1.5 cm band, so the low-utility arms (static_contract,
+    # react, both induced points) piled into the bottom-left corner and their
+    # labels overprinted each other. Widening costs no page height and does
+    # most of the work, since the crowding is along x; the extra height
+    # separates what is left.
     SX, SY = 9.0 / xmax, 2.3 / ymax          # cm per unit
     sty = {"ungated": "draw=black!55, fill=black!12",
            "gated": "draw=blue!62!black, fill=blue!62!black",
@@ -315,7 +317,8 @@ def fill_Ladder(ctx):
     OFAR column gets each of them backwards:
 
       * A contrast whose OFAR drop is produced by an arm that stopped
-        answering (FB-02) is a silence effect, not a safety effect.
+        answering (docs/EXECUTION_PLAN.md, Part 6b, FB-02) is a silence
+        effect, not a safety effect.
       * A contrast with zero discordant families is a FLOOR -- both arms are
         already at zero false authorization -- and reporting p=1.0 as "no
         effect" would understate a perfect result.
@@ -364,9 +367,9 @@ def fill_Ladder(ctx):
     # The abstract now states the invariant point in its second sentence
     # ("the zero itself is entailed by the emission invariant rather than
     # measured"), so repeating it in full here cost a paragraph to say the
-    # same thing twice on the same page. Reviewers objected to the density,
-    # not to the disclosure -- so the disclosure stays, compressed to the
-    # clause that carries it.
+    # same thing twice on the same page. The problem was the density, not the
+    # disclosure -- so the disclosure stays, compressed to the clause that
+    # carries it.
     if masked:
         parts.append(
             "That zero is the authorization invariant realised rather than an "
@@ -376,8 +379,8 @@ def fill_Ladder(ctx):
         uu = max(unmasked.items(), key=lambda kv: kv[1]["utility"])
         # Introduction, not results: the endpoint definitions arrive later,
         # and Section 6 prints all six of these numbers against the table
-        # they come from. Reviewers objected to statistics landing before
-        # the endpoints they are measured on, and they were right.
+        # they come from. Statistics should not land before the endpoints
+        # they are measured on.
         parts.append(
             "The separation is therefore not in the false-authorization "
             "column but in what each arm retains: \\texttt{%s} holds its "
@@ -437,14 +440,14 @@ def fill_Ladder(ctx):
 
 def _w0(model):
     """The frozen W0 pilot outputs for a model: the ONE equivalence margin
-    (FREEZE F3) and whether dev variance licenses verdict language at all
-    (FREEZE F6). Both are pre-registered from the DEV split; reading them
-    here stops the confirmatory data from choosing either."""
+    (docs/ANALYSIS_PLAN.md, F3) and whether dev variance licenses verdict
+    language at all (F6). Both are pre-registered from the DEV split; reading
+    them here stops the confirmatory data from choosing either."""
     return _load("w0_pilots_%s.json" % model)
 
 
 def fill_Control(ctx):
-    """The pre-registered E2 verdict (FREEZE F6).
+    """The pre-registered E2 verdict (docs/ANALYSIS_PLAN.md, F6).
 
     F6 names the paired permutation test as PRIMARY and TOST as the
     equivalence test, and it is the TOST verdict that the dev pilot's power
@@ -932,7 +935,7 @@ def fill_S1Limit(ctx):
                f["valid"]))
 
 
-# --- abstract slots (SKELETON.md, frozen) ----------------------------------
+# --- abstract slots (frozen) -----------------------------------------------
 
 def fill_AbsLadder(ctx):
     """The ladder sentence, restricted to what the ladder can actually decide.
@@ -1159,8 +1162,8 @@ def table_T1(ctx, model=None):
 
 
 def _short(contrast: str) -> str:
-    """Contrast labels for T2. The official text block is 5.5in and the
-    full arm names overflow it; these forms are unambiguous in context and
+    """Contrast labels for T2. The text block is 5.5in and the full arm
+    names overflow it; these forms are unambiguous in context and
     the caption spells the mapping out."""
     abbrev = {"masked_reactive_v": "masked", "prime_guided": "guided"}
     parts = [abbrev.get(p, p.replace("react_", "")) for p in contrast.split("->")]
@@ -1236,10 +1239,9 @@ def table_T2(ctx, model=None):
                    "Anchor & branching & nested \\\\\n\\midrule\n"
                    + "\n".join(crows))
 
-    # Panel (d): the authored-versus-induced contrast. Every independent
-    # reviewer asked for this in the main results rather than 21 pages
-    # later, and for the same reason: the configuration that is NEW is the
-    # induced one, and the configuration that produces the headline zero is
+    # Panel (d): the authored-versus-induced contrast belongs in the main
+    # results rather than in an appendix: the configuration that is NEW is
+    # the induced one, and the configuration that produces the headline zero is
     # the authored one. Printing them in the same table is the only honest
     # way to show that, and it is the paper's own argument -- enforcement
     # preserves the committed program exactly, so this gap prices S2.
@@ -1552,8 +1554,8 @@ def fill_Attribution(ctx):
            "and all exceeding the margin frozen before confirmatory scoring."
            % (_pp(min(gaps)), _pp(max(gaps)), len(cl)))
     # Answer the confound BEFORE reporting the frontier deflation. The
-    # objection is that PRIME arg-maxes the utility we score, so every
-    # utility comparison flatters it. The reply is not a friendlier utility
+    # confound is that PRIME arg-maxes the utility we score, so every
+    # utility comparison flatters it. The answer is not a friendlier utility
     # -- any U the emission rule still arg maxes is circular the same way --
     # but the same contrast on endpoints the rule cannot raise: what the
     # agent RESOLVED, and what it SPENT.
@@ -1574,13 +1576,13 @@ def fill_Attribution(ctx):
                    rec["n_clusters"], _pp(per["delta"]),
                    _p(per["p_randomization"])))
 
-    # State the deficit, do not manage it. An earlier draft replaced "the
-    # model leaves points on the table against random selection" with the
-    # softer "the gate imposes no utility ceiling, so the architecture is
-    # policy-agnostic"; three independent reviewers then reconstructed the
-    # deficit from the table anyway and each asked, in the same words, what
-    # the language model is contributing. The honest answer is printed here,
-    # and it is read off the generator rather than asserted.
+    # State the deficit, do not manage it. Softer wording ("the gate imposes
+    # no utility ceiling, so the architecture is policy-agnostic") hides
+    # that the model leaves points on the table against random selection;
+    # the deficit can be reconstructed from the table anyway, and it raises
+    # the question of what the language model is contributing. The honest
+    # answer is printed here, and it is read off the generator rather than
+    # asserted.
     tight = "bmin"
     best = pol.get("shortest_route") or {}
     rand = pol.get("random_masked") or {}
@@ -1588,10 +1590,9 @@ def fill_Attribution(ctx):
     dep = (t1.get("prime_guided") or {}).get("utility")
     if best.get(tight) is not None and dep is not None:
         # Report the control law as the FRACTION OF ACHIEVABLE HEADROOM it
-        # recovers, not as a bare gap over the reactive arm. Two reviewers
-        # independently asked for this: a gap over a weak baseline says
-        # nothing about how much was there to win, and the deterministic
-        # frontier tells us exactly how much was.
+        # recovers, not as a bare gap over the reactive arm: a gap over a weak
+        # baseline says nothing about how much was there to win, and the
+        # deterministic frontier tells us exactly how much was.
         gate = (t1.get("masked_reactive_v") or {}).get("utility")
         head = (best[tight] - gate) if gate is not None else None
         frac = (100.0 * (dep - gate) / head) if head else None
@@ -1647,8 +1648,8 @@ def table_F2(ctx, model=None):
 def fill_ExtText(ctx):
     """PRIME against comparators it did not design as ablations of itself.
 
-    Every arm on the ladder is a PRIME ablation, which three reviews named
-    as the binding evidence gap: that design cannot separate "the mechanism
+    Every arm on the ladder is a PRIME ablation, which leaves an evidence
+    gap: that design cannot separate "the mechanism
     is better" from "the harness suits it". These six are independent
     scaffolds and control mechanisms, run end to end on the confirmatory
     split under the same model, budget, executor and oracle.
@@ -1869,7 +1870,7 @@ def table_ALT(ctx, model=None):
              if v.get("status") != "NOT RUN"}
     con = alt.get("contrasts") or {}
     # Both reference arms, side by side. Showing only the gate-only column
-    # is what let three reviewers read a gate-only range as PRIME's.
+    # invites reading a gate-only range as PRIME's.
     cong = alt.get("contrasts_guided") or {}
     if not cells:
         return None
@@ -1919,8 +1920,8 @@ def fill_AbsGate(ctx):
     alt = _load("tableALT.json") or {}
     # The subject of the sentence below is PRIME's emission rule, so the
     # advantage has to be PRIME's, not the gate-only arm's. Reading the
-    # gate block here understated our own number by ~11 points AND
-    # misattributed it; three independent reviewers caught it.
+    # gate block here would understate our own number by ~11 points AND
+    # misattribute it.
     con = alt.get("contrasts_guided") or {}
     d_o = g.get("direct|ofar_a")
     d_u = g.get("direct|utility")
@@ -1949,10 +1950,10 @@ def fill_AbsGate(ctx):
 def fill_StaticDomains(ctx):
     """Where a hand-written contract beats the apparatus. Say it in the body.
 
-    A reviewer's exact objection: if a hand-written contract matches the
-    learned-and-committed program at equal safety in half the domains, the
-    case for the machinery is weaker than Section 6 implies, and that belongs
-    in the main text rather than an appendix table.
+    If a hand-written contract matches the learned-and-committed program at
+    equal safety in half the domains, the case for the machinery is weaker
+    than Section 6 implies, and that belongs in the main text rather than an
+    appendix table.
     """
     d = _load("static_contract_domains.json") or {}
     rows = d.get("rows") or []
@@ -2028,11 +2029,11 @@ def fill_ContractSemantics(ctx):
 def fill_Rejection(ctx):
     """Reject-and-regenerate, bounded rather than strawmanned.
 
-    A reviewer called this the paper's biggest missing comparison and was
-    right. The strongest version of the alternative is a perfect post-hoc
-    checker with unlimited resamples, and its ceiling is computable from the
-    ungated arm's own episodes. The answer is two-sided; both halves are
-    printed, including the half that goes against the mask.
+    This is the most obvious missing comparison. The strongest version of the
+    alternative is a perfect post-hoc checker with unlimited resamples, and its
+    ceiling is computable from the ungated arm's own episodes. The answer is
+    two-sided; both halves are printed, including the half that goes against
+    the mask.
     """
     d = _load("rejection_bound.json") or {}
     rej, gate, dep, ung = (d.get("rejection_ceiling"), d.get("gate_only"),
@@ -2060,8 +2061,7 @@ def fill_Rejection(ctx):
 def fill_Family2(ctx):
     """The enforcement contrast on a second, independent model family.
 
-    Two of three review panels made this a hard requirement in the same
-    words: the structural guarantee is model-independent by construction,
+    The structural guarantee is model-independent by construction,
     but what the gate COSTS and what the control law is WORTH are
     policy-dependent, and every confirmatory number came from one lineage.
     """
@@ -2103,9 +2103,8 @@ def fill_Family2(ctx):
 def fill_Anatomy(ctx):
     """Why induction fails, as a mechanism rather than a verdict.
 
-    A reviewer asked for exactly this: a diagnosis that generalises, with
-    evidence that it is the binding constraint, on the grounds that a pilot
-    negative becomes a contribution at that point. The mechanism is a
+    A diagnosis that generalises, with evidence that it is the binding
+    constraint, turns a pilot negative into a contribution. The mechanism is a
     property of state-enumeration induction in general, not of one model.
     """
     d = _load("induction_anatomy.json") or {}
@@ -2148,11 +2147,11 @@ def fill_Anatomy(ctx):
 def fill_Prevalence(ctx):
     """The enforcement contrast as a curve, not a single operating point.
 
-    A reviewer objected that the gap is reported at one author-chosen
-    corruption rate with no sensitivity analysis anywhere in the paper, and
-    that a single engineered operating point cannot support a claim about
-    how much enforcement is worth. Resampling the same episodes across the
-    two strata answers it without regenerating anything.
+    Reported at one author-chosen corruption rate with no sensitivity
+    analysis, the gap would rest on a single engineered operating point,
+    which cannot support a claim about how much enforcement is worth.
+    Resampling the same episodes across the two strata answers it without
+    regenerating anything.
     """
     d = _load("prevalence_sweep.json") or {}
     rows = d.get("rows") or []
@@ -2174,14 +2173,13 @@ def fill_Prevalence(ctx):
 def fill_External(ctx):
     """The one family whose contract we did not author.
 
-    Every reviewer raised the same objection in different words -- there is
-    no point anywhere in the paper where the system meets an artifact the
-    authors did not design -- and each proposed a different remedy:
-    calibrate the oracle against outside judgement, evaluate on a benchmark
-    the team did not build, or report the endpoint on an undegraded
-    distribution. FDAAA 801 answers all three at once, because the contract
-    is a statute, the records are real and untouched, and the violations
-    are somebody else's.
+    Without this family there is no point anywhere in the paper where the
+    system meets an artifact the authors did not design. Three remedies are
+    possible: calibrate the oracle against outside judgement, evaluate on a
+    benchmark the team did not build, or report the endpoint on an undegraded
+    distribution. FDAAA 801 answers all three at once, because the contract is
+    a statute, the records are real and untouched, and the violations are
+    somebody else's.
 
     Stated carefully: the independence is of CONTRACT and of DECISION
     PROCEDURE, not of data. The external tracker reads the same registry
@@ -2229,14 +2227,14 @@ def fill_External(ctx):
 def fill_RWG(ctx):
     """The Rubric-to-Work Gap as a measured rate, not just a named concept.
 
-    A reviewer objected, correctly, that the gap is named in the
-    introduction, formalised in a definition, subtyped in an appendix, and
-    never reported as a rate anywhere -- naming a phenomenon centrally and
-    never measuring it is a soft overclaim. It IS measured, though, under a
-    different name: evidence recall is the share of the gold licence's atoms
-    an arm actually resolved, so its complement is exactly recognition
-    minus execution. Saying so costs a clause and closes the objection with
-    data already in the paper.
+    The gap is named in the introduction, formalised in a definition,
+    subtyped in an appendix, and would otherwise never be reported as a
+    rate -- naming a phenomenon centrally and never measuring it is a soft
+    overclaim. It IS measured, though, under a different name: evidence
+    recall is the share of the gold licence's atoms an arm actually
+    resolved, so its complement is exactly recognition minus execution.
+    Saying so costs a clause and closes the gap with data already in the
+    paper.
     """
     alt = _load("tableALT.json") or {}
     cells = {k: v for k, v in (alt.get("cells") or {}).items()
@@ -2259,10 +2257,10 @@ def fill_RWG(ctx):
 def fill_AbsGateShort(ctx):
     """The gate result, with each number attached to the pairing it came from.
 
-    This sentence was WRONG in v7.0 and an independent reviewer caught it.
-    Leading with the matched-information rung was right, but the TOST verdict
-    and the "answers more often" clause were carried over from the OTHER
-    pairing and welded onto it. On the mask rung itself
+    An earlier version of this sentence was wrong: leading with the
+    matched-information rung was right, but the TOST verdict and the
+    "answers more often" clause were carried over from the OTHER pairing and
+    welded onto it. On the mask rung itself
     (react_program_attested -> masked_reactive_v) pooled utility falls
     38.0 -> 30.1 and the emit rate does not move; no utility TOST was ever
     computed for that contrast. The equivalence belongs to
@@ -2293,8 +2291,8 @@ def fill_AbsGateShort(ctx):
           if d_u.get("tost_equivalent") else "statistically comparable")
     # The abstract now supplies the lead-in ("what is empirical is its
     # price, and") so this filler starts mid-sentence with the comparison
-    # itself. Reviewers asked that no number arrive before the object it is
-    # measured on has been named in plain words.
+    # itself. No number should arrive before the object it is measured on
+    # has been named in plain words.
     return ("it depends on the comparison. Against an arm holding the same "
             "vocabulary, routes and evidence, unsupported-claim emission falls "
             "from %s\\%% to zero and retained utility from %s to %s --- one "
@@ -2364,10 +2362,9 @@ def fill_NConf(_):
 def fill_Scorecard(ctx):
     """The conjunction, stated once, instead of four concessions apart.
 
-    Every line here is already somewhere in the paper. A reviewer who
-    assembled them by hand observed that the paper never states them
-    together, and that having to build that ledger yourself is a cost the
-    paper imposes rather than pays. So it is paid here, in the body, at the
+    Every line here is already somewhere in the paper, but never stated
+    together, and having to build that ledger yourself is a cost the paper
+    would impose rather than pay. So it is paid here, in the body, at the
     point where the mechanisms are introduced.
     """
     T2 = ctx.get("T2") or {}
@@ -2522,7 +2519,7 @@ def fill_Factorial(ctx):
 
     Dropping minimality and the freeze together reaches nearly twice the
     deployed cell's supported utility at the same zero. Leaving that in an
-    appendix table undiscussed is the worst available state: a reviewer who
+    appendix table undiscussed is the worst available state: a reader who
     finds it stops asking about the cell and starts asking what else was not
     discussed. It is reported here with what actually separates the cells --
     two factors at once, and 60% more tool calls -- and with the half the
@@ -2663,8 +2660,8 @@ def fill_AbsInducedShort2(ctx):
     if not (ut and of):
         return None
     # The false-authorization half of this cost moved to the body: the
-    # abstract was carrying 26 numeric tokens and reviewers could not
-    # extract the argument in one pass. Utility is the load-bearing half.
+    # abstract was carrying 26 numeric tokens and the argument could not be
+    # extracted in one pass. Utility is the load-bearing half.
     return ("The decomposition prices the open problem: inducing the support "
             "logic rather than authoring it costs %s to %s utility points "
             "and breaks the zero, and because enforcement preserves the "

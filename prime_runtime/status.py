@@ -1,11 +1,11 @@
 """Typed availability, route status, obligation frontier, completion.
 
-Implements PRIME-master.md SS6.4 (route status via a typed availability
-function; repair-aware residual R~; obligation frontier; global unsat-core
-repair frontier) and SS11.5 (RouteCompletion / Completion / five mutually
+Implements route status via a typed availability function, the repair-aware
+residual R~, the obligation frontier, the global unsat-core repair frontier,
+and the completion metrics (RouteCompletion / Completion / five mutually
 exclusive per-claim states).
 
-Availability precedence (fail-closed totality, master SS6.4):
+Availability precedence (fail-closed totality):
 
     satisfied > repairable > open > impossible
 
@@ -23,7 +23,7 @@ Resolver table format
                  artifact/scope version (default False).
 
 Retraction of a provenance-bearing attestation is always a registered repair
-action (master SS6.4: repair targets attestations, never frozen constraints).
+action (repair targets attestations, never frozen constraints).
 Use :func:`resolver_table` to build the table from an Instance.
 """
 
@@ -49,7 +49,7 @@ FRONTIER_ELIGIBLE = (ACTIVE, REPAIR_BLOCKED)
 
 class ResolverError(RuntimeError):
     """Fail-closed resolver-contract violation: no availability case applies
-    (master SS6.4 totality).  The runtime authorizes no new claim and
+    (fail-closed totality).  The runtime authorizes no new claim and
     requires trusted intervention; it never guesses a status."""
 
 
@@ -58,8 +58,8 @@ def resolver_table(instance: Instance) -> Dict[str, Dict[str, Any]]:
     table: Dict[str, Dict[str, Any]] = {}
     for atom in instance.atoms:
         if atom.resolver is None:
-            # authoring-time terminal unavailability (master SS10.5,
-            # evidence-unavailable split): no tool can establish the atom
+            # authoring-time terminal unavailability (evidence-unavailable
+            # split): no tool can establish the atom
             # for this artifact/scope version -> availability 'impossible'.
             table[atom.id] = {"tool": None, "enabled": False, "impossible": True}
         else:
@@ -67,7 +67,7 @@ def resolver_table(instance: Instance) -> Dict[str, Dict[str, Any]]:
                 "tool": atom.resolver.tool,
                 "enabled": atom.resolver.tool in instance.actions,
                 "impossible": False,
-                # call-class identity (EXECUTION_PLAN v5, D3/G8): atoms whose
+                # call-class identity: atoms whose
                 # resolver shares (tool, params) are established by ONE
                 # underlying call; guidance costs and executor budgets both
                 # count distinct call classes, so planner-predicted cost can
@@ -102,7 +102,7 @@ def _unblockable_by_retraction(literal: str, ledger) -> bool:
 
 
 def avail(literal: str, ledger, resolvers: Mapping[str, Mapping[str, Any]]) -> str:
-    """Availability status of a license literal (master SS6.4).
+    """Availability status of a license literal.
 
     Returns one of 'satisfied' | 'repairable' | 'open' | 'impossible',
     applying the precedence order; raises :class:`ResolverError` when no case
@@ -113,7 +113,7 @@ def avail(literal: str, ledger, resolvers: Mapping[str, Mapping[str, Any]]) -> s
     c = cl(ledger)
     if is_inconsistent(c):
         raise InconsistentLedgerError(
-            "route-level status suspended: ledger inconsistent (master SS6.4)"
+            "route-level status suspended: the ledger is inconsistent"
         )
     atom, _pos = parse_literal(literal)
     if atom not in ledger.atoms:
@@ -153,7 +153,7 @@ def avail(literal: str, ledger, resolvers: Mapping[str, Mapping[str, Any]]) -> s
 def route_status(
     route: Sequence[str], ledger, resolvers: Mapping[str, Mapping[str, Any]]
 ) -> str:
-    """Route status (master SS6.4): complete | dead | repair-blocked | active.
+    """Route status: complete | dead | repair-blocked | active.
 
     Case order makes categories mutually exclusive; terminal impossibility
     takes precedence over a simultaneous repairable conflict.
@@ -172,7 +172,7 @@ def residual(
     route: Sequence[str], ledger, resolvers: Mapping[str, Mapping[str, Any]]
 ) -> List[str]:
     """Repair-aware residual R~(p, z): open literals plus repair(l) markers —
-    a conflicted literal appears once, as a repair action (master SS6.4)."""
+    a conflicted literal appears once, as a repair action."""
     out: List[str] = []
     for lit in route:
         s = avail(lit, ledger, resolvers)
@@ -184,7 +184,7 @@ def residual(
 
 
 def _global_repair_frontier(ledger) -> List[str]:
-    """Global unsat-core repair frontier (master SS6.4).
+    """Global unsat-core repair frontier.
 
     Phi is hard; each non-conflicted attested value is a labeled assumption
     alpha_i -> l_i.  We return review_or_retract obligations for a
@@ -216,7 +216,7 @@ def frontier(
     ledger,
     resolvers: Mapping[str, Mapping[str, Any]],
 ) -> List[List[str]]:
-    """Obligation frontier R_t(c) (master SS6.4).
+    """Obligation frontier R_t(c).
 
     Consistent ledger: residuals of frontier-eligible routes (status in
     {active, repair-blocked}); complete and dead routes are excluded.
@@ -233,7 +233,7 @@ def frontier(
 
 
 # ---------------------------------------------------------------------------
-# Completion metrics (master SS11.5)
+# Completion metrics
 # ---------------------------------------------------------------------------
 
 
@@ -255,7 +255,7 @@ def completion(
     ledger,
     resolvers: Mapping[str, Mapping[str, Any]],
 ) -> float:
-    """Completion(c, z) (master SS11.5): 0 if the ledger is inconsistent or
+    """Completion(c, z): 0 if the ledger is inconsistent or
     all routes are dead; else max RouteCompletion over NON-DEAD routes — a
     completed route correctly scores 1 (frontier eligibility is only for
     action selection)."""
@@ -275,7 +275,7 @@ def claim_state(
     resolvers: Mapping[str, Mapping[str, Any]],
 ) -> str:
     """Exactly one of the five mutually exclusive per-claim states
-    (master SS11.5): ledger-inconsistent / completed / all-routes-dead /
+    ledger-inconsistent / completed / all-routes-dead /
     repair-blocked / active-incomplete."""
     if is_inconsistent(cl(ledger)):
         return "ledger-inconsistent"

@@ -11,21 +11,8 @@
    "invoked": true,
    "prompt_tokens": 312,
    "completion_tokens": 19,
-   "latency_s": 2.091,
+   "latency_s": 1.514,
    "raw": "The document specifies \"Django\" as the affected package by name. ANSWER: T"
-  },
-  {
-   "attempt": 2,
-   "atom": "E3",
-   "attested": "T",
-   "quote": "6.0 before 6.0.2, 5.2 before 5.2.11, and 4.2 before 4.2.28.",
-   "verdict": "F",
-   "agree": false,
-   "invoked": true,
-   "prompt_tokens": 294,
-   "completion_tokens": 29,
-   "latency_s": 2.321,
-   "raw": "The document does not specify a version in which the issue is fixed; it only mentions versions where the issue was discovered. ANSWER: F"
   }
  ]
 }

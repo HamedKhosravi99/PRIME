@@ -1,4 +1,5 @@
-"""Unit tests for the frozen-program interpreter (SS7.2, SS7.4, SS7.8)."""
+"""Unit tests for the frozen-program interpreter (freeze, Auth masking,
+typed claim objects)."""
 
 import dataclasses
 
@@ -93,8 +94,7 @@ def test_emit_max_auth_antichain(toy_instance):
 
 
 def test_conflict_removes_previous_authorization(toy_instance):
-    """A conflict can remove a previously available claim before emission
-    (master SS5.4)."""
+    """A conflict can remove a previously available claim before emission."""
     interp = Interpreter(toy_instance)
     led = _ledger(toy_instance)
     led.apply(_att("E1", "T", 1))

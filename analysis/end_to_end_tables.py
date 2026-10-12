@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
-"""Task #5 -- end-to-end oracle-scored Table C, Table E, and the E3
-cost-support frontier
-(the design notes, Weakness 1
-SS1.3 E1 methods list / matched resources / primary metrics, and Weakness 8
-SS8.6's 2^4 mechanism-interaction ablation).
+"""End-to-end oracle-scored Table C (method list, matched resources, primary
+metrics), Table E (the 2^4 mechanism-interaction ablation), and the E3
+cost-support frontier.
 
 SCORING: every emitted claim in every episode is scored against the
 EXECUTABLE BENCHMARK ORACLE (prime_runtime/oracle.py) -- oracle_authorization
 evaluated on the emission-time evidence facts reconstructed method-
 independently from the trace -- NOT against PRIME's own gold-ledger
-complete_auth field. Per Weakness 7 ("benchmark truth is F*, NOT PRIME's
-routes"), a claim counts as oracle-supported iff
+complete_auth field. Benchmark truth is F*, NOT PRIME's routes: a claim
+counts as oracle-supported iff
 ``oracle.oracle_authorization(instance, claim_id, facts_at_emission)`` is
 True; PRIME's own routes never enter the scoring path (only the induced/gold/
 nonminimal *program* is under test, exactly like every other arm).
@@ -70,7 +68,7 @@ RESEARCH_TABLE_C_MODELS = ["gpt-4.1", "gpt-4o-mini"]
 EPS = 1e-9
 
 # --------------------------------------------------------------------------
-# Table C method list (Task #5): 9 configs, matched budget=20, gpt-4.1
+# Table C method list: 9 configs, matched budget=20, gpt-4.1
 # primary / gpt-4o-mini secondary.
 # --------------------------------------------------------------------------
 TABLE_C_MODELS = ["gpt-4.1", "gpt-4o-mini"]
@@ -88,8 +86,8 @@ TABLE_C_CONFIGS: Tuple[Tuple[str, str, str], ...] = (
 )
 
 # --------------------------------------------------------------------------
-# E3 frontier method list (Task #5): gpt-4.1 only, budgets 4/8/16 (+20 reused
-# from Table C -- "at least four action budgets", memo SS1.3 E3).
+# E3 frontier method list: gpt-4.1 only, budgets 4/8/16 (+20 reused
+# from Table C, so at least four action budgets).
 # --------------------------------------------------------------------------
 FRONTIER_CONFIGS: Tuple[Tuple[str, str, str], ...] = (
     ("direct", "gold", "Direct"),
@@ -122,8 +120,8 @@ def _instance_for(episode: Dict[str, Any]):
     if not path or not os.path.exists(path):
         # Fall back to the canonical bench path by instance id. This fires
         # whenever the recorded absolute instance_path does not exist on THIS
-        # machine -- most importantly for episodes produced on the cluster
-        # cluster, whose summaries carry absolute cluster paths.
+        # machine -- most importantly for episodes produced on a cluster,
+        # whose summaries carry absolute cluster paths.
         #
         # Resolve by searching every bench/instances/<domain>/ subdirectory
         # rather than hardcoding a prefix->directory map: the map used to
@@ -190,7 +188,7 @@ def compute_oracle_ceilings(instance_paths: List[str]) -> Dict[str, Dict[str, An
 
 
 # ==========================================================================
-# Per-episode oracle scoring (Weakness 7: score via F*, not PRIME's routes)
+# Per-episode oracle scoring (score via F*, not PRIME's routes)
 # ==========================================================================
 
 
@@ -369,8 +367,7 @@ def compare_mcnemar(
     baseline among ``baseline_arms`` (each license_source='gold'), then run
     exact McNemar (paired by instance id) between ``target`` (default
     PRIME induced) and each baseline reading on episode OFAR (1 = episode
-    emitted >=1 oracle-unsupported claim). Mirrors the paired analysis in
-    analysis/END_TO_END_REPORT.md §3, generalized to any instance set."""
+    emitted >=1 oracle-unsupported claim), for any instance set."""
     out: Dict[str, Any] = {}
     for model in models:
         tkey = "%s|%s|%s" % (model, target[0], target[1])

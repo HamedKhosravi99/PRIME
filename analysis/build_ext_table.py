@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """External comparators on ObligationBench (results/tableEXT.json).
 
-Every arm in the ladder is an ablation of PRIME itself, which three
-independent reviews identified as the binding evidence gap: nothing in that
-design distinguishes "the mechanism is better" from "the harness is tuned
-for it". These six arms are the independent comparators, run end to end on
-the confirmatory split under the same model, budget, executor and oracle:
+Every arm in the ladder is an ablation of PRIME itself, which leaves an
+evidence gap: nothing in that design distinguishes "the mechanism is better"
+from "the harness is tuned for it". These six arms are the independent
+comparators, run end to end on the confirmatory split under the same model,
+budget, executor and oracle:
 
   static_contract  an authored formal contract, conjunctive collapse of the
                    same gold licences -- the nearest prior-art cell in the

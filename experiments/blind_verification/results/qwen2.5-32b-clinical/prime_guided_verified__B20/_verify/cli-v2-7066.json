@@ -3,16 +3,16 @@
  "events": [
   {
    "attempt": 1,
-   "atom": "E2",
-   "attested": "T",
-   "quote": "* At least 18 years of age",
-   "verdict": "T",
+   "atom": "E3",
+   "attested": "F",
+   "quote": "Willing and able to give informed consent and adhere to protocol therapy; written informed consent and any locally required authorization must be obtained from the patient prior to performing any protocol-related procedures, including screening evaluations",
+   "verdict": "F",
    "agree": true,
    "invoked": true,
-   "prompt_tokens": 1761,
-   "completion_tokens": 28,
-   "latency_s": 2.514,
-   "raw": "The document specifies an inclusion criterion that participants must be at least 18 years of age, establishing the condition. ANSWER: T"
+   "prompt_tokens": 1756,
+   "completion_tokens": 45,
+   "latency_s": 3.463,
+   "raw": "The document does not restrict enrollment to one sex only, as it includes criteria relevant to both males and females, such as the requirement for female participants of childbearing potential to have a negative pregnancy test. ANSWER: F"
   }
  ]
 }

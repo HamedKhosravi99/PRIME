@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Commitment-view noninterference audit (paper §4.5-§4.6, Weakness 4).
+"""Commitment-view noninterference audit.
 
 Implements Experiment I1 (paired hidden-outcome invariance) and a stub of
 Experiment I2 (manifest ablation: strict vs expanded vs artifact-visible).
@@ -25,8 +25,8 @@ observe it.
 No live LLM is used or required: :func:`scripted_induce` is a deterministic,
 non-learned stub whose only job is to make "the committed program is a
 function of the specification manifest" checkable end to end. The point of
-I1 is the CAPABILITY BOUNDARY, not induction quality (that is Weakness 3's
-concern, measured elsewhere).
+I1 is the CAPABILITY BOUNDARY, not induction quality (measured elsewhere,
+e.g. analysis/induction_table_b.py).
 
 Experiment I2 (stub) -- manifest ablation
 --------------------------------------------
@@ -200,8 +200,7 @@ def _make_pair(
     mutation: str, atom_id: Optional[str], tmp_dir: str
 ) -> Tuple[Any, Any, Dict[str, Any], Dict[str, Any], Dict[str, Any]]:
     """Build one (instance_a, instance_b) pair differing ONLY in hidden
-    evidence, plus a machine-readable mutation-provenance record (memo
-    Sec D format)."""
+    evidence, plus a machine-readable mutation-provenance record."""
     raw_a = copy.deepcopy(BASE_RAW_INSTANCE)
     tag = "%s-%s" % (mutation, atom_id or "global")
     raw_a["id"] = "audit-%s-a" % tag
@@ -272,7 +271,7 @@ def spec_manifest_strict(instance) -> Dict[str, Any]:
 
 def spec_manifest_expanded(instance) -> Dict[str, Any]:
     """Mode 2: strict manifest + each atom's authored proposition text
-    ("artifact structure", paper §4.6 Experiment I2 condition 2)."""
+    ("artifact structure", Experiment I2 condition 2)."""
     manifest = C.spec_manifest(instance)
     prop_by_id = {a.id: a.proposition for a in instance.atoms}
     for entry in manifest["atoms"]:
@@ -324,15 +323,14 @@ def scripted_induce(manifest: Mapping[str, Any], seed: int = 0) -> Dict[str, Lis
     ``manifest`` and ``seed`` ONLY -- it reads no global state, no clock,
     and no evidence resolver.
 
-    This is Weakness 4's central architectural claim made executable: under
-    the STRICT manifest (:func:`spec_manifest_strict`), atoms never carry a
-    ``proposition`` or ``gold_value`` key and the manifest never carries
-    ``_gold_licenses_leak``, so every evidence-sensitive branch below is
-    simply inert and the function is provably manifest-only. Under the
-    expanded/artifact-visible manifests those keys ARE present, and the
-    same function will use them if it can -- which is exactly how I2
-    demonstrates that exposure, not commitment timing, is what creates
-    leakage risk.
+    This is the central architectural claim of commitment made executable:
+    under the STRICT manifest (:func:`spec_manifest_strict`), atoms never carry
+    a ``proposition`` or ``gold_value`` key and the manifest never carries
+    ``_gold_licenses_leak``, so every evidence-sensitive branch below is simply
+    inert and the function is provably manifest-only. Under the
+    expanded/artifact-visible manifests those keys ARE present, and the same
+    function will use them if it can -- which is exactly how I2 demonstrates
+    that exposure, not commitment timing, is what creates leakage risk.
 
     The artifact-visible branch layers its two leaked signals ADDITIVELY
     (start from the leaked ``gold_licenses`` routes, then additionally

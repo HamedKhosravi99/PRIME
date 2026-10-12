@@ -10,15 +10,7 @@ mirrors is touched).
 
 Results-dir convention: UNSUFFIXED (``results/<model>/<arm>__<lsrc>``), same
 as build_tableC_guided_software.py uses for the software domain -- i.e.
-``results/qwen2.5-14b-q4-local/prime_guided__gold`` etc. Safe w.r.t.
-analysis/fill_paper.py's software-review cascade for the same two reasons as
-the gpt-4.1 script: (1) prime_guided/static_contract are excluded by arm name
-alone (the cascade only pools arm in {direct, rubric, react, prime}); (2) the
-cascade's common-pool restriction intersects instance sets across ALL model
-families, so re-running/extending qwen2.5-14b-q4-local's plain ``prime``
-arm to the full 21-instance software pool cannot change the cascade's
-existing 9-instance common-pool numbers -- it only adds data the (separate)
-guided-completion table below consumes.
+``results/qwen2.5-14b-q4-local/prime_guided__gold`` etc.
 
 Only the induced-license rows are included when actually run; when not run,
 they show as NOT RUN in the printed table/comparisons (never fabricated).

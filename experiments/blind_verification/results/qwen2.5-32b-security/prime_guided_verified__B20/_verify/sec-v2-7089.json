@@ -11,7 +11,7 @@
    "invoked": true,
    "prompt_tokens": 298,
    "completion_tokens": 21,
-   "latency_s": 1.217,
+   "latency_s": 2.137,
    "raw": "The document mentions \"Airflow\" as the affected package by its registered name. ANSWER: T"
   },
   {
@@ -24,7 +24,7 @@
    "invoked": true,
    "prompt_tokens": 280,
    "completion_tokens": 28,
-   "latency_s": 2.267,
+   "latency_s": 1.934,
    "raw": "The document suggests migrating to Airflow 2.9 to resolve the issue, implying this version fixes the vulnerability. ANSWER: T"
   },
   {
@@ -37,7 +37,7 @@
    "invoked": true,
    "prompt_tokens": 285,
    "completion_tokens": 20,
-   "latency_s": 1.161,
+   "latency_s": 1.114,
    "raw": "The document does not specify the first affected version where the issue was introduced. ANSWER: F"
   }
  ]

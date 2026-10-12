@@ -140,10 +140,10 @@ def main(argv=None) -> int:
     a = ap.parse_args(argv)
     # Two reference arms, kept apart on purpose. `contrasts` is the gate-only
     # arm and is what Table 9's advantage column reports; `contrasts_guided`
-    # is deployed PRIME. Three independent reviewers read a range drawn from
-    # the first as if it described the second, so each block now records its
-    # own reference arm and the abstract reads the reference off the file
-    # rather than off a caption written somewhere else.
+    # is deployed PRIME. A range drawn from the first is easily misread as
+    # describing the second, so each block records its own reference arm and
+    # the abstract reads the reference off the file rather than off a caption
+    # written somewhere else.
     out = {"cells": {}, "contrasts": {}, "contrasts_guided": {},
            "control_law_unoptimised": {},
            "reference": "masked_reactive_v",
@@ -164,14 +164,14 @@ def main(argv=None) -> int:
 
     # THE CONTROL LAW ON AN ENDPOINT PRIME DOES NOT OPTIMISE.
     #
-    # A reviewer's central objection: "PRIME emits the arg max of the
-    # supplied utility, which is also what we score, so its selection step
-    # optimises the scoring function by construction and the reactive arms'
-    # does not" -- which confounds every utility comparison, including the
-    # control law. The clean answer is to re-run the SAME contrast on an
-    # endpoint the emission rule cannot be optimising: evidence recall is
-    # fixed by what an arm gathered, not by what it chose to emit, and
-    # utility-per-call has a denominator PRIME is indifferent to.
+    # PRIME emits the arg max of the supplied utility, which is also what we
+    # score, so its selection step optimises the scoring function by
+    # construction and the reactive arms' does not -- which confounds every
+    # utility comparison, including the control law. The clean answer is to
+    # re-run the SAME contrast on an endpoint the emission rule cannot be
+    # optimising: evidence recall is fixed by what an arm gathered, not by what
+    # it chose to emit, and utility-per-call has a denominator PRIME is
+    # indifferent to.
     #
     # This is the control-law contrast, cluster-level, same tests, on
     # endpoints outside the confound.

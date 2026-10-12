@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 """The enforcement contrast as a function of corruption prevalence.
 
-WHY. A reviewer's objection, in their words: the false-authorization endpoint
-is identifiable only because records were degraded until claims lost support,
-so the reported gap is "the enforcement gap AT a 41.5% corruption rate, with
-no calibration to anything. There is no sensitivity analysis over the
-injection rate anywhere in 36 pages. A single engineered operating point
-cannot support a claim about how much enforcement is worth."
+WHY. The false-authorization endpoint is identifiable only because records
+were degraded until claims lost support, so a single reported gap is the
+enforcement gap AT a 41.5% corruption rate, with no calibration to anything.
+A single engineered operating point cannot support a claim about how much
+enforcement is worth.
 
-That is fair, and it is answerable without regenerating the benchmark. The
+That is answerable without regenerating the benchmark. The
 confirmatory split carries a per-instance flag for whether a route is broken
 by a genuinely FALSE atom (false-load-bearing) rather than a missing one.
 Resampling the SAME episodes at different mixtures of those two strata gives

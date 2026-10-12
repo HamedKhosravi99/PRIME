@@ -1,0 +1,8 @@
+{
+  "inclusion_rule": "has recall_number and classification",
+  "n_retained": 1200,
+  "n_seen": 1200,
+  "retrieved_at": "2026-08-01T04:47:50.808241+00:00",
+  "sampling": "endpoint default order (deterministic at retrieval time)",
+  "source_population": "openFDA drug enforcement endpoint, paged from offset 0"
+}

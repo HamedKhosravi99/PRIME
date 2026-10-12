@@ -1,4 +1,4 @@
-"""Unit tests for Lic / Auth downward closure / MaxAuth antichain (SS9.2)."""
+"""Unit tests for Lic / Auth downward closure / MaxAuth antichain."""
 
 from prime_runtime import auth
 from prime_runtime.ledger import Ledger

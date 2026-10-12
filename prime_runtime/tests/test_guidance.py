@@ -1,6 +1,6 @@
 """Tests for prime_runtime.guidance: the reachable-ceiling / minimal-route
 computation behind the ``prime_guided`` arm's obligation-guided completion
-mechanism (see prime_runtime/GUIDED_COMPLETION_REPORT.md).
+mechanism.
 
 Two layers:
   - direct unit tests on ``reachable_ceiling`` against a small synthetic
@@ -208,7 +208,7 @@ def test_ceiling_after_only_c1_evidence_never_regresses_below_authorized(path):
     from C1's own route -- inspect_record deltas fire every atom whose
     resolver params match the executed call, so a single field read can
     settle several threshold predicates over the same field at once,
-    master goldledger.delta; that is a domain property, not a bug here, so
+    see goldledger.delta; that is a domain property, not a bug here, so
     this test asserts the general invariant rather than assuming C1 is
     exactly the authorized ceiling.)"""
     inst = load_instance(path)

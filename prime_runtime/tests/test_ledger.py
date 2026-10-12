@@ -1,4 +1,4 @@
-"""Unit tests for the attested ledger (master SS5.4, T4)."""
+"""Unit tests for the attested ledger and its integrity rule."""
 
 import pytest
 

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""W2a confirmatory tables T1/T2 (EXECUTION_PLAN v5 Part 3 + FREEZE.md F9).
+"""W2a confirmatory tables T1/T2 (docs/EXECUTION_PLAN.md, Part 3;
+docs/ANALYSIS_PLAN.md, F9).
 
-Endpoints, all judge-free, per FREEZE F5:
+Endpoints, all judge-free, per docs/ANALYSIS_PLAN.md, F5:
   OFAR-A            emitted claim unsupported under the authored protocol
   OFAR-B            unsupported under F*_B (mechanical conjunctive collapse)
   sensitivity       OFAR_B - OFAR_A
@@ -19,12 +20,13 @@ perfect safety but is silence. The 7B react_program rungs emit on ~0% of
 answerable instances and score OFAR 0.0 while masked_reactive_v scores the
 same 0.0 while emitting on ~88%: identical column, opposite meaning. Any cell
 with emit_rate_avail below DEGENERATE_EMIT_RATE is flagged "degenerate" and
-its OFAR must not be read as a safety result (EXECUTION_PLAN Part 6b FB-02;
-this is the table-side counterpart of the R4 Claude-N1 discordant-cluster
-rule, which guards the same floor effect on the inference side).
+its OFAR must not be read as a safety result (docs/EXECUTION_PLAN.md,
+Part 6b, FB-02; this is the table-side counterpart of the discordant-cluster
+rule in Part R4, which guards the same floor effect on the inference side).
 
-Inference per FREEZE F6: family-cluster randomization primary, hierarchical
-bootstrap CI, McNemar sensitivity, TOST for E2, Holm within each family.
+Inference per docs/ANALYSIS_PLAN.md, F6: family-cluster randomization primary,
+hierarchical bootstrap CI, McNemar sensitivity, TOST for E2, Holm within each
+family.
 
 Sign conventions (stats_v5 always computes mean(a - b) over the pair passed
 to paired(), so the subtraction order encodes the meaning; both fields below
@@ -37,7 +39,8 @@ CI is signed to match):
 
 ESTIMAND WARNING. T1 cells are INSTANCE-level rates (mean over episodes);
 T2 contrasts are the pre-registered CLUSTER-level estimand (mean over
-template families of each family's mean difference, per FREEZE F6). The
+template families of each family's mean difference, per
+docs/ANALYSIS_PLAN.md, F6). The
 balanced split's families are deliberately unequal in size (4-15 instances),
 so the two do not reconcile arithmetically: a T2 delta is NOT the difference
 of two T1 columns and must never be described as such in the manuscript.
@@ -90,10 +93,10 @@ def _get(record: Any, path: str) -> Tuple[Any, bool]:
     return cur, True
 
 
-# FREEZE F3: ONE equivalence margin for the study, computed from the PRIMARY
-# panel's DEV split and written by analysis/w0_pilots.py. Reading it here
-# means the table and the prose cannot drift apart, and the F2 floor is used
-# only while that pilot has not landed.
+# docs/ANALYSIS_PLAN.md, F3: ONE equivalence margin for the study, computed
+# from the PRIMARY panel's DEV split and written by analysis/w0_pilots.py.
+# Reading it here means the table and the prose cannot drift apart, and the F2
+# floor is used only while that pilot has not landed.
 PRIMARY_PANEL = "qwen2.5-32b"
 
 

@@ -1,10 +1,8 @@
 """Executable benchmark oracle F* — independent of PRIME's route representation.
 
-Implements the "common infrastructure A" and Weakness-7 fixes from
-`the design notes`: benchmark
-truth must be an EXECUTABLE PREDICATE over evidence, not a check of whether
-some route in PRIME's authored license family is complete. Concretely
-(revision-analysis memo, "Common infrastructure ... A" and Weakness 7 §7.2):
+Benchmark truth must be an EXECUTABLE PREDICATE over evidence, not a check
+of whether some route in PRIME's authored license family is complete.
+Concretely:
 
     F*_x : Gamma_x x Omega_x -> {0,1}
 
@@ -12,21 +10,21 @@ is built directly from each benchmark instance's authored ``gold_licenses``
 SEMANTICS (the disjunctive-normal-form support relation an annotator
 declared: claim c is supported iff some route's literals are all confirmed),
 but is implemented here as three INDEPENDENT representations that must agree
-everywhere (memo §7.3, §7.7 Experiment B1 "logical-representation
-invariance"):
+everywhere (the logical-representation invariance check, Experiment B1 in
+:mod:`analysis.oracle_invariance`):
 
     support               -- direct DNF evaluation ("support" = call the
-                              predicate; §7.2's ``def support(claim, facts)``).
+                              predicate).
     support_via_bdd        -- a small self-contained reduced-ordered binary
                               decision diagram (no external solver deps).
     support_via_truthtable -- exhaustive enumeration over the same domain.
 
 ``prime_routes`` (PRIME's own DNF route family) are then DERIVED from F* via
 :func:`derive_prime_routes` (Quine-McCluskey-style prime-implicant
-minimization, memo §7.2/§7.4) — the dependency runs oracle -> routes, never
+minimization) — the dependency runs oracle -> routes, never
 routes -> oracle, which is the point: scoring calls ``support`` (or an
 equivalent representation) directly and never asks "is some route in the
-authored family complete" (memo §7.2, §7.9).
+authored family complete".
 
 Representation-invariance design note
 --------------------------------------
@@ -59,21 +57,21 @@ lookup), not an artifact of a shared partial-assignment convention.
 
 Phi (the instance's forbidden-pattern constraints) plays no role in
 ``support``/``support_via_bdd``/``support_via_truthtable`` — F* is a
-function of confirmed evidence only, exactly as memo §7.2 defines it. Phi
+function of confirmed evidence only. Phi
 DOES matter for :func:`derive_prime_routes`, which must minimize only over
-*realizable* complete atom assignments (memo §7.4): an unrealizable
+*realizable* complete atom assignments: an unrealizable
 combination can never actually occur, so a route need not defend against it,
 and treating unrealizable atom combinations as don't-cares is what makes the
 derived routes match hand-authored "minimal, non-dominated" gold routes.
 
-Scope: this module reads ``instance.gold_licenses`` (SPEC.md's committed
+Scope: this module reads ``instance.gold_licenses`` (the committed
 ground truth) and ``instance.phi_patterns`` but performs its OWN Boolean
 evaluation — it never calls into ``interpreter``/``auth``'s route-matching
 machinery to decide what F* says. ``auth.py`` and ``closure.py`` ARE used
 (imported, not modified) where the task is genuinely about the RUNTIME's
 own authorization semantics under a program, e.g. :func:`auth_fp`/
 :func:`auth_fn`, which compare the runtime's ``auth.auth_ids`` against this
-module's independent oracle (memo Weakness 2 §2.3, Experiment C1).
+module's independent oracle.
 """
 
 import itertools
@@ -132,7 +130,7 @@ def _routes_of(instance: Instance, claim_id: str) -> Tuple[Tuple[str, ...], ...]
 
 def support(instance: Instance, claim_id: str, facts: Mapping[str, FactState]) -> bool:
     """F*(claim_id, facts): direct evaluation of the executable support
-    predicate (revision-analysis memo, Common infra A / Weakness 7 §7.2).
+    predicate.
 
     ``OR`` over the instance's authored gold routes of ``AND`` over each
     route's literals of literal confirmation. This is the benchmark's
@@ -254,8 +252,8 @@ def _get_bdd(instance: Instance, claim_id: str) -> Tuple[BDD, int, Tuple[str, ..
 
 def support_via_bdd(instance: Instance, claim_id: str, facts: Mapping[str, FactState]) -> bool:
     """F*(claim_id, facts) evaluated via a reduced-ordered BDD over the
-    derived per-literal confirmation variables (memo §7.3: "second evaluator
-    representation ... reduced ordered binary decision diagram")."""
+    derived per-literal confirmation variables (the second evaluator
+    representation)."""
     bdd, root, order = _get_bdd(instance, claim_id)
     assignment = {lit: _sat_literal(lit, facts) for lit in order}
     return bdd.evaluate(root, assignment)
@@ -299,9 +297,10 @@ def support_via_truthtable(
 ) -> bool:
     """F*(claim_id, facts) via exhaustive lookup: the full ``2^|literals|``
     truth table of the claim's gold-route DNF, indexed by the same derived
-    per-literal confirmation bits as :func:`support_via_bdd` (memo §7.7
-    Experiment B1). ``|literals| <= len(instance.atoms) <= MAX_ATOMS`` (20)
-    for any well-formed benchmark instance."""
+    per-literal confirmation bits as :func:`support_via_bdd` (the third
+    representation in Experiment B1).
+    ``|literals| <= len(instance.atoms) <= MAX_ATOMS`` (20) for any
+    well-formed benchmark instance."""
     table, order = _get_table(instance, claim_id)
     bits = tuple(_sat_literal(lit, facts) for lit in order)
     return table[bits]
@@ -383,9 +382,9 @@ def _quine_mccluskey(onset: Sequence[str], dontcare: Sequence[str]) -> set:
 
 def derive_prime_routes(instance: Instance, claim_id: str) -> List[FrozenSet[str]]:
     """Derive the prime implicants of F*(claim_id, .) directly from the
-    oracle (memo Weakness 7 §7.2, §7.4): "derive prime routes from this
-    function only for PRIME's gold-program condition ... do not rely on a
-    manually incomplete route family."
+    oracle, for PRIME's gold-program condition, so that the condition
+    does not rely on a manually authored and possibly incomplete route
+    family.
 
     Enumerates all ``2^len(atoms)`` complete atom assignments; assignments
     forbidden by Phi (``instance.phi_patterns``) are treated as
@@ -441,8 +440,7 @@ def derive_prime_routes(instance: Instance, claim_id: str) -> List[FrozenSet[str
 def gold_route_mismatch(instance: Instance, claim_id: str) -> Dict[str, Any]:
     """Compare :func:`derive_prime_routes` against the authored
     ``gold_licenses`` family for one claim. Never "fixes" a mismatch —
-    reports it (memo §7.2: "report any mismatch as a benchmark-authoring
-    finding, do not silently fix")."""
+    reports it as a benchmark-authoring finding."""
     derived = {frozenset(r) for r in derive_prime_routes(instance, claim_id)}
     gold = {frozenset(r) for r in _routes_of(instance, claim_id)}
     return {
@@ -489,8 +487,8 @@ def oracle_authorization(
 ) -> bool:
     """Authorization-aware oracle support: claim ``claim_id`` is
     oracle-authorized at ``facts`` iff F*-support holds for it OR for some
-    claim that dominates it under the instance's declared order (memo
-    Weakness 2 §2.3 C1's ``F*(c, z) = 1``, used the same authorization-aware
+    claim that dominates it under the instance's declared order
+    (``F*(c, z) = 1`` used the same authorization-aware
     way ``goldledger.complete_auth`` uses the gold PROGRAM's Auth: a
     dominating supported claim entails every weaker comparable one)."""
     for cid in instance.claim_ids:
@@ -503,7 +501,7 @@ def ofar(
     emitted: Sequence[Tuple[Instance, str]],
     facts_at_emission: Sequence[Mapping[str, FactState]],
 ) -> Dict[str, Any]:
-    """Oracle False-Authorization Rate (memo Common infra A):
+    """Oracle False-Authorization Rate:
 
         OFAR = #{emitted claims c : F*(c, omega_t) = 0} / #{emitted claims}
 
@@ -533,7 +531,7 @@ def ofar(
 
 
 # ---------------------------------------------------------------------------
-# Program-oracle disagreement: AuthFP / AuthFN (memo Weakness 2 §2.3, C1)
+# Program-oracle disagreement: AuthFP / AuthFN
 # ---------------------------------------------------------------------------
 
 
@@ -566,9 +564,9 @@ def facts_to_ledger(instance: Instance, facts: Mapping[str, FactState]) -> Ledge
 
 
 def enumerate_complete_states(instance: Instance) -> Iterable[Dict[str, FactState]]:
-    """All Phi-realizable complete evidence states (Q, memo §2.3 C1: "for
-    benchmark instances with at most 20-25 Boolean evidence atoms, evaluate
-    all complete assignments"). Yields ``dict[atom_id, 'T'|'F']``."""
+    """All Phi-realizable complete evidence states (Q; exhaustive
+    enumeration is feasible because benchmark instances have at most 20
+    Boolean evidence atoms). Yields ``dict[atom_id, 'T'|'F']``."""
     for omega in _closure.realizable_assignments(instance.atom_ids, instance.phi_patterns):
         yield {a: ("T" if v else "F") for a, v in omega.items()}
 
@@ -578,7 +576,7 @@ def auth_fp(
     instance: Instance,
     sample_states: Sequence[Mapping[str, FactState]],
 ) -> Dict[str, Any]:
-    """AuthFP(P_hat, F*) (memo §2.3, C1):
+    """AuthFP(P_hat, F*):
 
         Pr_z~Q[ exists c : c in Auth_Phat(z) and F*(c, z) = 0 ]
 
@@ -609,7 +607,7 @@ def auth_fn(
     instance: Instance,
     sample_states: Sequence[Mapping[str, FactState]],
 ) -> Dict[str, Any]:
-    """AuthFN(P_hat, F*) (memo §2.3, C1):
+    """AuthFN(P_hat, F*):
 
         Pr_z~Q[ exists c : F*(c, z) = 1 and c not in Auth_Phat(z) ]
 

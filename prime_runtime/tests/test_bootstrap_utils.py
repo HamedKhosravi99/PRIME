@@ -1,6 +1,5 @@
-"""Tests for analysis/bootstrap_utils.py (Task #4 de-confound: the
-instance-cluster bootstrap CI shared by induction_table_b.py and
-induction_refinement.py)."""
+"""Tests for analysis/bootstrap_utils.py (the instance-cluster bootstrap CI
+shared by induction_table_b.py and induction_refinement.py)."""
 
 import math
 

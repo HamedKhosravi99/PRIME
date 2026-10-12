@@ -1,4 +1,4 @@
-"""JSONL trace logging (SPEC.md Runtime API; PRIME-master.md SS2.3).
+"""JSONL trace logging.
 
 Every action, tool observation, attestation, and emission is logged with its
 step and, where applicable, the ledger version.  The gold-ledger evaluator

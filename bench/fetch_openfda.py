@@ -24,7 +24,7 @@ original "report_date"), because prime_runtime.predicates' date_before/
 date_after require ISO-parseable dates and Python's date.fromisoformat()
 rejects undashed "YYYYMMDD" strings in this pinned interpreter (3.9). This
 is a pure reformatting of the SAME real value (no digit is invented or
-changed) -- see bench/AUTHORING.md and this script's --iso-dates flag.
+changed) -- see this script's --iso-dates flag.
 """
 from __future__ import annotations
 

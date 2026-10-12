@@ -1,10 +1,10 @@
 """Licensing and authorization semantics.
 
-Implements PRIME-master.md SS5.4 (Lic through Cl_Phi), SS7.5 / SS9.2 (single
-authorization semantics: Auth = downward closure of licensed claims over the
-claim order; Auth = {} on an inconsistent ledger so nothing is ever
-authorized under conflicts that make the base UNSAT), and MaxAuth — the
-maximal authorized antichain.
+Implements Lic (evaluated through Cl_Phi), the single authorization
+semantics (Auth = downward closure of licensed claims over the claim order;
+Auth = {} on an inconsistent ledger so nothing is ever authorized under
+conflicts that make the base UNSAT), and MaxAuth — the maximal authorized
+antichain.
 """
 
 from typing import Dict, FrozenSet, List, Set, Tuple
@@ -35,7 +35,7 @@ def preceq(weaker: str, stronger: str, program: Program) -> bool:
 
 def lic(claim_id: str, program: Program, ledger) -> bool:
     """Lic_P(c, z): some route of c is satisfied on the fail-closed closure
-    Cl_Phi(z) (master SS5.4).  False on an inconsistent ledger."""
+    Cl_Phi(z).  False on an inconsistent ledger."""
     c = cl(ledger)
     if is_inconsistent(c):
         return False
@@ -44,7 +44,7 @@ def lic(claim_id: str, program: Program, ledger) -> bool:
 
 def auth_ids(program: Program, ledger) -> List[str]:
     """AuthIDs_P(z): claims authorized directly or by downward closure —
-    c is authorized iff some d with c <=* d is licensed (master SS9.2).
+    c is authorized iff some d with c <=* d is licensed.
     Empty on an inconsistent ledger (nothing authorized)."""
     c = cl(ledger)
     if is_inconsistent(c):
@@ -62,7 +62,7 @@ def auth_ids(program: Program, ledger) -> List[str]:
 
 def max_auth(program: Program, ledger) -> List[str]:
     """MaxAuth_P(z): the antichain of maximal authorized claims — authorized
-    claims not strictly dominated by another authorized claim (master SS7.5).
+    claims not strictly dominated by another authorized claim.
     """
     auth = auth_ids(program, ledger)
     auth_set = set(auth)

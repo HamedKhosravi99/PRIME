@@ -1,13 +1,13 @@
 """Method-independent gold-ledger reconstruction and CompleteAuth scoring.
 
-Implements PRIME-master.md SS2.3 / SS11.7: the evaluator reconstructs
+The evaluator reconstructs
 z^gold_0 = U^E, z^gold_{t+1} = Delta_gold(z^gold_t, a_t, o_t) from each
 system's logged environment trace, identically for PRIME and every baseline.
 A system's chain of thought, claimed evidence summary, internal ledger,
 attestation log, or emissions are NEVER read — only (action, observation)
 pairs, replayed through the instance's registered resolver definitions.
 
-CompleteAuth(c, t) (master SS2.3) is evaluated at each claim's emission
+CompleteAuth(c, t) is evaluated at each claim's emission
 ledger step against the GOLD program: 1 iff c is in AuthIDs_gold(z^gold_t)
 — i.e., some dominating claim's gold license is closed at step t.
 
@@ -78,7 +78,7 @@ def eval_attest(rule: str, observation: Mapping[str, Any]) -> Optional[str]:
         ok = observation.get("error") is None and observation.get("content") is not None
         return "T" if ok else None
     if rule == "attested":
-        # text-evidence atoms (NAACL, Experiment E): the model is the resolver.
+        # text-evidence atoms: the model is the resolver.
         # The executor accepts an attestation only when the atom's source text
         # was read in this episode and the quoted span occurs in it; the
         # value is then recorded as the model gave it, right or wrong, which
@@ -139,7 +139,7 @@ def delta(
 ) -> List[Dict[str, Any]]:
     """Delta_gold: convert one (action, observation) pair into ledger
     attestations via the instance's registered resolver definitions
-    (master SS5.3 closed typed atom schema) and apply them.
+    (closed typed atom schema) and apply them.
 
     An atom fires when its resolver tool matches the action, its optional
     ``params`` binding is included in the executed params, and its attest
@@ -190,14 +190,14 @@ class GoldReplay:
 
     def complete_auth(self, claim_id: str, step: int) -> int:
         """CompleteAuth(c, t) against the gold program at the gold ledger of
-        step t (master SS2.3): authorization-aware — 1 iff c is authorized,
+        step t: authorization-aware — 1 iff c is authorized,
         directly or through a dominating claim's completed license."""
         led = self.ledger_at(step)
         return 1 if claim_id in _auth.auth_ids(self.program, led) else 0
 
     def completion_at_final(self) -> float:
         """Max obligation completion over all gold claims at the final gold
-        ledger (master SS11.5): per claim, max over non-dead routes of the
+        ledger: per claim, max over non-dead routes of the
         fraction of route literals satisfied under Cl_Phi; empty route -> 1;
         0 when the ledger is inconsistent or all routes dead."""
         last = max((a["step"] for a in self.attestations), default=0)
@@ -226,7 +226,7 @@ def reconstruct(
 
     Reads ONLY entries of type "observation" (which carry the producing
     action and params) — never the agent's own attestation or emission
-    entries (method-independent scoring, master SS2.3).
+    entries (method-independent scoring).
     """
     entries = read_trace(trace)
     led = Ledger(instance.atom_ids, instance.phi_patterns)

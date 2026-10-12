@@ -2,8 +2,8 @@
 """Why state-enumeration induction fails, as a mechanism rather than a verdict.
 
 The paper reports that inducing the support logic rather than authoring it
-costs utility and breaks the zero. That is a verdict, and a reviewer asked
-the obvious next question: a diagnosis that generalises -- over-conjunction?
+costs utility and breaks the zero. That is a verdict; the obvious next
+question is a diagnosis that generalises -- over-conjunction?
 unresolvable atoms? schema violation? -- with evidence that it is the binding
 constraint. This computes that diagnosis.
 

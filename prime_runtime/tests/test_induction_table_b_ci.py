@@ -1,4 +1,4 @@
-"""Tests for the Task #4 de-confound additions to analysis/induction_table_b.py:
+"""Tests for the uncertainty additions to analysis/induction_table_b.py:
 the instance-cluster bootstrap CI (``bootstrap_table_b_cis``), the per-draw
 ``induced_licenses`` capture (needed by self-consistency voting), and the
 ``--temperature`` threading through ``LLMClient`` (matched-temperature panel).
@@ -72,9 +72,9 @@ def test_bootstrap_cis_bounds_are_sane():
 def test_bootstrap_cis_ci_reflects_between_instance_disagreement():
     """i1 is always precise and i2 is always imprecise: resampling instances
     with replacement can produce (i1,i1) -> precision 1.0 or (i2,i2) ->
-    precision 0.0, so the CI must span most of [0,1] -- this is exactly the
-    N=9-single-draw concern Task A #1 fixes: a metric that is a coin flip
-    across instances must SHOW a wide CI, not a falsely tight one."""
+    precision 0.0, so the CI must span most of [0,1] -- with N=9 instances
+    and a single draw each, a metric that is a coin flip across instances
+    must SHOW a wide CI, not a falsely tight one."""
     mr = _synthetic_model_result()
     ci = itb.bootstrap_table_b_cis(mr, iters=3000, seed=1)
     prec = ci["route_precision_semantic"]
@@ -84,8 +84,8 @@ def test_bootstrap_cis_ci_reflects_between_instance_disagreement():
 def test_bootstrap_cis_handles_invalid_draws_in_denominator():
     """An invalid draw must still count in AuthFP_real's denominator when
     real_authfp is known, and never counts toward route-precision (no route
-    records for an invalid draw) -- mirrors score_instance's own §3.9
-    convention, not a separate rule invented here."""
+    records for an invalid draw) -- mirrors score_instance's own
+    all-attempts denominator convention, not a separate rule invented here."""
     per_instance = [
         _rec("i1", True, [True], True, False, False),
         {

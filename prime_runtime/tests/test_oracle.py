@@ -1,13 +1,11 @@
 """Tests for the executable benchmark oracle F* (prime_runtime/oracle.py).
 
-Covers the representation-invariance property required by
-the design notes Weakness 7
-(§7.2-§7.4, §7.7 Experiment B1) and the program-oracle disagreement metrics
-required by Weakness 2 §2.3 Experiment C1: F* correctness on real benchmark
-instances (satisfiable chain, a failing suite, and a multi-route claim),
-three-representation agreement, prime routes DERIVED from the oracle matching
-(or, honestly, not matching) the authored gold routes, and AuthFP/AuthFN on a
-synthetic under-specified induced program.
+Covers the representation-invariance property (Experiment B1) and the
+program-oracle disagreement metrics (AuthFP/AuthFN): F* correctness on real
+benchmark instances (satisfiable chain, a failing suite, and a multi-route
+claim), three-representation agreement, prime routes DERIVED from the oracle
+matching (or, honestly, not matching) the authored gold routes, and
+AuthFP/AuthFN on a synthetic under-specified induced program.
 """
 
 import glob
@@ -41,7 +39,7 @@ def _all_real_instance_paths():
 def _gold_value_facts(instance):
     """The single honest evidence state for a benchmark instance: every
     atom's ``gold_value`` (the ACTUAL outcome authors recorded from running
-    the real resolver against the real artifact — SPEC.md atom shape)."""
+    the real resolver against the real artifact)."""
     import json
 
     raw = json.load(open(instance.path))
@@ -198,7 +196,7 @@ def test_empty_route_is_trivially_supported_on_all_three_representations():
 
 @pytest.mark.parametrize("path", _all_real_instance_paths())
 def test_derived_routes_match_authored_gold_routes_on_real_instances(path):
-    """Weakness 7 §7.2/§7.4: for every real ObligationBench instance, the
+    """For every real ObligationBench instance, the
     prime implicants DERIVED from F* must equal the authored gold_licenses
     family exactly -- routes are a representation of the oracle, not the
     other way round, and a real benchmark's routes should already BE the
@@ -214,7 +212,7 @@ def test_toy_fixture_c3_route_has_a_reportable_mismatch(toy_instance):
     DELIBERATE negative control for the mismatch reporter: its Phi entails
     E2=T -> E4=T, so E4 is REDUNDANT in the authored C3 route [E1,E2,E3,E4]
     -- the true prime implicant is [E1,E2,E3]. derive_prime_routes must
-    surface this rather than silently reconciling it (memo §7.2)."""
+    surface this rather than silently reconciling it."""
     report = oracle.gold_route_mismatch(toy_instance, "C3")
     assert report["match"] is False
     assert report["derived"] == [["E1", "E2", "E3"]]
@@ -273,7 +271,7 @@ def test_ofar_empty_episode_is_zero():
 
 
 # ---------------------------------------------------------------------------
-# AuthFP / AuthFN: program-oracle disagreement (Weakness 2 §2.3, C1)
+# AuthFP / AuthFN: program-oracle disagreement
 # ---------------------------------------------------------------------------
 
 

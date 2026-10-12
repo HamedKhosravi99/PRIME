@@ -1,5 +1,5 @@
 """End-to-end dry run: the full runner pipeline on the fixture instance with
-the scripted deterministic fake LLM — no API calls (SPEC.md SSRunner)."""
+the scripted deterministic fake LLM — no API calls."""
 
 import json
 import os

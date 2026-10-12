@@ -1,6 +1,6 @@
-"""Fail-closed solver closure Cl_Phi (PRIME-master.md SS5.4).
+"""Fail-closed solver closure Cl_Phi.
 
-Semantics (master SS5.4, round-9 "fail-closed solver closure"):
+Semantics:
 
 1. Conflicted atoms are EXCLUDED from the classical fact set facts°(z) and
    remain 'C' in the closure.
@@ -36,7 +36,7 @@ _realizable_cache: Dict[Tuple[Tuple[str, ...], Tuple[Tuple[Tuple[str, str], ...]
 
 class InconsistentLedger:
     """Marker: Phi ∧ facts°(z) is UNSAT — ledger inconsistent, nothing
-    authorized until an explicit retraction resolves it (master SS5.4)."""
+    authorized until an explicit retraction resolves it."""
 
     def __init__(self, facts: Optional[Mapping[str, bool]] = None) -> None:
         self.facts: Dict[str, bool] = dict(facts or {})
@@ -47,7 +47,7 @@ class InconsistentLedger:
 
 class InconsistentLedgerError(RuntimeError):
     """Raised by status functions that cannot operate on an inconsistent
-    ledger (route-level status is suspended, master SS6.4)."""
+    ledger (route-level status is suspended)."""
 
 
 def is_inconsistent(closure_result: object) -> bool:
@@ -140,8 +140,7 @@ def cl(ledger):
     """Fail-closed closure Cl_Phi(z) of a :class:`~prime_runtime.ledger.Ledger`.
 
     Returns ``dict[atom, 'U'|'T'|'F'|'C']`` for a consistent base, or an
-    :class:`InconsistentLedger` marker when Phi ∧ facts°(z) is UNSAT
-    (master SS5.4; SPEC.md Runtime API).
+    :class:`InconsistentLedger` marker when Phi ∧ facts°(z) is UNSAT.
     """
     return cl_states(ledger.atoms, ledger.phi_patterns, ledger.states())
 
@@ -149,7 +148,7 @@ def cl(ledger):
 def entails(closure_map: Mapping[str, str], literal: str) -> bool:
     """Cl_Phi(z) |= literal — the literal's atom closed to the literal's
     polarity.  Conflicted ('C') and unknown ('U') atoms satisfy neither
-    polarity (master SS5.4)."""
+    polarity."""
     atom, pos = parse_literal(literal)
     return closure_map.get(atom) == ("T" if pos else "F")
 

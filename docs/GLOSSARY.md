@@ -11,9 +11,9 @@ The code was written before the paper's wording settled, so it often uses older 
 | resolver, `attest` rule | the executable predicate that settles a check on the record |
 | license, route, `gold_licenses` | route: a minimal set of checks that suffices for a conclusion |
 | program | the review program $P_0$: the conclusions, their order, and their routes |
-| `license_source=gold`, gold program | the supplied rule (S3) |
-| `license_source=induced`, induced program, induction | routes learned by the model (S2) |
-| open vocabulary, `openvocab` | the rule constructed by the model (S1) |
+| `license_source=gold`, gold program | the committed program supplied with the task (every experiment of the paper) |
+| `license_source=induced`, induced program, induction | routes learned by the model (an earlier study, not in the paper) |
+| open vocabulary, `openvocab` | rules constructed by the model (an earlier study, not in the paper) |
 | commitment, `CommitmentGate` | precommitment: the program is checked, hashed, and frozen before any resolver may run |
 | ledger, attestation | the record of check results; an attestation is one settled check |
 | `auth_ids`, authorized claims | the conclusions the ledger authorizes, closed downward under the strength order |
@@ -54,12 +54,16 @@ The code was written before the paper's wording settled, so it often uses older 
 | `react_program_attested` | fully informed, unenforced: told the rule and shown its own ledger |
 | `masked_reactive_v` | PRIME without guidance |
 | `prime_guided` | PRIME |
+| `prime_complete` | PRIME with completion |
+| `prime_flat` | the flat gate of Appendix E.2: one conclusion, no grading |
+| `ext_agentspec`, `ext_agentspec_examine`, `ext_researchloop`, `ext_prooforstop`, `ext_hesp` | the closest control systems of Section 6.4 (AgentSpec with stop and with self-examination, ResearchLoop, Proof-or-Stop, HESP); GLEAN is `runner/glean.py` |
 | `direct`, `rubric`, `cove`, `reflexion`, `conformal`, `static_contract` | Direct, Rubric, CoVe, Reflexion, Conformal, Static checklist |
 | `prime`, `masked_reactive` | the unguided PRIME agents of the hand-built pilot |
 | `prime_guided_gated` | guided PRIME restricted to conclusions whose learned routes passed validation |
 | `prime_nonminimal` | PRIME with redundant checks added to its routes |
 | `shortest_route` | the ceiling-targeting policy (no LLM) |
-| `cheapest_literal`, `random_masked`, `masked_reactive_prefix`, `informed_route_planner`, `clairvoyant_ceiling` | the other fixed policies of Experiment 3 |
+| `random_masked` | the random-order policy (no LLM) |
+| `cheapest_literal`, `masked_reactive_prefix`, `informed_route_planner`, `clairvoyant_ceiling` | other scripted policies, not in the paper |
 
 ## Budgets
 
@@ -72,15 +76,23 @@ The code was written before the paper's wording settled, so it often uses older 
 
 | Folder | Contents |
 |---|---|
-| `w2a/` | confirmatory runs with the supplied rule (Experiments 1, 2, 3, and 6). `natural__` runs use the held-out natural split, `policy-*` holds the fixed policies, and `gptoss-20b-*` and `qwen2.5-7b-*` hold the other models |
-| `w2ext/` | the comparators (Experiment 5) |
-| `w2seed/` | reruns sampled at temperature 0.7 (Experiment 6) |
-| `w2b/`, `induction_*.json` | learned routes (Experiment 7) |
-| `openvocab_endtoend_*.json`, `*-openvocab/` | constructed rules (Experiment 8) |
-| `v2dev/`, `w0_pilots_*.json` | development-split runs that set the pre-registered margin |
-| `fdaaa/`, `tableFDAAA.json` | the FDAAA set |
-| `qwen2.5-*-<domain>/`, `gpt-*`, `tableC_*.json` | the pilot on hand-built tasks (e-companion) |
+| `w2a/` | the balanced split: Sections 6.1 and 6.2 with Qwen2.5-32B-Instruct (`qwen2.5-32b-<domain>/<arm>__<budget>`) and with the other models (`gptoss-20b-*`, `mistral-small-24b-*`, `qwen2.5-7b-*`); PRIME with completion (`prime_complete__*`); the flat gate (`prime_flat__B20`); the closest control systems of Section 6.4 (`ext_*`); the natural split (`natural__*`, not reported); the scripted policies (`policy-*`) |
+| `w2loc/` | evidence location (Section 6.2), the locator-uncertain copy |
+| `w2text/` | judging textual evidence (Section 6.3), the text-evidence split; the verified condition is in `experiments/blind_verification/results/` |
+| `w2seed/` | sampled decoding at temperature 0.7, three seeds (Appendix E.1) |
+| `glean/` | the GLEAN verifier's diagnostics (Section 6.4) |
+| `w2ext/` | six further baselines (Direct, Rubric, CoVe, Reflexion, Conformal, Static checklist), checked by `reproduce_tables.py`; not reported in the paper |
+| `fdaaa/`, `specbuild_e2e/` | the regulation study (Appendix F) |
+| `v2dev/` | development-split runs that set the minimum effect for guidance (Appendix D) |
+| `w2ob/` | the one-branch variant (not reported in the paper) |
+| `w2b/`, `induction_*.json`, `openvocab_*` | learned routes and constructed rules (an earlier study, not in the paper) |
+| `qwen2.5-*-<domain>/`, `gpt-*`, `tableC_*.json` | the exploratory pilot on hand-built tasks (Appendix G) |
 | `w1v5/` | early runs of the ladder agents on the hand-built tasks, not used in the paper |
+| `*.json` at the top | the output of each analysis script; README.md maps them to the paper |
+
+## Experiment letters
+
+Earlier drafts lettered the experiments, and some reports and comments still do: A is Section 6.1 (information versus enforcement), B and C are Section 6.2 (guidance, and evidence location), D is Section 6.3 (judging textual evidence), and E is Section 6.4 (the closest control systems).
 
 ## Plans and notes
 
@@ -89,8 +101,8 @@ The code was written before the paper's wording settled, so it often uses older 
 | FREEZE F1 to F9 | sections of `docs/ANALYSIS_PLAN.md` |
 | FB-01, FB-02, ... | entries of the deviations log, `docs/EXECUTION_PLAN.md` Part 6b |
 | W0, W1, W2a, W2b, W3 | stages of `docs/EXECUTION_PLAN.md`: preconditions on development data, agent additions, confirmatory runs, learned routes, and validation gates |
-| GPT Q..., Claude N... | comments from language-model reviewers of the execution plan |
-| `PRIME-master.md` and "master §...", `SPEC.md`, `*_REPORT.md`, "the design notes" | internal design documents, not included; the paper and its e-companion state everything the results rely on |
+| GPT Q..., Claude N... (in `docs/EXECUTION_PLAN.md`) | items raised by language-model reviews of the execution plan, with their dispositions |
+| `PRIME-master.md` and "master §...", `SPEC.md`, `*_REPORT.md`, "the design notes" | internal design documents, not included; the paper and its appendices state everything the results rely on |
 
 ## Scripts kept from an earlier draft
 

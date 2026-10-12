@@ -6,8 +6,8 @@ with exactly the same machinery as every other Table C script.
 
 This is the free-compute companion to the API-model scripts
 (analysis/build_tableC_guided_{security,drugsafety,financial}.py): the runs
-it reads are produced by cluster/serve_and_run_guided.sbatch under the cluster's
-zero-cost `<qos>` QOS, with no paid API key anywhere in the pipeline.
+it reads are produced by cluster/serve_and_run_guided.sbatch on a free
+cluster queue, with no paid API key anywhere in the pipeline.
 
 ADDITIVE, like every other analysis/build_tableC_guided_*.py: it imports
 end_to_end_tables.py and tableC_guided_common.py without editing them, and

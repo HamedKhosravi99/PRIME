@@ -1,7 +1,8 @@
 """The blind verifier: a fresh-context second judgment of a text atom.
 
 The prompt is frozen (verifier_spec.md) and byte-identical to the `blind`
-prompt of pilot/experiments/risk_aware_prime/verify_attestations.py; the
+prompt of the risk-aware study's experiments/risk_aware_prime/
+verify_attestations.py (not part of this package); the
 SHA-256 of the two prompt strings is asserted at import so a silent edit
 cannot go unnoticed.
 """

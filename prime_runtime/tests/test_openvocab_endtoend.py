@@ -1,5 +1,5 @@
 """Anchors for the standard-construction (S1) end-to-end pipeline
-(analysis/openvocab_endtoend.py) -- the review-response experiment that runs
+(analysis/openvocab_endtoend.py) -- the experiment that runs
 open-vocabulary standard construction through the UNCHANGED masked runtime
 and scores it against the authored standard by evidence signatures only.
 

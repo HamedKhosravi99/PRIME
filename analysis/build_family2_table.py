@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """The confirmatory ladder on a second, independent model family.
 
-WHY. Two of three review panels made this a hard requirement, in the same
-words: the structural guarantee is model-independent by construction, but the
+WHY. The structural guarantee is model-independent by construction, but the
 empirical claims -- what the gate costs, what the control law is worth -- are
 policy-dependent, and every confirmatory number came from one pretraining
 lineage (Qwen2.5 at two scales). gpt-oss-20b is a different lineage, a

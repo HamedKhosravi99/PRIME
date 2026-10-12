@@ -1,7 +1,6 @@
 """Tests for the ``prime_guided`` arm (runner/arms.py): obligation-guided
 completion's TERMINATION RULE enforcement, the guided system prompt, budget
-exhaustion, and the unchanged safety mask (see
-prime_runtime/GUIDED_COMPLETION_REPORT.md). All scripted -- no API calls.
+exhaustion, and the unchanged safety mask. All scripted -- no API calls.
 
 The unguided ``prime`` arm is exercised alongside ``prime_guided`` throughout
 so the guided-vs-unguided ablation contrast and the "masking is unchanged"

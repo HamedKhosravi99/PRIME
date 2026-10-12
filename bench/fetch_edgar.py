@@ -12,8 +12,8 @@ Integrity: we store exactly the ``val``/``end``/``start``/``fy``/``fp``/
 ``form``/``accn``/``frame`` fields SEC's own API returns for the requested
 ``us-gaap`` concepts -- nothing computed, edited, or invented. Every instance
 built on this data embeds a further-trimmed (but byte-identical on every kept
-field) subset directly in the instance JSON per prime_runtime/
-RECORD_ORACLE_REPORT.md's structured-record capability, so runs stay
+field) subset directly in the instance JSON (the "records" field read by
+the structured-record predicates, prime_runtime/predicates.py), so runs stay
 offline-replayable; PROVENANCE always points back at the untrimmed file this
 script writes so any embedded figure can be checked against the raw API
 response.

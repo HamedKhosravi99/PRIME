@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """Reject-and-regenerate, as an upper bound rather than a strawman.
 
-A reviewer named this the paper's biggest missing comparison: "why is there no
-reject-and-regenerate baseline -- model emits a claim with citations, an
-executable post-hoc check rejects unsupported ones, resample? That also
-reaches 0% by construction. The interesting question is whether masking
-retains more utility than rejection sampling at matched budget."
+The natural alternative to masking is reject-and-regenerate: the model emits
+a claim with citations, an executable post-hoc check rejects unsupported
+ones, and the model resamples. That also reaches 0% by construction. The
+interesting question is whether masking retains more utility than rejection
+sampling at matched budget.
 
-It is a fair question and it deserves the strongest possible version of the
-alternative, not a convenient one. With a PERFECT post-hoc checker and
+That question deserves the strongest possible version of the alternative,
+not a convenient one. With a PERFECT post-hoc checker and
 unlimited resamples, rejection converges to: emit the strongest claim the
 evidence already gathered actually supports. Nothing that rejects and
 resamples can do better, because resampling changes what is SAID and never

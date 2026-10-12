@@ -1,5 +1,5 @@
 """Tests for the ``masked_reactive`` arm -- the strong formal-contract
-baseline requested by review: same gold DNF routes, same graded claim
+baseline: same gold DNF routes, same graded claim
 lattice, same enforced claim mask, but NO obligation-directed action
 selection and NO minimal-route planning.
 

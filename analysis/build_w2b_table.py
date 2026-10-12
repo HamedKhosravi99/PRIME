@@ -15,7 +15,7 @@ Three quantities T1 cannot carry:
                 129 of the 480 confirmatory instances carry a resolver-less
                 atom on a gold route, so some claims are ineligible for a
                 STRUCTURAL reason rather than an induction-quality one -- the
-                W3 exit note in EXECUTION_PLAN requires stating that.
+                W3 exit note in docs/EXECUTION_PLAN.md requires stating that.
   amplification OFAR of the UNGATED guided arm minus the gated one. Guiding
                 an induced program toward a claim whose routes never passed
                 validation is the configuration that turned 0% false

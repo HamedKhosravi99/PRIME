@@ -1,4 +1,4 @@
-"""Schema loading and instance-constraint validation (SPEC.md)."""
+"""Schema loading and instance-constraint validation."""
 
 import dataclasses
 import json

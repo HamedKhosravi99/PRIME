@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Revision-freedom -> standard-drift table (mechanism experiment 4).
+"""Revision-freedom -> standard-drift table.
 
 Reads results/<model>/drift__<mode>/summary.json plus the fixed deployed arm
 (prime__gold), and reports per revision-freedom mode: drift-event rate,

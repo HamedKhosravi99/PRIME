@@ -1,4 +1,4 @@
-"""The four experimental arms and the shared tool-calling loop (SPEC.md).
+"""The four experimental arms and the shared tool-calling loop.
 
 Arms (all sharing the same tool loop and 20-tool-call budget):
 
@@ -13,7 +13,7 @@ Arms (all sharing the same tool loop and 20-tool-call budget):
 Tools are executed HERE, by the runner, against the artifact directory; tool
 outcomes are converted to attestations via the instance's registered
 resolver definitions and ``Ledger.apply`` — the policy never writes the
-ledger (T4).
+ledger (ledger integrity).
 """
 
 import json
@@ -49,8 +49,7 @@ from prime_runtime.schema import (  # noqa: E402
 )
 from prime_runtime.trace import TraceLogger  # noqa: E402
 
-# Task #5 (the design notes,
-# Weakness 1 SS1.3 E1 methods list) adds four arms to the original four:
+# Four further baseline arms beyond the original four:
 #   reflexion         answer -> self-critique -> revise -> emit (tools allowed)
 #   cove              answer -> verification questions -> answer via tools ->
 #                      revise -> emit (tools allowed)
@@ -61,7 +60,7 @@ from prime_runtime.trace import TraceLogger  # noqa: E402
 # "PRIME without commitment" is NOT a new arm: it is already the existing
 # prime arm's posthoc/arbitrary revision_mode ablations (see run_arm below).
 #
-# prime_guided (see prime_runtime/GUIDED_COMPLETION_REPORT.md): a CORE
+# prime_guided (see prime_runtime/guidance.py): a CORE
 # mechanism change, not a prompt tweak. PRIME's obligations are otherwise
 # PERMISSIONS -- nothing drives the agent to keep gathering evidence once
 # the weakest claim is authorized (measured under-claiming in structured-
@@ -83,7 +82,7 @@ ARMS = (
     "reflexion", "cove", "static_contract", "prime_nonminimal",
     "prime_guided", "prime_guided_gated", "masked_reactive", "conformal",
     "prime_complete", "prime_flat",
-    # v5 information/enforcement ladder (EXECUTION_PLAN v5 Part 1):
+    # v5 information/enforcement ladder (docs/EXECUTION_PLAN.md, Part 1):
     "react_verify", "react_spec", "react_spec_verify",
     "react_program", "react_program_verify", "react_program_attested",
     "masked_reactive_v",
@@ -92,8 +91,9 @@ ARMS = (
     "ext_prooforstop", "ext_hesp", "ext_glean",
 )
 
-# Frozen compliance instruction (FREEZE.md F7): IDENTICAL on both sides of
-# the primary enforcement contrast; the mask is the only difference.
+# Frozen compliance instruction (docs/ANALYSIS_PLAN.md, F7): IDENTICAL on
+# both sides of the primary enforcement contrast; the mask is the only
+# difference.
 COMPLIANCE_INSTR = (
     "\n\nBefore emitting any claim, check every route of that claim against "
     "the evidence you have actually gathered with tools in this session; "
@@ -108,10 +108,13 @@ GUIDED_MAX_STALLS = 3  # bound on consecutive no-tool-call "hold" nudges
 # still reachable -- NOT part of the termination-rule semantics itself
 # (which only ever blocks a stop while forward progress is still possible);
 # it exists purely to bound worst-case wall-clock/API cost, exactly the way
-# ``max_tool_calls`` already bounds tool-call cost. See
-# prime_runtime/GUIDED_COMPLETION_REPORT.md SS"Assumptions".
+# ``max_tool_calls`` already bounds tool-call cost.
 
 _SKIP_DIRS = {".git", "__pycache__", ".pytest_cache", "node_modules", ".venv"}
+# The only pytest options run_tests passes on (output and stop-first flags,
+# and two options that narrow the run by a path inside the artifact).
+_PYTEST_FLAGS = frozenset({"-q", "-qq", "-v", "-vv", "-x", "-s"})
+_PYTEST_PATH_OPTIONS = ("--ignore=", "--deselect=")
 _CONFIG_GLOBS = (".json", ".yaml", ".yml", ".toml", ".cfg", ".ini")
 
 
@@ -146,29 +149,59 @@ class ToolExecutor:
     def __init__(self, instance: Instance) -> None:
         self.instance = instance
         self.root = instance.artifact_dir
-        # Call-class cache (EXECUTION_PLAN v5 D3/G8): one underlying
+        # Call-class cache: one underlying
         # execution per (tool, canonical params); repeats are served from
-        # cache and MUST NOT consume budget. `last_was_cached` lets the arm
-        # loop skip the budget increment on a cache hit; `observed_classes`
-        # is the executor-side ground truth the planner's cost model is
-        # tested against (planner-predicted == executor-observed).
+        # cache and MUST NOT consume budget. `charges` tells an agent loop,
+        # before a call executes, whether it consumes budget;
+        # `last_was_cached` reports whether the call just executed was a
+        # cache hit; `observed_classes` is the executor-side ground truth the
+        # planner's cost model is tested against (planner-predicted ==
+        # executor-observed).
         self._call_cache: Dict[Tuple[str, Tuple], Dict[str, Any]] = {}
         self.last_was_cached: bool = False
         self._texts_read: Dict[Tuple[str, str], str] = {}
         self.observed_classes: set = set()
 
     def _safe_path(self, rel: str) -> Optional[str]:
-        full = os.path.normpath(os.path.join(self.root, rel))
-        if not full.startswith(os.path.normpath(self.root)):
+        """Resolve ``rel`` inside the artifact directory, or return None.
+
+        The root and the candidate are both resolved (symlinks followed)
+        before the containment test, so ``..`` segments, absolute paths,
+        sibling directories whose names share the root's prefix, and
+        symlinks that leave the root are all refused."""
+        root = os.path.realpath(self.root)
+        full = os.path.realpath(os.path.join(root, rel))
+        if os.path.commonpath([root, full]) != root:
             return None
         return full
 
     def _class_key(self, name: str, params: Mapping[str, Any]) -> Tuple[str, Tuple]:
-        return (name, tuple(sorted((str(k), str(v)) for k, v in dict(params).items())))
+        """A call class: the tool and its arguments, and for attest_atom also
+        whether the check's source text has been read, because the outcome
+        depends on it (an attestation refused before the read is evaluated
+        afresh after it)."""
+        key = tuple(sorted((str(k), str(v)) for k, v in dict(params).items()))
+        if name == "attest_atom":
+            key += (("<source read>", str(self._source_read(params))),)
+        return (name, key)
+
+    def _source_read(self, params: Mapping[str, Any]) -> bool:
+        aid = str(dict(params).get("atom_id", ""))
+        atom = next((a for a in self.instance.atoms if a.id == aid), None)
+        src = (getattr(atom, "hint", None) or {}).get("source") or {}
+        return (str(src.get("record_id", "")), str(src.get("field_path", ""))) in self._texts_read
 
     def was_called(self, name: str, params: Mapping[str, Any]) -> bool:
         """Whether this (tool, params) call class has been executed in the episode."""
         return self._class_key(name, params) in self._call_cache
+
+    def charges(self, name: str, params: Mapping[str, Any]) -> bool:
+        """Whether a call about to be made consumes budget: every call does,
+        except a repeat of an executed call class, which execute() serves
+        from the cache. Decided before the call executes. (The logged runs
+        charged each call by the cache status of the previously executed
+        call; see docs/KNOWN_ISSUES.md.)"""
+        return not self.was_called(name, params)
 
     def execute(self, name: str, params: Mapping[str, Any]) -> Dict[str, Any]:
         key = self._class_key(name, params)
@@ -246,7 +279,8 @@ class ToolExecutor:
         # ``path``; the search must honor it, else a whole-repo scan resolves
         # the atom against the wrong evidence.
         scope_rel = str(params.get("path", "") or "").strip()
-        search_root = self.root
+        root = os.path.realpath(self.root)
+        search_root = root
         if scope_rel:
             scoped = self._safe_path(scope_rel)
             if scoped is None or not os.path.exists(scoped):
@@ -255,12 +289,14 @@ class ToolExecutor:
             search_root = scoped
         matches: List[Dict[str, Any]] = []
         for fpath in self._iter_files(search_root):
+            if self._safe_path(os.path.relpath(fpath, root)) is None:
+                continue  # a symlinked file that points outside the root
             try:
                 with open(fpath, "r", encoding="utf-8", errors="replace") as fh:
                     for i, line in enumerate(fh, 1):
                         if rx.search(line):
                             matches.append({
-                                "path": os.path.relpath(fpath, self.root),
+                                "path": os.path.relpath(fpath, root),
                                 "line": i,
                                 "text": line.rstrip()[:200],
                             })
@@ -287,11 +323,19 @@ class ToolExecutor:
         # other value is a space-separated list of pytest targets (files /
         # node ids). An atom scoped to specific modules must run exactly
         # those, else it resolves against the wrong tests (e.g. the whole
-        # suite is red while the named core modules are green).
+        # suite is red while the named core modules are green). One refused
+        # token refuses the whole call: dropping it instead would widen the
+        # run, up to the full suite when every target is refused.
         if suite and suite != "default":
-            targets = [t for t in shlex.split(suite)
-                       if self._safe_path(t.split("::", 1)[0]) is not None]
-            cmd += targets
+            requested = shlex.split(suite)
+            rejected = [t for t in requested if not self._test_target_ok(t)]
+            if rejected:
+                return {"suite": suite, "exit_code": -1,
+                        "error": "refused: %s (test paths must stay inside the artifact "
+                                 "directory; accepted options: %s, --ignore=PATH, "
+                                 "--deselect=PATH)"
+                                 % (" ".join(rejected), ", ".join(sorted(_PYTEST_FLAGS)))}
+            cmd += requested
         try:
             proc = subprocess.run(
                 cmd,
@@ -308,6 +352,24 @@ class ToolExecutor:
             "stdout": proc.stdout[-2000:],
             "stderr": proc.stderr[-2000:],
         }
+
+    def _test_target_ok(self, token: str) -> bool:
+        """Accept a pytest path or node id inside the artifact directory, a
+        flag in ``_PYTEST_FLAGS``, or ``--ignore=``/``--deselect=`` with a
+        path inside it. Every other option is refused: options such as
+        ``-p``, ``-c``, ``--rootdir`` or ``--basetemp`` load code or touch
+        files outside the artifact. A path that does not exist is passed
+        on, and pytest reports it."""
+        if token in _PYTEST_FLAGS:
+            return True
+        for opt in _PYTEST_PATH_OPTIONS:
+            if token.startswith(opt):
+                token = token[len(opt):]
+                break
+        else:
+            if token.startswith("-"):
+                return False
+        return bool(token) and self._safe_path(token.split("::", 1)[0]) is not None
 
     def _tool_inspect_config(self, params: Dict[str, Any]) -> Dict[str, Any]:
         rel = str(params.get("path", "") or "")
@@ -426,7 +488,7 @@ def tool_schemas(
 
     ``claim_choices`` restricts the ``emit_claim`` enum (default: every
     instance claim). Used by the mechanism-ablation ``graded`` factor
-    (Task #5, Table E): ``graded=False`` restricts the enum to just the
+    (Table E): ``graded=False`` restricts the enum to just the
     top-level claim -- answer/abstain only, no intermediate-strength claims."""
     claim_ids = list(claim_choices) if claim_choices is not None else list(instance.claim_ids)
     catalog: Dict[str, Dict[str, Any]] = {
@@ -516,8 +578,8 @@ def tool_schemas(
         },
     }
     if revision_mode == "posthoc":
-        # Post-hoc program generation (master SS12.3 arm 5, Prop. 4's
-        # selector): emit_claim carries the license program that licenses the
+        # Post-hoc program generation (the post-hoc selector ablation):
+        # emit_claim carries the license program that licenses the
         # claim, supplied at emission time.
         catalog["emit_claim"] = {
             "description": "Emit a final evaluative claim by id and end the "
@@ -633,7 +695,7 @@ def _prime_system_prompt(
 
 # ---------------------------------------------------------------------------
 # prime_guided arm (CORE mechanism: obligation-guided completion, see
-# prime_runtime/guidance.py and prime_runtime/GUIDED_COMPLETION_REPORT.md)
+# prime_runtime/guidance.py)
 # ---------------------------------------------------------------------------
 
 
@@ -829,7 +891,7 @@ def _prime_guided_system_prompt(
 
 
 # ---------------------------------------------------------------------------
-# static_contract arm (Task #5 / memo E1 "static formal contract" baseline)
+# static_contract arm (the "static formal contract" baseline)
 # ---------------------------------------------------------------------------
 
 
@@ -860,7 +922,7 @@ def _checklist_satisfied(required: Sequence[str], ledger: Ledger) -> bool:
 
 
 # ---------------------------------------------------------------------------
-# information-matched comparators (NAACL review response)
+# information-matched comparators
 # ---------------------------------------------------------------------------
 # The six external comparators are prompted the way their authors proposed
 # and, like ReAct, are never told which fields the atoms read; part of their
@@ -912,7 +974,7 @@ def _static_contract_system_prompt(
 
 
 # ---------------------------------------------------------------------------
-# prime_nonminimal arm (Task #5 / memo E1 "PRIME, nonminimal routes")
+# prime_nonminimal arm ("PRIME, nonminimal routes")
 # ---------------------------------------------------------------------------
 
 
@@ -985,7 +1047,7 @@ class InducedProgramInvalid(Exception):
     """Model failed to induce a valid license program (after retries).
 
     Not a crash: license-induction validity is a MEASURED quantity (the
-    RubricBench risk, master SS12.0/SS17.3). The episode records an
+    RubricBench risk). The episode records an
     invalid-induction outcome and abstains."""
 
 
@@ -1064,8 +1126,8 @@ def induce_program(
                 still strictly inside the information boundary (no atom
                 proposition, no gold value, no gold licenses).
 
-    Reviewers correctly observed that under "ids" the policy is connecting
-    semantically empty identifiers, which understates what license induction
+    Under "ids" the policy is connecting semantically empty identifiers,
+    which understates what license induction
     from a specification would look like; "spec" is the matched condition
     that tests that.
     """
@@ -1133,7 +1195,8 @@ def _build_validated_program(instance: Instance, licenses) -> Program:
     return program
 
 
-# family -> induced licence family (FB-05). Backed by disk because each ARM
+# family -> induced licence family (docs/EXECUTION_PLAN.md, Part 6b, FB-05).
+# Backed by disk because each ARM
 # is a separate run_batch process: an in-memory cache alone would still
 # re-induce every family once per arm, which is 3x the model calls (19 GPU-
 # hours instead of 6) for programs that are identical by construction. The
@@ -1227,7 +1290,7 @@ def induce_program_v5(instance: Instance, llm, policy: str = "unanimous",
     # W2b, and it also makes the clustering honest: the family is already
     # the inferential unit, so one committed program per family is what the
     # design means rather than 4-15 noisy draws of the same one.
-    # Logged as freeze-break FB-05.
+    # Logged as freeze-break FB-05 (docs/EXECUTION_PLAN.md, Part 6b).
     fam = _family_of(instance)
     model = getattr(llm, "model", "unknown")
     key = (fam, model, policy, draws)
@@ -1272,15 +1335,14 @@ class EpisodeResult:
         self.final_text: str = ""
         self.error: str = ""
         self.ledger_states: Dict[str, str] = {}
-        # Revision-freedom ablation (master SS12.3 curve 4): zero in the
-        # deployed fixed mode.
+        # Revision-freedom ablation: zero in the deployed fixed mode.
         self.revisions_proposed: int = 0
         self.revisions_accepted: int = 0
         self.drift_events: int = 0  # accepted auth-expanding revisions
         self.revision_log: List[Dict[str, Any]] = []
-        # prime_guided only (obligation-guided completion, master mechanism
-        # change -- see prime_runtime/GUIDED_COMPLETION_REPORT.md): counts of
-        # the termination rule actually firing. Zero for every other arm.
+        # prime_guided only (obligation-guided completion -- see
+        # prime_runtime/guidance.py): counts of the termination rule
+        # actually firing. Zero for every other arm.
         self.guided_holds: int = 0  # premature emit_claim held (mask-safe)
         self.guided_stalls: int = 0  # silent-stop nudges (bounded, see GUIDED_MAX_STALLS)
         # prime_complete only: resolver calls the runtime made itself after
@@ -1310,12 +1372,11 @@ def run_arm(
     """Run one episode of ``arm`` on ``instance``; logs everything to trace.
 
     ``max_tool_calls``: the matched action-budget cap (default 20, Table C);
-    E3's cost-support frontier (Task #5) reruns the same arms at 4/8/16 by
+    E3's cost-support frontier reruns the same arms at 4/8/16 by
     passing this explicitly -- every arm still shares the identical loop.
 
     ``revision_mode``: "fixed" (deployed full-freeze default) or one of the
-    ablation modes (prime / prime_nonminimal arms only, master SS12.3
-    mechanism curve 4)."""
+    revision-freedom ablation modes (prime / prime_nonminimal arms only)."""
     if arm not in ARMS:
         raise ValueError("unknown arm %r" % arm)
     if revision_mode not in REVISION_MODES:
@@ -1344,20 +1405,20 @@ def run_arm(
         )
     if arm == "prime_nonminimal" and license_source == "induced":
         raise ValueError(
-            "prime_nonminimal pads GOLD routes (memo E1 'PRIME, nonminimal "
-            "routes'); it does not support license_source='induced'"
+            "prime_nonminimal pads GOLD routes; it does not support "
+            "license_source='induced'"
         )
     # prime_guided's obligation-guided completion (reachable ceiling +
     # termination rule) is only meaningful under the deployed full-freeze
     # program (revision_mode="fixed"); under an ablation revision_mode it
     # falls back to plain (unguided) prime-arm behavior below.
-    # prime_guided_gated is prime_guided restricted to claims that survive
-    # the W3 commit gates (EXECUTION_PLAN v4: gold -> prime_guided,
-    # induced -> gated primary, ungated -> amplification diagnostic). The
-    # ungated arm on an INDUCED program is the configuration that turned
-    # 0% OFAR into 100% in the fifth wave, so guiding toward a claim whose
-    # routes did not survive counterfactual validation is exactly what the
-    # gate exists to prevent.
+    # prime_guided_gated is prime_guided restricted to claims that survive the
+    # W3 commit gates (docs/EXECUTION_PLAN.md, Part R, P8: gold ->
+    # prime_guided, induced -> gated primary, ungated -> amplification
+    # diagnostic). The ungated arm on an INDUCED program is the configuration
+    # that turned 0% OFAR into 100% in an earlier run, so guiding toward a
+    # claim whose routes did not survive counterfactual validation is exactly
+    # what the gate exists to prevent.
     guided = arm in ("prime_guided", "prime_guided_gated", "prime_complete") and revision_mode == "fixed"
     # prime_complete = prime_guided (same prompt, same mask, same holds and
     # nudges) plus scripted completion: when the model still stops short of
@@ -1387,7 +1448,7 @@ def run_arm(
                     program = induce_program(instance, llm, view=induction_view)
                 result.induced_program_valid = True
             except InducedProgramInvalid as exc:
-                # Measured outcome, not a crash (master SS12.0): induction
+                # Measured outcome, not a crash: induction
                 # below the validity floor -> the episode abstains, and the
                 # induction-validity rate is reported alongside the arms.
                 result.induced_program_valid = False
@@ -1449,7 +1510,7 @@ def run_arm(
         if is_prime_like:
             if guided:
                 # v5: guided also carries the spec vocabulary + routes
-                # (FREEZE.md F7 ladder row) so its obligations are
+                # (docs/ANALYSIS_PLAN.md, F7 ladder row) so its obligations are
                 # dischargeable on deep-locator domains; the guidance
                 # directives come on top.
                 messages[0] = {
@@ -1480,12 +1541,13 @@ def run_arm(
                                 % (authorized or "none")),
                 }
             elif arm == "masked_reactive_v":
-                # FROZEN v5 ladder (FREEZE.md F7): masked_reactive_v carries
-                # vocab + routes + attested ledger + compliance instruction
-                # -- i.e., EXACTLY react_program_attested's prompt -- plus
-                # the authorized-claims gate line; the MASK is the only
-                # mechanism difference in the E1 contrast. Machine-checked
-                # by test_e1_contrast_is_mask_only.
+                # FROZEN v5 ladder (docs/ANALYSIS_PLAN.md, F7):
+                # masked_reactive_v carries vocab + routes + attested ledger +
+                # compliance instruction -- i.e., EXACTLY
+                # react_program_attested's prompt -- plus the authorized-claims
+                # gate line; the MASK is the only mechanism difference in the
+                # E1 contrast. Machine-checked by
+                # test_e1_contrast_is_mask_only.
                 authorized = interpreter.legal_claim_actions(ledger)
                 mrp = (_ladder_system_prompt("react_program_attested",
                                              instance, ledger)
@@ -1550,7 +1612,7 @@ def run_arm(
         call = calls[0]
         name, args = call["name"], dict(call.get("arguments", {}))
         step += 1
-        if not executor.last_was_cached:
+        if executor.charges(name, args):
             result.tool_calls += 1
         trace.log_action(step, name, args)
 
@@ -1668,7 +1730,7 @@ def run_arm(
                 )
             elif arm in ("reflexion", "cove") and not reflected:
                 # Draft claim: run the one self-critique / verification-then-
-                # revise round (Task #5), then let the SAME tool loop continue
+                # revise round, then let the SAME tool loop continue
                 # (further tool calls allowed) until the model re-emits, which
                 # is then accepted as the final answer below.
                 reflected = True
@@ -1701,7 +1763,7 @@ def run_arm(
                                       result, claim_levels, max_tool_calls, step)
 
     if is_prime_like and not result.emitted:
-        # Budget exhausted / model stopped: emit MaxAuth antichain (SS7.5),
+        # Budget exhausted / model stopped: emit MaxAuth antichain,
         # or abstain when nothing is authorized.
         maximal = prime_auth.max_auth(interpreter.program, ledger)
         if flat:
@@ -1814,7 +1876,7 @@ def _discharge_obligations(instance, interpreter, ledger, executor, trace, resul
 
 def _posthoc_supply_program(interpreter, args, step, ledger, trace):
     """Post-hoc mode: install the emission-time program supplied with
-    emit_claim (validated for well-formedness only — Prop. 4's selector).
+    emit_claim (validated for well-formedness only — the post-hoc selector).
 
     Returns (proceed, feedback): proceed=False with feedback when a supplied
     program was rejected as ill-formed; proceed=True otherwise (with or
@@ -1846,7 +1908,7 @@ def _force_claim_selection(
     """One strict-JSON follow-up mapping the arm's final answer to claim IDs.
 
     ``claim_choices`` restricts which claims may be chosen (the ``graded``
-    ablation factor, Task #5 Table E: answer/abstain only offers the
+    ablation factor, Table E: answer/abstain only offers the
     top-level claim)."""
     is_prime_like = arm in ("prime", "prime_nonminimal", "prime_guided", "prime_guided_gated",
                             "masked_reactive", "masked_reactive_v", "prime_complete", "prime_flat")
@@ -1858,7 +1920,7 @@ def _force_claim_selection(
         "(empty list to abstain)." % json.dumps({c.id: c.text for c in eligible})
     )
     if is_prime_like and revision_mode == "posthoc":
-        # Post-hoc selector (Prop. 4): the program licensing the asserted
+        # Post-hoc selector: the program licensing the asserted
         # claims is supplied together with the assertion.
         prompt = (
             "Based on your assessment above, which of these claims do you "
@@ -1955,13 +2017,13 @@ def _elicit_claim_confidences(instance, messages, llm, result: "EpisodeResult") 
         result.claim_confidences = {}
 
 
-# Scaffold-sensitivity variants (review: "an adapter of our design would test
-# our choices, not their systems"). PRIME_SCAFFOLD_VARIANT selects among
-# meaning-preserving paraphrases of the self-standard arms' fixed instruction
-# strings; variant 0 is BYTE-IDENTICAL to the originally-run scaffolds (pinned
-# by test_scaffold_variants.py), so every published number is unchanged.
-# Running the same arms under variants 1-2 turns "our prompt choices" from a
-# confound into a measured sensitivity band.
+# Scaffold-sensitivity variants (an adapter of our design could test our
+# choices rather than the original systems). PRIME_SCAFFOLD_VARIANT selects
+# among meaning-preserving paraphrases of the self-standard arms' fixed
+# instruction strings; variant 0 is BYTE-IDENTICAL to the originally-run
+# scaffolds (pinned by test_scaffold_variants.py), so every published number is
+# unchanged. Running the same arms under variants 1-2 turns "our prompt
+# choices" from a confound into a measured sensitivity band.
 def _scaffold_variant() -> int:
     try:
         return int(os.environ.get("PRIME_SCAFFOLD_VARIANT", "0"))
@@ -2057,8 +2119,8 @@ _REFLECT_PROMPT_VARIANTS = {
 
 
 def _reflect_or_verify(arm: str, claim_id: str, messages, llm, result: "EpisodeResult") -> None:
-    """The one self-critique (reflexion) / verification-question (cove) round
-    (Task #5): two plain (non-tool) chat turns appended to ``messages`` in
+    """The one self-critique (reflexion) / verification-question (cove)
+    round: two plain (non-tool) chat turns appended to ``messages`` in
     place. Neither turn counts against the shared tool-call budget — only
     the draft and the eventual final emit_claim do, matching how every other
     arm's terminal emit_claim is the thing that is budget-matched."""
@@ -2079,7 +2141,7 @@ def _add_usage(result: EpisodeResult, resp: Mapping[str, Any]) -> None:
 
 
 # ---------------------------------------------------------------------------
-# 2^4 mechanism-interaction ablation (Task #5 / memo Weakness 8 SS8.6, Table E)
+# 2^4 mechanism-interaction ablation (Table E)
 # ---------------------------------------------------------------------------
 
 # Fractional-factorial half-design generator I = A*B*C*D (resolution IV: no
@@ -2114,10 +2176,10 @@ def run_prime_ablation(
     max_tool_calls: int = MAX_TOOL_CALLS,
     induction_view: str = "ids",
 ) -> EpisodeResult:
-    """One cell of the 2^4 mechanism-interaction ablation (Task #5, Table E;
-    memo Weakness 8 SS8.6: "minimal routes vs. redundant routes; frozen vs.
-    revisable program; emission mask vs. prompt-only compliance; graded
-    lattice vs. answer/abstain"). Each factor is a concrete config toggle:
+    """One cell of the 2^4 mechanism-interaction ablation (Table E: minimal
+    routes vs. redundant routes; frozen vs. revisable program; emission mask
+    vs. prompt-only compliance; graded lattice vs. answer/abstain). Each factor
+    is a concrete config toggle:
 
         minimal   True  -> PRIME's own minimal gold routes (arm ``prime``)
                   False -> routes padded with 1-2 redundant literals
@@ -2214,7 +2276,7 @@ def run_prime_ablation(
         call = calls[0]
         name, args = call["name"], dict(call.get("arguments", {}))
         step += 1
-        if not executor.last_was_cached:
+        if executor.charges(name, args):
             result.tool_calls += 1
         trace.log_action(step, name, args)
 

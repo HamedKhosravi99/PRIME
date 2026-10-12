@@ -1,4 +1,4 @@
-"""Gold-ledger reconstruction from a synthetic trace (master SS2.3)."""
+"""Gold-ledger reconstruction from a synthetic trace."""
 
 from prime_runtime import goldledger
 
@@ -65,7 +65,7 @@ def test_complete_auth_per_step(toy_instance):
 
 def test_complete_auth_is_authorization_aware(toy_instance):
     """Completing a dominating claim's license makes CompleteAuth hold for
-    the dominated claim (downward closure, master SS2.3)."""
+    the dominated claim (downward closure)."""
     trace = [
         {
             "type": "observation", "step": 1, "action": "inspect_file",

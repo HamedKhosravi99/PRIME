@@ -1,5 +1,5 @@
-"""Theorem EC.2.2 of the IJDS e-companion (guidance reaches the strongest
-affordable conclusion), checked without the shared-checks-first condition.
+"""The appendix theorem that guidance reaches the strongest affordable
+conclusion, checked without the shared-checks-first condition.
 
 The compliant guided run is simulated exactly as the theorem defines it:
 guidance targets t(D) = max R(D), the largest live conclusion whose open call
@@ -9,7 +9,7 @@ program with up to three conclusions, every grouping of atoms into call
 classes, every truth assignment, and every budget in range. The stated level
 must equal k*, the largest level whose route holds and costs at most B0.
 
-The three counterexamples of the e-companion (conclusions not a chain, two
+The three counterexamples stated in the appendix (conclusions not a chain, two
 routes per conclusion, routes not nested) are checked as well.
 """
 from __future__ import annotations
@@ -38,7 +38,7 @@ def _stated_levels(routes, cls_of, cost, truth, budget):
         return all(truth[a] for a in routes[k] if cls_of[a] in called)
 
     def run(called, spent):
-        assert spent <= budget  # Lemma EC.2.3(i)
+        assert spent <= budget  # guidance never overspends the budget
         reach = [k for k in range(n) if live(k, called)
                  and sum(cost[c] for c in classes[k] - called) <= budget - spent]
         if reach:
@@ -86,7 +86,7 @@ def test_guidance_reaches_k_star_in_every_call_order():
     three = _enumerate(3, (1, 2), range(0, 8))
     four = _enumerate(4, (1,), range(0, 6))
     assert three == (139392, 0)
-    assert four == (508320, 0)  # 647,712 cases in all, as the e-companion states
+    assert four == (508320, 0)  # 647,712 cases in all, as the appendix states
 
 
 def _general_run(levels, order, routes, truth, budget, priority):

@@ -1,6 +1,5 @@
-"""Task #5 (the design notes,
-Weakness 8 SS8.6): the 2^4 mechanism-interaction ablation harness
-(runner/arms.py's ``run_prime_ablation`` / ``ABLATION_CELLS``)."""
+"""The 2^4 mechanism-interaction ablation harness (runner/arms.py's
+``run_prime_ablation`` / ``ABLATION_CELLS``)."""
 
 import os
 import sys

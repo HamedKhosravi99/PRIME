@@ -1,8 +1,7 @@
 """Machine-checked record for the CORRECTED guided utility-optimality
-theorem (paper Theorem `thm:guided`; prime_runtime/GUIDED_COMPLETION_REPORT.md
-SS4 + Correction).
+theorem (paper Theorem `thm:guided`).
 
-Review established that the theorem's original statement,
+The theorem's original statement,
 
     level(MaxAuth_P(z_T)) = max{ level(c) : cost_P(c, z_0) <= B_0 },
 
@@ -138,7 +137,7 @@ def test_counterexample_H3_refuted_route_breaks_the_original_equality():
 
 
 def test_counterexample_H3_chain_version_route_multiplicity():
-    """The PAPER's Remark counterexample (review round 2): a full CHAIN
+    """The PAPER's Remark counterexample: a full CHAIN
     C1 <= C2 <= C3, order-coherent along the chain, where the H3-free
     equality still fails -- and fails specifically because of route
     MULTIPLICITY within a level (C2's second route {c,e} survives but the

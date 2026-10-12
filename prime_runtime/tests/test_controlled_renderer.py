@@ -1,11 +1,10 @@
-"""Tests for the deterministic controlled renderer (Weakness 5 fix).
+"""Tests for the deterministic controlled renderer.
 
-Implements the R1-R4 property/mutation tests from
-`the design notes` SS5.5, plus a
-runtime-conformance test over the Table A columns named in SS5 (mask
-violation, conflict-fail-open, premature claim, renderer strengthening,
-retraction failure), all on one scripted episode driven by the REAL
-:class:`~prime_runtime.interpreter.Interpreter` / :class:`~prime_runtime.ledger.Ledger`.
+Implements the R1-R4 property/mutation tests, plus a runtime-conformance test
+over five failure categories (mask violation, conflict-fail-open, premature
+claim, renderer strengthening, retraction failure), all on one scripted episode
+driven by the REAL :class:`~prime_runtime.interpreter.Interpreter` /
+:class:`~prime_runtime.ledger.Ledger`.
 
     R1  exhaustive template enumeration      -> test_R1_*
     R2  semantic-strength mutation suite      -> test_R2_*
@@ -151,7 +150,7 @@ def test_R1_multi_zone_round_trip():
 # R2: semantic-strength mutation suite
 #
 # Deterministic mutations of the RENDERED STRING (never of the typed object)
-# for all nine categories named in the revision analysis SS5.5.  Every
+# for nine mutation categories.  Every
 # mutation must be rejected: either it breaks the fixed grammar outright
 # (parse failure) or it remains grammatical but denotes content outside
 # AuthContents(O) (subset failure).

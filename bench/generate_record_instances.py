@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Template-family instance generator (EXECUTION_PLAN v5, Part 4 / W0.4).
+"""Template-family instance generator (docs/EXECUTION_PLAN.md, Part 4).
 
 Generates ObligationBench record-domain instances from the harvested public
 records (bench/harvest_records.py), under the frozen v5 design:
@@ -8,8 +8,8 @@ records (bench/harvest_records.py), under the frozen v5 design:
     deterministically from a per-domain probe pool; a family = (topology,
     cost profile, probe composition) fingerprint;
   * full 2x2 {nested,branching} x {homogeneous,heterogeneous call-class
-    cost} cross with matched difficulty covariates (GPT Q2);
-  * every held-out record belongs to EXACTLY ONE family (GPT Q3);
+    cost} cross with matched difficulty covariates (Part R4, Q2);
+  * every held-out record belongs to EXACTLY ONE family (Part R4, Q3);
   * balanced-diagnostic strata 30/30/25/15 (C3/C2max/C1max/none) with
     exactly ~40% of instances containing a FALSE load-bearing atom (the
     remaining degradation realized by authored unavailability, resolver:
@@ -20,7 +20,7 @@ records (bench/harvest_records.py), under the frozen v5 design:
     expected)) for the content-false endpoint;
   * family splits 40/10/50 dev/val/heldout, families held out whole,
     replacement forbidden;
-  * verify-or-drop with two-type attrition accounting (GPT P10).
+  * verify-or-drop with two-type attrition accounting (Part R, P10).
 
 Every instance passes schema validation AND an atom-value verify (resolver
 executed through the real ToolExecutor; observed truth must equal the
@@ -43,6 +43,7 @@ import json
 import os
 import random
 import sys
+import zlib
 from typing import Any, Dict, List, Optional, Tuple
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -55,6 +56,21 @@ from prime_runtime.predicates import evaluate_predicate, format_predicate_rule  
 from prime_runtime.schema import SchemaError, load_instance  # noqa: E402
 
 SEED = 20260801
+# Offsets of the family-enumeration seed, per domain. Earlier versions drew them as
+# hash(domain) % 1000, which Python randomizes in every process (PYTHONHASHSEED), so
+# each run enumerated different families from the same seed. These are the offsets
+# the published files were generated with, recovered by matching the enumerated
+# families against them: the primary corpus (run of 2026-08-01) and the one-branch
+# variant (run of 2026-10-08, which drew its own offsets, so its family ids name
+# other probe sets than the same ids in the primary corpus). A domain not listed
+# gets a stable offset from its name.
+FAMILY_SEED_OFFSET = {"security": 472, "clinical": 363, "drugsafety": 94, "financial": 382}
+ONE_BRANCH_FAMILY_SEED_OFFSET = {"security": 965, "clinical": 547, "drugsafety": 464, "financial": 866}
+
+
+def family_rng(domain: str, offsets: Dict[str, int] = FAMILY_SEED_OFFSET) -> random.Random:
+    off = offsets.get(domain, zlib.crc32(domain.encode("utf-8")) % 1000)
+    return random.Random(SEED + off)
 OUT = os.path.join(HERE, "instances_v2")
 
 # ---------------------------------------------------------------------------
@@ -476,7 +492,7 @@ def build_instance(domain: str, fam: Dict[str, Any], rec_row: Dict[str, Any],
     supported through it alone and C3 is not: the agent has to abandon the
     failed branch and find the surviving one. The balanced split never
     contains this case (there the degraded atom is on every C2 route or on
-    none); this is the heldout_onebranch split of the NAACL review response."""
+    none); this is the heldout_onebranch split."""
     pool = {p[0]: p for p in POOLS[domain]["probes"]}
     record = rec_row["record"]
     rid = rec_row["record_id"]
@@ -652,7 +668,8 @@ def build_instance(domain: str, fam: Dict[str, Any], rec_row: Dict[str, Any],
             "cost": fam["cost"], "target_level": target_level,
             "false_mech": bool(false_mech and (one_branch or (
                 target_level is not None and target_level < 3))),
-            "one_branch": bool(one_branch)}),
+            # the key appears on one-branch tasks only, as in the published files
+            **({"one_branch": True} if one_branch else {})}),
     }
     return inst, ""
 
@@ -685,7 +702,7 @@ def generate_one_branch(domains, per_domain: int, seq_base: int) -> int:
     manifest = json.load(open(mpath)) if os.path.exists(mpath) else {"seed": SEED, "domains": {}}
     manifest.setdefault("one_branch", {})
     for domain in domains:
-        fams = enumerate_families(domain, random.Random(SEED + hash(domain) % 1000))
+        fams = enumerate_families(domain, family_rng(domain, ONE_BRANCH_FAMILY_SEED_OFFSET))
         heldout = {fid for fid, info in manifest["domains"][domain]["families"].items()
                    if info["split"] == "heldout" and info["topology"] == "branching"}
         fams = [f for f in fams if f["family_id"] in heldout]
@@ -827,7 +844,7 @@ def main() -> int:
     os.makedirs(tmpdir, exist_ok=True)
 
     for domain in args.domains:
-        fams = enumerate_families(domain, random.Random(SEED + hash(domain) % 1000))
+        fams = enumerate_families(domain, family_rng(domain))
         # family splits 40/10/50 per topology
         splits: Dict[str, str] = {}
         for topo in ("branching", "nested"):

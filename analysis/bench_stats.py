@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Generator for the ObligationBench descriptive numbers (EXECUTION_PLAN v5:
-"numbers only from generators"; FREEZE F9 slot \\slot{BenchStats}).
+"""Generator for the ObligationBench descriptive numbers (docs/ANALYSIS_PLAN.md,
+F9: "numbers only from generators"; slot \\slot{BenchStats}).
 
 Every quantity the manuscript states about the benchmark is derived here from
 the frozen manifest plus the instance files themselves -- never hand-typed --
@@ -88,10 +88,9 @@ def collect() -> dict:
             collections.Counter(f["ceiling"] for f in bal).items())},
         "claims_per_instance": sorted(claims),
         "content_balanced": dict(content),
-        # ALL splits. Stating this bare in a paragraph about the
-        # confirmatory split invited exactly the misreading it got: a
-        # reviewer took "301 instances are false-load-bearing" as 301 of
-        # 480 (62.7%) and argued the endpoint is engineered at a high
+        # ALL splits. Stated bare in a paragraph about the confirmatory
+        # split, "301 instances are false-load-bearing" is easily misread as
+        # 301 of 480 (62.7%), suggesting the endpoint is engineered at a high
         # corruption rate. 301 is dev 86 + val 16 + balanced 199; the
         # confirmatory rate is 199 of 480, i.e. 41.5%. Both are reported,
         # each with its denominator.
@@ -107,10 +106,11 @@ def collect() -> dict:
 
 
 def latex_short(s: dict) -> str:
-    """Body-length version (FREEZE F9 slot). The construction details it
-    omits -- per-domain attrition, the natural split's uneven realized
-    sizes -- are not dropped: they live in the benchmark-schema appendix and
-    in the frozen manifest, and --json still emits every one of them."""
+    """Body-length version (docs/ANALYSIS_PLAN.md, F9 slot). The construction
+    details it omits -- per-domain attrition, the natural split's uneven
+    realized sizes -- are not dropped: they live in the benchmark-schema
+    appendix and in the frozen manifest, and --json still emits every one of
+    them."""
     bal = s["counts"]["heldout_balanced"]
     k = s["claims_per_instance"]
     return (

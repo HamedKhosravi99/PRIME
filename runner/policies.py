@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Deterministic (no-LLM) policy arms and computed planners for the v5
-control-law study (EXECUTION_PLAN v5, Part 1 / D7 / R4).
+control-law study (docs/EXECUTION_PLAN.md, Part 1 and Part R4).
 
 Policy arms -- run REAL episodes (real ToolExecutor calls, real attested
 ledger, same MaxAuth emission), only ACTION SELECTION is scripted:
@@ -18,7 +18,8 @@ ledger, same MaxAuth emission), only ACTION SELECTION is scripted:
                          membership depth desc, then atom id). The
                          attribution arm for the ordering-vs-direction
                          question; runs UPFRONT on all branching
-                         confirmatory instances (R4 Q4).
+                         confirmatory instances (docs/EXECUTION_PLAN.md,
+                         Part R4, Q4).
 
 Computed planners -- no episodes at all, pure DP over the committed program
 and the instance's verified gold values:
@@ -246,7 +247,7 @@ def main() -> int:
     ap.add_argument("--budget", type=int, default=20)
     ap.add_argument("--budget-anchor", default="fixed",
                     choices=("fixed", "bmin", "bmin1", "2bmin"),
-                    help="spec-only per-instance anchors (FREEZE.md F4), "
+                    help="spec-only per-instance anchors (docs/ANALYSIS_PLAN.md, F4), "
                          "computed by the SAME function run_batch uses. "
                          "Without this the policy family can only be run at "
                          "a fixed budget, and at B=20 every arm reaches the "

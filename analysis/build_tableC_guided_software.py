@@ -13,11 +13,7 @@ prime__gold / prime__induced / static_contract__gold runs already live
 (unlike security/drugsafety/financial/research/clinical, which each have
 their own ``results/<model>-<domain>/`` tree). The ``prime_guided`` runs
 added by this ablation are written into that SAME unsuffixed tree
-(``results/<model>/prime_guided__{gold,induced}``). This is safe w.r.t.
-analysis/fill_paper.py's software-review cascade: that script's arm filter
-only pools ``arm in (direct, rubric, react, prime)`` into the cascade table,
-so ``prime_guided`` rows are excluded on arm name alone, independent of
-directory (fill_paper.py is not modified by this script).
+(``results/<model>/prime_guided__{gold,induced}``).
 
 Writes:
   results/tableC_guided_software.json   ({"table": ..., "comparisons": ...})

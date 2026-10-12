@@ -1,4 +1,4 @@
-"""Unit tests for the fail-closed solver closure Cl_Phi (master SS5.4)."""
+"""Unit tests for the fail-closed solver closure Cl_Phi."""
 
 import pytest
 
@@ -13,7 +13,7 @@ def _att(atom, value, step=1):
 def test_resolution_example_unit_propagation_insufficient():
     """Phi = (¬a∨b∨c) ∧ (¬a∨¬b∨c): attesting a entails c by resolution —
     unit propagation derives nothing, exhaustive closure must find c=T
-    (master SS6.2 recorded counterexample), with b,c unconflicted."""
+    (a recorded counterexample), with b,c unconflicted."""
     phi = [
         {"a": "T", "b": "F", "c": "F"},  # forbid = clause ¬a∨b∨c violated
         {"a": "T", "b": "T", "c": "F"},  # forbid = clause ¬a∨¬b∨c violated

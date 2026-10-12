@@ -1,5 +1,5 @@
 """Specification/evidence split, hash-gated commitment, and the
-Commitment-View Noninterference audit (paper Weakness 4, §4.2-§4.6).
+Commitment-View Noninterference audit.
 
 Covers:
   - spec_manifest excludes outcome-bearing fields (gold_value, proposition,

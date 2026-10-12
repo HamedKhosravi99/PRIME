@@ -1,6 +1,6 @@
-"""EXECUTION_PLAN v5 W0.5 tests: the five machine-checkable call-class
-requirements (GPT R8/G8), the topology classifier, and the prefix-first
-regression (GPT's nested-order counterexample).
+"""Call-class tests: the five machine-checkable call-class requirements,
+the topology classifier, and the prefix-first regression test for the
+nested-order counterexample.
 
 The five requirements:
   1. one call class causes at most one external call;
@@ -159,11 +159,11 @@ def test_classifier_ladder_and_branching():
 
 
 def test_prefix_first_defeats_gpt_nested_counterexample():
-    """GPT round-3: ladder C1:{a}, C2:{a,b}, b false, B0=1. The concern was
-    that an agent probing b first ends with nothing. With budget-aware
-    guidance that cannot happen: at B0=1 the target is C1, so only a is
-    surfaced, and the run emits C1, the hindsight maximum. On nested ladders
-    the order of the target route's checks never matters
+    """Nested-order counterexample: ladder C1:{a}, C2:{a,b}, b false, B0=1.
+    The concern was that an agent probing b first ends with nothing. With
+    budget-aware guidance that cannot happen: at B0=1 the target is C1, so
+    only a is surfaced, and the run emits C1, the hindsight maximum. On
+    nested ladders the order of the target route's checks never matters
     (test_ladder_any_order.py); prefix-first stays the deployed default."""
     sys.path.insert(0, _TESTS)
     from test_guided_optimality import run_guided
@@ -188,9 +188,10 @@ def test_prefix_first_never_changes_ceiling_selection():
 
 
 def test_e1_contrast_is_mask_only(tmp_path):
-    """FREEZE.md F7: react_program_attested and masked_reactive_v must have
-    IDENTICAL prompts except the authorized-claims gate line -- the mask is
-    the only mechanism difference in the E1 enforcement contrast."""
+    """docs/ANALYSIS_PLAN.md, F7: react_program_attested and
+    masked_reactive_v must have IDENTICAL prompts except the
+    authorized-claims gate line -- the mask is the only mechanism difference
+    in the E1 enforcement contrast."""
     import arms as arms_mod
     from prime_runtime.interpreter import Interpreter
     from prime_runtime.ledger import Ledger
