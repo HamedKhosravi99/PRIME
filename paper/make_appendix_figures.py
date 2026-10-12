@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
-"""Appendix E figures of the NAACL draft, labelled with the draft's agent names.
+"""Appendix E figures, labelled with the paper's agent names.
 
-Reuses paper/figures/make_figures.py: the same episodes, the same numbers, and
-the same checks against its expected values. Writes fig_ladder_naacl.pdf and
-fig_rejection_naacl.pdf next to this file, so the shared figures that other
-drafts include stay unchanged. The control-law figure is used as is from
-paper/figures/fig_controllaw.pdf.
+Reuses figures/make_figures.py: the same episodes, the same numbers, and
+the same checks against its expected values. Writes fig_ladder_appendix.pdf and
+fig_rejection_appendix.pdf next to this file, so the shared figures in figures/
+stay unchanged. The control-law figure is used as is from
+figures/fig_controllaw.pdf.
 """
 import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 for _d in (os.path.join(os.path.dirname(HERE), "figures"),  # main repository
-           os.path.join(HERE, "code", "figures")):          # prime-naacl2027
+           os.path.join(HERE, "code", "figures")):          # the paper's source tree
     if os.path.exists(os.path.join(_d, "make_figures.py")):
         sys.path.insert(0, _d)
         break
@@ -23,7 +23,7 @@ mf.LEDGER_NOTE = "adding the ledger display raised it"
 mf.REJECTION_FLOOR_LABEL = "Answer without evidence"
 mf.HERE = HERE
 _save = mf.save
-mf.save = lambda fig, name: _save(fig, name.replace(".pdf", "_naacl.pdf"))
+mf.save = lambda fig, name: _save(fig, name.replace(".pdf", "_appendix.pdf"))
 
 
 def main() -> int:

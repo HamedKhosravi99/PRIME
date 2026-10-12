@@ -30,7 +30,7 @@ tables: logs
 figures: logs
 	$(PYTHON) figures/make_figures.py
 	$(PYTHON) paper/make_fig_budget.py
-	$(PYTHON) paper/make_naacl_appendix_figures.py
+	$(PYTHON) paper/make_appendix_figures.py
 
 # obligationbench.py against the runtime, on every task and every logged reference episode
 conformance: logs

@@ -70,10 +70,10 @@ Numbers in the paper are computed by the scripts below from the episode logs; ea
 | Table 3, the closest control systems (Section 6.4) | `runner/extsys.py` and `runner/glean.py` (instantiations: `docs/EXTSYS.md`); `analysis/build_extsys_table.py`; `paper/make_tab_extsys.py` | `tableEXTSYS.json`, `glean/diagnostics_qwen2.5-32b_B20.json` |
 | Table 4, conformance tests (Appendix B) | `prime_runtime/tests/` | |
 | Table 6, atoms of the running example `sec-v2-0114` (Appendix C) | `bench/generate_record_instances.py` | |
-| Figure 3, the full information ladder (Appendix E.1) | `paper/make_naacl_appendix_figures.py`, through `figures/make_figures.py` | `tableT1.json`, `tableT2.json` |
+| Figure 3, the full information ladder (Appendix E.1) | `paper/make_appendix_figures.py`, through `figures/make_figures.py` | `tableT1.json`, `tableT2.json` |
 | Table 8, information versus enforcement with other models; sampled decoding (Appendix E.1) | `analysis/build_w2a_tables.py --models <tags>`; sampled decoding: `fill_SeedNote` in `analysis/fill_v2_tables.py` (reads the `w2seed` logs) | `tableT1.json`, `tableT2.json` |
 | Figure 4, guidance gain in each registered cell (Appendix E.2) | `figures/make_figures.py` | `tableT2.json` (`control_law`) |
-| Figure 5, after-the-fact filter (Appendix E.2) | `paper/make_naacl_appendix_figures.py` | `rejection_bound.json`, `frontier_policies.json`, `tableEXT.json` |
+| Figure 5, after-the-fact filter (Appendix E.2) | `paper/make_appendix_figures.py` | `rejection_bound.json`, `frontier_policies.json`, `tableEXT.json` |
 | Appendix E.2, flat gate | `analysis/build_flat_table.py` | `tableFLAT.json` |
 | Table 9, information versus enforcement, guidance, and evidence location on three models (Appendix E.3) | `analysis/build_multimodel_table.py`; `paper/make_tab_multimodel.py` | `tableMULTI.json` (the fully informed agent's locator-split cell is a new cell, `results/new_cells.md`) |
 | Appendix E.3, live completion on the locator-uncertain split | `analysis/build_locator_table.py`, `analysis/build_locator_extra.py` | `tableLOC.json`, `tableLOC_extra.json` |

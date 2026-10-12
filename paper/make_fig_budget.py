@@ -59,5 +59,6 @@ h1, l1 = ax1.get_legend_handles_labels(); h2, l2 = ax2.get_legend_handles_labels
 handles = h1[:3] + [h1[3], h1[4]]; labels = ["PRIME, no guidance", "PRIME", "PRIME, completion", "Random check / blind enum. (no LLM)", "Ceiling-targeting / true locators (no LLM)"]
 fig.legend(handles, labels, loc="lower center", ncol=2, fontsize=5.8, frameon=False, bbox_to_anchor=(0.5, -0.30), handlelength=1.8, columnspacing=1.0)
 fig.subplots_adjust(left=0.13, right=0.99, top=0.88, bottom=0.17, wspace=0.08)
-fig.savefig(os.path.join(HERE, "fig_budget.pdf"), bbox_inches="tight", pad_inches=0.01)
+fig.savefig(os.path.join(HERE, "fig_budget.pdf"), bbox_inches="tight", pad_inches=0.01,
+            metadata={"Creator": None, "Producer": None, "CreationDate": None})
 print("wrote fig_budget.pdf")

@@ -16,7 +16,7 @@
 # into OUTBASE/<MODELTAG>-<domain>/<ARM>__<ANCHOR>/. Lists travel through the
 # environment (sbatch splits --export values on commas):
 #   env CELLS="react_program_attested:heldout_locator:bmin:results/w2loc" \
-#     sbatch -q inferno -p gpu-h100 --gres=gpu:h100:1 --cpus-per-task=8 --mem=96G -t 6:00:00 \
+#     sbatch -q <qos> -p gpu-h100 --gres=gpu:h100:1 --cpus-per-task=8 --mem=96G -t 6:00:00 \
 #     --export=ALL,MODEL=Qwen/Qwen2.5-32B-Instruct,MODELTAG=qwen2.5-32b cluster/new_cells.sbatch
 set -euo pipefail
 SCRATCH=$HOME/scratch

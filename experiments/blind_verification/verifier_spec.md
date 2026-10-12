@@ -67,8 +67,8 @@ request is counted as an invocation, each use as a consultation.
   latency) in `_verify/<instance>.json` and in `summary.json`.
 - Everything else (arm `prime_guided`, gold program, 20 calls, guidance,
   holds, stall nudges, MaxAuth fallback, forced selection, parallel 6,
-  vLLM recipe of the HTCondor job script) is as in the original text
-  run, which was produced on the HTCondor pool.
+  vLLM recipe of the second cluster's job script) is as in the original text
+  run, which was produced on that cluster.
 
 ## What the verifier and agent never see
 

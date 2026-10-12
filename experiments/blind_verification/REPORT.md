@@ -1,6 +1,6 @@
 # PRIME with blind same-model verification: live experiment
 
-Status: COMPLETE (2026-10-10). Live run on an HTCondor cluster 85839
+Status: COMPLETE (2026-10-10). Live run on the second cluster (job 85839)
 (one NVIDIA A100 80GB, vLLM 0.10.1.1, Qwen2.5-32B-Instruct, the same
 serving stack, model, budget, arm and parallelism as the original
 Experiment D cells), 240 episodes, 0 errors. Every number below is read
@@ -74,8 +74,8 @@ requests are not charged to that budget and are counted separately.
   `pilot/bench` and `pilot/results/w2text` is clean after the run; the
   SHA-256 prefixes of `arms.py` (35bd91b5f9c2a3aa), `run_episode.py`
   (0bdf01bbab0db278), `ledger.py` (abbfabdd2c090804) and `goldledger.py`
-  (45e04d4957396d80) are identical locally and on the HTCondor copy that ran
-  the job; the three wrapper files on the HTCondor cluster hash to the same values as the
+  (45e04d4957396d80) are identical locally and on the cluster copy that ran
+  the job; the three wrapper files on the cluster hash to the same values as the
   committed ones (0ece6125b4f44885, fef466115bf7e99e, 0afd7e87b500dbc3).
 - **Verifier blind.** `test_wrapper.py` (passed locally and on the job node
   before the episodes started; the job aborts on failure) records what the
@@ -91,7 +91,7 @@ requests are not charged to that budget and are counted separately.
   records; `analyze_live.py` reads gold after the run, for scoring and the
   audit only.
 - **Same environment as the baseline.** The original text cells were
-  produced on the HTCondor pool with vLLM 0.10.1.1 on A100s; so was this run.
+  produced on the second cluster with vLLM 0.10.1.1 on A100s; so was this run.
 
 ## 3. Results
 

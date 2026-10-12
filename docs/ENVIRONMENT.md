@@ -14,7 +14,7 @@ The agents talk to a model through an OpenAI-compatible endpoint served by vLLM.
 | `Qwen/Qwen2.5-32B-Instruct` | the confirmatory grid (Sections 6.1 and 6.2 with named fields): two A100 GPUs, tensor-parallel 2; the later runs (evidence location, textual evidence, the closest systems, the regulation study): one or two GPUs of the types the scheduler assigned (A100 80GB, H100, H200, RTX Pro Blackwell) | 0.24.0 (Python 3.11) | `hermes` |
 | `Qwen/Qwen2.5-7B-Instruct` | one A100 GPU | 0.24.0 | `hermes` |
 | `openai/gpt-oss-20b` | H200 GPUs | 0.24.0 | `openai` |
-| `mistralai/Mistral-Small-24B-Instruct-2501` | security on H100 GPUs; clinical, drug safety, and financial on A100 80GB GPUs of a second (HTCondor) cluster | 0.24.0; 0.10.1 on the second cluster | `mistral_safe` (`cluster/mistral_safe_parser.py`) |
+| `mistralai/Mistral-Small-24B-Instruct-2501` | security on H100 GPUs; clinical, drug safety, and financial on A100 80GB GPUs of a second cluster | 0.24.0; 0.10.1 on the second cluster | `mistral_safe` (`cluster/mistral_safe_parser.py`) |
 
 The model weights were the repositories' default revisions at the time of the runs (August to October 2026). The revision hashes were not recorded.
 

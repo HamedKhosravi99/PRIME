@@ -36,4 +36,4 @@ jobs:
         run: |
           python figures/make_figures.py
           python paper/make_fig_budget.py
-          python paper/make_naacl_appendix_figures.py
+          python paper/make_appendix_figures.py

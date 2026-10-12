@@ -53,7 +53,7 @@ def test_locally_served_base_is_allowed(monkeypatch):
 
 def test_cluster_style_node_base_is_allowed(monkeypatch):
     _clean(monkeypatch)
-    monkeypatch.setenv("PRIME_LLM_BASE", "http://atl1-1-03-010-1-0:8115/v1")
+    monkeypatch.setenv("PRIME_LLM_BASE", "http://gpu-node-01:8115/v1")
     assert llm_mod.LLMClient(model="qwen2.5-32b")
 
 

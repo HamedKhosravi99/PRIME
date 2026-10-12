@@ -22,7 +22,7 @@
 #
 # ALWAYS pass an explicit --mem. Do NOT use --mem=0 (the old serve_and_run.sbatch
 # does): it requests the node's ENTIRE RAM, which no partially-allocated node can
-# satisfy, so an <qos> job sits on "(Resources)" forever instead of backfilling.
+# satisfy, so a <qos> job sits on "(Resources)" forever instead of backfilling.
 #
 # GPU requirement: this vLLM/PyTorch build supports compute capability >= 7.5.
 # The gpu-v100 partition is CC 7.0 and CANNOT run it (verified: job 11564167 died
@@ -151,7 +151,7 @@ trap 'kill $VLLM_PID 2>/dev/null || true' EXIT
 # ---- 2. wait for health (up to 30 min for a large model) -------------------
 HEALTHY=0
 # 90 min. 30 was enough for one 32B server per node but not for three, and
-# packed three shards onto atl1-1-03-010-1-0, each reading a ~65GB model
+# packed three shards onto one node, each reading a ~65GB model
 # from shared scratch, and loading slowed to 152s per checkpoint shard. The
 # third was at 12/17 when the timer expired -- it was progressing, not
 # stuck. 60 min covers the contended case; a genuinely dead server still
@@ -272,7 +272,7 @@ case "$CONFIGSET" in
     # External / scaffold baselines on the v2 benchmark. Own driver below.
     CONFIGS=("__ext__ gold") ;;
   w2extspec)
-    # Information-matched reruns of the six comparators (NAACL review
+    # Information-matched reruns of the six comparators (review
     # response): same prompts plus the specification-view block. Own driver.
     CONFIGS=("__extspec__ gold") ;;
   w2text)
@@ -385,7 +385,7 @@ if [ "$CONFIGSET" = "w2ext" ]; then
   exit 0
 fi
 
-# ---- Locator-uncertain split and scripted completion (NAACL /goal) ---------
+# ---- Locator-uncertain split and scripted completion ----------------------
 run_anchor () {  # ARM SPLIT ANCHOR OUTBASE
   local ARM=$1 SPLIT=$2 ANCHOR=$3 OUTBASE=$4
   local AA="--max-tool-calls 20"
@@ -499,7 +499,7 @@ if [ "$CONFIGSET" = "w2complete" ]; then
   exit 0
 fi
 
-# ---- Information-matched comparators (NAACL review response) --------------
+# ---- Information-matched comparators (review response) --------------------
 # Identical to w2ext except that every comparator also receives the
 # specification view (PRIME_COMPARATOR_SPEC=1); outputs carry a __spec tag so
 # the published directories are never touched. Table: analysis/build_ext_table.py --variant spec
@@ -518,7 +518,7 @@ if [ "$CONFIGSET" = "w2extspec" ]; then
   exit 0
 fi
 
-# ---- One-branch-fails split (NAACL review response) ------------------------
+# ---- One-branch-fails split (review response) ------------------------------
 # Generated locally by bench/generate_record_instances.py --one-branch-per-domain
 # and synced with the rest of bench/instances_v2. Table: analysis/build_onebranch_table.py
 if [ "$CONFIGSET" = "w2ob" ]; then
