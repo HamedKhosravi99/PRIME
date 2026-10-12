@@ -45,10 +45,10 @@ ANCHORS = ("bmin", "bmin1", "2bmin", "B20")
 ARMS = ("prime_guided", "masked_reactive_v")
 BENCH = os.path.join(PILOT, "bench", "instances_v2")
 # --split locator: the same replay on the locator-uncertain split
-# (results/w2loc, anchors bmin/2bmin/B20), where completion enumerates the
-# remaining candidate fields of an open atom (runner/arms.py).
+# (results/w2loc, every anchor with a logged cell), where completion
+# enumerates the remaining candidate fields of an open atom (runner/arms.py).
 SPLIT = {"balanced": ("heldout_balanced", "w2a", ANCHORS),
-         "locator": ("heldout_locator", "w2loc", ("bmin", "2bmin", "B20")),
+         "locator": ("heldout_locator", "w2loc", ANCHORS),
          "onebranch": ("heldout_onebranch", "w2ob", ("B20",))}
 
 

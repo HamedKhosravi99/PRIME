@@ -54,7 +54,7 @@ make corpus                            # python3 bench/reproduce_corpus.py
 
 This regenerates all 1,898 tasks from `bench/harvest/` and compares each with the published file byte for byte: 938 primary, 240 one-branch, 480 locator-uncertain, and 240 text-evidence tasks. The generators are deterministic: their family enumeration uses pinned seed offsets (`bench/generate_record_instances.py`). `bench/reduce_harvest.py` documents how the shipped harvest was reduced from the full one, and `docs/KNOWN_ISSUES.md` gives the history. The regulation set is built by `bench/fdaaa/build_fdaaa_instances.py`; one of its inputs is a third-party table that is not included (see Data provenance).
 
-**3. Rerunning the agents (GPU).** See Running an agent. Greedy decoding on a served model is close to deterministic but not exactly so, and `docs/KNOWN_ISSUES.md` lists the episodes in which the released runner's budget accounting differs from the logged runs; the 139 episodes it affected were rerun.
+**3. Rerunning the agents (GPU).** See Running an agent. Greedy decoding on a served model is close to deterministic but not exactly so, and `docs/KNOWN_ISSUES.md` lists the episodes in which the released runner's budget accounting differs from the logged runs; the 139 episodes it affected were rerun. Four cells were run afterwards with the corrected runner, as new cells rather than reruns: the fully informed agent on the locator-uncertain split at $b_{\min}$ for the three models (Table 9) and PRIME at $b_{\min}{+}1$ on that split with Qwen (Table 11); `results/new_cells.md` lists them.
 
 ## From the paper to the code
 
@@ -75,10 +75,10 @@ Numbers in the paper are computed by the scripts below from the episode logs; ea
 | Figure 4, guidance gain in each registered cell (Appendix E.2) | `figures/make_figures.py` | `tableT2.json` (`control_law`) |
 | Figure 5, after-the-fact filter (Appendix E.2) | `paper/make_naacl_appendix_figures.py` | `rejection_bound.json`, `frontier_policies.json`, `tableEXT.json` |
 | Appendix E.2, flat gate | `analysis/build_flat_table.py` | `tableFLAT.json` |
-| Table 9, information versus enforcement, guidance, and evidence location on three models (Appendix E.3) | `analysis/build_multimodel_table.py`; `paper/make_tab_multimodel.py` | `tableMULTI.json` |
+| Table 9, information versus enforcement, guidance, and evidence location on three models (Appendix E.3) | `analysis/build_multimodel_table.py`; `paper/make_tab_multimodel.py` | `tableMULTI.json` (the fully informed agent's locator-split cell is a new cell, `results/new_cells.md`) |
 | Appendix E.3, live completion on the locator-uncertain split | `analysis/build_locator_table.py`, `analysis/build_locator_extra.py` | `tableLOC.json`, `tableLOC_extra.json` |
-| Table 10, the closest systems in full (Appendix E.5) | `analysis/build_extsys_table.py`; `paper/make_tab_extsys.py` | `tableEXTSYS.json` |
-| Table 11, PRIME against HESP's controller (Appendix E.5) | `analysis/hesp_controller_runs.py` (`--split heldout_locator` for the right half), `analysis/build_controller_table.py`, `analysis/build_locator_hesp_table.py`; `paper/make_tab_extsys.py` | `tableCONTROLLER.json`, `tableLOC_HESP.json` |
+| Table 10, the closest systems in full (Appendix E.5) | `analysis/build_extsys_table.py`; `paper/make_tab_extsys.py`; model calls of the PRIME runs and the fully informed agent: `analysis/model_calls.py`, which counts them from the traces (checked by `prime_runtime/tests/test_model_calls.py`) | `tableEXTSYS.json` |
+| Table 11, PRIME against HESP's controller (Appendix E.5) | `analysis/hesp_controller_runs.py` (`--split heldout_locator` for the right half), `analysis/build_controller_table.py`, `analysis/build_locator_hesp_table.py`, `analysis/discharge_replay.py --split locator` (completion replayed on the locator split); `paper/make_tab_extsys.py` | `tableCONTROLLER.json`, `tableLOC_HESP.json`, `discharge_replay_locator.json` |
 | Appendix E.5, utility crediting only established conclusions | `analysis/established_utility.py` | `established_utility_hesp.json` |
 | Appendix E.5, sensitivity of HESP's prior and threshold; stall cap | `analysis/hesp_prior_sensitivity.py`, `analysis/hesp_controller_runs.py --prior counted_lodo`, `analysis/stall_cap_replay.py` | `hesp_prior_sensitivity.json`, `hesp_tau_sensitivity.json`, `stall_cap_replay.json` |
 | Tables 12 and 14, the regulation and the two construction workflows (Appendix F) | `experiments/specbuild/` (`create.py`, `validate.py`, `build_test.py`, `score_e2e.py`, `analyze_e2e.py`) | `experiments/specbuild/reported/e2e.json`, `analysis.json`; agent episodes in `results/specbuild_e2e/` |
@@ -138,7 +138,7 @@ Each artifact's `PROVENANCE` file records where and when it was retrieved.
 ## Known issues
 
 `docs/KNOWN_ISSUES.md` lists where the released code differs from the code that produced the logs:
-- budget accounting after a repeated call: `analysis/budget_accounting_audit.py` found the 139 episodes whose outcome it could change, and all were rerun with the corrected runner (the originals ship in `results/superseded_by_rerun/`); the paper's numbers include the reruns;
+- budget accounting after a repeated call: `analysis/budget_accounting_audit.py` found the 139 episodes whose outcome it could change, and all were rerun with the corrected runner (the originals ship in `results/superseded_by_rerun/`); the paper's numbers include the reruns; the four cells run afterwards used the corrected runner, and the audit checks them under its rule;
 - attestations refused before a read, which affects no logged episode.
 
 It also explains the excluded episodes, and says what the one-branch variant's family ids mean.

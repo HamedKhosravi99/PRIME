@@ -26,7 +26,7 @@
  "induction_method": "oneshot",
  "induction_view": "ids",
  "instance": "cli-v2-7066",
- "instance_path": "/storage/project/r-xh9-0/anonymous/prime_rerun/bench/instances_v2/clinical/heldout_text/cli-v2-7066.json",
+ "instance_path": "bench/instances_v2/clinical/heldout_text/cli-v2-7066.json",
  "license_source": "gold",
  "max_completion": 1.0,
  "max_level": 3,

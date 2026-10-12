@@ -25,6 +25,8 @@ The rerun changed:
 
 The reported numbers moved by at most 0.2 points: Table 2, Table 8's gpt-oss-20b row, Tables 9 and 10, and two percentages of Appendix E.3. Table 1, Figure 2, Table 3, the regulation study, and every false-authorization rate are unchanged. `results/rerun_changes.md` lists each change, and the paper reports the rerun numbers.
 
+Four cells were run after the rerun with the corrected runner (`cluster/new_cells.sbatch`). They fill cells that had not been run, so they replace nothing: the fully informed agent on the locator-uncertain split at $b_{\min}$ for the three models (Table 9), and PRIME at $b_{\min}{+}1$ on that split with Qwen (Table 11). Their episodes carry a `new_cell` marker (`analysis/import_new_cells.py`), and the audit checks their call counts under the corrected rule. `results/new_cells.md` lists the jobs and the values they added.
+
 ## Episodes whose trace and summary came from different runs (rerun)
 
 In 21 logged episodes the trace and the summary entry came from different runs of the same episode, so the summary's call count differed from the one the trace replays to:

@@ -12,10 +12,13 @@ Takes about five minutes.
 
 Usage: python3 analysis/regenerate_tables.py            # check
        python3 analysis/regenerate_tables.py --update   # keep the regenerated files
+       python3 analysis/regenerate_tables.py --update --changes new_cells_changes.json
 
 --update is for after the logs change (for example when rerun episodes replace
 logged ones): it keeps every regenerated file and writes results/rerun_changes.json,
-which lists every number that changed, file by file, so the paper can follow.
+which lists every number that changed, file by file, so the paper can follow
+(--changes names another file under results/, so that a later update does not
+overwrite the record of an earlier one).
 """
 from __future__ import annotations
 
@@ -33,8 +36,10 @@ RESULTS = os.path.join(ROOT, "results")
 RUNS = [
     ("analysis/build_w2a_tables.py", [], ["tableT1.json", "tableT2.json"]),
     ("analysis/build_complete_table.py", [], ["tableCOMPLETE.json", "discharge_replay.json"]),
+    ("analysis/discharge_replay.py", ["--split", "locator"], ["discharge_replay_locator.json"]),
     ("analysis/locator_first_reads.py", [], ["locator_first_reads.json"]),
     ("analysis/build_text_table.py", [], ["tableTEXT.json"]),
+    ("analysis/text_attestation_counts.py", [], ["text_attestation_counts.json"]),
     ("analysis/build_extsys_table.py", [], ["tableEXTSYS.json"]),
     ("analysis/build_flat_table.py", [], ["tableFLAT.json"]),
     ("analysis/build_multimodel_table.py", [], ["tableMULTI.json"]),
@@ -100,7 +105,9 @@ def run(script, args):
 
 
 def main(argv=None) -> int:
-    update = "--update" in (sys.argv[1:] if argv is None else argv)
+    args = sys.argv[1:] if argv is None else argv
+    update = "--update" in args
+    changes_name = args[args.index("--changes") + 1] if "--changes" in args else "rerun_changes.json"
     changes = {}
     if not os.path.isdir(os.path.join(RESULTS, "w2a")):
         print("results/ holds no episode logs; extract logs/prime-episode-logs.tar.gz first (make logs)")
@@ -185,16 +192,16 @@ def main(argv=None) -> int:
     print("%-40s        sampled decoding: 25.4 to 26.9%% unenforced, 0.0%% under the mask" % "fill_SeedNote (analysis/fill_v2_tables.py)")
 
     if update:
-        with open(os.path.join(RESULTS, "rerun_changes.json"), "w", encoding="utf-8") as fh:
+        with open(os.path.join(RESULTS, changes_name), "w", encoding="utf-8") as fh:
             json.dump(changes, fh, indent=1, sort_keys=True, default=str)
-        print("\nupdated %d files, %d numbers changed; see results/rerun_changes.json"
-              % (len(changes), sum(len(v) for v in changes.values())))
+        print("\nupdated %d files, %d numbers changed; see results/%s"
+              % (len(changes), sum(len(v) for v in changes.values()), changes_name))
     if bad:
         print("\nDIFFERENCES:\n  " + "\n  ".join(bad))
         return 1
     if update:
         print("\nregenerated tables written; differences from the paper's Table 8 and sampled-decoding values, if any, "
-              "are in results/rerun_changes.json")
+              "are in results/%s" % changes_name)
     else:
         print("\nevery regenerated table is identical to the shipped one; Table 8 and the sampled-decoding values match the paper")
     return 0

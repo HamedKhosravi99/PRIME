@@ -37,6 +37,9 @@ Rerun episodes. An episode replaced by a rerun with the corrected runner
 (analysis/merge_reruns.py marks it "rerun") was charged by the corrected rule;
 the audit checks that replaying the corrected rule on its trace reproduces its
 logged count (`rerun_mismatch` otherwise) and does not count it as affected.
+Cells run after the rerun with the corrected runner (analysis/import_new_cells.py
+marks their episodes "new_cell") are checked the same way (`new_cell`,
+`new_cell_mismatch`).
 
 Writes results/budget_accounting_audit.json.
 Usage: python3 analysis/budget_accounting_audit.py
@@ -125,7 +128,7 @@ def cell_key(rel_run: str):
 
 def main() -> int:
     cells = defaultdict(lambda: {"n": 0, "repeat": 0, "differ": 0, "cap": 0, "count_mismatch": 0,
-                                 "rerun": 0, "rerun_mismatch": 0,
+                                 "rerun": 0, "rerun_mismatch": 0, "new_cell": 0, "new_cell_mismatch": 0,
                                  "episodes_differ": [], "episodes_mismatch": [], "episodes_cap": []})
     for top in REPORTED:
         base = SOURCES[top]
@@ -150,6 +153,10 @@ def main() -> int:
                 if e.get("rerun"):
                     c["rerun"] += 1
                     c["rerun_mismatch"] += int(new != e.get("tool_calls"))
+                    continue
+                if e.get("new_cell"):
+                    c["new_cell"] += 1
+                    c["new_cell_mismatch"] += int(new != e.get("tool_calls"))
                     continue
                 c["repeat"] += repeat
                 mismatch = old != e.get("tool_calls")
@@ -179,11 +186,13 @@ def main() -> int:
                      "bound_points": round(100.0 * affected / denominator, 2),
                      "replay_count_mismatch": c["count_mismatch"],
                      "rerun": c["rerun"], "rerun_mismatch": c["rerun_mismatch"],
+                     "new_cell": c["new_cell"], "new_cell_mismatch": c["new_cell_mismatch"],
                      "episodes_differ": sorted(c["episodes_differ"]), "episodes_cap": sorted(c["episodes_cap"]),
                      "episodes_mismatch": sorted(c["episodes_mismatch"])})
     out = {"rule": __doc__.split("\n\n")[1], "cells": rows,
            "totals": {k: sum(r[k] for r in rows) for k in ("n", "repeat", "differ", "cap", "affected",
-                                                            "replay_count_mismatch", "rerun", "rerun_mismatch")}}
+                                                            "replay_count_mismatch", "rerun", "rerun_mismatch",
+                                                            "new_cell", "new_cell_mismatch")}}
     with open(os.path.join(RESULTS, "budget_accounting_audit.json"), "w", encoding="utf-8") as fh:
         json.dump(out, fh, indent=1, sort_keys=True)
     print("%-9s %-18s %-9s %-34s %5s %6s %6s %4s %8s %8s" % ("folder", "model", "split", "run", "n", "repeat",
@@ -201,6 +210,8 @@ def main() -> int:
     print("max bound over cells: %.2f points" % max(r["bound_points"] for r in rows))
     print("rerun with the corrected runner: %d episodes, %d whose logged count the corrected rule does not reproduce"
           % (t["rerun"], t["rerun_mismatch"]))
+    print("new cells run with the corrected runner: %d episodes, %d whose logged count the corrected rule does not reproduce"
+          % (t["new_cell"], t["new_cell_mismatch"]))
     print("wrote results/budget_accounting_audit.json")
     return 0
 

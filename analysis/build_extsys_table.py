@@ -15,7 +15,10 @@ compares each system with PRIME on paired tasks:
                        stated conclusion / 3 x 100)
   emit                 share of answerable tasks with a stated conclusion
   cost                 counted agent actions (the budget unit)
-  model calls          LLM requests per episode (external arms record them)
+  model calls          LLM requests per episode (external arms record them;
+                       for the reference arms analysis/model_calls.py counts
+                       them from the traces: agent turns, reminders after a
+                       silent stop, and the forced final question)
 
 Paired contrasts use the frozen family-cluster machinery (stats_v5):
 sign-flip randomization p and a hierarchical bootstrap CI, each system minus
@@ -37,6 +40,7 @@ for _p in (PILOT, os.path.join(PILOT, "runner"), os.path.join(PILOT, "release"),
         sys.path.insert(0, _p)
 
 import build_w2a_tables as bw  # noqa: E402
+import model_calls as mc  # noqa: E402
 import obligationbench as ob  # noqa: E402
 import stats_v5 as st  # noqa: E402
 
@@ -76,8 +80,8 @@ def reads_metrics(model: str, name: str, tasks) -> dict:
             tp = os.path.join(run, e["instance"] + ".jsonl")
             if not os.path.exists(tp):
                 continue
-            for line in open(tp, encoding="utf-8"):
-                r = json.loads(line)
+            records = mc.trace_records(tp)
+            for r in records:
                 if r.get("type") == "action" and r.get("name") == "inspect_record":
                     q = r.get("params") or {}
                     reads.append([str(q.get("record_id", "")), str(q.get("field_path", ""))])
@@ -85,6 +89,10 @@ def reads_metrics(model: str, name: str, tasks) -> dict:
                           "reads": reads})
             if (e.get("ext") or {}).get("llm_calls") is not None:
                 llm_calls.append(e["ext"]["llm_calls"])
+            elif not e.get("arm", "").startswith("ext_"):
+                # the PRIME runs and the fully informed agent did not record
+                # their requests; analysis/model_calls.py recovers them
+                llm_calls.append(mc.model_calls(e, records))
     if not preds:
         return {}
     s = ob.score({p["task_id"]: tasks[p["task_id"]] for p in preds}, preds)["overall"]

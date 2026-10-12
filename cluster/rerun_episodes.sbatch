@@ -3,7 +3,7 @@
 #SBATCH -A <account>
 #SBATCH -N 1
 #SBATCH --requeue
-#SBATCH -o /storage/project/r-xh9-0/anonymous/prime_rerun/logs/%x-%j.out
+#SBATCH -o logs/%x-%j.out
 # Rerun the episodes of results/rerun_manifest.csv with the corrected runner
 # (budget charged by each call's own cache status). Serves MODEL with vLLM the
 # way serve_and_run_guided.sbatch did for the logged runs (same caches on
@@ -21,7 +21,7 @@
 # (TIERS defaults to "1 2 3"; pass it through the environment: env TIERS="1 2" sbatch --export=ALL ...)
 set -euo pipefail
 SCRATCH=$HOME/scratch
-ROOT=/storage/project/r-xh9-0/anonymous/prime_rerun
+ROOT=<project>/prime_rerun
 export HF_HOME=$SCRATCH/hf
 export HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1
 export XDG_CACHE_HOME=$SCRATCH/xdg_cache TRITON_CACHE_DIR=$SCRATCH/triton_cache

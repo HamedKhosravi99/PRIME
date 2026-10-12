@@ -6,11 +6,11 @@ results/w2loc/<tag>-<domain>/, the rows a reader needs to check the sign of
 each headline result: the fully informed agent at 20 calls (false
 authorization, utility); PRIME without guidance, PRIME, and PRIME with
 completion at b_min, 2b_min, and 20 calls on the balanced split; and on the
-locator-uncertain split PRIME at b_min and 2b_min, the mask alone and PRIME
-with completion at b_min, against blind enumeration (40.3 / 58.5) and the
+locator-uncertain split PRIME at b_min and 2b_min, the fully informed agent,
+the mask alone, and PRIME with completion at b_min, against blind enumeration (40.3 / 58.5) and the
 true locators (59.2), which are LLM-free and shared by every model. Family-
 mean contrasts: guidance (PRIME minus the mask alone), completion against
-the ceiling-targeting policy paired per task, and PRIME against
+the ceiling-targeting policy paired per task, and each agent against
 blind enumeration at b_min on the locator split.
 
 Usage: python3 analysis/build_multimodel_table.py [--models qwen2.5-32b gptoss-20b mistral-small-24b]
@@ -118,10 +118,14 @@ def main(argv=None) -> int:
             M["locator"]["prime_%s" % an] = summary(pg)
             if pg and blind[an]:
                 M["contrasts"]["loc_%s|prime-vs-blind" % an] = contrast(pg, blind[an])
+        fl = cell(m, "w2loc", "react_program_attested__bmin", LOC)
         mk = cell(m, "w2loc", "masked_reactive_v__bmin", LOC)
         pc = cell(m, "w2loc", "prime_complete__bmin", LOC)
+        M["locator"]["fully_informed_bmin"] = summary(fl)
         M["locator"]["mask_bmin"] = summary(mk)
         M["locator"]["complete_bmin"] = summary(pc)
+        if fl and blind["bmin"]:
+            M["contrasts"]["loc_bmin|fully_informed-vs-blind"] = contrast(fl, blind["bmin"])
         if mk and blind["bmin"]:
             M["contrasts"]["loc_bmin|mask-vs-blind"] = contrast(mk, blind["bmin"])
         if pc and blind["bmin"]:
