@@ -97,17 +97,24 @@ def test_emissions_contradicted_by_the_agents_own_ledger_are_counted(tmp_path, m
     monkeypatch.setattr(bw, "RESULTS", str(tmp_path))
     import glob
     target = None
-    for p in glob.glob(os.path.join(_P, "bench", "instances_v2", "security",
-                                    "heldout_balanced", "*.json")):
+    # sorted: glob order differs between filesystems, and the target must not
+    # depend on it. The claim must also be one the record does not support,
+    # since only an unsupported emission can be contradicted by the ledger.
+    for p in sorted(glob.glob(os.path.join(_P, "bench", "instances_v2", "security",
+                                           "heldout_balanced", "*.json"))):
         inst = json.load(open(p))
+        gold = {a["id"]: a["gold_value"] for a in inst["atoms"]}
         for cid, routes in inst["gold_licenses"].items():
-            common = set(routes[0]).intersection(*[set(r) for r in routes])
-            if common:
+            supported = any(all((gold.get(x[1:]) == "F") if x.startswith("!") else (gold.get(x) == "T")
+                                for x in r) for r in routes)
+            common = {x for x in set(routes[0]).intersection(*[set(r) for r in routes])
+                      if not x.startswith("!")}
+            if common and not supported:
                 target = (p, inst, cid, sorted(common)[0])
                 break
         if target:
             break
-    assert target, "need a claim whose routes share an atom"
+    assert target, "need an unsupported claim whose routes share an atom"
     path, inst, cid, blocking = target
 
     for dom in bw.DOMAINS:
