@@ -82,6 +82,17 @@ def changed_numbers(old, new, path="", out=None):
     return out
 
 
+def same_within_float(old, new, rel=1e-9) -> bool:
+    """Equal up to the last digits of floats: Python 3.12 sums floats with
+    compensated summation, so an unrounded mean can differ in its last digit
+    from the one Python 3.9 wrote; every rounded value is unaffected."""
+    for _p, a, b in changed_numbers(old, new):
+        if not (isinstance(a, float) and isinstance(b, (int, float))
+                and abs(a - b) <= rel * max(1.0, abs(a))):
+            return False
+    return True
+
+
 def run(script, args):
     t = time.time()
     p = subprocess.run([sys.executable, script] + args, cwd=ROOT, capture_output=True, text=True)
@@ -111,6 +122,10 @@ def main(argv=None) -> int:
                 after = fh.read()
             if after == before:
                 notes.append("%s identical" % o)
+            elif not update and same_within_float(json.loads(before), json.loads(after)):
+                notes.append("%s identical up to float last digits" % o)
+                with open(path, "wb") as fh:
+                    fh.write(before)
             elif update:
                 notes.append("%s UPDATED" % o)
                 diffs = changed_numbers(json.loads(before), json.loads(after))
