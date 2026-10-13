@@ -56,7 +56,7 @@ The code was written before the paper's wording settled, so it often uses older 
 | `prime_guided` | PRIME |
 | `prime_complete` | PRIME with completion |
 | `prime_flat` | the flat gate of Appendix E.2: one conclusion, no grading |
-| `ext_agentspec`, `ext_agentspec_examine`, `ext_researchloop`, `ext_prooforstop`, `ext_hesp` | the closest control systems of Section 6.4 (AgentSpec with stop and with self-examination, ResearchLoop, Proof-or-Stop, HESP); GLEAN is `src/prime_agents/glean.py` |
+| `ext_agentspec`, `ext_agentspec_examine`, `ext_researchloop`, `ext_prooforstop`, `ext_hesp` | the closest control systems of Section 7.4 (AgentSpec with stop and with self-examination, ResearchLoop, Proof-or-Stop, HESP); GLEAN is `src/prime_agents/glean.py` |
 | `direct`, `rubric`, `cove`, `reflexion`, `conformal`, `static_contract` | Direct, Rubric, CoVe, Reflexion, Conformal, Static checklist |
 | `prime`, `masked_reactive` | the unguided PRIME agents of the hand-built pilot |
 | `prime_guided_gated` | guided PRIME restricted to conclusions whose learned routes passed validation |
@@ -76,11 +76,11 @@ The code was written before the paper's wording settled, so it often uses older 
 
 | Folder | Contents |
 |---|---|
-| `w2a/` | the balanced split: Sections 6.1 and 6.2 with Qwen2.5-32B-Instruct (`qwen2.5-32b-<domain>/<arm>__<budget>`) and with the other models (`gptoss-20b-*`, `mistral-small-24b-*`, `qwen2.5-7b-*`); PRIME with completion (`prime_complete__*`); the flat gate (`prime_flat__B20`); the closest control systems of Section 6.4 (`ext_*`); the natural split (`natural__*`, not reported); the scripted policies (`policy-*`) |
-| `w2loc/` | evidence location (Section 6.2), the locator-uncertain copy |
-| `w2text/` | judging textual evidence (Section 6.3), the text-evidence split; the verified condition is in `experiments/blind_verification/results/` |
+| `w2a/` | the balanced split: Sections 7.1 and 7.2 with Qwen2.5-32B-Instruct (`qwen2.5-32b-<domain>/<arm>__<budget>`) and with the other models (`gptoss-20b-*`, `mistral-small-24b-*`, `qwen2.5-7b-*`); PRIME with completion (`prime_complete__*`); the flat gate (`prime_flat__B20`); the closest control systems of Section 7.4 (`ext_*`); the natural split (`natural__*`, not reported); the scripted policies (`policy-*`) |
+| `w2loc/` | evidence location (Section 7.2), the locator-uncertain copy |
+| `w2text/` | judging textual evidence (Section 7.3), the text-evidence split; the verified condition is in `experiments/blind_verification/results/` |
 | `w2seed/` | sampled decoding at temperature 0.7, three seeds (Appendix E.1) |
-| `glean/` | the GLEAN verifier's diagnostics (Section 6.4) |
+| `glean/` | the GLEAN verifier's diagnostics (Section 7.4) |
 | `w2ext/` | six further baselines (Direct, Rubric, CoVe, Reflexion, Conformal, Static checklist), checked by `experiments/reproduce_tables.py`; not reported in the paper |
 | `fdaaa/`, `specbuild_e2e/` | the regulation study (Appendix F) |
 | `v2dev/` | development-split runs that set the minimum effect for guidance (Appendix D) |
@@ -92,7 +92,7 @@ The code was written before the paper's wording settled, so it often uses older 
 
 ## Experiment letters
 
-Earlier drafts lettered the experiments, and some reports and comments still do: A is Section 6.1 (information versus enforcement), B and C are Section 6.2 (guidance, and evidence location), D is Section 6.3 (judging textual evidence), and E is Section 6.4 (the closest control systems).
+Earlier drafts lettered the experiments, and some reports and comments still do: A is Section 7.1 (information versus enforcement), B and C are Section 7.2 (guidance, and evidence location), D is Section 7.3 (judging textual evidence), and E is Section 7.4 (the closest control systems).
 
 ## Plans and notes
 

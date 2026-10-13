@@ -103,7 +103,7 @@ COMPLIANCE_INSTR = (
 )
 MAX_TOOL_CALLS = 20
 RUN_TESTS_TIMEOUT = 120  # seconds
-GUIDED_MAX_STALLS = 3  # bound on consecutive no-tool-call "hold" nudges
+GUIDED_MAX_STALLS = 3  # bound on no-tool-call "hold" nudges per episode (never reset)
 # (prime_guided): a safety valve against a runaway loop when the model
 # repeatedly refuses to call a tool after being told a stronger claim is
 # still reachable -- NOT part of the termination-rule semantics itself
@@ -1504,7 +1504,7 @@ def run_arm(
 
     step = 0
     reflected = False  # reflexion/cove: has the one critique/verify round run?
-    stall_count = 0  # prime_guided: consecutive silent-stop nudges, bounded
+    stall_count = 0  # prime_guided: silent-stop nudges in this episode, bounded
     while result.tool_calls < max_tool_calls:
         if is_prime_like:
             if guided:
