@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://prime-pilot/bench/schema.json",
-  "title": "ObligationBench-pilot instance (software-review domain)",
+  "title": "SUFFICE-pilot instance (software-review domain)",
   "description": "Formalizes the Instance JSON contract in pilot/SPEC.md. Structural constraints only; cross-field semantic constraints (order-coherence, realizability under phi, route minimality, path existence, tool membership) are enforced by bench/validate.py and by the runtime's schema.validate_instance.",
   "type": "object",
   "required": [

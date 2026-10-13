@@ -26,8 +26,8 @@ paraphrased, or invented). Nothing is fabricated; a trial missing a
 required field is reported as missing, never backfilled.
 
 Usage:
-    python3 src/obligationbench/construction/fetch_ctgov.py check  <NCT_ID>
-    python3 src/obligationbench/construction/fetch_ctgov.py fetch  <NCT_ID> <out.json>
+    python3 src/suffice/construction/fetch_ctgov.py check  <NCT_ID>
+    python3 src/suffice/construction/fetch_ctgov.py fetch  <NCT_ID> <out.json>
 """
 from __future__ import annotations
 

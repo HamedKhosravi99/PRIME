@@ -19,8 +19,8 @@ import llm as llm_mod  # noqa: E402
 from prime_runtime.schema import load_instance  # noqa: E402
 from prime_runtime.trace import TraceLogger  # noqa: E402
 
-TEXT = sorted(glob.glob(os.path.join(_PILOT, "data", "obligationbench", "clinical", "heldout_text", "*.json")))
-BAL = sorted(glob.glob(os.path.join(_PILOT, "data", "obligationbench", "security", "heldout_balanced", "*.json")))
+TEXT = sorted(glob.glob(os.path.join(_PILOT, "data", "suffice", "clinical", "heldout_text", "*.json")))
+BAL = sorted(glob.glob(os.path.join(_PILOT, "data", "suffice", "security", "heldout_balanced", "*.json")))
 
 
 def _run(arm, path, tmp_path, script):

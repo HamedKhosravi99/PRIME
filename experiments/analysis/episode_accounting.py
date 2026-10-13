@@ -4,7 +4,7 @@
 Reads results/**/summary.json (no model is called). For each run folder it counts
 the episodes the run logged, the failed ones (an episode whose model calls still
 timed out after the client's retries, or that ended on another error, carries no
-measurement and is left out of every rate), and, for runs on an ObligationBench
+measurement and is left out of every rate), and, for runs on a SUFFICE
 split, the tasks the split holds, so that a missing episode would show. Writes
 results/excluded_episodes.json with every failed episode and its error class, and
 prints the runs with failures.
@@ -34,12 +34,12 @@ def error_class(err: str) -> str:
 
 
 def split_size(instance_path: str):
-    """Tasks in the ObligationBench split an episode's instance belongs to."""
-    # logged runs name bench/instances_v2/; runs from this layout name data/obligationbench/
-    m = re.search(r"(?:instances_v2|obligationbench)/([a-z]+)/([a-z_]+)/[^/]+\.json$", instance_path or "")
+    """Tasks in the SUFFICE split an episode's instance belongs to."""
+    # logged runs name bench/instances_v2/; runs from this layout name data/suffice/
+    m = re.search(r"(?:instances_v2|suffice)/([a-z]+)/([a-z_]+)/[^/]+\.json$", instance_path or "")
     if not m:
         return None, None
-    d = os.path.join(ROOT, "data", "obligationbench", m.group(1), m.group(2))
+    d = os.path.join(ROOT, "data", "suffice", m.group(1), m.group(2))
     if not os.path.isdir(d):
         return None, None
     return "%s/%s" % (m.group(1), m.group(2)), sum(1 for f in os.listdir(d) if f.endswith(".json"))

@@ -3,7 +3,7 @@
 domain; the predicate grammar the records are read with is in
 src/prime_runtime/predicates.py). No auth needed.
 
-    python3 src/obligationbench/construction/fetch_osv.py <vuln_id> [<vuln_id> ...] [--nvd]
+    python3 src/suffice/construction/fetch_osv.py <vuln_id> [<vuln_id> ...] [--nvd]
 
 For each ``<vuln_id>`` (an OSV/GHSA id, e.g. ``GHSA-x4qr-2fvf-3mr5``, or any
 other id the OSV API recognizes -- PYSEC-..., RUSTSEC-..., etc.):

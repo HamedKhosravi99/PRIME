@@ -90,7 +90,7 @@ JUDGE_PROMPT = (
 # ---------------------------------------------------------------------------
 
 def _instance_path(iid: str) -> str:
-    hits = glob.glob(os.path.join(_PILOT, "data", "obligationbench", "*", "*", iid + ".json"))
+    hits = glob.glob(os.path.join(_PILOT, "data", "suffice", "*", "*", iid + ".json"))
     if not hits:
         raise FileNotFoundError(iid)
     return hits[0]

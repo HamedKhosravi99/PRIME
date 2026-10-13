@@ -16,8 +16,8 @@ fact about the artifact you did not observe):
       is a hard error -- this is what makes authored gold-values trustworthy.
 
 Usage:
-    python3 src/obligationbench/construction/scaffold_repo.py scaffold https://github.com/x/y y --branch v1
-    python3 src/obligationbench/construction/scaffold_repo.py verify data/pilot/instances/swe/swe-0007.json
+    python3 src/suffice/construction/scaffold_repo.py scaffold https://github.com/x/y y --branch v1
+    python3 src/suffice/construction/scaffold_repo.py verify data/pilot/instances/swe/swe-0007.json
 """
 from __future__ import annotations
 

@@ -44,7 +44,7 @@ for _p in (PILOT, os.path.join(PILOT, "src"), HERE, os.path.join(PILOT, "src", "
 
 import build_w2a_tables as bw   # noqa: E402  -- the single scorer
 
-BENCH = os.path.join(PILOT, "data", "obligationbench")
+BENCH = os.path.join(PILOT, "data", "suffice")
 SPLIT = "heldout_balanced"
 UNGATED = "react_program_attested"
 

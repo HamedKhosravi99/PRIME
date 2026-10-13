@@ -196,7 +196,7 @@ def test_empty_route_is_trivially_supported_on_all_three_representations():
 
 @pytest.mark.parametrize("path", _all_real_instance_paths())
 def test_derived_routes_match_authored_gold_routes_on_real_instances(path):
-    """For every real ObligationBench instance, the
+    """For every real SUFFICE instance, the
     prime implicants DERIVED from F* must equal the authored gold_licenses
     family exactly -- routes are a representation of the oracle, not the
     other way round, and a real benchmark's routes should already BE the

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""PRIME runtime outcomes on ObligationBench tasks, for cross-implementation checks.
+"""PRIME runtime outcomes on SUFFICE tasks, for cross-implementation checks.
 
-ObligationBench's scorer (``src/obligationbench/__init__.py`` here; ``src/obligationbench/`` in the
+SUFFICE's scorer (``src/suffice/__init__.py`` here; ``src/suffice/`` in the
 standalone benchmark) re-implements the runtime's evidence handling, so that scoring
 needs no part of PRIME. This module computes, with the runtime itself (the tool
 executor, the resolvers of the gold ledger, the four-valued ledger, and the
@@ -23,11 +23,11 @@ authorization check), the outcomes any scorer must agree with:
               the conclusions they authorize, and the distinct call classes the
               executor charged.
 
-    python3 src/obligationbench/construction/conformance.py --write PATH.json.gz
+    python3 src/suffice/construction/conformance.py --write PATH.json.gz
 
 writes the fixture that the benchmark's tests/test_conformance.py reads;
-tests/test_obligationbench_conformance.py compares the same outcomes
-with ``src/obligationbench/__init__.py`` directly.
+tests/test_suffice_conformance.py compares the same outcomes
+with ``src/suffice/__init__.py`` directly.
 """
 from __future__ import annotations
 
@@ -63,7 +63,7 @@ def task_paths(splits: Iterable[str]) -> List[str]:
     out: List[str] = []
     for dom in DOMAINS:
         for split in splits:
-            out += sorted(glob.glob(os.path.join(ROOT, "data", "obligationbench", dom, split, "*.json")))
+            out += sorted(glob.glob(os.path.join(ROOT, "data", "suffice", dom, split, "*.json")))
     return out
 
 
@@ -178,7 +178,7 @@ def episode_outcomes(results: str) -> Dict[str, Dict[str, List[Any]]]:
     import reproduce_tables as rt
     paths = {}
     for dom in DOMAINS:
-        for p in glob.glob(os.path.join(ROOT, "data", "obligationbench", dom, "heldout_balanced", "*.json")):
+        for p in glob.glob(os.path.join(ROOT, "data", "suffice", dom, "heldout_balanced", "*.json")):
             paths[os.path.basename(p)[:-5]] = p
     out: Dict[str, Dict[str, List[Any]]] = {}
     for agent, (_name, folder, _exp) in rt.AGENTS.items():

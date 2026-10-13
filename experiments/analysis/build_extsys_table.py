@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Closest external systems on ObligationBench (results/tableEXTSYS.json).
+"""Closest external systems on SUFFICE (results/tableEXTSYS.json).
 
 The five arms in src/prime_agents/extsys.py reimplement the decision procedures of
 AgentSpec, ResearchLoop, Proof-or-Stop, HESP, and GLEAN and run them on the
@@ -10,7 +10,7 @@ compares each system with PRIME on paired tasks:
 
   false authorization  a stated conclusion the record does not support
   premature            a stated conclusion the system's own reads did not
-                       establish (src/obligationbench/__init__.py)
+                       establish (src/suffice/__init__.py)
   utility              supported utility (level of the strongest supported
                        stated conclusion / 3 x 100)
   emit                 share of answerable tasks with a stated conclusion
@@ -41,7 +41,7 @@ for _p in (PILOT, os.path.join(PILOT, "src"), os.path.join(PILOT, "src", "prime_
 
 import build_w2a_tables as bw  # noqa: E402
 import model_calls as mc  # noqa: E402
-import obligationbench as ob  # noqa: E402
+import suffice as ob  # noqa: E402
 import stats_v5 as st  # noqa: E402
 
 EXT = (("ext_agentspec", "AgentSpec, stop"),
@@ -60,7 +60,7 @@ REFERENCE = (("react_program_attested", "Fully informed agent"),
 def _tasks():
     tasks = {}
     for dom in bw.DOMAINS:
-        tasks.update(ob.load_tasks(os.path.join(PILOT, "data", "obligationbench", dom, "heldout_balanced")))
+        tasks.update(ob.load_tasks(os.path.join(PILOT, "data", "suffice", dom, "heldout_balanced")))
     return tasks
 
 

@@ -46,7 +46,7 @@ DRY_RUN = False
 def task_path(p: str) -> str:
     """A manifest written before the repository was reorganized names bench/instances_v2/."""
     old = "bench/instances_v2/"
-    return "data/obligationbench/" + p[len(old):] if p.startswith(old) else p
+    return "data/suffice/" + p[len(old):] if p.startswith(old) else p
 
 
 def command(r, ep_dir: str):

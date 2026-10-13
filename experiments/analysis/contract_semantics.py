@@ -41,7 +41,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 PILOT = os.path.dirname(os.path.dirname(HERE))
 RESULTS = os.path.join(PILOT, "results")
-BENCH = os.path.join(PILOT, "src", "obligationbench", "construction")
+BENCH = os.path.join(PILOT, "src", "suffice", "construction")
 
 # the five domains of the carried-forward family, in the order the
 # static-contract table reports them
@@ -148,7 +148,7 @@ def main(argv=None) -> int:
     carried_all = _route_census(carried_files)
 
     conf_files = sorted(glob.glob(os.path.join(
-        PILOT, "data", "obligationbench", "*", "heldout_balanced", "*.json")))
+        PILOT, "data", "suffice", "*", "heldout_balanced", "*.json")))
     conf = _route_census(conf_files)
     work, sat_profile, licence_gap = _work_census(conf_files)
 

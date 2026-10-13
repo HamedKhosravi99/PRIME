@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Template-family instance generator (docs/EXECUTION_PLAN.md, Part 4).
 
-Generates ObligationBench record-domain instances from the harvested public
-records (src/obligationbench/construction/harvest_records.py), under the frozen v5 design:
+Generates SUFFICE record-domain instances from the harvested public
+records (src/suffice/construction/harvest_records.py), under the frozen v5 design:
 
   * >=16 branching + >=8 nested template FAMILIES per domain, enumerated
     deterministically from a per-domain probe pool; a family = (topology,
@@ -27,10 +27,10 @@ executed through the real ToolExecutor; observed truth must equal the
 stored gold_value). No LLM, no judge, no hand-authored per-instance content.
 
 Outputs:
-  data/obligationbench/<domain>/<split>/<id>.json
-  data/obligationbench/manifest.json      (counts, strata, attrition, splits)
+  data/suffice/<domain>/<split>/<id>.json
+  data/suffice/manifest.json      (counts, strata, attrition, splits)
 
-Usage: python3 src/obligationbench/construction/generate_record_instances.py [--domains ...]
+Usage: python3 src/suffice/construction/generate_record_instances.py [--domains ...]
 """
 from __future__ import annotations
 
@@ -71,7 +71,7 @@ ONE_BRANCH_FAMILY_SEED_OFFSET = {"security": 965, "clinical": 547, "drugsafety":
 def family_rng(domain: str, offsets: Dict[str, int] = FAMILY_SEED_OFFSET) -> random.Random:
     off = offsets.get(domain, zlib.crc32(domain.encode("utf-8")) % 1000)
     return random.Random(SEED + off)
-OUT = os.path.join(PILOT, "data", "obligationbench")
+OUT = os.path.join(PILOT, "data", "suffice")
 
 # ---------------------------------------------------------------------------
 # Per-domain probe pools. A probe = a named, reliably-present field with a

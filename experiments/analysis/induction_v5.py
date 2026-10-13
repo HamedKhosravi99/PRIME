@@ -24,7 +24,7 @@ Nothing here reads gold_value or gold_licenses: those are used only by
 the SCORING side (experiments/analysis/*_tables.py) after commitment.
 
 Usage:
-  python3 experiments/analysis/induction_v5.py --instances 'data/obligationbench/security/dev/*.json' \
+  python3 experiments/analysis/induction_v5.py --instances 'data/suffice/security/dev/*.json' \
       --model qwen2.5-32b --method state_first_unanimous --out results/ind_v5/...
 """
 from __future__ import annotations
@@ -160,7 +160,7 @@ def compile_routes_exact(accepted: Set[FrozenSet[str]],
     r is accepted, and r is minimal under inclusion.
 
     max_width defaults to the full vocabulary rather than to a fixed 6. The
-    old default silently truncated: 189 gold routes in ObligationBench are
+    old default silently truncated: 189 gold routes in SUFFICE are
     7 atoms wide, so under a cap of 6 those claims compiled to NOTHING and
     the induced program simply could not license them. That would have
     surfaced in W2b as an induction-quality result when it was a

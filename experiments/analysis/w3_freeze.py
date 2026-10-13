@@ -41,7 +41,7 @@ for _p in (PILOT, os.path.join(PILOT, "src"), os.path.join(PILOT, "src", "prime_
 
 import induction_v5 as iv  # noqa: E402
 
-BENCH = os.path.join(PILOT, "data", "obligationbench")
+BENCH = os.path.join(PILOT, "data", "suffice")
 DOMAINS = ("security", "clinical", "drugsafety", "financial")
 
 
@@ -78,7 +78,7 @@ def check(path: str) -> dict:
     lint = iv.lint_program(inst, {c: [list(r) for r in gold[c]] for c in gold})
     # Only findings that NAME A CLAIM gate guidance (induction_v5.eligibility),
     # so only those can invalidate a program. `unused_vocabulary_atom` names an
-    # atom and fires on gold by construction: ObligationBench seeds distractor
+    # atom and fires on gold by construction: SUFFICE seeds distractor
     # atoms the gold routes deliberately do not use, which is the discrimination
     # the benchmark is testing. Counting it as a defect would fail every
     # instance in the corpus.

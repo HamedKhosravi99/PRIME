@@ -68,7 +68,7 @@ import stats_v5 as st  # noqa: E402
 from prime_runtime.predicates import evaluate_predicate  # noqa: E402
 
 RESULTS = os.path.join(PILOT, "results")
-BENCH = os.path.join(PILOT, "data", "obligationbench")
+BENCH = os.path.join(PILOT, "data", "suffice")
 DOMAINS = ("security", "clinical", "drugsafety", "financial")
 
 DEGENERATE_EMIT_RATE = 0.25      # pre-registered before 32B confirmatory data

@@ -3,7 +3,7 @@
 artifacts). Uses the abs-page citation_* meta tags (the export API is flaky
 from here). Records provenance. Integrity: we store exactly what arXiv serves.
 
-    python3 src/obligationbench/construction/download_arxiv.py <arxiv_id> <out.txt> ["role: target|corpus"]
+    python3 src/suffice/construction/download_arxiv.py <arxiv_id> <out.txt> ["role: target|corpus"]
 """
 from __future__ import annotations
 

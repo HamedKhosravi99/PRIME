@@ -576,7 +576,7 @@ def fig_asymmetry(d):
                        None]}}
     nv = int(reg("asymmetry/S1/n_valid", d["S1"]["n_valid"], s1))
     nt = int(reg("asymmetry/S1/n_total", d["S1"]["n_total"], s1))
-    # S1 on ObligationBench itself (30 held-out clinical tasks, the -v2 run):
+    # S1 on SUFFICE itself (30 held-out clinical tasks, the -v2 run):
     # every proposal valid, none states a conclusion. Reported beside the
     # pilot run in the annotation; it does not change the plotted zeros.
     with open(os.path.join(RESULTS, "openvocab_endtoend_%s-v2_clinical.json" % MODEL),

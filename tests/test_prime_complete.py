@@ -25,8 +25,8 @@ import llm as llm_mod  # noqa: E402
 from prime_runtime.schema import load_instance  # noqa: E402
 from prime_runtime.trace import TraceLogger  # noqa: E402
 
-BAL = sorted(glob.glob(os.path.join(_PILOT, "data", "obligationbench", "security", "heldout_balanced", "*.json")))
-LOC = sorted(glob.glob(os.path.join(_PILOT, "data", "obligationbench", "security", "heldout_locator", "*.json")))
+BAL = sorted(glob.glob(os.path.join(_PILOT, "data", "suffice", "security", "heldout_balanced", "*.json")))
+LOC = sorted(glob.glob(os.path.join(_PILOT, "data", "suffice", "security", "heldout_locator", "*.json")))
 
 
 def _supported(path):

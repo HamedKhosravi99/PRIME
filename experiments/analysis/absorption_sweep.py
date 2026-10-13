@@ -46,7 +46,7 @@ from prime_runtime import absorption as ab  # noqa: E402
 from prime_runtime.schema import make_program  # noqa: E402
 
 RESULTS = os.path.join(PILOT, "results")
-BENCH = os.path.join(PILOT, "data", "obligationbench")
+BENCH = os.path.join(PILOT, "data", "suffice")
 
 
 def program_of(inst):

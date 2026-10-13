@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Fetch REAL SEC EDGAR XBRL company-facts data (financial/SEC-XBRL domain
-artifacts; mirrors src/obligationbench/construction/download_arxiv.py's role for the research domain).
+artifacts; mirrors src/suffice/construction/download_arxiv.py's role for the research domain).
 
 Endpoint: https://data.sec.gov/api/xbrl/companyfacts/CIK##########.json
 (10-digit, zero-padded CIK). SEC REQUIRES a compliant declared User-Agent
@@ -19,10 +19,10 @@ script writes so any embedded figure can be checked against the raw API
 response.
 
 Usage:
-    python3 src/obligationbench/construction/fetch_edgar.py <CIK> <out_dir> [--concepts C1 C2 ...] \
+    python3 src/suffice/construction/fetch_edgar.py <CIK> <out_dir> [--concepts C1 C2 ...] \
         [--name entity_short_name]
 
-    python3 src/obligationbench/construction/fetch_edgar.py 0000320193 data/pilot/artifacts/fin-aapl \
+    python3 src/suffice/construction/fetch_edgar.py 0000320193 data/pilot/artifacts/fin-aapl \
         --concepts Revenues RevenueFromContractWithCustomerExcludingAssessedTax \
                    NetIncomeLoss Assets Liabilities --name aapl
 

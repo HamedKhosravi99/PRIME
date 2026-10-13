@@ -35,7 +35,7 @@ RESULTS = os.path.join(ROOT, "results")
 SUPERSEDED = next((p for p in (os.path.join(ROOT, "results_superseded", "results"),
                                os.path.join(RESULTS, "superseded_by_rerun", "results")) if os.path.isdir(p)),
                   os.path.join(ROOT, "results_superseded", "results"))
-BENCH = os.path.join(ROOT, "data", "obligationbench")
+BENCH = os.path.join(ROOT, "data", "suffice")
 MODEL = "qwen2.5-32b"
 DOMS = ("clinical", "security")
 SPLIT = "heldout_text"

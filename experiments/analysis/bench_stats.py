@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generator for the ObligationBench descriptive numbers (docs/ANALYSIS_PLAN.md,
+"""Generator for the SUFFICE descriptive numbers (docs/ANALYSIS_PLAN.md,
 F9: "numbers only from generators"; slot \\slot{BenchStats}).
 
 Every quantity the manuscript states about the benchmark is derived here from
@@ -24,7 +24,7 @@ for _p in (PILOT, os.path.join(PILOT, "src"), os.path.join(PILOT, "src", "prime_
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-BENCH = os.path.join(PILOT, "data", "obligationbench")
+BENCH = os.path.join(PILOT, "data", "suffice")
 MANIFEST = os.path.join(BENCH, "manifest.json")
 
 # presentation order fixed here so the prose is stable across regenerations

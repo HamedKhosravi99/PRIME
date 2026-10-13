@@ -11,9 +11,9 @@ all: test corpus tables figures conformance
 test:
 	$(PYTHON) -m pytest -q tests
 
-# regenerate all 1,898 ObligationBench tasks from data/harvest/ and compare them byte for byte
+# regenerate all 1,898 SUFFICE tasks from data/harvest/ and compare them byte for byte
 corpus:
-	$(PYTHON) src/obligationbench/construction/reproduce_corpus.py
+	$(PYTHON) src/suffice/construction/reproduce_corpus.py
 
 # extract the episode logs and the JSON the analysis scripts wrote into results/
 logs: results/.extracted
@@ -32,9 +32,9 @@ figures: logs
 	$(PYTHON) experiments/paper/make_fig_budget.py
 	$(PYTHON) experiments/paper/make_appendix_figures.py
 
-# the standalone scorer (src/obligationbench/) against the runtime, on every task and every logged reference episode
+# the standalone scorer (src/suffice/) against the runtime, on every task and every logged reference episode
 conformance: logs
-	$(PYTHON) -m pytest -q tests/test_obligationbench_conformance.py
+	$(PYTHON) -m pytest -q tests/test_suffice_conformance.py
 
 # syntax errors and undefined names only; the code is not reformatted
 lint:

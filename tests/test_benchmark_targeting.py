@@ -13,7 +13,7 @@ import re
 _PILOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 _SBATCH = os.path.join(_PILOT, "experiments", "slurm", "serve_and_run_guided.sbatch")
 _ANALYSIS = os.path.join(_PILOT, "experiments", "analysis")
-_V2 = "obligationbench"  # the v2 benchmark: data/obligationbench/
+_V2 = "data/suffice"  # the v2 benchmark directory
 
 
 def _sbatch():
@@ -26,7 +26,7 @@ def test_v2_configsets_read_the_v2_benchmark():
     for tag in ("w2alad", "w2apol", "w2bind"):
         i = s.index('CONFIGSET" = "%s"' % tag)
         block = s[i:i + 2500]
-        assert _V2 in block, "%s does not read data/obligationbench" % tag
+        assert _V2 in block, "%s does not read data/suffice" % tag
 
 
 def test_w2b_configset_forces_the_conservative_induction():

@@ -34,7 +34,7 @@ Every policy arm episode writes the same summary shape as runner arms
 machinery.
 
 Usage:
-  python3 src/prime_agents/policies.py --instances 'data/obligationbench/security/dev/*.json' \
+  python3 src/prime_agents/policies.py --instances 'data/suffice/security/dev/*.json' \
       --arm shortest_route --budget 20 --out results/policy_runs/...
 """
 from __future__ import annotations

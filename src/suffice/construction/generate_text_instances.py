@@ -18,8 +18,8 @@ and the records vary.
 Routes (chain): C1 = [E1] (a field atom, the title / summary is present);
 C2 = [E1, E2]; C3 = [E1, E2, E3, E4] with E2..E4 text atoms.
 
-Usage: python3 src/obligationbench/construction/generate_text_instances.py --per-domain 120
-Writes data/obligationbench/<domain>/heldout_text/<id>.json, ids from 7001.
+Usage: python3 src/suffice/construction/generate_text_instances.py --per-domain 120
+Writes data/suffice/<domain>/heldout_text/<id>.json, ids from 7001.
 """
 from __future__ import annotations
 

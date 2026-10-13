@@ -90,7 +90,7 @@ for CELL in $CELLS; do
   for DOM in $DOMAINS; do
     OUT="$OUTBASE/${MODELTAG}-${DOM}/${ARM}__${ANCHOR}"
     echo "[job] pass=$PASS arm=$ARM split=$SPLIT anchor=$ANCHOR out=$OUT start=$(date +%H:%M:%S)"
-    python3 src/prime_agents/run_batch.py --instances "data/obligationbench/${DOM}/${SPLIT}/*.json" \
+    python3 src/prime_agents/run_batch.py --instances "data/suffice/${DOM}/${SPLIT}/*.json" \
       --arm "$ARM" --license-source gold --model "$MODEL" --parallel "$PARALLEL" \
       $AA --resume --out "$OUT" || echo "[job] FAILED $ARM $ANCHOR $DOM (continuing)"
   done

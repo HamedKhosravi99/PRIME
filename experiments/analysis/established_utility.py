@@ -24,7 +24,7 @@ for _p in (PILOT, os.path.join(PILOT, "src"), os.path.join(PILOT, "src", "prime_
         sys.path.insert(0, _p)
 
 import build_w2a_tables as bw  # noqa: E402
-import obligationbench as ob  # noqa: E402
+import suffice as ob  # noqa: E402
 import stats_v5 as st  # noqa: E402
 
 
@@ -55,7 +55,7 @@ def per_task(name: str, tasks) -> dict:
 def main() -> int:
     tasks = {}
     for dom in bw.DOMAINS:
-        tasks.update(ob.load_tasks(os.path.join(PILOT, "data", "obligationbench", dom, "heldout_balanced")))
+        tasks.update(ob.load_tasks(os.path.join(PILOT, "data", "suffice", dom, "heldout_balanced")))
     p, h = per_task("prime_complete__B20", tasks), per_task("ext_hesp__B20", tasks)
     rows = [{"record": p[i]["facts"]["record"], "family": p[i]["facts"]["family"],
              "domain": p[i]["facts"]["domain"], "topology": p[i]["facts"]["topology"],

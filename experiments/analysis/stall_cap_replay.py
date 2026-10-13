@@ -71,7 +71,7 @@ _PATHS = {}
 def f_path(iid):
     if not _PATHS:
         import glob
-        for p in glob.glob(os.path.join(PILOT, "data", "obligationbench", "*", "*", "*.json")):
+        for p in glob.glob(os.path.join(PILOT, "data", "suffice", "*", "*", "*.json")):
             _PATHS[os.path.basename(p)[:-5]] = p
     return _PATHS[iid]
 

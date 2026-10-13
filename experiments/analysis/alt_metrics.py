@@ -47,7 +47,7 @@ import stats_v5 as st  # noqa: E402
 RESULTS = os.path.join(PILOT, "results")
 
 _INSTANCE_INDEX = {}
-for _p in glob.glob(os.path.join(PILOT, "data", "obligationbench", "*", "*", "*.json")):
+for _p in glob.glob(os.path.join(PILOT, "data", "suffice", "*", "*", "*.json")):
     _INSTANCE_INDEX.setdefault(os.path.basename(_p), []).append(_p)
 
 

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Reproduce the paper's per-agent endpoints from the episode logs with the
-standalone ObligationBench scorer.
+standalone SUFFICE scorer.
 
 For every agent of the information ladder (the paper's Section 6.1) and six
 further baselines that the paper does not report, on the 480 held-out balanced tasks with Qwen2.5-32B-Instruct and
 20 tool calls, this script rebuilds the agent's predictions from its logged
 traces (the conclusions it stated and the record fields it read), scores them
-with src/obligationbench/__init__.py, and checks false authorization, the premature-
+with src/suffice/__init__.py, and checks false authorization, the premature-
 conclusion rate, supported utility, the emission rate, and evidence value
 against the reference values: those the paper prints (Table 1 and Figure 3) for
 the ladder, and the logged values for the six baselines. It exits nonzero on any
@@ -40,7 +40,7 @@ for _p in (ROOT, os.path.join(ROOT, "src")):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-import obligationbench as ob  # noqa: E402
+import suffice as ob  # noqa: E402
 
 DOMAINS = ("security", "clinical", "drugsafety", "financial")
 MODEL = "qwen2.5-32b"
@@ -89,7 +89,7 @@ TIMEOUT = "APITimeoutError"
 def heldout_tasks() -> Dict[str, Dict[str, Any]]:
     tasks: Dict[str, Dict[str, Any]] = {}
     for dom in DOMAINS:
-        tasks.update(ob.load_tasks(os.path.join(ROOT, "data", "obligationbench", dom, "heldout_balanced")))
+        tasks.update(ob.load_tasks(os.path.join(ROOT, "data", "suffice", dom, "heldout_balanced")))
     return tasks
 
 

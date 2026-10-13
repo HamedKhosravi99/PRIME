@@ -21,7 +21,7 @@ import arms as arms_mod  # noqa: E402
 from prime_runtime.ledger import Ledger  # noqa: E402
 from prime_runtime.schema import load_instance  # noqa: E402
 
-BENCH = sorted(glob.glob(os.path.join(PILOT, "data", "obligationbench", "security", "heldout_balanced", "*.json")))
+BENCH = sorted(glob.glob(os.path.join(PILOT, "data", "suffice", "security", "heldout_balanced", "*.json")))
 
 
 @pytest.fixture

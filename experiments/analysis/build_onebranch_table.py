@@ -3,7 +3,7 @@
 
 In the balanced split a branching task either keeps both alternative routes
 to C2 satisfiable or neither, so nothing there tests whether an agent finds
-the one surviving alternative. data/obligationbench/*/heldout_onebranch holds
+the one surviving alternative. data/suffice/*/heldout_onebranch holds
 tasks where exactly one of the two routes to C2 survives and C3 is not
 supported (generate_record_instances.py --one-branch-per-domain).
 
@@ -96,7 +96,7 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--model", default="qwen2.5-32b")
     a = ap.parse_args(argv)
-    n_tasks = sum(len(glob.glob(os.path.join(PILOT, "data", "obligationbench", d, SPLIT, "*.json")))
+    n_tasks = sum(len(glob.glob(os.path.join(PILOT, "data", "suffice", d, SPLIT, "*.json")))
                   for d in bw.DOMAINS)
     out = {"split": SPLIT, "n_tasks": n_tasks, "cells": {}, "contrasts": {}}
     rows = {arm: rows_of(a.model, arm) for arm in LLM_ARMS + POLICY_ARMS}

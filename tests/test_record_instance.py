@@ -6,12 +6,12 @@ src/prime_runtime/predicates.py).
 
 Covers: nested field-path resolution (dict + list mixed paths, not-found
 cases); goldledger firing record_predicate atoms through the real
-ToolExecutor (mirrors src/obligationbench/construction/scaffold_repo.py's verifier); a full scripted
+ToolExecutor (mirrors src/suffice/construction/scaffold_repo.py's verifier); a full scripted
 prime-arm episode end to end (build_dry_run_script -> run_arm -> gold
 replay); the exact-param-attestation-trap regression guard (record atoms
 must declare ONLY stable identifying params, never the predicate/expected
-value); schema.py's defensive record_id check; and src/obligationbench/validate.py +
-src/obligationbench/construction/scaffold_repo.py as subprocesses on the smoke instance.
+value); schema.py's defensive record_id check; and src/suffice/validate.py +
+src/suffice/construction/scaffold_repo.py as subprocesses on the smoke instance.
 """
 
 import json
@@ -24,7 +24,7 @@ import pytest
 _TESTS = os.path.dirname(os.path.abspath(__file__))
 _PILOT = os.path.dirname(_TESTS)
 _RUNNER = os.path.join(_PILOT, "src", "prime_agents")
-_BENCH = os.path.join(_PILOT, "src", "obligationbench", "construction")
+_BENCH = os.path.join(_PILOT, "src", "suffice", "construction")
 for _p in (_PILOT, os.path.join(_PILOT, "src"), _RUNNER):
     if _p not in sys.path:
         sys.path.insert(0, _p)
@@ -36,7 +36,7 @@ from prime_runtime.schema import SchemaError, load_instance  # noqa: E402
 from prime_runtime.trace import TraceLogger  # noqa: E402
 
 REC_0001 = os.path.join(_PILOT, "data", "pilot", "instances", "_smoke_record", "rec-0001.json")
-VALIDATE_PY = os.path.join(_PILOT, "src", "obligationbench", "validate.py")
+VALIDATE_PY = os.path.join(_PILOT, "src", "suffice", "validate.py")
 SCAFFOLD_PY = os.path.join(_BENCH, "scaffold_repo.py")
 
 
@@ -111,7 +111,7 @@ def test_tool_inspect_record_success_and_errors(rec_instance):
 
 # ---------------------------------------------------------------------------
 # goldledger: record_predicate atoms fire through the REAL ToolExecutor,
-# reproducing src/obligationbench/construction/scaffold_repo.py's verifier logic directly.
+# reproducing src/suffice/construction/scaffold_repo.py's verifier logic directly.
 # ---------------------------------------------------------------------------
 
 
@@ -192,9 +192,9 @@ def test_direct_arm_is_unsupported_on_the_smoke_instance(rec_instance, tmp_path)
 
 
 # ---------------------------------------------------------------------------
-# src/obligationbench/validate.py and src/obligationbench/construction/scaffold_repo.py as subprocesses (the real
+# src/suffice/validate.py and src/suffice/construction/scaffold_repo.py as subprocesses (the real
 # offline authoring tools) on the smoke instance -- regression protection
-# for the two extended, standalone src/obligationbench/construction/ scripts.
+# for the two extended, standalone src/suffice/construction/ scripts.
 # ---------------------------------------------------------------------------
 
 

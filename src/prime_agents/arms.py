@@ -125,7 +125,7 @@ def _resolve_field_path(record: Any, field_path: str) -> Tuple[Any, bool]:
 
     Returns ``(value, found)``. A list segment is a non-negative or negative
     integer index; a dict segment is a key. The empty path returns the whole
-    record. Mirrors ``src/obligationbench/validate.py``'s standalone duplicate (kept
+    record. Mirrors ``src/suffice/validate.py``'s standalone duplicate (kept
     independent there so the offline validator has no runtime import)."""
     if not field_path:
         return record, True

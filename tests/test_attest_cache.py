@@ -19,7 +19,7 @@ import pytest  # noqa: E402
 import arms as arms_mod  # noqa: E402
 from prime_runtime.schema import load_instance  # noqa: E402
 
-TEXT = sorted(glob.glob(os.path.join(_P, "data", "obligationbench", "clinical", "heldout_text", "*.json")))
+TEXT = sorted(glob.glob(os.path.join(_P, "data", "suffice", "clinical", "heldout_text", "*.json")))
 
 
 @pytest.mark.skipif(not TEXT, reason="no text-evidence tasks")

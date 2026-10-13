@@ -1,4 +1,4 @@
-# Closest external systems on ObligationBench
+# Closest external systems on SUFFICE
 
 Five systems from Appendix H are instantiated on the 480 balanced held-out tasks
 with the same model (Qwen2.5-32B-Instruct, greedy), tools, resolvers, budget

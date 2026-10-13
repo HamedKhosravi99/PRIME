@@ -27,7 +27,7 @@ import run_episode as re_mod  # noqa: E402
 
 def _instance():
     return sorted(glob.glob(os.path.join(
-        _P, "data", "obligationbench", "security", "dev", "*.json")))[0]
+        _P, "data", "suffice", "security", "dev", "*.json")))[0]
 
 
 def test_induction_method_is_threaded_through_every_layer():
@@ -190,7 +190,7 @@ def test_induction_is_cached_per_family_not_per_instance(tmp_path, monkeypatch):
 
     by_fam = {}
     for p in sorted(glob.glob(os.path.join(
-            _P, "data", "obligationbench", "security", "heldout_balanced", "*.json"))):
+            _P, "data", "suffice", "security", "heldout_balanced", "*.json"))):
         f = json.loads(open(p).read())
         fam = json.loads(f["notes_for_annotators"])["family"]
         by_fam.setdefault(fam, []).append(p)
@@ -221,7 +221,7 @@ def test_different_families_induce_separately(tmp_path, monkeypatch):
 
     seen, paths = {}, []
     for p in sorted(glob.glob(os.path.join(
-            _P, "data", "obligationbench", "security", "heldout_balanced", "*.json"))):
+            _P, "data", "suffice", "security", "heldout_balanced", "*.json"))):
         fam = json.loads(json.loads(open(p).read())["notes_for_annotators"]
                          if False else open(p).read())
         fam = json.loads(json.loads(open(p).read())["notes_for_annotators"])["family"]
@@ -255,7 +255,7 @@ def test_induction_cache_survives_across_processes(tmp_path, monkeypatch):
 
     monkeypatch.setattr(arms, "_INDUCTION_CACHE_DIR", str(tmp_path))
     inst = load_instance(sorted(glob.glob(os.path.join(
-        _P, "data", "obligationbench", "security", "heldout_balanced", "*.json")))[0])
+        _P, "data", "suffice", "security", "heldout_balanced", "*.json")))[0])
 
     calls = {"n": 0}
 
@@ -290,7 +290,7 @@ def test_cache_is_keyed_by_model_and_induction_config(tmp_path, monkeypatch):
     monkeypatch.setattr(arms, "_INDUCTION_CACHE_DIR", str(tmp_path))
     monkeypatch.setattr(arms, "_INDUCTION_CACHE", {})
     inst = load_instance(sorted(glob.glob(os.path.join(
-        _P, "data", "obligationbench", "security", "heldout_balanced", "*.json")))[0])
+        _P, "data", "suffice", "security", "heldout_balanced", "*.json")))[0])
     calls = {"n": 0}
     monkeypatch.setattr(iv, "induce_state_first",
                         lambda i, l, policy="unanimous", draws=3:
@@ -326,7 +326,7 @@ def test_an_unnamed_model_is_never_cached(tmp_path, monkeypatch):
                         lambda i, l, policy="unanimous", draws=3:
                         {c.id: [] for c in i.claims})
     inst = load_instance(sorted(glob.glob(os.path.join(
-        _P, "data", "obligationbench", "security", "heldout_balanced", "*.json")))[0])
+        _P, "data", "suffice", "security", "heldout_balanced", "*.json")))[0])
     arms.induce_program_v5(inst, object())          # no .model attribute
     assert not os.listdir(str(tmp_path)), \
         "an unnamed model's induction reached the on-disk cache"

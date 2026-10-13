@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ObligationBench: load tasks, run an agent's checks, and score its conclusions.
+"""SUFFICE: load tasks, run an agent's checks, and score its conclusions.
 
 Each task gives an agent one public record (a security advisory, a clinical-trial
 registration, a drug recall, or a company filing), a short list of conclusions of
@@ -26,7 +26,7 @@ Score predictions, one JSON object per line
     {"task_id": "sec-v2-0012", "stated": ["C2"],
      "reads": [["GHSA-2wx6-wc87-rmjm", "published"], ...]}
 
-    python -m obligationbench score --tasks data/heldout_balanced.jsonl \\
+    python -m suffice score --tasks data/heldout_balanced.jsonl \\
         --predictions my_agent.jsonl [--by domain] [--json out.json]
 
 ``stated`` lists the conclusion ids the agent stated (empty means it abstained).
@@ -300,7 +300,7 @@ def _print(result: Dict[str, Any]) -> None:
 
 
 def main(argv: Optional[List[str]] = None) -> int:
-    ap = argparse.ArgumentParser(description="ObligationBench scorer")
+    ap = argparse.ArgumentParser(description="SUFFICE scorer")
     sub = ap.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("score", help="score a predictions file")
     s.add_argument("--tasks", required=True,

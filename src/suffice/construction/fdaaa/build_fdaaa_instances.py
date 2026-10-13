@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate ObligationBench instances whose contract we did not author.
+"""Generate SUFFICE instances whose contract we did not author.
 
 Every other family in this benchmark has the same weakness: we wrote the
 claim schema, we wrote the gold licences, we wrote the oracle, and we broke
@@ -45,7 +45,7 @@ C3 entails C2 entails C1, and each step needs strictly more evidence, which
 is exactly the structure PRIME's mask consumes.
 
 Usage:
-  python3 src/obligationbench/construction/fdaaa/build_fdaaa_instances.py --limit 600
+  python3 src/suffice/construction/fdaaa/build_fdaaa_instances.py --limit 600
 """
 from __future__ import annotations
 

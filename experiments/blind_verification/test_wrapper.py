@@ -45,7 +45,7 @@ class FakeVerifier:
 
 def main() -> int:
     blind_verifier.check_frozen()
-    path = sorted(glob.glob(os.path.join(PILOT, "data", "obligationbench", "security", "heldout_text", "*.json")))[0]
+    path = sorted(glob.glob(os.path.join(PILOT, "data", "suffice", "security", "heldout_text", "*.json")))[0]
     inst = load_instance(path)
     atom = next(a for a in inst.atoms if a.resolver.tool == "attest_atom")
     src = atom.hint["source"]

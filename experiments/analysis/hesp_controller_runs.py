@@ -56,7 +56,7 @@ def main(argv=None) -> int:
             out = os.path.join(PILOT, "results", base, "policy-%s" % dom, "%s__%s" % (name, anchor))
             os.makedirs(out, exist_ok=True)
             eps = []
-            for p in sorted(glob.glob(os.path.join(PILOT, "data", "obligationbench", dom, a.split, "*.json"))):
+            for p in sorted(glob.glob(os.path.join(PILOT, "data", "suffice", dom, a.split, "*.json"))):
                 budget = 20 if anchor == "B20" else run_batch.instance_budget(p, anchor, 20)
                 eps.append(run_episode(p, "ext_hesp", "gold", AlwaysAct(), out, max_tool_calls=budget))
             with open(os.path.join(out, "summary.json"), "w", encoding="utf-8") as fh:

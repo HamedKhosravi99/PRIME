@@ -49,13 +49,13 @@ The call class of `attest_atom` now also records whether the source text has bee
 
 ## Conformance of the standalone scorer
 
-`tests/test_obligationbench_conformance.py` compares `src/obligationbench/` with the runtime on:
+`tests/test_suffice_conformance.py` compares `src/suffice/` with the runtime on:
 
 - every read probe of the 1,658 record tasks;
 - seeded check-value states of all 1,898 tasks;
 - the 7,176 completed reference episodes.
 
-The standalone benchmark's `tests/test_conformance.py` compares its environment with the same runtime outcomes, text attestations included, through a fixture written by `python3 src/obligationbench/construction/conformance.py`.
+The standalone benchmark's `tests/test_conformance.py` compares its environment with the same runtime outcomes, text attestations included, through a fixture written by `python3 src/suffice/construction/conformance.py`.
 
 Two rules were aligned in the standalone benchmark when these tests were added:
 
@@ -73,6 +73,6 @@ An episode whose model calls still timed out after the client's retries carries 
 
 ## One-branch family ids
 
-The one-branch variant (`data/obligationbench/<domain>/heldout_onebranch`, 240 tasks) was generated on 2026-10-08 in a separate run. That run enumerated its families with its own seed offsets, so its family ids (for example `clinical-branching-hom-17`) name other probe sets than the same ids in the primary corpus.
+The one-branch variant (`data/suffice/<domain>/heldout_onebranch`, 240 tasks) was generated on 2026-10-08 in a separate run. That run enumerated its families with its own seed offsets, so its family ids (for example `clinical-branching-hom-17`) name other probe sets than the same ids in the primary corpus.
 
-None of its 40 families matches any primary-corpus family, by routes or by probe set, so the variant is held out from every primary split. Its family ids are local to the variant; do not join them with primary-corpus families. `src/obligationbench/construction/generate_record_instances.py` pins both runs' offsets (`FAMILY_SEED_OFFSET`, `ONE_BRANCH_FAMILY_SEED_OFFSET`), and `python3 src/obligationbench/construction/reproduce_corpus.py` regenerates all 1,898 tasks byte for byte.
+None of its 40 families matches any primary-corpus family, by routes or by probe set, so the variant is held out from every primary split. Its family ids are local to the variant; do not join them with primary-corpus families. `src/suffice/construction/generate_record_instances.py` pins both runs' offsets (`FAMILY_SEED_OFFSET`, `ONE_BRANCH_FAMILY_SEED_OFFSET`), and `python3 src/suffice/construction/reproduce_corpus.py` regenerates all 1,898 tasks byte for byte.

@@ -1,6 +1,6 @@
 # Data sources and attribution
 
-ObligationBench embeds snapshots of fields from public records. The records of the four ObligationBench domains were retrieved on 1 August 2026 and those of the FDAAA set on 3 August 2026; they are redistributed under their sources' terms, listed below. Check each source's current terms before reusing its records outside this dataset. No source endorses this dataset.
+SUFFICE embeds snapshots of fields from public records. The records of the four SUFFICE domains were retrieved on 1 August 2026 and those of the FDAAA set on 3 August 2026; they are redistributed under their sources' terms, listed below. Check each source's current terms before reusing its records outside this dataset. No source endorses this dataset.
 
 | Domain | Source | Terms |
 |---|---|---|

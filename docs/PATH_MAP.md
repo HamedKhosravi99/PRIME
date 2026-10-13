@@ -7,16 +7,16 @@ The repository was reorganized after the runs. The frozen plans (`ANALYSIS_PLAN.
 | `prime_runtime/tests/` | `tests/` |
 | `prime_runtime/` | `src/prime_runtime/` |
 | `runner/` | `src/prime_agents/` |
-| `obligationbench.py` | `src/obligationbench/__init__.py` (also `python -m obligationbench`) |
-| `bench/schema.json`, `bench/validate.py` | `src/obligationbench/` |
-| `bench/instances_v2/` | `data/obligationbench/` |
+| `obligationbench.py` | `src/suffice/__init__.py` (also `python -m suffice`) |
+| `bench/schema.json`, `bench/validate.py` | `src/suffice/` |
+| `bench/instances_v2/` | `data/suffice/` |
 | `bench/instances_fdaaa/` | `data/fdaaa/instances/` |
 | `bench/fdaaa/external/` | `data/fdaaa/external/` |
-| `bench/fdaaa/build_fdaaa_instances.py`, `bench/fdaaa/contract/` | `src/obligationbench/construction/fdaaa/` |
+| `bench/fdaaa/build_fdaaa_instances.py`, `bench/fdaaa/contract/` | `src/suffice/construction/fdaaa/` |
 | `bench/harvest/` | `data/harvest/` |
 | `bench/instances/` | `data/pilot/instances/` |
 | `bench/artifacts/` | `data/pilot/artifacts/` |
-| `bench/*.py` (fetchers, harvest, generators, `reproduce_corpus.py`, `conformance.py`, `scaffold_repo.py`, ...) | `src/obligationbench/construction/` |
+| `bench/*.py` (fetchers, harvest, generators, `reproduce_corpus.py`, `conformance.py`, `scaffold_repo.py`, ...) | `src/suffice/construction/` |
 | `analysis/end_to_end_tables.py`, `analysis/build_tableC_*.py`, `analysis/tableC_guided_common.py`, `analysis/build_financial_table.py`, `analysis/drift_table.py`, `analysis/mcnemar_split.py` (the pilot, Appendix G) | `experiments/analysis/pilot/` |
 | `analysis/` | `experiments/analysis/` |
 | `figures/*.py`, `paper/*.py` | `experiments/paper/` |

@@ -4,7 +4,7 @@ and verify the reduction changes nothing: trim() and the paper's builder give id
 output on full and reduced records."""
 import glob, json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); PILOT = os.path.dirname(os.path.dirname(HERE))
-sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(PILOT, "src", "obligationbench", "construction", "fdaaa"))
+sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(PILOT, "src", "suffice", "construction", "fdaaa"))
 import common, build_fdaaa_instances as BA
 
 def reduce(s):

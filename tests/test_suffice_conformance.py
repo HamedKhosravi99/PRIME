@@ -1,9 +1,9 @@
-"""src/obligationbench/__init__.py, the standalone scorer, agrees with the runtime.
+"""src/suffice/__init__.py, the standalone scorer, agrees with the runtime.
 
 The scorer re-implements the runtime's handling of record reads and its
 authorization check, so that scoring needs nothing but the standard library.
-src/obligationbench/construction/conformance.py computes the runtime's outcomes; this test recomputes each
-with src/obligationbench/__init__.py and compares:
+src/suffice/construction/conformance.py computes the runtime's outcomes; this test recomputes each
+with src/suffice/__init__.py and compares:
 
 * every resolver field, locator candidate, a missing field, and an unknown record
   of the 1,658 record tasks: the observation and the checks the read settles;
@@ -13,9 +13,9 @@ with src/obligationbench/__init__.py and compares:
   agents: the checks its reads settle, the conclusions they establish, and that
   the runtime's replay matches the logged final ledger.
 
-Text attestations, which src/obligationbench/__init__.py does not handle, are compared by the
+Text attestations, which src/suffice/__init__.py does not handle, are compared by the
 standalone benchmark's tests/test_conformance.py against a fixture written by
-``python3 src/obligationbench/construction/conformance.py``.
+``python3 src/suffice/construction/conformance.py``.
 """
 from __future__ import annotations
 
@@ -28,15 +28,15 @@ import pytest
 
 _TESTS = os.path.dirname(os.path.abspath(__file__))
 _P = os.path.dirname(_TESTS)
-for _x in (_P, os.path.join(_P, "src"), os.path.join(_P, "src", "prime_agents"), os.path.join(_P, "src", "obligationbench", "construction"),
+for _x in (_P, os.path.join(_P, "src"), os.path.join(_P, "src", "prime_agents"), os.path.join(_P, "src", "suffice", "construction"),
            os.path.join(_P, "experiments")):
     if _x not in sys.path:
         sys.path.insert(0, _x)
 
 import conformance as cf  # noqa: E402
 
-_SCORER = os.path.join(_P, "src", "obligationbench", "__init__.py")
-_spec = importlib.util.spec_from_file_location("obligationbench_single", _SCORER)
+_SCORER = os.path.join(_P, "src", "suffice", "__init__.py")
+_spec = importlib.util.spec_from_file_location("suffice_single", _SCORER)
 ob = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(ob)
 

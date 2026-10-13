@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """Fetch a REAL drug enforcement (recall) record from the openFDA public API
 into a local artifact directory (drug-safety domain artifacts). Mirrors
-src/obligationbench/construction/download_arxiv.py's style: fetch exactly what the API serves, store it
+src/suffice/construction/download_arxiv.py's style: fetch exactly what the API serves, store it
 verbatim, and record provenance -- never fabricate, never edit field values.
 
 Endpoint (no auth required): https://api.fda.gov/drug/enforcement.json
 API docs: https://open.fda.gov/apis/drug/enforcement/
 
 Usage:
-    python3 src/obligationbench/construction/fetch_openfda.py <recall_number> <artifact_name>
-    python3 src/obligationbench/construction/fetch_openfda.py --search '<lucene-query>' <artifact_name> [--limit N]
+    python3 src/suffice/construction/fetch_openfda.py <recall_number> <artifact_name>
+    python3 src/suffice/construction/fetch_openfda.py --search '<lucene-query>' <artifact_name> [--limit N]
 
 Writes, under data/pilot/artifacts/<artifact_name>/:
     raw_enforcement_record.json   exact API response (meta + results), pretty-printed

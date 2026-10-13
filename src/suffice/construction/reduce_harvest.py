@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Reduce a harvest to the record fields the generators read.
 
-    python3 src/obligationbench/construction/reduce_harvest.py --src /path/to/full/harvest --dst /path/to/reduced/harvest
+    python3 src/suffice/construction/reduce_harvest.py --src /path/to/full/harvest --dst /path/to/reduced/harvest
 
 The full harvest of 2026-08-01 (``harvest/<domain>/records.jsonl``, 2.3 GB, almost all
 of it SEC companyfacts) keeps every field the sources returned. The generators read 55
@@ -14,7 +14,7 @@ quote in their proofs of concept (AWS's documented example key, a key id inside 
 URL, a mock API key, an OpenSSH key header) are replaced by ``[REDACTED]`` so that
 secret scanners do not flag the repository; none of the four records is in a published
 task. The released package ships the output as ``data/harvest/``; every published task
-regenerates byte for byte from it (``src/obligationbench/construction/reproduce_corpus.py``).
+regenerates byte for byte from it (``src/suffice/construction/reproduce_corpus.py``).
 """
 from __future__ import annotations
 

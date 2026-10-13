@@ -71,7 +71,7 @@ def main() -> int:
                 arm, anchor = run.split("__")[0], run.split("__")[-1]
             temperature, seed = ("0.7", run.split("__")[1][len("T07S"):]) if folder == "w2seed" else ("0", "")
             split = SPLIT[folder]
-            ipath = os.path.join("data", "obligationbench", dom, split, iid + ".json")
+            ipath = os.path.join("data", "suffice", dom, split, iid + ".json")
             if not os.path.exists(os.path.join(ROOT, ipath)):
                 raise SystemExit("instance file missing: %s" % ipath)
             why = ("mismatch" if ep in c["episodes_mismatch"] else

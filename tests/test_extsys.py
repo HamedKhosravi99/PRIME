@@ -21,7 +21,7 @@ import llm as llm_mod  # noqa: E402
 from prime_runtime.schema import load_instance  # noqa: E402
 from prime_runtime.trace import TraceLogger  # noqa: E402
 
-BAL = sorted(glob.glob(os.path.join(_PILOT, "data", "obligationbench", "*", "heldout_balanced", "*.json")))
+BAL = sorted(glob.glob(os.path.join(_PILOT, "data", "suffice", "*", "heldout_balanced", "*.json")))
 pytestmark = pytest.mark.skipif(not BAL, reason="benchmark instances not present")
 
 AGENTIC = ("ext_agentspec", "ext_agentspec_examine", "ext_researchloop", "ext_prooforstop")

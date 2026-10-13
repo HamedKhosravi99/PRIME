@@ -56,7 +56,7 @@ def main(argv=None) -> int:
     if not model:
         print("PRIME_LLM_MODEL is not set", file=sys.stderr)
         return 2
-    paths = sorted(glob.glob(os.path.join(PILOT, "data", "obligationbench", a.domain, "heldout_text", "*.json")))
+    paths = sorted(glob.glob(os.path.join(PILOT, "data", "suffice", a.domain, "heldout_text", "*.json")))
     if a.instances:
         keep = set(a.instances)
         paths = [p for p in paths if os.path.splitext(os.path.basename(p))[0] in keep]

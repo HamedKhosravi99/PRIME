@@ -20,7 +20,7 @@ for _x in (_P, os.path.join(_P, "src"), os.path.join(_P, "src", "prime_agents"),
 import induction_v5 as iv  # noqa: E402
 from prime_runtime.schema import load_instance  # noqa: E402
 
-V2 = sorted(glob.glob(os.path.join(_P, "data", "obligationbench", "security", "dev", "*.json")))
+V2 = sorted(glob.glob(os.path.join(_P, "data", "suffice", "security", "dev", "*.json")))
 
 
 class _GoldLabeler:
@@ -187,7 +187,7 @@ def test_state_first_induction_end_to_end_recovers_gold():
 
 def test_route_width_is_not_capped_below_the_corpus_maximum():
     """compile_routes_exact defaulted to max_width=6, but 189 gold routes in
-    ObligationBench are 7 atoms wide. Under that cap those claims compiled
+    SUFFICE are 7 atoms wide. Under that cap those claims compiled
     to NOTHING, so an induced program could not license them -- which would
     have surfaced in W2b as an induction-quality result rather than a
     configuration cap."""
@@ -219,7 +219,7 @@ def _big():
 
 
 def test_unused_vocabulary_lint_does_not_gate_guidance():
-    """ObligationBench deliberately seeds distractor atoms, so
+    """SUFFICE deliberately seeds distractor atoms, so
     `unused_vocabulary_atom` fires on gold for 472 of 480 balanced instances.
     It names an atom rather than a claim, which is the only reason guidance
     is not switched off corpus-wide -- adding a `claim` key to that finding
@@ -243,5 +243,5 @@ def _inst():
     import os
     here = os.path.dirname(_TESTS)
     p = sorted(glob.glob(os.path.join(
-        here, "data", "obligationbench", "*", "heldout_balanced", "*.json")))[0]
+        here, "data", "suffice", "*", "heldout_balanced", "*.json")))[0]
     return iv.load_instance(p)

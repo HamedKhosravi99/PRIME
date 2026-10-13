@@ -7,7 +7,7 @@ the faithful reading the instance builder uses. Inputs are the pinned files in
 (trialstracker_2026-08-03.csv) is third-party and is not part of the public
 release; place a copy in ../external/ to run.
 
-Usage: python3 src/obligationbench/construction/fdaaa/agreement_pilot.py
+Usage: python3 src/suffice/construction/fdaaa/agreement_pilot.py
 """
 import csv, json, os
 from datetime import date, timedelta

@@ -70,7 +70,7 @@ def _routes(episode, claim):
 
 _INSTANCE_INDEX = {}
 for _p in __import__("glob").glob(os.path.join(
-        PILOT, "data", "obligationbench", "*", "*", "*.json")):
+        PILOT, "data", "suffice", "*", "*", "*.json")):
     _INSTANCE_INDEX.setdefault(os.path.basename(_p), []).append(_p)
 
 

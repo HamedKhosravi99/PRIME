@@ -31,7 +31,7 @@ for _p in (PILOT, os.path.join(PILOT, "src"), HERE, os.path.join(PILOT, "release
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-import obligationbench as ob  # noqa: E402
+import suffice as ob  # noqa: E402
 
 MODEL = "qwen2.5-32b"
 DOMAINS = ("security", "clinical", "drugsafety", "financial")
@@ -43,7 +43,7 @@ REPS = 20
 def episodes(arm):
     tasks = {}
     for dom in DOMAINS:
-        tasks.update(ob.load_tasks(os.path.join(PILOT, "data", "obligationbench", dom, "heldout_balanced")))
+        tasks.update(ob.load_tasks(os.path.join(PILOT, "data", "suffice", dom, "heldout_balanced")))
     out = []
     for dom in DOMAINS:
         run = os.path.join(PILOT, "results", "w2a", "%s-%s" % (MODEL, dom), "%s__B20" % arm)

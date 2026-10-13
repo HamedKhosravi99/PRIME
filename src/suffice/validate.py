@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""ObligationBench-pilot instance validator (Agent B, src/obligationbench/construction/).
+"""SUFFICE-pilot instance validator (Agent B, src/suffice/construction/).
 
 Checks, per instance JSON under instances/swe/:
-  1.  parses as JSON and conforms to src/obligationbench/schema.json (jsonschema if
+  1.  parses as JSON and conforms to src/suffice/schema.json (jsonschema if
       available, else a minimal structural fallback);
   2.  referential integrity: unique claim/atom ids; order pairs, phi keys,
       gold_license keys and route literals all reference declared ids;

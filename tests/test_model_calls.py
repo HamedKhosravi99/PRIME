@@ -25,7 +25,7 @@ import model_calls as mc  # noqa: E402
 from prime_runtime.schema import load_instance  # noqa: E402
 from run_episode import run_episode  # noqa: E402
 
-V2 = os.path.join(_P, "data", "obligationbench")
+V2 = os.path.join(_P, "data", "suffice")
 INSTANCES = [
     os.path.join(V2, "security", "heldout_balanced", "sec-v2-0012.json"),
     os.path.join(V2, "clinical", "heldout_locator", sorted(os.listdir(os.path.join(V2, "clinical", "heldout_locator")))[0]),

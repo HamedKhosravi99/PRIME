@@ -13,7 +13,7 @@ PROTOCOL, frozen before any label is read (2026-10-10):
                trial whose fetch fails is reported as such, never backfilled
   program      the FDAAA program exactly as committed: compile_contract and
                build_instance imported, unmodified, from
-               src/obligationbench/construction/fdaaa/build_fdaaa_instances.py (reading D: calendar
+               src/suffice/construction/fdaaa/build_fdaaa_instances.py (reading D: calendar
                year, certification timeliness, no administrative grace; the
                runtime's predicate grammar decides every atom)
   selection    the builder's own: drop withheld, not applicable (not an ACT),
@@ -51,7 +51,7 @@ import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PILOT = os.path.dirname(os.path.dirname(HERE))
-sys.path.insert(0, os.path.join(PILOT, "src", "obligationbench", "construction", "fdaaa"))
+sys.path.insert(0, os.path.join(PILOT, "src", "suffice", "construction", "fdaaa"))
 sys.path.insert(0, PILOT)
 sys.path.insert(0, os.path.join(PILOT, "src"))
 import build_fdaaa_instances as B  # noqa: E402  (read-only import of the frozen builder)

@@ -858,7 +858,7 @@ def fill_T4Text(ctx):
 def _s1_facts():
     """S1 end-to-end results, read from the run JSONs rather than typed.
 
-    These come from the EARLIER instance family, not ObligationBench, and
+    These come from the EARLIER instance family, not SUFFICE, and
     every sentence built from them says so. They are carried forward because
     the generated benchmark does not measure S1 at all: its vocabularies are
     authored, which is precisely the thing S1 asks a model to supply.
@@ -900,7 +900,7 @@ def fill_S1(ctx):
             "not weakly wrong but load-bearingly wrong, and the unchanged "
             "mask converts them into abstention rather than into error "
             "(Appendix~\\ref{apx:carried}; earlier instance family, not "
-            "ObligationBench)."
+            "SUFFICE)."
             % (f["valid"], f["n"], _pp(100 * max(f["ofar"])),
                _pp(max(f["util"]))))
 

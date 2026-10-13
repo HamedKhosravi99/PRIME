@@ -34,7 +34,7 @@ for _p in (PILOT, os.path.join(PILOT, "src"), os.path.join(PILOT, "src", "prime_
         sys.path.insert(0, _p)
 
 import extsys  # noqa: E402
-import obligationbench as ob  # noqa: E402
+import suffice as ob  # noqa: E402
 import run_batch  # noqa: E402
 from prime_runtime.schema import load_instance  # noqa: E402
 from prime_runtime.trace import TraceLogger  # noqa: E402
@@ -54,9 +54,9 @@ class AlwaysAct:
 def run(prior: str, anchor: str, tmp: str):
     tasks = {}
     for dom in DOMAINS:
-        tasks.update(ob.load_tasks(os.path.join(PILOT, "data", "obligationbench", dom, "heldout_balanced")))
+        tasks.update(ob.load_tasks(os.path.join(PILOT, "data", "suffice", dom, "heldout_balanced")))
     preds = []
-    for p in sorted(glob.glob(os.path.join(PILOT, "data", "obligationbench", "*", "heldout_balanced", "*.json"))):
+    for p in sorted(glob.glob(os.path.join(PILOT, "data", "suffice", "*", "heldout_balanced", "*.json"))):
         inst = load_instance(p)
         budget = 20 if anchor == "B20" else run_batch.instance_budget(p, anchor, 20)
         tp = os.path.join(tmp, "%s-%s-%s.jsonl" % (prior, anchor, inst.id))

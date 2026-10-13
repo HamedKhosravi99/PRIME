@@ -14,7 +14,7 @@ Domains:
   drugsafety openFDA drug enforcement endpoint, paged
   financial  SEC EDGAR companyfacts per-CIK JSON (compliant User-Agent)
 
-Usage: python3 src/obligationbench/construction/harvest_records.py [--domains security clinical ...]
+Usage: python3 src/suffice/construction/harvest_records.py [--domains security clinical ...]
        [--target N]   (records per domain to retain; default 1200)
 """
 from __future__ import annotations
@@ -34,7 +34,7 @@ from typing import Any, Dict, List
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(HERE))), "data", "harvest")
 UA = {"User-Agent": os.environ.get(
-    "SEC_USER_AGENT", "ObligationBench research harvester (contact: anon@example.org)")}
+    "SEC_USER_AGENT", "SUFFICE research harvester (contact: anon@example.org)")}
 
 
 def _now() -> str:

@@ -52,7 +52,7 @@ for _p in (PILOT, os.path.join(PILOT, "src"), HERE, os.path.join(PILOT, "src", "
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-BENCH = os.path.join(PILOT, "data", "obligationbench")
+BENCH = os.path.join(PILOT, "data", "suffice")
 CACHE = os.path.join(PILOT, "results", "induction_cache")
 SPLIT = "heldout_balanced"
 

@@ -74,7 +74,7 @@ def main(argv=None) -> int:
 
     man_p = os.path.join(BENCH, "manifest.json")
     if not os.path.exists(man_p):
-        print("no FDAAA instances; run src/obligationbench/construction/fdaaa/build_fdaaa_instances.py")
+        print("no FDAAA instances; run src/suffice/construction/fdaaa/build_fdaaa_instances.py")
         return 1
     man = json.load(open(man_p, encoding="utf-8"))
 

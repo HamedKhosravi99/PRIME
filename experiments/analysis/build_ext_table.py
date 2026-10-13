@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""External comparators on ObligationBench (results/tableEXT.json).
+"""External comparators on SUFFICE (results/tableEXT.json).
 
 Every arm in the ladder is an ablation of PRIME itself, which leaves an
 evidence gap: nothing in that design distinguishes "the mechanism is better"

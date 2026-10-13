@@ -1,7 +1,7 @@
 """Instance schema, validation, and gold-program construction.
 
 Implements the instance JSON contract (formalized structurally in
-src/obligationbench/schema.json) and the constraint checks the runtime enforces on
+src/suffice/schema.json) and the constraint checks the runtime enforces on
 benchmark instances: order coherence, route realizability under Phi,
 min-cardinality route representatives, and tool-resolvability of every atom.
 
@@ -221,7 +221,7 @@ class Instance:
 
 
 def load_instance(path: str, validate: bool = True) -> Instance:
-    """Load an instance JSON file (see src/obligationbench/schema.json)."""
+    """Load an instance JSON file (see src/suffice/schema.json)."""
     with open(path, "r", encoding="utf-8") as fh:
         raw = json.load(fh)
     try:

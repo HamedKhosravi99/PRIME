@@ -37,7 +37,7 @@ for _p in (PILOT, os.path.join(PILOT, "src"), os.path.join(PILOT, "src", "prime_
         sys.path.insert(0, _p)
 
 RESULTS = os.path.join(PILOT, "results")
-BENCH = os.path.join(PILOT, "data", "obligationbench")
+BENCH = os.path.join(PILOT, "data", "suffice")
 DOMAINS = ("security", "clinical", "drugsafety", "financial")
 
 

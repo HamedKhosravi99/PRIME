@@ -339,7 +339,7 @@ def main(argv: List[str] = None) -> int:
     ap.add_argument("--tag", default="")
     ap.add_argument("--budget", type=int, default=20)
     ap.add_argument("--v2-split", default=None,
-                    help="run on data/obligationbench/<domain>/<split> instead "
+                    help="run on data/suffice/<domain>/<split> instead "
                          "of the legacy data/pilot/instances/<sub> layout. Without "
                          "this the S1 result is about the OLD instance set, "
                          "not the confirmatory benchmark the paper reports, "
@@ -353,7 +353,7 @@ def main(argv: List[str] = None) -> int:
     for spec in args.domains:
         label, sub = spec.split(":", 1)
         if args.v2_split:
-            pat = os.path.join(PILOT, "data", "obligationbench", label,
+            pat = os.path.join(PILOT, "data", "suffice", label,
                                args.v2_split, "*.json")
         else:
             pat = os.path.join(PILOT, "data", "pilot", "instances", sub, "*.json")

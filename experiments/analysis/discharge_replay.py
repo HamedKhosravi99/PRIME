@@ -43,7 +43,7 @@ from prime_runtime.schema import load_instance  # noqa: E402
 MODEL = "qwen2.5-32b"
 ANCHORS = ("bmin", "bmin1", "2bmin", "B20")
 ARMS = ("prime_guided", "masked_reactive_v")
-BENCH = os.path.join(PILOT, "data", "obligationbench")
+BENCH = os.path.join(PILOT, "data", "suffice")
 # --split locator: the same replay on the locator-uncertain split
 # (results/w2loc, every anchor with a logged cell), where completion
 # enumerates the remaining candidate fields of an open atom (src/prime_agents/arms.py).

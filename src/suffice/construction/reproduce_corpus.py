@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Regenerate ObligationBench from the harvest and compare with the published tasks.
+"""Regenerate SUFFICE from the harvest and compare with the published tasks.
 
-    python3 src/obligationbench/construction/reproduce_corpus.py [--harvest data/harvest] [--keep]
+    python3 src/suffice/construction/reproduce_corpus.py [--harvest data/harvest] [--keep]
 
 Copies the two generators into a temporary copy of the repository layout (so the
-published files in data/obligationbench/ are never touched), runs them in the order the corpus was made
+published files in data/suffice/ are never touched), runs them in the order the corpus was made
 (the primary corpus; the one-branch, locator-uncertain, and text-evidence variants),
 and compares every regenerated task file with the published one byte for byte. Exits
 nonzero unless all 1,898 tasks are identical. The released package ships the harvest
-of 2026-08-01 reduced to the fields the generators read (src/obligationbench/construction/reduce_harvest.py), on
+of 2026-08-01 reduced to the fields the generators read (src/suffice/construction/reduce_harvest.py), on
 which this takes a few seconds; on the full harvest it takes about two minutes.
 """
 from __future__ import annotations
@@ -38,10 +38,10 @@ def main(argv=None) -> int:
     ap.add_argument("--harvest", default=os.path.join(ROOT, "data", "harvest"))
     ap.add_argument("--keep", action="store_true", help="keep the regenerated files")
     a = ap.parse_args(argv)
-    tmp = tempfile.mkdtemp(prefix="obligationbench-regen-")
+    tmp = tempfile.mkdtemp(prefix="suffice-regen-")
     try:
         src = os.path.join(tmp, "src")
-        gen = os.path.join(src, "obligationbench", "construction")
+        gen = os.path.join(src, "suffice", "construction")
         os.makedirs(gen)
         for d in ("prime_runtime", "prime_agents"):
             os.symlink(os.path.join(ROOT, "src", d), os.path.join(src, d))
@@ -49,7 +49,7 @@ def main(argv=None) -> int:
             shutil.copy2(os.path.join(HERE, f), os.path.join(gen, f))
         os.makedirs(os.path.join(tmp, "data"))
         os.symlink(os.path.abspath(a.harvest), os.path.join(tmp, "data", "harvest"))
-        out = os.path.join(tmp, "data", "obligationbench")
+        out = os.path.join(tmp, "data", "suffice")
         for script, args in RUNS:
             p = subprocess.run([sys.executable, script] + args, cwd=gen, capture_output=True, text=True)
             if p.returncode != 0:
@@ -60,7 +60,7 @@ def main(argv=None) -> int:
         for split in SPLITS:
             pub = same = missing = extra = 0
             for dom in DOMAINS:
-                ref = os.path.join(ROOT, "data", "obligationbench", dom, split)
+                ref = os.path.join(ROOT, "data", "suffice", dom, split)
                 new = os.path.join(out, dom, split)
                 fr = {f for f in os.listdir(ref) if f.endswith(".json")} if os.path.isdir(ref) else set()
                 fn = {f for f in os.listdir(new) if f.endswith(".json")} if os.path.isdir(new) else set()

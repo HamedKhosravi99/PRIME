@@ -13,7 +13,7 @@ This is the standalone part of contract/agreement_pilot.py, the exploratory
 script that also compared deadline variants on 6,000 trials; that comparison
 is not used in the paper.
 
-Usage: python3 src/obligationbench/construction/fdaaa/notices_check.py   (needs network access)
+Usage: python3 src/suffice/construction/fdaaa/notices_check.py   (needs network access)
 """
 from __future__ import annotations
 

@@ -197,7 +197,7 @@ def test_e1_contrast_is_mask_only(tmp_path):
     from prime_runtime.ledger import Ledger
     from prime_runtime.schema import load_instance
     import glob as _glob
-    path = sorted(_glob.glob(os.path.join(_P, "data", "obligationbench", "security", "dev", "*.json")))[0]
+    path = sorted(_glob.glob(os.path.join(_P, "data", "suffice", "security", "dev", "*.json")))[0]
     inst = load_instance(path)
     ledger = Ledger(inst.atom_ids, inst.phi_patterns)
     interp = Interpreter(inst, inst.gold_program(), revision_mode="fixed")

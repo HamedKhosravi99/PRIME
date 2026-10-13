@@ -1,4 +1,4 @@
-"""Closest external systems, instantiated on ObligationBench as arms.
+"""Closest external systems, instantiated on SUFFICE as arms.
 
 Each arm reimplements the decision procedure of one published system and runs
 it on the same tasks, model, tools, executor, resolvers, budget accounting,
@@ -731,7 +731,7 @@ def _hesp_rates(exclude_domain: Optional[str] = None) -> Dict[Any, float]:
         if exclude_domain not in _HESP_Q_EXCL:
             import glob as _glob
             cnt2: Dict[Any, List[int]] = {}
-            for p in _glob.glob(os.path.join(_PILOT, "data", "obligationbench", "*", "dev", "*.json")):
+            for p in _glob.glob(os.path.join(_PILOT, "data", "suffice", "*", "dev", "*.json")):
                 if os.path.basename(os.path.dirname(os.path.dirname(p))) == exclude_domain:
                     continue
                 raw = json.load(open(p, encoding="utf-8"))
@@ -750,7 +750,7 @@ def _hesp_rates(exclude_domain: Optional[str] = None) -> Dict[Any, float]:
     if _HESP_Q is None:
         import glob as _glob
         cnt: Dict[Any, List[int]] = {}
-        for p in _glob.glob(os.path.join(_PILOT, "data", "obligationbench", "*", "dev", "*.json")):
+        for p in _glob.glob(os.path.join(_PILOT, "data", "suffice", "*", "dev", "*.json")):
             raw = json.load(open(p, encoding="utf-8"))
             topo = json.loads(raw["notes_for_annotators"]).get("topology", "")
             lv = {c["id"]: c["level"] for c in raw["claims"]}

@@ -100,7 +100,7 @@ def test_emissions_contradicted_by_the_agents_own_ledger_are_counted(tmp_path, m
     # sorted: glob order differs between filesystems, and the target must not
     # depend on it. The claim must also be one the record does not support,
     # since only an unsupported emission can be contradicted by the ledger.
-    for p in sorted(glob.glob(os.path.join(_P, "data", "obligationbench", "security", "heldout_balanced", "*.json"))):
+    for p in sorted(glob.glob(os.path.join(_P, "data", "suffice", "security", "heldout_balanced", "*.json"))):
         inst = json.load(open(p))
         gold = {a["id"]: a["gold_value"] for a in inst["atoms"]}
         for cid, routes in inst["gold_licenses"].items():
@@ -138,7 +138,7 @@ def test_an_unknown_atom_state_does_not_count_as_knowing(tmp_path, monkeypatch):
     knowledge, and counting it would overstate the finding."""
     monkeypatch.setattr(bw, "RESULTS", str(tmp_path))
     import glob
-    p0 = sorted(glob.glob(os.path.join(_P, "data", "obligationbench", "security", "heldout_balanced", "*.json")))[0]
+    p0 = sorted(glob.glob(os.path.join(_P, "data", "suffice", "security", "heldout_balanced", "*.json")))[0]
     inst = json.load(open(p0))
     cid = sorted(inst["gold_licenses"])[0]
     for dom in bw.DOMAINS:

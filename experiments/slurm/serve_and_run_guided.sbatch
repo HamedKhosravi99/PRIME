@@ -256,7 +256,7 @@ case "$CONFIGSET" in
     CONFIGS=("prime gold" "prime_guided gold" "masked_reactive gold" "static_contract gold" "react gold" \
              "prime induced" "prime_guided induced" "masked_reactive induced") ;;
   v2dev)
-    # W0.6 LLM dev pilots on data/obligationbench/*/dev (EXECUTION_PLAN v5):
+    # W0.6 LLM dev pilots on data/suffice/*/dev (EXECUTION_PLAN v5):
     # G_dev (masked_reactive_v vs computed informed planner), TOST variance,
     # and the react_program instruction-effect pair. Budgets handled by the
     # driver loop below (BUDGETS env), gold license source only.
@@ -313,7 +313,7 @@ case "$CONFIGSET" in
     # at the four anchors. Own driver below.
     CONFIGS=("__complete__ gold") ;;
   w2ob)
-    # One-branch-fails split (data/obligationbench/*/heldout_onebranch): the
+    # One-branch-fails split (data/suffice/*/heldout_onebranch): the
     # fully informed agent, the mask, and PRIME where exactly one of two
     # alternative routes to C2 survives. Own driver below.
     CONFIGS=("__ob__ gold") ;;
@@ -354,7 +354,7 @@ if [ "$CONFIGSET" = "w2seed" ]; then
     for ARM in react_program_attested masked_reactive_v prime_guided; do
       for SEED in 11 12 13; do
         OUT="results/w2seed/${MODELTAG}-${DOM}/${ARM}__T07S${SEED}__B20"
-        python3 src/prime_agents/run_batch.py --instances "data/obligationbench/${DOM}/heldout_balanced/*.json" \
+        python3 src/prime_agents/run_batch.py --instances "data/suffice/${DOM}/heldout_balanced/*.json" \
           --arm "$ARM" --license-source gold --model "$MODEL" --parallel "$PARALLEL" \
           --max-tool-calls 20 --temperature 0.7 --seed "$SEED" --resume --out "$OUT" \
           || echo "[job] FAILED $ARM seed=$SEED (continuing)"
@@ -375,7 +375,7 @@ if [ "$CONFIGSET" = "w2ext" ]; then
     DOM=${D%%:*}
     for ARM in static_contract cove reflexion conformal rubric direct; do
       OUT="results/w2ext/${MODELTAG}-${DOM}/${ARM}__B20"
-      python3 src/prime_agents/run_batch.py --instances "data/obligationbench/${DOM}/heldout_balanced/*.json" \
+      python3 src/prime_agents/run_batch.py --instances "data/suffice/${DOM}/heldout_balanced/*.json" \
         --arm "$ARM" --license-source gold --model "$MODEL" --parallel "$PARALLEL" \
         --max-tool-calls 20 --resume --out "$OUT" \
         || echo "[job] FAILED $ARM (continuing)"
@@ -392,7 +392,7 @@ run_anchor () {  # ARM SPLIT ANCHOR OUTBASE
   [ "$ANCHOR" != "B20" ] && AA="--max-tool-calls 20 --budget-anchor $ANCHOR"
   local OUT="$OUTBASE/${MODELTAG}-${DOM}/${ARM}__${ANCHOR}"
   echo "[job] arm=$ARM split=$SPLIT anchor=$ANCHOR out=$OUT start=$(date +%H:%M:%S)"
-  python3 src/prime_agents/run_batch.py --instances "data/obligationbench/${DOM}/${SPLIT}/*.json" \
+  python3 src/prime_agents/run_batch.py --instances "data/suffice/${DOM}/${SPLIT}/*.json" \
     --arm "$ARM" --license-source gold --model "$MODEL" --parallel "$PARALLEL" \
     $AA --resume --out "$OUT" || echo "[job] FAILED $ARM $ANCHOR (continuing)"
 }
@@ -508,7 +508,7 @@ if [ "$CONFIGSET" = "w2extspec" ]; then
     DOM=${D%%:*}
     for ARM in static_contract cove reflexion conformal rubric direct; do
       OUT="results/w2ext/${MODELTAG}-${DOM}/${ARM}__spec__B20"
-      python3 src/prime_agents/run_batch.py --instances "data/obligationbench/${DOM}/heldout_balanced/*.json" \
+      python3 src/prime_agents/run_batch.py --instances "data/suffice/${DOM}/heldout_balanced/*.json" \
         --arm "$ARM" --license-source gold --model "$MODEL" --parallel "$PARALLEL" \
         --max-tool-calls 20 --comparator-spec-view --resume --out "$OUT" \
         || echo "[job] FAILED $ARM (continuing)"
@@ -519,14 +519,14 @@ if [ "$CONFIGSET" = "w2extspec" ]; then
 fi
 
 # ---- One-branch-fails split (review response) ------------------------------
-# Generated locally by src/obligationbench/construction/generate_record_instances.py --one-branch-per-domain
-# and synced with the rest of data/obligationbench. Table: experiments/analysis/build_onebranch_table.py
+# Generated locally by src/suffice/construction/generate_record_instances.py --one-branch-per-domain
+# and synced with the rest of data/suffice. Table: experiments/analysis/build_onebranch_table.py
 if [ "$CONFIGSET" = "w2ob" ]; then
   for D in $DOMAINS; do
     DOM=${D%%:*}
     for ARM in react_program_attested masked_reactive_v prime_guided; do
       OUT="results/w2ob/${MODELTAG}-${DOM}/${ARM}__B20"
-      python3 src/prime_agents/run_batch.py --instances "data/obligationbench/${DOM}/heldout_onebranch/*.json" \
+      python3 src/prime_agents/run_batch.py --instances "data/suffice/${DOM}/heldout_onebranch/*.json" \
         --arm "$ARM" --license-source gold --model "$MODEL" --parallel "$PARALLEL" \
         --max-tool-calls 20 --resume --out "$OUT" \
         || echo "[job] FAILED $ARM (continuing)"
@@ -565,7 +565,7 @@ if [ "$CONFIGSET" = "w2bind" ]; then
     DOM=${D%%:*}
     for ARM in masked_reactive_v prime_guided_gated prime_guided; do
       OUT="results/w2b/${MODELTAG}-${DOM}/${ARM}__induced__B20"
-      python3 src/prime_agents/run_batch.py --instances "data/obligationbench/${DOM}/heldout_balanced/*.json" \
+      python3 src/prime_agents/run_batch.py --instances "data/suffice/${DOM}/heldout_balanced/*.json" \
         --arm "$ARM" --license-source induced --induction-method state_first \
         --model "$MODEL" --parallel "$PARALLEL" --max-tool-calls 20 --resume \
         --out "$OUT" || echo "[job] FAILED $ARM (continuing)"
@@ -581,17 +581,17 @@ if [ "$CONFIGSET" = "w2alad" ] || [ "$CONFIGSET" = "w2apol" ]; then
     if [ "$CONFIGSET" = "w2alad" ]; then
       for ARM in react react_verify react_spec react_spec_verify react_program react_program_verify react_program_attested masked_reactive_v prime_guided; do
         OUT="results/w2a/${MODELTAG}-${DOM}/${ARM}__B20"
-        python3 src/prime_agents/run_batch.py --instances "data/obligationbench/${DOM}/heldout_balanced/*.json"           --arm "$ARM" --license-source gold --model "$MODEL" --parallel "$PARALLEL"           --max-tool-calls 20 --resume --out "$OUT" || echo "[job] FAILED $ARM (continuing)"
+        python3 src/prime_agents/run_batch.py --instances "data/suffice/${DOM}/heldout_balanced/*.json"           --arm "$ARM" --license-source gold --model "$MODEL" --parallel "$PARALLEL"           --max-tool-calls 20 --resume --out "$OUT" || echo "[job] FAILED $ARM (continuing)"
       done
       for ARM in react react_program_attested masked_reactive_v prime_guided; do
         OUT="results/w2a/${MODELTAG}-${DOM}/natural__${ARM}__B20"
-        python3 src/prime_agents/run_batch.py --instances "data/obligationbench/${DOM}/heldout_natural/*.json"           --arm "$ARM" --license-source gold --model "$MODEL" --parallel "$PARALLEL"           --max-tool-calls 20 --resume --out "$OUT" || echo "[job] FAILED natural $ARM (continuing)"
+        python3 src/prime_agents/run_batch.py --instances "data/suffice/${DOM}/heldout_natural/*.json"           --arm "$ARM" --license-source gold --model "$MODEL" --parallel "$PARALLEL"           --max-tool-calls 20 --resume --out "$OUT" || echo "[job] FAILED natural $ARM (continuing)"
       done
     else
       for ARM in masked_reactive_v prime_guided; do
         for ANCHOR in bmin bmin1 2bmin; do
           OUT="results/w2a/${MODELTAG}-${DOM}/${ARM}__${ANCHOR}"
-          python3 src/prime_agents/run_batch.py --instances "data/obligationbench/${DOM}/heldout_balanced/*.json"             --arm "$ARM" --license-source gold --model "$MODEL" --parallel "$PARALLEL"             --max-tool-calls 20 --budget-anchor "$ANCHOR" --resume --out "$OUT" || echo "[job] FAILED $ARM $ANCHOR (continuing)"
+          python3 src/prime_agents/run_batch.py --instances "data/suffice/${DOM}/heldout_balanced/*.json"             --arm "$ARM" --license-source gold --model "$MODEL" --parallel "$PARALLEL"             --max-tool-calls 20 --budget-anchor "$ANCHOR" --resume --out "$OUT" || echo "[job] FAILED $ARM $ANCHOR (continuing)"
         done
       done
     fi
@@ -603,7 +603,7 @@ fi
 for D in $DOMAINS; do
   # configsets with their own driver loops must not enter the legacy loop:
   # its NINST=$(ls data/pilot/instances/... | wc -l) fails under set -e/pipefail
-  # for v2 domains (paths live under data/obligationbench), which killed the
+  # for v2 domains (paths live under data/suffice), which killed the
   # first W2a shards at launch.
   case "$CONFIGSET" in v2dev|w2alad|w2apol|w2bind|s1v2|w2ext|w2seed) break ;; esac
   DOM=${D%%:*}; SUB=${D##*:}
@@ -645,7 +645,7 @@ if [ "$CONFIGSET" = "v2dev" ]; then
         OUT="results/v2dev/${MODELTAG}-${DOM}/${ARM}__B${B}"
         echo "[job] --- v2dev arm=$ARM B=$B domain=$DOM -> $OUT ---"
         python3 src/prime_agents/run_batch.py \
-          --instances "data/obligationbench/${SUB}/dev/*.json" \
+          --instances "data/suffice/${SUB}/dev/*.json" \
           --arm "$ARM" --license-source "$LSRC" \
           --model "$MODEL" --parallel "$PARALLEL" \
           --max-tool-calls "$B" --resume --out "$OUT" \
@@ -690,7 +690,7 @@ if [ "${VOCAB:-0}" = "1" ]; then
     # VOCAB run would have populated the panel from the old instance set
     # while every neighbouring number came from instances_v2.
     if [ -n "${VOCAB_V2_SPLIT:-}" ]; then
-      VGLOB="data/obligationbench/$DOM/${VOCAB_V2_SPLIT}/*.json"
+      VGLOB="data/suffice/$DOM/${VOCAB_V2_SPLIT}/*.json"
     else
       VGLOB="data/pilot/instances/$SUB/*.json"
     fi

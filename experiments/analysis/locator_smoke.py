@@ -30,7 +30,7 @@ for _p in (PILOT, os.path.join(PILOT, "src"), os.path.join(PILOT, "src", "prime_
 
 import build_w2a_tables as bw  # noqa: E402
 
-BENCH = os.path.join(PILOT, "data", "obligationbench")
+BENCH = os.path.join(PILOT, "data", "suffice")
 
 
 def task_of(iid):
