@@ -56,11 +56,11 @@ docs/                   the frozen analysis and execution plans, the glossary, a
 Python 3.9 or later. The runtime, the scorer, the generators, and most analysis scripts use only the standard library; the figures need numpy and matplotlib, the tests pytest, and running agents the `openai` client and an OpenAI-compatible endpoint.
 
 ```bash
-pip install -r requirements.txt        # or: pip install -e ".[figures,dev]"
+pip install -r requirements.txt        # or: pip install ".[figures,dev]"
 make test                              # the tests
 ```
 
-Every script runs from a fresh checkout without installing anything: it puts `src/` on its own path. `pip install -e .` also makes `prime_runtime`, `prime_agents`, and `suffice` importable from anywhere; with it (or with `PYTHONPATH=src`), `python -m suffice score --tasks ... --predictions ...` runs the scorer.
+Every script runs from a fresh checkout without installing anything: it puts `src/` on its own path. `pip install .` also makes `prime_runtime`, `prime_agents`, and `suffice` importable from anywhere (add `-e` for an editable install, which needs pip 21.3 or later); with it (or with `PYTHONPATH=src`), `python -m suffice score --tasks ... --predictions ...` runs the scorer.
 
 ## Reproducing the paper
 
