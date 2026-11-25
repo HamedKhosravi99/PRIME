@@ -21,7 +21,7 @@ results/.extracted: $(LOGS)
 	tar -xzf $(LOGS)
 	touch $@
 
-# the per-agent endpoints of Section 6.1 from the traces, then every table JSON regenerated and compared
+# the per-agent endpoints of Section 7.1 from the traces, then every table JSON regenerated and compared
 tables: logs
 	$(PYTHON) experiments/reproduce_tables.py
 	$(PYTHON) experiments/analysis/regenerate_tables.py

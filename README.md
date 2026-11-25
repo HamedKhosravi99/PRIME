@@ -4,6 +4,25 @@ Code, benchmark, and analysis for the paper "PRIME: Towards Verifiable Evidence-
 
 PRIME fixes, before an LLM agent examines a case, which checks suffice for each conclusion. It then records what the agent's checks establish, points the agent at the checks that remain, and refuses any conclusion that the completed checks do not justify. SUFFICE, the paper's benchmark, has 938 tasks built from public security advisories, clinical-trial registrations, drug recalls, and company filings, plus derived variants, scored by executable rules with no LLM judge. The benchmark is also distributed on its own, with a dataset card and an installable scorer.
 
+## Quick start
+
+Everything below runs on a laptop CPU in a few minutes, with Python 3.9 or later and no model, GPU, or API key.
+
+```bash
+python3 examples/quickstart.py     # PRIME on the paper's running example (Figure 1): commit, record, gate, guide
+
+make test                          # more than 650 tests of the runtime, the agents, and the scorer (needs pytest, about 2 minutes)
+
+make logs && python3 experiments/reproduce_tables.py
+                                   # rebuilds Table 2 from the released episode logs and checks every value (under a minute)
+
+python3 src/prime_agents/run_batch.py --instances "data/suffice/security/heldout_balanced/*.json" \
+    --arm prime_guided --license-source gold --dry-run --out results/quickstart
+                                   # full PRIME episodes on 120 benchmark tasks, with a scripted agent in place of the model
+```
+
+To run PRIME with a real model, serve it behind an OpenAI-compatible endpoint and drop `--dry-run` (see Running an agent). To use the runtime in your own agent, `examples/quickstart.py` shows the three calls it needs: commit the evidence routes, record each check result, and ask what may be reported and what to check next.
+
 ## Contents
 
 ```
@@ -26,6 +45,7 @@ experiments/            everything that turns the data into the paper's numbers
   blind_verification/   the verified-attestation runs
   slurm/                the SLURM scripts that served each model with vLLM and ran the agents
 tests/                  the conformance and regression tests (Table 7)
+examples/               quickstart.py, the paper's running example on the runtime
 docs/                   the frozen analysis and execution plans, the glossary, and the notes below
 ```
 
